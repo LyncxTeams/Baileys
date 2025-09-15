@@ -7,6 +7,12 @@ export declare const NO_MESSAGE_FOUND_ERROR_TEXT = "Message absent from node"
 
 export declare const MISSING_KEYS_ERROR_TEXT = "Key used already or never filled"
 
+export declare const DECRYPTION_RETRY_CONFIG: {
+    maxRetries: number
+    baseDelayMs: number
+    sessionRecordErrors: string[]
+}
+
 export declare const NACK_REASONS: {
     ParsingError: number
     UnrecognizedStanza: number
@@ -23,82 +29,24 @@ export declare const NACK_REASONS: {
     DBOperationFailed: number
 }
 
+export declare const extractAddressingContext: (stanza: BinaryNode) => {
+    addressingMode: string
+    senderAlt: string | undefined
+    recipientAlt: string | undefined
+}
+
 /**
  * Decode the received node as a message.
  * @note this will only parse the message, not decrypt it
  */
 export declare function decodeMessageNode(stanza: BinaryNode, meId: string, meLid: string): {
-    fullMessage: proto.IWebMessageInfo & {
-        key: {
-            remoteJid: string
-            fromMe: boolean
-            id: string
-            participant?: string
-            senderLid?: string
-            senderPn?: string
-            participantLid?: string
-            newsletter_server_id?: number
-        }
-        messageTimestamp: number
-        pushName?: string
-        broadcast: boolean
-        newsletter: boolean
-        newsletter_server_id?: number
-        status?: proto.WebMessageInfo.Status
-        platform?: string
-        verifiedBizName?: string
-        multicast?: boolean
-        metaInfo?: {
-            targetID: string
-            targetSender?: string
-        }
-        botInfo?: {
-            editType: string
-            editTargetID: string
-            editSenderTimestampMS: string
-        }
-        message?: proto.IMessage
-        messageStubType?: proto.WebMessageInfo.StubType
-        messageStubParameters?: string[]
-    }
+    fullMessage: proto.IWebMessageInfo
     author: string
     sender: string
 }
 
 export declare const decryptMessageNode: (stanza: BinaryNode, meId: string, meLid: string, repository: SignalRepository, logger: ILogger) => {
-    fullMessage: proto.IWebMessageInfo & {
-        key: {
-            remoteJid: string
-            fromMe: boolean
-            id: string
-            participant?: string
-            senderLid?: string
-            senderPn?: string
-            participantLid?: string
-            newsletter_server_id?: number
-        }
-        messageTimestamp: number
-        pushName?: string
-        broadcast: boolean
-        newsletter: boolean
-        newsletter_server_id?: number
-        status?: proto.WebMessageInfo.Status
-        platform?: string
-        verifiedBizName?: string
-        multicast?: boolean
-        metaInfo?: {
-            targetID: string
-            targetSender?: string
-        }
-        botInfo?: {
-            editType: string
-            editTargetID: string
-            editSenderTimestampMS: string
-        }
-        message?: proto.IMessage
-        messageStubType?: proto.WebMessageInfo.StubType
-        messageStubParameters?: string[]
-    }
+    fullMessage: proto.IWebMessageInfo
     category: string
     author: string
     decrypt(): Promise<void>

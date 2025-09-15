@@ -2,6 +2,7 @@ import { Boom } from '@hapi/boom'
 import { proto } from '../../WAProto'
 import { BotListInfo, ChatModification, ContactAction, MessageUpsertType, SocketConfig, WABusinessProfile, WAMediaUpload, WAPatchCreate, WAPresence, WAPrivacyCallValue, WAPrivacyGroupAddValue, WAPrivacyMessagesValue, WAPrivacyOnlineValue, WAPrivacyValue, WAReadReceiptsValue } from '../Types'
 import { LabelActionBody } from '../Types/Label'
+import { QuickReplyAction } from '../Types/Bussines'
 import { BinaryNode } from '../WABinary'
 import { USyncQuery } from '../WAUSync'
 
@@ -14,16 +15,13 @@ export declare const makeChatsSocket: (config: SocketConfig) => {
     }>
     upsertMessage: (msg: proto.IWebMessageInfo, type: MessageUpsertType) => Promise<void>
     appPatch: (patchCreate: WAPatchCreate) => Promise<void>
+    createCallLink: (type: 'audio' | 'video', event?: number, timeoutMs?: number) => Promise<void>
     sendPresenceUpdate: (type: WAPresence, toJid?: string) => Promise<void>
     presenceSubscribe: (toJid: string, tcToken?: Buffer) => Promise<void>
     getBotListV2: () => Promise<BotListInfo[]>
     getLidUser: (jid: string) => Promise<{
     	lid: string
         id: string
-    }[] | undefined>
-    onWhatsApp: (...jids: string[]) => Promise<{
-        jid: string
-        exists: unknown
     }[] | undefined>
     fetchBlocklist: () => Promise<string[]>
     fetchStatus: (...jids: string[]) => Promise<import("../WAUSync").USyncQueryResultList[] | undefined>
@@ -42,6 +40,7 @@ export declare const makeChatsSocket: (config: SocketConfig) => {
     updateReadReceiptsPrivacy: (value: WAReadReceiptsValue) => Promise<void>
     updateGroupsAddPrivacy: (value: WAPrivacyGroupAddValue) => Promise<void>
     updateDefaultDisappearingMode: (duration: number) => Promise<void>
+    updateDisableLinkPreviewsPrivacy: (isPreviewsDisabled: boolean) => Promise<void>
     getBusinessProfile: (jid: string) => Promise<WABusinessProfile | void>
     resyncAppState: (collections: readonly ("critical_block" | "critical_unblock_low" | "regular_high" | "regular_low" | "regular")[], isInitialSync: boolean) => Promise<void>
     chatModify: (mod: ChatModification, jid: string) => Promise<void>
@@ -56,6 +55,8 @@ export declare const makeChatsSocket: (config: SocketConfig) => {
         id: string
         fromMe?: boolean
     }[], star: boolean) => Promise<void>
+    addOrEditQuickReply: (quickReply: QuickReplyAction) => Promise<void>
+    removeQuickReply: (timestamp: string) => Promise<void>
     addOrEditContact: (jid: string, contact: ContactAction) => Promise<void>
     removeContact: (jid: string) => Promise<void>
     executeUSyncQuery: (usyncQuery: USyncQuery) => Promise<import("../WAUSync").USyncQueryResult | undefined>

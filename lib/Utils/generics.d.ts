@@ -72,20 +72,6 @@ export declare const fetchLatestBaileysVersion: (options?: AxiosRequestConfig<{}
     error: any
 }>
 
-/**
- * A utility that fetches the latest web version of whatsapp.
- * Use to ensure your WA connection is always on the latest version
- */
-export declare const fetchLatestWaWebVersion: (options: AxiosRequestConfig<{}>) => Promise<{
-    version: WAVersion
-    isLatest: boolean
-    error?: undefined
-} | {
-    version: WAVersion
-    isLatest: boolean
-    error: any
-}>
-
 /** unique message tag prefix for MD clients */
 export declare const generateMdTagPrefix: () => string
 /**

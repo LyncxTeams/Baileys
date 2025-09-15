@@ -26,6 +26,9 @@ export declare const jidEncode: (user: string | number | null, server: JidServer
 
 export declare const jidDecode: (jid: string | undefined) => FullJid | undefined
 
+/** is the jid Meta AI */
+export declare const isJidMetaAI: (jid: string | undefined) => boolean | undefined
+
 /** is the jid a user */
 export declare const areJidsSameUser: (jid1: string | undefined, jid2: string | undefined) => boolean
 
@@ -51,3 +54,5 @@ export declare const isJidNewsletter: (jid: string | undefined) => boolean | und
 export declare const isJidBot: (jid: string | undefined) => boolean | undefined
 
 export declare const jidNormalizedUser: (jid: string | undefined) => string
+
+export declare const transferDevice: (fromJid: string, toJid: string) => string

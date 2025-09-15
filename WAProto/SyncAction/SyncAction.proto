@@ -95,6 +95,12 @@ message SyncActionValue {
     optional LidContactAction lidContactAction = 61;
     optional CtwaPerCustomerDataSharingAction ctwaPerCustomerDataSharingAction = 62;
     optional PaymentTosAction paymentTosAction = 63;
+    optional PrivacySettingChannelsPersonalisedRecommendationAction privacySettingChannelsPersonalisedRecommendationAction = 64;
+    optional BusinessBroadcastAssociationAction businessBroadcastAssociationAction = 65;
+    optional DetectedOutcomesStatusAction detectedOutcomesStatusAction = 66;
+    optional MaibaAIFeaturesControlAction maibaAiFeaturesControlAction = 68;
+    optional BusinessBroadcastListAction businessBroadcastListAction = 69;
+    optional MusicUserIdAction musicUserIdAction = 70;
     message AgentAction {
         optional string name = 1;
         optional int32 deviceID = 2;
@@ -109,6 +115,14 @@ message SyncActionValue {
     }
     message BotWelcomeRequestAction {
         optional bool isSent = 1;
+    }
+    message BusinessBroadcastAssociationAction {
+        optional bool deleted = 1;
+    }
+    message BusinessBroadcastListAction {
+        optional bool deleted = 1;
+        repeated string phoneNumbers = 2;
+        optional string listName = 3;
     }
     message CallLogAction {
         optional CallLogRecord callLogRecord = 1;
@@ -156,6 +170,9 @@ message SyncActionValue {
     message DeleteMessageForMeAction {
         optional bool deleteMedia = 1;
         optional int64 messageTimestamp = 2;
+    }
+    message DetectedOutcomesStatusAction {
+        optional bool isEnabled = 1;
     }
     message ExternalWebBetaAction {
         optional bool isOptIn = 1;
@@ -207,6 +224,14 @@ message SyncActionValue {
     message LockChatAction {
         optional bool locked = 1;
     }
+    message MaibaAIFeaturesControlAction {
+        optional MaibaAIFeatureStatus aiFeatureStatus = 1;
+        enum MaibaAIFeatureStatus {
+            ENABLED = 0;
+            ENABLED_HAS_LEARNING = 1;
+            DISABLED = 2;
+        }
+    }
     message MarkChatAsReadAction {
         optional bool read = 1;
         optional SyncActionValue.SyncActionMessageRange messageRange = 2;
@@ -235,6 +260,9 @@ message SyncActionValue {
             ACTIVE = 0;
             INACTIVE = 1;
         }
+    }
+    message MusicUserIdAction {
+        optional string musicUserId = 1;
     }
     message MuteAction {
         optional bool muted = 1;
@@ -286,6 +314,9 @@ message SyncActionValue {
     message PrimaryVersionAction {
         optional string version = 1;
     }
+    message PrivacySettingChannelsPersonalisedRecommendationAction {
+        optional bool isUserOptedOut = 1;
+    }
     message PrivacySettingDisableLinkPreviewsAction {
         optional bool isPreviewsDisabled = 1;
     }
@@ -335,6 +366,8 @@ message SyncActionValue {
         optional bool isFavorite = 9;
         optional uint32 deviceIdHint = 10;
         optional bool isLottie = 11;
+        optional string imageHash = 12;
+        optional bool isAvatarSticker = 13;
     }
     message SubscriptionAction {
         optional bool isDeactivated = 1;

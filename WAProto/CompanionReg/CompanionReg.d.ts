@@ -1102,6 +1102,15 @@ export namespace CompanionReg {
 
             /** HistorySyncConfig supportMessageAssociation */
             supportMessageAssociation?: (boolean|null);
+
+            /** HistorySyncConfig supportGroupHistory */
+            supportGroupHistory?: (boolean|null);
+
+            /** HistorySyncConfig onDemandReady */
+            onDemandReady?: (boolean|null);
+
+            /** HistorySyncConfig supportGuestChat */
+            supportGuestChat?: (boolean|null);
         }
 
         /** Represents a HistorySyncConfig. */
@@ -1155,6 +1164,15 @@ export namespace CompanionReg {
             /** HistorySyncConfig supportMessageAssociation. */
             public supportMessageAssociation?: (boolean|null);
 
+            /** HistorySyncConfig supportGroupHistory. */
+            public supportGroupHistory?: (boolean|null);
+
+            /** HistorySyncConfig onDemandReady. */
+            public onDemandReady?: (boolean|null);
+
+            /** HistorySyncConfig supportGuestChat. */
+            public supportGuestChat?: (boolean|null);
+
             /** HistorySyncConfig _fullSyncDaysLimit. */
             public _fullSyncDaysLimit?: "fullSyncDaysLimit";
 
@@ -1196,6 +1214,15 @@ export namespace CompanionReg {
 
             /** HistorySyncConfig _supportMessageAssociation. */
             public _supportMessageAssociation?: "supportMessageAssociation";
+
+            /** HistorySyncConfig _supportGroupHistory. */
+            public _supportGroupHistory?: "supportGroupHistory";
+
+            /** HistorySyncConfig _onDemandReady. */
+            public _onDemandReady?: "onDemandReady";
+
+            /** HistorySyncConfig _supportGuestChat. */
+            public _supportGuestChat?: "supportGuestChat";
 
             /**
              * Creates a new HistorySyncConfig instance using the specified properties.

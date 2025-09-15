@@ -78,6 +78,7 @@ export type SignalDataTypeMap = {
     }
     'app-state-sync-key': proto.Message.IAppStateSyncKeyData
     'app-state-sync-version': LTHashState
+    'lid-mapping': string
 }
 
 export type SignalDataSet = {
@@ -99,7 +100,7 @@ export type SignalKeyStore = {
 
 export type SignalKeyStoreWithTransaction = SignalKeyStore & {
     isInTransaction: () => boolean
-    transaction<T>(exec: () => Promise<T>): Promise<T>
+    transaction<T>(exec: () => Promise<T>, key: string): Promise<T>
 }
 
 export type TransactionCapabilityOptions = {

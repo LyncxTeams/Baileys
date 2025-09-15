@@ -15,6 +15,8 @@ export declare const generateLinkPreviewIfRequired: (text: string, getUrlInfo: M
 
 export declare const prepareWAMessageMedia: (message: AnyMediaMessageContent, options: MediaGenerationOptions) => Promise<proto.Message>
 
+export declare const prepareAlbumMessageContent: (jid: string, albums: WAProto.IMessage, options: MessageContentGenerationOptions) => Promise<proto.Message[]>
+
 export declare const prepareDisappearingMessageSettingContent: (ephemeralExpiration?: number) => proto.Message
 
 /**

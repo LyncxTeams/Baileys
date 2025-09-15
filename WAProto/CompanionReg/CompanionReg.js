@@ -3004,6 +3004,9 @@ $root.CompanionReg = (function() {
              * @property {boolean|null} [supportFbidBotChatHistory] HistorySyncConfig supportFbidBotChatHistory
              * @property {boolean|null} [supportAddOnHistorySyncMigration] HistorySyncConfig supportAddOnHistorySyncMigration
              * @property {boolean|null} [supportMessageAssociation] HistorySyncConfig supportMessageAssociation
+             * @property {boolean|null} [supportGroupHistory] HistorySyncConfig supportGroupHistory
+             * @property {boolean|null} [onDemandReady] HistorySyncConfig onDemandReady
+             * @property {boolean|null} [supportGuestChat] HistorySyncConfig supportGuestChat
              */
 
             /**
@@ -3132,6 +3135,30 @@ $root.CompanionReg = (function() {
              * @instance
              */
             HistorySyncConfig.prototype.supportMessageAssociation = null;
+
+            /**
+             * HistorySyncConfig supportGroupHistory.
+             * @member {boolean|null|undefined} supportGroupHistory
+             * @memberof CompanionReg.DeviceProps.HistorySyncConfig
+             * @instance
+             */
+            HistorySyncConfig.prototype.supportGroupHistory = null;
+
+            /**
+             * HistorySyncConfig onDemandReady.
+             * @member {boolean|null|undefined} onDemandReady
+             * @memberof CompanionReg.DeviceProps.HistorySyncConfig
+             * @instance
+             */
+            HistorySyncConfig.prototype.onDemandReady = null;
+
+            /**
+             * HistorySyncConfig supportGuestChat.
+             * @member {boolean|null|undefined} supportGuestChat
+             * @memberof CompanionReg.DeviceProps.HistorySyncConfig
+             * @instance
+             */
+            HistorySyncConfig.prototype.supportGuestChat = null;
 
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
@@ -3291,6 +3318,39 @@ $root.CompanionReg = (function() {
             });
 
             /**
+             * HistorySyncConfig _supportGroupHistory.
+             * @member {"supportGroupHistory"|undefined} _supportGroupHistory
+             * @memberof CompanionReg.DeviceProps.HistorySyncConfig
+             * @instance
+             */
+            Object.defineProperty(HistorySyncConfig.prototype, "_supportGroupHistory", {
+                get: $util.oneOfGetter($oneOfFields = ["supportGroupHistory"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * HistorySyncConfig _onDemandReady.
+             * @member {"onDemandReady"|undefined} _onDemandReady
+             * @memberof CompanionReg.DeviceProps.HistorySyncConfig
+             * @instance
+             */
+            Object.defineProperty(HistorySyncConfig.prototype, "_onDemandReady", {
+                get: $util.oneOfGetter($oneOfFields = ["onDemandReady"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * HistorySyncConfig _supportGuestChat.
+             * @member {"supportGuestChat"|undefined} _supportGuestChat
+             * @memberof CompanionReg.DeviceProps.HistorySyncConfig
+             * @instance
+             */
+            Object.defineProperty(HistorySyncConfig.prototype, "_supportGuestChat", {
+                get: $util.oneOfGetter($oneOfFields = ["supportGuestChat"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
              * Creates a new HistorySyncConfig instance using the specified properties.
              * @function create
              * @memberof CompanionReg.DeviceProps.HistorySyncConfig
@@ -3342,6 +3402,12 @@ $root.CompanionReg = (function() {
                     writer.uint32(/* id 13, wireType 0 =*/104).bool(message.supportAddOnHistorySyncMigration);
                 if (message.supportMessageAssociation != null && Object.hasOwnProperty.call(message, "supportMessageAssociation"))
                     writer.uint32(/* id 14, wireType 0 =*/112).bool(message.supportMessageAssociation);
+                if (message.supportGroupHistory != null && Object.hasOwnProperty.call(message, "supportGroupHistory"))
+                    writer.uint32(/* id 15, wireType 0 =*/120).bool(message.supportGroupHistory);
+                if (message.onDemandReady != null && Object.hasOwnProperty.call(message, "onDemandReady"))
+                    writer.uint32(/* id 16, wireType 0 =*/128).bool(message.onDemandReady);
+                if (message.supportGuestChat != null && Object.hasOwnProperty.call(message, "supportGuestChat"))
+                    writer.uint32(/* id 17, wireType 0 =*/136).bool(message.supportGuestChat);
                 return writer;
             };
 
@@ -3432,6 +3498,18 @@ $root.CompanionReg = (function() {
                         }
                     case 14: {
                             message.supportMessageAssociation = reader.bool();
+                            break;
+                        }
+                    case 15: {
+                            message.supportGroupHistory = reader.bool();
+                            break;
+                        }
+                    case 16: {
+                            message.onDemandReady = reader.bool();
+                            break;
+                        }
+                    case 17: {
+                            message.supportGuestChat = reader.bool();
                             break;
                         }
                     default:
@@ -3540,6 +3618,21 @@ $root.CompanionReg = (function() {
                     if (typeof message.supportMessageAssociation !== "boolean")
                         return "supportMessageAssociation: boolean expected";
                 }
+                if (message.supportGroupHistory != null && message.hasOwnProperty("supportGroupHistory")) {
+                    properties._supportGroupHistory = 1;
+                    if (typeof message.supportGroupHistory !== "boolean")
+                        return "supportGroupHistory: boolean expected";
+                }
+                if (message.onDemandReady != null && message.hasOwnProperty("onDemandReady")) {
+                    properties._onDemandReady = 1;
+                    if (typeof message.onDemandReady !== "boolean")
+                        return "onDemandReady: boolean expected";
+                }
+                if (message.supportGuestChat != null && message.hasOwnProperty("supportGuestChat")) {
+                    properties._supportGuestChat = 1;
+                    if (typeof message.supportGuestChat !== "boolean")
+                        return "supportGuestChat: boolean expected";
+                }
                 return null;
             };
 
@@ -3583,6 +3676,12 @@ $root.CompanionReg = (function() {
                     message.supportAddOnHistorySyncMigration = Boolean(object.supportAddOnHistorySyncMigration);
                 if (object.supportMessageAssociation != null)
                     message.supportMessageAssociation = Boolean(object.supportMessageAssociation);
+                if (object.supportGroupHistory != null)
+                    message.supportGroupHistory = Boolean(object.supportGroupHistory);
+                if (object.onDemandReady != null)
+                    message.onDemandReady = Boolean(object.onDemandReady);
+                if (object.supportGuestChat != null)
+                    message.supportGuestChat = Boolean(object.supportGuestChat);
                 return message;
             };
 
@@ -3668,6 +3767,21 @@ $root.CompanionReg = (function() {
                     object.supportMessageAssociation = message.supportMessageAssociation;
                     if (options.oneofs)
                         object._supportMessageAssociation = "supportMessageAssociation";
+                }
+                if (message.supportGroupHistory != null && message.hasOwnProperty("supportGroupHistory")) {
+                    object.supportGroupHistory = message.supportGroupHistory;
+                    if (options.oneofs)
+                        object._supportGroupHistory = "supportGroupHistory";
+                }
+                if (message.onDemandReady != null && message.hasOwnProperty("onDemandReady")) {
+                    object.onDemandReady = message.onDemandReady;
+                    if (options.oneofs)
+                        object._onDemandReady = "onDemandReady";
+                }
+                if (message.supportGuestChat != null && message.hasOwnProperty("supportGuestChat")) {
+                    object.supportGuestChat = message.supportGuestChat;
+                    if (options.oneofs)
+                        object._supportGuestChat = "supportGuestChat";
                 }
                 return object;
             };

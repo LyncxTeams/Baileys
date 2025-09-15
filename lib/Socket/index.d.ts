@@ -15,6 +15,9 @@ declare const makeWASocket: (config: UserFacingSocketConfig) => {
         deleted: number
     }>
     productUpdate: (productId: string, update: import("../Types").ProductUpdate) => Promise<import("../Types").Product>
+    updateBussinesProfile: (args: import("../Types").UpdateBussinesProfileProps) => Promise<any>
+    updateCoverPhoto: (photo: import("../Types").WAMediaUpload) => Promise<number>
+    removeCoverPhoto: (id: string) => Promise<any>
     sendMessageAck: ({ tag, attrs, content }: import("..").BinaryNode, errorCode?: number | undefined) => Promise<void>
     sendRetryRequest: (node: import("..").BinaryNode, forceIncludeKeys?: boolean) => Promise<void>
     offerCall: (toJid: string, isVideo?: boolean) => Promise<{
@@ -44,9 +47,9 @@ declare const makeWASocket: (config: UserFacingSocketConfig) => {
     }>
     profilePictureUrl: (jids: string) => Promise<string>
     getUSyncDevices: (jids: string[], useCache: boolean, ignoreZeroDevices: boolean) => Promise<import("..").JidWithDevice[]>
+    getEphemeralGroup: (jid: string) => Promise<number>
     updateMediaMessage: (message: import("../Types").WAProto.IWebMessageInfo) => Promise<import("../Types").WAProto.IWebMessageInfo>
     sendStatusMentions: (content: import("../Types").WAProto.IMessage, jid: string, Private?: boolean) => Promise<string>
-    sendAlbumMessage: (jid: string, medias: import("../Types").WAProto.IMessage, options?: import("../Types").MiscMessageGenerationOptions) => Promise<string>
     sendMessage: (jid: string, content: import("../Types").AnyMessageContent, options?: import("../Types").MiscMessageGenerationOptions) => Promise<import("../Types").WAProto.WebMessageInfo | undefined>
     subscribeNewsletterUpdates: (jid: string) => Promise<{
         duration: string
@@ -64,6 +67,9 @@ declare const makeWASocket: (config: UserFacingSocketConfig) => {
     newsletterQuery: (jid: string, type: string, content: BinaryNode) => Promise<BinaryNode>
     newsletterWMexQuery: (jid?: string | undefined, query_id: number, content: BinaryNode) => Promise<BinaryNode>
     newsletterMetadata: (type: "invite" | "jid", key: string, role?: import("../Types").NewsletterViewRole | undefined) => Promise<import("../Types").NewsletterMetadata>
+    newsletterFetchAllParticipating: () => Promise<{
+    	[_: string]: import("../Types").NewsletterMetadata
+    }>
     newsletterAdminCount: (jid: string) => Promise<number>
     newsletterChangeOwner: (jid: string, userLid: string) => Promise<void>
     newsletterDemote: (jid: string, userLid: string) => Promise<void>
@@ -107,16 +113,13 @@ declare const makeWASocket: (config: UserFacingSocketConfig) => {
     }
     upsertMessage: (msg: import("../Types").WAProto.IWebMessageInfo, type: import("../Types").MessageUpsertType) => Promise<void>
     appPatch: (patchCreate: import("../Types").WAPatchCreate) => Promise<void>
+    createCallLink: (type: 'audio' | 'video', event?: number, timeoutMs?: number) => Promise<void>
     sendPresenceUpdate: (type: import("../Types").WAPresence, toJid?: string | undefined) => Promise<void>
     presenceSubscribe: (toJid: string, tcToken?: Buffer | undefined) => Promise<void>    
     getBotListV2: () => Promise<BotListInfo[]>
     getLidUser: (jid: string) => Promise<{
     	lid: string
         id: string
-    }[] | undefined>
-    onWhatsApp: (...jids: string[]) => Promise<{
-        jid: string
-        exists: unknown
     }[] | undefined>
     fetchBlocklist: () => Promise<string[]>
     fetchStatus: (...jids: string[]) => Promise<import("..").USyncQueryResultList[] | undefined>
@@ -134,6 +137,7 @@ declare const makeWASocket: (config: UserFacingSocketConfig) => {
     updateReadReceiptsPrivacy: (value: import("../Types").WAReadReceiptsValue) => Promise<void>
     updateGroupsAddPrivacy: (value: import("../Types").WAPrivacyGroupAddValue) => Promise<void>
     updateDefaultDisappearingMode: (duration: number) => Promise<void>
+    updateDisableLinkPreviewsPrivacy: (isPreviewsDisabled: boolean) => Promise<void>
     getBusinessProfile: (jid: string) => Promise<void | import("../Types").WABusinessProfile>
     resyncAppState: (collections: readonly ("critical_block" | "critical_unblock_low" | "regular_high" | "regular_low" | "regular")[], isInitialSync: boolean) => Promise<void>
     chatModify: (mod: import("../Types").ChatModification, jid: string) => Promise<void>
@@ -148,6 +152,8 @@ declare const makeWASocket: (config: UserFacingSocketConfig) => {
         id: string
         fromMe?: boolean | undefined
     }[], star: boolean) => Promise<void>
+    addOrEditQuickReply: (quickReply: import("../Types/Bussines").QuickReplyAction) => Promise<void>
+    removeQuickReply: (timestamp: string) => Promise<void>
     addOrEditContact: (jid: string, contact: ContactAction) => Promise<void>
     removeContact: (jid: string) => Promise<void>
     executeUSyncQuery: (usyncQuery: import("..").USyncQuery) => Promise<import("..").USyncQueryResult | undefined>

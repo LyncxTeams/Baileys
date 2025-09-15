@@ -30,6 +30,7 @@ $root.StatusAttributions = (function() {
          * @property {StatusAttributions.StatusAttribution.IExternalShare|null} [externalShare] StatusAttribution externalShare
          * @property {StatusAttributions.StatusAttribution.IMusic|null} [music] StatusAttribution music
          * @property {StatusAttributions.StatusAttribution.IGroupStatus|null} [groupStatus] StatusAttribution groupStatus
+         * @property {StatusAttributions.StatusAttribution.IRLAttribution|null} [rlAttribution] StatusAttribution rlAttribution
          */
 
         /**
@@ -95,6 +96,14 @@ $root.StatusAttributions = (function() {
          */
         StatusAttribution.prototype.groupStatus = null;
 
+        /**
+         * StatusAttribution rlAttribution.
+         * @member {StatusAttributions.StatusAttribution.IRLAttribution|null|undefined} rlAttribution
+         * @memberof StatusAttributions.StatusAttribution
+         * @instance
+         */
+        StatusAttribution.prototype.rlAttribution = null;
+
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
@@ -122,12 +131,12 @@ $root.StatusAttributions = (function() {
 
         /**
          * StatusAttribution attributionData.
-         * @member {"statusReshare"|"externalShare"|"music"|"groupStatus"|undefined} attributionData
+         * @member {"statusReshare"|"externalShare"|"music"|"groupStatus"|"rlAttribution"|undefined} attributionData
          * @memberof StatusAttributions.StatusAttribution
          * @instance
          */
         Object.defineProperty(StatusAttribution.prototype, "attributionData", {
-            get: $util.oneOfGetter($oneOfFields = ["statusReshare", "externalShare", "music", "groupStatus"]),
+            get: $util.oneOfGetter($oneOfFields = ["statusReshare", "externalShare", "music", "groupStatus", "rlAttribution"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
@@ -167,6 +176,8 @@ $root.StatusAttributions = (function() {
                 $root.StatusAttributions.StatusAttribution.Music.encode(message.music, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
             if (message.groupStatus != null && Object.hasOwnProperty.call(message, "groupStatus"))
                 $root.StatusAttributions.StatusAttribution.GroupStatus.encode(message.groupStatus, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+            if (message.rlAttribution != null && Object.hasOwnProperty.call(message, "rlAttribution"))
+                $root.StatusAttributions.StatusAttribution.RLAttribution.encode(message.rlAttribution, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
             return writer;
         };
 
@@ -227,6 +238,10 @@ $root.StatusAttributions = (function() {
                         message.groupStatus = $root.StatusAttributions.StatusAttribution.GroupStatus.decode(reader, reader.uint32());
                         break;
                     }
+                case 7: {
+                        message.rlAttribution = $root.StatusAttributions.StatusAttribution.RLAttribution.decode(reader, reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -273,6 +288,8 @@ $root.StatusAttributions = (function() {
                 case 2:
                 case 3:
                 case 4:
+                case 5:
+                case 6:
                     break;
                 }
             }
@@ -319,6 +336,16 @@ $root.StatusAttributions = (function() {
                         return "groupStatus." + error;
                 }
             }
+            if (message.rlAttribution != null && message.hasOwnProperty("rlAttribution")) {
+                if (properties.attributionData === 1)
+                    return "attributionData: multiple values";
+                properties.attributionData = 1;
+                {
+                    var error = $root.StatusAttributions.StatusAttribution.RLAttribution.verify(message.rlAttribution);
+                    if (error)
+                        return "rlAttribution." + error;
+                }
+            }
             return null;
         };
 
@@ -341,25 +368,33 @@ $root.StatusAttributions = (function() {
                     break;
                 }
                 break;
-            case "RESHARE":
+            case "UNKNOWN":
             case 0:
                 message.type = 0;
                 break;
-            case "EXTERNAL_SHARE":
+            case "RESHARE":
             case 1:
                 message.type = 1;
                 break;
-            case "MUSIC":
+            case "EXTERNAL_SHARE":
             case 2:
                 message.type = 2;
                 break;
-            case "STATUS_MENTION":
+            case "MUSIC":
             case 3:
                 message.type = 3;
                 break;
-            case "GROUP_STATUS":
+            case "STATUS_MENTION":
             case 4:
                 message.type = 4;
+                break;
+            case "GROUP_STATUS":
+            case 5:
+                message.type = 5;
+                break;
+            case "RL_ATTRIBUTION":
+            case 6:
+                message.type = 6;
                 break;
             }
             if (object.actionUrl != null)
@@ -383,6 +418,11 @@ $root.StatusAttributions = (function() {
                 if (typeof object.groupStatus !== "object")
                     throw TypeError(".StatusAttributions.StatusAttribution.groupStatus: object expected");
                 message.groupStatus = $root.StatusAttributions.StatusAttribution.GroupStatus.fromObject(object.groupStatus);
+            }
+            if (object.rlAttribution != null) {
+                if (typeof object.rlAttribution !== "object")
+                    throw TypeError(".StatusAttributions.StatusAttribution.rlAttribution: object expected");
+                message.rlAttribution = $root.StatusAttributions.StatusAttribution.RLAttribution.fromObject(object.rlAttribution);
             }
             return message;
         };
@@ -429,6 +469,11 @@ $root.StatusAttributions = (function() {
                 object.groupStatus = $root.StatusAttributions.StatusAttribution.GroupStatus.toObject(message.groupStatus, options);
                 if (options.oneofs)
                     object.attributionData = "groupStatus";
+            }
+            if (message.rlAttribution != null && message.hasOwnProperty("rlAttribution")) {
+                object.rlAttribution = $root.StatusAttributions.StatusAttribution.RLAttribution.toObject(message.rlAttribution, options);
+                if (options.oneofs)
+                    object.attributionData = "rlAttribution";
             }
             return object;
         };
@@ -702,6 +747,7 @@ $root.StatusAttributions = (function() {
                     case 4:
                     case 5:
                     case 6:
+                    case 7:
                         break;
                     }
                 }
@@ -766,6 +812,10 @@ $root.StatusAttributions = (function() {
                 case "PINTEREST":
                 case 6:
                     message.source = 6;
+                    break;
+                case "THREADS":
+                case 7:
+                    message.source = 7;
                     break;
                 }
                 if (object.duration != null)
@@ -848,6 +898,7 @@ $root.StatusAttributions = (function() {
              * @property {number} SPOTIFY=4 SPOTIFY value
              * @property {number} YOUTUBE=5 YOUTUBE value
              * @property {number} PINTEREST=6 PINTEREST value
+             * @property {number} THREADS=7 THREADS value
              */
             ExternalShare.Source = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
@@ -858,6 +909,7 @@ $root.StatusAttributions = (function() {
                 values[valuesById[4] = "SPOTIFY"] = 4;
                 values[valuesById[5] = "YOUTUBE"] = 5;
                 values[valuesById[6] = "PINTEREST"] = 6;
+                values[valuesById[7] = "THREADS"] = 7;
                 return values;
             })();
 
@@ -1498,6 +1550,276 @@ $root.StatusAttributions = (function() {
             };
 
             return Music;
+        })();
+
+        StatusAttribution.RLAttribution = (function() {
+
+            /**
+             * Properties of a RLAttribution.
+             * @memberof StatusAttributions.StatusAttribution
+             * @interface IRLAttribution
+             * @property {StatusAttributions.StatusAttribution.RLAttribution.Source|null} [source] RLAttribution source
+             */
+
+            /**
+             * Constructs a new RLAttribution.
+             * @memberof StatusAttributions.StatusAttribution
+             * @classdesc Represents a RLAttribution.
+             * @implements IRLAttribution
+             * @constructor
+             * @param {StatusAttributions.StatusAttribution.IRLAttribution=} [properties] Properties to set
+             */
+            function RLAttribution(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * RLAttribution source.
+             * @member {StatusAttributions.StatusAttribution.RLAttribution.Source|null|undefined} source
+             * @memberof StatusAttributions.StatusAttribution.RLAttribution
+             * @instance
+             */
+            RLAttribution.prototype.source = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            /**
+             * RLAttribution _source.
+             * @member {"source"|undefined} _source
+             * @memberof StatusAttributions.StatusAttribution.RLAttribution
+             * @instance
+             */
+            Object.defineProperty(RLAttribution.prototype, "_source", {
+                get: $util.oneOfGetter($oneOfFields = ["source"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new RLAttribution instance using the specified properties.
+             * @function create
+             * @memberof StatusAttributions.StatusAttribution.RLAttribution
+             * @static
+             * @param {StatusAttributions.StatusAttribution.IRLAttribution=} [properties] Properties to set
+             * @returns {StatusAttributions.StatusAttribution.RLAttribution} RLAttribution instance
+             */
+            RLAttribution.create = function create(properties) {
+                return new RLAttribution(properties);
+            };
+
+            /**
+             * Encodes the specified RLAttribution message. Does not implicitly {@link StatusAttributions.StatusAttribution.RLAttribution.verify|verify} messages.
+             * @function encode
+             * @memberof StatusAttributions.StatusAttribution.RLAttribution
+             * @static
+             * @param {StatusAttributions.StatusAttribution.IRLAttribution} message RLAttribution message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            RLAttribution.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.source != null && Object.hasOwnProperty.call(message, "source"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.source);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified RLAttribution message, length delimited. Does not implicitly {@link StatusAttributions.StatusAttribution.RLAttribution.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof StatusAttributions.StatusAttribution.RLAttribution
+             * @static
+             * @param {StatusAttributions.StatusAttribution.IRLAttribution} message RLAttribution message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            RLAttribution.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a RLAttribution message from the specified reader or buffer.
+             * @function decode
+             * @memberof StatusAttributions.StatusAttribution.RLAttribution
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {StatusAttributions.StatusAttribution.RLAttribution} RLAttribution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            RLAttribution.decode = function decode(reader, length, error) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.RLAttribution();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    if (tag === error)
+                        break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.source = reader.int32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a RLAttribution message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof StatusAttributions.StatusAttribution.RLAttribution
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {StatusAttributions.StatusAttribution.RLAttribution} RLAttribution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            RLAttribution.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a RLAttribution message.
+             * @function verify
+             * @memberof StatusAttributions.StatusAttribution.RLAttribution
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            RLAttribution.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.source != null && message.hasOwnProperty("source")) {
+                    properties._source = 1;
+                    switch (message.source) {
+                    default:
+                        return "source: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                        break;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a RLAttribution message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof StatusAttributions.StatusAttribution.RLAttribution
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {StatusAttributions.StatusAttribution.RLAttribution} RLAttribution
+             */
+            RLAttribution.fromObject = function fromObject(object) {
+                if (object instanceof $root.StatusAttributions.StatusAttribution.RLAttribution)
+                    return object;
+                var message = new $root.StatusAttributions.StatusAttribution.RLAttribution();
+                switch (object.source) {
+                default:
+                    if (typeof object.source === "number") {
+                        message.source = object.source;
+                        break;
+                    }
+                    break;
+                case "UNKNOWN":
+                case 0:
+                    message.source = 0;
+                    break;
+                case "RAY_BAN_META_GLASSES":
+                case 1:
+                    message.source = 1;
+                    break;
+                case "OAKLEY_META_GLASSES":
+                case 2:
+                    message.source = 2;
+                    break;
+                case "HYPERNOVA_GLASSES":
+                case 3:
+                    message.source = 3;
+                    break;
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a RLAttribution message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof StatusAttributions.StatusAttribution.RLAttribution
+             * @static
+             * @param {StatusAttributions.StatusAttribution.RLAttribution} message RLAttribution
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            RLAttribution.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (message.source != null && message.hasOwnProperty("source")) {
+                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.RLAttribution.Source[message.source] === undefined ? message.source : $root.StatusAttributions.StatusAttribution.RLAttribution.Source[message.source] : message.source;
+                    if (options.oneofs)
+                        object._source = "source";
+                }
+                return object;
+            };
+
+            /**
+             * Converts this RLAttribution to JSON.
+             * @function toJSON
+             * @memberof StatusAttributions.StatusAttribution.RLAttribution
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            RLAttribution.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for RLAttribution
+             * @function getTypeUrl
+             * @memberof StatusAttributions.StatusAttribution.RLAttribution
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            RLAttribution.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.RLAttribution";
+            };
+
+            /**
+             * Source enum.
+             * @name StatusAttributions.StatusAttribution.RLAttribution.Source
+             * @enum {number}
+             * @property {number} UNKNOWN=0 UNKNOWN value
+             * @property {number} RAY_BAN_META_GLASSES=1 RAY_BAN_META_GLASSES value
+             * @property {number} OAKLEY_META_GLASSES=2 OAKLEY_META_GLASSES value
+             * @property {number} HYPERNOVA_GLASSES=3 HYPERNOVA_GLASSES value
+             */
+            RLAttribution.Source = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "UNKNOWN"] = 0;
+                values[valuesById[1] = "RAY_BAN_META_GLASSES"] = 1;
+                values[valuesById[2] = "OAKLEY_META_GLASSES"] = 2;
+                values[valuesById[3] = "HYPERNOVA_GLASSES"] = 3;
+                return values;
+            })();
+
+            return RLAttribution;
         })();
 
         StatusAttribution.StatusReshare = (function() {
@@ -2155,19 +2477,23 @@ $root.StatusAttributions = (function() {
          * Type enum.
          * @name StatusAttributions.StatusAttribution.Type
          * @enum {number}
-         * @property {number} RESHARE=0 RESHARE value
-         * @property {number} EXTERNAL_SHARE=1 EXTERNAL_SHARE value
-         * @property {number} MUSIC=2 MUSIC value
-         * @property {number} STATUS_MENTION=3 STATUS_MENTION value
-         * @property {number} GROUP_STATUS=4 GROUP_STATUS value
+         * @property {number} UNKNOWN=0 UNKNOWN value
+         * @property {number} RESHARE=1 RESHARE value
+         * @property {number} EXTERNAL_SHARE=2 EXTERNAL_SHARE value
+         * @property {number} MUSIC=3 MUSIC value
+         * @property {number} STATUS_MENTION=4 STATUS_MENTION value
+         * @property {number} GROUP_STATUS=5 GROUP_STATUS value
+         * @property {number} RL_ATTRIBUTION=6 RL_ATTRIBUTION value
          */
         StatusAttribution.Type = (function() {
             var valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "RESHARE"] = 0;
-            values[valuesById[1] = "EXTERNAL_SHARE"] = 1;
-            values[valuesById[2] = "MUSIC"] = 2;
-            values[valuesById[3] = "STATUS_MENTION"] = 3;
-            values[valuesById[4] = "GROUP_STATUS"] = 4;
+            values[valuesById[0] = "UNKNOWN"] = 0;
+            values[valuesById[1] = "RESHARE"] = 1;
+            values[valuesById[2] = "EXTERNAL_SHARE"] = 2;
+            values[valuesById[3] = "MUSIC"] = 3;
+            values[valuesById[4] = "STATUS_MENTION"] = 4;
+            values[valuesById[5] = "GROUP_STATUS"] = 5;
+            values[valuesById[6] = "RL_ATTRIBUTION"] = 6;
             return values;
         })();
 

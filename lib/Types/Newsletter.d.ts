@@ -89,6 +89,7 @@ export declare const enum XWAPaths {
     ADMIN_COUNT = "xwa2_newsletter_admin",
     CREATE = "xwa2_newsletter_create",
     NEWSLETTER = "xwa2_newsletter",
+    SUBSCRIBED = "xwa2_newsletter_subscribed", 
     METADATA_UPDATE = "xwa2_notify_newsletter_on_metadata_update"
 }
 
@@ -103,5 +104,6 @@ export declare const enum QueryIds {
     ADMIN_COUNT = "7130823597031706",
     CHANGE_OWNER = "7341777602580933",
     DELETE = "8316537688363079",
-    DEMOTE = "6551828931592903"
+    DEMOTE = "6551828931592903", 
+    SUBSCRIBED = "6388546374527196"
 }

@@ -1,7 +1,7 @@
 {
-  "name": "@lyncxteams/baileys",
-  "version": "7.3.3",
-  "description": "WhatsApp API Modification By FuadXyro",
+  "name": "@itsukichan/baileys",
+  "version": "7.3.2",
+  "description": "WhatsApp API Modification By Itsukiichan",
   "keywords": [
     "whatsapp",
     "js-whatsapp",
@@ -12,10 +12,10 @@
     "automation",
     "multi-device"
   ],
-  "homepage": "https://github.com/LyncxTeams/Baileys",
+  "homepage": "https://github.com/Itsukichann/Baileys",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/LyncxTeams/Baileys.git"
+    "url": "git+ssh://git@github.com/Itsukichann/Baileys.git"
   },
   "license": "MIT",
   "author": "Itsukichann",
@@ -24,7 +24,6 @@
   "files": [
     "lib/*",
     "WAProto/*",
-    "WASignalGroup/*.js",
     "engine-requirements.js"
   ],
   "scripts": {
@@ -34,8 +33,6 @@
     "changelog:last": "conventional-changelog -p angular -r 2",
     "changelog:preview": "conventional-changelog -p angular -u",
     "changelog:update": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "example": "node --inspect -r ts-node/register Example/example.ts",
-    "gen:protobuf": "sh WAProto/GenerateStatics.sh",
     "lint": "eslint src --ext .js,.ts",
     "lint:fix": "yarn lint --fix",
     "prepack": "tsc",
@@ -49,47 +46,45 @@
     "@adiwajshing/keyed-db": "^0.2.4",
     "@cacheable/node-cache": "1.5.3", 
     "@itsukichan/eslint-config": "^1.0.0", 
-    "@itsukichan/libsignal-node": "^1.0.0", 
+    "@itsukichan/libsignal-node": "^1.0.1", 
     "async-mutex": "^0.5.0",
-    "axios": "^1.6.0",
+    "axios": "^1.12.1",
     "audio-decode": "^2.2.2", 
     "cache-manager": "^5.7.6", 
+    "fflate": "^0.8.2", 
     "lodash": "^4.17.21",
     "link-preview-js": "^3.0.14", 
+    "lru-cache": "^11.1.0", 
     "music-metadata": "^7.12.3",
+    "moment-timezone": "*",
     "pino": "^9.6",
     "protobufjs": "^7.2.4",
     "qrcode-terminal": "^0.12.0", 
     "ws": "^8.13.0"
   },
   "devDependencies": {
-    "@types/jest": "^27.5.1",
+    "@types/jest": "^29.5.14",
     "@types/node": "^16.0.0",
     "@types/ws": "^8.0.0",
     "conventional-changelog-cli": "^2.2.2",
     "eslint": "^8.0.0",
-    "jest": "^27.0.6",
+    "jest": "^30.1.1",
     "jimp": "^0.22.12",
     "json": "^11.0.0",
     "link-preview-js": "^3.0.5",
     "open": "^8.4.2",
     "release-it": "^15.10.3",
-    "sharp": "^0.32.6",
-    "ts-jest": "^27.0.3",
+    "ts-jest": "^29.4.1",
     "ts-node": "^10.8.1",
     "typedoc": "^0.27.9",
     "typedoc-plugin-markdown": "4.4.2",
     "typescript": "^5.8.2"
   },
   "peerDependencies": {
-    "jimp": "^0.22.12",
-    "sharp": "^0.34.1"
+    "jimp": "^0.22.12"
   },
   "peerDependenciesMeta": {
     "jimp": {
-      "optional": true
-    },
-    "sharp": {
       "optional": true
     }
   },
@@ -101,6 +96,6 @@
     "lib": "lib"
   },
   "bugs": {
-    "url": "https://github.com/LyncxTeams/Baileys/issues"
+    "url": "https://github.com/Itsukichann/Baileys/issues"
   }
 }

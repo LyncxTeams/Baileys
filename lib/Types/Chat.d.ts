@@ -1,5 +1,6 @@
 import type { proto } from '../../WAProto'
 import type { AccountSettings } from './Auth'
+import type { QuickReplyAction } from './Bussines'
 import type { ContactAction } from './Contact'
 import type { BufferedEventData } from './Events'
 import type { LabelActionBody } from './Label'
@@ -66,6 +67,8 @@ export type ChatUpdate = Partial<Chat & {
      * undefined if the condition is not yet fulfilled
      * */
     conditional: (bufferedData: BufferedEventData) => boolean | undefined
+    /** last update time */
+    timestamp?: number
 }>
 
 /**
@@ -109,6 +112,10 @@ export type ChatModification = {
     delete: true
     lastMessages: LastMessageList
 } | {
+    contact: proto.SyncActionValue.IContactAction | null
+} | {
+    disableLinkPreviews: proto.SyncActionValue.IPrivacySettingDisableLinkPreviewsAction
+} | {
     addLabel: LabelActionBody
 } | {
     addChatLabel: ChatLabelAssociationActionBody
@@ -118,6 +125,8 @@ export type ChatModification = {
     addMessageLabel: MessageLabelAssociationActionBody
 } | {
     removeMessageLabel: MessageLabelAssociationActionBody
+} | {
+    quickReply: QuickReplyAction
 }
 
 export type InitialReceivedChatsState = {

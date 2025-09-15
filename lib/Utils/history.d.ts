@@ -6,10 +6,7 @@ export declare const downloadHistory: (msg: proto.Message.IHistorySyncNotificati
 
 export declare const processHistoryMessage: (item: proto.IHistorySync) => {
     chats: Chat[]
-    contacts: Array<Contact & {
-        lid?: string
-        jid?: string
-    }>
+    contacts: Contact[]
     messages: proto.IWebMessageInfo[]
     syncType: proto.HistorySync.HistorySyncType
     progress: number | null | undefined
@@ -17,10 +14,7 @@ export declare const processHistoryMessage: (item: proto.IHistorySync) => {
 
 export declare const downloadAndProcessHistorySyncNotification: (msg: proto.Message.IHistorySyncNotification, options: AxiosRequestConfig<{}>) => Promise<{
     chats: Chat[]
-    contacts: Array<Contact & {
-        lid?: string
-        jid?: string
-    }>
+    contacts: Contact[]
     messages: proto.IWebMessageInfo[]
     syncType: proto.HistorySync.HistorySyncType
     progress: number | null | undefined

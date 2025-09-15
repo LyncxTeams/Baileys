@@ -1,4 +1,5 @@
 import { Adv } from './Adv'
+import { BotMetadata } from './BotMetadata'
 import { Cert } from './Cert'
 import { WAChatLockSettings } from './ChatLockSettings'
 import { CompanionReg } from './CompanionReg'
@@ -24,6 +25,7 @@ import { Web } from './Web'
 
 const proto = {
   ...Adv,
+  ...BotMetadata, 
   ...Cert,
   ...ChatLockSettings,
   ...CompanionReg, 

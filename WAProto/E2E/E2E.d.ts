@@ -23,16 +23,10 @@ export namespace E2E {
         constructor(properties?: E2E.IMemberLabel);
 
         /** MemberLabel label. */
-        public label?: (string|null);
+        public label: string;
 
         /** MemberLabel labelTimestamp. */
-        public labelTimestamp?: (number|Long|null);
-
-        /** MemberLabel _label. */
-        public _label?: "label";
-
-        /** MemberLabel _labelTimestamp. */
-        public _labelTimestamp?: "labelTimestamp";
+        public labelTimestamp: (number|Long);
 
         /**
          * Creates a new MemberLabel instance using the specified properties.
@@ -141,16 +135,7 @@ export namespace E2E {
         public message?: (E2E.IMessage|null);
 
         /** AIQueryFanout timestamp. */
-        public timestamp?: (number|Long|null);
-
-        /** AIQueryFanout _messageKey. */
-        public _messageKey?: "messageKey";
-
-        /** AIQueryFanout _message. */
-        public _message?: "message";
-
-        /** AIQueryFanout _timestamp. */
-        public _timestamp?: "timestamp";
+        public timestamp: (number|Long);
 
         /**
          * Creates a new AIQueryFanout instance using the specified properties.
@@ -355,28 +340,16 @@ export namespace E2E {
             constructor(properties?: E2E.UrlTrackingMap.IUrlTrackingMapElement);
 
             /** UrlTrackingMapElement originalUrl. */
-            public originalUrl?: (string|null);
+            public originalUrl: string;
 
             /** UrlTrackingMapElement unconsentedUsersUrl. */
-            public unconsentedUsersUrl?: (string|null);
+            public unconsentedUsersUrl: string;
 
             /** UrlTrackingMapElement consentedUsersUrl. */
-            public consentedUsersUrl?: (string|null);
+            public consentedUsersUrl: string;
 
             /** UrlTrackingMapElement cardIndex. */
-            public cardIndex?: (number|null);
-
-            /** UrlTrackingMapElement _originalUrl. */
-            public _originalUrl?: "originalUrl";
-
-            /** UrlTrackingMapElement _unconsentedUsersUrl. */
-            public _unconsentedUsersUrl?: "unconsentedUsersUrl";
-
-            /** UrlTrackingMapElement _consentedUsersUrl. */
-            public _consentedUsersUrl?: "consentedUsersUrl";
-
-            /** UrlTrackingMapElement _cardIndex. */
-            public _cardIndex?: "cardIndex";
+            public cardIndex: number;
 
             /**
              * Creates a new UrlTrackingMapElement instance using the specified properties.
@@ -495,49 +468,28 @@ export namespace E2E {
         constructor(properties?: E2E.IProcessedVideo);
 
         /** ProcessedVideo directPath. */
-        public directPath?: (string|null);
+        public directPath: string;
 
         /** ProcessedVideo fileSha256. */
-        public fileSha256?: (Uint8Array|null);
+        public fileSha256: Uint8Array;
 
         /** ProcessedVideo height. */
-        public height?: (number|null);
+        public height: number;
 
         /** ProcessedVideo width. */
-        public width?: (number|null);
+        public width: number;
 
         /** ProcessedVideo fileLength. */
-        public fileLength?: (number|Long|null);
+        public fileLength: (number|Long);
 
         /** ProcessedVideo bitrate. */
-        public bitrate?: (number|null);
+        public bitrate: number;
 
         /** ProcessedVideo quality. */
-        public quality?: (E2E.ProcessedVideo.VideoQuality|null);
+        public quality: E2E.ProcessedVideo.VideoQuality;
 
         /** ProcessedVideo capabilities. */
         public capabilities: string[];
-
-        /** ProcessedVideo _directPath. */
-        public _directPath?: "directPath";
-
-        /** ProcessedVideo _fileSha256. */
-        public _fileSha256?: "fileSha256";
-
-        /** ProcessedVideo _height. */
-        public _height?: "height";
-
-        /** ProcessedVideo _width. */
-        public _width?: "width";
-
-        /** ProcessedVideo _fileLength. */
-        public _fileLength?: "fileLength";
-
-        /** ProcessedVideo _bitrate. */
-        public _bitrate?: "bitrate";
-
-        /** ProcessedVideo _quality. */
-        public _quality?: "quality";
 
         /**
          * Creates a new ProcessedVideo instance using the specified properties.
@@ -645,10 +597,7 @@ export namespace E2E {
         constructor(properties?: E2E.ILIDMigrationMappingSyncMessage);
 
         /** LIDMigrationMappingSyncMessage encodedMappingPayload. */
-        public encodedMappingPayload?: (Uint8Array|null);
-
-        /** LIDMigrationMappingSyncMessage _encodedMappingPayload. */
-        public _encodedMappingPayload?: "encodedMappingPayload";
+        public encodedMappingPayload: Uint8Array;
 
         /**
          * Creates a new LIDMigrationMappingSyncMessage instance using the specified properties.
@@ -751,22 +700,13 @@ export namespace E2E {
         constructor(properties?: E2E.IMediaNotifyMessage);
 
         /** MediaNotifyMessage expressPathUrl. */
-        public expressPathUrl?: (string|null);
+        public expressPathUrl: string;
 
         /** MediaNotifyMessage fileEncSha256. */
-        public fileEncSha256?: (Uint8Array|null);
+        public fileEncSha256: Uint8Array;
 
         /** MediaNotifyMessage fileLength. */
-        public fileLength?: (number|Long|null);
-
-        /** MediaNotifyMessage _expressPathUrl. */
-        public _expressPathUrl?: "expressPathUrl";
-
-        /** MediaNotifyMessage _fileEncSha256. */
-        public _fileEncSha256?: "fileEncSha256";
-
-        /** MediaNotifyMessage _fileLength. */
-        public _fileLength?: "fileLength";
+        public fileLength: (number|Long);
 
         /**
          * Creates a new MediaNotifyMessage instance using the specified properties.
@@ -869,22 +809,13 @@ export namespace E2E {
         constructor(properties?: E2E.IMessageSecretMessage);
 
         /** MessageSecretMessage version. */
-        public version?: (number|null);
+        public version: number;
 
         /** MessageSecretMessage encIv. */
-        public encIv?: (Uint8Array|null);
+        public encIv: Uint8Array;
 
         /** MessageSecretMessage encPayload. */
-        public encPayload?: (Uint8Array|null);
-
-        /** MessageSecretMessage _version. */
-        public _version?: "version";
-
-        /** MessageSecretMessage _encIv. */
-        public _encIv?: "encIv";
-
-        /** MessageSecretMessage _encPayload. */
-        public _encPayload?: "encPayload";
+        public encPayload: Uint8Array;
 
         /**
          * Creates a new MessageSecretMessage instance using the specified properties.
@@ -984,16 +915,10 @@ export namespace E2E {
         constructor(properties?: E2E.IGroupMention);
 
         /** GroupMention groupJid. */
-        public groupJid?: (string|null);
+        public groupJid: string;
 
         /** GroupMention groupSubject. */
-        public groupSubject?: (string|null);
-
-        /** GroupMention _groupJid. */
-        public _groupJid?: "groupJid";
-
-        /** GroupMention _groupSubject. */
-        public _groupSubject?: "groupSubject";
+        public groupSubject: string;
 
         /**
          * Creates a new GroupMention instance using the specified properties.
@@ -1093,16 +1018,10 @@ export namespace E2E {
         constructor(properties?: E2E.IActionLink);
 
         /** ActionLink url. */
-        public url?: (string|null);
+        public url: string;
 
         /** ActionLink buttonTitle. */
-        public buttonTitle?: (string|null);
-
-        /** ActionLink _url. */
-        public _url?: "url";
-
-        /** ActionLink _buttonTitle. */
-        public _buttonTitle?: "buttonTitle";
+        public buttonTitle: string;
 
         /**
          * Creates a new ActionLink instance using the specified properties.
@@ -1208,28 +1127,16 @@ export namespace E2E {
         constructor(properties?: E2E.IDisappearingMode);
 
         /** DisappearingMode initiator. */
-        public initiator?: (E2E.DisappearingMode.Initiator|null);
+        public initiator: E2E.DisappearingMode.Initiator;
 
         /** DisappearingMode trigger. */
-        public trigger?: (E2E.DisappearingMode.Trigger|null);
+        public trigger: E2E.DisappearingMode.Trigger;
 
         /** DisappearingMode initiatorDeviceJid. */
-        public initiatorDeviceJid?: (string|null);
+        public initiatorDeviceJid: string;
 
         /** DisappearingMode initiatedByMe. */
-        public initiatedByMe?: (boolean|null);
-
-        /** DisappearingMode _initiator. */
-        public _initiator?: "initiator";
-
-        /** DisappearingMode _trigger. */
-        public _trigger?: "trigger";
-
-        /** DisappearingMode _initiatorDeviceJid. */
-        public _initiatorDeviceJid?: "initiatorDeviceJid";
-
-        /** DisappearingMode _initiatedByMe. */
-        public _initiatedByMe?: "initiatedByMe";
+        public initiatedByMe: boolean;
 
         /**
          * Creates a new DisappearingMode instance using the specified properties.
@@ -1374,64 +1281,34 @@ export namespace E2E {
         constructor(properties?: E2E.IPaymentBackground);
 
         /** PaymentBackground id. */
-        public id?: (string|null);
+        public id: string;
 
         /** PaymentBackground fileLength. */
-        public fileLength?: (number|Long|null);
+        public fileLength: (number|Long);
 
         /** PaymentBackground width. */
-        public width?: (number|null);
+        public width: number;
 
         /** PaymentBackground height. */
-        public height?: (number|null);
+        public height: number;
 
         /** PaymentBackground mimetype. */
-        public mimetype?: (string|null);
+        public mimetype: string;
 
         /** PaymentBackground placeholderArgb. */
-        public placeholderArgb?: (number|null);
+        public placeholderArgb: number;
 
         /** PaymentBackground textArgb. */
-        public textArgb?: (number|null);
+        public textArgb: number;
 
         /** PaymentBackground subtextArgb. */
-        public subtextArgb?: (number|null);
+        public subtextArgb: number;
 
         /** PaymentBackground mediaData. */
         public mediaData?: (E2E.PaymentBackground.IMediaData|null);
 
         /** PaymentBackground type. */
-        public type?: (E2E.PaymentBackground.Type|null);
-
-        /** PaymentBackground _id. */
-        public _id?: "id";
-
-        /** PaymentBackground _fileLength. */
-        public _fileLength?: "fileLength";
-
-        /** PaymentBackground _width. */
-        public _width?: "width";
-
-        /** PaymentBackground _height. */
-        public _height?: "height";
-
-        /** PaymentBackground _mimetype. */
-        public _mimetype?: "mimetype";
-
-        /** PaymentBackground _placeholderArgb. */
-        public _placeholderArgb?: "placeholderArgb";
-
-        /** PaymentBackground _textArgb. */
-        public _textArgb?: "textArgb";
-
-        /** PaymentBackground _subtextArgb. */
-        public _subtextArgb?: "subtextArgb";
-
-        /** PaymentBackground _mediaData. */
-        public _mediaData?: "mediaData";
-
-        /** PaymentBackground _type. */
-        public _type?: "type";
+        public type: E2E.PaymentBackground.Type;
 
         /**
          * Creates a new PaymentBackground instance using the specified properties.
@@ -1542,34 +1419,19 @@ export namespace E2E {
             constructor(properties?: E2E.PaymentBackground.IMediaData);
 
             /** MediaData mediaKey. */
-            public mediaKey?: (Uint8Array|null);
+            public mediaKey: Uint8Array;
 
             /** MediaData mediaKeyTimestamp. */
-            public mediaKeyTimestamp?: (number|Long|null);
+            public mediaKeyTimestamp: (number|Long);
 
             /** MediaData fileSha256. */
-            public fileSha256?: (Uint8Array|null);
+            public fileSha256: Uint8Array;
 
             /** MediaData fileEncSha256. */
-            public fileEncSha256?: (Uint8Array|null);
+            public fileEncSha256: Uint8Array;
 
             /** MediaData directPath. */
-            public directPath?: (string|null);
-
-            /** MediaData _mediaKey. */
-            public _mediaKey?: "mediaKey";
-
-            /** MediaData _mediaKeyTimestamp. */
-            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
-
-            /** MediaData _fileSha256. */
-            public _fileSha256?: "fileSha256";
-
-            /** MediaData _fileEncSha256. */
-            public _fileEncSha256?: "fileEncSha256";
-
-            /** MediaData _directPath. */
-            public _directPath?: "directPath";
+            public directPath: string;
 
             /**
              * Creates a new MediaData instance using the specified properties.
@@ -1679,22 +1541,13 @@ export namespace E2E {
         constructor(properties?: E2E.IMoney);
 
         /** Money value. */
-        public value?: (number|Long|null);
+        public value: (number|Long);
 
         /** Money offset. */
-        public offset?: (number|null);
+        public offset: number;
 
         /** Money currencyCode. */
-        public currencyCode?: (string|null);
-
-        /** Money _value. */
-        public _value?: "value";
-
-        /** Money _offset. */
-        public _offset?: "offset";
-
-        /** Money _currencyCode. */
-        public _currencyCode?: "currencyCode";
+        public currencyCode: string;
 
         /**
          * Creates a new Money instance using the specified properties.
@@ -1800,7 +1653,7 @@ export namespace E2E {
         constructor(properties?: E2E.IHydratedTemplateButton);
 
         /** HydratedTemplateButton index. */
-        public index?: (number|null);
+        public index: number;
 
         /** HydratedTemplateButton quickReplyButton. */
         public quickReplyButton?: (E2E.HydratedTemplateButton.IHydratedQuickReplyButton|null);
@@ -1810,9 +1663,6 @@ export namespace E2E {
 
         /** HydratedTemplateButton callButton. */
         public callButton?: (E2E.HydratedTemplateButton.IHydratedCallButton|null);
-
-        /** HydratedTemplateButton _index. */
-        public _index?: "index";
 
         /** HydratedTemplateButton hydratedButton. */
         public hydratedButton?: ("quickReplyButton"|"urlButton"|"callButton");
@@ -1917,16 +1767,10 @@ export namespace E2E {
             constructor(properties?: E2E.HydratedTemplateButton.IHydratedCallButton);
 
             /** HydratedCallButton displayText. */
-            public displayText?: (string|null);
+            public displayText: string;
 
             /** HydratedCallButton phoneNumber. */
-            public phoneNumber?: (string|null);
-
-            /** HydratedCallButton _displayText. */
-            public _displayText?: "displayText";
-
-            /** HydratedCallButton _phoneNumber. */
-            public _phoneNumber?: "phoneNumber";
+            public phoneNumber: string;
 
             /**
              * Creates a new HydratedCallButton instance using the specified properties.
@@ -2026,16 +1870,10 @@ export namespace E2E {
             constructor(properties?: E2E.HydratedTemplateButton.IHydratedQuickReplyButton);
 
             /** HydratedQuickReplyButton displayText. */
-            public displayText?: (string|null);
+            public displayText: string;
 
             /** HydratedQuickReplyButton id. */
-            public id?: (string|null);
-
-            /** HydratedQuickReplyButton _displayText. */
-            public _displayText?: "displayText";
-
-            /** HydratedQuickReplyButton _id. */
-            public _id?: "id";
+            public id: string;
 
             /**
              * Creates a new HydratedQuickReplyButton instance using the specified properties.
@@ -2141,28 +1979,16 @@ export namespace E2E {
             constructor(properties?: E2E.HydratedTemplateButton.IHydratedURLButton);
 
             /** HydratedURLButton displayText. */
-            public displayText?: (string|null);
+            public displayText: string;
 
             /** HydratedURLButton url. */
-            public url?: (string|null);
+            public url: string;
 
             /** HydratedURLButton consentedUsersUrl. */
-            public consentedUsersUrl?: (string|null);
+            public consentedUsersUrl: string;
 
             /** HydratedURLButton webviewPresentation. */
-            public webviewPresentation?: (E2E.HydratedTemplateButton.HydratedURLButton.WebviewPresentationType|null);
-
-            /** HydratedURLButton _displayText. */
-            public _displayText?: "displayText";
-
-            /** HydratedURLButton _url. */
-            public _url?: "url";
-
-            /** HydratedURLButton _consentedUsersUrl. */
-            public _consentedUsersUrl?: "consentedUsersUrl";
-
-            /** HydratedURLButton _webviewPresentation. */
-            public _webviewPresentation?: "webviewPresentation";
+            public webviewPresentation: E2E.HydratedTemplateButton.HydratedURLButton.WebviewPresentationType;
 
             /**
              * Creates a new HydratedURLButton instance using the specified properties.
@@ -2279,7 +2105,7 @@ export namespace E2E {
         constructor(properties?: E2E.ITemplateButton);
 
         /** TemplateButton index. */
-        public index?: (number|null);
+        public index: number;
 
         /** TemplateButton quickReplyButton. */
         public quickReplyButton?: (E2E.TemplateButton.IQuickReplyButton|null);
@@ -2289,9 +2115,6 @@ export namespace E2E {
 
         /** TemplateButton callButton. */
         public callButton?: (E2E.TemplateButton.ICallButton|null);
-
-        /** TemplateButton _index. */
-        public _index?: "index";
 
         /** TemplateButton button. */
         public button?: ("quickReplyButton"|"urlButton"|"callButton");
@@ -2401,12 +2224,6 @@ export namespace E2E {
             /** CallButton phoneNumber. */
             public phoneNumber?: (E2E.Message.IHighlyStructuredMessage|null);
 
-            /** CallButton _displayText. */
-            public _displayText?: "displayText";
-
-            /** CallButton _phoneNumber. */
-            public _phoneNumber?: "phoneNumber";
-
             /**
              * Creates a new CallButton instance using the specified properties.
              * @param [properties] Properties to set
@@ -2508,13 +2325,7 @@ export namespace E2E {
             public displayText?: (E2E.Message.IHighlyStructuredMessage|null);
 
             /** QuickReplyButton id. */
-            public id?: (string|null);
-
-            /** QuickReplyButton _displayText. */
-            public _displayText?: "displayText";
-
-            /** QuickReplyButton _id. */
-            public _id?: "id";
+            public id: string;
 
             /**
              * Creates a new QuickReplyButton instance using the specified properties.
@@ -2619,12 +2430,6 @@ export namespace E2E {
             /** URLButton url. */
             public url?: (E2E.Message.IHighlyStructuredMessage|null);
 
-            /** URLButton _displayText. */
-            public _displayText?: "displayText";
-
-            /** URLButton _url. */
-            public _url?: "url";
-
             /**
              * Creates a new URLButton instance using the specified properties.
              * @param [properties] Properties to set
@@ -2727,22 +2532,13 @@ export namespace E2E {
         constructor(properties?: E2E.ILocation);
 
         /** Location degreesLatitude. */
-        public degreesLatitude?: (number|null);
+        public degreesLatitude: number;
 
         /** Location degreesLongitude. */
-        public degreesLongitude?: (number|null);
+        public degreesLongitude: number;
 
         /** Location name. */
-        public name?: (string|null);
-
-        /** Location _degreesLatitude. */
-        public _degreesLatitude?: "degreesLatitude";
-
-        /** Location _degreesLongitude. */
-        public _degreesLongitude?: "degreesLongitude";
-
-        /** Location _name. */
-        public _name?: "name";
+        public name: string;
 
         /**
          * Creates a new Location instance using the specified properties.
@@ -2848,28 +2644,16 @@ export namespace E2E {
         constructor(properties?: E2E.IPoint);
 
         /** Point xDeprecated. */
-        public xDeprecated?: (number|null);
+        public xDeprecated: number;
 
         /** Point yDeprecated. */
-        public yDeprecated?: (number|null);
+        public yDeprecated: number;
 
         /** Point x. */
-        public x?: (number|null);
+        public x: number;
 
         /** Point y. */
-        public y?: (number|null);
-
-        /** Point _xDeprecated. */
-        public _xDeprecated?: "xDeprecated";
-
-        /** Point _yDeprecated. */
-        public _yDeprecated?: "yDeprecated";
-
-        /** Point _x. */
-        public _x?: "x";
-
-        /** Point _y. */
-        public _y?: "y";
+        public y: number;
 
         /**
          * Creates a new Point instance using the specified properties.
@@ -2990,13 +2774,13 @@ export namespace E2E {
         public polygonVertices: E2E.IPoint[];
 
         /** InteractiveAnnotation shouldSkipConfirmation. */
-        public shouldSkipConfirmation?: (boolean|null);
+        public shouldSkipConfirmation: boolean;
 
         /** InteractiveAnnotation embeddedContent. */
         public embeddedContent?: (E2E.IEmbeddedContent|null);
 
         /** InteractiveAnnotation statusLinkType. */
-        public statusLinkType?: (E2E.InteractiveAnnotation.StatusLinkType|null);
+        public statusLinkType: E2E.InteractiveAnnotation.StatusLinkType;
 
         /** InteractiveAnnotation location. */
         public location?: (E2E.ILocation|null);
@@ -3009,15 +2793,6 @@ export namespace E2E {
 
         /** InteractiveAnnotation tapAction. */
         public tapAction?: (E2E.ITapLinkAction|null);
-
-        /** InteractiveAnnotation _shouldSkipConfirmation. */
-        public _shouldSkipConfirmation?: "shouldSkipConfirmation";
-
-        /** InteractiveAnnotation _embeddedContent. */
-        public _embeddedContent?: "embeddedContent";
-
-        /** InteractiveAnnotation _statusLinkType. */
-        public _statusLinkType?: "statusLinkType";
 
         /** InteractiveAnnotation action. */
         public action?: ("location"|"newsletter"|"embeddedAction"|"tapAction");
@@ -3130,16 +2905,10 @@ export namespace E2E {
         constructor(properties?: E2E.ITapLinkAction);
 
         /** TapLinkAction title. */
-        public title?: (string|null);
+        public title: string;
 
         /** TapLinkAction tapUrl. */
-        public tapUrl?: (string|null);
-
-        /** TapLinkAction _title. */
-        public _title?: "title";
-
-        /** TapLinkAction _tapUrl. */
-        public _tapUrl?: "tapUrl";
+        public tapUrl: string;
 
         /**
          * Creates a new TapLinkAction instance using the specified properties.
@@ -3372,70 +3141,37 @@ export namespace E2E {
         constructor(properties?: E2E.IEmbeddedMusic);
 
         /** EmbeddedMusic musicContentMediaId. */
-        public musicContentMediaId?: (string|null);
+        public musicContentMediaId: string;
 
         /** EmbeddedMusic songId. */
-        public songId?: (string|null);
+        public songId: string;
 
         /** EmbeddedMusic author. */
-        public author?: (string|null);
+        public author: string;
 
         /** EmbeddedMusic title. */
-        public title?: (string|null);
+        public title: string;
 
         /** EmbeddedMusic artworkDirectPath. */
-        public artworkDirectPath?: (string|null);
+        public artworkDirectPath: string;
 
         /** EmbeddedMusic artworkSha256. */
-        public artworkSha256?: (Uint8Array|null);
+        public artworkSha256: Uint8Array;
 
         /** EmbeddedMusic artworkEncSha256. */
-        public artworkEncSha256?: (Uint8Array|null);
+        public artworkEncSha256: Uint8Array;
 
         /** EmbeddedMusic artworkMediaKey. */
-        public artworkMediaKey?: (Uint8Array|null);
+        public artworkMediaKey: Uint8Array;
 
         /** EmbeddedMusic artistAttribution. */
-        public artistAttribution?: (string|null);
+        public artistAttribution: string;
 
         /** EmbeddedMusic countryBlocklist. */
-        public countryBlocklist?: (Uint8Array|null);
+        public countryBlocklist: Uint8Array;
 
         /** EmbeddedMusic isExplicit. */
-        public isExplicit?: (boolean|null);
-
-        /** EmbeddedMusic _musicContentMediaId. */
-        public _musicContentMediaId?: "musicContentMediaId";
-
-        /** EmbeddedMusic _songId. */
-        public _songId?: "songId";
-
-        /** EmbeddedMusic _author. */
-        public _author?: "author";
-
-        /** EmbeddedMusic _title. */
-        public _title?: "title";
-
-        /** EmbeddedMusic _artworkDirectPath. */
-        public _artworkDirectPath?: "artworkDirectPath";
-
-        /** EmbeddedMusic _artworkSha256. */
-        public _artworkSha256?: "artworkSha256";
-
-        /** EmbeddedMusic _artworkEncSha256. */
-        public _artworkEncSha256?: "artworkEncSha256";
-
-        /** EmbeddedMusic _artworkMediaKey. */
-        public _artworkMediaKey?: "artworkMediaKey";
-
-        /** EmbeddedMusic _artistAttribution. */
-        public _artistAttribution?: "artistAttribution";
-
-        /** EmbeddedMusic _countryBlocklist. */
-        public _countryBlocklist?: "countryBlocklist";
-
-        /** EmbeddedMusic _isExplicit. */
-        public _isExplicit?: "isExplicit";
+        public isExplicit: boolean;
 
         /**
          * Creates a new EmbeddedMusic instance using the specified properties.
@@ -3535,16 +3271,10 @@ export namespace E2E {
         constructor(properties?: E2E.IEmbeddedMessage);
 
         /** EmbeddedMessage stanzaId. */
-        public stanzaId?: (string|null);
+        public stanzaId: string;
 
         /** EmbeddedMessage message. */
         public message?: (E2E.IMessage|null);
-
-        /** EmbeddedMessage _stanzaId. */
-        public _stanzaId?: "stanzaId";
-
-        /** EmbeddedMessage _message. */
-        public _message?: "message";
 
         /**
          * Creates a new EmbeddedMessage instance using the specified properties.
@@ -3662,46 +3392,28 @@ export namespace E2E {
         constructor(properties?: E2E.IDeviceListMetadata);
 
         /** DeviceListMetadata senderKeyHash. */
-        public senderKeyHash?: (Uint8Array|null);
+        public senderKeyHash: Uint8Array;
 
         /** DeviceListMetadata senderTimestamp. */
-        public senderTimestamp?: (number|Long|null);
+        public senderTimestamp: (number|Long);
 
         /** DeviceListMetadata senderKeyIndexes. */
         public senderKeyIndexes: number[];
 
         /** DeviceListMetadata senderAccountType. */
-        public senderAccountType?: (Adv.ADVEncryptionType|null);
+        public senderAccountType: Adv.ADVEncryptionType;
 
         /** DeviceListMetadata receiverAccountType. */
-        public receiverAccountType?: (Adv.ADVEncryptionType|null);
+        public receiverAccountType: Adv.ADVEncryptionType;
 
         /** DeviceListMetadata recipientKeyHash. */
-        public recipientKeyHash?: (Uint8Array|null);
+        public recipientKeyHash: Uint8Array;
 
         /** DeviceListMetadata recipientTimestamp. */
-        public recipientTimestamp?: (number|Long|null);
+        public recipientTimestamp: (number|Long);
 
         /** DeviceListMetadata recipientKeyIndexes. */
         public recipientKeyIndexes: number[];
-
-        /** DeviceListMetadata _senderKeyHash. */
-        public _senderKeyHash?: "senderKeyHash";
-
-        /** DeviceListMetadata _senderTimestamp. */
-        public _senderTimestamp?: "senderTimestamp";
-
-        /** DeviceListMetadata _senderAccountType. */
-        public _senderAccountType?: "senderAccountType";
-
-        /** DeviceListMetadata _receiverAccountType. */
-        public _receiverAccountType?: "receiverAccountType";
-
-        /** DeviceListMetadata _recipientKeyHash. */
-        public _recipientKeyHash?: "recipientKeyHash";
-
-        /** DeviceListMetadata _recipientTimestamp. */
-        public _recipientTimestamp?: "recipientTimestamp";
 
         /**
          * Creates a new DeviceListMetadata instance using the specified properties.
@@ -3803,7 +3515,7 @@ export namespace E2E {
         botMessageSecret?: (Uint8Array|null);
 
         /** MessageContextInfo botMetadata */
-        botMetadata?: (E2E.IBotMetadata|null);
+        botMetadata?: (BotMetadata.IBotMetadata|null);
 
         /** MessageContextInfo reportingTokenVersion */
         reportingTokenVersion?: (number|null);
@@ -3843,37 +3555,37 @@ export namespace E2E {
         public deviceListMetadata?: (E2E.IDeviceListMetadata|null);
 
         /** MessageContextInfo deviceListMetadataVersion. */
-        public deviceListMetadataVersion?: (number|null);
+        public deviceListMetadataVersion: number;
 
         /** MessageContextInfo messageSecret. */
-        public messageSecret?: (Uint8Array|null);
+        public messageSecret: Uint8Array;
 
         /** MessageContextInfo paddingBytes. */
-        public paddingBytes?: (Uint8Array|null);
+        public paddingBytes: Uint8Array;
 
         /** MessageContextInfo messageAddOnDurationInSecs. */
-        public messageAddOnDurationInSecs?: (number|null);
+        public messageAddOnDurationInSecs: number;
 
         /** MessageContextInfo botMessageSecret. */
-        public botMessageSecret?: (Uint8Array|null);
+        public botMessageSecret: Uint8Array;
 
         /** MessageContextInfo botMetadata. */
-        public botMetadata?: (E2E.IBotMetadata|null);
+        public botMetadata?: (BotMetadata.IBotMetadata|null);
 
         /** MessageContextInfo reportingTokenVersion. */
-        public reportingTokenVersion?: (number|null);
+        public reportingTokenVersion: number;
 
         /** MessageContextInfo messageAddOnExpiryType. */
-        public messageAddOnExpiryType?: (E2E.MessageContextInfo.MessageAddonExpiryType|null);
+        public messageAddOnExpiryType: E2E.MessageContextInfo.MessageAddonExpiryType;
 
         /** MessageContextInfo messageAssociation. */
         public messageAssociation?: (E2E.IMessageAssociation|null);
 
         /** MessageContextInfo capiCreatedGroup. */
-        public capiCreatedGroup?: (boolean|null);
+        public capiCreatedGroup: boolean;
 
         /** MessageContextInfo supportPayload. */
-        public supportPayload?: (string|null);
+        public supportPayload: string;
 
         /** MessageContextInfo limitSharing. */
         public limitSharing?: (Protocol.ILimitSharing|null);
@@ -3883,48 +3595,6 @@ export namespace E2E {
 
         /** MessageContextInfo threadId. */
         public threadId: E2E.IThreadID[];
-
-        /** MessageContextInfo _deviceListMetadata. */
-        public _deviceListMetadata?: "deviceListMetadata";
-
-        /** MessageContextInfo _deviceListMetadataVersion. */
-        public _deviceListMetadataVersion?: "deviceListMetadataVersion";
-
-        /** MessageContextInfo _messageSecret. */
-        public _messageSecret?: "messageSecret";
-
-        /** MessageContextInfo _paddingBytes. */
-        public _paddingBytes?: "paddingBytes";
-
-        /** MessageContextInfo _messageAddOnDurationInSecs. */
-        public _messageAddOnDurationInSecs?: "messageAddOnDurationInSecs";
-
-        /** MessageContextInfo _botMessageSecret. */
-        public _botMessageSecret?: "botMessageSecret";
-
-        /** MessageContextInfo _botMetadata. */
-        public _botMetadata?: "botMetadata";
-
-        /** MessageContextInfo _reportingTokenVersion. */
-        public _reportingTokenVersion?: "reportingTokenVersion";
-
-        /** MessageContextInfo _messageAddOnExpiryType. */
-        public _messageAddOnExpiryType?: "messageAddOnExpiryType";
-
-        /** MessageContextInfo _messageAssociation. */
-        public _messageAssociation?: "messageAssociation";
-
-        /** MessageContextInfo _capiCreatedGroup. */
-        public _capiCreatedGroup?: "capiCreatedGroup";
-
-        /** MessageContextInfo _supportPayload. */
-        public _supportPayload?: "supportPayload";
-
-        /** MessageContextInfo _limitSharing. */
-        public _limitSharing?: "limitSharing";
-
-        /** MessageContextInfo _limitSharingV2. */
-        public _limitSharingV2?: "limitSharingV2";
 
         /**
          * Creates a new MessageContextInfo instance using the specified properties.
@@ -4033,16 +3703,10 @@ export namespace E2E {
         constructor(properties?: E2E.IThreadID);
 
         /** ThreadID threadType. */
-        public threadType?: (E2E.ThreadID.ThreadType|null);
+        public threadType: E2E.ThreadID.ThreadType;
 
         /** ThreadID threadKey. */
         public threadKey?: (Protocol.IMessageKey|null);
-
-        /** ThreadID _threadType. */
-        public _threadType?: "threadType";
-
-        /** ThreadID _threadKey. */
-        public _threadKey?: "threadKey";
 
         /**
          * Creates a new ThreadID instance using the specified properties.
@@ -4154,22 +3818,13 @@ export namespace E2E {
         constructor(properties?: E2E.IMessageAssociation);
 
         /** MessageAssociation associationType. */
-        public associationType?: (E2E.MessageAssociation.AssociationType|null);
+        public associationType: E2E.MessageAssociation.AssociationType;
 
         /** MessageAssociation parentMessageKey. */
         public parentMessageKey?: (Protocol.IMessageKey|null);
 
         /** MessageAssociation messageIndex. */
-        public messageIndex?: (number|null);
-
-        /** MessageAssociation _associationType. */
-        public _associationType?: "associationType";
-
-        /** MessageAssociation _parentMessageKey. */
-        public _parentMessageKey?: "parentMessageKey";
-
-        /** MessageAssociation _messageIndex. */
-        public _messageIndex?: "messageIndex";
+        public messageIndex: number;
 
         /**
          * Creates a new MessageAssociation instance using the specified properties.
@@ -4268,3033 +3923,8 @@ export namespace E2E {
             MOTION_PHOTO = 12,
             STATUS_LINK_ACTION = 13,
             VIEW_ALL_REPLIES = 14,
-            STATUS_ADD_YOURS_AI_IMAGINE = 15
-        }
-    }
-
-    /** Properties of a BotMetadata. */
-    interface IBotMetadata {
-
-        /** BotMetadata avatarMetadata */
-        avatarMetadata?: (E2E.IBotAvatarMetadata|null);
-
-        /** BotMetadata personaId */
-        personaId?: (string|null);
-
-        /** BotMetadata pluginMetadata */
-        pluginMetadata?: (E2E.IBotPluginMetadata|null);
-
-        /** BotMetadata suggestedPromptMetadata */
-        suggestedPromptMetadata?: (E2E.IBotSuggestedPromptMetadata|null);
-
-        /** BotMetadata invokerJid */
-        invokerJid?: (string|null);
-
-        /** BotMetadata sessionMetadata */
-        sessionMetadata?: (E2E.IBotSessionMetadata|null);
-
-        /** BotMetadata memuMetadata */
-        memuMetadata?: (E2E.IBotMemuMetadata|null);
-
-        /** BotMetadata timezone */
-        timezone?: (string|null);
-
-        /** BotMetadata reminderMetadata */
-        reminderMetadata?: (E2E.IBotReminderMetadata|null);
-
-        /** BotMetadata modelMetadata */
-        modelMetadata?: (E2E.IBotModelMetadata|null);
-
-        /** BotMetadata messageDisclaimerText */
-        messageDisclaimerText?: (string|null);
-
-        /** BotMetadata progressIndicatorMetadata */
-        progressIndicatorMetadata?: (E2E.IBotProgressIndicatorMetadata|null);
-
-        /** BotMetadata capabilityMetadata */
-        capabilityMetadata?: (E2E.IBotCapabilityMetadata|null);
-
-        /** BotMetadata imagineMetadata */
-        imagineMetadata?: (E2E.IBotImagineMetadata|null);
-
-        /** BotMetadata memoryMetadata */
-        memoryMetadata?: (E2E.IBotMemoryMetadata|null);
-
-        /** BotMetadata renderingMetadata */
-        renderingMetadata?: (E2E.IBotRenderingMetadata|null);
-
-        /** BotMetadata botMetricsMetadata */
-        botMetricsMetadata?: (E2E.IBotMetricsMetadata|null);
-
-        /** BotMetadata botLinkedAccountsMetadata */
-        botLinkedAccountsMetadata?: (E2E.IBotLinkedAccountsMetadata|null);
-
-        /** BotMetadata richResponseSourcesMetadata */
-        richResponseSourcesMetadata?: (E2E.IBotSourcesMetadata|null);
-
-        /** BotMetadata aiConversationContext */
-        aiConversationContext?: (Uint8Array|null);
-
-        /** BotMetadata botPromotionMessageMetadata */
-        botPromotionMessageMetadata?: (E2E.IBotPromotionMessageMetadata|null);
-
-        /** BotMetadata botModeSelectionMetadata */
-        botModeSelectionMetadata?: (E2E.IBotModeSelectionMetadata|null);
-
-        /** BotMetadata botQuotaMetadata */
-        botQuotaMetadata?: (E2E.IBotQuotaMetadata|null);
-
-        /** BotMetadata botAgeCollectionMetadata */
-        botAgeCollectionMetadata?: (E2E.IBotAgeCollectionMetadata|null);
-
-        /** BotMetadata conversationStarterPromptId */
-        conversationStarterPromptId?: (string|null);
-
-        /** BotMetadata botResponseId */
-        botResponseId?: (string|null);
-
-        /** BotMetadata verificationMetadata */
-        verificationMetadata?: (E2E.IBotSignatureVerificationMetadata|null);
-    }
-
-    /** Represents a BotMetadata. */
-    class BotMetadata implements IBotMetadata {
-
-        /**
-         * Constructs a new BotMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotMetadata);
-
-        /** BotMetadata avatarMetadata. */
-        public avatarMetadata?: (E2E.IBotAvatarMetadata|null);
-
-        /** BotMetadata personaId. */
-        public personaId?: (string|null);
-
-        /** BotMetadata pluginMetadata. */
-        public pluginMetadata?: (E2E.IBotPluginMetadata|null);
-
-        /** BotMetadata suggestedPromptMetadata. */
-        public suggestedPromptMetadata?: (E2E.IBotSuggestedPromptMetadata|null);
-
-        /** BotMetadata invokerJid. */
-        public invokerJid?: (string|null);
-
-        /** BotMetadata sessionMetadata. */
-        public sessionMetadata?: (E2E.IBotSessionMetadata|null);
-
-        /** BotMetadata memuMetadata. */
-        public memuMetadata?: (E2E.IBotMemuMetadata|null);
-
-        /** BotMetadata timezone. */
-        public timezone?: (string|null);
-
-        /** BotMetadata reminderMetadata. */
-        public reminderMetadata?: (E2E.IBotReminderMetadata|null);
-
-        /** BotMetadata modelMetadata. */
-        public modelMetadata?: (E2E.IBotModelMetadata|null);
-
-        /** BotMetadata messageDisclaimerText. */
-        public messageDisclaimerText?: (string|null);
-
-        /** BotMetadata progressIndicatorMetadata. */
-        public progressIndicatorMetadata?: (E2E.IBotProgressIndicatorMetadata|null);
-
-        /** BotMetadata capabilityMetadata. */
-        public capabilityMetadata?: (E2E.IBotCapabilityMetadata|null);
-
-        /** BotMetadata imagineMetadata. */
-        public imagineMetadata?: (E2E.IBotImagineMetadata|null);
-
-        /** BotMetadata memoryMetadata. */
-        public memoryMetadata?: (E2E.IBotMemoryMetadata|null);
-
-        /** BotMetadata renderingMetadata. */
-        public renderingMetadata?: (E2E.IBotRenderingMetadata|null);
-
-        /** BotMetadata botMetricsMetadata. */
-        public botMetricsMetadata?: (E2E.IBotMetricsMetadata|null);
-
-        /** BotMetadata botLinkedAccountsMetadata. */
-        public botLinkedAccountsMetadata?: (E2E.IBotLinkedAccountsMetadata|null);
-
-        /** BotMetadata richResponseSourcesMetadata. */
-        public richResponseSourcesMetadata?: (E2E.IBotSourcesMetadata|null);
-
-        /** BotMetadata aiConversationContext. */
-        public aiConversationContext?: (Uint8Array|null);
-
-        /** BotMetadata botPromotionMessageMetadata. */
-        public botPromotionMessageMetadata?: (E2E.IBotPromotionMessageMetadata|null);
-
-        /** BotMetadata botModeSelectionMetadata. */
-        public botModeSelectionMetadata?: (E2E.IBotModeSelectionMetadata|null);
-
-        /** BotMetadata botQuotaMetadata. */
-        public botQuotaMetadata?: (E2E.IBotQuotaMetadata|null);
-
-        /** BotMetadata botAgeCollectionMetadata. */
-        public botAgeCollectionMetadata?: (E2E.IBotAgeCollectionMetadata|null);
-
-        /** BotMetadata conversationStarterPromptId. */
-        public conversationStarterPromptId?: (string|null);
-
-        /** BotMetadata botResponseId. */
-        public botResponseId?: (string|null);
-
-        /** BotMetadata verificationMetadata. */
-        public verificationMetadata?: (E2E.IBotSignatureVerificationMetadata|null);
-
-        /** BotMetadata _avatarMetadata. */
-        public _avatarMetadata?: "avatarMetadata";
-
-        /** BotMetadata _personaId. */
-        public _personaId?: "personaId";
-
-        /** BotMetadata _pluginMetadata. */
-        public _pluginMetadata?: "pluginMetadata";
-
-        /** BotMetadata _suggestedPromptMetadata. */
-        public _suggestedPromptMetadata?: "suggestedPromptMetadata";
-
-        /** BotMetadata _invokerJid. */
-        public _invokerJid?: "invokerJid";
-
-        /** BotMetadata _sessionMetadata. */
-        public _sessionMetadata?: "sessionMetadata";
-
-        /** BotMetadata _memuMetadata. */
-        public _memuMetadata?: "memuMetadata";
-
-        /** BotMetadata _timezone. */
-        public _timezone?: "timezone";
-
-        /** BotMetadata _reminderMetadata. */
-        public _reminderMetadata?: "reminderMetadata";
-
-        /** BotMetadata _modelMetadata. */
-        public _modelMetadata?: "modelMetadata";
-
-        /** BotMetadata _messageDisclaimerText. */
-        public _messageDisclaimerText?: "messageDisclaimerText";
-
-        /** BotMetadata _progressIndicatorMetadata. */
-        public _progressIndicatorMetadata?: "progressIndicatorMetadata";
-
-        /** BotMetadata _capabilityMetadata. */
-        public _capabilityMetadata?: "capabilityMetadata";
-
-        /** BotMetadata _imagineMetadata. */
-        public _imagineMetadata?: "imagineMetadata";
-
-        /** BotMetadata _memoryMetadata. */
-        public _memoryMetadata?: "memoryMetadata";
-
-        /** BotMetadata _renderingMetadata. */
-        public _renderingMetadata?: "renderingMetadata";
-
-        /** BotMetadata _botMetricsMetadata. */
-        public _botMetricsMetadata?: "botMetricsMetadata";
-
-        /** BotMetadata _botLinkedAccountsMetadata. */
-        public _botLinkedAccountsMetadata?: "botLinkedAccountsMetadata";
-
-        /** BotMetadata _richResponseSourcesMetadata. */
-        public _richResponseSourcesMetadata?: "richResponseSourcesMetadata";
-
-        /** BotMetadata _aiConversationContext. */
-        public _aiConversationContext?: "aiConversationContext";
-
-        /** BotMetadata _botPromotionMessageMetadata. */
-        public _botPromotionMessageMetadata?: "botPromotionMessageMetadata";
-
-        /** BotMetadata _botModeSelectionMetadata. */
-        public _botModeSelectionMetadata?: "botModeSelectionMetadata";
-
-        /** BotMetadata _botQuotaMetadata. */
-        public _botQuotaMetadata?: "botQuotaMetadata";
-
-        /** BotMetadata _botAgeCollectionMetadata. */
-        public _botAgeCollectionMetadata?: "botAgeCollectionMetadata";
-
-        /** BotMetadata _conversationStarterPromptId. */
-        public _conversationStarterPromptId?: "conversationStarterPromptId";
-
-        /** BotMetadata _botResponseId. */
-        public _botResponseId?: "botResponseId";
-
-        /** BotMetadata _verificationMetadata. */
-        public _verificationMetadata?: "verificationMetadata";
-
-        /**
-         * Creates a new BotMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotMetadata instance
-         */
-        public static create(properties?: E2E.IBotMetadata): E2E.BotMetadata;
-
-        /**
-         * Encodes the specified BotMetadata message. Does not implicitly {@link E2E.BotMetadata.verify|verify} messages.
-         * @param message BotMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotMetadata message, length delimited. Does not implicitly {@link E2E.BotMetadata.verify|verify} messages.
-         * @param message BotMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotMetadata;
-
-        /**
-         * Decodes a BotMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotMetadata;
-
-        /**
-         * Verifies a BotMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotMetadata;
-
-        /**
-         * Creates a plain object from a BotMetadata message. Also converts values to other types if specified.
-         * @param message BotMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    /** Properties of a BotSourcesMetadata. */
-    interface IBotSourcesMetadata {
-
-        /** BotSourcesMetadata sources */
-        sources?: (E2E.BotSourcesMetadata.IBotSourceItem[]|null);
-    }
-
-    /** Represents a BotSourcesMetadata. */
-    class BotSourcesMetadata implements IBotSourcesMetadata {
-
-        /**
-         * Constructs a new BotSourcesMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotSourcesMetadata);
-
-        /** BotSourcesMetadata sources. */
-        public sources: E2E.BotSourcesMetadata.IBotSourceItem[];
-
-        /**
-         * Creates a new BotSourcesMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotSourcesMetadata instance
-         */
-        public static create(properties?: E2E.IBotSourcesMetadata): E2E.BotSourcesMetadata;
-
-        /**
-         * Encodes the specified BotSourcesMetadata message. Does not implicitly {@link E2E.BotSourcesMetadata.verify|verify} messages.
-         * @param message BotSourcesMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotSourcesMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotSourcesMetadata message, length delimited. Does not implicitly {@link E2E.BotSourcesMetadata.verify|verify} messages.
-         * @param message BotSourcesMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotSourcesMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotSourcesMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotSourcesMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotSourcesMetadata;
-
-        /**
-         * Decodes a BotSourcesMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotSourcesMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotSourcesMetadata;
-
-        /**
-         * Verifies a BotSourcesMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotSourcesMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotSourcesMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotSourcesMetadata;
-
-        /**
-         * Creates a plain object from a BotSourcesMetadata message. Also converts values to other types if specified.
-         * @param message BotSourcesMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotSourcesMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotSourcesMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSourcesMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotSourcesMetadata {
-
-        /** Properties of a BotSourceItem. */
-        interface IBotSourceItem {
-
-            /** BotSourceItem provider */
-            provider?: (E2E.BotSourcesMetadata.BotSourceItem.SourceProvider|null);
-
-            /** BotSourceItem thumbnailCdnUrl */
-            thumbnailCdnUrl?: (string|null);
-
-            /** BotSourceItem sourceProviderUrl */
-            sourceProviderUrl?: (string|null);
-
-            /** BotSourceItem sourceQuery */
-            sourceQuery?: (string|null);
-
-            /** BotSourceItem faviconCdnUrl */
-            faviconCdnUrl?: (string|null);
-
-            /** BotSourceItem citationNumber */
-            citationNumber?: (number|null);
-        }
-
-        /** Represents a BotSourceItem. */
-        class BotSourceItem implements IBotSourceItem {
-
-            /**
-             * Constructs a new BotSourceItem.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: E2E.BotSourcesMetadata.IBotSourceItem);
-
-            /** BotSourceItem provider. */
-            public provider?: (E2E.BotSourcesMetadata.BotSourceItem.SourceProvider|null);
-
-            /** BotSourceItem thumbnailCdnUrl. */
-            public thumbnailCdnUrl?: (string|null);
-
-            /** BotSourceItem sourceProviderUrl. */
-            public sourceProviderUrl?: (string|null);
-
-            /** BotSourceItem sourceQuery. */
-            public sourceQuery?: (string|null);
-
-            /** BotSourceItem faviconCdnUrl. */
-            public faviconCdnUrl?: (string|null);
-
-            /** BotSourceItem citationNumber. */
-            public citationNumber?: (number|null);
-
-            /** BotSourceItem _provider. */
-            public _provider?: "provider";
-
-            /** BotSourceItem _thumbnailCdnUrl. */
-            public _thumbnailCdnUrl?: "thumbnailCdnUrl";
-
-            /** BotSourceItem _sourceProviderUrl. */
-            public _sourceProviderUrl?: "sourceProviderUrl";
-
-            /** BotSourceItem _sourceQuery. */
-            public _sourceQuery?: "sourceQuery";
-
-            /** BotSourceItem _faviconCdnUrl. */
-            public _faviconCdnUrl?: "faviconCdnUrl";
-
-            /** BotSourceItem _citationNumber. */
-            public _citationNumber?: "citationNumber";
-
-            /**
-             * Creates a new BotSourceItem instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns BotSourceItem instance
-             */
-            public static create(properties?: E2E.BotSourcesMetadata.IBotSourceItem): E2E.BotSourcesMetadata.BotSourceItem;
-
-            /**
-             * Encodes the specified BotSourceItem message. Does not implicitly {@link E2E.BotSourcesMetadata.BotSourceItem.verify|verify} messages.
-             * @param message BotSourceItem message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: E2E.BotSourcesMetadata.IBotSourceItem, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified BotSourceItem message, length delimited. Does not implicitly {@link E2E.BotSourcesMetadata.BotSourceItem.verify|verify} messages.
-             * @param message BotSourceItem message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: E2E.BotSourcesMetadata.IBotSourceItem, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a BotSourceItem message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns BotSourceItem
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotSourcesMetadata.BotSourceItem;
-
-            /**
-             * Decodes a BotSourceItem message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns BotSourceItem
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotSourcesMetadata.BotSourceItem;
-
-            /**
-             * Verifies a BotSourceItem message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a BotSourceItem message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns BotSourceItem
-             */
-            public static fromObject(object: { [k: string]: any }): E2E.BotSourcesMetadata.BotSourceItem;
-
-            /**
-             * Creates a plain object from a BotSourceItem message. Also converts values to other types if specified.
-             * @param message BotSourceItem
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: E2E.BotSourcesMetadata.BotSourceItem, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this BotSourceItem to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BotSourceItem
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
-        }
-
-        namespace BotSourceItem {
-
-            /** SourceProvider enum. */
-            enum SourceProvider {
-                UNKNOWN = 0,
-                BING = 1,
-                GOOGLE = 2,
-                SUPPORT = 3
-            }
-        }
-    }
-
-    /** Properties of a BotAgeCollectionMetadata. */
-    interface IBotAgeCollectionMetadata {
-
-        /** BotAgeCollectionMetadata ageCollectionEligible */
-        ageCollectionEligible?: (boolean|null);
-
-        /** BotAgeCollectionMetadata shouldTriggerAgeCollectionOnClient */
-        shouldTriggerAgeCollectionOnClient?: (boolean|null);
-    }
-
-    /** Represents a BotAgeCollectionMetadata. */
-    class BotAgeCollectionMetadata implements IBotAgeCollectionMetadata {
-
-        /**
-         * Constructs a new BotAgeCollectionMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotAgeCollectionMetadata);
-
-        /** BotAgeCollectionMetadata ageCollectionEligible. */
-        public ageCollectionEligible?: (boolean|null);
-
-        /** BotAgeCollectionMetadata shouldTriggerAgeCollectionOnClient. */
-        public shouldTriggerAgeCollectionOnClient?: (boolean|null);
-
-        /** BotAgeCollectionMetadata _ageCollectionEligible. */
-        public _ageCollectionEligible?: "ageCollectionEligible";
-
-        /** BotAgeCollectionMetadata _shouldTriggerAgeCollectionOnClient. */
-        public _shouldTriggerAgeCollectionOnClient?: "shouldTriggerAgeCollectionOnClient";
-
-        /**
-         * Creates a new BotAgeCollectionMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotAgeCollectionMetadata instance
-         */
-        public static create(properties?: E2E.IBotAgeCollectionMetadata): E2E.BotAgeCollectionMetadata;
-
-        /**
-         * Encodes the specified BotAgeCollectionMetadata message. Does not implicitly {@link E2E.BotAgeCollectionMetadata.verify|verify} messages.
-         * @param message BotAgeCollectionMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotAgeCollectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotAgeCollectionMetadata message, length delimited. Does not implicitly {@link E2E.BotAgeCollectionMetadata.verify|verify} messages.
-         * @param message BotAgeCollectionMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotAgeCollectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotAgeCollectionMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotAgeCollectionMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotAgeCollectionMetadata;
-
-        /**
-         * Decodes a BotAgeCollectionMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotAgeCollectionMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotAgeCollectionMetadata;
-
-        /**
-         * Verifies a BotAgeCollectionMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotAgeCollectionMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotAgeCollectionMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotAgeCollectionMetadata;
-
-        /**
-         * Creates a plain object from a BotAgeCollectionMetadata message. Also converts values to other types if specified.
-         * @param message BotAgeCollectionMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotAgeCollectionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotAgeCollectionMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotAgeCollectionMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    /** Properties of a BotImagineMetadata. */
-    interface IBotImagineMetadata {
-
-        /** BotImagineMetadata imagineType */
-        imagineType?: (E2E.BotImagineMetadata.ImagineType|null);
-    }
-
-    /** Represents a BotImagineMetadata. */
-    class BotImagineMetadata implements IBotImagineMetadata {
-
-        /**
-         * Constructs a new BotImagineMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotImagineMetadata);
-
-        /** BotImagineMetadata imagineType. */
-        public imagineType?: (E2E.BotImagineMetadata.ImagineType|null);
-
-        /** BotImagineMetadata _imagineType. */
-        public _imagineType?: "imagineType";
-
-        /**
-         * Creates a new BotImagineMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotImagineMetadata instance
-         */
-        public static create(properties?: E2E.IBotImagineMetadata): E2E.BotImagineMetadata;
-
-        /**
-         * Encodes the specified BotImagineMetadata message. Does not implicitly {@link E2E.BotImagineMetadata.verify|verify} messages.
-         * @param message BotImagineMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotImagineMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotImagineMetadata message, length delimited. Does not implicitly {@link E2E.BotImagineMetadata.verify|verify} messages.
-         * @param message BotImagineMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotImagineMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotImagineMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotImagineMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotImagineMetadata;
-
-        /**
-         * Decodes a BotImagineMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotImagineMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotImagineMetadata;
-
-        /**
-         * Verifies a BotImagineMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotImagineMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotImagineMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotImagineMetadata;
-
-        /**
-         * Creates a plain object from a BotImagineMetadata message. Also converts values to other types if specified.
-         * @param message BotImagineMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotImagineMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotImagineMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotImagineMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotImagineMetadata {
-
-        /** ImagineType enum. */
-        enum ImagineType {
-            UNKNOWN = 0,
-            IMAGINE = 1,
-            MEMU = 2,
-            FLASH = 3,
-            EDIT = 4
-        }
-    }
-
-    /** Properties of a BotQuotaMetadata. */
-    interface IBotQuotaMetadata {
-
-        /** BotQuotaMetadata botFeatureQuotaMetadata */
-        botFeatureQuotaMetadata?: (E2E.BotQuotaMetadata.IBotFeatureQuotaMetadata[]|null);
-    }
-
-    /** Represents a BotQuotaMetadata. */
-    class BotQuotaMetadata implements IBotQuotaMetadata {
-
-        /**
-         * Constructs a new BotQuotaMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotQuotaMetadata);
-
-        /** BotQuotaMetadata botFeatureQuotaMetadata. */
-        public botFeatureQuotaMetadata: E2E.BotQuotaMetadata.IBotFeatureQuotaMetadata[];
-
-        /**
-         * Creates a new BotQuotaMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotQuotaMetadata instance
-         */
-        public static create(properties?: E2E.IBotQuotaMetadata): E2E.BotQuotaMetadata;
-
-        /**
-         * Encodes the specified BotQuotaMetadata message. Does not implicitly {@link E2E.BotQuotaMetadata.verify|verify} messages.
-         * @param message BotQuotaMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotQuotaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotQuotaMetadata message, length delimited. Does not implicitly {@link E2E.BotQuotaMetadata.verify|verify} messages.
-         * @param message BotQuotaMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotQuotaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotQuotaMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotQuotaMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotQuotaMetadata;
-
-        /**
-         * Decodes a BotQuotaMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotQuotaMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotQuotaMetadata;
-
-        /**
-         * Verifies a BotQuotaMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotQuotaMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotQuotaMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotQuotaMetadata;
-
-        /**
-         * Creates a plain object from a BotQuotaMetadata message. Also converts values to other types if specified.
-         * @param message BotQuotaMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotQuotaMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotQuotaMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotQuotaMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotQuotaMetadata {
-
-        /** Properties of a BotFeatureQuotaMetadata. */
-        interface IBotFeatureQuotaMetadata {
-
-            /** BotFeatureQuotaMetadata featureType */
-            featureType?: (E2E.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType|null);
-
-            /** BotFeatureQuotaMetadata remainingQuota */
-            remainingQuota?: (number|null);
-
-            /** BotFeatureQuotaMetadata expirationTimestamp */
-            expirationTimestamp?: (number|Long|null);
-        }
-
-        /** Represents a BotFeatureQuotaMetadata. */
-        class BotFeatureQuotaMetadata implements IBotFeatureQuotaMetadata {
-
-            /**
-             * Constructs a new BotFeatureQuotaMetadata.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: E2E.BotQuotaMetadata.IBotFeatureQuotaMetadata);
-
-            /** BotFeatureQuotaMetadata featureType. */
-            public featureType?: (E2E.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType|null);
-
-            /** BotFeatureQuotaMetadata remainingQuota. */
-            public remainingQuota?: (number|null);
-
-            /** BotFeatureQuotaMetadata expirationTimestamp. */
-            public expirationTimestamp?: (number|Long|null);
-
-            /** BotFeatureQuotaMetadata _featureType. */
-            public _featureType?: "featureType";
-
-            /** BotFeatureQuotaMetadata _remainingQuota. */
-            public _remainingQuota?: "remainingQuota";
-
-            /** BotFeatureQuotaMetadata _expirationTimestamp. */
-            public _expirationTimestamp?: "expirationTimestamp";
-
-            /**
-             * Creates a new BotFeatureQuotaMetadata instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns BotFeatureQuotaMetadata instance
-             */
-            public static create(properties?: E2E.BotQuotaMetadata.IBotFeatureQuotaMetadata): E2E.BotQuotaMetadata.BotFeatureQuotaMetadata;
-
-            /**
-             * Encodes the specified BotFeatureQuotaMetadata message. Does not implicitly {@link E2E.BotQuotaMetadata.BotFeatureQuotaMetadata.verify|verify} messages.
-             * @param message BotFeatureQuotaMetadata message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: E2E.BotQuotaMetadata.IBotFeatureQuotaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified BotFeatureQuotaMetadata message, length delimited. Does not implicitly {@link E2E.BotQuotaMetadata.BotFeatureQuotaMetadata.verify|verify} messages.
-             * @param message BotFeatureQuotaMetadata message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: E2E.BotQuotaMetadata.IBotFeatureQuotaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a BotFeatureQuotaMetadata message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns BotFeatureQuotaMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotQuotaMetadata.BotFeatureQuotaMetadata;
-
-            /**
-             * Decodes a BotFeatureQuotaMetadata message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns BotFeatureQuotaMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotQuotaMetadata.BotFeatureQuotaMetadata;
-
-            /**
-             * Verifies a BotFeatureQuotaMetadata message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a BotFeatureQuotaMetadata message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns BotFeatureQuotaMetadata
-             */
-            public static fromObject(object: { [k: string]: any }): E2E.BotQuotaMetadata.BotFeatureQuotaMetadata;
-
-            /**
-             * Creates a plain object from a BotFeatureQuotaMetadata message. Also converts values to other types if specified.
-             * @param message BotFeatureQuotaMetadata
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: E2E.BotQuotaMetadata.BotFeatureQuotaMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this BotFeatureQuotaMetadata to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BotFeatureQuotaMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
-        }
-
-        namespace BotFeatureQuotaMetadata {
-
-            /** BotFeatureType enum. */
-            enum BotFeatureType {
-                UNKNOWN_FEATURE = 0,
-                REASONING_FEATURE = 1
-            }
-        }
-    }
-
-    /** Properties of a BotModeSelectionMetadata. */
-    interface IBotModeSelectionMetadata {
-
-        /** BotModeSelectionMetadata mode */
-        mode?: (E2E.BotModeSelectionMetadata.BotUserSelectionMode[]|null);
-    }
-
-    /** Represents a BotModeSelectionMetadata. */
-    class BotModeSelectionMetadata implements IBotModeSelectionMetadata {
-
-        /**
-         * Constructs a new BotModeSelectionMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotModeSelectionMetadata);
-
-        /** BotModeSelectionMetadata mode. */
-        public mode: E2E.BotModeSelectionMetadata.BotUserSelectionMode[];
-
-        /**
-         * Creates a new BotModeSelectionMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotModeSelectionMetadata instance
-         */
-        public static create(properties?: E2E.IBotModeSelectionMetadata): E2E.BotModeSelectionMetadata;
-
-        /**
-         * Encodes the specified BotModeSelectionMetadata message. Does not implicitly {@link E2E.BotModeSelectionMetadata.verify|verify} messages.
-         * @param message BotModeSelectionMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotModeSelectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotModeSelectionMetadata message, length delimited. Does not implicitly {@link E2E.BotModeSelectionMetadata.verify|verify} messages.
-         * @param message BotModeSelectionMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotModeSelectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotModeSelectionMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotModeSelectionMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotModeSelectionMetadata;
-
-        /**
-         * Decodes a BotModeSelectionMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotModeSelectionMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotModeSelectionMetadata;
-
-        /**
-         * Verifies a BotModeSelectionMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotModeSelectionMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotModeSelectionMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotModeSelectionMetadata;
-
-        /**
-         * Creates a plain object from a BotModeSelectionMetadata message. Also converts values to other types if specified.
-         * @param message BotModeSelectionMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotModeSelectionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotModeSelectionMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotModeSelectionMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotModeSelectionMetadata {
-
-        /** BotUserSelectionMode enum. */
-        enum BotUserSelectionMode {
-            UNKNOWN_MODE = 0,
-            REASONING_MODE = 1
-        }
-    }
-
-    /** Properties of a BotCapabilityMetadata. */
-    interface IBotCapabilityMetadata {
-
-        /** BotCapabilityMetadata capabilities */
-        capabilities?: (E2E.BotCapabilityMetadata.BotCapabilityType[]|null);
-    }
-
-    /** Represents a BotCapabilityMetadata. */
-    class BotCapabilityMetadata implements IBotCapabilityMetadata {
-
-        /**
-         * Constructs a new BotCapabilityMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotCapabilityMetadata);
-
-        /** BotCapabilityMetadata capabilities. */
-        public capabilities: E2E.BotCapabilityMetadata.BotCapabilityType[];
-
-        /**
-         * Creates a new BotCapabilityMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotCapabilityMetadata instance
-         */
-        public static create(properties?: E2E.IBotCapabilityMetadata): E2E.BotCapabilityMetadata;
-
-        /**
-         * Encodes the specified BotCapabilityMetadata message. Does not implicitly {@link E2E.BotCapabilityMetadata.verify|verify} messages.
-         * @param message BotCapabilityMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotCapabilityMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotCapabilityMetadata message, length delimited. Does not implicitly {@link E2E.BotCapabilityMetadata.verify|verify} messages.
-         * @param message BotCapabilityMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotCapabilityMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotCapabilityMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotCapabilityMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotCapabilityMetadata;
-
-        /**
-         * Decodes a BotCapabilityMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotCapabilityMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotCapabilityMetadata;
-
-        /**
-         * Verifies a BotCapabilityMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotCapabilityMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotCapabilityMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotCapabilityMetadata;
-
-        /**
-         * Creates a plain object from a BotCapabilityMetadata message. Also converts values to other types if specified.
-         * @param message BotCapabilityMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotCapabilityMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotCapabilityMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotCapabilityMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotCapabilityMetadata {
-
-        /** BotCapabilityType enum. */
-        enum BotCapabilityType {
-            UNKNOWN = 0,
-            PROGRESS_INDICATOR = 1,
-            RICH_RESPONSE_HEADING = 2,
-            RICH_RESPONSE_NESTED_LIST = 3,
-            AI_MEMORY = 4,
-            RICH_RESPONSE_THREAD_SURFING = 5,
-            RICH_RESPONSE_TABLE = 6,
-            RICH_RESPONSE_CODE = 7,
-            RICH_RESPONSE_STRUCTURED_RESPONSE = 8,
-            RICH_RESPONSE_INLINE_IMAGE = 9,
-            WA_IG_1P_PLUGIN_RANKING_CONTROL = 10,
-            WA_IG_1P_PLUGIN_RANKING_UPDATE_1 = 11,
-            WA_IG_1P_PLUGIN_RANKING_UPDATE_2 = 12,
-            WA_IG_1P_PLUGIN_RANKING_UPDATE_3 = 13,
-            WA_IG_1P_PLUGIN_RANKING_UPDATE_4 = 14,
-            WA_IG_1P_PLUGIN_RANKING_UPDATE_5 = 15,
-            WA_IG_1P_PLUGIN_RANKING_UPDATE_6 = 16,
-            WA_IG_1P_PLUGIN_RANKING_UPDATE_7 = 17,
-            WA_IG_1P_PLUGIN_RANKING_UPDATE_8 = 18,
-            WA_IG_1P_PLUGIN_RANKING_UPDATE_9 = 19,
-            WA_IG_1P_PLUGIN_RANKING_UPDATE_10 = 20,
-            RICH_RESPONSE_SUB_HEADING = 21,
-            RICH_RESPONSE_GRID_IMAGE = 22,
-            AI_STUDIO_UGC_MEMORY = 23,
-            RICH_RESPONSE_LATEX = 24,
-            RICH_RESPONSE_MAPS = 25,
-            RICH_RESPONSE_INLINE_REELS = 26,
-            AGENTIC_PLANNING = 27,
-            ACCOUNT_LINKING = 28,
-            STREAMING_DISAGGREGATION = 29,
-            RICH_RESPONSE_GRID_IMAGE_3P = 30,
-            RICH_RESPONSE_LATEX_INLINE = 31,
-            QUERY_PLAN = 32,
-            PROACTIVE_MESSAGE = 33,
-            RICH_RESPONSE_UNIFIED_RESPONSE = 34,
-            PROMOTION_MESSAGE = 35,
-            SIMPLIFIED_PROFILE_PAGE = 36
-        }
-    }
-
-    /** Properties of a BotProgressIndicatorMetadata. */
-    interface IBotProgressIndicatorMetadata {
-
-        /** BotProgressIndicatorMetadata progressDescription */
-        progressDescription?: (string|null);
-
-        /** BotProgressIndicatorMetadata stepsMetadata */
-        stepsMetadata?: (E2E.BotProgressIndicatorMetadata.IBotPlanningStepMetadata[]|null);
-    }
-
-    /** Represents a BotProgressIndicatorMetadata. */
-    class BotProgressIndicatorMetadata implements IBotProgressIndicatorMetadata {
-
-        /**
-         * Constructs a new BotProgressIndicatorMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotProgressIndicatorMetadata);
-
-        /** BotProgressIndicatorMetadata progressDescription. */
-        public progressDescription?: (string|null);
-
-        /** BotProgressIndicatorMetadata stepsMetadata. */
-        public stepsMetadata: E2E.BotProgressIndicatorMetadata.IBotPlanningStepMetadata[];
-
-        /** BotProgressIndicatorMetadata _progressDescription. */
-        public _progressDescription?: "progressDescription";
-
-        /**
-         * Creates a new BotProgressIndicatorMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotProgressIndicatorMetadata instance
-         */
-        public static create(properties?: E2E.IBotProgressIndicatorMetadata): E2E.BotProgressIndicatorMetadata;
-
-        /**
-         * Encodes the specified BotProgressIndicatorMetadata message. Does not implicitly {@link E2E.BotProgressIndicatorMetadata.verify|verify} messages.
-         * @param message BotProgressIndicatorMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotProgressIndicatorMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotProgressIndicatorMetadata message, length delimited. Does not implicitly {@link E2E.BotProgressIndicatorMetadata.verify|verify} messages.
-         * @param message BotProgressIndicatorMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotProgressIndicatorMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotProgressIndicatorMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotProgressIndicatorMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotProgressIndicatorMetadata;
-
-        /**
-         * Decodes a BotProgressIndicatorMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotProgressIndicatorMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotProgressIndicatorMetadata;
-
-        /**
-         * Verifies a BotProgressIndicatorMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotProgressIndicatorMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotProgressIndicatorMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotProgressIndicatorMetadata;
-
-        /**
-         * Creates a plain object from a BotProgressIndicatorMetadata message. Also converts values to other types if specified.
-         * @param message BotProgressIndicatorMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotProgressIndicatorMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotProgressIndicatorMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotProgressIndicatorMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotProgressIndicatorMetadata {
-
-        /** Properties of a BotPlanningStepMetadata. */
-        interface IBotPlanningStepMetadata {
-
-            /** BotPlanningStepMetadata statusTitle */
-            statusTitle?: (string|null);
-
-            /** BotPlanningStepMetadata statusBody */
-            statusBody?: (string|null);
-
-            /** BotPlanningStepMetadata sourcesMetadata */
-            sourcesMetadata?: (E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata[]|null);
-
-            /** BotPlanningStepMetadata status */
-            status?: (E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus|null);
-
-            /** BotPlanningStepMetadata isReasoning */
-            isReasoning?: (boolean|null);
-
-            /** BotPlanningStepMetadata isEnhancedSearch */
-            isEnhancedSearch?: (boolean|null);
-
-            /** BotPlanningStepMetadata sections */
-            sections?: (E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata[]|null);
-        }
-
-        /** Represents a BotPlanningStepMetadata. */
-        class BotPlanningStepMetadata implements IBotPlanningStepMetadata {
-
-            /**
-             * Constructs a new BotPlanningStepMetadata.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: E2E.BotProgressIndicatorMetadata.IBotPlanningStepMetadata);
-
-            /** BotPlanningStepMetadata statusTitle. */
-            public statusTitle?: (string|null);
-
-            /** BotPlanningStepMetadata statusBody. */
-            public statusBody?: (string|null);
-
-            /** BotPlanningStepMetadata sourcesMetadata. */
-            public sourcesMetadata: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata[];
-
-            /** BotPlanningStepMetadata status. */
-            public status?: (E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus|null);
-
-            /** BotPlanningStepMetadata isReasoning. */
-            public isReasoning?: (boolean|null);
-
-            /** BotPlanningStepMetadata isEnhancedSearch. */
-            public isEnhancedSearch?: (boolean|null);
-
-            /** BotPlanningStepMetadata sections. */
-            public sections: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata[];
-
-            /** BotPlanningStepMetadata _statusTitle. */
-            public _statusTitle?: "statusTitle";
-
-            /** BotPlanningStepMetadata _statusBody. */
-            public _statusBody?: "statusBody";
-
-            /** BotPlanningStepMetadata _status. */
-            public _status?: "status";
-
-            /** BotPlanningStepMetadata _isReasoning. */
-            public _isReasoning?: "isReasoning";
-
-            /** BotPlanningStepMetadata _isEnhancedSearch. */
-            public _isEnhancedSearch?: "isEnhancedSearch";
-
-            /**
-             * Creates a new BotPlanningStepMetadata instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns BotPlanningStepMetadata instance
-             */
-            public static create(properties?: E2E.BotProgressIndicatorMetadata.IBotPlanningStepMetadata): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata;
-
-            /**
-             * Encodes the specified BotPlanningStepMetadata message. Does not implicitly {@link E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.verify|verify} messages.
-             * @param message BotPlanningStepMetadata message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: E2E.BotProgressIndicatorMetadata.IBotPlanningStepMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified BotPlanningStepMetadata message, length delimited. Does not implicitly {@link E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.verify|verify} messages.
-             * @param message BotPlanningStepMetadata message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: E2E.BotProgressIndicatorMetadata.IBotPlanningStepMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a BotPlanningStepMetadata message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns BotPlanningStepMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata;
-
-            /**
-             * Decodes a BotPlanningStepMetadata message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns BotPlanningStepMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata;
-
-            /**
-             * Verifies a BotPlanningStepMetadata message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a BotPlanningStepMetadata message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns BotPlanningStepMetadata
-             */
-            public static fromObject(object: { [k: string]: any }): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata;
-
-            /**
-             * Creates a plain object from a BotPlanningStepMetadata message. Also converts values to other types if specified.
-             * @param message BotPlanningStepMetadata
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this BotPlanningStepMetadata to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for BotPlanningStepMetadata
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
-        }
-
-        namespace BotPlanningStepMetadata {
-
-            /** Properties of a BotPlanningSearchSourceMetadata. */
-            interface IBotPlanningSearchSourceMetadata {
-
-                /** BotPlanningSearchSourceMetadata title */
-                title?: (string|null);
-
-                /** BotPlanningSearchSourceMetadata provider */
-                provider?: (E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider|null);
-
-                /** BotPlanningSearchSourceMetadata sourceUrl */
-                sourceUrl?: (string|null);
-
-                /** BotPlanningSearchSourceMetadata favIconUrl */
-                favIconUrl?: (string|null);
-            }
-
-            /** Represents a BotPlanningSearchSourceMetadata. */
-            class BotPlanningSearchSourceMetadata implements IBotPlanningSearchSourceMetadata {
-
-                /**
-                 * Constructs a new BotPlanningSearchSourceMetadata.
-                 * @param [properties] Properties to set
-                 */
-                constructor(properties?: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata);
-
-                /** BotPlanningSearchSourceMetadata title. */
-                public title?: (string|null);
-
-                /** BotPlanningSearchSourceMetadata provider. */
-                public provider?: (E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider|null);
-
-                /** BotPlanningSearchSourceMetadata sourceUrl. */
-                public sourceUrl?: (string|null);
-
-                /** BotPlanningSearchSourceMetadata favIconUrl. */
-                public favIconUrl?: (string|null);
-
-                /** BotPlanningSearchSourceMetadata _title. */
-                public _title?: "title";
-
-                /** BotPlanningSearchSourceMetadata _provider. */
-                public _provider?: "provider";
-
-                /** BotPlanningSearchSourceMetadata _sourceUrl. */
-                public _sourceUrl?: "sourceUrl";
-
-                /** BotPlanningSearchSourceMetadata _favIconUrl. */
-                public _favIconUrl?: "favIconUrl";
-
-                /**
-                 * Creates a new BotPlanningSearchSourceMetadata instance using the specified properties.
-                 * @param [properties] Properties to set
-                 * @returns BotPlanningSearchSourceMetadata instance
-                 */
-                public static create(properties?: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata;
-
-                /**
-                 * Encodes the specified BotPlanningSearchSourceMetadata message. Does not implicitly {@link E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.verify|verify} messages.
-                 * @param message BotPlanningSearchSourceMetadata message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encode(message: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Encodes the specified BotPlanningSearchSourceMetadata message, length delimited. Does not implicitly {@link E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.verify|verify} messages.
-                 * @param message BotPlanningSearchSourceMetadata message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encodeDelimited(message: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Decodes a BotPlanningSearchSourceMetadata message from the specified reader or buffer.
-                 * @param reader Reader or buffer to decode from
-                 * @param [length] Message length if known beforehand
-                 * @returns BotPlanningSearchSourceMetadata
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata;
-
-                /**
-                 * Decodes a BotPlanningSearchSourceMetadata message from the specified reader or buffer, length delimited.
-                 * @param reader Reader or buffer to decode from
-                 * @returns BotPlanningSearchSourceMetadata
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata;
-
-                /**
-                 * Verifies a BotPlanningSearchSourceMetadata message.
-                 * @param message Plain object to verify
-                 * @returns `null` if valid, otherwise the reason why it is not
-                 */
-                public static verify(message: { [k: string]: any }): (string|null);
-
-                /**
-                 * Creates a BotPlanningSearchSourceMetadata message from a plain object. Also converts values to their respective internal types.
-                 * @param object Plain object
-                 * @returns BotPlanningSearchSourceMetadata
-                 */
-                public static fromObject(object: { [k: string]: any }): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata;
-
-                /**
-                 * Creates a plain object from a BotPlanningSearchSourceMetadata message. Also converts values to other types if specified.
-                 * @param message BotPlanningSearchSourceMetadata
-                 * @param [options] Conversion options
-                 * @returns Plain object
-                 */
-                public static toObject(message: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                /**
-                 * Converts this BotPlanningSearchSourceMetadata to JSON.
-                 * @returns JSON object
-                 */
-                public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for BotPlanningSearchSourceMetadata
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
-            }
-
-            /** Properties of a BotPlanningSearchSourcesMetadata. */
-            interface IBotPlanningSearchSourcesMetadata {
-
-                /** BotPlanningSearchSourcesMetadata sourceTitle */
-                sourceTitle?: (string|null);
-
-                /** BotPlanningSearchSourcesMetadata provider */
-                provider?: (E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider|null);
-
-                /** BotPlanningSearchSourcesMetadata sourceUrl */
-                sourceUrl?: (string|null);
-            }
-
-            /** Represents a BotPlanningSearchSourcesMetadata. */
-            class BotPlanningSearchSourcesMetadata implements IBotPlanningSearchSourcesMetadata {
-
-                /**
-                 * Constructs a new BotPlanningSearchSourcesMetadata.
-                 * @param [properties] Properties to set
-                 */
-                constructor(properties?: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata);
-
-                /** BotPlanningSearchSourcesMetadata sourceTitle. */
-                public sourceTitle?: (string|null);
-
-                /** BotPlanningSearchSourcesMetadata provider. */
-                public provider?: (E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider|null);
-
-                /** BotPlanningSearchSourcesMetadata sourceUrl. */
-                public sourceUrl?: (string|null);
-
-                /** BotPlanningSearchSourcesMetadata _sourceTitle. */
-                public _sourceTitle?: "sourceTitle";
-
-                /** BotPlanningSearchSourcesMetadata _provider. */
-                public _provider?: "provider";
-
-                /** BotPlanningSearchSourcesMetadata _sourceUrl. */
-                public _sourceUrl?: "sourceUrl";
-
-                /**
-                 * Creates a new BotPlanningSearchSourcesMetadata instance using the specified properties.
-                 * @param [properties] Properties to set
-                 * @returns BotPlanningSearchSourcesMetadata instance
-                 */
-                public static create(properties?: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata;
-
-                /**
-                 * Encodes the specified BotPlanningSearchSourcesMetadata message. Does not implicitly {@link E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.verify|verify} messages.
-                 * @param message BotPlanningSearchSourcesMetadata message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encode(message: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Encodes the specified BotPlanningSearchSourcesMetadata message, length delimited. Does not implicitly {@link E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.verify|verify} messages.
-                 * @param message BotPlanningSearchSourcesMetadata message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encodeDelimited(message: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Decodes a BotPlanningSearchSourcesMetadata message from the specified reader or buffer.
-                 * @param reader Reader or buffer to decode from
-                 * @param [length] Message length if known beforehand
-                 * @returns BotPlanningSearchSourcesMetadata
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata;
-
-                /**
-                 * Decodes a BotPlanningSearchSourcesMetadata message from the specified reader or buffer, length delimited.
-                 * @param reader Reader or buffer to decode from
-                 * @returns BotPlanningSearchSourcesMetadata
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata;
-
-                /**
-                 * Verifies a BotPlanningSearchSourcesMetadata message.
-                 * @param message Plain object to verify
-                 * @returns `null` if valid, otherwise the reason why it is not
-                 */
-                public static verify(message: { [k: string]: any }): (string|null);
-
-                /**
-                 * Creates a BotPlanningSearchSourcesMetadata message from a plain object. Also converts values to their respective internal types.
-                 * @param object Plain object
-                 * @returns BotPlanningSearchSourcesMetadata
-                 */
-                public static fromObject(object: { [k: string]: any }): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata;
-
-                /**
-                 * Creates a plain object from a BotPlanningSearchSourcesMetadata message. Also converts values to other types if specified.
-                 * @param message BotPlanningSearchSourcesMetadata
-                 * @param [options] Conversion options
-                 * @returns Plain object
-                 */
-                public static toObject(message: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                /**
-                 * Converts this BotPlanningSearchSourcesMetadata to JSON.
-                 * @returns JSON object
-                 */
-                public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for BotPlanningSearchSourcesMetadata
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
-            }
-
-            namespace BotPlanningSearchSourcesMetadata {
-
-                /** BotPlanningSearchSourceProvider enum. */
-                enum BotPlanningSearchSourceProvider {
-                    UNKNOWN = 0,
-                    OTHER = 1,
-                    GOOGLE = 2,
-                    BING = 3
-                }
-            }
-
-            /** Properties of a BotPlanningStepSectionMetadata. */
-            interface IBotPlanningStepSectionMetadata {
-
-                /** BotPlanningStepSectionMetadata sectionTitle */
-                sectionTitle?: (string|null);
-
-                /** BotPlanningStepSectionMetadata sectionBody */
-                sectionBody?: (string|null);
-
-                /** BotPlanningStepSectionMetadata sourcesMetadata */
-                sourcesMetadata?: (E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata[]|null);
-            }
-
-            /** Represents a BotPlanningStepSectionMetadata. */
-            class BotPlanningStepSectionMetadata implements IBotPlanningStepSectionMetadata {
-
-                /**
-                 * Constructs a new BotPlanningStepSectionMetadata.
-                 * @param [properties] Properties to set
-                 */
-                constructor(properties?: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata);
-
-                /** BotPlanningStepSectionMetadata sectionTitle. */
-                public sectionTitle?: (string|null);
-
-                /** BotPlanningStepSectionMetadata sectionBody. */
-                public sectionBody?: (string|null);
-
-                /** BotPlanningStepSectionMetadata sourcesMetadata. */
-                public sourcesMetadata: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata[];
-
-                /** BotPlanningStepSectionMetadata _sectionTitle. */
-                public _sectionTitle?: "sectionTitle";
-
-                /** BotPlanningStepSectionMetadata _sectionBody. */
-                public _sectionBody?: "sectionBody";
-
-                /**
-                 * Creates a new BotPlanningStepSectionMetadata instance using the specified properties.
-                 * @param [properties] Properties to set
-                 * @returns BotPlanningStepSectionMetadata instance
-                 */
-                public static create(properties?: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata;
-
-                /**
-                 * Encodes the specified BotPlanningStepSectionMetadata message. Does not implicitly {@link E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.verify|verify} messages.
-                 * @param message BotPlanningStepSectionMetadata message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encode(message: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Encodes the specified BotPlanningStepSectionMetadata message, length delimited. Does not implicitly {@link E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.verify|verify} messages.
-                 * @param message BotPlanningStepSectionMetadata message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encodeDelimited(message: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Decodes a BotPlanningStepSectionMetadata message from the specified reader or buffer.
-                 * @param reader Reader or buffer to decode from
-                 * @param [length] Message length if known beforehand
-                 * @returns BotPlanningStepSectionMetadata
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata;
-
-                /**
-                 * Decodes a BotPlanningStepSectionMetadata message from the specified reader or buffer, length delimited.
-                 * @param reader Reader or buffer to decode from
-                 * @returns BotPlanningStepSectionMetadata
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata;
-
-                /**
-                 * Verifies a BotPlanningStepSectionMetadata message.
-                 * @param message Plain object to verify
-                 * @returns `null` if valid, otherwise the reason why it is not
-                 */
-                public static verify(message: { [k: string]: any }): (string|null);
-
-                /**
-                 * Creates a BotPlanningStepSectionMetadata message from a plain object. Also converts values to their respective internal types.
-                 * @param object Plain object
-                 * @returns BotPlanningStepSectionMetadata
-                 */
-                public static fromObject(object: { [k: string]: any }): E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata;
-
-                /**
-                 * Creates a plain object from a BotPlanningStepSectionMetadata message. Also converts values to other types if specified.
-                 * @param message BotPlanningStepSectionMetadata
-                 * @param [options] Conversion options
-                 * @returns Plain object
-                 */
-                public static toObject(message: E2E.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                /**
-                 * Converts this BotPlanningStepSectionMetadata to JSON.
-                 * @returns JSON object
-                 */
-                public toJSON(): { [k: string]: any };
-
-                /**
-                 * Gets the default type url for BotPlanningStepSectionMetadata
-                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns The default type url
-                 */
-                public static getTypeUrl(typeUrlPrefix?: string): string;
-            }
-
-            /** BotSearchSourceProvider enum. */
-            enum BotSearchSourceProvider {
-                UNKNOWN_PROVIDER = 0,
-                OTHER = 1,
-                GOOGLE = 2,
-                BING = 3
-            }
-
-            /** PlanningStepStatus enum. */
-            enum PlanningStepStatus {
-                UNKNOWN = 0,
-                PLANNED = 1,
-                EXECUTING = 2,
-                FINISHED = 3
-            }
-        }
-    }
-
-    /** Properties of a BotModelMetadata. */
-    interface IBotModelMetadata {
-
-        /** BotModelMetadata modelType */
-        modelType?: (E2E.BotModelMetadata.ModelType|null);
-
-        /** BotModelMetadata premiumModelStatus */
-        premiumModelStatus?: (E2E.BotModelMetadata.PremiumModelStatus|null);
-    }
-
-    /** Represents a BotModelMetadata. */
-    class BotModelMetadata implements IBotModelMetadata {
-
-        /**
-         * Constructs a new BotModelMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotModelMetadata);
-
-        /** BotModelMetadata modelType. */
-        public modelType?: (E2E.BotModelMetadata.ModelType|null);
-
-        /** BotModelMetadata premiumModelStatus. */
-        public premiumModelStatus?: (E2E.BotModelMetadata.PremiumModelStatus|null);
-
-        /** BotModelMetadata _modelType. */
-        public _modelType?: "modelType";
-
-        /** BotModelMetadata _premiumModelStatus. */
-        public _premiumModelStatus?: "premiumModelStatus";
-
-        /**
-         * Creates a new BotModelMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotModelMetadata instance
-         */
-        public static create(properties?: E2E.IBotModelMetadata): E2E.BotModelMetadata;
-
-        /**
-         * Encodes the specified BotModelMetadata message. Does not implicitly {@link E2E.BotModelMetadata.verify|verify} messages.
-         * @param message BotModelMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotModelMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotModelMetadata message, length delimited. Does not implicitly {@link E2E.BotModelMetadata.verify|verify} messages.
-         * @param message BotModelMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotModelMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotModelMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotModelMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotModelMetadata;
-
-        /**
-         * Decodes a BotModelMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotModelMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotModelMetadata;
-
-        /**
-         * Verifies a BotModelMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotModelMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotModelMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotModelMetadata;
-
-        /**
-         * Creates a plain object from a BotModelMetadata message. Also converts values to other types if specified.
-         * @param message BotModelMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotModelMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotModelMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotModelMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotModelMetadata {
-
-        /** ModelType enum. */
-        enum ModelType {
-            UNKNOWN_TYPE = 0,
-            LLAMA_PROD = 1,
-            LLAMA_PROD_PREMIUM = 2
-        }
-
-        /** PremiumModelStatus enum. */
-        enum PremiumModelStatus {
-            UNKNOWN_STATUS = 0,
-            AVAILABLE = 1,
-            QUOTA_EXCEED_LIMIT = 2
-        }
-    }
-
-    /** Properties of a BotReminderMetadata. */
-    interface IBotReminderMetadata {
-
-        /** BotReminderMetadata requestMessageKey */
-        requestMessageKey?: (Protocol.IMessageKey|null);
-
-        /** BotReminderMetadata action */
-        action?: (E2E.BotReminderMetadata.ReminderAction|null);
-
-        /** BotReminderMetadata name */
-        name?: (string|null);
-
-        /** BotReminderMetadata nextTriggerTimestamp */
-        nextTriggerTimestamp?: (number|Long|null);
-
-        /** BotReminderMetadata frequency */
-        frequency?: (E2E.BotReminderMetadata.ReminderFrequency|null);
-    }
-
-    /** Represents a BotReminderMetadata. */
-    class BotReminderMetadata implements IBotReminderMetadata {
-
-        /**
-         * Constructs a new BotReminderMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotReminderMetadata);
-
-        /** BotReminderMetadata requestMessageKey. */
-        public requestMessageKey?: (Protocol.IMessageKey|null);
-
-        /** BotReminderMetadata action. */
-        public action?: (E2E.BotReminderMetadata.ReminderAction|null);
-
-        /** BotReminderMetadata name. */
-        public name?: (string|null);
-
-        /** BotReminderMetadata nextTriggerTimestamp. */
-        public nextTriggerTimestamp?: (number|Long|null);
-
-        /** BotReminderMetadata frequency. */
-        public frequency?: (E2E.BotReminderMetadata.ReminderFrequency|null);
-
-        /** BotReminderMetadata _requestMessageKey. */
-        public _requestMessageKey?: "requestMessageKey";
-
-        /** BotReminderMetadata _action. */
-        public _action?: "action";
-
-        /** BotReminderMetadata _name. */
-        public _name?: "name";
-
-        /** BotReminderMetadata _nextTriggerTimestamp. */
-        public _nextTriggerTimestamp?: "nextTriggerTimestamp";
-
-        /** BotReminderMetadata _frequency. */
-        public _frequency?: "frequency";
-
-        /**
-         * Creates a new BotReminderMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotReminderMetadata instance
-         */
-        public static create(properties?: E2E.IBotReminderMetadata): E2E.BotReminderMetadata;
-
-        /**
-         * Encodes the specified BotReminderMetadata message. Does not implicitly {@link E2E.BotReminderMetadata.verify|verify} messages.
-         * @param message BotReminderMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotReminderMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotReminderMetadata message, length delimited. Does not implicitly {@link E2E.BotReminderMetadata.verify|verify} messages.
-         * @param message BotReminderMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotReminderMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotReminderMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotReminderMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotReminderMetadata;
-
-        /**
-         * Decodes a BotReminderMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotReminderMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotReminderMetadata;
-
-        /**
-         * Verifies a BotReminderMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotReminderMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotReminderMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotReminderMetadata;
-
-        /**
-         * Creates a plain object from a BotReminderMetadata message. Also converts values to other types if specified.
-         * @param message BotReminderMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotReminderMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotReminderMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotReminderMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotReminderMetadata {
-
-        /** ReminderAction enum. */
-        enum ReminderAction {
-            NOTIFY = 1,
-            CREATE = 2,
-            DELETE = 3,
-            UPDATE = 4
-        }
-
-        /** ReminderFrequency enum. */
-        enum ReminderFrequency {
-            ONCE = 1,
-            DAILY = 2,
-            WEEKLY = 3,
-            BIWEEKLY = 4,
-            MONTHLY = 5
-        }
-    }
-
-    /** Properties of a BotMemuMetadata. */
-    interface IBotMemuMetadata {
-
-        /** BotMemuMetadata faceImages */
-        faceImages?: (E2E.IBotMediaMetadata[]|null);
-    }
-
-    /** Represents a BotMemuMetadata. */
-    class BotMemuMetadata implements IBotMemuMetadata {
-
-        /**
-         * Constructs a new BotMemuMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotMemuMetadata);
-
-        /** BotMemuMetadata faceImages. */
-        public faceImages: E2E.IBotMediaMetadata[];
-
-        /**
-         * Creates a new BotMemuMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotMemuMetadata instance
-         */
-        public static create(properties?: E2E.IBotMemuMetadata): E2E.BotMemuMetadata;
-
-        /**
-         * Encodes the specified BotMemuMetadata message. Does not implicitly {@link E2E.BotMemuMetadata.verify|verify} messages.
-         * @param message BotMemuMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotMemuMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotMemuMetadata message, length delimited. Does not implicitly {@link E2E.BotMemuMetadata.verify|verify} messages.
-         * @param message BotMemuMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotMemuMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotMemuMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotMemuMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotMemuMetadata;
-
-        /**
-         * Decodes a BotMemuMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotMemuMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotMemuMetadata;
-
-        /**
-         * Verifies a BotMemuMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotMemuMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotMemuMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotMemuMetadata;
-
-        /**
-         * Creates a plain object from a BotMemuMetadata message. Also converts values to other types if specified.
-         * @param message BotMemuMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotMemuMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotMemuMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMemuMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    /** Properties of a BotMediaMetadata. */
-    interface IBotMediaMetadata {
-
-        /** BotMediaMetadata fileSha256 */
-        fileSha256?: (string|null);
-
-        /** BotMediaMetadata mediaKey */
-        mediaKey?: (string|null);
-
-        /** BotMediaMetadata fileEncSha256 */
-        fileEncSha256?: (string|null);
-
-        /** BotMediaMetadata directPath */
-        directPath?: (string|null);
-
-        /** BotMediaMetadata mediaKeyTimestamp */
-        mediaKeyTimestamp?: (number|Long|null);
-
-        /** BotMediaMetadata mimetype */
-        mimetype?: (string|null);
-
-        /** BotMediaMetadata orientationType */
-        orientationType?: (E2E.BotMediaMetadata.OrientationType|null);
-    }
-
-    /** Represents a BotMediaMetadata. */
-    class BotMediaMetadata implements IBotMediaMetadata {
-
-        /**
-         * Constructs a new BotMediaMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotMediaMetadata);
-
-        /** BotMediaMetadata fileSha256. */
-        public fileSha256?: (string|null);
-
-        /** BotMediaMetadata mediaKey. */
-        public mediaKey?: (string|null);
-
-        /** BotMediaMetadata fileEncSha256. */
-        public fileEncSha256?: (string|null);
-
-        /** BotMediaMetadata directPath. */
-        public directPath?: (string|null);
-
-        /** BotMediaMetadata mediaKeyTimestamp. */
-        public mediaKeyTimestamp?: (number|Long|null);
-
-        /** BotMediaMetadata mimetype. */
-        public mimetype?: (string|null);
-
-        /** BotMediaMetadata orientationType. */
-        public orientationType?: (E2E.BotMediaMetadata.OrientationType|null);
-
-        /** BotMediaMetadata _fileSha256. */
-        public _fileSha256?: "fileSha256";
-
-        /** BotMediaMetadata _mediaKey. */
-        public _mediaKey?: "mediaKey";
-
-        /** BotMediaMetadata _fileEncSha256. */
-        public _fileEncSha256?: "fileEncSha256";
-
-        /** BotMediaMetadata _directPath. */
-        public _directPath?: "directPath";
-
-        /** BotMediaMetadata _mediaKeyTimestamp. */
-        public _mediaKeyTimestamp?: "mediaKeyTimestamp";
-
-        /** BotMediaMetadata _mimetype. */
-        public _mimetype?: "mimetype";
-
-        /** BotMediaMetadata _orientationType. */
-        public _orientationType?: "orientationType";
-
-        /**
-         * Creates a new BotMediaMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotMediaMetadata instance
-         */
-        public static create(properties?: E2E.IBotMediaMetadata): E2E.BotMediaMetadata;
-
-        /**
-         * Encodes the specified BotMediaMetadata message. Does not implicitly {@link E2E.BotMediaMetadata.verify|verify} messages.
-         * @param message BotMediaMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotMediaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotMediaMetadata message, length delimited. Does not implicitly {@link E2E.BotMediaMetadata.verify|verify} messages.
-         * @param message BotMediaMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotMediaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotMediaMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotMediaMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotMediaMetadata;
-
-        /**
-         * Decodes a BotMediaMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotMediaMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotMediaMetadata;
-
-        /**
-         * Verifies a BotMediaMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotMediaMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotMediaMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotMediaMetadata;
-
-        /**
-         * Creates a plain object from a BotMediaMetadata message. Also converts values to other types if specified.
-         * @param message BotMediaMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotMediaMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotMediaMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMediaMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotMediaMetadata {
-
-        /** OrientationType enum. */
-        enum OrientationType {
-            CENTER = 1,
-            LEFT = 2,
-            RIGHT = 3
-        }
-    }
-
-    /** Properties of a BotSessionMetadata. */
-    interface IBotSessionMetadata {
-
-        /** BotSessionMetadata sessionId */
-        sessionId?: (string|null);
-
-        /** BotSessionMetadata sessionSource */
-        sessionSource?: (E2E.BotSessionSource|null);
-    }
-
-    /** Represents a BotSessionMetadata. */
-    class BotSessionMetadata implements IBotSessionMetadata {
-
-        /**
-         * Constructs a new BotSessionMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotSessionMetadata);
-
-        /** BotSessionMetadata sessionId. */
-        public sessionId?: (string|null);
-
-        /** BotSessionMetadata sessionSource. */
-        public sessionSource?: (E2E.BotSessionSource|null);
-
-        /** BotSessionMetadata _sessionId. */
-        public _sessionId?: "sessionId";
-
-        /** BotSessionMetadata _sessionSource. */
-        public _sessionSource?: "sessionSource";
-
-        /**
-         * Creates a new BotSessionMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotSessionMetadata instance
-         */
-        public static create(properties?: E2E.IBotSessionMetadata): E2E.BotSessionMetadata;
-
-        /**
-         * Encodes the specified BotSessionMetadata message. Does not implicitly {@link E2E.BotSessionMetadata.verify|verify} messages.
-         * @param message BotSessionMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotSessionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotSessionMetadata message, length delimited. Does not implicitly {@link E2E.BotSessionMetadata.verify|verify} messages.
-         * @param message BotSessionMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotSessionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotSessionMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotSessionMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotSessionMetadata;
-
-        /**
-         * Decodes a BotSessionMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotSessionMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotSessionMetadata;
-
-        /**
-         * Verifies a BotSessionMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotSessionMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotSessionMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotSessionMetadata;
-
-        /**
-         * Creates a plain object from a BotSessionMetadata message. Also converts values to other types if specified.
-         * @param message BotSessionMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotSessionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotSessionMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSessionMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    /** Properties of a BotMetricsMetadata. */
-    interface IBotMetricsMetadata {
-
-        /** BotMetricsMetadata destinationId */
-        destinationId?: (string|null);
-
-        /** BotMetricsMetadata destinationEntryPoint */
-        destinationEntryPoint?: (E2E.BotMetricsEntryPoint|null);
-
-        /** BotMetricsMetadata threadOrigin */
-        threadOrigin?: (E2E.BotMetricsThreadEntryPoint|null);
-    }
-
-    /** Represents a BotMetricsMetadata. */
-    class BotMetricsMetadata implements IBotMetricsMetadata {
-
-        /**
-         * Constructs a new BotMetricsMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotMetricsMetadata);
-
-        /** BotMetricsMetadata destinationId. */
-        public destinationId?: (string|null);
-
-        /** BotMetricsMetadata destinationEntryPoint. */
-        public destinationEntryPoint?: (E2E.BotMetricsEntryPoint|null);
-
-        /** BotMetricsMetadata threadOrigin. */
-        public threadOrigin?: (E2E.BotMetricsThreadEntryPoint|null);
-
-        /** BotMetricsMetadata _destinationId. */
-        public _destinationId?: "destinationId";
-
-        /** BotMetricsMetadata _destinationEntryPoint. */
-        public _destinationEntryPoint?: "destinationEntryPoint";
-
-        /** BotMetricsMetadata _threadOrigin. */
-        public _threadOrigin?: "threadOrigin";
-
-        /**
-         * Creates a new BotMetricsMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotMetricsMetadata instance
-         */
-        public static create(properties?: E2E.IBotMetricsMetadata): E2E.BotMetricsMetadata;
-
-        /**
-         * Encodes the specified BotMetricsMetadata message. Does not implicitly {@link E2E.BotMetricsMetadata.verify|verify} messages.
-         * @param message BotMetricsMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotMetricsMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotMetricsMetadata message, length delimited. Does not implicitly {@link E2E.BotMetricsMetadata.verify|verify} messages.
-         * @param message BotMetricsMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotMetricsMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotMetricsMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotMetricsMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotMetricsMetadata;
-
-        /**
-         * Decodes a BotMetricsMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotMetricsMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotMetricsMetadata;
-
-        /**
-         * Verifies a BotMetricsMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotMetricsMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotMetricsMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotMetricsMetadata;
-
-        /**
-         * Creates a plain object from a BotMetricsMetadata message. Also converts values to other types if specified.
-         * @param message BotMetricsMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotMetricsMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotMetricsMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMetricsMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    /** Properties of a BotRenderingMetadata. */
-    interface IBotRenderingMetadata {
-
-        /** BotRenderingMetadata keywords */
-        keywords?: (E2E.BotRenderingMetadata.IKeyword[]|null);
-    }
-
-    /** Represents a BotRenderingMetadata. */
-    class BotRenderingMetadata implements IBotRenderingMetadata {
-
-        /**
-         * Constructs a new BotRenderingMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotRenderingMetadata);
-
-        /** BotRenderingMetadata keywords. */
-        public keywords: E2E.BotRenderingMetadata.IKeyword[];
-
-        /**
-         * Creates a new BotRenderingMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotRenderingMetadata instance
-         */
-        public static create(properties?: E2E.IBotRenderingMetadata): E2E.BotRenderingMetadata;
-
-        /**
-         * Encodes the specified BotRenderingMetadata message. Does not implicitly {@link E2E.BotRenderingMetadata.verify|verify} messages.
-         * @param message BotRenderingMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotRenderingMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotRenderingMetadata message, length delimited. Does not implicitly {@link E2E.BotRenderingMetadata.verify|verify} messages.
-         * @param message BotRenderingMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotRenderingMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotRenderingMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotRenderingMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotRenderingMetadata;
-
-        /**
-         * Decodes a BotRenderingMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotRenderingMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotRenderingMetadata;
-
-        /**
-         * Verifies a BotRenderingMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotRenderingMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotRenderingMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotRenderingMetadata;
-
-        /**
-         * Creates a plain object from a BotRenderingMetadata message. Also converts values to other types if specified.
-         * @param message BotRenderingMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotRenderingMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotRenderingMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotRenderingMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotRenderingMetadata {
-
-        /** Properties of a Keyword. */
-        interface IKeyword {
-
-            /** Keyword value */
-            value?: (string|null);
-
-            /** Keyword associatedPrompts */
-            associatedPrompts?: (string[]|null);
-        }
-
-        /** Represents a Keyword. */
-        class Keyword implements IKeyword {
-
-            /**
-             * Constructs a new Keyword.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: E2E.BotRenderingMetadata.IKeyword);
-
-            /** Keyword value. */
-            public value?: (string|null);
-
-            /** Keyword associatedPrompts. */
-            public associatedPrompts: string[];
-
-            /** Keyword _value. */
-            public _value?: "value";
-
-            /**
-             * Creates a new Keyword instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Keyword instance
-             */
-            public static create(properties?: E2E.BotRenderingMetadata.IKeyword): E2E.BotRenderingMetadata.Keyword;
-
-            /**
-             * Encodes the specified Keyword message. Does not implicitly {@link E2E.BotRenderingMetadata.Keyword.verify|verify} messages.
-             * @param message Keyword message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: E2E.BotRenderingMetadata.IKeyword, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified Keyword message, length delimited. Does not implicitly {@link E2E.BotRenderingMetadata.Keyword.verify|verify} messages.
-             * @param message Keyword message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: E2E.BotRenderingMetadata.IKeyword, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a Keyword message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Keyword
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotRenderingMetadata.Keyword;
-
-            /**
-             * Decodes a Keyword message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns Keyword
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotRenderingMetadata.Keyword;
-
-            /**
-             * Verifies a Keyword message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a Keyword message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns Keyword
-             */
-            public static fromObject(object: { [k: string]: any }): E2E.BotRenderingMetadata.Keyword;
-
-            /**
-             * Creates a plain object from a Keyword message. Also converts values to other types if specified.
-             * @param message Keyword
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: E2E.BotRenderingMetadata.Keyword, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this Keyword to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-
-            /**
-             * Gets the default type url for Keyword
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
-        }
-    }
-
-    /** Properties of a BotPromotionMessageMetadata. */
-    interface IBotPromotionMessageMetadata {
-
-        /** BotPromotionMessageMetadata promotionType */
-        promotionType?: (E2E.BotPromotionMessageMetadata.BotPromotionType|null);
-
-        /** BotPromotionMessageMetadata buttonTitle */
-        buttonTitle?: (string|null);
-    }
-
-    /** Represents a BotPromotionMessageMetadata. */
-    class BotPromotionMessageMetadata implements IBotPromotionMessageMetadata {
-
-        /**
-         * Constructs a new BotPromotionMessageMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotPromotionMessageMetadata);
-
-        /** BotPromotionMessageMetadata promotionType. */
-        public promotionType?: (E2E.BotPromotionMessageMetadata.BotPromotionType|null);
-
-        /** BotPromotionMessageMetadata buttonTitle. */
-        public buttonTitle?: (string|null);
-
-        /** BotPromotionMessageMetadata _promotionType. */
-        public _promotionType?: "promotionType";
-
-        /** BotPromotionMessageMetadata _buttonTitle. */
-        public _buttonTitle?: "buttonTitle";
-
-        /**
-         * Creates a new BotPromotionMessageMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotPromotionMessageMetadata instance
-         */
-        public static create(properties?: E2E.IBotPromotionMessageMetadata): E2E.BotPromotionMessageMetadata;
-
-        /**
-         * Encodes the specified BotPromotionMessageMetadata message. Does not implicitly {@link E2E.BotPromotionMessageMetadata.verify|verify} messages.
-         * @param message BotPromotionMessageMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotPromotionMessageMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotPromotionMessageMetadata message, length delimited. Does not implicitly {@link E2E.BotPromotionMessageMetadata.verify|verify} messages.
-         * @param message BotPromotionMessageMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotPromotionMessageMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotPromotionMessageMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotPromotionMessageMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotPromotionMessageMetadata;
-
-        /**
-         * Decodes a BotPromotionMessageMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotPromotionMessageMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotPromotionMessageMetadata;
-
-        /**
-         * Verifies a BotPromotionMessageMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotPromotionMessageMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotPromotionMessageMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotPromotionMessageMetadata;
-
-        /**
-         * Creates a plain object from a BotPromotionMessageMetadata message. Also converts values to other types if specified.
-         * @param message BotPromotionMessageMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotPromotionMessageMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotPromotionMessageMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotPromotionMessageMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotPromotionMessageMetadata {
-
-        /** BotPromotionType enum. */
-        enum BotPromotionType {
-            UNKNOWN_TYPE = 0,
-            C50 = 1
+            STATUS_ADD_YOURS_AI_IMAGINE = 15,
+            STATUS_QUESTION = 16
         }
     }
 
@@ -7324,7 +3954,7 @@ export namespace E2E {
         constructor(properties?: E2E.IAIRichResponseMessage);
 
         /** AIRichResponseMessage messageType. */
-        public messageType?: (E2E.AIRichResponseMessage.AIRichResponseMessageType|null);
+        public messageType: E2E.AIRichResponseMessage.AIRichResponseMessageType;
 
         /** AIRichResponseMessage submessages. */
         public submessages: E2E.AIRichResponseMessage.IAIRichResponseSubMessage[];
@@ -7334,15 +3964,6 @@ export namespace E2E {
 
         /** AIRichResponseMessage contextInfo. */
         public contextInfo?: (E2E.IContextInfo|null);
-
-        /** AIRichResponseMessage _messageType. */
-        public _messageType?: "messageType";
-
-        /** AIRichResponseMessage _unifiedResponse. */
-        public _unifiedResponse?: "unifiedResponse";
-
-        /** AIRichResponseMessage _contextInfo. */
-        public _contextInfo?: "contextInfo";
 
         /**
          * Creates a new AIRichResponseMessage instance using the specified properties.
@@ -7444,13 +4065,10 @@ export namespace E2E {
             constructor(properties?: E2E.AIRichResponseMessage.IAIRichResponseCodeMetadata);
 
             /** AIRichResponseCodeMetadata codeLanguage. */
-            public codeLanguage?: (string|null);
+            public codeLanguage: string;
 
             /** AIRichResponseCodeMetadata codeBlocks. */
             public codeBlocks: E2E.AIRichResponseMessage.AIRichResponseCodeMetadata.IAIRichResponseCodeBlock[];
-
-            /** AIRichResponseCodeMetadata _codeLanguage. */
-            public _codeLanguage?: "codeLanguage";
 
             /**
              * Creates a new AIRichResponseCodeMetadata instance using the specified properties.
@@ -7552,16 +4170,10 @@ export namespace E2E {
                 constructor(properties?: E2E.AIRichResponseMessage.AIRichResponseCodeMetadata.IAIRichResponseCodeBlock);
 
                 /** AIRichResponseCodeBlock highlightType. */
-                public highlightType?: (E2E.AIRichResponseMessage.AIRichResponseCodeMetadata.AIRichResponseCodeHighlightType|null);
+                public highlightType: E2E.AIRichResponseMessage.AIRichResponseCodeMetadata.AIRichResponseCodeHighlightType;
 
                 /** AIRichResponseCodeBlock codeContent. */
-                public codeContent?: (string|null);
-
-                /** AIRichResponseCodeBlock _highlightType. */
-                public _highlightType?: "highlightType";
-
-                /** AIRichResponseCodeBlock _codeContent. */
-                public _codeContent?: "codeContent";
+                public codeContent: string;
 
                 /**
                  * Creates a new AIRichResponseCodeBlock instance using the specified properties.
@@ -7675,10 +4287,7 @@ export namespace E2E {
             public itemsMetadata: E2E.AIRichResponseMessage.AIRichResponseContentItemsMetadata.IAIRichResponseContentItemMetadata[];
 
             /** AIRichResponseContentItemsMetadata contentType. */
-            public contentType?: (E2E.AIRichResponseMessage.AIRichResponseContentItemsMetadata.ContentType|null);
-
-            /** AIRichResponseContentItemsMetadata _contentType. */
-            public _contentType?: "contentType";
+            public contentType: E2E.AIRichResponseMessage.AIRichResponseContentItemsMetadata.ContentType;
 
             /**
              * Creates a new AIRichResponseContentItemsMetadata instance using the specified properties.
@@ -7886,28 +4495,16 @@ export namespace E2E {
                 constructor(properties?: E2E.AIRichResponseMessage.AIRichResponseContentItemsMetadata.IAIRichResponseReelItem);
 
                 /** AIRichResponseReelItem title. */
-                public title?: (string|null);
+                public title: string;
 
                 /** AIRichResponseReelItem profileIconUrl. */
-                public profileIconUrl?: (string|null);
+                public profileIconUrl: string;
 
                 /** AIRichResponseReelItem thumbnailUrl. */
-                public thumbnailUrl?: (string|null);
+                public thumbnailUrl: string;
 
                 /** AIRichResponseReelItem videoUrl. */
-                public videoUrl?: (string|null);
-
-                /** AIRichResponseReelItem _title. */
-                public _title?: "title";
-
-                /** AIRichResponseReelItem _profileIconUrl. */
-                public _profileIconUrl?: "profileIconUrl";
-
-                /** AIRichResponseReelItem _thumbnailUrl. */
-                public _thumbnailUrl?: "thumbnailUrl";
-
-                /** AIRichResponseReelItem _videoUrl. */
-                public _videoUrl?: "videoUrl";
+                public videoUrl: string;
 
                 /**
                  * Creates a new AIRichResponseReelItem instance using the specified properties.
@@ -8020,28 +4617,16 @@ export namespace E2E {
             constructor(properties?: E2E.AIRichResponseMessage.IAIRichResponseDynamicMetadata);
 
             /** AIRichResponseDynamicMetadata type. */
-            public type?: (E2E.AIRichResponseMessage.AIRichResponseDynamicMetadata.AIRichResponseDynamicMetadataType|null);
+            public type: E2E.AIRichResponseMessage.AIRichResponseDynamicMetadata.AIRichResponseDynamicMetadataType;
 
             /** AIRichResponseDynamicMetadata version. */
-            public version?: (number|Long|null);
+            public version: (number|Long);
 
             /** AIRichResponseDynamicMetadata url. */
-            public url?: (string|null);
+            public url: string;
 
             /** AIRichResponseDynamicMetadata loopCount. */
-            public loopCount?: (number|null);
-
-            /** AIRichResponseDynamicMetadata _type. */
-            public _type?: "type";
-
-            /** AIRichResponseDynamicMetadata _version. */
-            public _version?: "version";
-
-            /** AIRichResponseDynamicMetadata _url. */
-            public _url?: "url";
-
-            /** AIRichResponseDynamicMetadata _loopCount. */
-            public _loopCount?: "loopCount";
+            public loopCount: number;
 
             /**
              * Creates a new AIRichResponseDynamicMetadata instance using the specified properties.
@@ -8156,9 +4741,6 @@ export namespace E2E {
             /** AIRichResponseGridImageMetadata imageUrls. */
             public imageUrls: E2E.AIRichResponseMessage.IAIRichResponseImageURL[];
 
-            /** AIRichResponseGridImageMetadata _gridImageUrl. */
-            public _gridImageUrl?: "gridImageUrl";
-
             /**
              * Creates a new AIRichResponseGridImageMetadata instance using the specified properties.
              * @param [properties] Properties to set
@@ -8260,22 +4842,13 @@ export namespace E2E {
             constructor(properties?: E2E.AIRichResponseMessage.IAIRichResponseImageURL);
 
             /** AIRichResponseImageURL imagePreviewUrl. */
-            public imagePreviewUrl?: (string|null);
+            public imagePreviewUrl: string;
 
             /** AIRichResponseImageURL imageHighResUrl. */
-            public imageHighResUrl?: (string|null);
+            public imageHighResUrl: string;
 
             /** AIRichResponseImageURL sourceUrl. */
-            public sourceUrl?: (string|null);
-
-            /** AIRichResponseImageURL _imagePreviewUrl. */
-            public _imagePreviewUrl?: "imagePreviewUrl";
-
-            /** AIRichResponseImageURL _imageHighResUrl. */
-            public _imageHighResUrl?: "imageHighResUrl";
-
-            /** AIRichResponseImageURL _sourceUrl. */
-            public _sourceUrl?: "sourceUrl";
+            public sourceUrl: string;
 
             /**
              * Creates a new AIRichResponseImageURL instance using the specified properties.
@@ -8384,25 +4957,13 @@ export namespace E2E {
             public imageUrl?: (E2E.AIRichResponseMessage.IAIRichResponseImageURL|null);
 
             /** AIRichResponseInlineImageMetadata imageText. */
-            public imageText?: (string|null);
+            public imageText: string;
 
             /** AIRichResponseInlineImageMetadata alignment. */
-            public alignment?: (E2E.AIRichResponseMessage.AIRichResponseInlineImageMetadata.AIRichResponseImageAlignment|null);
+            public alignment: E2E.AIRichResponseMessage.AIRichResponseInlineImageMetadata.AIRichResponseImageAlignment;
 
             /** AIRichResponseInlineImageMetadata tapLinkUrl. */
-            public tapLinkUrl?: (string|null);
-
-            /** AIRichResponseInlineImageMetadata _imageUrl. */
-            public _imageUrl?: "imageUrl";
-
-            /** AIRichResponseInlineImageMetadata _imageText. */
-            public _imageText?: "imageText";
-
-            /** AIRichResponseInlineImageMetadata _alignment. */
-            public _alignment?: "alignment";
-
-            /** AIRichResponseInlineImageMetadata _tapLinkUrl. */
-            public _tapLinkUrl?: "tapLinkUrl";
+            public tapLinkUrl: string;
 
             /**
              * Creates a new AIRichResponseInlineImageMetadata instance using the specified properties.
@@ -8512,13 +5073,10 @@ export namespace E2E {
             constructor(properties?: E2E.AIRichResponseMessage.IAIRichResponseLatexMetadata);
 
             /** AIRichResponseLatexMetadata text. */
-            public text?: (string|null);
+            public text: string;
 
             /** AIRichResponseLatexMetadata expressions. */
             public expressions: E2E.AIRichResponseMessage.AIRichResponseLatexMetadata.IAIRichResponseLatexExpression[];
-
-            /** AIRichResponseLatexMetadata _text. */
-            public _text?: "text";
 
             /**
              * Creates a new AIRichResponseLatexMetadata instance using the specified properties.
@@ -8641,58 +5199,31 @@ export namespace E2E {
                 constructor(properties?: E2E.AIRichResponseMessage.AIRichResponseLatexMetadata.IAIRichResponseLatexExpression);
 
                 /** AIRichResponseLatexExpression latexExpression. */
-                public latexExpression?: (string|null);
+                public latexExpression: string;
 
                 /** AIRichResponseLatexExpression url. */
-                public url?: (string|null);
+                public url: string;
 
                 /** AIRichResponseLatexExpression width. */
-                public width?: (number|null);
+                public width: number;
 
                 /** AIRichResponseLatexExpression height. */
-                public height?: (number|null);
+                public height: number;
 
                 /** AIRichResponseLatexExpression fontHeight. */
-                public fontHeight?: (number|null);
+                public fontHeight: number;
 
                 /** AIRichResponseLatexExpression imageTopPadding. */
-                public imageTopPadding?: (number|null);
+                public imageTopPadding: number;
 
                 /** AIRichResponseLatexExpression imageLeadingPadding. */
-                public imageLeadingPadding?: (number|null);
+                public imageLeadingPadding: number;
 
                 /** AIRichResponseLatexExpression imageBottomPadding. */
-                public imageBottomPadding?: (number|null);
+                public imageBottomPadding: number;
 
                 /** AIRichResponseLatexExpression imageTrailingPadding. */
-                public imageTrailingPadding?: (number|null);
-
-                /** AIRichResponseLatexExpression _latexExpression. */
-                public _latexExpression?: "latexExpression";
-
-                /** AIRichResponseLatexExpression _url. */
-                public _url?: "url";
-
-                /** AIRichResponseLatexExpression _width. */
-                public _width?: "width";
-
-                /** AIRichResponseLatexExpression _height. */
-                public _height?: "height";
-
-                /** AIRichResponseLatexExpression _fontHeight. */
-                public _fontHeight?: "fontHeight";
-
-                /** AIRichResponseLatexExpression _imageTopPadding. */
-                public _imageTopPadding?: "imageTopPadding";
-
-                /** AIRichResponseLatexExpression _imageLeadingPadding. */
-                public _imageLeadingPadding?: "imageLeadingPadding";
-
-                /** AIRichResponseLatexExpression _imageBottomPadding. */
-                public _imageBottomPadding?: "imageBottomPadding";
-
-                /** AIRichResponseLatexExpression _imageTrailingPadding. */
-                public _imageTrailingPadding?: "imageTrailingPadding";
+                public imageTrailingPadding: number;
 
                 /**
                  * Creates a new AIRichResponseLatexExpression instance using the specified properties.
@@ -8805,37 +5336,22 @@ export namespace E2E {
             constructor(properties?: E2E.AIRichResponseMessage.IAIRichResponseMapMetadata);
 
             /** AIRichResponseMapMetadata centerLatitude. */
-            public centerLatitude?: (number|null);
+            public centerLatitude: number;
 
             /** AIRichResponseMapMetadata centerLongitude. */
-            public centerLongitude?: (number|null);
+            public centerLongitude: number;
 
             /** AIRichResponseMapMetadata latitudeDelta. */
-            public latitudeDelta?: (number|null);
+            public latitudeDelta: number;
 
             /** AIRichResponseMapMetadata longitudeDelta. */
-            public longitudeDelta?: (number|null);
+            public longitudeDelta: number;
 
             /** AIRichResponseMapMetadata annotations. */
             public annotations: E2E.AIRichResponseMessage.AIRichResponseMapMetadata.IAIRichResponseMapAnnotation[];
 
             /** AIRichResponseMapMetadata showInfoList. */
-            public showInfoList?: (boolean|null);
-
-            /** AIRichResponseMapMetadata _centerLatitude. */
-            public _centerLatitude?: "centerLatitude";
-
-            /** AIRichResponseMapMetadata _centerLongitude. */
-            public _centerLongitude?: "centerLongitude";
-
-            /** AIRichResponseMapMetadata _latitudeDelta. */
-            public _latitudeDelta?: "latitudeDelta";
-
-            /** AIRichResponseMapMetadata _longitudeDelta. */
-            public _longitudeDelta?: "longitudeDelta";
-
-            /** AIRichResponseMapMetadata _showInfoList. */
-            public _showInfoList?: "showInfoList";
+            public showInfoList: boolean;
 
             /**
              * Creates a new AIRichResponseMapMetadata instance using the specified properties.
@@ -8946,34 +5462,19 @@ export namespace E2E {
                 constructor(properties?: E2E.AIRichResponseMessage.AIRichResponseMapMetadata.IAIRichResponseMapAnnotation);
 
                 /** AIRichResponseMapAnnotation annotationNumber. */
-                public annotationNumber?: (number|null);
+                public annotationNumber: number;
 
                 /** AIRichResponseMapAnnotation latitude. */
-                public latitude?: (number|null);
+                public latitude: number;
 
                 /** AIRichResponseMapAnnotation longitude. */
-                public longitude?: (number|null);
+                public longitude: number;
 
                 /** AIRichResponseMapAnnotation title. */
-                public title?: (string|null);
+                public title: string;
 
                 /** AIRichResponseMapAnnotation body. */
-                public body?: (string|null);
-
-                /** AIRichResponseMapAnnotation _annotationNumber. */
-                public _annotationNumber?: "annotationNumber";
-
-                /** AIRichResponseMapAnnotation _latitude. */
-                public _latitude?: "latitude";
-
-                /** AIRichResponseMapAnnotation _longitude. */
-                public _longitude?: "longitude";
-
-                /** AIRichResponseMapAnnotation _title. */
-                public _title?: "title";
-
-                /** AIRichResponseMapAnnotation _body. */
-                public _body?: "body";
+                public body: string;
 
                 /**
                  * Creates a new AIRichResponseMapAnnotation instance using the specified properties.
@@ -9104,13 +5605,13 @@ export namespace E2E {
             constructor(properties?: E2E.AIRichResponseMessage.IAIRichResponseSubMessage);
 
             /** AIRichResponseSubMessage messageType. */
-            public messageType?: (E2E.AIRichResponseMessage.AIRichResponseSubMessageType|null);
+            public messageType: E2E.AIRichResponseMessage.AIRichResponseSubMessageType;
 
             /** AIRichResponseSubMessage gridImageMetadata. */
             public gridImageMetadata?: (E2E.AIRichResponseMessage.IAIRichResponseGridImageMetadata|null);
 
             /** AIRichResponseSubMessage messageText. */
-            public messageText?: (string|null);
+            public messageText: string;
 
             /** AIRichResponseSubMessage imageMetadata. */
             public imageMetadata?: (E2E.AIRichResponseMessage.IAIRichResponseInlineImageMetadata|null);
@@ -9132,36 +5633,6 @@ export namespace E2E {
 
             /** AIRichResponseSubMessage contentItemsMetadata. */
             public contentItemsMetadata?: (E2E.AIRichResponseMessage.IAIRichResponseContentItemsMetadata|null);
-
-            /** AIRichResponseSubMessage _messageType. */
-            public _messageType?: "messageType";
-
-            /** AIRichResponseSubMessage _gridImageMetadata. */
-            public _gridImageMetadata?: "gridImageMetadata";
-
-            /** AIRichResponseSubMessage _messageText. */
-            public _messageText?: "messageText";
-
-            /** AIRichResponseSubMessage _imageMetadata. */
-            public _imageMetadata?: "imageMetadata";
-
-            /** AIRichResponseSubMessage _codeMetadata. */
-            public _codeMetadata?: "codeMetadata";
-
-            /** AIRichResponseSubMessage _tableMetadata. */
-            public _tableMetadata?: "tableMetadata";
-
-            /** AIRichResponseSubMessage _dynamicMetadata. */
-            public _dynamicMetadata?: "dynamicMetadata";
-
-            /** AIRichResponseSubMessage _latexMetadata. */
-            public _latexMetadata?: "latexMetadata";
-
-            /** AIRichResponseSubMessage _mapMetadata. */
-            public _mapMetadata?: "mapMetadata";
-
-            /** AIRichResponseSubMessage _contentItemsMetadata. */
-            public _contentItemsMetadata?: "contentItemsMetadata";
 
             /**
              * Creates a new AIRichResponseSubMessage instance using the specified properties.
@@ -9278,10 +5749,7 @@ export namespace E2E {
             public rows: E2E.AIRichResponseMessage.AIRichResponseTableMetadata.IAIRichResponseTableRow[];
 
             /** AIRichResponseTableMetadata title. */
-            public title?: (string|null);
-
-            /** AIRichResponseTableMetadata _title. */
-            public _title?: "title";
+            public title: string;
 
             /**
              * Creates a new AIRichResponseTableMetadata instance using the specified properties.
@@ -9386,10 +5854,7 @@ export namespace E2E {
                 public items: string[];
 
                 /** AIRichResponseTableRow isHeading. */
-                public isHeading?: (boolean|null);
-
-                /** AIRichResponseTableRow _isHeading. */
-                public _isHeading?: "isHeading";
+                public isHeading: boolean;
 
                 /**
                  * Creates a new AIRichResponseTableRow instance using the specified properties.
@@ -9487,10 +5952,7 @@ export namespace E2E {
             constructor(properties?: E2E.AIRichResponseMessage.IAIRichResponseUnifiedResponse);
 
             /** AIRichResponseUnifiedResponse data. */
-            public data?: (Uint8Array|null);
-
-            /** AIRichResponseUnifiedResponse _data. */
-            public _data?: "data";
+            public data: Uint8Array;
 
             /**
              * Creates a new AIRichResponseUnifiedResponse instance using the specified properties.
@@ -9569,1365 +6031,6 @@ export namespace E2E {
              */
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
-    }
-
-    /** Properties of a BotSignatureVerificationUseCaseProof. */
-    interface IBotSignatureVerificationUseCaseProof {
-
-        /** BotSignatureVerificationUseCaseProof version */
-        version?: (number|null);
-
-        /** BotSignatureVerificationUseCaseProof useCase */
-        useCase?: (E2E.BotSignatureVerificationUseCaseProof.BotSignatureUseCase|null);
-
-        /** BotSignatureVerificationUseCaseProof signature */
-        signature?: (Uint8Array|null);
-
-        /** BotSignatureVerificationUseCaseProof certificateChain */
-        certificateChain?: (Uint8Array|null);
-    }
-
-    /** Represents a BotSignatureVerificationUseCaseProof. */
-    class BotSignatureVerificationUseCaseProof implements IBotSignatureVerificationUseCaseProof {
-
-        /**
-         * Constructs a new BotSignatureVerificationUseCaseProof.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotSignatureVerificationUseCaseProof);
-
-        /** BotSignatureVerificationUseCaseProof version. */
-        public version?: (number|null);
-
-        /** BotSignatureVerificationUseCaseProof useCase. */
-        public useCase?: (E2E.BotSignatureVerificationUseCaseProof.BotSignatureUseCase|null);
-
-        /** BotSignatureVerificationUseCaseProof signature. */
-        public signature?: (Uint8Array|null);
-
-        /** BotSignatureVerificationUseCaseProof certificateChain. */
-        public certificateChain?: (Uint8Array|null);
-
-        /** BotSignatureVerificationUseCaseProof _version. */
-        public _version?: "version";
-
-        /** BotSignatureVerificationUseCaseProof _useCase. */
-        public _useCase?: "useCase";
-
-        /** BotSignatureVerificationUseCaseProof _signature. */
-        public _signature?: "signature";
-
-        /** BotSignatureVerificationUseCaseProof _certificateChain. */
-        public _certificateChain?: "certificateChain";
-
-        /**
-         * Creates a new BotSignatureVerificationUseCaseProof instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotSignatureVerificationUseCaseProof instance
-         */
-        public static create(properties?: E2E.IBotSignatureVerificationUseCaseProof): E2E.BotSignatureVerificationUseCaseProof;
-
-        /**
-         * Encodes the specified BotSignatureVerificationUseCaseProof message. Does not implicitly {@link E2E.BotSignatureVerificationUseCaseProof.verify|verify} messages.
-         * @param message BotSignatureVerificationUseCaseProof message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotSignatureVerificationUseCaseProof, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotSignatureVerificationUseCaseProof message, length delimited. Does not implicitly {@link E2E.BotSignatureVerificationUseCaseProof.verify|verify} messages.
-         * @param message BotSignatureVerificationUseCaseProof message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotSignatureVerificationUseCaseProof, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotSignatureVerificationUseCaseProof message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotSignatureVerificationUseCaseProof
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotSignatureVerificationUseCaseProof;
-
-        /**
-         * Decodes a BotSignatureVerificationUseCaseProof message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotSignatureVerificationUseCaseProof
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotSignatureVerificationUseCaseProof;
-
-        /**
-         * Verifies a BotSignatureVerificationUseCaseProof message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotSignatureVerificationUseCaseProof message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotSignatureVerificationUseCaseProof
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotSignatureVerificationUseCaseProof;
-
-        /**
-         * Creates a plain object from a BotSignatureVerificationUseCaseProof message. Also converts values to other types if specified.
-         * @param message BotSignatureVerificationUseCaseProof
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotSignatureVerificationUseCaseProof, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotSignatureVerificationUseCaseProof to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSignatureVerificationUseCaseProof
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotSignatureVerificationUseCaseProof {
-
-        /** BotSignatureUseCase enum. */
-        enum BotSignatureUseCase {
-            WA_BOT_MSG = 0
-        }
-    }
-
-    /** Properties of a BotSignatureVerificationMetadata. */
-    interface IBotSignatureVerificationMetadata {
-
-        /** BotSignatureVerificationMetadata proofs */
-        proofs?: (E2E.IBotSignatureVerificationUseCaseProof[]|null);
-    }
-
-    /** Represents a BotSignatureVerificationMetadata. */
-    class BotSignatureVerificationMetadata implements IBotSignatureVerificationMetadata {
-
-        /**
-         * Constructs a new BotSignatureVerificationMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotSignatureVerificationMetadata);
-
-        /** BotSignatureVerificationMetadata proofs. */
-        public proofs: E2E.IBotSignatureVerificationUseCaseProof[];
-
-        /**
-         * Creates a new BotSignatureVerificationMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotSignatureVerificationMetadata instance
-         */
-        public static create(properties?: E2E.IBotSignatureVerificationMetadata): E2E.BotSignatureVerificationMetadata;
-
-        /**
-         * Encodes the specified BotSignatureVerificationMetadata message. Does not implicitly {@link E2E.BotSignatureVerificationMetadata.verify|verify} messages.
-         * @param message BotSignatureVerificationMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotSignatureVerificationMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotSignatureVerificationMetadata message, length delimited. Does not implicitly {@link E2E.BotSignatureVerificationMetadata.verify|verify} messages.
-         * @param message BotSignatureVerificationMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotSignatureVerificationMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotSignatureVerificationMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotSignatureVerificationMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotSignatureVerificationMetadata;
-
-        /**
-         * Decodes a BotSignatureVerificationMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotSignatureVerificationMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotSignatureVerificationMetadata;
-
-        /**
-         * Verifies a BotSignatureVerificationMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotSignatureVerificationMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotSignatureVerificationMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotSignatureVerificationMetadata;
-
-        /**
-         * Creates a plain object from a BotSignatureVerificationMetadata message. Also converts values to other types if specified.
-         * @param message BotSignatureVerificationMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotSignatureVerificationMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotSignatureVerificationMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSignatureVerificationMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    /** Properties of a BotMemoryFact. */
-    interface IBotMemoryFact {
-
-        /** BotMemoryFact fact */
-        fact?: (string|null);
-
-        /** BotMemoryFact factId */
-        factId?: (string|null);
-    }
-
-    /** Represents a BotMemoryFact. */
-    class BotMemoryFact implements IBotMemoryFact {
-
-        /**
-         * Constructs a new BotMemoryFact.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotMemoryFact);
-
-        /** BotMemoryFact fact. */
-        public fact?: (string|null);
-
-        /** BotMemoryFact factId. */
-        public factId?: (string|null);
-
-        /** BotMemoryFact _fact. */
-        public _fact?: "fact";
-
-        /** BotMemoryFact _factId. */
-        public _factId?: "factId";
-
-        /**
-         * Creates a new BotMemoryFact instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotMemoryFact instance
-         */
-        public static create(properties?: E2E.IBotMemoryFact): E2E.BotMemoryFact;
-
-        /**
-         * Encodes the specified BotMemoryFact message. Does not implicitly {@link E2E.BotMemoryFact.verify|verify} messages.
-         * @param message BotMemoryFact message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotMemoryFact, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotMemoryFact message, length delimited. Does not implicitly {@link E2E.BotMemoryFact.verify|verify} messages.
-         * @param message BotMemoryFact message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotMemoryFact, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotMemoryFact message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotMemoryFact
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotMemoryFact;
-
-        /**
-         * Decodes a BotMemoryFact message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotMemoryFact
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotMemoryFact;
-
-        /**
-         * Verifies a BotMemoryFact message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotMemoryFact message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotMemoryFact
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotMemoryFact;
-
-        /**
-         * Creates a plain object from a BotMemoryFact message. Also converts values to other types if specified.
-         * @param message BotMemoryFact
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotMemoryFact, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotMemoryFact to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMemoryFact
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    /** Properties of a BotMemoryMetadata. */
-    interface IBotMemoryMetadata {
-
-        /** BotMemoryMetadata addedFacts */
-        addedFacts?: (E2E.IBotMemoryFact[]|null);
-
-        /** BotMemoryMetadata removedFacts */
-        removedFacts?: (E2E.IBotMemoryFact[]|null);
-
-        /** BotMemoryMetadata disclaimer */
-        disclaimer?: (string|null);
-    }
-
-    /** Represents a BotMemoryMetadata. */
-    class BotMemoryMetadata implements IBotMemoryMetadata {
-
-        /**
-         * Constructs a new BotMemoryMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotMemoryMetadata);
-
-        /** BotMemoryMetadata addedFacts. */
-        public addedFacts: E2E.IBotMemoryFact[];
-
-        /** BotMemoryMetadata removedFacts. */
-        public removedFacts: E2E.IBotMemoryFact[];
-
-        /** BotMemoryMetadata disclaimer. */
-        public disclaimer?: (string|null);
-
-        /** BotMemoryMetadata _disclaimer. */
-        public _disclaimer?: "disclaimer";
-
-        /**
-         * Creates a new BotMemoryMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotMemoryMetadata instance
-         */
-        public static create(properties?: E2E.IBotMemoryMetadata): E2E.BotMemoryMetadata;
-
-        /**
-         * Encodes the specified BotMemoryMetadata message. Does not implicitly {@link E2E.BotMemoryMetadata.verify|verify} messages.
-         * @param message BotMemoryMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotMemoryMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotMemoryMetadata message, length delimited. Does not implicitly {@link E2E.BotMemoryMetadata.verify|verify} messages.
-         * @param message BotMemoryMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotMemoryMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotMemoryMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotMemoryMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotMemoryMetadata;
-
-        /**
-         * Decodes a BotMemoryMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotMemoryMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotMemoryMetadata;
-
-        /**
-         * Verifies a BotMemoryMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotMemoryMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotMemoryMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotMemoryMetadata;
-
-        /**
-         * Creates a plain object from a BotMemoryMetadata message. Also converts values to other types if specified.
-         * @param message BotMemoryMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotMemoryMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotMemoryMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotMemoryMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    /** Properties of a BotLinkedAccount. */
-    interface IBotLinkedAccount {
-
-        /** BotLinkedAccount type */
-        type?: (E2E.BotLinkedAccount.BotLinkedAccountType|null);
-    }
-
-    /** Represents a BotLinkedAccount. */
-    class BotLinkedAccount implements IBotLinkedAccount {
-
-        /**
-         * Constructs a new BotLinkedAccount.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotLinkedAccount);
-
-        /** BotLinkedAccount type. */
-        public type?: (E2E.BotLinkedAccount.BotLinkedAccountType|null);
-
-        /** BotLinkedAccount _type. */
-        public _type?: "type";
-
-        /**
-         * Creates a new BotLinkedAccount instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotLinkedAccount instance
-         */
-        public static create(properties?: E2E.IBotLinkedAccount): E2E.BotLinkedAccount;
-
-        /**
-         * Encodes the specified BotLinkedAccount message. Does not implicitly {@link E2E.BotLinkedAccount.verify|verify} messages.
-         * @param message BotLinkedAccount message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotLinkedAccount, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotLinkedAccount message, length delimited. Does not implicitly {@link E2E.BotLinkedAccount.verify|verify} messages.
-         * @param message BotLinkedAccount message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotLinkedAccount, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotLinkedAccount message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotLinkedAccount
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotLinkedAccount;
-
-        /**
-         * Decodes a BotLinkedAccount message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotLinkedAccount
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotLinkedAccount;
-
-        /**
-         * Verifies a BotLinkedAccount message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotLinkedAccount message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotLinkedAccount
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotLinkedAccount;
-
-        /**
-         * Creates a plain object from a BotLinkedAccount message. Also converts values to other types if specified.
-         * @param message BotLinkedAccount
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotLinkedAccount, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotLinkedAccount to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotLinkedAccount
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotLinkedAccount {
-
-        /** BotLinkedAccountType enum. */
-        enum BotLinkedAccountType {
-            BOT_LINKED_ACCOUNT_TYPE_1P = 0
-        }
-    }
-
-    /** Properties of a BotLinkedAccountsMetadata. */
-    interface IBotLinkedAccountsMetadata {
-
-        /** BotLinkedAccountsMetadata accounts */
-        accounts?: (E2E.IBotLinkedAccount[]|null);
-
-        /** BotLinkedAccountsMetadata acAuthTokens */
-        acAuthTokens?: (Uint8Array|null);
-
-        /** BotLinkedAccountsMetadata acErrorCode */
-        acErrorCode?: (number|null);
-    }
-
-    /** Represents a BotLinkedAccountsMetadata. */
-    class BotLinkedAccountsMetadata implements IBotLinkedAccountsMetadata {
-
-        /**
-         * Constructs a new BotLinkedAccountsMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotLinkedAccountsMetadata);
-
-        /** BotLinkedAccountsMetadata accounts. */
-        public accounts: E2E.IBotLinkedAccount[];
-
-        /** BotLinkedAccountsMetadata acAuthTokens. */
-        public acAuthTokens?: (Uint8Array|null);
-
-        /** BotLinkedAccountsMetadata acErrorCode. */
-        public acErrorCode?: (number|null);
-
-        /** BotLinkedAccountsMetadata _acAuthTokens. */
-        public _acAuthTokens?: "acAuthTokens";
-
-        /** BotLinkedAccountsMetadata _acErrorCode. */
-        public _acErrorCode?: "acErrorCode";
-
-        /**
-         * Creates a new BotLinkedAccountsMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotLinkedAccountsMetadata instance
-         */
-        public static create(properties?: E2E.IBotLinkedAccountsMetadata): E2E.BotLinkedAccountsMetadata;
-
-        /**
-         * Encodes the specified BotLinkedAccountsMetadata message. Does not implicitly {@link E2E.BotLinkedAccountsMetadata.verify|verify} messages.
-         * @param message BotLinkedAccountsMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotLinkedAccountsMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotLinkedAccountsMetadata message, length delimited. Does not implicitly {@link E2E.BotLinkedAccountsMetadata.verify|verify} messages.
-         * @param message BotLinkedAccountsMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotLinkedAccountsMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotLinkedAccountsMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotLinkedAccountsMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotLinkedAccountsMetadata;
-
-        /**
-         * Decodes a BotLinkedAccountsMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotLinkedAccountsMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotLinkedAccountsMetadata;
-
-        /**
-         * Verifies a BotLinkedAccountsMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotLinkedAccountsMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotLinkedAccountsMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotLinkedAccountsMetadata;
-
-        /**
-         * Creates a plain object from a BotLinkedAccountsMetadata message. Also converts values to other types if specified.
-         * @param message BotLinkedAccountsMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotLinkedAccountsMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotLinkedAccountsMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotLinkedAccountsMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    /** Properties of a BotPromptSuggestion. */
-    interface IBotPromptSuggestion {
-
-        /** BotPromptSuggestion prompt */
-        prompt?: (string|null);
-
-        /** BotPromptSuggestion promptId */
-        promptId?: (string|null);
-    }
-
-    /** Represents a BotPromptSuggestion. */
-    class BotPromptSuggestion implements IBotPromptSuggestion {
-
-        /**
-         * Constructs a new BotPromptSuggestion.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotPromptSuggestion);
-
-        /** BotPromptSuggestion prompt. */
-        public prompt?: (string|null);
-
-        /** BotPromptSuggestion promptId. */
-        public promptId?: (string|null);
-
-        /** BotPromptSuggestion _prompt. */
-        public _prompt?: "prompt";
-
-        /** BotPromptSuggestion _promptId. */
-        public _promptId?: "promptId";
-
-        /**
-         * Creates a new BotPromptSuggestion instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotPromptSuggestion instance
-         */
-        public static create(properties?: E2E.IBotPromptSuggestion): E2E.BotPromptSuggestion;
-
-        /**
-         * Encodes the specified BotPromptSuggestion message. Does not implicitly {@link E2E.BotPromptSuggestion.verify|verify} messages.
-         * @param message BotPromptSuggestion message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotPromptSuggestion, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotPromptSuggestion message, length delimited. Does not implicitly {@link E2E.BotPromptSuggestion.verify|verify} messages.
-         * @param message BotPromptSuggestion message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotPromptSuggestion, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotPromptSuggestion message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotPromptSuggestion
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotPromptSuggestion;
-
-        /**
-         * Decodes a BotPromptSuggestion message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotPromptSuggestion
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotPromptSuggestion;
-
-        /**
-         * Verifies a BotPromptSuggestion message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotPromptSuggestion message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotPromptSuggestion
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotPromptSuggestion;
-
-        /**
-         * Creates a plain object from a BotPromptSuggestion message. Also converts values to other types if specified.
-         * @param message BotPromptSuggestion
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotPromptSuggestion, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotPromptSuggestion to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotPromptSuggestion
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    /** Properties of a BotPromptSuggestions. */
-    interface IBotPromptSuggestions {
-
-        /** BotPromptSuggestions suggestions */
-        suggestions?: (E2E.IBotPromptSuggestion[]|null);
-    }
-
-    /** Represents a BotPromptSuggestions. */
-    class BotPromptSuggestions implements IBotPromptSuggestions {
-
-        /**
-         * Constructs a new BotPromptSuggestions.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotPromptSuggestions);
-
-        /** BotPromptSuggestions suggestions. */
-        public suggestions: E2E.IBotPromptSuggestion[];
-
-        /**
-         * Creates a new BotPromptSuggestions instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotPromptSuggestions instance
-         */
-        public static create(properties?: E2E.IBotPromptSuggestions): E2E.BotPromptSuggestions;
-
-        /**
-         * Encodes the specified BotPromptSuggestions message. Does not implicitly {@link E2E.BotPromptSuggestions.verify|verify} messages.
-         * @param message BotPromptSuggestions message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotPromptSuggestions, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotPromptSuggestions message, length delimited. Does not implicitly {@link E2E.BotPromptSuggestions.verify|verify} messages.
-         * @param message BotPromptSuggestions message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotPromptSuggestions, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotPromptSuggestions message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotPromptSuggestions
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotPromptSuggestions;
-
-        /**
-         * Decodes a BotPromptSuggestions message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotPromptSuggestions
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotPromptSuggestions;
-
-        /**
-         * Verifies a BotPromptSuggestions message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotPromptSuggestions message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotPromptSuggestions
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotPromptSuggestions;
-
-        /**
-         * Creates a plain object from a BotPromptSuggestions message. Also converts values to other types if specified.
-         * @param message BotPromptSuggestions
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotPromptSuggestions, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotPromptSuggestions to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotPromptSuggestions
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    /** Properties of a BotSuggestedPromptMetadata. */
-    interface IBotSuggestedPromptMetadata {
-
-        /** BotSuggestedPromptMetadata suggestedPrompts */
-        suggestedPrompts?: (string[]|null);
-
-        /** BotSuggestedPromptMetadata selectedPromptIndex */
-        selectedPromptIndex?: (number|null);
-
-        /** BotSuggestedPromptMetadata promptSuggestions */
-        promptSuggestions?: (E2E.IBotPromptSuggestions|null);
-
-        /** BotSuggestedPromptMetadata selectedPromptId */
-        selectedPromptId?: (string|null);
-    }
-
-    /** Represents a BotSuggestedPromptMetadata. */
-    class BotSuggestedPromptMetadata implements IBotSuggestedPromptMetadata {
-
-        /**
-         * Constructs a new BotSuggestedPromptMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotSuggestedPromptMetadata);
-
-        /** BotSuggestedPromptMetadata suggestedPrompts. */
-        public suggestedPrompts: string[];
-
-        /** BotSuggestedPromptMetadata selectedPromptIndex. */
-        public selectedPromptIndex?: (number|null);
-
-        /** BotSuggestedPromptMetadata promptSuggestions. */
-        public promptSuggestions?: (E2E.IBotPromptSuggestions|null);
-
-        /** BotSuggestedPromptMetadata selectedPromptId. */
-        public selectedPromptId?: (string|null);
-
-        /** BotSuggestedPromptMetadata _selectedPromptIndex. */
-        public _selectedPromptIndex?: "selectedPromptIndex";
-
-        /** BotSuggestedPromptMetadata _promptSuggestions. */
-        public _promptSuggestions?: "promptSuggestions";
-
-        /** BotSuggestedPromptMetadata _selectedPromptId. */
-        public _selectedPromptId?: "selectedPromptId";
-
-        /**
-         * Creates a new BotSuggestedPromptMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotSuggestedPromptMetadata instance
-         */
-        public static create(properties?: E2E.IBotSuggestedPromptMetadata): E2E.BotSuggestedPromptMetadata;
-
-        /**
-         * Encodes the specified BotSuggestedPromptMetadata message. Does not implicitly {@link E2E.BotSuggestedPromptMetadata.verify|verify} messages.
-         * @param message BotSuggestedPromptMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotSuggestedPromptMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotSuggestedPromptMetadata message, length delimited. Does not implicitly {@link E2E.BotSuggestedPromptMetadata.verify|verify} messages.
-         * @param message BotSuggestedPromptMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotSuggestedPromptMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotSuggestedPromptMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotSuggestedPromptMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotSuggestedPromptMetadata;
-
-        /**
-         * Decodes a BotSuggestedPromptMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotSuggestedPromptMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotSuggestedPromptMetadata;
-
-        /**
-         * Verifies a BotSuggestedPromptMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotSuggestedPromptMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotSuggestedPromptMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotSuggestedPromptMetadata;
-
-        /**
-         * Creates a plain object from a BotSuggestedPromptMetadata message. Also converts values to other types if specified.
-         * @param message BotSuggestedPromptMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotSuggestedPromptMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotSuggestedPromptMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotSuggestedPromptMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    /** Properties of a BotPluginMetadata. */
-    interface IBotPluginMetadata {
-
-        /** BotPluginMetadata provider */
-        provider?: (E2E.BotPluginMetadata.SearchProvider|null);
-
-        /** BotPluginMetadata pluginType */
-        pluginType?: (E2E.BotPluginMetadata.PluginType|null);
-
-        /** BotPluginMetadata thumbnailCdnUrl */
-        thumbnailCdnUrl?: (string|null);
-
-        /** BotPluginMetadata profilePhotoCdnUrl */
-        profilePhotoCdnUrl?: (string|null);
-
-        /** BotPluginMetadata searchProviderUrl */
-        searchProviderUrl?: (string|null);
-
-        /** BotPluginMetadata referenceIndex */
-        referenceIndex?: (number|null);
-
-        /** BotPluginMetadata expectedLinksCount */
-        expectedLinksCount?: (number|null);
-
-        /** BotPluginMetadata searchQuery */
-        searchQuery?: (string|null);
-
-        /** BotPluginMetadata parentPluginMessageKey */
-        parentPluginMessageKey?: (Protocol.IMessageKey|null);
-
-        /** BotPluginMetadata deprecatedField */
-        deprecatedField?: (E2E.BotPluginMetadata.PluginType|null);
-
-        /** BotPluginMetadata parentPluginType */
-        parentPluginType?: (E2E.BotPluginMetadata.PluginType|null);
-
-        /** BotPluginMetadata faviconCdnUrl */
-        faviconCdnUrl?: (string|null);
-    }
-
-    /** Represents a BotPluginMetadata. */
-    class BotPluginMetadata implements IBotPluginMetadata {
-
-        /**
-         * Constructs a new BotPluginMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotPluginMetadata);
-
-        /** BotPluginMetadata provider. */
-        public provider?: (E2E.BotPluginMetadata.SearchProvider|null);
-
-        /** BotPluginMetadata pluginType. */
-        public pluginType?: (E2E.BotPluginMetadata.PluginType|null);
-
-        /** BotPluginMetadata thumbnailCdnUrl. */
-        public thumbnailCdnUrl?: (string|null);
-
-        /** BotPluginMetadata profilePhotoCdnUrl. */
-        public profilePhotoCdnUrl?: (string|null);
-
-        /** BotPluginMetadata searchProviderUrl. */
-        public searchProviderUrl?: (string|null);
-
-        /** BotPluginMetadata referenceIndex. */
-        public referenceIndex?: (number|null);
-
-        /** BotPluginMetadata expectedLinksCount. */
-        public expectedLinksCount?: (number|null);
-
-        /** BotPluginMetadata searchQuery. */
-        public searchQuery?: (string|null);
-
-        /** BotPluginMetadata parentPluginMessageKey. */
-        public parentPluginMessageKey?: (Protocol.IMessageKey|null);
-
-        /** BotPluginMetadata deprecatedField. */
-        public deprecatedField?: (E2E.BotPluginMetadata.PluginType|null);
-
-        /** BotPluginMetadata parentPluginType. */
-        public parentPluginType?: (E2E.BotPluginMetadata.PluginType|null);
-
-        /** BotPluginMetadata faviconCdnUrl. */
-        public faviconCdnUrl?: (string|null);
-
-        /** BotPluginMetadata _provider. */
-        public _provider?: "provider";
-
-        /** BotPluginMetadata _pluginType. */
-        public _pluginType?: "pluginType";
-
-        /** BotPluginMetadata _thumbnailCdnUrl. */
-        public _thumbnailCdnUrl?: "thumbnailCdnUrl";
-
-        /** BotPluginMetadata _profilePhotoCdnUrl. */
-        public _profilePhotoCdnUrl?: "profilePhotoCdnUrl";
-
-        /** BotPluginMetadata _searchProviderUrl. */
-        public _searchProviderUrl?: "searchProviderUrl";
-
-        /** BotPluginMetadata _referenceIndex. */
-        public _referenceIndex?: "referenceIndex";
-
-        /** BotPluginMetadata _expectedLinksCount. */
-        public _expectedLinksCount?: "expectedLinksCount";
-
-        /** BotPluginMetadata _searchQuery. */
-        public _searchQuery?: "searchQuery";
-
-        /** BotPluginMetadata _parentPluginMessageKey. */
-        public _parentPluginMessageKey?: "parentPluginMessageKey";
-
-        /** BotPluginMetadata _deprecatedField. */
-        public _deprecatedField?: "deprecatedField";
-
-        /** BotPluginMetadata _parentPluginType. */
-        public _parentPluginType?: "parentPluginType";
-
-        /** BotPluginMetadata _faviconCdnUrl. */
-        public _faviconCdnUrl?: "faviconCdnUrl";
-
-        /**
-         * Creates a new BotPluginMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotPluginMetadata instance
-         */
-        public static create(properties?: E2E.IBotPluginMetadata): E2E.BotPluginMetadata;
-
-        /**
-         * Encodes the specified BotPluginMetadata message. Does not implicitly {@link E2E.BotPluginMetadata.verify|verify} messages.
-         * @param message BotPluginMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotPluginMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotPluginMetadata message, length delimited. Does not implicitly {@link E2E.BotPluginMetadata.verify|verify} messages.
-         * @param message BotPluginMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotPluginMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotPluginMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotPluginMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotPluginMetadata;
-
-        /**
-         * Decodes a BotPluginMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotPluginMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotPluginMetadata;
-
-        /**
-         * Verifies a BotPluginMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotPluginMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotPluginMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotPluginMetadata;
-
-        /**
-         * Creates a plain object from a BotPluginMetadata message. Also converts values to other types if specified.
-         * @param message BotPluginMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotPluginMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotPluginMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotPluginMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    namespace BotPluginMetadata {
-
-        /** PluginType enum. */
-        enum PluginType {
-            UNKNOWN_PLUGIN = 0,
-            REELS = 1,
-            SEARCH = 2
-        }
-
-        /** SearchProvider enum. */
-        enum SearchProvider {
-            UNKNOWN = 0,
-            BING = 1,
-            GOOGLE = 2,
-            SUPPORT = 3
-        }
-    }
-
-    /** Properties of a BotAvatarMetadata. */
-    interface IBotAvatarMetadata {
-
-        /** BotAvatarMetadata sentiment */
-        sentiment?: (number|null);
-
-        /** BotAvatarMetadata behaviorGraph */
-        behaviorGraph?: (string|null);
-
-        /** BotAvatarMetadata action */
-        action?: (number|null);
-
-        /** BotAvatarMetadata intensity */
-        intensity?: (number|null);
-
-        /** BotAvatarMetadata wordCount */
-        wordCount?: (number|null);
-    }
-
-    /** Represents a BotAvatarMetadata. */
-    class BotAvatarMetadata implements IBotAvatarMetadata {
-
-        /**
-         * Constructs a new BotAvatarMetadata.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: E2E.IBotAvatarMetadata);
-
-        /** BotAvatarMetadata sentiment. */
-        public sentiment?: (number|null);
-
-        /** BotAvatarMetadata behaviorGraph. */
-        public behaviorGraph?: (string|null);
-
-        /** BotAvatarMetadata action. */
-        public action?: (number|null);
-
-        /** BotAvatarMetadata intensity. */
-        public intensity?: (number|null);
-
-        /** BotAvatarMetadata wordCount. */
-        public wordCount?: (number|null);
-
-        /** BotAvatarMetadata _sentiment. */
-        public _sentiment?: "sentiment";
-
-        /** BotAvatarMetadata _behaviorGraph. */
-        public _behaviorGraph?: "behaviorGraph";
-
-        /** BotAvatarMetadata _action. */
-        public _action?: "action";
-
-        /** BotAvatarMetadata _intensity. */
-        public _intensity?: "intensity";
-
-        /** BotAvatarMetadata _wordCount. */
-        public _wordCount?: "wordCount";
-
-        /**
-         * Creates a new BotAvatarMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns BotAvatarMetadata instance
-         */
-        public static create(properties?: E2E.IBotAvatarMetadata): E2E.BotAvatarMetadata;
-
-        /**
-         * Encodes the specified BotAvatarMetadata message. Does not implicitly {@link E2E.BotAvatarMetadata.verify|verify} messages.
-         * @param message BotAvatarMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: E2E.IBotAvatarMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified BotAvatarMetadata message, length delimited. Does not implicitly {@link E2E.BotAvatarMetadata.verify|verify} messages.
-         * @param message BotAvatarMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: E2E.IBotAvatarMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a BotAvatarMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns BotAvatarMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.BotAvatarMetadata;
-
-        /**
-         * Decodes a BotAvatarMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns BotAvatarMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.BotAvatarMetadata;
-
-        /**
-         * Verifies a BotAvatarMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a BotAvatarMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns BotAvatarMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): E2E.BotAvatarMetadata;
-
-        /**
-         * Creates a plain object from a BotAvatarMetadata message. Also converts values to other types if specified.
-         * @param message BotAvatarMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: E2E.BotAvatarMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this BotAvatarMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for BotAvatarMetadata
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
     }
 
     /** Properties of a ContextInfo. */
@@ -11076,6 +6179,18 @@ export namespace E2E {
 
         /** ContextInfo statusAttributions */
         statusAttributions?: (StatusAttributions.IStatusAttribution[]|null);
+
+        /** ContextInfo isGroupStatus */
+        isGroupStatus?: (boolean|null);
+
+        /** ContextInfo forwardOrigin */
+        forwardOrigin?: (E2E.ContextInfo.ForwardOrigin|null);
+
+        /** ContextInfo questionReplyQuotedMessage */
+        questionReplyQuotedMessage?: (E2E.ContextInfo.IQuestionReplyQuotedMessage|null);
+
+        /** ContextInfo statusAudienceMetadata */
+        statusAudienceMetadata?: (E2E.ContextInfo.IStatusAudienceMetadata|null);
     }
 
     /** Represents a ContextInfo. */
@@ -11088,34 +6203,34 @@ export namespace E2E {
         constructor(properties?: E2E.IContextInfo);
 
         /** ContextInfo stanzaId. */
-        public stanzaId?: (string|null);
+        public stanzaId: string;
 
         /** ContextInfo participant. */
-        public participant?: (string|null);
+        public participant: string;
 
         /** ContextInfo quotedMessage. */
         public quotedMessage?: (E2E.IMessage|null);
 
         /** ContextInfo remoteJid. */
-        public remoteJid?: (string|null);
+        public remoteJid: string;
 
         /** ContextInfo mentionedJid. */
         public mentionedJid: string[];
 
         /** ContextInfo conversionSource. */
-        public conversionSource?: (string|null);
+        public conversionSource: string;
 
         /** ContextInfo conversionData. */
-        public conversionData?: (Uint8Array|null);
+        public conversionData: Uint8Array;
 
         /** ContextInfo conversionDelaySeconds. */
-        public conversionDelaySeconds?: (number|null);
+        public conversionDelaySeconds: number;
 
         /** ContextInfo forwardingScore. */
-        public forwardingScore?: (number|null);
+        public forwardingScore: number;
 
         /** ContextInfo isForwarded. */
-        public isForwarded?: (boolean|null);
+        public isForwarded: boolean;
 
         /** ContextInfo quotedAd. */
         public quotedAd?: (E2E.ContextInfo.IAdReplyInfo|null);
@@ -11124,25 +6239,25 @@ export namespace E2E {
         public placeholderKey?: (Protocol.IMessageKey|null);
 
         /** ContextInfo expiration. */
-        public expiration?: (number|null);
+        public expiration: number;
 
         /** ContextInfo ephemeralSettingTimestamp. */
-        public ephemeralSettingTimestamp?: (number|Long|null);
+        public ephemeralSettingTimestamp: (number|Long);
 
         /** ContextInfo ephemeralSharedSecret. */
-        public ephemeralSharedSecret?: (Uint8Array|null);
+        public ephemeralSharedSecret: Uint8Array;
 
         /** ContextInfo externalAdReply. */
         public externalAdReply?: (E2E.ContextInfo.IExternalAdReplyInfo|null);
 
         /** ContextInfo entryPointConversionSource. */
-        public entryPointConversionSource?: (string|null);
+        public entryPointConversionSource: string;
 
         /** ContextInfo entryPointConversionApp. */
-        public entryPointConversionApp?: (string|null);
+        public entryPointConversionApp: string;
 
         /** ContextInfo entryPointConversionDelaySeconds. */
-        public entryPointConversionDelaySeconds?: (number|null);
+        public entryPointConversionDelaySeconds: number;
 
         /** ContextInfo disappearingMode. */
         public disappearingMode?: (E2E.IDisappearingMode|null);
@@ -11151,19 +6266,19 @@ export namespace E2E {
         public actionLink?: (E2E.IActionLink|null);
 
         /** ContextInfo groupSubject. */
-        public groupSubject?: (string|null);
+        public groupSubject: string;
 
         /** ContextInfo parentGroupJid. */
-        public parentGroupJid?: (string|null);
+        public parentGroupJid: string;
 
         /** ContextInfo trustBannerType. */
-        public trustBannerType?: (string|null);
+        public trustBannerType: string;
 
         /** ContextInfo trustBannerAction. */
-        public trustBannerAction?: (number|null);
+        public trustBannerAction: number;
 
         /** ContextInfo isSampled. */
-        public isSampled?: (boolean|null);
+        public isSampled: boolean;
 
         /** ContextInfo groupMentions. */
         public groupMentions: E2E.IGroupMention[];
@@ -11178,193 +6293,70 @@ export namespace E2E {
         public businessMessageForwardInfo?: (E2E.ContextInfo.IBusinessMessageForwardInfo|null);
 
         /** ContextInfo smbClientCampaignId. */
-        public smbClientCampaignId?: (string|null);
+        public smbClientCampaignId: string;
 
         /** ContextInfo smbServerCampaignId. */
-        public smbServerCampaignId?: (string|null);
+        public smbServerCampaignId: string;
 
         /** ContextInfo dataSharingContext. */
         public dataSharingContext?: (E2E.ContextInfo.IDataSharingContext|null);
 
         /** ContextInfo alwaysShowAdAttribution. */
-        public alwaysShowAdAttribution?: (boolean|null);
+        public alwaysShowAdAttribution: boolean;
 
         /** ContextInfo featureEligibilities. */
         public featureEligibilities?: (E2E.ContextInfo.IFeatureEligibilities|null);
 
         /** ContextInfo entryPointConversionExternalSource. */
-        public entryPointConversionExternalSource?: (string|null);
+        public entryPointConversionExternalSource: string;
 
         /** ContextInfo entryPointConversionExternalMedium. */
-        public entryPointConversionExternalMedium?: (string|null);
+        public entryPointConversionExternalMedium: string;
 
         /** ContextInfo ctwaSignals. */
-        public ctwaSignals?: (string|null);
+        public ctwaSignals: string;
 
         /** ContextInfo ctwaPayload. */
-        public ctwaPayload?: (Uint8Array|null);
+        public ctwaPayload: Uint8Array;
 
         /** ContextInfo forwardedAiBotMessageInfo. */
         public forwardedAiBotMessageInfo?: (E2E.ContextInfo.IForwardedAIBotMessageInfo|null);
 
         /** ContextInfo statusAttributionType. */
-        public statusAttributionType?: (E2E.ContextInfo.StatusAttributionType|null);
+        public statusAttributionType: E2E.ContextInfo.StatusAttributionType;
 
         /** ContextInfo urlTrackingMap. */
         public urlTrackingMap?: (E2E.IUrlTrackingMap|null);
 
         /** ContextInfo pairedMediaType. */
-        public pairedMediaType?: (E2E.ContextInfo.PairedMediaType|null);
+        public pairedMediaType: E2E.ContextInfo.PairedMediaType;
 
         /** ContextInfo rankingVersion. */
-        public rankingVersion?: (number|null);
+        public rankingVersion: number;
 
         /** ContextInfo memberLabel. */
         public memberLabel?: (E2E.IMemberLabel|null);
 
         /** ContextInfo isQuestion. */
-        public isQuestion?: (boolean|null);
+        public isQuestion: boolean;
 
         /** ContextInfo statusSourceType. */
-        public statusSourceType?: (E2E.ContextInfo.StatusSourceType|null);
+        public statusSourceType: E2E.ContextInfo.StatusSourceType;
 
         /** ContextInfo statusAttributions. */
         public statusAttributions: StatusAttributions.IStatusAttribution[];
 
-        /** ContextInfo _stanzaId. */
-        public _stanzaId?: "stanzaId";
+        /** ContextInfo isGroupStatus. */
+        public isGroupStatus: boolean;
 
-        /** ContextInfo _participant. */
-        public _participant?: "participant";
+        /** ContextInfo forwardOrigin. */
+        public forwardOrigin: E2E.ContextInfo.ForwardOrigin;
 
-        /** ContextInfo _quotedMessage. */
-        public _quotedMessage?: "quotedMessage";
+        /** ContextInfo questionReplyQuotedMessage. */
+        public questionReplyQuotedMessage?: (E2E.ContextInfo.IQuestionReplyQuotedMessage|null);
 
-        /** ContextInfo _remoteJid. */
-        public _remoteJid?: "remoteJid";
-
-        /** ContextInfo _conversionSource. */
-        public _conversionSource?: "conversionSource";
-
-        /** ContextInfo _conversionData. */
-        public _conversionData?: "conversionData";
-
-        /** ContextInfo _conversionDelaySeconds. */
-        public _conversionDelaySeconds?: "conversionDelaySeconds";
-
-        /** ContextInfo _forwardingScore. */
-        public _forwardingScore?: "forwardingScore";
-
-        /** ContextInfo _isForwarded. */
-        public _isForwarded?: "isForwarded";
-
-        /** ContextInfo _quotedAd. */
-        public _quotedAd?: "quotedAd";
-
-        /** ContextInfo _placeholderKey. */
-        public _placeholderKey?: "placeholderKey";
-
-        /** ContextInfo _expiration. */
-        public _expiration?: "expiration";
-
-        /** ContextInfo _ephemeralSettingTimestamp. */
-        public _ephemeralSettingTimestamp?: "ephemeralSettingTimestamp";
-
-        /** ContextInfo _ephemeralSharedSecret. */
-        public _ephemeralSharedSecret?: "ephemeralSharedSecret";
-
-        /** ContextInfo _externalAdReply. */
-        public _externalAdReply?: "externalAdReply";
-
-        /** ContextInfo _entryPointConversionSource. */
-        public _entryPointConversionSource?: "entryPointConversionSource";
-
-        /** ContextInfo _entryPointConversionApp. */
-        public _entryPointConversionApp?: "entryPointConversionApp";
-
-        /** ContextInfo _entryPointConversionDelaySeconds. */
-        public _entryPointConversionDelaySeconds?: "entryPointConversionDelaySeconds";
-
-        /** ContextInfo _disappearingMode. */
-        public _disappearingMode?: "disappearingMode";
-
-        /** ContextInfo _actionLink. */
-        public _actionLink?: "actionLink";
-
-        /** ContextInfo _groupSubject. */
-        public _groupSubject?: "groupSubject";
-
-        /** ContextInfo _parentGroupJid. */
-        public _parentGroupJid?: "parentGroupJid";
-
-        /** ContextInfo _trustBannerType. */
-        public _trustBannerType?: "trustBannerType";
-
-        /** ContextInfo _trustBannerAction. */
-        public _trustBannerAction?: "trustBannerAction";
-
-        /** ContextInfo _isSampled. */
-        public _isSampled?: "isSampled";
-
-        /** ContextInfo _utm. */
-        public _utm?: "utm";
-
-        /** ContextInfo _forwardedNewsletterMessageInfo. */
-        public _forwardedNewsletterMessageInfo?: "forwardedNewsletterMessageInfo";
-
-        /** ContextInfo _businessMessageForwardInfo. */
-        public _businessMessageForwardInfo?: "businessMessageForwardInfo";
-
-        /** ContextInfo _smbClientCampaignId. */
-        public _smbClientCampaignId?: "smbClientCampaignId";
-
-        /** ContextInfo _smbServerCampaignId. */
-        public _smbServerCampaignId?: "smbServerCampaignId";
-
-        /** ContextInfo _dataSharingContext. */
-        public _dataSharingContext?: "dataSharingContext";
-
-        /** ContextInfo _alwaysShowAdAttribution. */
-        public _alwaysShowAdAttribution?: "alwaysShowAdAttribution";
-
-        /** ContextInfo _featureEligibilities. */
-        public _featureEligibilities?: "featureEligibilities";
-
-        /** ContextInfo _entryPointConversionExternalSource. */
-        public _entryPointConversionExternalSource?: "entryPointConversionExternalSource";
-
-        /** ContextInfo _entryPointConversionExternalMedium. */
-        public _entryPointConversionExternalMedium?: "entryPointConversionExternalMedium";
-
-        /** ContextInfo _ctwaSignals. */
-        public _ctwaSignals?: "ctwaSignals";
-
-        /** ContextInfo _ctwaPayload. */
-        public _ctwaPayload?: "ctwaPayload";
-
-        /** ContextInfo _forwardedAiBotMessageInfo. */
-        public _forwardedAiBotMessageInfo?: "forwardedAiBotMessageInfo";
-
-        /** ContextInfo _statusAttributionType. */
-        public _statusAttributionType?: "statusAttributionType";
-
-        /** ContextInfo _urlTrackingMap. */
-        public _urlTrackingMap?: "urlTrackingMap";
-
-        /** ContextInfo _pairedMediaType. */
-        public _pairedMediaType?: "pairedMediaType";
-
-        /** ContextInfo _rankingVersion. */
-        public _rankingVersion?: "rankingVersion";
-
-        /** ContextInfo _memberLabel. */
-        public _memberLabel?: "memberLabel";
-
-        /** ContextInfo _isQuestion. */
-        public _isQuestion?: "isQuestion";
-
-        /** ContextInfo _statusSourceType. */
-        public _statusSourceType?: "statusSourceType";
+        /** ContextInfo statusAudienceMetadata. */
+        public statusAudienceMetadata?: (E2E.ContextInfo.IStatusAudienceMetadata|null);
 
         /**
          * Creates a new ContextInfo instance using the specified properties.
@@ -11472,28 +6464,16 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IAdReplyInfo);
 
             /** AdReplyInfo advertiserName. */
-            public advertiserName?: (string|null);
+            public advertiserName: string;
 
             /** AdReplyInfo mediaType. */
-            public mediaType?: (E2E.ContextInfo.AdReplyInfo.MediaType|null);
+            public mediaType: E2E.ContextInfo.AdReplyInfo.MediaType;
 
             /** AdReplyInfo jpegThumbnail. */
-            public jpegThumbnail?: (Uint8Array|null);
+            public jpegThumbnail: Uint8Array;
 
             /** AdReplyInfo caption. */
-            public caption?: (string|null);
-
-            /** AdReplyInfo _advertiserName. */
-            public _advertiserName?: "advertiserName";
-
-            /** AdReplyInfo _mediaType. */
-            public _mediaType?: "mediaType";
-
-            /** AdReplyInfo _jpegThumbnail. */
-            public _jpegThumbnail?: "jpegThumbnail";
-
-            /** AdReplyInfo _caption. */
-            public _caption?: "caption";
+            public caption: string;
 
             /**
              * Creates a new AdReplyInfo instance using the specified properties.
@@ -11600,10 +6580,7 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IBusinessMessageForwardInfo);
 
             /** BusinessMessageForwardInfo businessOwnerJid. */
-            public businessOwnerJid?: (string|null);
-
-            /** BusinessMessageForwardInfo _businessOwnerJid. */
-            public _businessOwnerJid?: "businessOwnerJid";
+            public businessOwnerJid: string;
 
             /**
              * Creates a new BusinessMessageForwardInfo instance using the specified properties.
@@ -11694,6 +6671,9 @@ export namespace E2E {
 
             /** DataSharingContext parameters */
             parameters?: (E2E.ContextInfo.DataSharingContext.IParameters[]|null);
+
+            /** DataSharingContext dataSharingFlags */
+            dataSharingFlags?: (number|null);
         }
 
         /** Represents a DataSharingContext. */
@@ -11706,19 +6686,16 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IDataSharingContext);
 
             /** DataSharingContext showMmDisclosure. */
-            public showMmDisclosure?: (boolean|null);
+            public showMmDisclosure: boolean;
 
             /** DataSharingContext encryptedSignalTokenConsented. */
-            public encryptedSignalTokenConsented?: (string|null);
+            public encryptedSignalTokenConsented: string;
 
             /** DataSharingContext parameters. */
             public parameters: E2E.ContextInfo.DataSharingContext.IParameters[];
 
-            /** DataSharingContext _showMmDisclosure. */
-            public _showMmDisclosure?: "showMmDisclosure";
-
-            /** DataSharingContext _encryptedSignalTokenConsented. */
-            public _encryptedSignalTokenConsented?: "encryptedSignalTokenConsented";
+            /** DataSharingContext dataSharingFlags. */
+            public dataSharingFlags: number;
 
             /**
              * Creates a new DataSharingContext instance using the specified properties.
@@ -11800,6 +6777,12 @@ export namespace E2E {
 
         namespace DataSharingContext {
 
+            /** DataSharingFlags enum. */
+            enum DataSharingFlags {
+                SHOW_MM_DISCLOSURE_ON_CLICK = 1,
+                SHOW_MM_DISCLOSURE_ON_READ = 2
+            }
+
             /** Properties of a Parameters. */
             interface IParameters {
 
@@ -11829,34 +6812,19 @@ export namespace E2E {
                 constructor(properties?: E2E.ContextInfo.DataSharingContext.IParameters);
 
                 /** Parameters key. */
-                public key?: (string|null);
+                public key: string;
 
                 /** Parameters stringData. */
-                public stringData?: (string|null);
+                public stringData: string;
 
                 /** Parameters intData. */
-                public intData?: (number|Long|null);
+                public intData: (number|Long);
 
                 /** Parameters floatData. */
-                public floatData?: (number|null);
+                public floatData: number;
 
                 /** Parameters contents. */
                 public contents?: (E2E.ContextInfo.DataSharingContext.IParameters|null);
-
-                /** Parameters _key. */
-                public _key?: "key";
-
-                /** Parameters _stringData. */
-                public _stringData?: "stringData";
-
-                /** Parameters _intData. */
-                public _intData?: "intData";
-
-                /** Parameters _floatData. */
-                public _floatData?: "floatData";
-
-                /** Parameters _contents. */
-                public _contents?: "contents";
 
                 /**
                  * Creates a new Parameters instance using the specified properties.
@@ -12014,6 +6982,12 @@ export namespace E2E {
 
             /** ExternalAdReplyInfo adType */
             adType?: (E2E.ContextInfo.ExternalAdReplyInfo.AdType|null);
+
+            /** ExternalAdReplyInfo wtwaWebsiteUrl */
+            wtwaWebsiteUrl?: (string|null);
+
+            /** ExternalAdReplyInfo adPreviewUrl */
+            adPreviewUrl?: (string|null);
         }
 
         /** Represents an ExternalAdReplyInfo. */
@@ -12026,154 +7000,85 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IExternalAdReplyInfo);
 
             /** ExternalAdReplyInfo title. */
-            public title?: (string|null);
+            public title: string;
 
             /** ExternalAdReplyInfo body. */
-            public body?: (string|null);
+            public body: string;
 
             /** ExternalAdReplyInfo mediaType. */
-            public mediaType?: (E2E.ContextInfo.ExternalAdReplyInfo.MediaType|null);
+            public mediaType: E2E.ContextInfo.ExternalAdReplyInfo.MediaType;
 
             /** ExternalAdReplyInfo thumbnailUrl. */
-            public thumbnailUrl?: (string|null);
+            public thumbnailUrl: string;
 
             /** ExternalAdReplyInfo mediaUrl. */
-            public mediaUrl?: (string|null);
+            public mediaUrl: string;
 
             /** ExternalAdReplyInfo thumbnail. */
-            public thumbnail?: (Uint8Array|null);
+            public thumbnail: Uint8Array;
 
             /** ExternalAdReplyInfo sourceType. */
-            public sourceType?: (string|null);
+            public sourceType: string;
 
             /** ExternalAdReplyInfo sourceId. */
-            public sourceId?: (string|null);
+            public sourceId: string;
 
             /** ExternalAdReplyInfo sourceUrl. */
-            public sourceUrl?: (string|null);
+            public sourceUrl: string;
 
             /** ExternalAdReplyInfo containsAutoReply. */
-            public containsAutoReply?: (boolean|null);
+            public containsAutoReply: boolean;
 
             /** ExternalAdReplyInfo renderLargerThumbnail. */
-            public renderLargerThumbnail?: (boolean|null);
+            public renderLargerThumbnail: boolean;
 
             /** ExternalAdReplyInfo showAdAttribution. */
-            public showAdAttribution?: (boolean|null);
+            public showAdAttribution: boolean;
 
             /** ExternalAdReplyInfo ctwaClid. */
-            public ctwaClid?: (string|null);
+            public ctwaClid: string;
 
             /** ExternalAdReplyInfo ref. */
-            public ref?: (string|null);
+            public ref: string;
 
             /** ExternalAdReplyInfo clickToWhatsappCall. */
-            public clickToWhatsappCall?: (boolean|null);
+            public clickToWhatsappCall: boolean;
 
             /** ExternalAdReplyInfo adContextPreviewDismissed. */
-            public adContextPreviewDismissed?: (boolean|null);
+            public adContextPreviewDismissed: boolean;
 
             /** ExternalAdReplyInfo sourceApp. */
-            public sourceApp?: (string|null);
+            public sourceApp: string;
 
             /** ExternalAdReplyInfo automatedGreetingMessageShown. */
-            public automatedGreetingMessageShown?: (boolean|null);
+            public automatedGreetingMessageShown: boolean;
 
             /** ExternalAdReplyInfo greetingMessageBody. */
-            public greetingMessageBody?: (string|null);
+            public greetingMessageBody: string;
 
             /** ExternalAdReplyInfo ctaPayload. */
-            public ctaPayload?: (string|null);
+            public ctaPayload: string;
 
             /** ExternalAdReplyInfo disableNudge. */
-            public disableNudge?: (boolean|null);
+            public disableNudge: boolean;
 
             /** ExternalAdReplyInfo originalImageUrl. */
-            public originalImageUrl?: (string|null);
+            public originalImageUrl: string;
 
             /** ExternalAdReplyInfo automatedGreetingMessageCtaType. */
-            public automatedGreetingMessageCtaType?: (string|null);
+            public automatedGreetingMessageCtaType: string;
 
             /** ExternalAdReplyInfo wtwaAdFormat. */
-            public wtwaAdFormat?: (boolean|null);
+            public wtwaAdFormat: boolean;
 
             /** ExternalAdReplyInfo adType. */
-            public adType?: (E2E.ContextInfo.ExternalAdReplyInfo.AdType|null);
+            public adType: E2E.ContextInfo.ExternalAdReplyInfo.AdType;
 
-            /** ExternalAdReplyInfo _title. */
-            public _title?: "title";
+            /** ExternalAdReplyInfo wtwaWebsiteUrl. */
+            public wtwaWebsiteUrl: string;
 
-            /** ExternalAdReplyInfo _body. */
-            public _body?: "body";
-
-            /** ExternalAdReplyInfo _mediaType. */
-            public _mediaType?: "mediaType";
-
-            /** ExternalAdReplyInfo _thumbnailUrl. */
-            public _thumbnailUrl?: "thumbnailUrl";
-
-            /** ExternalAdReplyInfo _mediaUrl. */
-            public _mediaUrl?: "mediaUrl";
-
-            /** ExternalAdReplyInfo _thumbnail. */
-            public _thumbnail?: "thumbnail";
-
-            /** ExternalAdReplyInfo _sourceType. */
-            public _sourceType?: "sourceType";
-
-            /** ExternalAdReplyInfo _sourceId. */
-            public _sourceId?: "sourceId";
-
-            /** ExternalAdReplyInfo _sourceUrl. */
-            public _sourceUrl?: "sourceUrl";
-
-            /** ExternalAdReplyInfo _containsAutoReply. */
-            public _containsAutoReply?: "containsAutoReply";
-
-            /** ExternalAdReplyInfo _renderLargerThumbnail. */
-            public _renderLargerThumbnail?: "renderLargerThumbnail";
-
-            /** ExternalAdReplyInfo _showAdAttribution. */
-            public _showAdAttribution?: "showAdAttribution";
-
-            /** ExternalAdReplyInfo _ctwaClid. */
-            public _ctwaClid?: "ctwaClid";
-
-            /** ExternalAdReplyInfo _ref. */
-            public _ref?: "ref";
-
-            /** ExternalAdReplyInfo _clickToWhatsappCall. */
-            public _clickToWhatsappCall?: "clickToWhatsappCall";
-
-            /** ExternalAdReplyInfo _adContextPreviewDismissed. */
-            public _adContextPreviewDismissed?: "adContextPreviewDismissed";
-
-            /** ExternalAdReplyInfo _sourceApp. */
-            public _sourceApp?: "sourceApp";
-
-            /** ExternalAdReplyInfo _automatedGreetingMessageShown. */
-            public _automatedGreetingMessageShown?: "automatedGreetingMessageShown";
-
-            /** ExternalAdReplyInfo _greetingMessageBody. */
-            public _greetingMessageBody?: "greetingMessageBody";
-
-            /** ExternalAdReplyInfo _ctaPayload. */
-            public _ctaPayload?: "ctaPayload";
-
-            /** ExternalAdReplyInfo _disableNudge. */
-            public _disableNudge?: "disableNudge";
-
-            /** ExternalAdReplyInfo _originalImageUrl. */
-            public _originalImageUrl?: "originalImageUrl";
-
-            /** ExternalAdReplyInfo _automatedGreetingMessageCtaType. */
-            public _automatedGreetingMessageCtaType?: "automatedGreetingMessageCtaType";
-
-            /** ExternalAdReplyInfo _wtwaAdFormat. */
-            public _wtwaAdFormat?: "wtwaAdFormat";
-
-            /** ExternalAdReplyInfo _adType. */
-            public _adType?: "adType";
+            /** ExternalAdReplyInfo adPreviewUrl. */
+            public adPreviewUrl: string;
 
             /**
              * Creates a new ExternalAdReplyInfo instance using the specified properties.
@@ -12295,28 +7200,16 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IFeatureEligibilities);
 
             /** FeatureEligibilities cannotBeReactedTo. */
-            public cannotBeReactedTo?: (boolean|null);
+            public cannotBeReactedTo: boolean;
 
             /** FeatureEligibilities cannotBeRanked. */
-            public cannotBeRanked?: (boolean|null);
+            public cannotBeRanked: boolean;
 
             /** FeatureEligibilities canRequestFeedback. */
-            public canRequestFeedback?: (boolean|null);
+            public canRequestFeedback: boolean;
 
             /** FeatureEligibilities canBeReshared. */
-            public canBeReshared?: (boolean|null);
-
-            /** FeatureEligibilities _cannotBeReactedTo. */
-            public _cannotBeReactedTo?: "cannotBeReactedTo";
-
-            /** FeatureEligibilities _cannotBeRanked. */
-            public _cannotBeRanked?: "cannotBeRanked";
-
-            /** FeatureEligibilities _canRequestFeedback. */
-            public _canRequestFeedback?: "canRequestFeedback";
-
-            /** FeatureEligibilities _canBeReshared. */
-            public _canBeReshared?: "canBeReshared";
+            public canBeReshared: boolean;
 
             /**
              * Creates a new FeatureEligibilities instance using the specified properties.
@@ -12396,6 +7289,15 @@ export namespace E2E {
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
+        /** ForwardOrigin enum. */
+        enum ForwardOrigin {
+            UNKNOWN = 0,
+            CHAT = 1,
+            STATUS = 2,
+            CHANNELS = 3,
+            META_AI = 4
+        }
+
         /** Properties of a ForwardedAIBotMessageInfo. */
         interface IForwardedAIBotMessageInfo {
 
@@ -12419,22 +7321,13 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IForwardedAIBotMessageInfo);
 
             /** ForwardedAIBotMessageInfo botName. */
-            public botName?: (string|null);
+            public botName: string;
 
             /** ForwardedAIBotMessageInfo botJid. */
-            public botJid?: (string|null);
+            public botJid: string;
 
             /** ForwardedAIBotMessageInfo creatorName. */
-            public creatorName?: (string|null);
-
-            /** ForwardedAIBotMessageInfo _botName. */
-            public _botName?: "botName";
-
-            /** ForwardedAIBotMessageInfo _botJid. */
-            public _botJid?: "botJid";
-
-            /** ForwardedAIBotMessageInfo _creatorName. */
-            public _creatorName?: "creatorName";
+            public creatorName: string;
 
             /**
              * Creates a new ForwardedAIBotMessageInfo instance using the specified properties.
@@ -12543,34 +7436,19 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IForwardedNewsletterMessageInfo);
 
             /** ForwardedNewsletterMessageInfo newsletterJid. */
-            public newsletterJid?: (string|null);
+            public newsletterJid: string;
 
             /** ForwardedNewsletterMessageInfo serverMessageId. */
-            public serverMessageId?: (number|null);
+            public serverMessageId: number;
 
             /** ForwardedNewsletterMessageInfo newsletterName. */
-            public newsletterName?: (string|null);
+            public newsletterName: string;
 
             /** ForwardedNewsletterMessageInfo contentType. */
-            public contentType?: (E2E.ContextInfo.ForwardedNewsletterMessageInfo.ContentType|null);
+            public contentType: E2E.ContextInfo.ForwardedNewsletterMessageInfo.ContentType;
 
             /** ForwardedNewsletterMessageInfo accessibilityText. */
-            public accessibilityText?: (string|null);
-
-            /** ForwardedNewsletterMessageInfo _newsletterJid. */
-            public _newsletterJid?: "newsletterJid";
-
-            /** ForwardedNewsletterMessageInfo _serverMessageId. */
-            public _serverMessageId?: "serverMessageId";
-
-            /** ForwardedNewsletterMessageInfo _newsletterName. */
-            public _newsletterName?: "newsletterName";
-
-            /** ForwardedNewsletterMessageInfo _contentType. */
-            public _contentType?: "contentType";
-
-            /** ForwardedNewsletterMessageInfo _accessibilityText. */
-            public _accessibilityText?: "accessibilityText";
+            public accessibilityText: string;
 
             /**
              * Creates a new ForwardedNewsletterMessageInfo instance using the specified properties.
@@ -12671,11 +7549,228 @@ export namespace E2E {
             MOTION_PHOTO_CHILD = 6
         }
 
+        /** Properties of a QuestionReplyQuotedMessage. */
+        interface IQuestionReplyQuotedMessage {
+
+            /** QuestionReplyQuotedMessage serverQuestionId */
+            serverQuestionId?: (number|null);
+
+            /** QuestionReplyQuotedMessage quotedQuestion */
+            quotedQuestion?: (E2E.IMessage|null);
+
+            /** QuestionReplyQuotedMessage quotedResponse */
+            quotedResponse?: (E2E.IMessage|null);
+        }
+
+        /** Represents a QuestionReplyQuotedMessage. */
+        class QuestionReplyQuotedMessage implements IQuestionReplyQuotedMessage {
+
+            /**
+             * Constructs a new QuestionReplyQuotedMessage.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: E2E.ContextInfo.IQuestionReplyQuotedMessage);
+
+            /** QuestionReplyQuotedMessage serverQuestionId. */
+            public serverQuestionId: number;
+
+            /** QuestionReplyQuotedMessage quotedQuestion. */
+            public quotedQuestion?: (E2E.IMessage|null);
+
+            /** QuestionReplyQuotedMessage quotedResponse. */
+            public quotedResponse?: (E2E.IMessage|null);
+
+            /**
+             * Creates a new QuestionReplyQuotedMessage instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns QuestionReplyQuotedMessage instance
+             */
+            public static create(properties?: E2E.ContextInfo.IQuestionReplyQuotedMessage): E2E.ContextInfo.QuestionReplyQuotedMessage;
+
+            /**
+             * Encodes the specified QuestionReplyQuotedMessage message. Does not implicitly {@link E2E.ContextInfo.QuestionReplyQuotedMessage.verify|verify} messages.
+             * @param message QuestionReplyQuotedMessage message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: E2E.ContextInfo.IQuestionReplyQuotedMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified QuestionReplyQuotedMessage message, length delimited. Does not implicitly {@link E2E.ContextInfo.QuestionReplyQuotedMessage.verify|verify} messages.
+             * @param message QuestionReplyQuotedMessage message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: E2E.ContextInfo.IQuestionReplyQuotedMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a QuestionReplyQuotedMessage message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns QuestionReplyQuotedMessage
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.ContextInfo.QuestionReplyQuotedMessage;
+
+            /**
+             * Decodes a QuestionReplyQuotedMessage message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns QuestionReplyQuotedMessage
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.ContextInfo.QuestionReplyQuotedMessage;
+
+            /**
+             * Verifies a QuestionReplyQuotedMessage message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a QuestionReplyQuotedMessage message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns QuestionReplyQuotedMessage
+             */
+            public static fromObject(object: { [k: string]: any }): E2E.ContextInfo.QuestionReplyQuotedMessage;
+
+            /**
+             * Creates a plain object from a QuestionReplyQuotedMessage message. Also converts values to other types if specified.
+             * @param message QuestionReplyQuotedMessage
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: E2E.ContextInfo.QuestionReplyQuotedMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this QuestionReplyQuotedMessage to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for QuestionReplyQuotedMessage
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
         /** StatusAttributionType enum. */
         enum StatusAttributionType {
             NONE = 0,
             RESHARED_FROM_MENTION = 1,
-            RESHARED_FROM_POST = 2
+            RESHARED_FROM_POST = 2,
+            RESHARED_FROM_POST_MANY_TIMES = 3,
+            FORWARDED_FROM_STATUS = 4
+        }
+
+        /** Properties of a StatusAudienceMetadata. */
+        interface IStatusAudienceMetadata {
+
+            /** StatusAudienceMetadata audienceType */
+            audienceType?: (E2E.ContextInfo.StatusAudienceMetadata.AudienceType|null);
+        }
+
+        /** Represents a StatusAudienceMetadata. */
+        class StatusAudienceMetadata implements IStatusAudienceMetadata {
+
+            /**
+             * Constructs a new StatusAudienceMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: E2E.ContextInfo.IStatusAudienceMetadata);
+
+            /** StatusAudienceMetadata audienceType. */
+            public audienceType: E2E.ContextInfo.StatusAudienceMetadata.AudienceType;
+
+            /**
+             * Creates a new StatusAudienceMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns StatusAudienceMetadata instance
+             */
+            public static create(properties?: E2E.ContextInfo.IStatusAudienceMetadata): E2E.ContextInfo.StatusAudienceMetadata;
+
+            /**
+             * Encodes the specified StatusAudienceMetadata message. Does not implicitly {@link E2E.ContextInfo.StatusAudienceMetadata.verify|verify} messages.
+             * @param message StatusAudienceMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: E2E.ContextInfo.IStatusAudienceMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified StatusAudienceMetadata message, length delimited. Does not implicitly {@link E2E.ContextInfo.StatusAudienceMetadata.verify|verify} messages.
+             * @param message StatusAudienceMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: E2E.ContextInfo.IStatusAudienceMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a StatusAudienceMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns StatusAudienceMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.ContextInfo.StatusAudienceMetadata;
+
+            /**
+             * Decodes a StatusAudienceMetadata message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns StatusAudienceMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.ContextInfo.StatusAudienceMetadata;
+
+            /**
+             * Verifies a StatusAudienceMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a StatusAudienceMetadata message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns StatusAudienceMetadata
+             */
+            public static fromObject(object: { [k: string]: any }): E2E.ContextInfo.StatusAudienceMetadata;
+
+            /**
+             * Creates a plain object from a StatusAudienceMetadata message. Also converts values to other types if specified.
+             * @param message StatusAudienceMetadata
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: E2E.ContextInfo.StatusAudienceMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this StatusAudienceMetadata to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for StatusAudienceMetadata
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        namespace StatusAudienceMetadata {
+
+            /** AudienceType enum. */
+            enum AudienceType {
+                UNKNOWN = 0,
+                CLOSE_FRIENDS = 1
+            }
         }
 
         /** StatusSourceType enum. */
@@ -12708,16 +7803,10 @@ export namespace E2E {
             constructor(properties?: E2E.ContextInfo.IUTMInfo);
 
             /** UTMInfo utmSource. */
-            public utmSource?: (string|null);
+            public utmSource: string;
 
             /** UTMInfo utmCampaign. */
-            public utmCampaign?: (string|null);
-
-            /** UTMInfo _utmSource. */
-            public _utmSource?: "utmSource";
-
-            /** UTMInfo _utmCampaign. */
-            public _utmCampaign?: "utmCampaign";
+            public utmCampaign: string;
 
             /**
              * Creates a new UTMInfo instance using the specified properties.
@@ -13064,6 +8153,15 @@ export namespace E2E {
 
         /** Message botForwardedMessage */
         botForwardedMessage?: (E2E.Message.IFutureProofMessage|null);
+
+        /** Message statusQuestionAnswerMessage */
+        statusQuestionAnswerMessage?: (E2E.Message.IStatusQuestionAnswerMessage|null);
+
+        /** Message questionReplyMessage */
+        questionReplyMessage?: (E2E.Message.IFutureProofMessage|null);
+
+        /** Message questionResponseMessage */
+        questionResponseMessage?: (E2E.Message.IQuestionResponseMessage|null);
     }
 
     /** Represents a Message. */
@@ -13076,7 +8174,7 @@ export namespace E2E {
         constructor(properties?: E2E.IMessage);
 
         /** Message conversation. */
-        public conversation?: (string|null);
+        public conversation: string;
 
         /** Message senderKeyDistributionMessage. */
         public senderKeyDistributionMessage?: (E2E.Message.ISenderKeyDistributionMessage|null);
@@ -13339,269 +8437,14 @@ export namespace E2E {
         /** Message botForwardedMessage. */
         public botForwardedMessage?: (E2E.Message.IFutureProofMessage|null);
 
-        /** Message _conversation. */
-        public _conversation?: "conversation";
+        /** Message statusQuestionAnswerMessage. */
+        public statusQuestionAnswerMessage?: (E2E.Message.IStatusQuestionAnswerMessage|null);
 
-        /** Message _senderKeyDistributionMessage. */
-        public _senderKeyDistributionMessage?: "senderKeyDistributionMessage";
+        /** Message questionReplyMessage. */
+        public questionReplyMessage?: (E2E.Message.IFutureProofMessage|null);
 
-        /** Message _imageMessage. */
-        public _imageMessage?: "imageMessage";
-
-        /** Message _contactMessage. */
-        public _contactMessage?: "contactMessage";
-
-        /** Message _locationMessage. */
-        public _locationMessage?: "locationMessage";
-
-        /** Message _extendedTextMessage. */
-        public _extendedTextMessage?: "extendedTextMessage";
-
-        /** Message _documentMessage. */
-        public _documentMessage?: "documentMessage";
-
-        /** Message _audioMessage. */
-        public _audioMessage?: "audioMessage";
-
-        /** Message _videoMessage. */
-        public _videoMessage?: "videoMessage";
-
-        /** Message _call. */
-        public _call?: "call";
-
-        /** Message _chat. */
-        public _chat?: "chat";
-
-        /** Message _protocolMessage. */
-        public _protocolMessage?: "protocolMessage";
-
-        /** Message _contactsArrayMessage. */
-        public _contactsArrayMessage?: "contactsArrayMessage";
-
-        /** Message _highlyStructuredMessage. */
-        public _highlyStructuredMessage?: "highlyStructuredMessage";
-
-        /** Message _fastRatchetKeySenderKeyDistributionMessage. */
-        public _fastRatchetKeySenderKeyDistributionMessage?: "fastRatchetKeySenderKeyDistributionMessage";
-
-        /** Message _sendPaymentMessage. */
-        public _sendPaymentMessage?: "sendPaymentMessage";
-
-        /** Message _liveLocationMessage. */
-        public _liveLocationMessage?: "liveLocationMessage";
-
-        /** Message _requestPaymentMessage. */
-        public _requestPaymentMessage?: "requestPaymentMessage";
-
-        /** Message _declinePaymentRequestMessage. */
-        public _declinePaymentRequestMessage?: "declinePaymentRequestMessage";
-
-        /** Message _cancelPaymentRequestMessage. */
-        public _cancelPaymentRequestMessage?: "cancelPaymentRequestMessage";
-
-        /** Message _templateMessage. */
-        public _templateMessage?: "templateMessage";
-
-        /** Message _stickerMessage. */
-        public _stickerMessage?: "stickerMessage";
-
-        /** Message _groupInviteMessage. */
-        public _groupInviteMessage?: "groupInviteMessage";
-
-        /** Message _templateButtonReplyMessage. */
-        public _templateButtonReplyMessage?: "templateButtonReplyMessage";
-
-        /** Message _productMessage. */
-        public _productMessage?: "productMessage";
-
-        /** Message _deviceSentMessage. */
-        public _deviceSentMessage?: "deviceSentMessage";
-
-        /** Message _messageContextInfo. */
-        public _messageContextInfo?: "messageContextInfo";
-
-        /** Message _listMessage. */
-        public _listMessage?: "listMessage";
-
-        /** Message _viewOnceMessage. */
-        public _viewOnceMessage?: "viewOnceMessage";
-
-        /** Message _orderMessage. */
-        public _orderMessage?: "orderMessage";
-
-        /** Message _listResponseMessage. */
-        public _listResponseMessage?: "listResponseMessage";
-
-        /** Message _ephemeralMessage. */
-        public _ephemeralMessage?: "ephemeralMessage";
-
-        /** Message _invoiceMessage. */
-        public _invoiceMessage?: "invoiceMessage";
-
-        /** Message _buttonsMessage. */
-        public _buttonsMessage?: "buttonsMessage";
-
-        /** Message _buttonsResponseMessage. */
-        public _buttonsResponseMessage?: "buttonsResponseMessage";
-
-        /** Message _paymentInviteMessage. */
-        public _paymentInviteMessage?: "paymentInviteMessage";
-
-        /** Message _interactiveMessage. */
-        public _interactiveMessage?: "interactiveMessage";
-
-        /** Message _reactionMessage. */
-        public _reactionMessage?: "reactionMessage";
-
-        /** Message _stickerSyncRmrMessage. */
-        public _stickerSyncRmrMessage?: "stickerSyncRmrMessage";
-
-        /** Message _interactiveResponseMessage. */
-        public _interactiveResponseMessage?: "interactiveResponseMessage";
-
-        /** Message _pollCreationMessage. */
-        public _pollCreationMessage?: "pollCreationMessage";
-
-        /** Message _pollUpdateMessage. */
-        public _pollUpdateMessage?: "pollUpdateMessage";
-
-        /** Message _keepInChatMessage. */
-        public _keepInChatMessage?: "keepInChatMessage";
-
-        /** Message _documentWithCaptionMessage. */
-        public _documentWithCaptionMessage?: "documentWithCaptionMessage";
-
-        /** Message _requestPhoneNumberMessage. */
-        public _requestPhoneNumberMessage?: "requestPhoneNumberMessage";
-
-        /** Message _viewOnceMessageV2. */
-        public _viewOnceMessageV2?: "viewOnceMessageV2";
-
-        /** Message _encReactionMessage. */
-        public _encReactionMessage?: "encReactionMessage";
-
-        /** Message _editedMessage. */
-        public _editedMessage?: "editedMessage";
-
-        /** Message _viewOnceMessageV2Extension. */
-        public _viewOnceMessageV2Extension?: "viewOnceMessageV2Extension";
-
-        /** Message _pollCreationMessageV2. */
-        public _pollCreationMessageV2?: "pollCreationMessageV2";
-
-        /** Message _scheduledCallCreationMessage. */
-        public _scheduledCallCreationMessage?: "scheduledCallCreationMessage";
-
-        /** Message _groupMentionedMessage. */
-        public _groupMentionedMessage?: "groupMentionedMessage";
-
-        /** Message _pinInChatMessage. */
-        public _pinInChatMessage?: "pinInChatMessage";
-
-        /** Message _pollCreationMessageV3. */
-        public _pollCreationMessageV3?: "pollCreationMessageV3";
-
-        /** Message _scheduledCallEditMessage. */
-        public _scheduledCallEditMessage?: "scheduledCallEditMessage";
-
-        /** Message _ptvMessage. */
-        public _ptvMessage?: "ptvMessage";
-
-        /** Message _botInvokeMessage. */
-        public _botInvokeMessage?: "botInvokeMessage";
-
-        /** Message _callLogMesssage. */
-        public _callLogMesssage?: "callLogMesssage";
-
-        /** Message _messageHistoryBundle. */
-        public _messageHistoryBundle?: "messageHistoryBundle";
-
-        /** Message _encCommentMessage. */
-        public _encCommentMessage?: "encCommentMessage";
-
-        /** Message _bcallMessage. */
-        public _bcallMessage?: "bcallMessage";
-
-        /** Message _lottieStickerMessage. */
-        public _lottieStickerMessage?: "lottieStickerMessage";
-
-        /** Message _eventMessage. */
-        public _eventMessage?: "eventMessage";
-
-        /** Message _encEventResponseMessage. */
-        public _encEventResponseMessage?: "encEventResponseMessage";
-
-        /** Message _commentMessage. */
-        public _commentMessage?: "commentMessage";
-
-        /** Message _newsletterAdminInviteMessage. */
-        public _newsletterAdminInviteMessage?: "newsletterAdminInviteMessage";
-
-        /** Message _placeholderMessage. */
-        public _placeholderMessage?: "placeholderMessage";
-
-        /** Message _secretEncryptedMessage. */
-        public _secretEncryptedMessage?: "secretEncryptedMessage";
-
-        /** Message _albumMessage. */
-        public _albumMessage?: "albumMessage";
-
-        /** Message _eventCoverImage. */
-        public _eventCoverImage?: "eventCoverImage";
-
-        /** Message _stickerPackMessage. */
-        public _stickerPackMessage?: "stickerPackMessage";
-
-        /** Message _statusMentionMessage. */
-        public _statusMentionMessage?: "statusMentionMessage";
-
-        /** Message _pollResultSnapshotMessage. */
-        public _pollResultSnapshotMessage?: "pollResultSnapshotMessage";
-
-        /** Message _pollCreationOptionImageMessage. */
-        public _pollCreationOptionImageMessage?: "pollCreationOptionImageMessage";
-
-        /** Message _associatedChildMessage. */
-        public _associatedChildMessage?: "associatedChildMessage";
-
-        /** Message _groupStatusMentionMessage. */
-        public _groupStatusMentionMessage?: "groupStatusMentionMessage";
-
-        /** Message _pollCreationMessageV4. */
-        public _pollCreationMessageV4?: "pollCreationMessageV4";
-
-        /** Message _pollCreationMessageV5. */
-        public _pollCreationMessageV5?: "pollCreationMessageV5";
-
-        /** Message _statusAddYours. */
-        public _statusAddYours?: "statusAddYours";
-
-        /** Message _groupStatusMessage. */
-        public _groupStatusMessage?: "groupStatusMessage";
-
-        /** Message _richResponseMessage. */
-        public _richResponseMessage?: "richResponseMessage";
-
-        /** Message _statusNotificationMessage. */
-        public _statusNotificationMessage?: "statusNotificationMessage";
-
-        /** Message _limitSharingMessage. */
-        public _limitSharingMessage?: "limitSharingMessage";
-
-        /** Message _botTaskMessage. */
-        public _botTaskMessage?: "botTaskMessage";
-
-        /** Message _questionMessage. */
-        public _questionMessage?: "questionMessage";
-
-        /** Message _messageHistoryNotice. */
-        public _messageHistoryNotice?: "messageHistoryNotice";
-
-        /** Message _groupStatusMessageV2. */
-        public _groupStatusMessageV2?: "groupStatusMessageV2";
-
-        /** Message _botForwardedMessage. */
-        public _botForwardedMessage?: "botForwardedMessage";
+        /** Message questionResponseMessage. */
+        public questionResponseMessage?: (E2E.Message.IQuestionResponseMessage|null);
 
         /**
          * Creates a new Message instance using the specified properties.
@@ -13706,22 +8549,13 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IAlbumMessage);
 
             /** AlbumMessage expectedImageCount. */
-            public expectedImageCount?: (number|null);
+            public expectedImageCount: number;
 
             /** AlbumMessage expectedVideoCount. */
-            public expectedVideoCount?: (number|null);
+            public expectedVideoCount: number;
 
             /** AlbumMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
-
-            /** AlbumMessage _expectedImageCount. */
-            public _expectedImageCount?: "expectedImageCount";
-
-            /** AlbumMessage _expectedVideoCount. */
-            public _expectedVideoCount?: "expectedVideoCount";
-
-            /** AlbumMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new AlbumMessage instance using the specified properties.
@@ -13824,10 +8658,7 @@ export namespace E2E {
             public collectionNames: string[];
 
             /** AppStateFatalExceptionNotification timestamp. */
-            public timestamp?: (number|Long|null);
-
-            /** AppStateFatalExceptionNotification _timestamp. */
-            public _timestamp?: "timestamp";
+            public timestamp: (number|Long);
 
             /**
              * Creates a new AppStateFatalExceptionNotification instance using the specified properties.
@@ -13932,12 +8763,6 @@ export namespace E2E {
             /** AppStateSyncKey keyData. */
             public keyData?: (E2E.Message.IAppStateSyncKeyData|null);
 
-            /** AppStateSyncKey _keyId. */
-            public _keyId?: "keyId";
-
-            /** AppStateSyncKey _keyData. */
-            public _keyData?: "keyData";
-
             /**
              * Creates a new AppStateSyncKey instance using the specified properties.
              * @param [properties] Properties to set
@@ -14039,22 +8864,13 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IAppStateSyncKeyData);
 
             /** AppStateSyncKeyData keyData. */
-            public keyData?: (Uint8Array|null);
+            public keyData: Uint8Array;
 
             /** AppStateSyncKeyData fingerprint. */
             public fingerprint?: (E2E.Message.IAppStateSyncKeyFingerprint|null);
 
             /** AppStateSyncKeyData timestamp. */
-            public timestamp?: (number|Long|null);
-
-            /** AppStateSyncKeyData _keyData. */
-            public _keyData?: "keyData";
-
-            /** AppStateSyncKeyData _fingerprint. */
-            public _fingerprint?: "fingerprint";
-
-            /** AppStateSyncKeyData _timestamp. */
-            public _timestamp?: "timestamp";
+            public timestamp: (number|Long);
 
             /**
              * Creates a new AppStateSyncKeyData instance using the specified properties.
@@ -14157,19 +8973,13 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IAppStateSyncKeyFingerprint);
 
             /** AppStateSyncKeyFingerprint rawId. */
-            public rawId?: (number|null);
+            public rawId: number;
 
             /** AppStateSyncKeyFingerprint currentIndex. */
-            public currentIndex?: (number|null);
+            public currentIndex: number;
 
             /** AppStateSyncKeyFingerprint deviceIndexes. */
             public deviceIndexes: number[];
-
-            /** AppStateSyncKeyFingerprint _rawId. */
-            public _rawId?: "rawId";
-
-            /** AppStateSyncKeyFingerprint _currentIndex. */
-            public _currentIndex?: "currentIndex";
 
             /**
              * Creates a new AppStateSyncKeyFingerprint instance using the specified properties.
@@ -14266,10 +9076,7 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IAppStateSyncKeyId);
 
             /** AppStateSyncKeyId keyId. */
-            public keyId?: (Uint8Array|null);
-
-            /** AppStateSyncKeyId _keyId. */
-            public _keyId?: "keyId";
+            public keyId: Uint8Array;
 
             /**
              * Creates a new AppStateSyncKeyId instance using the specified properties.
@@ -14593,6 +9400,9 @@ export namespace E2E {
 
             /** AudioMessage accessibilityLabel */
             accessibilityLabel?: (string|null);
+
+            /** AudioMessage mediaKeyDomain */
+            mediaKeyDomain?: (E2E.Message.MediaKeyDomain|null);
         }
 
         /** Represents an AudioMessage. */
@@ -14605,100 +9415,55 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IAudioMessage);
 
             /** AudioMessage url. */
-            public url?: (string|null);
+            public url: string;
 
             /** AudioMessage mimetype. */
-            public mimetype?: (string|null);
+            public mimetype: string;
 
             /** AudioMessage fileSha256. */
-            public fileSha256?: (Uint8Array|null);
+            public fileSha256: Uint8Array;
 
             /** AudioMessage fileLength. */
-            public fileLength?: (number|Long|null);
+            public fileLength: (number|Long);
 
             /** AudioMessage seconds. */
-            public seconds?: (number|null);
+            public seconds: number;
 
             /** AudioMessage ptt. */
-            public ptt?: (boolean|null);
+            public ptt: boolean;
 
             /** AudioMessage mediaKey. */
-            public mediaKey?: (Uint8Array|null);
+            public mediaKey: Uint8Array;
 
             /** AudioMessage fileEncSha256. */
-            public fileEncSha256?: (Uint8Array|null);
+            public fileEncSha256: Uint8Array;
 
             /** AudioMessage directPath. */
-            public directPath?: (string|null);
+            public directPath: string;
 
             /** AudioMessage mediaKeyTimestamp. */
-            public mediaKeyTimestamp?: (number|Long|null);
+            public mediaKeyTimestamp: (number|Long);
 
             /** AudioMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** AudioMessage streamingSidecar. */
-            public streamingSidecar?: (Uint8Array|null);
+            public streamingSidecar: Uint8Array;
 
             /** AudioMessage waveform. */
-            public waveform?: (Uint8Array|null);
+            public waveform: Uint8Array;
 
             /** AudioMessage backgroundArgb. */
-            public backgroundArgb?: (number|null);
+            public backgroundArgb: number;
 
             /** AudioMessage viewOnce. */
-            public viewOnce?: (boolean|null);
+            public viewOnce: boolean;
 
             /** AudioMessage accessibilityLabel. */
-            public accessibilityLabel?: (string|null);
+            public accessibilityLabel: string;
 
-            /** AudioMessage _url. */
-            public _url?: "url";
-
-            /** AudioMessage _mimetype. */
-            public _mimetype?: "mimetype";
-
-            /** AudioMessage _fileSha256. */
-            public _fileSha256?: "fileSha256";
-
-            /** AudioMessage _fileLength. */
-            public _fileLength?: "fileLength";
-
-            /** AudioMessage _seconds. */
-            public _seconds?: "seconds";
-
-            /** AudioMessage _ptt. */
-            public _ptt?: "ptt";
-
-            /** AudioMessage _mediaKey. */
-            public _mediaKey?: "mediaKey";
-
-            /** AudioMessage _fileEncSha256. */
-            public _fileEncSha256?: "fileEncSha256";
-
-            /** AudioMessage _directPath. */
-            public _directPath?: "directPath";
-
-            /** AudioMessage _mediaKeyTimestamp. */
-            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
-
-            /** AudioMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** AudioMessage _streamingSidecar. */
-            public _streamingSidecar?: "streamingSidecar";
-
-            /** AudioMessage _waveform. */
-            public _waveform?: "waveform";
-
-            /** AudioMessage _backgroundArgb. */
-            public _backgroundArgb?: "backgroundArgb";
-
-            /** AudioMessage _viewOnce. */
-            public _viewOnce?: "viewOnce";
-
-            /** AudioMessage _accessibilityLabel. */
-            public _accessibilityLabel?: "accessibilityLabel";
+            /** AudioMessage mediaKeyDomain. */
+            public mediaKeyDomain: E2E.Message.MediaKeyDomain;
 
             /**
              * Creates a new AudioMessage instance using the specified properties.
@@ -14804,28 +9569,16 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IBCallMessage);
 
             /** BCallMessage sessionId. */
-            public sessionId?: (string|null);
+            public sessionId: string;
 
             /** BCallMessage mediaType. */
-            public mediaType?: (E2E.Message.BCallMessage.MediaType|null);
+            public mediaType: E2E.Message.BCallMessage.MediaType;
 
             /** BCallMessage masterKey. */
-            public masterKey?: (Uint8Array|null);
+            public masterKey: Uint8Array;
 
             /** BCallMessage caption. */
-            public caption?: (string|null);
-
-            /** BCallMessage _sessionId. */
-            public _sessionId?: "sessionId";
-
-            /** BCallMessage _mediaType. */
-            public _mediaType?: "mediaType";
-
-            /** BCallMessage _masterKey. */
-            public _masterKey?: "masterKey";
-
-            /** BCallMessage _caption. */
-            public _caption?: "caption";
+            public caption: string;
 
             /**
              * Creates a new BCallMessage instance using the specified properties.
@@ -14935,6 +9688,9 @@ export namespace E2E {
 
             /** BotFeedbackMessage kindReport */
             kindReport?: (E2E.Message.BotFeedbackMessage.ReportKind|null);
+
+            /** BotFeedbackMessage sideBySideSurveyMetadata */
+            sideBySideSurveyMetadata?: (E2E.Message.BotFeedbackMessage.ISideBySideSurveyMetadata|null);
         }
 
         /** Represents a BotFeedbackMessage. */
@@ -14950,37 +9706,22 @@ export namespace E2E {
             public messageKey?: (Protocol.IMessageKey|null);
 
             /** BotFeedbackMessage kind. */
-            public kind?: (E2E.Message.BotFeedbackMessage.BotFeedbackKind|null);
+            public kind: E2E.Message.BotFeedbackMessage.BotFeedbackKind;
 
             /** BotFeedbackMessage text. */
-            public text?: (string|null);
+            public text: string;
 
             /** BotFeedbackMessage kindNegative. */
-            public kindNegative?: (number|Long|null);
+            public kindNegative: (number|Long);
 
             /** BotFeedbackMessage kindPositive. */
-            public kindPositive?: (number|Long|null);
+            public kindPositive: (number|Long);
 
             /** BotFeedbackMessage kindReport. */
-            public kindReport?: (E2E.Message.BotFeedbackMessage.ReportKind|null);
+            public kindReport: E2E.Message.BotFeedbackMessage.ReportKind;
 
-            /** BotFeedbackMessage _messageKey. */
-            public _messageKey?: "messageKey";
-
-            /** BotFeedbackMessage _kind. */
-            public _kind?: "kind";
-
-            /** BotFeedbackMessage _text. */
-            public _text?: "text";
-
-            /** BotFeedbackMessage _kindNegative. */
-            public _kindNegative?: "kindNegative";
-
-            /** BotFeedbackMessage _kindPositive. */
-            public _kindPositive?: "kindPositive";
-
-            /** BotFeedbackMessage _kindReport. */
-            public _kindReport?: "kindReport";
+            /** BotFeedbackMessage sideBySideSurveyMetadata. */
+            public sideBySideSurveyMetadata?: (E2E.Message.BotFeedbackMessage.ISideBySideSurveyMetadata|null);
 
             /**
              * Creates a new BotFeedbackMessage instance using the specified properties.
@@ -15104,6 +9845,251 @@ export namespace E2E {
                 NONE = 0,
                 GENERIC = 1
             }
+
+            /** Properties of a SideBySideSurveyMetadata. */
+            interface ISideBySideSurveyMetadata {
+
+                /** SideBySideSurveyMetadata selectedRequestId */
+                selectedRequestId?: (string|null);
+
+                /** SideBySideSurveyMetadata surveyId */
+                surveyId?: (number|null);
+
+                /** SideBySideSurveyMetadata simonSessionFbid */
+                simonSessionFbid?: (string|null);
+
+                /** SideBySideSurveyMetadata responseOtid */
+                responseOtid?: (string|null);
+
+                /** SideBySideSurveyMetadata responseTimestampMsString */
+                responseTimestampMsString?: (string|null);
+
+                /** SideBySideSurveyMetadata isSelectedResponsePrimary */
+                isSelectedResponsePrimary?: (boolean|null);
+
+                /** SideBySideSurveyMetadata messageIdToEdit */
+                messageIdToEdit?: (string|null);
+
+                /** SideBySideSurveyMetadata analyticsData */
+                analyticsData?: (E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.ISideBySideSurveyAnalyticsData|null);
+            }
+
+            /** Represents a SideBySideSurveyMetadata. */
+            class SideBySideSurveyMetadata implements ISideBySideSurveyMetadata {
+
+                /**
+                 * Constructs a new SideBySideSurveyMetadata.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: E2E.Message.BotFeedbackMessage.ISideBySideSurveyMetadata);
+
+                /** SideBySideSurveyMetadata selectedRequestId. */
+                public selectedRequestId: string;
+
+                /** SideBySideSurveyMetadata surveyId. */
+                public surveyId: number;
+
+                /** SideBySideSurveyMetadata simonSessionFbid. */
+                public simonSessionFbid: string;
+
+                /** SideBySideSurveyMetadata responseOtid. */
+                public responseOtid: string;
+
+                /** SideBySideSurveyMetadata responseTimestampMsString. */
+                public responseTimestampMsString: string;
+
+                /** SideBySideSurveyMetadata isSelectedResponsePrimary. */
+                public isSelectedResponsePrimary: boolean;
+
+                /** SideBySideSurveyMetadata messageIdToEdit. */
+                public messageIdToEdit: string;
+
+                /** SideBySideSurveyMetadata analyticsData. */
+                public analyticsData?: (E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.ISideBySideSurveyAnalyticsData|null);
+
+                /**
+                 * Creates a new SideBySideSurveyMetadata instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns SideBySideSurveyMetadata instance
+                 */
+                public static create(properties?: E2E.Message.BotFeedbackMessage.ISideBySideSurveyMetadata): E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata;
+
+                /**
+                 * Encodes the specified SideBySideSurveyMetadata message. Does not implicitly {@link E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.verify|verify} messages.
+                 * @param message SideBySideSurveyMetadata message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: E2E.Message.BotFeedbackMessage.ISideBySideSurveyMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified SideBySideSurveyMetadata message, length delimited. Does not implicitly {@link E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.verify|verify} messages.
+                 * @param message SideBySideSurveyMetadata message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: E2E.Message.BotFeedbackMessage.ISideBySideSurveyMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a SideBySideSurveyMetadata message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns SideBySideSurveyMetadata
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata;
+
+                /**
+                 * Decodes a SideBySideSurveyMetadata message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns SideBySideSurveyMetadata
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata;
+
+                /**
+                 * Verifies a SideBySideSurveyMetadata message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a SideBySideSurveyMetadata message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns SideBySideSurveyMetadata
+                 */
+                public static fromObject(object: { [k: string]: any }): E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata;
+
+                /**
+                 * Creates a plain object from a SideBySideSurveyMetadata message. Also converts values to other types if specified.
+                 * @param message SideBySideSurveyMetadata
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this SideBySideSurveyMetadata to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+
+                /**
+                 * Gets the default type url for SideBySideSurveyMetadata
+                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns The default type url
+                 */
+                public static getTypeUrl(typeUrlPrefix?: string): string;
+            }
+
+            namespace SideBySideSurveyMetadata {
+
+                /** Properties of a SideBySideSurveyAnalyticsData. */
+                interface ISideBySideSurveyAnalyticsData {
+
+                    /** SideBySideSurveyAnalyticsData tessaEvent */
+                    tessaEvent?: (string|null);
+
+                    /** SideBySideSurveyAnalyticsData tessaSessionFbid */
+                    tessaSessionFbid?: (string|null);
+                }
+
+                /** Represents a SideBySideSurveyAnalyticsData. */
+                class SideBySideSurveyAnalyticsData implements ISideBySideSurveyAnalyticsData {
+
+                    /**
+                     * Constructs a new SideBySideSurveyAnalyticsData.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.ISideBySideSurveyAnalyticsData);
+
+                    /** SideBySideSurveyAnalyticsData tessaEvent. */
+                    public tessaEvent: string;
+
+                    /** SideBySideSurveyAnalyticsData tessaSessionFbid. */
+                    public tessaSessionFbid: string;
+
+                    /**
+                     * Creates a new SideBySideSurveyAnalyticsData instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns SideBySideSurveyAnalyticsData instance
+                     */
+                    public static create(properties?: E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.ISideBySideSurveyAnalyticsData): E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData;
+
+                    /**
+                     * Encodes the specified SideBySideSurveyAnalyticsData message. Does not implicitly {@link E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData.verify|verify} messages.
+                     * @param message SideBySideSurveyAnalyticsData message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.ISideBySideSurveyAnalyticsData, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified SideBySideSurveyAnalyticsData message, length delimited. Does not implicitly {@link E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData.verify|verify} messages.
+                     * @param message SideBySideSurveyAnalyticsData message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.ISideBySideSurveyAnalyticsData, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a SideBySideSurveyAnalyticsData message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns SideBySideSurveyAnalyticsData
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData;
+
+                    /**
+                     * Decodes a SideBySideSurveyAnalyticsData message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns SideBySideSurveyAnalyticsData
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData;
+
+                    /**
+                     * Verifies a SideBySideSurveyAnalyticsData message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a SideBySideSurveyAnalyticsData message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns SideBySideSurveyAnalyticsData
+                     */
+                    public static fromObject(object: { [k: string]: any }): E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData;
+
+                    /**
+                     * Creates a plain object from a SideBySideSurveyAnalyticsData message. Also converts values to other types if specified.
+                     * @param message SideBySideSurveyAnalyticsData
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: E2E.Message.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this SideBySideSurveyAnalyticsData to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+
+                    /**
+                     * Gets the default type url for SideBySideSurveyAnalyticsData
+                     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                     * @returns The default type url
+                     */
+                    public static getTypeUrl(typeUrlPrefix?: string): string;
+                }
+            }
         }
 
         /** Properties of a ButtonsMessage. */
@@ -15150,10 +10136,10 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IButtonsMessage);
 
             /** ButtonsMessage contentText. */
-            public contentText?: (string|null);
+            public contentText: string;
 
             /** ButtonsMessage footerText. */
-            public footerText?: (string|null);
+            public footerText: string;
 
             /** ButtonsMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
@@ -15162,7 +10148,7 @@ export namespace E2E {
             public buttons: E2E.Message.ButtonsMessage.IButton[];
 
             /** ButtonsMessage headerType. */
-            public headerType?: (E2E.Message.ButtonsMessage.HeaderType|null);
+            public headerType: E2E.Message.ButtonsMessage.HeaderType;
 
             /** ButtonsMessage text. */
             public text?: (string|null);
@@ -15178,18 +10164,6 @@ export namespace E2E {
 
             /** ButtonsMessage locationMessage. */
             public locationMessage?: (E2E.Message.ILocationMessage|null);
-
-            /** ButtonsMessage _contentText. */
-            public _contentText?: "contentText";
-
-            /** ButtonsMessage _footerText. */
-            public _footerText?: "footerText";
-
-            /** ButtonsMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** ButtonsMessage _headerType. */
-            public _headerType?: "headerType";
 
             /** ButtonsMessage header. */
             public header?: ("text"|"documentMessage"|"imageMessage"|"videoMessage"|"locationMessage");
@@ -15300,28 +10274,16 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.ButtonsMessage.IButton);
 
                 /** Button buttonId. */
-                public buttonId?: (string|null);
+                public buttonId: string;
 
                 /** Button buttonText. */
                 public buttonText?: (E2E.Message.ButtonsMessage.Button.IButtonText|null);
 
                 /** Button type. */
-                public type?: (E2E.Message.ButtonsMessage.Button.Type|null);
+                public type: E2E.Message.ButtonsMessage.Button.Type;
 
                 /** Button nativeFlowInfo. */
                 public nativeFlowInfo?: (E2E.Message.ButtonsMessage.Button.INativeFlowInfo|null);
-
-                /** Button _buttonId. */
-                public _buttonId?: "buttonId";
-
-                /** Button _buttonText. */
-                public _buttonText?: "buttonText";
-
-                /** Button _type. */
-                public _type?: "type";
-
-                /** Button _nativeFlowInfo. */
-                public _nativeFlowInfo?: "nativeFlowInfo";
 
                 /**
                  * Creates a new Button instance using the specified properties.
@@ -15420,10 +10382,7 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.ButtonsMessage.Button.IButtonText);
 
                     /** ButtonText displayText. */
-                    public displayText?: (string|null);
-
-                    /** ButtonText _displayText. */
-                    public _displayText?: "displayText";
+                    public displayText: string;
 
                     /**
                      * Creates a new ButtonText instance using the specified properties.
@@ -15523,16 +10482,10 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.ButtonsMessage.Button.INativeFlowInfo);
 
                     /** NativeFlowInfo name. */
-                    public name?: (string|null);
+                    public name: string;
 
                     /** NativeFlowInfo paramsJson. */
-                    public paramsJson?: (string|null);
-
-                    /** NativeFlowInfo _name. */
-                    public _name?: "name";
-
-                    /** NativeFlowInfo _paramsJson. */
-                    public _paramsJson?: "paramsJson";
+                    public paramsJson: string;
 
                     /**
                      * Creates a new NativeFlowInfo instance using the specified properties.
@@ -15658,25 +10611,16 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IButtonsResponseMessage);
 
             /** ButtonsResponseMessage selectedButtonId. */
-            public selectedButtonId?: (string|null);
+            public selectedButtonId: string;
 
             /** ButtonsResponseMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** ButtonsResponseMessage type. */
-            public type?: (E2E.Message.ButtonsResponseMessage.Type|null);
+            public type: E2E.Message.ButtonsResponseMessage.Type;
 
             /** ButtonsResponseMessage selectedDisplayText. */
             public selectedDisplayText?: (string|null);
-
-            /** ButtonsResponseMessage _selectedButtonId. */
-            public _selectedButtonId?: "selectedButtonId";
-
-            /** ButtonsResponseMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** ButtonsResponseMessage _type. */
-            public _type?: "type";
 
             /** ButtonsResponseMessage response. */
             public response?: "selectedDisplayText";
@@ -15791,6 +10735,12 @@ export namespace E2E {
 
             /** Call contextInfo */
             contextInfo?: (E2E.IContextInfo|null);
+
+            /** Call nativeFlowCallButtonPayload */
+            nativeFlowCallButtonPayload?: (string|null);
+
+            /** Call deeplinkPayload */
+            deeplinkPayload?: (string|null);
         }
 
         /** Represents a Call. */
@@ -15803,46 +10753,31 @@ export namespace E2E {
             constructor(properties?: E2E.Message.ICall);
 
             /** Call callKey. */
-            public callKey?: (Uint8Array|null);
+            public callKey: Uint8Array;
 
             /** Call conversionSource. */
-            public conversionSource?: (string|null);
+            public conversionSource: string;
 
             /** Call conversionData. */
-            public conversionData?: (Uint8Array|null);
+            public conversionData: Uint8Array;
 
             /** Call conversionDelaySeconds. */
-            public conversionDelaySeconds?: (number|null);
+            public conversionDelaySeconds: number;
 
             /** Call ctwaSignals. */
-            public ctwaSignals?: (string|null);
+            public ctwaSignals: string;
 
             /** Call ctwaPayload. */
-            public ctwaPayload?: (Uint8Array|null);
+            public ctwaPayload: Uint8Array;
 
             /** Call contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
-            /** Call _callKey. */
-            public _callKey?: "callKey";
+            /** Call nativeFlowCallButtonPayload. */
+            public nativeFlowCallButtonPayload: string;
 
-            /** Call _conversionSource. */
-            public _conversionSource?: "conversionSource";
-
-            /** Call _conversionData. */
-            public _conversionData?: "conversionData";
-
-            /** Call _conversionDelaySeconds. */
-            public _conversionDelaySeconds?: "conversionDelaySeconds";
-
-            /** Call _ctwaSignals. */
-            public _ctwaSignals?: "ctwaSignals";
-
-            /** Call _ctwaPayload. */
-            public _ctwaPayload?: "ctwaPayload";
-
-            /** Call _contextInfo. */
-            public _contextInfo?: "contextInfo";
+            /** Call deeplinkPayload. */
+            public deeplinkPayload: string;
 
             /**
              * Creates a new Call instance using the specified properties.
@@ -15951,31 +10886,19 @@ export namespace E2E {
             constructor(properties?: E2E.Message.ICallLogMessage);
 
             /** CallLogMessage isVideo. */
-            public isVideo?: (boolean|null);
+            public isVideo: boolean;
 
             /** CallLogMessage callOutcome. */
-            public callOutcome?: (E2E.Message.CallLogMessage.CallOutcome|null);
+            public callOutcome: E2E.Message.CallLogMessage.CallOutcome;
 
             /** CallLogMessage durationSecs. */
-            public durationSecs?: (number|Long|null);
+            public durationSecs: (number|Long);
 
             /** CallLogMessage callType. */
-            public callType?: (E2E.Message.CallLogMessage.CallType|null);
+            public callType: E2E.Message.CallLogMessage.CallType;
 
             /** CallLogMessage participants. */
             public participants: E2E.Message.CallLogMessage.ICallParticipant[];
-
-            /** CallLogMessage _isVideo. */
-            public _isVideo?: "isVideo";
-
-            /** CallLogMessage _callOutcome. */
-            public _callOutcome?: "callOutcome";
-
-            /** CallLogMessage _durationSecs. */
-            public _durationSecs?: "durationSecs";
-
-            /** CallLogMessage _callType. */
-            public _callType?: "callType";
 
             /**
              * Creates a new CallLogMessage instance using the specified properties.
@@ -16089,16 +11012,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.CallLogMessage.ICallParticipant);
 
                 /** CallParticipant jid. */
-                public jid?: (string|null);
+                public jid: string;
 
                 /** CallParticipant callOutcome. */
-                public callOutcome?: (E2E.Message.CallLogMessage.CallOutcome|null);
-
-                /** CallParticipant _jid. */
-                public _jid?: "jid";
-
-                /** CallParticipant _callOutcome. */
-                public _callOutcome?: "callOutcome";
+                public callOutcome: E2E.Message.CallLogMessage.CallOutcome;
 
                 /**
                  * Creates a new CallParticipant instance using the specified properties.
@@ -16205,9 +11122,6 @@ export namespace E2E {
             /** CancelPaymentRequestMessage key. */
             public key?: (Protocol.IMessageKey|null);
 
-            /** CancelPaymentRequestMessage _key. */
-            public _key?: "key";
-
             /**
              * Creates a new CancelPaymentRequestMessage instance using the specified properties.
              * @param [properties] Properties to set
@@ -16306,16 +11220,10 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IChat);
 
             /** Chat displayName. */
-            public displayName?: (string|null);
+            public displayName: string;
 
             /** Chat id. */
-            public id?: (string|null);
-
-            /** Chat _displayName. */
-            public _displayName?: "displayName";
-
-            /** Chat _id. */
-            public _id?: "id";
+            public id: string;
 
             /**
              * Creates a new Chat instance using the specified properties.
@@ -16412,6 +11320,9 @@ export namespace E2E {
 
             /** CloudAPIThreadControlNotification notificationContent */
             notificationContent?: (E2E.Message.CloudAPIThreadControlNotification.ICloudAPIThreadControlNotificationContent|null);
+
+            /** CloudAPIThreadControlNotification shouldSuppressNotification */
+            shouldSuppressNotification?: (boolean|null);
         }
 
         /** Represents a CloudAPIThreadControlNotification. */
@@ -16424,34 +11335,22 @@ export namespace E2E {
             constructor(properties?: E2E.Message.ICloudAPIThreadControlNotification);
 
             /** CloudAPIThreadControlNotification status. */
-            public status?: (E2E.Message.CloudAPIThreadControlNotification.CloudAPIThreadControl|null);
+            public status: E2E.Message.CloudAPIThreadControlNotification.CloudAPIThreadControl;
 
             /** CloudAPIThreadControlNotification senderNotificationTimestampMs. */
-            public senderNotificationTimestampMs?: (number|Long|null);
+            public senderNotificationTimestampMs: (number|Long);
 
             /** CloudAPIThreadControlNotification consumerLid. */
-            public consumerLid?: (string|null);
+            public consumerLid: string;
 
             /** CloudAPIThreadControlNotification consumerPhoneNumber. */
-            public consumerPhoneNumber?: (string|null);
+            public consumerPhoneNumber: string;
 
             /** CloudAPIThreadControlNotification notificationContent. */
             public notificationContent?: (E2E.Message.CloudAPIThreadControlNotification.ICloudAPIThreadControlNotificationContent|null);
 
-            /** CloudAPIThreadControlNotification _status. */
-            public _status?: "status";
-
-            /** CloudAPIThreadControlNotification _senderNotificationTimestampMs. */
-            public _senderNotificationTimestampMs?: "senderNotificationTimestampMs";
-
-            /** CloudAPIThreadControlNotification _consumerLid. */
-            public _consumerLid?: "consumerLid";
-
-            /** CloudAPIThreadControlNotification _consumerPhoneNumber. */
-            public _consumerPhoneNumber?: "consumerPhoneNumber";
-
-            /** CloudAPIThreadControlNotification _notificationContent. */
-            public _notificationContent?: "notificationContent";
+            /** CloudAPIThreadControlNotification shouldSuppressNotification. */
+            public shouldSuppressNotification: boolean;
 
             /**
              * Creates a new CloudAPIThreadControlNotification instance using the specified properties.
@@ -16560,16 +11459,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.CloudAPIThreadControlNotification.ICloudAPIThreadControlNotificationContent);
 
                 /** CloudAPIThreadControlNotificationContent handoffNotificationText. */
-                public handoffNotificationText?: (string|null);
+                public handoffNotificationText: string;
 
                 /** CloudAPIThreadControlNotificationContent extraJson. */
-                public extraJson?: (string|null);
-
-                /** CloudAPIThreadControlNotificationContent _handoffNotificationText. */
-                public _handoffNotificationText?: "handoffNotificationText";
-
-                /** CloudAPIThreadControlNotificationContent _extraJson. */
-                public _extraJson?: "extraJson";
+                public extraJson: string;
 
                 /**
                  * Creates a new CloudAPIThreadControlNotificationContent instance using the specified properties.
@@ -16675,12 +11568,6 @@ export namespace E2E {
             /** CommentMessage targetMessageKey. */
             public targetMessageKey?: (Protocol.IMessageKey|null);
 
-            /** CommentMessage _message. */
-            public _message?: "message";
-
-            /** CommentMessage _targetMessageKey. */
-            public _targetMessageKey?: "targetMessageKey";
-
             /**
              * Creates a new CommentMessage instance using the specified properties.
              * @param [properties] Properties to set
@@ -16782,22 +11669,13 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IContactMessage);
 
             /** ContactMessage displayName. */
-            public displayName?: (string|null);
+            public displayName: string;
 
             /** ContactMessage vcard. */
-            public vcard?: (string|null);
+            public vcard: string;
 
             /** ContactMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
-
-            /** ContactMessage _displayName. */
-            public _displayName?: "displayName";
-
-            /** ContactMessage _vcard. */
-            public _vcard?: "vcard";
-
-            /** ContactMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new ContactMessage instance using the specified properties.
@@ -16900,19 +11778,13 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IContactsArrayMessage);
 
             /** ContactsArrayMessage displayName. */
-            public displayName?: (string|null);
+            public displayName: string;
 
             /** ContactsArrayMessage contacts. */
             public contacts: E2E.Message.IContactMessage[];
 
             /** ContactsArrayMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
-
-            /** ContactsArrayMessage _displayName. */
-            public _displayName?: "displayName";
-
-            /** ContactsArrayMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new ContactsArrayMessage instance using the specified properties.
@@ -17010,9 +11882,6 @@ export namespace E2E {
 
             /** DeclinePaymentRequestMessage key. */
             public key?: (Protocol.IMessageKey|null);
-
-            /** DeclinePaymentRequestMessage _key. */
-            public _key?: "key";
 
             /**
              * Creates a new DeclinePaymentRequestMessage instance using the specified properties.
@@ -17115,22 +11984,13 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IDeviceSentMessage);
 
             /** DeviceSentMessage destinationJid. */
-            public destinationJid?: (string|null);
+            public destinationJid: string;
 
             /** DeviceSentMessage message. */
             public message?: (E2E.IMessage|null);
 
             /** DeviceSentMessage phash. */
-            public phash?: (string|null);
-
-            /** DeviceSentMessage _destinationJid. */
-            public _destinationJid?: "destinationJid";
-
-            /** DeviceSentMessage _message. */
-            public _message?: "message";
-
-            /** DeviceSentMessage _phash. */
-            public _phash?: "phash";
+            public phash: string;
 
             /**
              * Creates a new DeviceSentMessage instance using the specified properties.
@@ -17275,6 +12135,9 @@ export namespace E2E {
 
             /** DocumentMessage accessibilityLabel */
             accessibilityLabel?: (string|null);
+
+            /** DocumentMessage mediaKeyDomain */
+            mediaKeyDomain?: (E2E.Message.MediaKeyDomain|null);
         }
 
         /** Represents a DocumentMessage. */
@@ -17287,130 +12150,70 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IDocumentMessage);
 
             /** DocumentMessage url. */
-            public url?: (string|null);
+            public url: string;
 
             /** DocumentMessage mimetype. */
-            public mimetype?: (string|null);
+            public mimetype: string;
 
             /** DocumentMessage title. */
-            public title?: (string|null);
+            public title: string;
 
             /** DocumentMessage fileSha256. */
-            public fileSha256?: (Uint8Array|null);
+            public fileSha256: Uint8Array;
 
             /** DocumentMessage fileLength. */
-            public fileLength?: (number|Long|null);
+            public fileLength: (number|Long);
 
             /** DocumentMessage pageCount. */
-            public pageCount?: (number|null);
+            public pageCount: number;
 
             /** DocumentMessage mediaKey. */
-            public mediaKey?: (Uint8Array|null);
+            public mediaKey: Uint8Array;
 
             /** DocumentMessage fileName. */
-            public fileName?: (string|null);
+            public fileName: string;
 
             /** DocumentMessage fileEncSha256. */
-            public fileEncSha256?: (Uint8Array|null);
+            public fileEncSha256: Uint8Array;
 
             /** DocumentMessage directPath. */
-            public directPath?: (string|null);
+            public directPath: string;
 
             /** DocumentMessage mediaKeyTimestamp. */
-            public mediaKeyTimestamp?: (number|Long|null);
+            public mediaKeyTimestamp: (number|Long);
 
             /** DocumentMessage contactVcard. */
-            public contactVcard?: (boolean|null);
+            public contactVcard: boolean;
 
             /** DocumentMessage thumbnailDirectPath. */
-            public thumbnailDirectPath?: (string|null);
+            public thumbnailDirectPath: string;
 
             /** DocumentMessage thumbnailSha256. */
-            public thumbnailSha256?: (Uint8Array|null);
+            public thumbnailSha256: Uint8Array;
 
             /** DocumentMessage thumbnailEncSha256. */
-            public thumbnailEncSha256?: (Uint8Array|null);
+            public thumbnailEncSha256: Uint8Array;
 
             /** DocumentMessage jpegThumbnail. */
-            public jpegThumbnail?: (Uint8Array|null);
+            public jpegThumbnail: Uint8Array;
 
             /** DocumentMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** DocumentMessage thumbnailHeight. */
-            public thumbnailHeight?: (number|null);
+            public thumbnailHeight: number;
 
             /** DocumentMessage thumbnailWidth. */
-            public thumbnailWidth?: (number|null);
+            public thumbnailWidth: number;
 
             /** DocumentMessage caption. */
-            public caption?: (string|null);
+            public caption: string;
 
             /** DocumentMessage accessibilityLabel. */
-            public accessibilityLabel?: (string|null);
+            public accessibilityLabel: string;
 
-            /** DocumentMessage _url. */
-            public _url?: "url";
-
-            /** DocumentMessage _mimetype. */
-            public _mimetype?: "mimetype";
-
-            /** DocumentMessage _title. */
-            public _title?: "title";
-
-            /** DocumentMessage _fileSha256. */
-            public _fileSha256?: "fileSha256";
-
-            /** DocumentMessage _fileLength. */
-            public _fileLength?: "fileLength";
-
-            /** DocumentMessage _pageCount. */
-            public _pageCount?: "pageCount";
-
-            /** DocumentMessage _mediaKey. */
-            public _mediaKey?: "mediaKey";
-
-            /** DocumentMessage _fileName. */
-            public _fileName?: "fileName";
-
-            /** DocumentMessage _fileEncSha256. */
-            public _fileEncSha256?: "fileEncSha256";
-
-            /** DocumentMessage _directPath. */
-            public _directPath?: "directPath";
-
-            /** DocumentMessage _mediaKeyTimestamp. */
-            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
-
-            /** DocumentMessage _contactVcard. */
-            public _contactVcard?: "contactVcard";
-
-            /** DocumentMessage _thumbnailDirectPath. */
-            public _thumbnailDirectPath?: "thumbnailDirectPath";
-
-            /** DocumentMessage _thumbnailSha256. */
-            public _thumbnailSha256?: "thumbnailSha256";
-
-            /** DocumentMessage _thumbnailEncSha256. */
-            public _thumbnailEncSha256?: "thumbnailEncSha256";
-
-            /** DocumentMessage _jpegThumbnail. */
-            public _jpegThumbnail?: "jpegThumbnail";
-
-            /** DocumentMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** DocumentMessage _thumbnailHeight. */
-            public _thumbnailHeight?: "thumbnailHeight";
-
-            /** DocumentMessage _thumbnailWidth. */
-            public _thumbnailWidth?: "thumbnailWidth";
-
-            /** DocumentMessage _caption. */
-            public _caption?: "caption";
-
-            /** DocumentMessage _accessibilityLabel. */
-            public _accessibilityLabel?: "accessibilityLabel";
+            /** DocumentMessage mediaKeyDomain. */
+            public mediaKeyDomain: E2E.Message.MediaKeyDomain;
 
             /**
              * Creates a new DocumentMessage instance using the specified properties.
@@ -17516,19 +12319,10 @@ export namespace E2E {
             public targetMessageKey?: (Protocol.IMessageKey|null);
 
             /** EncCommentMessage encPayload. */
-            public encPayload?: (Uint8Array|null);
+            public encPayload: Uint8Array;
 
             /** EncCommentMessage encIv. */
-            public encIv?: (Uint8Array|null);
-
-            /** EncCommentMessage _targetMessageKey. */
-            public _targetMessageKey?: "targetMessageKey";
-
-            /** EncCommentMessage _encPayload. */
-            public _encPayload?: "encPayload";
-
-            /** EncCommentMessage _encIv. */
-            public _encIv?: "encIv";
+            public encIv: Uint8Array;
 
             /**
              * Creates a new EncCommentMessage instance using the specified properties.
@@ -17634,19 +12428,10 @@ export namespace E2E {
             public eventCreationMessageKey?: (Protocol.IMessageKey|null);
 
             /** EncEventResponseMessage encPayload. */
-            public encPayload?: (Uint8Array|null);
+            public encPayload: Uint8Array;
 
             /** EncEventResponseMessage encIv. */
-            public encIv?: (Uint8Array|null);
-
-            /** EncEventResponseMessage _eventCreationMessageKey. */
-            public _eventCreationMessageKey?: "eventCreationMessageKey";
-
-            /** EncEventResponseMessage _encPayload. */
-            public _encPayload?: "encPayload";
-
-            /** EncEventResponseMessage _encIv. */
-            public _encIv?: "encIv";
+            public encIv: Uint8Array;
 
             /**
              * Creates a new EncEventResponseMessage instance using the specified properties.
@@ -17752,19 +12537,10 @@ export namespace E2E {
             public targetMessageKey?: (Protocol.IMessageKey|null);
 
             /** EncReactionMessage encPayload. */
-            public encPayload?: (Uint8Array|null);
+            public encPayload: Uint8Array;
 
             /** EncReactionMessage encIv. */
-            public encIv?: (Uint8Array|null);
-
-            /** EncReactionMessage _targetMessageKey. */
-            public _targetMessageKey?: "targetMessageKey";
-
-            /** EncReactionMessage _encPayload. */
-            public _encPayload?: "encPayload";
-
-            /** EncReactionMessage _encIv. */
-            public _encIv?: "encIv";
+            public encIv: Uint8Array;
 
             /**
              * Creates a new EncReactionMessage instance using the specified properties.
@@ -17891,61 +12667,31 @@ export namespace E2E {
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** EventMessage isCanceled. */
-            public isCanceled?: (boolean|null);
+            public isCanceled: boolean;
 
             /** EventMessage name. */
-            public name?: (string|null);
+            public name: string;
 
             /** EventMessage description. */
-            public description?: (string|null);
+            public description: string;
 
             /** EventMessage location. */
             public location?: (E2E.Message.ILocationMessage|null);
 
             /** EventMessage joinLink. */
-            public joinLink?: (string|null);
+            public joinLink: string;
 
             /** EventMessage startTime. */
-            public startTime?: (number|Long|null);
+            public startTime: (number|Long);
 
             /** EventMessage endTime. */
-            public endTime?: (number|Long|null);
+            public endTime: (number|Long);
 
             /** EventMessage extraGuestsAllowed. */
-            public extraGuestsAllowed?: (boolean|null);
+            public extraGuestsAllowed: boolean;
 
             /** EventMessage isScheduleCall. */
-            public isScheduleCall?: (boolean|null);
-
-            /** EventMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** EventMessage _isCanceled. */
-            public _isCanceled?: "isCanceled";
-
-            /** EventMessage _name. */
-            public _name?: "name";
-
-            /** EventMessage _description. */
-            public _description?: "description";
-
-            /** EventMessage _location. */
-            public _location?: "location";
-
-            /** EventMessage _joinLink. */
-            public _joinLink?: "joinLink";
-
-            /** EventMessage _startTime. */
-            public _startTime?: "startTime";
-
-            /** EventMessage _endTime. */
-            public _endTime?: "endTime";
-
-            /** EventMessage _extraGuestsAllowed. */
-            public _extraGuestsAllowed?: "extraGuestsAllowed";
-
-            /** EventMessage _isScheduleCall. */
-            public _isScheduleCall?: "isScheduleCall";
+            public isScheduleCall: boolean;
 
             /**
              * Creates a new EventMessage instance using the specified properties.
@@ -18048,22 +12794,13 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IEventResponseMessage);
 
             /** EventResponseMessage response. */
-            public response?: (E2E.Message.EventResponseMessage.EventResponseType|null);
+            public response: E2E.Message.EventResponseMessage.EventResponseType;
 
             /** EventResponseMessage timestampMs. */
-            public timestampMs?: (number|Long|null);
+            public timestampMs: (number|Long);
 
             /** EventResponseMessage extraGuestCount. */
-            public extraGuestCount?: (number|null);
-
-            /** EventResponseMessage _response. */
-            public _response?: "response";
-
-            /** EventResponseMessage _timestampMs. */
-            public _timestampMs?: "timestampMs";
-
-            /** EventResponseMessage _extraGuestCount. */
-            public _extraGuestCount?: "extraGuestCount";
+            public extraGuestCount: number;
 
             /**
              * Creates a new EventResponseMessage instance using the specified properties.
@@ -18240,6 +12977,9 @@ export namespace E2E {
 
             /** ExtendedTextMessage paymentLinkMetadata */
             paymentLinkMetadata?: (E2E.Message.IPaymentLinkMetadata|null);
+
+            /** ExtendedTextMessage endCardTiles */
+            endCardTiles?: (E2E.Message.IVideoEndCard[]|null);
         }
 
         /** Represents an ExtendedTextMessage. */
@@ -18252,79 +12992,79 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IExtendedTextMessage);
 
             /** ExtendedTextMessage text. */
-            public text?: (string|null);
+            public text: string;
 
             /** ExtendedTextMessage matchedText. */
-            public matchedText?: (string|null);
+            public matchedText: string;
 
             /** ExtendedTextMessage description. */
-            public description?: (string|null);
+            public description: string;
 
             /** ExtendedTextMessage title. */
-            public title?: (string|null);
+            public title: string;
 
             /** ExtendedTextMessage textArgb. */
-            public textArgb?: (number|null);
+            public textArgb: number;
 
             /** ExtendedTextMessage backgroundArgb. */
-            public backgroundArgb?: (number|null);
+            public backgroundArgb: number;
 
             /** ExtendedTextMessage font. */
-            public font?: (E2E.Message.ExtendedTextMessage.FontType|null);
+            public font: E2E.Message.ExtendedTextMessage.FontType;
 
             /** ExtendedTextMessage previewType. */
-            public previewType?: (E2E.Message.ExtendedTextMessage.PreviewType|null);
+            public previewType: E2E.Message.ExtendedTextMessage.PreviewType;
 
             /** ExtendedTextMessage jpegThumbnail. */
-            public jpegThumbnail?: (Uint8Array|null);
+            public jpegThumbnail: Uint8Array;
 
             /** ExtendedTextMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** ExtendedTextMessage doNotPlayInline. */
-            public doNotPlayInline?: (boolean|null);
+            public doNotPlayInline: boolean;
 
             /** ExtendedTextMessage thumbnailDirectPath. */
-            public thumbnailDirectPath?: (string|null);
+            public thumbnailDirectPath: string;
 
             /** ExtendedTextMessage thumbnailSha256. */
-            public thumbnailSha256?: (Uint8Array|null);
+            public thumbnailSha256: Uint8Array;
 
             /** ExtendedTextMessage thumbnailEncSha256. */
-            public thumbnailEncSha256?: (Uint8Array|null);
+            public thumbnailEncSha256: Uint8Array;
 
             /** ExtendedTextMessage mediaKey. */
-            public mediaKey?: (Uint8Array|null);
+            public mediaKey: Uint8Array;
 
             /** ExtendedTextMessage mediaKeyTimestamp. */
-            public mediaKeyTimestamp?: (number|Long|null);
+            public mediaKeyTimestamp: (number|Long);
 
             /** ExtendedTextMessage thumbnailHeight. */
-            public thumbnailHeight?: (number|null);
+            public thumbnailHeight: number;
 
             /** ExtendedTextMessage thumbnailWidth. */
-            public thumbnailWidth?: (number|null);
+            public thumbnailWidth: number;
 
             /** ExtendedTextMessage inviteLinkGroupType. */
-            public inviteLinkGroupType?: (E2E.Message.ExtendedTextMessage.InviteLinkGroupType|null);
+            public inviteLinkGroupType: E2E.Message.ExtendedTextMessage.InviteLinkGroupType;
 
             /** ExtendedTextMessage inviteLinkParentGroupSubjectV2. */
-            public inviteLinkParentGroupSubjectV2?: (string|null);
+            public inviteLinkParentGroupSubjectV2: string;
 
             /** ExtendedTextMessage inviteLinkParentGroupThumbnailV2. */
-            public inviteLinkParentGroupThumbnailV2?: (Uint8Array|null);
+            public inviteLinkParentGroupThumbnailV2: Uint8Array;
 
             /** ExtendedTextMessage inviteLinkGroupTypeV2. */
-            public inviteLinkGroupTypeV2?: (E2E.Message.ExtendedTextMessage.InviteLinkGroupType|null);
+            public inviteLinkGroupTypeV2: E2E.Message.ExtendedTextMessage.InviteLinkGroupType;
 
             /** ExtendedTextMessage viewOnce. */
-            public viewOnce?: (boolean|null);
+            public viewOnce: boolean;
 
             /** ExtendedTextMessage videoHeight. */
-            public videoHeight?: (number|null);
+            public videoHeight: number;
 
             /** ExtendedTextMessage videoWidth. */
-            public videoWidth?: (number|null);
+            public videoWidth: number;
 
             /** ExtendedTextMessage faviconMMSMetadata. */
             public faviconMMSMetadata?: (E2E.Message.IMMSThumbnailMetadata|null);
@@ -18335,89 +13075,8 @@ export namespace E2E {
             /** ExtendedTextMessage paymentLinkMetadata. */
             public paymentLinkMetadata?: (E2E.Message.IPaymentLinkMetadata|null);
 
-            /** ExtendedTextMessage _text. */
-            public _text?: "text";
-
-            /** ExtendedTextMessage _matchedText. */
-            public _matchedText?: "matchedText";
-
-            /** ExtendedTextMessage _description. */
-            public _description?: "description";
-
-            /** ExtendedTextMessage _title. */
-            public _title?: "title";
-
-            /** ExtendedTextMessage _textArgb. */
-            public _textArgb?: "textArgb";
-
-            /** ExtendedTextMessage _backgroundArgb. */
-            public _backgroundArgb?: "backgroundArgb";
-
-            /** ExtendedTextMessage _font. */
-            public _font?: "font";
-
-            /** ExtendedTextMessage _previewType. */
-            public _previewType?: "previewType";
-
-            /** ExtendedTextMessage _jpegThumbnail. */
-            public _jpegThumbnail?: "jpegThumbnail";
-
-            /** ExtendedTextMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** ExtendedTextMessage _doNotPlayInline. */
-            public _doNotPlayInline?: "doNotPlayInline";
-
-            /** ExtendedTextMessage _thumbnailDirectPath. */
-            public _thumbnailDirectPath?: "thumbnailDirectPath";
-
-            /** ExtendedTextMessage _thumbnailSha256. */
-            public _thumbnailSha256?: "thumbnailSha256";
-
-            /** ExtendedTextMessage _thumbnailEncSha256. */
-            public _thumbnailEncSha256?: "thumbnailEncSha256";
-
-            /** ExtendedTextMessage _mediaKey. */
-            public _mediaKey?: "mediaKey";
-
-            /** ExtendedTextMessage _mediaKeyTimestamp. */
-            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
-
-            /** ExtendedTextMessage _thumbnailHeight. */
-            public _thumbnailHeight?: "thumbnailHeight";
-
-            /** ExtendedTextMessage _thumbnailWidth. */
-            public _thumbnailWidth?: "thumbnailWidth";
-
-            /** ExtendedTextMessage _inviteLinkGroupType. */
-            public _inviteLinkGroupType?: "inviteLinkGroupType";
-
-            /** ExtendedTextMessage _inviteLinkParentGroupSubjectV2. */
-            public _inviteLinkParentGroupSubjectV2?: "inviteLinkParentGroupSubjectV2";
-
-            /** ExtendedTextMessage _inviteLinkParentGroupThumbnailV2. */
-            public _inviteLinkParentGroupThumbnailV2?: "inviteLinkParentGroupThumbnailV2";
-
-            /** ExtendedTextMessage _inviteLinkGroupTypeV2. */
-            public _inviteLinkGroupTypeV2?: "inviteLinkGroupTypeV2";
-
-            /** ExtendedTextMessage _viewOnce. */
-            public _viewOnce?: "viewOnce";
-
-            /** ExtendedTextMessage _videoHeight. */
-            public _videoHeight?: "videoHeight";
-
-            /** ExtendedTextMessage _videoWidth. */
-            public _videoWidth?: "videoWidth";
-
-            /** ExtendedTextMessage _faviconMMSMetadata. */
-            public _faviconMMSMetadata?: "faviconMMSMetadata";
-
-            /** ExtendedTextMessage _linkPreviewMetadata. */
-            public _linkPreviewMetadata?: "linkPreviewMetadata";
-
-            /** ExtendedTextMessage _paymentLinkMetadata. */
-            public _paymentLinkMetadata?: "paymentLinkMetadata";
+            /** ExtendedTextMessage endCardTiles. */
+            public endCardTiles: E2E.Message.IVideoEndCard[];
 
             /**
              * Creates a new ExtendedTextMessage instance using the specified properties.
@@ -18547,10 +13206,7 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IFullHistorySyncOnDemandRequestMetadata);
 
             /** FullHistorySyncOnDemandRequestMetadata requestId. */
-            public requestId?: (string|null);
-
-            /** FullHistorySyncOnDemandRequestMetadata _requestId. */
-            public _requestId?: "requestId";
+            public requestId: string;
 
             /**
              * Creates a new FullHistorySyncOnDemandRequestMetadata instance using the specified properties.
@@ -18648,9 +13304,6 @@ export namespace E2E {
 
             /** FutureProofMessage message. */
             public message?: (E2E.IMessage|null);
-
-            /** FutureProofMessage _message. */
-            public _message?: "message";
 
             /**
              * Creates a new FutureProofMessage instance using the specified properties.
@@ -18768,52 +13421,28 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IGroupInviteMessage);
 
             /** GroupInviteMessage groupJid. */
-            public groupJid?: (string|null);
+            public groupJid: string;
 
             /** GroupInviteMessage inviteCode. */
-            public inviteCode?: (string|null);
+            public inviteCode: string;
 
             /** GroupInviteMessage inviteExpiration. */
-            public inviteExpiration?: (number|Long|null);
+            public inviteExpiration: (number|Long);
 
             /** GroupInviteMessage groupName. */
-            public groupName?: (string|null);
+            public groupName: string;
 
             /** GroupInviteMessage jpegThumbnail. */
-            public jpegThumbnail?: (Uint8Array|null);
+            public jpegThumbnail: Uint8Array;
 
             /** GroupInviteMessage caption. */
-            public caption?: (string|null);
+            public caption: string;
 
             /** GroupInviteMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** GroupInviteMessage groupType. */
-            public groupType?: (E2E.Message.GroupInviteMessage.GroupType|null);
-
-            /** GroupInviteMessage _groupJid. */
-            public _groupJid?: "groupJid";
-
-            /** GroupInviteMessage _inviteCode. */
-            public _inviteCode?: "inviteCode";
-
-            /** GroupInviteMessage _inviteExpiration. */
-            public _inviteExpiration?: "inviteExpiration";
-
-            /** GroupInviteMessage _groupName. */
-            public _groupName?: "groupName";
-
-            /** GroupInviteMessage _jpegThumbnail. */
-            public _jpegThumbnail?: "jpegThumbnail";
-
-            /** GroupInviteMessage _caption. */
-            public _caption?: "caption";
-
-            /** GroupInviteMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** GroupInviteMessage _groupType. */
-            public _groupType?: "groupType";
+            public groupType: E2E.Message.GroupInviteMessage.GroupType;
 
             /**
              * Creates a new GroupInviteMessage instance using the specified properties.
@@ -18943,52 +13572,31 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IHighlyStructuredMessage);
 
             /** HighlyStructuredMessage namespace. */
-            public namespace?: (string|null);
+            public namespace: string;
 
             /** HighlyStructuredMessage elementName. */
-            public elementName?: (string|null);
+            public elementName: string;
 
             /** HighlyStructuredMessage params. */
             public params: string[];
 
             /** HighlyStructuredMessage fallbackLg. */
-            public fallbackLg?: (string|null);
+            public fallbackLg: string;
 
             /** HighlyStructuredMessage fallbackLc. */
-            public fallbackLc?: (string|null);
+            public fallbackLc: string;
 
             /** HighlyStructuredMessage localizableParams. */
             public localizableParams: E2E.Message.HighlyStructuredMessage.IHSMLocalizableParameter[];
 
             /** HighlyStructuredMessage deterministicLg. */
-            public deterministicLg?: (string|null);
+            public deterministicLg: string;
 
             /** HighlyStructuredMessage deterministicLc. */
-            public deterministicLc?: (string|null);
+            public deterministicLc: string;
 
             /** HighlyStructuredMessage hydratedHsm. */
             public hydratedHsm?: (E2E.Message.ITemplateMessage|null);
-
-            /** HighlyStructuredMessage _namespace. */
-            public _namespace?: "namespace";
-
-            /** HighlyStructuredMessage _elementName. */
-            public _elementName?: "elementName";
-
-            /** HighlyStructuredMessage _fallbackLg. */
-            public _fallbackLg?: "fallbackLg";
-
-            /** HighlyStructuredMessage _fallbackLc. */
-            public _fallbackLc?: "fallbackLc";
-
-            /** HighlyStructuredMessage _deterministicLg. */
-            public _deterministicLg?: "deterministicLg";
-
-            /** HighlyStructuredMessage _deterministicLc. */
-            public _deterministicLc?: "deterministicLc";
-
-            /** HighlyStructuredMessage _hydratedHsm. */
-            public _hydratedHsm?: "hydratedHsm";
 
             /**
              * Creates a new HighlyStructuredMessage instance using the specified properties.
@@ -19093,16 +13701,13 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.HighlyStructuredMessage.IHSMLocalizableParameter);
 
                 /** HSMLocalizableParameter default. */
-                public default?: (string|null);
+                public default: string;
 
                 /** HSMLocalizableParameter currency. */
                 public currency?: (E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.IHSMCurrency|null);
 
                 /** HSMLocalizableParameter dateTime. */
                 public dateTime?: (E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.IHSMDateTime|null);
-
-                /** HSMLocalizableParameter _default. */
-                public _default?: "default";
 
                 /** HSMLocalizableParameter paramOneof. */
                 public paramOneof?: ("currency"|"dateTime");
@@ -19207,16 +13812,10 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.IHSMCurrency);
 
                     /** HSMCurrency currencyCode. */
-                    public currencyCode?: (string|null);
+                    public currencyCode: string;
 
                     /** HSMCurrency amount1000. */
-                    public amount1000?: (number|Long|null);
-
-                    /** HSMCurrency _currencyCode. */
-                    public _currencyCode?: "currencyCode";
-
-                    /** HSMCurrency _amount1000. */
-                    public _amount1000?: "amount1000";
+                    public amount1000: (number|Long);
 
                     /**
                      * Creates a new HSMCurrency instance using the specified properties.
@@ -19439,46 +14038,25 @@ export namespace E2E {
                         constructor(properties?: E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.IHSMDateTimeComponent);
 
                         /** HSMDateTimeComponent dayOfWeek. */
-                        public dayOfWeek?: (E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.DayOfWeekType|null);
+                        public dayOfWeek: E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.DayOfWeekType;
 
                         /** HSMDateTimeComponent year. */
-                        public year?: (number|null);
+                        public year: number;
 
                         /** HSMDateTimeComponent month. */
-                        public month?: (number|null);
+                        public month: number;
 
                         /** HSMDateTimeComponent dayOfMonth. */
-                        public dayOfMonth?: (number|null);
+                        public dayOfMonth: number;
 
                         /** HSMDateTimeComponent hour. */
-                        public hour?: (number|null);
+                        public hour: number;
 
                         /** HSMDateTimeComponent minute. */
-                        public minute?: (number|null);
+                        public minute: number;
 
                         /** HSMDateTimeComponent calendar. */
-                        public calendar?: (E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.CalendarType|null);
-
-                        /** HSMDateTimeComponent _dayOfWeek. */
-                        public _dayOfWeek?: "dayOfWeek";
-
-                        /** HSMDateTimeComponent _year. */
-                        public _year?: "year";
-
-                        /** HSMDateTimeComponent _month. */
-                        public _month?: "month";
-
-                        /** HSMDateTimeComponent _dayOfMonth. */
-                        public _dayOfMonth?: "dayOfMonth";
-
-                        /** HSMDateTimeComponent _hour. */
-                        public _hour?: "hour";
-
-                        /** HSMDateTimeComponent _minute. */
-                        public _minute?: "minute";
-
-                        /** HSMDateTimeComponent _calendar. */
-                        public _calendar?: "calendar";
+                        public calendar: E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.CalendarType;
 
                         /**
                          * Creates a new HSMDateTimeComponent instance using the specified properties.
@@ -19595,10 +14173,7 @@ export namespace E2E {
                         constructor(properties?: E2E.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.IHSMDateTimeUnixEpoch);
 
                         /** HSMDateTimeUnixEpoch timestamp. */
-                        public timestamp?: (number|Long|null);
-
-                        /** HSMDateTimeUnixEpoch _timestamp. */
-                        public _timestamp?: "timestamp";
+                        public timestamp: (number|Long);
 
                         /**
                          * Creates a new HSMDateTimeUnixEpoch instance using the specified properties.
@@ -19737,88 +14312,46 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IHistorySyncNotification);
 
             /** HistorySyncNotification fileSha256. */
-            public fileSha256?: (Uint8Array|null);
+            public fileSha256: Uint8Array;
 
             /** HistorySyncNotification fileLength. */
-            public fileLength?: (number|Long|null);
+            public fileLength: (number|Long);
 
             /** HistorySyncNotification mediaKey. */
-            public mediaKey?: (Uint8Array|null);
+            public mediaKey: Uint8Array;
 
             /** HistorySyncNotification fileEncSha256. */
-            public fileEncSha256?: (Uint8Array|null);
+            public fileEncSha256: Uint8Array;
 
             /** HistorySyncNotification directPath. */
-            public directPath?: (string|null);
+            public directPath: string;
 
             /** HistorySyncNotification syncType. */
-            public syncType?: (E2E.Message.HistorySyncNotification.HistorySyncType|null);
+            public syncType: E2E.Message.HistorySyncNotification.HistorySyncType;
 
             /** HistorySyncNotification chunkOrder. */
-            public chunkOrder?: (number|null);
+            public chunkOrder: number;
 
             /** HistorySyncNotification originalMessageId. */
-            public originalMessageId?: (string|null);
+            public originalMessageId: string;
 
             /** HistorySyncNotification progress. */
-            public progress?: (number|null);
+            public progress: number;
 
             /** HistorySyncNotification oldestMsgInChunkTimestampSec. */
-            public oldestMsgInChunkTimestampSec?: (number|Long|null);
+            public oldestMsgInChunkTimestampSec: (number|Long);
 
             /** HistorySyncNotification initialHistBootstrapInlinePayload. */
-            public initialHistBootstrapInlinePayload?: (Uint8Array|null);
+            public initialHistBootstrapInlinePayload: Uint8Array;
 
             /** HistorySyncNotification peerDataRequestSessionId. */
-            public peerDataRequestSessionId?: (string|null);
+            public peerDataRequestSessionId: string;
 
             /** HistorySyncNotification fullHistorySyncOnDemandRequestMetadata. */
             public fullHistorySyncOnDemandRequestMetadata?: (E2E.Message.IFullHistorySyncOnDemandRequestMetadata|null);
 
             /** HistorySyncNotification encHandle. */
-            public encHandle?: (string|null);
-
-            /** HistorySyncNotification _fileSha256. */
-            public _fileSha256?: "fileSha256";
-
-            /** HistorySyncNotification _fileLength. */
-            public _fileLength?: "fileLength";
-
-            /** HistorySyncNotification _mediaKey. */
-            public _mediaKey?: "mediaKey";
-
-            /** HistorySyncNotification _fileEncSha256. */
-            public _fileEncSha256?: "fileEncSha256";
-
-            /** HistorySyncNotification _directPath. */
-            public _directPath?: "directPath";
-
-            /** HistorySyncNotification _syncType. */
-            public _syncType?: "syncType";
-
-            /** HistorySyncNotification _chunkOrder. */
-            public _chunkOrder?: "chunkOrder";
-
-            /** HistorySyncNotification _originalMessageId. */
-            public _originalMessageId?: "originalMessageId";
-
-            /** HistorySyncNotification _progress. */
-            public _progress?: "progress";
-
-            /** HistorySyncNotification _oldestMsgInChunkTimestampSec. */
-            public _oldestMsgInChunkTimestampSec?: "oldestMsgInChunkTimestampSec";
-
-            /** HistorySyncNotification _initialHistBootstrapInlinePayload. */
-            public _initialHistBootstrapInlinePayload?: "initialHistBootstrapInlinePayload";
-
-            /** HistorySyncNotification _peerDataRequestSessionId. */
-            public _peerDataRequestSessionId?: "peerDataRequestSessionId";
-
-            /** HistorySyncNotification _fullHistorySyncOnDemandRequestMetadata. */
-            public _fullHistorySyncOnDemandRequestMetadata?: "fullHistorySyncOnDemandRequestMetadata";
-
-            /** HistorySyncNotification _encHandle. */
-            public _encHandle?: "encHandle";
+            public encHandle: string;
 
             /**
              * Creates a new HistorySyncNotification instance using the specified properties.
@@ -20002,6 +14535,9 @@ export namespace E2E {
 
             /** ImageMessage accessibilityLabel */
             accessibilityLabel?: (string|null);
+
+            /** ImageMessage mediaKeyDomain */
+            mediaKeyDomain?: (E2E.Message.MediaKeyDomain|null);
         }
 
         /** Represents an ImageMessage. */
@@ -20014,169 +14550,94 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IImageMessage);
 
             /** ImageMessage url. */
-            public url?: (string|null);
+            public url: string;
 
             /** ImageMessage mimetype. */
-            public mimetype?: (string|null);
+            public mimetype: string;
 
             /** ImageMessage caption. */
-            public caption?: (string|null);
+            public caption: string;
 
             /** ImageMessage fileSha256. */
-            public fileSha256?: (Uint8Array|null);
+            public fileSha256: Uint8Array;
 
             /** ImageMessage fileLength. */
-            public fileLength?: (number|Long|null);
+            public fileLength: (number|Long);
 
             /** ImageMessage height. */
-            public height?: (number|null);
+            public height: number;
 
             /** ImageMessage width. */
-            public width?: (number|null);
+            public width: number;
 
             /** ImageMessage mediaKey. */
-            public mediaKey?: (Uint8Array|null);
+            public mediaKey: Uint8Array;
 
             /** ImageMessage fileEncSha256. */
-            public fileEncSha256?: (Uint8Array|null);
+            public fileEncSha256: Uint8Array;
 
             /** ImageMessage interactiveAnnotations. */
             public interactiveAnnotations: E2E.IInteractiveAnnotation[];
 
             /** ImageMessage directPath. */
-            public directPath?: (string|null);
+            public directPath: string;
 
             /** ImageMessage mediaKeyTimestamp. */
-            public mediaKeyTimestamp?: (number|Long|null);
+            public mediaKeyTimestamp: (number|Long);
 
             /** ImageMessage jpegThumbnail. */
-            public jpegThumbnail?: (Uint8Array|null);
+            public jpegThumbnail: Uint8Array;
 
             /** ImageMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** ImageMessage firstScanSidecar. */
-            public firstScanSidecar?: (Uint8Array|null);
+            public firstScanSidecar: Uint8Array;
 
             /** ImageMessage firstScanLength. */
-            public firstScanLength?: (number|null);
+            public firstScanLength: number;
 
             /** ImageMessage experimentGroupId. */
-            public experimentGroupId?: (number|null);
+            public experimentGroupId: number;
 
             /** ImageMessage scansSidecar. */
-            public scansSidecar?: (Uint8Array|null);
+            public scansSidecar: Uint8Array;
 
             /** ImageMessage scanLengths. */
             public scanLengths: number[];
 
             /** ImageMessage midQualityFileSha256. */
-            public midQualityFileSha256?: (Uint8Array|null);
+            public midQualityFileSha256: Uint8Array;
 
             /** ImageMessage midQualityFileEncSha256. */
-            public midQualityFileEncSha256?: (Uint8Array|null);
+            public midQualityFileEncSha256: Uint8Array;
 
             /** ImageMessage viewOnce. */
-            public viewOnce?: (boolean|null);
+            public viewOnce: boolean;
 
             /** ImageMessage thumbnailDirectPath. */
-            public thumbnailDirectPath?: (string|null);
+            public thumbnailDirectPath: string;
 
             /** ImageMessage thumbnailSha256. */
-            public thumbnailSha256?: (Uint8Array|null);
+            public thumbnailSha256: Uint8Array;
 
             /** ImageMessage thumbnailEncSha256. */
-            public thumbnailEncSha256?: (Uint8Array|null);
+            public thumbnailEncSha256: Uint8Array;
 
             /** ImageMessage staticUrl. */
-            public staticUrl?: (string|null);
+            public staticUrl: string;
 
             /** ImageMessage annotations. */
             public annotations: E2E.IInteractiveAnnotation[];
 
             /** ImageMessage imageSourceType. */
-            public imageSourceType?: (E2E.Message.ImageMessage.ImageSourceType|null);
+            public imageSourceType: E2E.Message.ImageMessage.ImageSourceType;
 
             /** ImageMessage accessibilityLabel. */
-            public accessibilityLabel?: (string|null);
+            public accessibilityLabel: string;
 
-            /** ImageMessage _url. */
-            public _url?: "url";
-
-            /** ImageMessage _mimetype. */
-            public _mimetype?: "mimetype";
-
-            /** ImageMessage _caption. */
-            public _caption?: "caption";
-
-            /** ImageMessage _fileSha256. */
-            public _fileSha256?: "fileSha256";
-
-            /** ImageMessage _fileLength. */
-            public _fileLength?: "fileLength";
-
-            /** ImageMessage _height. */
-            public _height?: "height";
-
-            /** ImageMessage _width. */
-            public _width?: "width";
-
-            /** ImageMessage _mediaKey. */
-            public _mediaKey?: "mediaKey";
-
-            /** ImageMessage _fileEncSha256. */
-            public _fileEncSha256?: "fileEncSha256";
-
-            /** ImageMessage _directPath. */
-            public _directPath?: "directPath";
-
-            /** ImageMessage _mediaKeyTimestamp. */
-            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
-
-            /** ImageMessage _jpegThumbnail. */
-            public _jpegThumbnail?: "jpegThumbnail";
-
-            /** ImageMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** ImageMessage _firstScanSidecar. */
-            public _firstScanSidecar?: "firstScanSidecar";
-
-            /** ImageMessage _firstScanLength. */
-            public _firstScanLength?: "firstScanLength";
-
-            /** ImageMessage _experimentGroupId. */
-            public _experimentGroupId?: "experimentGroupId";
-
-            /** ImageMessage _scansSidecar. */
-            public _scansSidecar?: "scansSidecar";
-
-            /** ImageMessage _midQualityFileSha256. */
-            public _midQualityFileSha256?: "midQualityFileSha256";
-
-            /** ImageMessage _midQualityFileEncSha256. */
-            public _midQualityFileEncSha256?: "midQualityFileEncSha256";
-
-            /** ImageMessage _viewOnce. */
-            public _viewOnce?: "viewOnce";
-
-            /** ImageMessage _thumbnailDirectPath. */
-            public _thumbnailDirectPath?: "thumbnailDirectPath";
-
-            /** ImageMessage _thumbnailSha256. */
-            public _thumbnailSha256?: "thumbnailSha256";
-
-            /** ImageMessage _thumbnailEncSha256. */
-            public _thumbnailEncSha256?: "thumbnailEncSha256";
-
-            /** ImageMessage _staticUrl. */
-            public _staticUrl?: "staticUrl";
-
-            /** ImageMessage _imageSourceType. */
-            public _imageSourceType?: "imageSourceType";
-
-            /** ImageMessage _accessibilityLabel. */
-            public _accessibilityLabel?: "accessibilityLabel";
+            /** ImageMessage mediaKeyDomain. */
+            public mediaKeyDomain: E2E.Message.MediaKeyDomain;
 
             /**
              * Creates a new ImageMessage instance using the specified properties.
@@ -20284,10 +14745,7 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IInitialSecurityNotificationSettingSync);
 
             /** InitialSecurityNotificationSettingSync securityNotificationEnabled. */
-            public securityNotificationEnabled?: (boolean|null);
-
-            /** InitialSecurityNotificationSettingSync _securityNotificationEnabled. */
-            public _securityNotificationEnabled?: "securityNotificationEnabled";
+            public securityNotificationEnabled: boolean;
 
             /**
              * Creates a new InitialSecurityNotificationSettingSync instance using the specified properties.
@@ -20434,21 +14892,6 @@ export namespace E2E {
             /** InteractiveMessage carouselMessage. */
             public carouselMessage?: (E2E.Message.InteractiveMessage.ICarouselMessage|null);
 
-            /** InteractiveMessage _header. */
-            public _header?: "header";
-
-            /** InteractiveMessage _body. */
-            public _body?: "body";
-
-            /** InteractiveMessage _footer. */
-            public _footer?: "footer";
-
-            /** InteractiveMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** InteractiveMessage _urlTrackingMap. */
-            public _urlTrackingMap?: "urlTrackingMap";
-
             /** InteractiveMessage interactiveMessage. */
             public interactiveMessage?: ("shopStorefrontMessage"|"collectionMessage"|"nativeFlowMessage"|"carouselMessage");
 
@@ -20549,10 +14992,7 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.InteractiveMessage.IBody);
 
                 /** Body text. */
-                public text?: (string|null);
-
-                /** Body _text. */
-                public _text?: "text";
+                public text: string;
 
                 /**
                  * Creates a new Body instance using the specified properties.
@@ -20640,6 +15080,9 @@ export namespace E2E {
 
                 /** CarouselMessage messageVersion */
                 messageVersion?: (number|null);
+
+                /** CarouselMessage carouselCardType */
+                carouselCardType?: (E2E.Message.InteractiveMessage.CarouselMessage.CarouselCardType|null);
             }
 
             /** Represents a CarouselMessage. */
@@ -20655,10 +15098,10 @@ export namespace E2E {
                 public cards: E2E.Message.IInteractiveMessage[];
 
                 /** CarouselMessage messageVersion. */
-                public messageVersion?: (number|null);
+                public messageVersion: number;
 
-                /** CarouselMessage _messageVersion. */
-                public _messageVersion?: "messageVersion";
+                /** CarouselMessage carouselCardType. */
+                public carouselCardType: E2E.Message.InteractiveMessage.CarouselMessage.CarouselCardType;
 
                 /**
                  * Creates a new CarouselMessage instance using the specified properties.
@@ -20738,6 +15181,15 @@ export namespace E2E {
                 public static getTypeUrl(typeUrlPrefix?: string): string;
             }
 
+            namespace CarouselMessage {
+
+                /** CarouselCardType enum. */
+                enum CarouselCardType {
+                    DEFAULT = 0,
+                    ALBUM = 1
+                }
+            }
+
             /** Properties of a CollectionMessage. */
             interface ICollectionMessage {
 
@@ -20761,22 +15213,13 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.InteractiveMessage.ICollectionMessage);
 
                 /** CollectionMessage bizJid. */
-                public bizJid?: (string|null);
+                public bizJid: string;
 
                 /** CollectionMessage id. */
-                public id?: (string|null);
+                public id: string;
 
                 /** CollectionMessage messageVersion. */
-                public messageVersion?: (number|null);
-
-                /** CollectionMessage _bizJid. */
-                public _bizJid?: "bizJid";
-
-                /** CollectionMessage _id. */
-                public _id?: "id";
-
-                /** CollectionMessage _messageVersion. */
-                public _messageVersion?: "messageVersion";
+                public messageVersion: number;
 
                 /**
                  * Creates a new CollectionMessage instance using the specified properties.
@@ -20873,10 +15316,7 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.InteractiveMessage.IFooter);
 
                 /** Footer text. */
-                public text?: (string|null);
-
-                /** Footer _text. */
-                public _text?: "text";
+                public text: string;
 
                 /**
                  * Creates a new Footer instance using the specified properties.
@@ -20997,13 +15437,13 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.InteractiveMessage.IHeader);
 
                 /** Header title. */
-                public title?: (string|null);
+                public title: string;
 
                 /** Header subtitle. */
-                public subtitle?: (string|null);
+                public subtitle: string;
 
                 /** Header hasMediaAttachment. */
-                public hasMediaAttachment?: (boolean|null);
+                public hasMediaAttachment: boolean;
 
                 /** Header documentMessage. */
                 public documentMessage?: (E2E.Message.IDocumentMessage|null);
@@ -21022,15 +15462,6 @@ export namespace E2E {
 
                 /** Header productMessage. */
                 public productMessage?: (E2E.Message.IProductMessage|null);
-
-                /** Header _title. */
-                public _title?: "title";
-
-                /** Header _subtitle. */
-                public _subtitle?: "subtitle";
-
-                /** Header _hasMediaAttachment. */
-                public _hasMediaAttachment?: "hasMediaAttachment";
 
                 /** Header media. */
                 public media?: ("documentMessage"|"imageMessage"|"jpegThumbnail"|"videoMessage"|"locationMessage"|"productMessage");
@@ -21139,16 +15570,10 @@ export namespace E2E {
                 public buttons: E2E.Message.InteractiveMessage.NativeFlowMessage.INativeFlowButton[];
 
                 /** NativeFlowMessage messageParamsJson. */
-                public messageParamsJson?: (string|null);
+                public messageParamsJson: string;
 
                 /** NativeFlowMessage messageVersion. */
-                public messageVersion?: (number|null);
-
-                /** NativeFlowMessage _messageParamsJson. */
-                public _messageParamsJson?: "messageParamsJson";
-
-                /** NativeFlowMessage _messageVersion. */
-                public _messageVersion?: "messageVersion";
+                public messageVersion: number;
 
                 /**
                  * Creates a new NativeFlowMessage instance using the specified properties.
@@ -21250,16 +15675,10 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.InteractiveMessage.NativeFlowMessage.INativeFlowButton);
 
                     /** NativeFlowButton name. */
-                    public name?: (string|null);
+                    public name: string;
 
                     /** NativeFlowButton buttonParamsJson. */
-                    public buttonParamsJson?: (string|null);
-
-                    /** NativeFlowButton _name. */
-                    public _name?: "name";
-
-                    /** NativeFlowButton _buttonParamsJson. */
-                    public _buttonParamsJson?: "buttonParamsJson";
+                    public buttonParamsJson: string;
 
                     /**
                      * Creates a new NativeFlowButton instance using the specified properties.
@@ -21363,22 +15782,13 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.InteractiveMessage.IShopMessage);
 
                 /** ShopMessage id. */
-                public id?: (string|null);
+                public id: string;
 
                 /** ShopMessage surface. */
-                public surface?: (E2E.Message.InteractiveMessage.ShopMessage.Surface|null);
+                public surface: E2E.Message.InteractiveMessage.ShopMessage.Surface;
 
                 /** ShopMessage messageVersion. */
-                public messageVersion?: (number|null);
-
-                /** ShopMessage _id. */
-                public _id?: "id";
-
-                /** ShopMessage _surface. */
-                public _surface?: "surface";
-
-                /** ShopMessage _messageVersion. */
-                public _messageVersion?: "messageVersion";
+                public messageVersion: number;
 
                 /**
                  * Creates a new ShopMessage instance using the specified properties.
@@ -21501,12 +15911,6 @@ export namespace E2E {
             /** InteractiveResponseMessage nativeFlowResponseMessage. */
             public nativeFlowResponseMessage?: (E2E.Message.InteractiveResponseMessage.INativeFlowResponseMessage|null);
 
-            /** InteractiveResponseMessage _body. */
-            public _body?: "body";
-
-            /** InteractiveResponseMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
             /** InteractiveResponseMessage interactiveResponseMessage. */
             public interactiveResponseMessage?: "nativeFlowResponseMessage";
 
@@ -21610,16 +16014,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.InteractiveResponseMessage.IBody);
 
                 /** Body text. */
-                public text?: (string|null);
+                public text: string;
 
                 /** Body format. */
-                public format?: (E2E.Message.InteractiveResponseMessage.Body.Format|null);
-
-                /** Body _text. */
-                public _text?: "text";
-
-                /** Body _format. */
-                public _format?: "format";
+                public format: E2E.Message.InteractiveResponseMessage.Body.Format;
 
                 /**
                  * Creates a new Body instance using the specified properties.
@@ -21731,22 +16129,13 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.InteractiveResponseMessage.INativeFlowResponseMessage);
 
                 /** NativeFlowResponseMessage name. */
-                public name?: (string|null);
+                public name: string;
 
                 /** NativeFlowResponseMessage paramsJson. */
-                public paramsJson?: (string|null);
+                public paramsJson: string;
 
                 /** NativeFlowResponseMessage version. */
-                public version?: (number|null);
-
-                /** NativeFlowResponseMessage _name. */
-                public _name?: "name";
-
-                /** NativeFlowResponseMessage _paramsJson. */
-                public _paramsJson?: "paramsJson";
-
-                /** NativeFlowResponseMessage _version. */
-                public _version?: "version";
+                public version: number;
 
                 /**
                  * Creates a new NativeFlowResponseMessage instance using the specified properties.
@@ -21871,64 +16260,34 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IInvoiceMessage);
 
             /** InvoiceMessage note. */
-            public note?: (string|null);
+            public note: string;
 
             /** InvoiceMessage token. */
-            public token?: (string|null);
+            public token: string;
 
             /** InvoiceMessage attachmentType. */
-            public attachmentType?: (E2E.Message.InvoiceMessage.AttachmentType|null);
+            public attachmentType: E2E.Message.InvoiceMessage.AttachmentType;
 
             /** InvoiceMessage attachmentMimetype. */
-            public attachmentMimetype?: (string|null);
+            public attachmentMimetype: string;
 
             /** InvoiceMessage attachmentMediaKey. */
-            public attachmentMediaKey?: (Uint8Array|null);
+            public attachmentMediaKey: Uint8Array;
 
             /** InvoiceMessage attachmentMediaKeyTimestamp. */
-            public attachmentMediaKeyTimestamp?: (number|Long|null);
+            public attachmentMediaKeyTimestamp: (number|Long);
 
             /** InvoiceMessage attachmentFileSha256. */
-            public attachmentFileSha256?: (Uint8Array|null);
+            public attachmentFileSha256: Uint8Array;
 
             /** InvoiceMessage attachmentFileEncSha256. */
-            public attachmentFileEncSha256?: (Uint8Array|null);
+            public attachmentFileEncSha256: Uint8Array;
 
             /** InvoiceMessage attachmentDirectPath. */
-            public attachmentDirectPath?: (string|null);
+            public attachmentDirectPath: string;
 
             /** InvoiceMessage attachmentJpegThumbnail. */
-            public attachmentJpegThumbnail?: (Uint8Array|null);
-
-            /** InvoiceMessage _note. */
-            public _note?: "note";
-
-            /** InvoiceMessage _token. */
-            public _token?: "token";
-
-            /** InvoiceMessage _attachmentType. */
-            public _attachmentType?: "attachmentType";
-
-            /** InvoiceMessage _attachmentMimetype. */
-            public _attachmentMimetype?: "attachmentMimetype";
-
-            /** InvoiceMessage _attachmentMediaKey. */
-            public _attachmentMediaKey?: "attachmentMediaKey";
-
-            /** InvoiceMessage _attachmentMediaKeyTimestamp. */
-            public _attachmentMediaKeyTimestamp?: "attachmentMediaKeyTimestamp";
-
-            /** InvoiceMessage _attachmentFileSha256. */
-            public _attachmentFileSha256?: "attachmentFileSha256";
-
-            /** InvoiceMessage _attachmentFileEncSha256. */
-            public _attachmentFileEncSha256?: "attachmentFileEncSha256";
-
-            /** InvoiceMessage _attachmentDirectPath. */
-            public _attachmentDirectPath?: "attachmentDirectPath";
-
-            /** InvoiceMessage _attachmentJpegThumbnail. */
-            public _attachmentJpegThumbnail?: "attachmentJpegThumbnail";
+            public attachmentJpegThumbnail: Uint8Array;
 
             /**
              * Creates a new InvoiceMessage instance using the specified properties.
@@ -22043,19 +16402,10 @@ export namespace E2E {
             public key?: (Protocol.IMessageKey|null);
 
             /** KeepInChatMessage keepType. */
-            public keepType?: (E2E.KeepType|null);
+            public keepType: E2E.KeepType;
 
             /** KeepInChatMessage timestampMs. */
-            public timestampMs?: (number|Long|null);
-
-            /** KeepInChatMessage _key. */
-            public _key?: "key";
-
-            /** KeepInChatMessage _keepType. */
-            public _keepType?: "keepType";
-
-            /** KeepInChatMessage _timestampMs. */
-            public _timestampMs?: "timestampMs";
+            public timestampMs: (number|Long);
 
             /**
              * Creates a new KeepInChatMessage instance using the specified properties.
@@ -22170,28 +16520,13 @@ export namespace E2E {
             public urlMetadata?: (E2E.Message.IURLMetadata|null);
 
             /** LinkPreviewMetadata fbExperimentId. */
-            public fbExperimentId?: (number|null);
+            public fbExperimentId: number;
 
             /** LinkPreviewMetadata linkMediaDuration. */
-            public linkMediaDuration?: (number|null);
+            public linkMediaDuration: number;
 
             /** LinkPreviewMetadata socialMediaPostType. */
-            public socialMediaPostType?: (E2E.Message.LinkPreviewMetadata.SocialMediaPostType|null);
-
-            /** LinkPreviewMetadata _paymentLinkMetadata. */
-            public _paymentLinkMetadata?: "paymentLinkMetadata";
-
-            /** LinkPreviewMetadata _urlMetadata. */
-            public _urlMetadata?: "urlMetadata";
-
-            /** LinkPreviewMetadata _fbExperimentId. */
-            public _fbExperimentId?: "fbExperimentId";
-
-            /** LinkPreviewMetadata _linkMediaDuration. */
-            public _linkMediaDuration?: "linkMediaDuration";
-
-            /** LinkPreviewMetadata _socialMediaPostType. */
-            public _socialMediaPostType?: "socialMediaPostType";
+            public socialMediaPostType: E2E.Message.LinkPreviewMetadata.SocialMediaPostType;
 
             /**
              * Creates a new LinkPreviewMetadata instance using the specified properties.
@@ -22322,16 +16657,16 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IListMessage);
 
             /** ListMessage title. */
-            public title?: (string|null);
+            public title: string;
 
             /** ListMessage description. */
-            public description?: (string|null);
+            public description: string;
 
             /** ListMessage buttonText. */
-            public buttonText?: (string|null);
+            public buttonText: string;
 
             /** ListMessage listType. */
-            public listType?: (E2E.Message.ListMessage.ListType|null);
+            public listType: E2E.Message.ListMessage.ListType;
 
             /** ListMessage sections. */
             public sections: E2E.Message.ListMessage.ISection[];
@@ -22340,31 +16675,10 @@ export namespace E2E {
             public productListInfo?: (E2E.Message.ListMessage.IProductListInfo|null);
 
             /** ListMessage footerText. */
-            public footerText?: (string|null);
+            public footerText: string;
 
             /** ListMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
-
-            /** ListMessage _title. */
-            public _title?: "title";
-
-            /** ListMessage _description. */
-            public _description?: "description";
-
-            /** ListMessage _buttonText. */
-            public _buttonText?: "buttonText";
-
-            /** ListMessage _listType. */
-            public _listType?: "listType";
-
-            /** ListMessage _productListInfo. */
-            public _productListInfo?: "productListInfo";
-
-            /** ListMessage _footerText. */
-            public _footerText?: "footerText";
-
-            /** ListMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new ListMessage instance using the specified properties.
@@ -22470,10 +16784,7 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.ListMessage.IProduct);
 
                 /** Product productId. */
-                public productId?: (string|null);
-
-                /** Product _productId. */
-                public _productId?: "productId";
+                public productId: string;
 
                 /**
                  * Creates a new Product instance using the specified properties.
@@ -22573,16 +16884,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.ListMessage.IProductListHeaderImage);
 
                 /** ProductListHeaderImage productId. */
-                public productId?: (string|null);
+                public productId: string;
 
                 /** ProductListHeaderImage jpegThumbnail. */
-                public jpegThumbnail?: (Uint8Array|null);
-
-                /** ProductListHeaderImage _productId. */
-                public _productId?: "productId";
-
-                /** ProductListHeaderImage _jpegThumbnail. */
-                public _jpegThumbnail?: "jpegThumbnail";
+                public jpegThumbnail: Uint8Array;
 
                 /**
                  * Creates a new ProductListHeaderImage instance using the specified properties.
@@ -22691,13 +16996,7 @@ export namespace E2E {
                 public headerImage?: (E2E.Message.ListMessage.IProductListHeaderImage|null);
 
                 /** ProductListInfo businessOwnerJid. */
-                public businessOwnerJid?: (string|null);
-
-                /** ProductListInfo _headerImage. */
-                public _headerImage?: "headerImage";
-
-                /** ProductListInfo _businessOwnerJid. */
-                public _businessOwnerJid?: "businessOwnerJid";
+                public businessOwnerJid: string;
 
                 /**
                  * Creates a new ProductListInfo instance using the specified properties.
@@ -22797,13 +17096,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.ListMessage.IProductSection);
 
                 /** ProductSection title. */
-                public title?: (string|null);
+                public title: string;
 
                 /** ProductSection products. */
                 public products: E2E.Message.ListMessage.IProduct[];
-
-                /** ProductSection _title. */
-                public _title?: "title";
 
                 /**
                  * Creates a new ProductSection instance using the specified properties.
@@ -22906,22 +17202,13 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.ListMessage.IRow);
 
                 /** Row title. */
-                public title?: (string|null);
+                public title: string;
 
                 /** Row description. */
-                public description?: (string|null);
+                public description: string;
 
                 /** Row rowId. */
-                public rowId?: (string|null);
-
-                /** Row _title. */
-                public _title?: "title";
-
-                /** Row _description. */
-                public _description?: "description";
-
-                /** Row _rowId. */
-                public _rowId?: "rowId";
+                public rowId: string;
 
                 /**
                  * Creates a new Row instance using the specified properties.
@@ -23021,13 +17308,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.ListMessage.ISection);
 
                 /** Section title. */
-                public title?: (string|null);
+                public title: string;
 
                 /** Section rows. */
                 public rows: E2E.Message.ListMessage.IRow[];
-
-                /** Section _title. */
-                public _title?: "title";
 
                 /**
                  * Creates a new Section instance using the specified properties.
@@ -23137,10 +17421,10 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IListResponseMessage);
 
             /** ListResponseMessage title. */
-            public title?: (string|null);
+            public title: string;
 
             /** ListResponseMessage listType. */
-            public listType?: (E2E.Message.ListResponseMessage.ListType|null);
+            public listType: E2E.Message.ListResponseMessage.ListType;
 
             /** ListResponseMessage singleSelectReply. */
             public singleSelectReply?: (E2E.Message.ListResponseMessage.ISingleSelectReply|null);
@@ -23149,22 +17433,7 @@ export namespace E2E {
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** ListResponseMessage description. */
-            public description?: (string|null);
-
-            /** ListResponseMessage _title. */
-            public _title?: "title";
-
-            /** ListResponseMessage _listType. */
-            public _listType?: "listType";
-
-            /** ListResponseMessage _singleSelectReply. */
-            public _singleSelectReply?: "singleSelectReply";
-
-            /** ListResponseMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** ListResponseMessage _description. */
-            public _description?: "description";
+            public description: string;
 
             /**
              * Creates a new ListResponseMessage instance using the specified properties.
@@ -23269,10 +17538,7 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.ListResponseMessage.ISingleSelectReply);
 
                 /** SingleSelectReply selectedRowId. */
-                public selectedRowId?: (string|null);
-
-                /** SingleSelectReply _selectedRowId. */
-                public _selectedRowId?: "selectedRowId";
+                public selectedRowId: string;
 
                 /**
                  * Creates a new SingleSelectReply instance using the specified properties.
@@ -23397,64 +17663,34 @@ export namespace E2E {
             constructor(properties?: E2E.Message.ILiveLocationMessage);
 
             /** LiveLocationMessage degreesLatitude. */
-            public degreesLatitude?: (number|null);
+            public degreesLatitude: number;
 
             /** LiveLocationMessage degreesLongitude. */
-            public degreesLongitude?: (number|null);
+            public degreesLongitude: number;
 
             /** LiveLocationMessage accuracyInMeters. */
-            public accuracyInMeters?: (number|null);
+            public accuracyInMeters: number;
 
             /** LiveLocationMessage speedInMps. */
-            public speedInMps?: (number|null);
+            public speedInMps: number;
 
             /** LiveLocationMessage degreesClockwiseFromMagneticNorth. */
-            public degreesClockwiseFromMagneticNorth?: (number|null);
+            public degreesClockwiseFromMagneticNorth: number;
 
             /** LiveLocationMessage caption. */
-            public caption?: (string|null);
+            public caption: string;
 
             /** LiveLocationMessage sequenceNumber. */
-            public sequenceNumber?: (number|Long|null);
+            public sequenceNumber: (number|Long);
 
             /** LiveLocationMessage timeOffset. */
-            public timeOffset?: (number|null);
+            public timeOffset: number;
 
             /** LiveLocationMessage jpegThumbnail. */
-            public jpegThumbnail?: (Uint8Array|null);
+            public jpegThumbnail: Uint8Array;
 
             /** LiveLocationMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
-
-            /** LiveLocationMessage _degreesLatitude. */
-            public _degreesLatitude?: "degreesLatitude";
-
-            /** LiveLocationMessage _degreesLongitude. */
-            public _degreesLongitude?: "degreesLongitude";
-
-            /** LiveLocationMessage _accuracyInMeters. */
-            public _accuracyInMeters?: "accuracyInMeters";
-
-            /** LiveLocationMessage _speedInMps. */
-            public _speedInMps?: "speedInMps";
-
-            /** LiveLocationMessage _degreesClockwiseFromMagneticNorth. */
-            public _degreesClockwiseFromMagneticNorth?: "degreesClockwiseFromMagneticNorth";
-
-            /** LiveLocationMessage _caption. */
-            public _caption?: "caption";
-
-            /** LiveLocationMessage _sequenceNumber. */
-            public _sequenceNumber?: "sequenceNumber";
-
-            /** LiveLocationMessage _timeOffset. */
-            public _timeOffset?: "timeOffset";
-
-            /** LiveLocationMessage _jpegThumbnail. */
-            public _jpegThumbnail?: "jpegThumbnail";
-
-            /** LiveLocationMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new LiveLocationMessage instance using the specified properties.
@@ -23584,76 +17820,40 @@ export namespace E2E {
             constructor(properties?: E2E.Message.ILocationMessage);
 
             /** LocationMessage degreesLatitude. */
-            public degreesLatitude?: (number|null);
+            public degreesLatitude: number;
 
             /** LocationMessage degreesLongitude. */
-            public degreesLongitude?: (number|null);
+            public degreesLongitude: number;
 
             /** LocationMessage name. */
-            public name?: (string|null);
+            public name: string;
 
             /** LocationMessage address. */
-            public address?: (string|null);
+            public address: string;
 
             /** LocationMessage url. */
-            public url?: (string|null);
+            public url: string;
 
             /** LocationMessage isLive. */
-            public isLive?: (boolean|null);
+            public isLive: boolean;
 
             /** LocationMessage accuracyInMeters. */
-            public accuracyInMeters?: (number|null);
+            public accuracyInMeters: number;
 
             /** LocationMessage speedInMps. */
-            public speedInMps?: (number|null);
+            public speedInMps: number;
 
             /** LocationMessage degreesClockwiseFromMagneticNorth. */
-            public degreesClockwiseFromMagneticNorth?: (number|null);
+            public degreesClockwiseFromMagneticNorth: number;
 
             /** LocationMessage comment. */
-            public comment?: (string|null);
+            public comment: string;
 
             /** LocationMessage jpegThumbnail. */
-            public jpegThumbnail?: (Uint8Array|null);
+            public jpegThumbnail: Uint8Array;
 
             /** LocationMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
-
-            /** LocationMessage _degreesLatitude. */
-            public _degreesLatitude?: "degreesLatitude";
-
-            /** LocationMessage _degreesLongitude. */
-            public _degreesLongitude?: "degreesLongitude";
-
-            /** LocationMessage _name. */
-            public _name?: "name";
-
-            /** LocationMessage _address. */
-            public _address?: "address";
-
-            /** LocationMessage _url. */
-            public _url?: "url";
-
-            /** LocationMessage _isLive. */
-            public _isLive?: "isLive";
-
-            /** LocationMessage _accuracyInMeters. */
-            public _accuracyInMeters?: "accuracyInMeters";
-
-            /** LocationMessage _speedInMps. */
-            public _speedInMps?: "speedInMps";
-
-            /** LocationMessage _degreesClockwiseFromMagneticNorth. */
-            public _degreesClockwiseFromMagneticNorth?: "degreesClockwiseFromMagneticNorth";
-
-            /** LocationMessage _comment. */
-            public _comment?: "comment";
-
-            /** LocationMessage _jpegThumbnail. */
-            public _jpegThumbnail?: "jpegThumbnail";
-
-            /** LocationMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new LocationMessage instance using the specified properties.
@@ -23756,6 +17956,9 @@ export namespace E2E {
 
             /** MMSThumbnailMetadata thumbnailWidth */
             thumbnailWidth?: (number|null);
+
+            /** MMSThumbnailMetadata mediaKeyDomain */
+            mediaKeyDomain?: (E2E.Message.MediaKeyDomain|null);
         }
 
         /** Represents a MMSThumbnailMetadata. */
@@ -23768,46 +17971,28 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IMMSThumbnailMetadata);
 
             /** MMSThumbnailMetadata thumbnailDirectPath. */
-            public thumbnailDirectPath?: (string|null);
+            public thumbnailDirectPath: string;
 
             /** MMSThumbnailMetadata thumbnailSha256. */
-            public thumbnailSha256?: (Uint8Array|null);
+            public thumbnailSha256: Uint8Array;
 
             /** MMSThumbnailMetadata thumbnailEncSha256. */
-            public thumbnailEncSha256?: (Uint8Array|null);
+            public thumbnailEncSha256: Uint8Array;
 
             /** MMSThumbnailMetadata mediaKey. */
-            public mediaKey?: (Uint8Array|null);
+            public mediaKey: Uint8Array;
 
             /** MMSThumbnailMetadata mediaKeyTimestamp. */
-            public mediaKeyTimestamp?: (number|Long|null);
+            public mediaKeyTimestamp: (number|Long);
 
             /** MMSThumbnailMetadata thumbnailHeight. */
-            public thumbnailHeight?: (number|null);
+            public thumbnailHeight: number;
 
             /** MMSThumbnailMetadata thumbnailWidth. */
-            public thumbnailWidth?: (number|null);
+            public thumbnailWidth: number;
 
-            /** MMSThumbnailMetadata _thumbnailDirectPath. */
-            public _thumbnailDirectPath?: "thumbnailDirectPath";
-
-            /** MMSThumbnailMetadata _thumbnailSha256. */
-            public _thumbnailSha256?: "thumbnailSha256";
-
-            /** MMSThumbnailMetadata _thumbnailEncSha256. */
-            public _thumbnailEncSha256?: "thumbnailEncSha256";
-
-            /** MMSThumbnailMetadata _mediaKey. */
-            public _mediaKey?: "mediaKey";
-
-            /** MMSThumbnailMetadata _mediaKeyTimestamp. */
-            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
-
-            /** MMSThumbnailMetadata _thumbnailHeight. */
-            public _thumbnailHeight?: "thumbnailHeight";
-
-            /** MMSThumbnailMetadata _thumbnailWidth. */
-            public _thumbnailWidth?: "thumbnailWidth";
+            /** MMSThumbnailMetadata mediaKeyDomain. */
+            public mediaKeyDomain: E2E.Message.MediaKeyDomain;
 
             /**
              * Creates a new MMSThumbnailMetadata instance using the specified properties.
@@ -23887,6 +18072,15 @@ export namespace E2E {
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
+        /** MediaKeyDomain enum. */
+        enum MediaKeyDomain {
+            UNSET = 0,
+            E2EE_CHAT = 1,
+            STATUS = 2,
+            CAPI = 3,
+            BOT = 4
+        }
+
         /** Properties of a MessageHistoryBundle. */
         interface IMessageHistoryBundle {
 
@@ -23925,52 +18119,28 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IMessageHistoryBundle);
 
             /** MessageHistoryBundle mimetype. */
-            public mimetype?: (string|null);
+            public mimetype: string;
 
             /** MessageHistoryBundle fileSha256. */
-            public fileSha256?: (Uint8Array|null);
+            public fileSha256: Uint8Array;
 
             /** MessageHistoryBundle mediaKey. */
-            public mediaKey?: (Uint8Array|null);
+            public mediaKey: Uint8Array;
 
             /** MessageHistoryBundle fileEncSha256. */
-            public fileEncSha256?: (Uint8Array|null);
+            public fileEncSha256: Uint8Array;
 
             /** MessageHistoryBundle directPath. */
-            public directPath?: (string|null);
+            public directPath: string;
 
             /** MessageHistoryBundle mediaKeyTimestamp. */
-            public mediaKeyTimestamp?: (number|Long|null);
+            public mediaKeyTimestamp: (number|Long);
 
             /** MessageHistoryBundle contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** MessageHistoryBundle messageHistoryMetadata. */
             public messageHistoryMetadata?: (E2E.Message.IMessageHistoryMetadata|null);
-
-            /** MessageHistoryBundle _mimetype. */
-            public _mimetype?: "mimetype";
-
-            /** MessageHistoryBundle _fileSha256. */
-            public _fileSha256?: "fileSha256";
-
-            /** MessageHistoryBundle _mediaKey. */
-            public _mediaKey?: "mediaKey";
-
-            /** MessageHistoryBundle _fileEncSha256. */
-            public _fileEncSha256?: "fileEncSha256";
-
-            /** MessageHistoryBundle _directPath. */
-            public _directPath?: "directPath";
-
-            /** MessageHistoryBundle _mediaKeyTimestamp. */
-            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
-
-            /** MessageHistoryBundle _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** MessageHistoryBundle _messageHistoryMetadata. */
-            public _messageHistoryMetadata?: "messageHistoryMetadata";
 
             /**
              * Creates a new MessageHistoryBundle instance using the specified properties.
@@ -24056,8 +18226,8 @@ export namespace E2E {
             /** MessageHistoryMetadata historyReceivers */
             historyReceivers?: (string[]|null);
 
-            /** MessageHistoryMetadata firstMessageTimestamp */
-            firstMessageTimestamp?: (number|Long|null);
+            /** MessageHistoryMetadata oldestMessageTimestamp */
+            oldestMessageTimestamp?: (number|Long|null);
 
             /** MessageHistoryMetadata messageCount */
             messageCount?: (number|Long|null);
@@ -24075,17 +18245,11 @@ export namespace E2E {
             /** MessageHistoryMetadata historyReceivers. */
             public historyReceivers: string[];
 
-            /** MessageHistoryMetadata firstMessageTimestamp. */
-            public firstMessageTimestamp?: (number|Long|null);
+            /** MessageHistoryMetadata oldestMessageTimestamp. */
+            public oldestMessageTimestamp: (number|Long);
 
             /** MessageHistoryMetadata messageCount. */
-            public messageCount?: (number|Long|null);
-
-            /** MessageHistoryMetadata _firstMessageTimestamp. */
-            public _firstMessageTimestamp?: "firstMessageTimestamp";
-
-            /** MessageHistoryMetadata _messageCount. */
-            public _messageCount?: "messageCount";
+            public messageCount: (number|Long);
 
             /**
              * Creates a new MessageHistoryMetadata instance using the specified properties.
@@ -24189,12 +18353,6 @@ export namespace E2E {
 
             /** MessageHistoryNotice messageHistoryMetadata. */
             public messageHistoryMetadata?: (E2E.Message.IMessageHistoryMetadata|null);
-
-            /** MessageHistoryNotice _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** MessageHistoryNotice _messageHistoryMetadata. */
-            public _messageHistoryMetadata?: "messageHistoryMetadata";
 
             /**
              * Creates a new MessageHistoryNotice instance using the specified properties.
@@ -24306,40 +18464,22 @@ export namespace E2E {
             constructor(properties?: E2E.Message.INewsletterAdminInviteMessage);
 
             /** NewsletterAdminInviteMessage newsletterJid. */
-            public newsletterJid?: (string|null);
+            public newsletterJid: string;
 
             /** NewsletterAdminInviteMessage newsletterName. */
-            public newsletterName?: (string|null);
+            public newsletterName: string;
 
             /** NewsletterAdminInviteMessage jpegThumbnail. */
-            public jpegThumbnail?: (Uint8Array|null);
+            public jpegThumbnail: Uint8Array;
 
             /** NewsletterAdminInviteMessage caption. */
-            public caption?: (string|null);
+            public caption: string;
 
             /** NewsletterAdminInviteMessage inviteExpiration. */
-            public inviteExpiration?: (number|Long|null);
+            public inviteExpiration: (number|Long);
 
             /** NewsletterAdminInviteMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
-
-            /** NewsletterAdminInviteMessage _newsletterJid. */
-            public _newsletterJid?: "newsletterJid";
-
-            /** NewsletterAdminInviteMessage _newsletterName. */
-            public _newsletterName?: "newsletterName";
-
-            /** NewsletterAdminInviteMessage _jpegThumbnail. */
-            public _jpegThumbnail?: "jpegThumbnail";
-
-            /** NewsletterAdminInviteMessage _caption. */
-            public _caption?: "caption";
-
-            /** NewsletterAdminInviteMessage _inviteExpiration. */
-            public _inviteExpiration?: "inviteExpiration";
-
-            /** NewsletterAdminInviteMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new NewsletterAdminInviteMessage instance using the specified properties.
@@ -24478,94 +18618,49 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IOrderMessage);
 
             /** OrderMessage orderId. */
-            public orderId?: (string|null);
+            public orderId: string;
 
             /** OrderMessage thumbnail. */
-            public thumbnail?: (Uint8Array|null);
+            public thumbnail: Uint8Array;
 
             /** OrderMessage itemCount. */
-            public itemCount?: (number|null);
+            public itemCount: number;
 
             /** OrderMessage status. */
-            public status?: (E2E.Message.OrderMessage.OrderStatus|null);
+            public status: E2E.Message.OrderMessage.OrderStatus;
 
             /** OrderMessage surface. */
-            public surface?: (E2E.Message.OrderMessage.OrderSurface|null);
+            public surface: E2E.Message.OrderMessage.OrderSurface;
 
             /** OrderMessage message. */
-            public message?: (string|null);
+            public message: string;
 
             /** OrderMessage orderTitle. */
-            public orderTitle?: (string|null);
+            public orderTitle: string;
 
             /** OrderMessage sellerJid. */
-            public sellerJid?: (string|null);
+            public sellerJid: string;
 
             /** OrderMessage token. */
-            public token?: (string|null);
+            public token: string;
 
             /** OrderMessage totalAmount1000. */
-            public totalAmount1000?: (number|Long|null);
+            public totalAmount1000: (number|Long);
 
             /** OrderMessage totalCurrencyCode. */
-            public totalCurrencyCode?: (string|null);
+            public totalCurrencyCode: string;
 
             /** OrderMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** OrderMessage messageVersion. */
-            public messageVersion?: (number|null);
+            public messageVersion: number;
 
             /** OrderMessage orderRequestMessageId. */
             public orderRequestMessageId?: (Protocol.IMessageKey|null);
 
             /** OrderMessage catalogType. */
-            public catalogType?: (string|null);
-
-            /** OrderMessage _orderId. */
-            public _orderId?: "orderId";
-
-            /** OrderMessage _thumbnail. */
-            public _thumbnail?: "thumbnail";
-
-            /** OrderMessage _itemCount. */
-            public _itemCount?: "itemCount";
-
-            /** OrderMessage _status. */
-            public _status?: "status";
-
-            /** OrderMessage _surface. */
-            public _surface?: "surface";
-
-            /** OrderMessage _message. */
-            public _message?: "message";
-
-            /** OrderMessage _orderTitle. */
-            public _orderTitle?: "orderTitle";
-
-            /** OrderMessage _sellerJid. */
-            public _sellerJid?: "sellerJid";
-
-            /** OrderMessage _token. */
-            public _token?: "token";
-
-            /** OrderMessage _totalAmount1000. */
-            public _totalAmount1000?: "totalAmount1000";
-
-            /** OrderMessage _totalCurrencyCode. */
-            public _totalCurrencyCode?: "totalCurrencyCode";
-
-            /** OrderMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** OrderMessage _messageVersion. */
-            public _messageVersion?: "messageVersion";
-
-            /** OrderMessage _orderRequestMessageId. */
-            public _orderRequestMessageId?: "orderRequestMessageId";
-
-            /** OrderMessage _catalogType. */
-            public _catalogType?: "catalogType";
+            public catalogType: string;
 
             /**
              * Creates a new OrderMessage instance using the specified properties.
@@ -24680,16 +18775,10 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IPaymentInviteMessage);
 
             /** PaymentInviteMessage serviceType. */
-            public serviceType?: (E2E.Message.PaymentInviteMessage.ServiceType|null);
+            public serviceType: E2E.Message.PaymentInviteMessage.ServiceType;
 
             /** PaymentInviteMessage expiryTimestamp. */
-            public expiryTimestamp?: (number|Long|null);
-
-            /** PaymentInviteMessage _serviceType. */
-            public _serviceType?: "serviceType";
-
-            /** PaymentInviteMessage _expiryTimestamp. */
-            public _expiryTimestamp?: "expiryTimestamp";
+            public expiryTimestamp: (number|Long);
 
             /**
              * Creates a new PaymentInviteMessage instance using the specified properties.
@@ -24811,15 +18900,6 @@ export namespace E2E {
             /** PaymentLinkMetadata provider. */
             public provider?: (E2E.Message.PaymentLinkMetadata.IPaymentLinkProvider|null);
 
-            /** PaymentLinkMetadata _button. */
-            public _button?: "button";
-
-            /** PaymentLinkMetadata _header. */
-            public _header?: "header";
-
-            /** PaymentLinkMetadata _provider. */
-            public _provider?: "provider";
-
             /**
              * Creates a new PaymentLinkMetadata instance using the specified properties.
              * @param [properties] Properties to set
@@ -24917,10 +18997,7 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PaymentLinkMetadata.IPaymentLinkButton);
 
                 /** PaymentLinkButton displayText. */
-                public displayText?: (string|null);
-
-                /** PaymentLinkButton _displayText. */
-                public _displayText?: "displayText";
+                public displayText: string;
 
                 /**
                  * Creates a new PaymentLinkButton instance using the specified properties.
@@ -25017,10 +19094,7 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PaymentLinkMetadata.IPaymentLinkHeader);
 
                 /** PaymentLinkHeader headerType. */
-                public headerType?: (E2E.Message.PaymentLinkMetadata.PaymentLinkHeader.PaymentLinkHeaderType|null);
-
-                /** PaymentLinkHeader _headerType. */
-                public _headerType?: "headerType";
+                public headerType: E2E.Message.PaymentLinkMetadata.PaymentLinkHeader.PaymentLinkHeaderType;
 
                 /**
                  * Creates a new PaymentLinkHeader instance using the specified properties.
@@ -25126,10 +19200,7 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PaymentLinkMetadata.IPaymentLinkProvider);
 
                 /** PaymentLinkProvider paramsJson. */
-                public paramsJson?: (string|null);
-
-                /** PaymentLinkProvider _paramsJson. */
-                public _paramsJson?: "paramsJson";
+                public paramsJson: string;
 
                 /**
                  * Creates a new PaymentLinkProvider instance using the specified properties.
@@ -25245,7 +19316,7 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IPeerDataOperationRequestMessage);
 
             /** PeerDataOperationRequestMessage peerDataOperationRequestType. */
-            public peerDataOperationRequestType?: (E2E.Message.PeerDataOperationRequestType|null);
+            public peerDataOperationRequestType: E2E.Message.PeerDataOperationRequestType;
 
             /** PeerDataOperationRequestMessage requestStickerReupload. */
             public requestStickerReupload: E2E.Message.PeerDataOperationRequestMessage.IRequestStickerReupload[];
@@ -25264,18 +19335,6 @@ export namespace E2E {
 
             /** PeerDataOperationRequestMessage syncdCollectionFatalRecoveryRequest. */
             public syncdCollectionFatalRecoveryRequest?: (E2E.Message.PeerDataOperationRequestMessage.ISyncDCollectionFatalRecoveryRequest|null);
-
-            /** PeerDataOperationRequestMessage _peerDataOperationRequestType. */
-            public _peerDataOperationRequestType?: "peerDataOperationRequestType";
-
-            /** PeerDataOperationRequestMessage _historySyncOnDemandRequest. */
-            public _historySyncOnDemandRequest?: "historySyncOnDemandRequest";
-
-            /** PeerDataOperationRequestMessage _fullHistorySyncOnDemandRequest. */
-            public _fullHistorySyncOnDemandRequest?: "fullHistorySyncOnDemandRequest";
-
-            /** PeerDataOperationRequestMessage _syncdCollectionFatalRecoveryRequest. */
-            public _syncdCollectionFatalRecoveryRequest?: "syncdCollectionFatalRecoveryRequest";
 
             /**
              * Creates a new PeerDataOperationRequestMessage instance using the specified properties.
@@ -25381,12 +19440,6 @@ export namespace E2E {
 
                 /** FullHistorySyncOnDemandRequest historySyncConfig. */
                 public historySyncConfig?: (CompanionReg.DeviceProps.IHistorySyncConfig|null);
-
-                /** FullHistorySyncOnDemandRequest _requestMetadata. */
-                public _requestMetadata?: "requestMetadata";
-
-                /** FullHistorySyncOnDemandRequest _historySyncConfig. */
-                public _historySyncConfig?: "historySyncConfig";
 
                 /**
                  * Creates a new FullHistorySyncOnDemandRequest instance using the specified properties.
@@ -25498,40 +19551,22 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PeerDataOperationRequestMessage.IHistorySyncOnDemandRequest);
 
                 /** HistorySyncOnDemandRequest chatJid. */
-                public chatJid?: (string|null);
+                public chatJid: string;
 
                 /** HistorySyncOnDemandRequest oldestMsgId. */
-                public oldestMsgId?: (string|null);
+                public oldestMsgId: string;
 
                 /** HistorySyncOnDemandRequest oldestMsgFromMe. */
-                public oldestMsgFromMe?: (boolean|null);
+                public oldestMsgFromMe: boolean;
 
                 /** HistorySyncOnDemandRequest onDemandMsgCount. */
-                public onDemandMsgCount?: (number|null);
+                public onDemandMsgCount: number;
 
                 /** HistorySyncOnDemandRequest oldestMsgTimestampMs. */
-                public oldestMsgTimestampMs?: (number|Long|null);
+                public oldestMsgTimestampMs: (number|Long);
 
                 /** HistorySyncOnDemandRequest accountLid. */
-                public accountLid?: (string|null);
-
-                /** HistorySyncOnDemandRequest _chatJid. */
-                public _chatJid?: "chatJid";
-
-                /** HistorySyncOnDemandRequest _oldestMsgId. */
-                public _oldestMsgId?: "oldestMsgId";
-
-                /** HistorySyncOnDemandRequest _oldestMsgFromMe. */
-                public _oldestMsgFromMe?: "oldestMsgFromMe";
-
-                /** HistorySyncOnDemandRequest _onDemandMsgCount. */
-                public _onDemandMsgCount?: "onDemandMsgCount";
-
-                /** HistorySyncOnDemandRequest _oldestMsgTimestampMs. */
-                public _oldestMsgTimestampMs?: "oldestMsgTimestampMs";
-
-                /** HistorySyncOnDemandRequest _accountLid. */
-                public _accountLid?: "accountLid";
+                public accountLid: string;
 
                 /**
                  * Creates a new HistorySyncOnDemandRequest instance using the specified properties.
@@ -25630,9 +19665,6 @@ export namespace E2E {
                 /** PlaceholderMessageResendRequest messageKey. */
                 public messageKey?: (Protocol.IMessageKey|null);
 
-                /** PlaceholderMessageResendRequest _messageKey. */
-                public _messageKey?: "messageKey";
-
                 /**
                  * Creates a new PlaceholderMessageResendRequest instance using the specified properties.
                  * @param [properties] Properties to set
@@ -25728,10 +19760,7 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PeerDataOperationRequestMessage.IRequestStickerReupload);
 
                 /** RequestStickerReupload fileSha256. */
-                public fileSha256?: (string|null);
-
-                /** RequestStickerReupload _fileSha256. */
-                public _fileSha256?: "fileSha256";
+                public fileSha256: string;
 
                 /**
                  * Creates a new RequestStickerReupload instance using the specified properties.
@@ -25831,16 +19860,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PeerDataOperationRequestMessage.IRequestUrlPreview);
 
                 /** RequestUrlPreview url. */
-                public url?: (string|null);
+                public url: string;
 
                 /** RequestUrlPreview includeHqThumbnail. */
-                public includeHqThumbnail?: (boolean|null);
-
-                /** RequestUrlPreview _url. */
-                public _url?: "url";
-
-                /** RequestUrlPreview _includeHqThumbnail. */
-                public _includeHqThumbnail?: "includeHqThumbnail";
+                public includeHqThumbnail: boolean;
 
                 /**
                  * Creates a new RequestUrlPreview instance using the specified properties.
@@ -25940,16 +19963,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PeerDataOperationRequestMessage.ISyncDCollectionFatalRecoveryRequest);
 
                 /** SyncDCollectionFatalRecoveryRequest collectionName. */
-                public collectionName?: (string|null);
+                public collectionName: string;
 
                 /** SyncDCollectionFatalRecoveryRequest timestamp. */
-                public timestamp?: (number|Long|null);
-
-                /** SyncDCollectionFatalRecoveryRequest _collectionName. */
-                public _collectionName?: "collectionName";
-
-                /** SyncDCollectionFatalRecoveryRequest _timestamp. */
-                public _timestamp?: "timestamp";
+                public timestamp: (number|Long);
 
                 /**
                  * Creates a new SyncDCollectionFatalRecoveryRequest instance using the specified properties.
@@ -26053,19 +20070,13 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IPeerDataOperationRequestResponseMessage);
 
             /** PeerDataOperationRequestResponseMessage peerDataOperationRequestType. */
-            public peerDataOperationRequestType?: (E2E.Message.PeerDataOperationRequestType|null);
+            public peerDataOperationRequestType: E2E.Message.PeerDataOperationRequestType;
 
             /** PeerDataOperationRequestResponseMessage stanzaId. */
-            public stanzaId?: (string|null);
+            public stanzaId: string;
 
             /** PeerDataOperationRequestResponseMessage peerDataOperationResult. */
             public peerDataOperationResult: E2E.Message.PeerDataOperationRequestResponseMessage.IPeerDataOperationResult[];
-
-            /** PeerDataOperationRequestResponseMessage _peerDataOperationRequestType. */
-            public _peerDataOperationRequestType?: "peerDataOperationRequestType";
-
-            /** PeerDataOperationRequestResponseMessage _stanzaId. */
-            public _stanzaId?: "stanzaId";
 
             /**
              * Creates a new PeerDataOperationRequestResponseMessage instance using the specified properties.
@@ -26188,7 +20199,7 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.IPeerDataOperationResult);
 
                 /** PeerDataOperationResult mediaUploadResult. */
-                public mediaUploadResult?: (MmsRetry.MediaRetryNotification.ResultType|null);
+                public mediaUploadResult: MmsRetry.MediaRetryNotification.ResultType;
 
                 /** PeerDataOperationResult stickerMessage. */
                 public stickerMessage?: (E2E.Message.IStickerMessage|null);
@@ -26213,33 +20224,6 @@ export namespace E2E {
 
                 /** PeerDataOperationResult companionCanonicalUserNonceFetchRequestResponse. */
                 public companionCanonicalUserNonceFetchRequestResponse?: (E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ICompanionCanonicalUserNonceFetchResponse|null);
-
-                /** PeerDataOperationResult _mediaUploadResult. */
-                public _mediaUploadResult?: "mediaUploadResult";
-
-                /** PeerDataOperationResult _stickerMessage. */
-                public _stickerMessage?: "stickerMessage";
-
-                /** PeerDataOperationResult _linkPreviewResponse. */
-                public _linkPreviewResponse?: "linkPreviewResponse";
-
-                /** PeerDataOperationResult _placeholderMessageResendResponse. */
-                public _placeholderMessageResendResponse?: "placeholderMessageResendResponse";
-
-                /** PeerDataOperationResult _waffleNonceFetchRequestResponse. */
-                public _waffleNonceFetchRequestResponse?: "waffleNonceFetchRequestResponse";
-
-                /** PeerDataOperationResult _fullHistorySyncOnDemandRequestResponse. */
-                public _fullHistorySyncOnDemandRequestResponse?: "fullHistorySyncOnDemandRequestResponse";
-
-                /** PeerDataOperationResult _companionMetaNonceFetchRequestResponse. */
-                public _companionMetaNonceFetchRequestResponse?: "companionMetaNonceFetchRequestResponse";
-
-                /** PeerDataOperationResult _syncdSnapshotFatalRecoveryResponse. */
-                public _syncdSnapshotFatalRecoveryResponse?: "syncdSnapshotFatalRecoveryResponse";
-
-                /** PeerDataOperationResult _companionCanonicalUserNonceFetchRequestResponse. */
-                public _companionCanonicalUserNonceFetchRequestResponse?: "companionCanonicalUserNonceFetchRequestResponse";
 
                 /**
                  * Creates a new PeerDataOperationResult instance using the specified properties.
@@ -26326,6 +20310,12 @@ export namespace E2E {
 
                     /** CompanionCanonicalUserNonceFetchResponse nonce */
                     nonce?: (string|null);
+
+                    /** CompanionCanonicalUserNonceFetchResponse waFbid */
+                    waFbid?: (string|null);
+
+                    /** CompanionCanonicalUserNonceFetchResponse forceRefresh */
+                    forceRefresh?: (boolean|null);
                 }
 
                 /** Represents a CompanionCanonicalUserNonceFetchResponse. */
@@ -26338,10 +20328,13 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ICompanionCanonicalUserNonceFetchResponse);
 
                     /** CompanionCanonicalUserNonceFetchResponse nonce. */
-                    public nonce?: (string|null);
+                    public nonce: string;
 
-                    /** CompanionCanonicalUserNonceFetchResponse _nonce. */
-                    public _nonce?: "nonce";
+                    /** CompanionCanonicalUserNonceFetchResponse waFbid. */
+                    public waFbid: string;
+
+                    /** CompanionCanonicalUserNonceFetchResponse forceRefresh. */
+                    public forceRefresh: boolean;
 
                     /**
                      * Creates a new CompanionCanonicalUserNonceFetchResponse instance using the specified properties.
@@ -26438,10 +20431,7 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ICompanionMetaNonceFetchResponse);
 
                     /** CompanionMetaNonceFetchResponse nonce. */
-                    public nonce?: (string|null);
-
-                    /** CompanionMetaNonceFetchResponse _nonce. */
-                    public _nonce?: "nonce";
+                    public nonce: string;
 
                     /**
                      * Creates a new CompanionMetaNonceFetchResponse instance using the specified properties.
@@ -26544,13 +20534,7 @@ export namespace E2E {
                     public requestMetadata?: (E2E.Message.IFullHistorySyncOnDemandRequestMetadata|null);
 
                     /** FullHistorySyncOnDemandRequestResponse responseCode. */
-                    public responseCode?: (E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandResponseCode|null);
-
-                    /** FullHistorySyncOnDemandRequestResponse _requestMetadata. */
-                    public _requestMetadata?: "requestMetadata";
-
-                    /** FullHistorySyncOnDemandRequestResponse _responseCode. */
-                    public _responseCode?: "responseCode";
+                    public responseCode: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandResponseCode;
 
                     /**
                      * Creates a new FullHistorySyncOnDemandRequestResponse instance using the specified properties.
@@ -26664,6 +20648,9 @@ export namespace E2E {
 
                     /** LinkPreviewResponse hqThumbnail */
                     hqThumbnail?: (E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.ILinkPreviewHighQualityThumbnail|null);
+
+                    /** LinkPreviewResponse previewMetadata */
+                    previewMetadata?: (E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.IPaymentLinkPreviewMetadata|null);
                 }
 
                 /** Represents a LinkPreviewResponse. */
@@ -26676,46 +20663,28 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ILinkPreviewResponse);
 
                     /** LinkPreviewResponse url. */
-                    public url?: (string|null);
+                    public url: string;
 
                     /** LinkPreviewResponse title. */
-                    public title?: (string|null);
+                    public title: string;
 
                     /** LinkPreviewResponse description. */
-                    public description?: (string|null);
+                    public description: string;
 
                     /** LinkPreviewResponse thumbData. */
-                    public thumbData?: (Uint8Array|null);
+                    public thumbData: Uint8Array;
 
                     /** LinkPreviewResponse matchText. */
-                    public matchText?: (string|null);
+                    public matchText: string;
 
                     /** LinkPreviewResponse previewType. */
-                    public previewType?: (string|null);
+                    public previewType: string;
 
                     /** LinkPreviewResponse hqThumbnail. */
                     public hqThumbnail?: (E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.ILinkPreviewHighQualityThumbnail|null);
 
-                    /** LinkPreviewResponse _url. */
-                    public _url?: "url";
-
-                    /** LinkPreviewResponse _title. */
-                    public _title?: "title";
-
-                    /** LinkPreviewResponse _description. */
-                    public _description?: "description";
-
-                    /** LinkPreviewResponse _thumbData. */
-                    public _thumbData?: "thumbData";
-
-                    /** LinkPreviewResponse _matchText. */
-                    public _matchText?: "matchText";
-
-                    /** LinkPreviewResponse _previewType. */
-                    public _previewType?: "previewType";
-
-                    /** LinkPreviewResponse _hqThumbnail. */
-                    public _hqThumbnail?: "hqThumbnail";
+                    /** LinkPreviewResponse previewMetadata. */
+                    public previewMetadata?: (E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.IPaymentLinkPreviewMetadata|null);
 
                     /**
                      * Creates a new LinkPreviewResponse instance using the specified properties.
@@ -26832,46 +20801,25 @@ export namespace E2E {
                         constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.ILinkPreviewHighQualityThumbnail);
 
                         /** LinkPreviewHighQualityThumbnail directPath. */
-                        public directPath?: (string|null);
+                        public directPath: string;
 
                         /** LinkPreviewHighQualityThumbnail thumbHash. */
-                        public thumbHash?: (string|null);
+                        public thumbHash: string;
 
                         /** LinkPreviewHighQualityThumbnail encThumbHash. */
-                        public encThumbHash?: (string|null);
+                        public encThumbHash: string;
 
                         /** LinkPreviewHighQualityThumbnail mediaKey. */
-                        public mediaKey?: (Uint8Array|null);
+                        public mediaKey: Uint8Array;
 
                         /** LinkPreviewHighQualityThumbnail mediaKeyTimestampMs. */
-                        public mediaKeyTimestampMs?: (number|Long|null);
+                        public mediaKeyTimestampMs: (number|Long);
 
                         /** LinkPreviewHighQualityThumbnail thumbWidth. */
-                        public thumbWidth?: (number|null);
+                        public thumbWidth: number;
 
                         /** LinkPreviewHighQualityThumbnail thumbHeight. */
-                        public thumbHeight?: (number|null);
-
-                        /** LinkPreviewHighQualityThumbnail _directPath. */
-                        public _directPath?: "directPath";
-
-                        /** LinkPreviewHighQualityThumbnail _thumbHash. */
-                        public _thumbHash?: "thumbHash";
-
-                        /** LinkPreviewHighQualityThumbnail _encThumbHash. */
-                        public _encThumbHash?: "encThumbHash";
-
-                        /** LinkPreviewHighQualityThumbnail _mediaKey. */
-                        public _mediaKey?: "mediaKey";
-
-                        /** LinkPreviewHighQualityThumbnail _mediaKeyTimestampMs. */
-                        public _mediaKeyTimestampMs?: "mediaKeyTimestampMs";
-
-                        /** LinkPreviewHighQualityThumbnail _thumbWidth. */
-                        public _thumbWidth?: "thumbWidth";
-
-                        /** LinkPreviewHighQualityThumbnail _thumbHeight. */
-                        public _thumbHeight?: "thumbHeight";
+                        public thumbHeight: number;
 
                         /**
                          * Creates a new LinkPreviewHighQualityThumbnail instance using the specified properties.
@@ -26950,6 +20898,109 @@ export namespace E2E {
                          */
                         public static getTypeUrl(typeUrlPrefix?: string): string;
                     }
+
+                    /** Properties of a PaymentLinkPreviewMetadata. */
+                    interface IPaymentLinkPreviewMetadata {
+
+                        /** PaymentLinkPreviewMetadata isBusinessVerified */
+                        isBusinessVerified?: (boolean|null);
+
+                        /** PaymentLinkPreviewMetadata providerName */
+                        providerName?: (string|null);
+                    }
+
+                    /** Represents a PaymentLinkPreviewMetadata. */
+                    class PaymentLinkPreviewMetadata implements IPaymentLinkPreviewMetadata {
+
+                        /**
+                         * Constructs a new PaymentLinkPreviewMetadata.
+                         * @param [properties] Properties to set
+                         */
+                        constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.IPaymentLinkPreviewMetadata);
+
+                        /** PaymentLinkPreviewMetadata isBusinessVerified. */
+                        public isBusinessVerified: boolean;
+
+                        /** PaymentLinkPreviewMetadata providerName. */
+                        public providerName: string;
+
+                        /**
+                         * Creates a new PaymentLinkPreviewMetadata instance using the specified properties.
+                         * @param [properties] Properties to set
+                         * @returns PaymentLinkPreviewMetadata instance
+                         */
+                        public static create(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.IPaymentLinkPreviewMetadata): E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata;
+
+                        /**
+                         * Encodes the specified PaymentLinkPreviewMetadata message. Does not implicitly {@link E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata.verify|verify} messages.
+                         * @param message PaymentLinkPreviewMetadata message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encode(message: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.IPaymentLinkPreviewMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Encodes the specified PaymentLinkPreviewMetadata message, length delimited. Does not implicitly {@link E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata.verify|verify} messages.
+                         * @param message PaymentLinkPreviewMetadata message or plain object to encode
+                         * @param [writer] Writer to encode to
+                         * @returns Writer
+                         */
+                        public static encodeDelimited(message: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.IPaymentLinkPreviewMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                        /**
+                         * Decodes a PaymentLinkPreviewMetadata message from the specified reader or buffer.
+                         * @param reader Reader or buffer to decode from
+                         * @param [length] Message length if known beforehand
+                         * @returns PaymentLinkPreviewMetadata
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata;
+
+                        /**
+                         * Decodes a PaymentLinkPreviewMetadata message from the specified reader or buffer, length delimited.
+                         * @param reader Reader or buffer to decode from
+                         * @returns PaymentLinkPreviewMetadata
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata;
+
+                        /**
+                         * Verifies a PaymentLinkPreviewMetadata message.
+                         * @param message Plain object to verify
+                         * @returns `null` if valid, otherwise the reason why it is not
+                         */
+                        public static verify(message: { [k: string]: any }): (string|null);
+
+                        /**
+                         * Creates a PaymentLinkPreviewMetadata message from a plain object. Also converts values to their respective internal types.
+                         * @param object Plain object
+                         * @returns PaymentLinkPreviewMetadata
+                         */
+                        public static fromObject(object: { [k: string]: any }): E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata;
+
+                        /**
+                         * Creates a plain object from a PaymentLinkPreviewMetadata message. Also converts values to other types if specified.
+                         * @param message PaymentLinkPreviewMetadata
+                         * @param [options] Conversion options
+                         * @returns Plain object
+                         */
+                        public static toObject(message: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                        /**
+                         * Converts this PaymentLinkPreviewMetadata to JSON.
+                         * @returns JSON object
+                         */
+                        public toJSON(): { [k: string]: any };
+
+                        /**
+                         * Gets the default type url for PaymentLinkPreviewMetadata
+                         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                         * @returns The default type url
+                         */
+                        public static getTypeUrl(typeUrlPrefix?: string): string;
+                    }
                 }
 
                 /** Properties of a PlaceholderMessageResendResponse. */
@@ -26969,10 +21020,7 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.IPlaceholderMessageResendResponse);
 
                     /** PlaceholderMessageResendResponse webMessageInfoBytes. */
-                    public webMessageInfoBytes?: (Uint8Array|null);
-
-                    /** PlaceholderMessageResendResponse _webMessageInfoBytes. */
-                    public _webMessageInfoBytes?: "webMessageInfoBytes";
+                    public webMessageInfoBytes: Uint8Array;
 
                     /**
                      * Creates a new PlaceholderMessageResendResponse instance using the specified properties.
@@ -27072,16 +21120,10 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ISyncDSnapshotFatalRecoveryResponse);
 
                     /** SyncDSnapshotFatalRecoveryResponse collectionSnapshot. */
-                    public collectionSnapshot?: (Uint8Array|null);
+                    public collectionSnapshot: Uint8Array;
 
                     /** SyncDSnapshotFatalRecoveryResponse isCompressed. */
-                    public isCompressed?: (boolean|null);
-
-                    /** SyncDSnapshotFatalRecoveryResponse _collectionSnapshot. */
-                    public _collectionSnapshot?: "collectionSnapshot";
-
-                    /** SyncDSnapshotFatalRecoveryResponse _isCompressed. */
-                    public _isCompressed?: "isCompressed";
+                    public isCompressed: boolean;
 
                     /**
                      * Creates a new SyncDSnapshotFatalRecoveryResponse instance using the specified properties.
@@ -27181,16 +21223,10 @@ export namespace E2E {
                     constructor(properties?: E2E.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.IWaffleNonceFetchResponse);
 
                     /** WaffleNonceFetchResponse nonce. */
-                    public nonce?: (string|null);
+                    public nonce: string;
 
                     /** WaffleNonceFetchResponse waEntFbid. */
-                    public waEntFbid?: (string|null);
-
-                    /** WaffleNonceFetchResponse _nonce. */
-                    public _nonce?: "nonce";
-
-                    /** WaffleNonceFetchResponse _waEntFbid. */
-                    public _waEntFbid?: "waEntFbid";
+                    public waEntFbid: string;
 
                     /**
                      * Creates a new WaffleNonceFetchResponse instance using the specified properties.
@@ -27312,19 +21348,10 @@ export namespace E2E {
             public key?: (Protocol.IMessageKey|null);
 
             /** PinInChatMessage type. */
-            public type?: (E2E.Message.PinInChatMessage.Type|null);
+            public type: E2E.Message.PinInChatMessage.Type;
 
             /** PinInChatMessage senderTimestampMs. */
-            public senderTimestampMs?: (number|Long|null);
-
-            /** PinInChatMessage _key. */
-            public _key?: "key";
-
-            /** PinInChatMessage _type. */
-            public _type?: "type";
-
-            /** PinInChatMessage _senderTimestampMs. */
-            public _senderTimestampMs?: "senderTimestampMs";
+            public senderTimestampMs: (number|Long);
 
             /**
              * Creates a new PinInChatMessage instance using the specified properties.
@@ -27431,10 +21458,7 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IPlaceholderMessage);
 
             /** PlaceholderMessage type. */
-            public type?: (E2E.Message.PlaceholderMessage.PlaceholderType|null);
-
-            /** PlaceholderMessage _type. */
-            public _type?: "type";
+            public type: E2E.Message.PlaceholderMessage.PlaceholderType;
 
             /**
              * Creates a new PlaceholderMessage instance using the specified properties.
@@ -27567,49 +21591,28 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IPollCreationMessage);
 
             /** PollCreationMessage encKey. */
-            public encKey?: (Uint8Array|null);
+            public encKey: Uint8Array;
 
             /** PollCreationMessage name. */
-            public name?: (string|null);
+            public name: string;
 
             /** PollCreationMessage options. */
             public options: E2E.Message.PollCreationMessage.IOption[];
 
             /** PollCreationMessage selectableOptionsCount. */
-            public selectableOptionsCount?: (number|null);
+            public selectableOptionsCount: number;
 
             /** PollCreationMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** PollCreationMessage pollContentType. */
-            public pollContentType?: (E2E.Message.PollContentType|null);
+            public pollContentType: E2E.Message.PollContentType;
 
             /** PollCreationMessage pollType. */
-            public pollType?: (E2E.Message.PollCreationMessage.PollType|null);
+            public pollType: E2E.Message.PollCreationMessage.PollType;
 
             /** PollCreationMessage correctAnswer. */
             public correctAnswer?: (E2E.Message.PollCreationMessage.IOption|null);
-
-            /** PollCreationMessage _encKey. */
-            public _encKey?: "encKey";
-
-            /** PollCreationMessage _name. */
-            public _name?: "name";
-
-            /** PollCreationMessage _selectableOptionsCount. */
-            public _selectableOptionsCount?: "selectableOptionsCount";
-
-            /** PollCreationMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** PollCreationMessage _pollContentType. */
-            public _pollContentType?: "pollContentType";
-
-            /** PollCreationMessage _pollType. */
-            public _pollType?: "pollType";
-
-            /** PollCreationMessage _correctAnswer. */
-            public _correctAnswer?: "correctAnswer";
 
             /**
              * Creates a new PollCreationMessage instance using the specified properties.
@@ -27711,16 +21714,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PollCreationMessage.IOption);
 
                 /** Option optionName. */
-                public optionName?: (string|null);
+                public optionName: string;
 
                 /** Option optionHash. */
-                public optionHash?: (string|null);
-
-                /** Option _optionName. */
-                public _optionName?: "optionName";
-
-                /** Option _optionHash. */
-                public _optionHash?: "optionHash";
+                public optionHash: string;
 
                 /**
                  * Creates a new Option instance using the specified properties.
@@ -27827,16 +21824,10 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IPollEncValue);
 
             /** PollEncValue encPayload. */
-            public encPayload?: (Uint8Array|null);
+            public encPayload: Uint8Array;
 
             /** PollEncValue encIv. */
-            public encIv?: (Uint8Array|null);
-
-            /** PollEncValue _encPayload. */
-            public _encPayload?: "encPayload";
-
-            /** PollEncValue _encIv. */
-            public _encIv?: "encIv";
+            public encIv: Uint8Array;
 
             /**
              * Creates a new PollEncValue instance using the specified properties.
@@ -27939,19 +21930,13 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IPollResultSnapshotMessage);
 
             /** PollResultSnapshotMessage name. */
-            public name?: (string|null);
+            public name: string;
 
             /** PollResultSnapshotMessage pollVotes. */
             public pollVotes: E2E.Message.PollResultSnapshotMessage.IPollVote[];
 
             /** PollResultSnapshotMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
-
-            /** PollResultSnapshotMessage _name. */
-            public _name?: "name";
-
-            /** PollResultSnapshotMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new PollResultSnapshotMessage instance using the specified properties.
@@ -28053,16 +22038,10 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.PollResultSnapshotMessage.IPollVote);
 
                 /** PollVote optionName. */
-                public optionName?: (string|null);
+                public optionName: string;
 
                 /** PollVote optionVoteCount. */
-                public optionVoteCount?: (number|Long|null);
-
-                /** PollVote _optionName. */
-                public _optionName?: "optionName";
-
-                /** PollVote _optionVoteCount. */
-                public _optionVoteCount?: "optionVoteCount";
+                public optionVoteCount: (number|Long);
 
                 /**
                  * Creates a new PollVote instance using the specified properties.
@@ -28178,19 +22157,7 @@ export namespace E2E {
             public metadata?: (E2E.Message.IPollUpdateMessageMetadata|null);
 
             /** PollUpdateMessage senderTimestampMs. */
-            public senderTimestampMs?: (number|Long|null);
-
-            /** PollUpdateMessage _pollCreationMessageKey. */
-            public _pollCreationMessageKey?: "pollCreationMessageKey";
-
-            /** PollUpdateMessage _vote. */
-            public _vote?: "vote";
-
-            /** PollUpdateMessage _metadata. */
-            public _metadata?: "metadata";
-
-            /** PollUpdateMessage _senderTimestampMs. */
-            public _senderTimestampMs?: "senderTimestampMs";
+            public senderTimestampMs: (number|Long);
 
             /**
              * Creates a new PollUpdateMessage instance using the specified properties.
@@ -28493,37 +22460,19 @@ export namespace E2E {
             public product?: (E2E.Message.ProductMessage.IProductSnapshot|null);
 
             /** ProductMessage businessOwnerJid. */
-            public businessOwnerJid?: (string|null);
+            public businessOwnerJid: string;
 
             /** ProductMessage catalog. */
             public catalog?: (E2E.Message.ProductMessage.ICatalogSnapshot|null);
 
             /** ProductMessage body. */
-            public body?: (string|null);
+            public body: string;
 
             /** ProductMessage footer. */
-            public footer?: (string|null);
+            public footer: string;
 
             /** ProductMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
-
-            /** ProductMessage _product. */
-            public _product?: "product";
-
-            /** ProductMessage _businessOwnerJid. */
-            public _businessOwnerJid?: "businessOwnerJid";
-
-            /** ProductMessage _catalog. */
-            public _catalog?: "catalog";
-
-            /** ProductMessage _body. */
-            public _body?: "body";
-
-            /** ProductMessage _footer. */
-            public _footer?: "footer";
-
-            /** ProductMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
 
             /**
              * Creates a new ProductMessage instance using the specified properties.
@@ -28631,19 +22580,10 @@ export namespace E2E {
                 public catalogImage?: (E2E.Message.IImageMessage|null);
 
                 /** CatalogSnapshot title. */
-                public title?: (string|null);
+                public title: string;
 
                 /** CatalogSnapshot description. */
-                public description?: (string|null);
-
-                /** CatalogSnapshot _catalogImage. */
-                public _catalogImage?: "catalogImage";
-
-                /** CatalogSnapshot _title. */
-                public _title?: "title";
-
-                /** CatalogSnapshot _description. */
-                public _description?: "description";
+                public description: string;
 
                 /**
                  * Creates a new CatalogSnapshot instance using the specified properties.
@@ -28776,73 +22716,37 @@ export namespace E2E {
                 public productImage?: (E2E.Message.IImageMessage|null);
 
                 /** ProductSnapshot productId. */
-                public productId?: (string|null);
+                public productId: string;
 
                 /** ProductSnapshot title. */
-                public title?: (string|null);
+                public title: string;
 
                 /** ProductSnapshot description. */
-                public description?: (string|null);
+                public description: string;
 
                 /** ProductSnapshot currencyCode. */
-                public currencyCode?: (string|null);
+                public currencyCode: string;
 
                 /** ProductSnapshot priceAmount1000. */
-                public priceAmount1000?: (number|Long|null);
+                public priceAmount1000: (number|Long);
 
                 /** ProductSnapshot retailerId. */
-                public retailerId?: (string|null);
+                public retailerId: string;
 
                 /** ProductSnapshot url. */
-                public url?: (string|null);
+                public url: string;
 
                 /** ProductSnapshot productImageCount. */
-                public productImageCount?: (number|null);
+                public productImageCount: number;
 
                 /** ProductSnapshot firstImageId. */
-                public firstImageId?: (string|null);
+                public firstImageId: string;
 
                 /** ProductSnapshot salePriceAmount1000. */
-                public salePriceAmount1000?: (number|Long|null);
+                public salePriceAmount1000: (number|Long);
 
                 /** ProductSnapshot signedUrl. */
-                public signedUrl?: (string|null);
-
-                /** ProductSnapshot _productImage. */
-                public _productImage?: "productImage";
-
-                /** ProductSnapshot _productId. */
-                public _productId?: "productId";
-
-                /** ProductSnapshot _title. */
-                public _title?: "title";
-
-                /** ProductSnapshot _description. */
-                public _description?: "description";
-
-                /** ProductSnapshot _currencyCode. */
-                public _currencyCode?: "currencyCode";
-
-                /** ProductSnapshot _priceAmount1000. */
-                public _priceAmount1000?: "priceAmount1000";
-
-                /** ProductSnapshot _retailerId. */
-                public _retailerId?: "retailerId";
-
-                /** ProductSnapshot _url. */
-                public _url?: "url";
-
-                /** ProductSnapshot _productImageCount. */
-                public _productImageCount?: "productImageCount";
-
-                /** ProductSnapshot _firstImageId. */
-                public _firstImageId?: "firstImageId";
-
-                /** ProductSnapshot _salePriceAmount1000. */
-                public _salePriceAmount1000?: "salePriceAmount1000";
-
-                /** ProductSnapshot _signedUrl. */
-                public _signedUrl?: "signedUrl";
+                public signedUrl: string;
 
                 /**
                  * Creates a new ProductSnapshot instance using the specified properties.
@@ -29012,13 +22916,13 @@ export namespace E2E {
             public key?: (Protocol.IMessageKey|null);
 
             /** ProtocolMessage type. */
-            public type?: (E2E.Message.ProtocolMessage.Type|null);
+            public type: E2E.Message.ProtocolMessage.Type;
 
             /** ProtocolMessage ephemeralExpiration. */
-            public ephemeralExpiration?: (number|null);
+            public ephemeralExpiration: number;
 
             /** ProtocolMessage ephemeralSettingTimestamp. */
-            public ephemeralSettingTimestamp?: (number|Long|null);
+            public ephemeralSettingTimestamp: (number|Long);
 
             /** ProtocolMessage historySyncNotification. */
             public historySyncNotification?: (E2E.Message.IHistorySyncNotification|null);
@@ -29042,7 +22946,7 @@ export namespace E2E {
             public editedMessage?: (E2E.IMessage|null);
 
             /** ProtocolMessage timestampMs. */
-            public timestampMs?: (number|Long|null);
+            public timestampMs: (number|Long);
 
             /** ProtocolMessage peerDataOperationRequestMessage. */
             public peerDataOperationRequestMessage?: (E2E.Message.IPeerDataOperationRequestMessage|null);
@@ -29054,7 +22958,7 @@ export namespace E2E {
             public botFeedbackMessage?: (E2E.Message.IBotFeedbackMessage|null);
 
             /** ProtocolMessage invokerJid. */
-            public invokerJid?: (string|null);
+            public invokerJid: string;
 
             /** ProtocolMessage requestWelcomeMessageMetadata. */
             public requestWelcomeMessageMetadata?: (E2E.Message.IRequestWelcomeMessageMetadata|null);
@@ -29072,85 +22976,13 @@ export namespace E2E {
             public limitSharing?: (Protocol.ILimitSharing|null);
 
             /** ProtocolMessage aiPsiMetadata. */
-            public aiPsiMetadata?: (Uint8Array|null);
+            public aiPsiMetadata: Uint8Array;
 
             /** ProtocolMessage aiQueryFanout. */
             public aiQueryFanout?: (E2E.IAIQueryFanout|null);
 
             /** ProtocolMessage memberLabel. */
             public memberLabel?: (E2E.IMemberLabel|null);
-
-            /** ProtocolMessage _key. */
-            public _key?: "key";
-
-            /** ProtocolMessage _type. */
-            public _type?: "type";
-
-            /** ProtocolMessage _ephemeralExpiration. */
-            public _ephemeralExpiration?: "ephemeralExpiration";
-
-            /** ProtocolMessage _ephemeralSettingTimestamp. */
-            public _ephemeralSettingTimestamp?: "ephemeralSettingTimestamp";
-
-            /** ProtocolMessage _historySyncNotification. */
-            public _historySyncNotification?: "historySyncNotification";
-
-            /** ProtocolMessage _appStateSyncKeyShare. */
-            public _appStateSyncKeyShare?: "appStateSyncKeyShare";
-
-            /** ProtocolMessage _appStateSyncKeyRequest. */
-            public _appStateSyncKeyRequest?: "appStateSyncKeyRequest";
-
-            /** ProtocolMessage _initialSecurityNotificationSettingSync. */
-            public _initialSecurityNotificationSettingSync?: "initialSecurityNotificationSettingSync";
-
-            /** ProtocolMessage _appStateFatalExceptionNotification. */
-            public _appStateFatalExceptionNotification?: "appStateFatalExceptionNotification";
-
-            /** ProtocolMessage _disappearingMode. */
-            public _disappearingMode?: "disappearingMode";
-
-            /** ProtocolMessage _editedMessage. */
-            public _editedMessage?: "editedMessage";
-
-            /** ProtocolMessage _timestampMs. */
-            public _timestampMs?: "timestampMs";
-
-            /** ProtocolMessage _peerDataOperationRequestMessage. */
-            public _peerDataOperationRequestMessage?: "peerDataOperationRequestMessage";
-
-            /** ProtocolMessage _peerDataOperationRequestResponseMessage. */
-            public _peerDataOperationRequestResponseMessage?: "peerDataOperationRequestResponseMessage";
-
-            /** ProtocolMessage _botFeedbackMessage. */
-            public _botFeedbackMessage?: "botFeedbackMessage";
-
-            /** ProtocolMessage _invokerJid. */
-            public _invokerJid?: "invokerJid";
-
-            /** ProtocolMessage _requestWelcomeMessageMetadata. */
-            public _requestWelcomeMessageMetadata?: "requestWelcomeMessageMetadata";
-
-            /** ProtocolMessage _mediaNotifyMessage. */
-            public _mediaNotifyMessage?: "mediaNotifyMessage";
-
-            /** ProtocolMessage _cloudApiThreadControlNotification. */
-            public _cloudApiThreadControlNotification?: "cloudApiThreadControlNotification";
-
-            /** ProtocolMessage _lidMigrationMappingSyncMessage. */
-            public _lidMigrationMappingSyncMessage?: "lidMigrationMappingSyncMessage";
-
-            /** ProtocolMessage _limitSharing. */
-            public _limitSharing?: "limitSharing";
-
-            /** ProtocolMessage _aiPsiMetadata. */
-            public _aiPsiMetadata?: "aiPsiMetadata";
-
-            /** ProtocolMessage _aiQueryFanout. */
-            public _aiQueryFanout?: "aiQueryFanout";
-
-            /** ProtocolMessage _memberLabel. */
-            public _memberLabel?: "memberLabel";
 
             /**
              * Creates a new ProtocolMessage instance using the specified properties.
@@ -29263,6 +23095,109 @@ export namespace E2E {
             }
         }
 
+        /** Properties of a QuestionResponseMessage. */
+        interface IQuestionResponseMessage {
+
+            /** QuestionResponseMessage key */
+            key?: (Protocol.IMessageKey|null);
+
+            /** QuestionResponseMessage text */
+            text?: (string|null);
+        }
+
+        /** Represents a QuestionResponseMessage. */
+        class QuestionResponseMessage implements IQuestionResponseMessage {
+
+            /**
+             * Constructs a new QuestionResponseMessage.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: E2E.Message.IQuestionResponseMessage);
+
+            /** QuestionResponseMessage key. */
+            public key?: (Protocol.IMessageKey|null);
+
+            /** QuestionResponseMessage text. */
+            public text: string;
+
+            /**
+             * Creates a new QuestionResponseMessage instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns QuestionResponseMessage instance
+             */
+            public static create(properties?: E2E.Message.IQuestionResponseMessage): E2E.Message.QuestionResponseMessage;
+
+            /**
+             * Encodes the specified QuestionResponseMessage message. Does not implicitly {@link E2E.Message.QuestionResponseMessage.verify|verify} messages.
+             * @param message QuestionResponseMessage message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: E2E.Message.IQuestionResponseMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified QuestionResponseMessage message, length delimited. Does not implicitly {@link E2E.Message.QuestionResponseMessage.verify|verify} messages.
+             * @param message QuestionResponseMessage message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: E2E.Message.IQuestionResponseMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a QuestionResponseMessage message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns QuestionResponseMessage
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.Message.QuestionResponseMessage;
+
+            /**
+             * Decodes a QuestionResponseMessage message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns QuestionResponseMessage
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.Message.QuestionResponseMessage;
+
+            /**
+             * Verifies a QuestionResponseMessage message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a QuestionResponseMessage message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns QuestionResponseMessage
+             */
+            public static fromObject(object: { [k: string]: any }): E2E.Message.QuestionResponseMessage;
+
+            /**
+             * Creates a plain object from a QuestionResponseMessage message. Also converts values to other types if specified.
+             * @param message QuestionResponseMessage
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: E2E.Message.QuestionResponseMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this QuestionResponseMessage to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for QuestionResponseMessage
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
         /** Properties of a ReactionMessage. */
         interface IReactionMessage {
 
@@ -29292,25 +23227,13 @@ export namespace E2E {
             public key?: (Protocol.IMessageKey|null);
 
             /** ReactionMessage text. */
-            public text?: (string|null);
+            public text: string;
 
             /** ReactionMessage groupingKey. */
-            public groupingKey?: (string|null);
+            public groupingKey: string;
 
             /** ReactionMessage senderTimestampMs. */
-            public senderTimestampMs?: (number|Long|null);
-
-            /** ReactionMessage _key. */
-            public _key?: "key";
-
-            /** ReactionMessage _text. */
-            public _text?: "text";
-
-            /** ReactionMessage _groupingKey. */
-            public _groupingKey?: "groupingKey";
-
-            /** ReactionMessage _senderTimestampMs. */
-            public _senderTimestampMs?: "senderTimestampMs";
+            public senderTimestampMs: (number|Long);
 
             /**
              * Creates a new ReactionMessage instance using the specified properties.
@@ -29428,43 +23351,22 @@ export namespace E2E {
             public noteMessage?: (E2E.IMessage|null);
 
             /** RequestPaymentMessage currencyCodeIso4217. */
-            public currencyCodeIso4217?: (string|null);
+            public currencyCodeIso4217: string;
 
             /** RequestPaymentMessage amount1000. */
-            public amount1000?: (number|Long|null);
+            public amount1000: (number|Long);
 
             /** RequestPaymentMessage requestFrom. */
-            public requestFrom?: (string|null);
+            public requestFrom: string;
 
             /** RequestPaymentMessage expiryTimestamp. */
-            public expiryTimestamp?: (number|Long|null);
+            public expiryTimestamp: (number|Long);
 
             /** RequestPaymentMessage amount. */
             public amount?: (E2E.IMoney|null);
 
             /** RequestPaymentMessage background. */
             public background?: (E2E.IPaymentBackground|null);
-
-            /** RequestPaymentMessage _noteMessage. */
-            public _noteMessage?: "noteMessage";
-
-            /** RequestPaymentMessage _currencyCodeIso4217. */
-            public _currencyCodeIso4217?: "currencyCodeIso4217";
-
-            /** RequestPaymentMessage _amount1000. */
-            public _amount1000?: "amount1000";
-
-            /** RequestPaymentMessage _requestFrom. */
-            public _requestFrom?: "requestFrom";
-
-            /** RequestPaymentMessage _expiryTimestamp. */
-            public _expiryTimestamp?: "expiryTimestamp";
-
-            /** RequestPaymentMessage _amount. */
-            public _amount?: "amount";
-
-            /** RequestPaymentMessage _background. */
-            public _background?: "background";
 
             /**
              * Creates a new RequestPaymentMessage instance using the specified properties.
@@ -29563,9 +23465,6 @@ export namespace E2E {
             /** RequestPhoneNumberMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
-            /** RequestPhoneNumberMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
             /**
              * Creates a new RequestPhoneNumberMessage instance using the specified properties.
              * @param [properties] Properties to set
@@ -29661,10 +23560,7 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IRequestWelcomeMessageMetadata);
 
             /** RequestWelcomeMessageMetadata localChatState. */
-            public localChatState?: (E2E.Message.RequestWelcomeMessageMetadata.LocalChatState|null);
-
-            /** RequestWelcomeMessageMetadata _localChatState. */
-            public _localChatState?: "localChatState";
+            public localChatState: E2E.Message.RequestWelcomeMessageMetadata.LocalChatState;
 
             /**
              * Creates a new RequestWelcomeMessageMetadata instance using the specified properties.
@@ -29776,22 +23672,13 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IScheduledCallCreationMessage);
 
             /** ScheduledCallCreationMessage scheduledTimestampMs. */
-            public scheduledTimestampMs?: (number|Long|null);
+            public scheduledTimestampMs: (number|Long);
 
             /** ScheduledCallCreationMessage callType. */
-            public callType?: (E2E.Message.ScheduledCallCreationMessage.CallType|null);
+            public callType: E2E.Message.ScheduledCallCreationMessage.CallType;
 
             /** ScheduledCallCreationMessage title. */
-            public title?: (string|null);
-
-            /** ScheduledCallCreationMessage _scheduledTimestampMs. */
-            public _scheduledTimestampMs?: "scheduledTimestampMs";
-
-            /** ScheduledCallCreationMessage _callType. */
-            public _callType?: "callType";
-
-            /** ScheduledCallCreationMessage _title. */
-            public _title?: "title";
+            public title: string;
 
             /**
              * Creates a new ScheduledCallCreationMessage instance using the specified properties.
@@ -29904,13 +23791,7 @@ export namespace E2E {
             public key?: (Protocol.IMessageKey|null);
 
             /** ScheduledCallEditMessage editType. */
-            public editType?: (E2E.Message.ScheduledCallEditMessage.EditType|null);
-
-            /** ScheduledCallEditMessage _key. */
-            public _key?: "key";
-
-            /** ScheduledCallEditMessage _editType. */
-            public _editType?: "editType";
+            public editType: E2E.Message.ScheduledCallEditMessage.EditType;
 
             /**
              * Creates a new ScheduledCallEditMessage instance using the specified properties.
@@ -30028,25 +23909,13 @@ export namespace E2E {
             public targetMessageKey?: (Protocol.IMessageKey|null);
 
             /** SecretEncryptedMessage encPayload. */
-            public encPayload?: (Uint8Array|null);
+            public encPayload: Uint8Array;
 
             /** SecretEncryptedMessage encIv. */
-            public encIv?: (Uint8Array|null);
+            public encIv: Uint8Array;
 
             /** SecretEncryptedMessage secretEncType. */
-            public secretEncType?: (E2E.Message.SecretEncryptedMessage.SecretEncType|null);
-
-            /** SecretEncryptedMessage _targetMessageKey. */
-            public _targetMessageKey?: "targetMessageKey";
-
-            /** SecretEncryptedMessage _encPayload. */
-            public _encPayload?: "encPayload";
-
-            /** SecretEncryptedMessage _encIv. */
-            public _encIv?: "encIv";
-
-            /** SecretEncryptedMessage _secretEncType. */
-            public _secretEncType?: "secretEncType";
+            public secretEncType: E2E.Message.SecretEncryptedMessage.SecretEncType;
 
             /**
              * Creates a new SecretEncryptedMessage instance using the specified properties.
@@ -30147,6 +24016,9 @@ export namespace E2E {
 
             /** SendPaymentMessage background */
             background?: (E2E.IPaymentBackground|null);
+
+            /** SendPaymentMessage transactionData */
+            transactionData?: (string|null);
         }
 
         /** Represents a SendPaymentMessage. */
@@ -30167,14 +24039,8 @@ export namespace E2E {
             /** SendPaymentMessage background. */
             public background?: (E2E.IPaymentBackground|null);
 
-            /** SendPaymentMessage _noteMessage. */
-            public _noteMessage?: "noteMessage";
-
-            /** SendPaymentMessage _requestMessageKey. */
-            public _requestMessageKey?: "requestMessageKey";
-
-            /** SendPaymentMessage _background. */
-            public _background?: "background";
+            /** SendPaymentMessage transactionData. */
+            public transactionData: string;
 
             /**
              * Creates a new SendPaymentMessage instance using the specified properties.
@@ -30274,16 +24140,10 @@ export namespace E2E {
             constructor(properties?: E2E.Message.ISenderKeyDistributionMessage);
 
             /** SenderKeyDistributionMessage groupId. */
-            public groupId?: (string|null);
+            public groupId: string;
 
             /** SenderKeyDistributionMessage axolotlSenderKeyDistributionMessage. */
-            public axolotlSenderKeyDistributionMessage?: (Uint8Array|null);
-
-            /** SenderKeyDistributionMessage _groupId. */
-            public _groupId?: "groupId";
-
-            /** SenderKeyDistributionMessage _axolotlSenderKeyDistributionMessage. */
-            public _axolotlSenderKeyDistributionMessage?: "axolotlSenderKeyDistributionMessage";
+            public axolotlSenderKeyDistributionMessage: Uint8Array;
 
             /**
              * Creates a new SenderKeyDistributionMessage instance using the specified properties.
@@ -30392,16 +24252,7 @@ export namespace E2E {
             public originalMessageKey?: (Protocol.IMessageKey|null);
 
             /** StatusNotificationMessage type. */
-            public type?: (E2E.Message.StatusNotificationMessage.StatusNotificationType|null);
-
-            /** StatusNotificationMessage _responseMessageKey. */
-            public _responseMessageKey?: "responseMessageKey";
-
-            /** StatusNotificationMessage _originalMessageKey. */
-            public _originalMessageKey?: "originalMessageKey";
-
-            /** StatusNotificationMessage _type. */
-            public _type?: "type";
+            public type: E2E.Message.StatusNotificationMessage.StatusNotificationType;
 
             /**
              * Creates a new StatusNotificationMessage instance using the specified properties.
@@ -30487,8 +24338,112 @@ export namespace E2E {
             enum StatusNotificationType {
                 UNKNOWN = 0,
                 STATUS_ADD_YOURS = 1,
-                STATUS_RESHARE = 2
+                STATUS_RESHARE = 2,
+                STATUS_QUESTION_ANSWER_RESHARE = 3
             }
+        }
+
+        /** Properties of a StatusQuestionAnswerMessage. */
+        interface IStatusQuestionAnswerMessage {
+
+            /** StatusQuestionAnswerMessage key */
+            key?: (Protocol.IMessageKey|null);
+
+            /** StatusQuestionAnswerMessage text */
+            text?: (string|null);
+        }
+
+        /** Represents a StatusQuestionAnswerMessage. */
+        class StatusQuestionAnswerMessage implements IStatusQuestionAnswerMessage {
+
+            /**
+             * Constructs a new StatusQuestionAnswerMessage.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: E2E.Message.IStatusQuestionAnswerMessage);
+
+            /** StatusQuestionAnswerMessage key. */
+            public key?: (Protocol.IMessageKey|null);
+
+            /** StatusQuestionAnswerMessage text. */
+            public text: string;
+
+            /**
+             * Creates a new StatusQuestionAnswerMessage instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns StatusQuestionAnswerMessage instance
+             */
+            public static create(properties?: E2E.Message.IStatusQuestionAnswerMessage): E2E.Message.StatusQuestionAnswerMessage;
+
+            /**
+             * Encodes the specified StatusQuestionAnswerMessage message. Does not implicitly {@link E2E.Message.StatusQuestionAnswerMessage.verify|verify} messages.
+             * @param message StatusQuestionAnswerMessage message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: E2E.Message.IStatusQuestionAnswerMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified StatusQuestionAnswerMessage message, length delimited. Does not implicitly {@link E2E.Message.StatusQuestionAnswerMessage.verify|verify} messages.
+             * @param message StatusQuestionAnswerMessage message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: E2E.Message.IStatusQuestionAnswerMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a StatusQuestionAnswerMessage message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns StatusQuestionAnswerMessage
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.Message.StatusQuestionAnswerMessage;
+
+            /**
+             * Decodes a StatusQuestionAnswerMessage message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns StatusQuestionAnswerMessage
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.Message.StatusQuestionAnswerMessage;
+
+            /**
+             * Verifies a StatusQuestionAnswerMessage message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a StatusQuestionAnswerMessage message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns StatusQuestionAnswerMessage
+             */
+            public static fromObject(object: { [k: string]: any }): E2E.Message.StatusQuestionAnswerMessage;
+
+            /**
+             * Creates a plain object from a StatusQuestionAnswerMessage message. Also converts values to other types if specified.
+             * @param message StatusQuestionAnswerMessage
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: E2E.Message.StatusQuestionAnswerMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this StatusQuestionAnswerMessage to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for StatusQuestionAnswerMessage
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
         /** Properties of a StickerMessage. */
@@ -30553,6 +24508,9 @@ export namespace E2E {
 
             /** StickerMessage accessibilityLabel */
             accessibilityLabel?: (string|null);
+
+            /** StickerMessage mediaKeyDomain */
+            mediaKeyDomain?: (E2E.Message.MediaKeyDomain|null);
         }
 
         /** Represents a StickerMessage. */
@@ -30565,124 +24523,67 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IStickerMessage);
 
             /** StickerMessage url. */
-            public url?: (string|null);
+            public url: string;
 
             /** StickerMessage fileSha256. */
-            public fileSha256?: (Uint8Array|null);
+            public fileSha256: Uint8Array;
 
             /** StickerMessage fileEncSha256. */
-            public fileEncSha256?: (Uint8Array|null);
+            public fileEncSha256: Uint8Array;
 
             /** StickerMessage mediaKey. */
-            public mediaKey?: (Uint8Array|null);
+            public mediaKey: Uint8Array;
 
             /** StickerMessage mimetype. */
-            public mimetype?: (string|null);
+            public mimetype: string;
 
             /** StickerMessage height. */
-            public height?: (number|null);
+            public height: number;
 
             /** StickerMessage width. */
-            public width?: (number|null);
+            public width: number;
 
             /** StickerMessage directPath. */
-            public directPath?: (string|null);
+            public directPath: string;
 
             /** StickerMessage fileLength. */
-            public fileLength?: (number|Long|null);
+            public fileLength: (number|Long);
 
             /** StickerMessage mediaKeyTimestamp. */
-            public mediaKeyTimestamp?: (number|Long|null);
+            public mediaKeyTimestamp: (number|Long);
 
             /** StickerMessage firstFrameLength. */
-            public firstFrameLength?: (number|null);
+            public firstFrameLength: number;
 
             /** StickerMessage firstFrameSidecar. */
-            public firstFrameSidecar?: (Uint8Array|null);
+            public firstFrameSidecar: Uint8Array;
 
             /** StickerMessage isAnimated. */
-            public isAnimated?: (boolean|null);
+            public isAnimated: boolean;
 
             /** StickerMessage pngThumbnail. */
-            public pngThumbnail?: (Uint8Array|null);
+            public pngThumbnail: Uint8Array;
 
             /** StickerMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** StickerMessage stickerSentTs. */
-            public stickerSentTs?: (number|Long|null);
+            public stickerSentTs: (number|Long);
 
             /** StickerMessage isAvatar. */
-            public isAvatar?: (boolean|null);
+            public isAvatar: boolean;
 
             /** StickerMessage isAiSticker. */
-            public isAiSticker?: (boolean|null);
+            public isAiSticker: boolean;
 
             /** StickerMessage isLottie. */
-            public isLottie?: (boolean|null);
+            public isLottie: boolean;
 
             /** StickerMessage accessibilityLabel. */
-            public accessibilityLabel?: (string|null);
+            public accessibilityLabel: string;
 
-            /** StickerMessage _url. */
-            public _url?: "url";
-
-            /** StickerMessage _fileSha256. */
-            public _fileSha256?: "fileSha256";
-
-            /** StickerMessage _fileEncSha256. */
-            public _fileEncSha256?: "fileEncSha256";
-
-            /** StickerMessage _mediaKey. */
-            public _mediaKey?: "mediaKey";
-
-            /** StickerMessage _mimetype. */
-            public _mimetype?: "mimetype";
-
-            /** StickerMessage _height. */
-            public _height?: "height";
-
-            /** StickerMessage _width. */
-            public _width?: "width";
-
-            /** StickerMessage _directPath. */
-            public _directPath?: "directPath";
-
-            /** StickerMessage _fileLength. */
-            public _fileLength?: "fileLength";
-
-            /** StickerMessage _mediaKeyTimestamp. */
-            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
-
-            /** StickerMessage _firstFrameLength. */
-            public _firstFrameLength?: "firstFrameLength";
-
-            /** StickerMessage _firstFrameSidecar. */
-            public _firstFrameSidecar?: "firstFrameSidecar";
-
-            /** StickerMessage _isAnimated. */
-            public _isAnimated?: "isAnimated";
-
-            /** StickerMessage _pngThumbnail. */
-            public _pngThumbnail?: "pngThumbnail";
-
-            /** StickerMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** StickerMessage _stickerSentTs. */
-            public _stickerSentTs?: "stickerSentTs";
-
-            /** StickerMessage _isAvatar. */
-            public _isAvatar?: "isAvatar";
-
-            /** StickerMessage _isAiSticker. */
-            public _isAiSticker?: "isAiSticker";
-
-            /** StickerMessage _isLottie. */
-            public _isLottie?: "isLottie";
-
-            /** StickerMessage _accessibilityLabel. */
-            public _accessibilityLabel?: "accessibilityLabel";
+            /** StickerMessage mediaKeyDomain. */
+            public mediaKeyDomain: E2E.Message.MediaKeyDomain;
 
             /**
              * Creates a new StickerMessage instance using the specified properties.
@@ -30842,133 +24743,70 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IStickerPackMessage);
 
             /** StickerPackMessage stickerPackId. */
-            public stickerPackId?: (string|null);
+            public stickerPackId: string;
 
             /** StickerPackMessage name. */
-            public name?: (string|null);
+            public name: string;
 
             /** StickerPackMessage publisher. */
-            public publisher?: (string|null);
+            public publisher: string;
 
             /** StickerPackMessage stickers. */
             public stickers: E2E.Message.StickerPackMessage.ISticker[];
 
             /** StickerPackMessage fileLength. */
-            public fileLength?: (number|Long|null);
+            public fileLength: (number|Long);
 
             /** StickerPackMessage fileSha256. */
-            public fileSha256?: (Uint8Array|null);
+            public fileSha256: Uint8Array;
 
             /** StickerPackMessage fileEncSha256. */
-            public fileEncSha256?: (Uint8Array|null);
+            public fileEncSha256: Uint8Array;
 
             /** StickerPackMessage mediaKey. */
-            public mediaKey?: (Uint8Array|null);
+            public mediaKey: Uint8Array;
 
             /** StickerPackMessage directPath. */
-            public directPath?: (string|null);
+            public directPath: string;
 
             /** StickerPackMessage caption. */
-            public caption?: (string|null);
+            public caption: string;
 
             /** StickerPackMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** StickerPackMessage packDescription. */
-            public packDescription?: (string|null);
+            public packDescription: string;
 
             /** StickerPackMessage mediaKeyTimestamp. */
-            public mediaKeyTimestamp?: (number|Long|null);
+            public mediaKeyTimestamp: (number|Long);
 
             /** StickerPackMessage trayIconFileName. */
-            public trayIconFileName?: (string|null);
+            public trayIconFileName: string;
 
             /** StickerPackMessage thumbnailDirectPath. */
-            public thumbnailDirectPath?: (string|null);
+            public thumbnailDirectPath: string;
 
             /** StickerPackMessage thumbnailSha256. */
-            public thumbnailSha256?: (Uint8Array|null);
+            public thumbnailSha256: Uint8Array;
 
             /** StickerPackMessage thumbnailEncSha256. */
-            public thumbnailEncSha256?: (Uint8Array|null);
+            public thumbnailEncSha256: Uint8Array;
 
             /** StickerPackMessage thumbnailHeight. */
-            public thumbnailHeight?: (number|null);
+            public thumbnailHeight: number;
 
             /** StickerPackMessage thumbnailWidth. */
-            public thumbnailWidth?: (number|null);
+            public thumbnailWidth: number;
 
             /** StickerPackMessage imageDataHash. */
-            public imageDataHash?: (string|null);
+            public imageDataHash: string;
 
             /** StickerPackMessage stickerPackSize. */
-            public stickerPackSize?: (number|Long|null);
+            public stickerPackSize: (number|Long);
 
             /** StickerPackMessage stickerPackOrigin. */
-            public stickerPackOrigin?: (E2E.Message.StickerPackMessage.StickerPackOrigin|null);
-
-            /** StickerPackMessage _stickerPackId. */
-            public _stickerPackId?: "stickerPackId";
-
-            /** StickerPackMessage _name. */
-            public _name?: "name";
-
-            /** StickerPackMessage _publisher. */
-            public _publisher?: "publisher";
-
-            /** StickerPackMessage _fileLength. */
-            public _fileLength?: "fileLength";
-
-            /** StickerPackMessage _fileSha256. */
-            public _fileSha256?: "fileSha256";
-
-            /** StickerPackMessage _fileEncSha256. */
-            public _fileEncSha256?: "fileEncSha256";
-
-            /** StickerPackMessage _mediaKey. */
-            public _mediaKey?: "mediaKey";
-
-            /** StickerPackMessage _directPath. */
-            public _directPath?: "directPath";
-
-            /** StickerPackMessage _caption. */
-            public _caption?: "caption";
-
-            /** StickerPackMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** StickerPackMessage _packDescription. */
-            public _packDescription?: "packDescription";
-
-            /** StickerPackMessage _mediaKeyTimestamp. */
-            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
-
-            /** StickerPackMessage _trayIconFileName. */
-            public _trayIconFileName?: "trayIconFileName";
-
-            /** StickerPackMessage _thumbnailDirectPath. */
-            public _thumbnailDirectPath?: "thumbnailDirectPath";
-
-            /** StickerPackMessage _thumbnailSha256. */
-            public _thumbnailSha256?: "thumbnailSha256";
-
-            /** StickerPackMessage _thumbnailEncSha256. */
-            public _thumbnailEncSha256?: "thumbnailEncSha256";
-
-            /** StickerPackMessage _thumbnailHeight. */
-            public _thumbnailHeight?: "thumbnailHeight";
-
-            /** StickerPackMessage _thumbnailWidth. */
-            public _thumbnailWidth?: "thumbnailWidth";
-
-            /** StickerPackMessage _imageDataHash. */
-            public _imageDataHash?: "imageDataHash";
-
-            /** StickerPackMessage _stickerPackSize. */
-            public _stickerPackSize?: "stickerPackSize";
-
-            /** StickerPackMessage _stickerPackOrigin. */
-            public _stickerPackOrigin?: "stickerPackOrigin";
+            public stickerPackOrigin: E2E.Message.StickerPackMessage.StickerPackOrigin;
 
             /**
              * Creates a new StickerPackMessage instance using the specified properties.
@@ -31082,37 +24920,22 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.StickerPackMessage.ISticker);
 
                 /** Sticker fileName. */
-                public fileName?: (string|null);
+                public fileName: string;
 
                 /** Sticker isAnimated. */
-                public isAnimated?: (boolean|null);
+                public isAnimated: boolean;
 
                 /** Sticker emojis. */
                 public emojis: string[];
 
                 /** Sticker accessibilityLabel. */
-                public accessibilityLabel?: (string|null);
+                public accessibilityLabel: string;
 
                 /** Sticker isLottie. */
-                public isLottie?: (boolean|null);
+                public isLottie: boolean;
 
                 /** Sticker mimetype. */
-                public mimetype?: (string|null);
-
-                /** Sticker _fileName. */
-                public _fileName?: "fileName";
-
-                /** Sticker _isAnimated. */
-                public _isAnimated?: "isAnimated";
-
-                /** Sticker _accessibilityLabel. */
-                public _accessibilityLabel?: "accessibilityLabel";
-
-                /** Sticker _isLottie. */
-                public _isLottie?: "isLottie";
-
-                /** Sticker _mimetype. */
-                public _mimetype?: "mimetype";
+                public mimetype: string;
 
                 /**
                  * Creates a new Sticker instance using the specified properties.
@@ -31226,16 +25049,10 @@ export namespace E2E {
             public filehash: string[];
 
             /** StickerSyncRMRMessage rmrSource. */
-            public rmrSource?: (string|null);
+            public rmrSource: string;
 
             /** StickerSyncRMRMessage requestTimestamp. */
-            public requestTimestamp?: (number|Long|null);
-
-            /** StickerSyncRMRMessage _rmrSource. */
-            public _rmrSource?: "rmrSource";
-
-            /** StickerSyncRMRMessage _requestTimestamp. */
-            public _requestTimestamp?: "requestTimestamp";
+            public requestTimestamp: (number|Long);
 
             /**
              * Creates a new StickerSyncRMRMessage instance using the specified properties.
@@ -31344,34 +25161,19 @@ export namespace E2E {
             constructor(properties?: E2E.Message.ITemplateButtonReplyMessage);
 
             /** TemplateButtonReplyMessage selectedId. */
-            public selectedId?: (string|null);
+            public selectedId: string;
 
             /** TemplateButtonReplyMessage selectedDisplayText. */
-            public selectedDisplayText?: (string|null);
+            public selectedDisplayText: string;
 
             /** TemplateButtonReplyMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** TemplateButtonReplyMessage selectedIndex. */
-            public selectedIndex?: (number|null);
+            public selectedIndex: number;
 
             /** TemplateButtonReplyMessage selectedCarouselCardIndex. */
-            public selectedCarouselCardIndex?: (number|null);
-
-            /** TemplateButtonReplyMessage _selectedId. */
-            public _selectedId?: "selectedId";
-
-            /** TemplateButtonReplyMessage _selectedDisplayText. */
-            public _selectedDisplayText?: "selectedDisplayText";
-
-            /** TemplateButtonReplyMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** TemplateButtonReplyMessage _selectedIndex. */
-            public _selectedIndex?: "selectedIndex";
-
-            /** TemplateButtonReplyMessage _selectedCarouselCardIndex. */
-            public _selectedCarouselCardIndex?: "selectedCarouselCardIndex";
+            public selectedCarouselCardIndex: number;
 
             /**
              * Creates a new TemplateButtonReplyMessage instance using the specified properties.
@@ -31489,7 +25291,7 @@ export namespace E2E {
             public hydratedTemplate?: (E2E.Message.TemplateMessage.IHydratedFourRowTemplate|null);
 
             /** TemplateMessage templateId. */
-            public templateId?: (string|null);
+            public templateId: string;
 
             /** TemplateMessage fourRowTemplate. */
             public fourRowTemplate?: (E2E.Message.TemplateMessage.IFourRowTemplate|null);
@@ -31499,15 +25301,6 @@ export namespace E2E {
 
             /** TemplateMessage interactiveMessageTemplate. */
             public interactiveMessageTemplate?: (E2E.Message.IInteractiveMessage|null);
-
-            /** TemplateMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** TemplateMessage _hydratedTemplate. */
-            public _hydratedTemplate?: "hydratedTemplate";
-
-            /** TemplateMessage _templateId. */
-            public _templateId?: "templateId";
 
             /** TemplateMessage format. */
             public format?: ("fourRowTemplate"|"hydratedFourRowTemplate"|"interactiveMessageTemplate");
@@ -31653,12 +25446,6 @@ export namespace E2E {
                 /** FourRowTemplate locationMessage. */
                 public locationMessage?: (E2E.Message.ILocationMessage|null);
 
-                /** FourRowTemplate _content. */
-                public _content?: "content";
-
-                /** FourRowTemplate _footer. */
-                public _footer?: "footer";
-
                 /** FourRowTemplate title. */
                 public title?: ("documentMessage"|"highlyStructuredMessage"|"imageMessage"|"videoMessage"|"locationMessage");
 
@@ -31784,19 +25571,19 @@ export namespace E2E {
                 constructor(properties?: E2E.Message.TemplateMessage.IHydratedFourRowTemplate);
 
                 /** HydratedFourRowTemplate hydratedContentText. */
-                public hydratedContentText?: (string|null);
+                public hydratedContentText: string;
 
                 /** HydratedFourRowTemplate hydratedFooterText. */
-                public hydratedFooterText?: (string|null);
+                public hydratedFooterText: string;
 
                 /** HydratedFourRowTemplate hydratedButtons. */
                 public hydratedButtons: E2E.IHydratedTemplateButton[];
 
                 /** HydratedFourRowTemplate templateId. */
-                public templateId?: (string|null);
+                public templateId: string;
 
                 /** HydratedFourRowTemplate maskLinkedDevices. */
-                public maskLinkedDevices?: (boolean|null);
+                public maskLinkedDevices: boolean;
 
                 /** HydratedFourRowTemplate documentMessage. */
                 public documentMessage?: (E2E.Message.IDocumentMessage|null);
@@ -31812,18 +25599,6 @@ export namespace E2E {
 
                 /** HydratedFourRowTemplate locationMessage. */
                 public locationMessage?: (E2E.Message.ILocationMessage|null);
-
-                /** HydratedFourRowTemplate _hydratedContentText. */
-                public _hydratedContentText?: "hydratedContentText";
-
-                /** HydratedFourRowTemplate _hydratedFooterText. */
-                public _hydratedFooterText?: "hydratedFooterText";
-
-                /** HydratedFourRowTemplate _templateId. */
-                public _templateId?: "templateId";
-
-                /** HydratedFourRowTemplate _maskLinkedDevices. */
-                public _maskLinkedDevices?: "maskLinkedDevices";
 
                 /** HydratedFourRowTemplate title. */
                 public title?: ("documentMessage"|"hydratedTitleText"|"imageMessage"|"videoMessage"|"locationMessage");
@@ -31924,10 +25699,7 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IURLMetadata);
 
             /** URLMetadata fbExperimentId. */
-            public fbExperimentId?: (number|null);
-
-            /** URLMetadata _fbExperimentId. */
-            public _fbExperimentId?: "fbExperimentId";
+            public fbExperimentId: number;
 
             /**
              * Creates a new URLMetadata instance using the specified properties.
@@ -32001,6 +25773,121 @@ export namespace E2E {
 
             /**
              * Gets the default type url for URLMetadata
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        /** Properties of a VideoEndCard. */
+        interface IVideoEndCard {
+
+            /** VideoEndCard username */
+            username: string;
+
+            /** VideoEndCard caption */
+            caption: string;
+
+            /** VideoEndCard thumbnailImageUrl */
+            thumbnailImageUrl: string;
+
+            /** VideoEndCard profilePictureUrl */
+            profilePictureUrl: string;
+        }
+
+        /** Represents a VideoEndCard. */
+        class VideoEndCard implements IVideoEndCard {
+
+            /**
+             * Constructs a new VideoEndCard.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: E2E.Message.IVideoEndCard);
+
+            /** VideoEndCard username. */
+            public username: string;
+
+            /** VideoEndCard caption. */
+            public caption: string;
+
+            /** VideoEndCard thumbnailImageUrl. */
+            public thumbnailImageUrl: string;
+
+            /** VideoEndCard profilePictureUrl. */
+            public profilePictureUrl: string;
+
+            /**
+             * Creates a new VideoEndCard instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns VideoEndCard instance
+             */
+            public static create(properties?: E2E.Message.IVideoEndCard): E2E.Message.VideoEndCard;
+
+            /**
+             * Encodes the specified VideoEndCard message. Does not implicitly {@link E2E.Message.VideoEndCard.verify|verify} messages.
+             * @param message VideoEndCard message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: E2E.Message.IVideoEndCard, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified VideoEndCard message, length delimited. Does not implicitly {@link E2E.Message.VideoEndCard.verify|verify} messages.
+             * @param message VideoEndCard message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: E2E.Message.IVideoEndCard, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a VideoEndCard message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns VideoEndCard
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): E2E.Message.VideoEndCard;
+
+            /**
+             * Decodes a VideoEndCard message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns VideoEndCard
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): E2E.Message.VideoEndCard;
+
+            /**
+             * Verifies a VideoEndCard message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a VideoEndCard message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns VideoEndCard
+             */
+            public static fromObject(object: { [k: string]: any }): E2E.Message.VideoEndCard;
+
+            /**
+             * Creates a plain object from a VideoEndCard message. Also converts values to other types if specified.
+             * @param message VideoEndCard
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: E2E.Message.VideoEndCard, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this VideoEndCard to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for VideoEndCard
              * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns The default type url
              */
@@ -32099,6 +25986,9 @@ export namespace E2E {
 
             /** VideoMessage videoSourceType */
             videoSourceType?: (E2E.Message.VideoMessage.VideoSourceType|null);
+
+            /** VideoMessage mediaKeyDomain */
+            mediaKeyDomain?: (E2E.Message.MediaKeyDomain|null);
         }
 
         /** Represents a VideoMessage. */
@@ -32111,175 +26001,97 @@ export namespace E2E {
             constructor(properties?: E2E.Message.IVideoMessage);
 
             /** VideoMessage url. */
-            public url?: (string|null);
+            public url: string;
 
             /** VideoMessage mimetype. */
-            public mimetype?: (string|null);
+            public mimetype: string;
 
             /** VideoMessage fileSha256. */
-            public fileSha256?: (Uint8Array|null);
+            public fileSha256: Uint8Array;
 
             /** VideoMessage fileLength. */
-            public fileLength?: (number|Long|null);
+            public fileLength: (number|Long);
 
             /** VideoMessage seconds. */
-            public seconds?: (number|null);
+            public seconds: number;
 
             /** VideoMessage mediaKey. */
-            public mediaKey?: (Uint8Array|null);
+            public mediaKey: Uint8Array;
 
             /** VideoMessage caption. */
-            public caption?: (string|null);
+            public caption: string;
 
             /** VideoMessage gifPlayback. */
-            public gifPlayback?: (boolean|null);
+            public gifPlayback: boolean;
 
             /** VideoMessage height. */
-            public height?: (number|null);
+            public height: number;
 
             /** VideoMessage width. */
-            public width?: (number|null);
+            public width: number;
 
             /** VideoMessage fileEncSha256. */
-            public fileEncSha256?: (Uint8Array|null);
+            public fileEncSha256: Uint8Array;
 
             /** VideoMessage interactiveAnnotations. */
             public interactiveAnnotations: E2E.IInteractiveAnnotation[];
 
             /** VideoMessage directPath. */
-            public directPath?: (string|null);
+            public directPath: string;
 
             /** VideoMessage mediaKeyTimestamp. */
-            public mediaKeyTimestamp?: (number|Long|null);
+            public mediaKeyTimestamp: (number|Long);
 
             /** VideoMessage jpegThumbnail. */
-            public jpegThumbnail?: (Uint8Array|null);
+            public jpegThumbnail: Uint8Array;
 
             /** VideoMessage contextInfo. */
             public contextInfo?: (E2E.IContextInfo|null);
 
             /** VideoMessage streamingSidecar. */
-            public streamingSidecar?: (Uint8Array|null);
+            public streamingSidecar: Uint8Array;
 
             /** VideoMessage gifAttribution. */
-            public gifAttribution?: (E2E.Message.VideoMessage.Attribution|null);
+            public gifAttribution: E2E.Message.VideoMessage.Attribution;
 
             /** VideoMessage viewOnce. */
-            public viewOnce?: (boolean|null);
+            public viewOnce: boolean;
 
             /** VideoMessage thumbnailDirectPath. */
-            public thumbnailDirectPath?: (string|null);
+            public thumbnailDirectPath: string;
 
             /** VideoMessage thumbnailSha256. */
-            public thumbnailSha256?: (Uint8Array|null);
+            public thumbnailSha256: Uint8Array;
 
             /** VideoMessage thumbnailEncSha256. */
-            public thumbnailEncSha256?: (Uint8Array|null);
+            public thumbnailEncSha256: Uint8Array;
 
             /** VideoMessage staticUrl. */
-            public staticUrl?: (string|null);
+            public staticUrl: string;
 
             /** VideoMessage annotations. */
             public annotations: E2E.IInteractiveAnnotation[];
 
             /** VideoMessage accessibilityLabel. */
-            public accessibilityLabel?: (string|null);
+            public accessibilityLabel: string;
 
             /** VideoMessage processedVideos. */
             public processedVideos: E2E.IProcessedVideo[];
 
             /** VideoMessage externalShareFullVideoDurationInSeconds. */
-            public externalShareFullVideoDurationInSeconds?: (number|null);
+            public externalShareFullVideoDurationInSeconds: number;
 
             /** VideoMessage motionPhotoPresentationOffsetMs. */
-            public motionPhotoPresentationOffsetMs?: (number|Long|null);
+            public motionPhotoPresentationOffsetMs: (number|Long);
 
             /** VideoMessage metadataUrl. */
-            public metadataUrl?: (string|null);
+            public metadataUrl: string;
 
             /** VideoMessage videoSourceType. */
-            public videoSourceType?: (E2E.Message.VideoMessage.VideoSourceType|null);
+            public videoSourceType: E2E.Message.VideoMessage.VideoSourceType;
 
-            /** VideoMessage _url. */
-            public _url?: "url";
-
-            /** VideoMessage _mimetype. */
-            public _mimetype?: "mimetype";
-
-            /** VideoMessage _fileSha256. */
-            public _fileSha256?: "fileSha256";
-
-            /** VideoMessage _fileLength. */
-            public _fileLength?: "fileLength";
-
-            /** VideoMessage _seconds. */
-            public _seconds?: "seconds";
-
-            /** VideoMessage _mediaKey. */
-            public _mediaKey?: "mediaKey";
-
-            /** VideoMessage _caption. */
-            public _caption?: "caption";
-
-            /** VideoMessage _gifPlayback. */
-            public _gifPlayback?: "gifPlayback";
-
-            /** VideoMessage _height. */
-            public _height?: "height";
-
-            /** VideoMessage _width. */
-            public _width?: "width";
-
-            /** VideoMessage _fileEncSha256. */
-            public _fileEncSha256?: "fileEncSha256";
-
-            /** VideoMessage _directPath. */
-            public _directPath?: "directPath";
-
-            /** VideoMessage _mediaKeyTimestamp. */
-            public _mediaKeyTimestamp?: "mediaKeyTimestamp";
-
-            /** VideoMessage _jpegThumbnail. */
-            public _jpegThumbnail?: "jpegThumbnail";
-
-            /** VideoMessage _contextInfo. */
-            public _contextInfo?: "contextInfo";
-
-            /** VideoMessage _streamingSidecar. */
-            public _streamingSidecar?: "streamingSidecar";
-
-            /** VideoMessage _gifAttribution. */
-            public _gifAttribution?: "gifAttribution";
-
-            /** VideoMessage _viewOnce. */
-            public _viewOnce?: "viewOnce";
-
-            /** VideoMessage _thumbnailDirectPath. */
-            public _thumbnailDirectPath?: "thumbnailDirectPath";
-
-            /** VideoMessage _thumbnailSha256. */
-            public _thumbnailSha256?: "thumbnailSha256";
-
-            /** VideoMessage _thumbnailEncSha256. */
-            public _thumbnailEncSha256?: "thumbnailEncSha256";
-
-            /** VideoMessage _staticUrl. */
-            public _staticUrl?: "staticUrl";
-
-            /** VideoMessage _accessibilityLabel. */
-            public _accessibilityLabel?: "accessibilityLabel";
-
-            /** VideoMessage _externalShareFullVideoDurationInSeconds. */
-            public _externalShareFullVideoDurationInSeconds?: "externalShareFullVideoDurationInSeconds";
-
-            /** VideoMessage _motionPhotoPresentationOffsetMs. */
-            public _motionPhotoPresentationOffsetMs?: "motionPhotoPresentationOffsetMs";
-
-            /** VideoMessage _metadataUrl. */
-            public _metadataUrl?: "metadataUrl";
-
-            /** VideoMessage _videoSourceType. */
-            public _videoSourceType?: "videoSourceType";
+            /** VideoMessage mediaKeyDomain. */
+            public mediaKeyDomain: E2E.Message.MediaKeyDomain;
 
             /**
              * Creates a new VideoMessage instance using the specified properties.
@@ -32365,7 +26177,8 @@ export namespace E2E {
             enum Attribution {
                 NONE = 0,
                 GIPHY = 1,
-                TENOR = 2
+                TENOR = 2,
+                KLIPY = 3
             }
 
             /** VideoSourceType enum. */
@@ -32381,54 +26194,6 @@ export namespace E2E {
         UNKNOWN = 0,
         KEEP_FOR_ALL = 1,
         UNDO_KEEP_FOR_ALL = 2
-    }
-
-    /** BotSessionSource enum. */
-    enum BotSessionSource {
-        NONE = 0,
-        NULL_STATE = 1,
-        TYPEAHEAD = 2,
-        USER_INPUT = 3,
-        EMU_FLASH = 4,
-        EMU_FLASH_FOLLOWUP = 5,
-        VOICE = 6
-    }
-
-    /** BotMetricsThreadEntryPoint enum. */
-    enum BotMetricsThreadEntryPoint {
-        AI_TAB_THREAD = 1,
-        AI_HOME_THREAD = 2,
-        AI_DEEPLINK_IMMERSIVE_THREAD = 3,
-        AI_DEEPLINK_THREAD = 4
-    }
-
-    /** BotMetricsEntryPoint enum. */
-    enum BotMetricsEntryPoint {
-        FAVICON = 1,
-        CHATLIST = 2,
-        AISEARCH_NULL_STATE_PAPER_PLANE = 3,
-        AISEARCH_NULL_STATE_SUGGESTION = 4,
-        AISEARCH_TYPE_AHEAD_SUGGESTION = 5,
-        AISEARCH_TYPE_AHEAD_PAPER_PLANE = 6,
-        AISEARCH_TYPE_AHEAD_RESULT_CHATLIST = 7,
-        AISEARCH_TYPE_AHEAD_RESULT_MESSAGES = 8,
-        AIVOICE_SEARCH_BAR = 9,
-        AIVOICE_FAVICON = 10,
-        AISTUDIO = 11,
-        DEEPLINK = 12,
-        NOTIFICATION = 13,
-        PROFILE_MESSAGE_BUTTON = 14,
-        FORWARD = 15,
-        APP_SHORTCUT = 16,
-        FF_FAMILY = 17,
-        AI_TAB = 18,
-        AI_HOME = 19,
-        AI_DEEPLINK_IMMERSIVE = 20,
-        AI_DEEPLINK = 21,
-        META_AI_CHAT_SHORTCUT_AI_STUDIO = 22,
-        UGC_CHAT_SHORTCUT_AI_STUDIO = 23,
-        NEW_CHAT_AI_STUDIO = 24,
-        AIVOICE_FAVICON_CALL_HISTORY = 25
     }
 }
 
@@ -32461,28 +26226,16 @@ export namespace Protocol {
         constructor(properties?: Protocol.ILimitSharing);
 
         /** LimitSharing sharingLimited. */
-        public sharingLimited?: (boolean|null);
+        public sharingLimited: boolean;
 
         /** LimitSharing trigger. */
-        public trigger?: (Protocol.LimitSharing.TriggerType|null);
+        public trigger: Protocol.LimitSharing.TriggerType;
 
         /** LimitSharing limitSharingSettingTimestamp. */
-        public limitSharingSettingTimestamp?: (number|Long|null);
+        public limitSharingSettingTimestamp: (number|Long);
 
         /** LimitSharing initiatedByMe. */
-        public initiatedByMe?: (boolean|null);
-
-        /** LimitSharing _sharingLimited. */
-        public _sharingLimited?: "sharingLimited";
-
-        /** LimitSharing _trigger. */
-        public _trigger?: "trigger";
-
-        /** LimitSharing _limitSharingSettingTimestamp. */
-        public _limitSharingSettingTimestamp?: "limitSharingSettingTimestamp";
-
-        /** LimitSharing _initiatedByMe. */
-        public _initiatedByMe?: "initiatedByMe";
+        public initiatedByMe: boolean;
 
         /**
          * Creates a new LimitSharing instance using the specified properties.
@@ -32599,28 +26352,16 @@ export namespace Protocol {
         constructor(properties?: Protocol.IMessageKey);
 
         /** MessageKey remoteJid. */
-        public remoteJid?: (string|null);
+        public remoteJid: string;
 
         /** MessageKey fromMe. */
-        public fromMe?: (boolean|null);
+        public fromMe: boolean;
 
         /** MessageKey id. */
-        public id?: (string|null);
+        public id: string;
 
         /** MessageKey participant. */
-        public participant?: (string|null);
-
-        /** MessageKey _remoteJid. */
-        public _remoteJid?: "remoteJid";
-
-        /** MessageKey _fromMe. */
-        public _fromMe?: "fromMe";
-
-        /** MessageKey _id. */
-        public _id?: "id";
-
-        /** MessageKey _participant. */
-        public _participant?: "participant";
+        public participant: string;
 
         /**
          * Creates a new MessageKey instance using the specified properties.
@@ -32727,22 +26468,13 @@ export namespace Adv {
         constructor(properties?: Adv.IADVSignedDeviceIdentityHMAC);
 
         /** ADVSignedDeviceIdentityHMAC details. */
-        public details?: (Uint8Array|null);
+        public details: Uint8Array;
 
         /** ADVSignedDeviceIdentityHMAC hmac. */
-        public hmac?: (Uint8Array|null);
+        public hmac: Uint8Array;
 
         /** ADVSignedDeviceIdentityHMAC accountType. */
-        public accountType?: (Adv.ADVEncryptionType|null);
-
-        /** ADVSignedDeviceIdentityHMAC _details. */
-        public _details?: "details";
-
-        /** ADVSignedDeviceIdentityHMAC _hmac. */
-        public _hmac?: "hmac";
-
-        /** ADVSignedDeviceIdentityHMAC _accountType. */
-        public _accountType?: "accountType";
+        public accountType: Adv.ADVEncryptionType;
 
         /**
          * Creates a new ADVSignedDeviceIdentityHMAC instance using the specified properties.
@@ -32848,28 +26580,16 @@ export namespace Adv {
         constructor(properties?: Adv.IADVSignedDeviceIdentity);
 
         /** ADVSignedDeviceIdentity details. */
-        public details?: (Uint8Array|null);
+        public details: Uint8Array;
 
         /** ADVSignedDeviceIdentity accountSignatureKey. */
-        public accountSignatureKey?: (Uint8Array|null);
+        public accountSignatureKey: Uint8Array;
 
         /** ADVSignedDeviceIdentity accountSignature. */
-        public accountSignature?: (Uint8Array|null);
+        public accountSignature: Uint8Array;
 
         /** ADVSignedDeviceIdentity deviceSignature. */
-        public deviceSignature?: (Uint8Array|null);
-
-        /** ADVSignedDeviceIdentity _details. */
-        public _details?: "details";
-
-        /** ADVSignedDeviceIdentity _accountSignatureKey. */
-        public _accountSignatureKey?: "accountSignatureKey";
-
-        /** ADVSignedDeviceIdentity _accountSignature. */
-        public _accountSignature?: "accountSignature";
-
-        /** ADVSignedDeviceIdentity _deviceSignature. */
-        public _deviceSignature?: "deviceSignature";
+        public deviceSignature: Uint8Array;
 
         /**
          * Creates a new ADVSignedDeviceIdentity instance using the specified properties.
@@ -32978,34 +26698,19 @@ export namespace Adv {
         constructor(properties?: Adv.IADVDeviceIdentity);
 
         /** ADVDeviceIdentity rawId. */
-        public rawId?: (number|null);
+        public rawId: number;
 
         /** ADVDeviceIdentity timestamp. */
-        public timestamp?: (number|Long|null);
+        public timestamp: (number|Long);
 
         /** ADVDeviceIdentity keyIndex. */
-        public keyIndex?: (number|null);
+        public keyIndex: number;
 
         /** ADVDeviceIdentity accountType. */
-        public accountType?: (Adv.ADVEncryptionType|null);
+        public accountType: Adv.ADVEncryptionType;
 
         /** ADVDeviceIdentity deviceType. */
-        public deviceType?: (Adv.ADVEncryptionType|null);
-
-        /** ADVDeviceIdentity _rawId. */
-        public _rawId?: "rawId";
-
-        /** ADVDeviceIdentity _timestamp. */
-        public _timestamp?: "timestamp";
-
-        /** ADVDeviceIdentity _keyIndex. */
-        public _keyIndex?: "keyIndex";
-
-        /** ADVDeviceIdentity _accountType. */
-        public _accountType?: "accountType";
-
-        /** ADVDeviceIdentity _deviceType. */
-        public _deviceType?: "deviceType";
+        public deviceType: Adv.ADVEncryptionType;
 
         /**
          * Creates a new ADVDeviceIdentity instance using the specified properties.
@@ -33108,22 +26813,13 @@ export namespace Adv {
         constructor(properties?: Adv.IADVSignedKeyIndexList);
 
         /** ADVSignedKeyIndexList details. */
-        public details?: (Uint8Array|null);
+        public details: Uint8Array;
 
         /** ADVSignedKeyIndexList accountSignature. */
-        public accountSignature?: (Uint8Array|null);
+        public accountSignature: Uint8Array;
 
         /** ADVSignedKeyIndexList accountSignatureKey. */
-        public accountSignatureKey?: (Uint8Array|null);
-
-        /** ADVSignedKeyIndexList _details. */
-        public _details?: "details";
-
-        /** ADVSignedKeyIndexList _accountSignature. */
-        public _accountSignature?: "accountSignature";
-
-        /** ADVSignedKeyIndexList _accountSignatureKey. */
-        public _accountSignatureKey?: "accountSignatureKey";
+        public accountSignatureKey: Uint8Array;
 
         /**
          * Creates a new ADVSignedKeyIndexList instance using the specified properties.
@@ -33232,31 +26928,19 @@ export namespace Adv {
         constructor(properties?: Adv.IADVKeyIndexList);
 
         /** ADVKeyIndexList rawId. */
-        public rawId?: (number|null);
+        public rawId: number;
 
         /** ADVKeyIndexList timestamp. */
-        public timestamp?: (number|Long|null);
+        public timestamp: (number|Long);
 
         /** ADVKeyIndexList currentIndex. */
-        public currentIndex?: (number|null);
+        public currentIndex: number;
 
         /** ADVKeyIndexList validIndexes. */
         public validIndexes: number[];
 
         /** ADVKeyIndexList accountType. */
-        public accountType?: (Adv.ADVEncryptionType|null);
-
-        /** ADVKeyIndexList _rawId. */
-        public _rawId?: "rawId";
-
-        /** ADVKeyIndexList _timestamp. */
-        public _timestamp?: "timestamp";
-
-        /** ADVKeyIndexList _currentIndex. */
-        public _currentIndex?: "currentIndex";
-
-        /** ADVKeyIndexList _accountType. */
-        public _accountType?: "accountType";
+        public accountType: Adv.ADVEncryptionType;
 
         /**
          * Creates a new ADVKeyIndexList instance using the specified properties.
@@ -33343,6 +27027,5070 @@ export namespace Adv {
     }
 }
 
+/** Namespace BotMetadata. */
+export namespace BotMetadata {
+
+    /** Properties of a BotMetadata. */
+    interface IBotMetadata {
+
+        /** BotMetadata avatarMetadata */
+        avatarMetadata?: (BotMetadata.IBotAvatarMetadata|null);
+
+        /** BotMetadata personaId */
+        personaId?: (string|null);
+
+        /** BotMetadata pluginMetadata */
+        pluginMetadata?: (BotMetadata.IBotPluginMetadata|null);
+
+        /** BotMetadata suggestedPromptMetadata */
+        suggestedPromptMetadata?: (BotMetadata.IBotSuggestedPromptMetadata|null);
+
+        /** BotMetadata invokerJid */
+        invokerJid?: (string|null);
+
+        /** BotMetadata sessionMetadata */
+        sessionMetadata?: (BotMetadata.IBotSessionMetadata|null);
+
+        /** BotMetadata memuMetadata */
+        memuMetadata?: (BotMetadata.IBotMemuMetadata|null);
+
+        /** BotMetadata timezone */
+        timezone?: (string|null);
+
+        /** BotMetadata reminderMetadata */
+        reminderMetadata?: (BotMetadata.IBotReminderMetadata|null);
+
+        /** BotMetadata modelMetadata */
+        modelMetadata?: (BotMetadata.IBotModelMetadata|null);
+
+        /** BotMetadata messageDisclaimerText */
+        messageDisclaimerText?: (string|null);
+
+        /** BotMetadata progressIndicatorMetadata */
+        progressIndicatorMetadata?: (BotMetadata.IBotProgressIndicatorMetadata|null);
+
+        /** BotMetadata capabilityMetadata */
+        capabilityMetadata?: (BotMetadata.IBotCapabilityMetadata|null);
+
+        /** BotMetadata imagineMetadata */
+        imagineMetadata?: (BotMetadata.IBotImagineMetadata|null);
+
+        /** BotMetadata memoryMetadata */
+        memoryMetadata?: (BotMetadata.IBotMemoryMetadata|null);
+
+        /** BotMetadata renderingMetadata */
+        renderingMetadata?: (BotMetadata.IBotRenderingMetadata|null);
+
+        /** BotMetadata botMetricsMetadata */
+        botMetricsMetadata?: (BotMetadata.IBotMetricsMetadata|null);
+
+        /** BotMetadata botLinkedAccountsMetadata */
+        botLinkedAccountsMetadata?: (BotMetadata.IBotLinkedAccountsMetadata|null);
+
+        /** BotMetadata richResponseSourcesMetadata */
+        richResponseSourcesMetadata?: (BotMetadata.IBotSourcesMetadata|null);
+
+        /** BotMetadata aiConversationContext */
+        aiConversationContext?: (Uint8Array|null);
+
+        /** BotMetadata botPromotionMessageMetadata */
+        botPromotionMessageMetadata?: (BotMetadata.IBotPromotionMessageMetadata|null);
+
+        /** BotMetadata botModeSelectionMetadata */
+        botModeSelectionMetadata?: (BotMetadata.IBotModeSelectionMetadata|null);
+
+        /** BotMetadata botQuotaMetadata */
+        botQuotaMetadata?: (BotMetadata.IBotQuotaMetadata|null);
+
+        /** BotMetadata botAgeCollectionMetadata */
+        botAgeCollectionMetadata?: (BotMetadata.IBotAgeCollectionMetadata|null);
+
+        /** BotMetadata conversationStarterPromptId */
+        conversationStarterPromptId?: (string|null);
+
+        /** BotMetadata botResponseId */
+        botResponseId?: (string|null);
+
+        /** BotMetadata verificationMetadata */
+        verificationMetadata?: (BotMetadata.IBotSignatureVerificationMetadata|null);
+
+        /** BotMetadata unifiedResponseMutation */
+        unifiedResponseMutation?: (BotMetadata.IBotUnifiedResponseMutation|null);
+
+        /** BotMetadata botMessageOriginMetadata */
+        botMessageOriginMetadata?: (BotMetadata.IBotMessageOriginMetadata|null);
+
+        /** BotMetadata inThreadSurveyMetadata */
+        inThreadSurveyMetadata?: (BotMetadata.IInThreadSurveyMetadata|null);
+    }
+
+    /** Represents a BotMetadata. */
+    class BotMetadata implements IBotMetadata {
+
+        /**
+         * Constructs a new BotMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotMetadata);
+
+        /** BotMetadata avatarMetadata. */
+        public avatarMetadata?: (BotMetadata.IBotAvatarMetadata|null);
+
+        /** BotMetadata personaId. */
+        public personaId: string;
+
+        /** BotMetadata pluginMetadata. */
+        public pluginMetadata?: (BotMetadata.IBotPluginMetadata|null);
+
+        /** BotMetadata suggestedPromptMetadata. */
+        public suggestedPromptMetadata?: (BotMetadata.IBotSuggestedPromptMetadata|null);
+
+        /** BotMetadata invokerJid. */
+        public invokerJid: string;
+
+        /** BotMetadata sessionMetadata. */
+        public sessionMetadata?: (BotMetadata.IBotSessionMetadata|null);
+
+        /** BotMetadata memuMetadata. */
+        public memuMetadata?: (BotMetadata.IBotMemuMetadata|null);
+
+        /** BotMetadata timezone. */
+        public timezone: string;
+
+        /** BotMetadata reminderMetadata. */
+        public reminderMetadata?: (BotMetadata.IBotReminderMetadata|null);
+
+        /** BotMetadata modelMetadata. */
+        public modelMetadata?: (BotMetadata.IBotModelMetadata|null);
+
+        /** BotMetadata messageDisclaimerText. */
+        public messageDisclaimerText: string;
+
+        /** BotMetadata progressIndicatorMetadata. */
+        public progressIndicatorMetadata?: (BotMetadata.IBotProgressIndicatorMetadata|null);
+
+        /** BotMetadata capabilityMetadata. */
+        public capabilityMetadata?: (BotMetadata.IBotCapabilityMetadata|null);
+
+        /** BotMetadata imagineMetadata. */
+        public imagineMetadata?: (BotMetadata.IBotImagineMetadata|null);
+
+        /** BotMetadata memoryMetadata. */
+        public memoryMetadata?: (BotMetadata.IBotMemoryMetadata|null);
+
+        /** BotMetadata renderingMetadata. */
+        public renderingMetadata?: (BotMetadata.IBotRenderingMetadata|null);
+
+        /** BotMetadata botMetricsMetadata. */
+        public botMetricsMetadata?: (BotMetadata.IBotMetricsMetadata|null);
+
+        /** BotMetadata botLinkedAccountsMetadata. */
+        public botLinkedAccountsMetadata?: (BotMetadata.IBotLinkedAccountsMetadata|null);
+
+        /** BotMetadata richResponseSourcesMetadata. */
+        public richResponseSourcesMetadata?: (BotMetadata.IBotSourcesMetadata|null);
+
+        /** BotMetadata aiConversationContext. */
+        public aiConversationContext: Uint8Array;
+
+        /** BotMetadata botPromotionMessageMetadata. */
+        public botPromotionMessageMetadata?: (BotMetadata.IBotPromotionMessageMetadata|null);
+
+        /** BotMetadata botModeSelectionMetadata. */
+        public botModeSelectionMetadata?: (BotMetadata.IBotModeSelectionMetadata|null);
+
+        /** BotMetadata botQuotaMetadata. */
+        public botQuotaMetadata?: (BotMetadata.IBotQuotaMetadata|null);
+
+        /** BotMetadata botAgeCollectionMetadata. */
+        public botAgeCollectionMetadata?: (BotMetadata.IBotAgeCollectionMetadata|null);
+
+        /** BotMetadata conversationStarterPromptId. */
+        public conversationStarterPromptId: string;
+
+        /** BotMetadata botResponseId. */
+        public botResponseId: string;
+
+        /** BotMetadata verificationMetadata. */
+        public verificationMetadata?: (BotMetadata.IBotSignatureVerificationMetadata|null);
+
+        /** BotMetadata unifiedResponseMutation. */
+        public unifiedResponseMutation?: (BotMetadata.IBotUnifiedResponseMutation|null);
+
+        /** BotMetadata botMessageOriginMetadata. */
+        public botMessageOriginMetadata?: (BotMetadata.IBotMessageOriginMetadata|null);
+
+        /** BotMetadata inThreadSurveyMetadata. */
+        public inThreadSurveyMetadata?: (BotMetadata.IInThreadSurveyMetadata|null);
+
+        /**
+         * Creates a new BotMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotMetadata): BotMetadata.BotMetadata;
+
+        /**
+         * Encodes the specified BotMetadata message. Does not implicitly {@link BotMetadata.BotMetadata.verify|verify} messages.
+         * @param message BotMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotMetadata.verify|verify} messages.
+         * @param message BotMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMetadata;
+
+        /**
+         * Decodes a BotMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMetadata;
+
+        /**
+         * Verifies a BotMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMetadata;
+
+        /**
+         * Creates a plain object from a BotMetadata message. Also converts values to other types if specified.
+         * @param message BotMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a BotUnifiedResponseMutation. */
+    interface IBotUnifiedResponseMutation {
+
+        /** BotUnifiedResponseMutation sbsMetadata */
+        sbsMetadata?: (BotMetadata.BotUnifiedResponseMutation.ISideBySideMetadata|null);
+    }
+
+    /** Represents a BotUnifiedResponseMutation. */
+    class BotUnifiedResponseMutation implements IBotUnifiedResponseMutation {
+
+        /**
+         * Constructs a new BotUnifiedResponseMutation.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotUnifiedResponseMutation);
+
+        /** BotUnifiedResponseMutation sbsMetadata. */
+        public sbsMetadata?: (BotMetadata.BotUnifiedResponseMutation.ISideBySideMetadata|null);
+
+        /**
+         * Creates a new BotUnifiedResponseMutation instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotUnifiedResponseMutation instance
+         */
+        public static create(properties?: BotMetadata.IBotUnifiedResponseMutation): BotMetadata.BotUnifiedResponseMutation;
+
+        /**
+         * Encodes the specified BotUnifiedResponseMutation message. Does not implicitly {@link BotMetadata.BotUnifiedResponseMutation.verify|verify} messages.
+         * @param message BotUnifiedResponseMutation message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotUnifiedResponseMutation, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotUnifiedResponseMutation message, length delimited. Does not implicitly {@link BotMetadata.BotUnifiedResponseMutation.verify|verify} messages.
+         * @param message BotUnifiedResponseMutation message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotUnifiedResponseMutation, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotUnifiedResponseMutation message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotUnifiedResponseMutation
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotUnifiedResponseMutation;
+
+        /**
+         * Decodes a BotUnifiedResponseMutation message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotUnifiedResponseMutation
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotUnifiedResponseMutation;
+
+        /**
+         * Verifies a BotUnifiedResponseMutation message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotUnifiedResponseMutation message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotUnifiedResponseMutation
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotUnifiedResponseMutation;
+
+        /**
+         * Creates a plain object from a BotUnifiedResponseMutation message. Also converts values to other types if specified.
+         * @param message BotUnifiedResponseMutation
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotUnifiedResponseMutation, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotUnifiedResponseMutation to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotUnifiedResponseMutation
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotUnifiedResponseMutation {
+
+        /** Properties of a SideBySideMetadata. */
+        interface ISideBySideMetadata {
+
+            /** SideBySideMetadata primaryResponseId */
+            primaryResponseId?: (string|null);
+        }
+
+        /** Represents a SideBySideMetadata. */
+        class SideBySideMetadata implements ISideBySideMetadata {
+
+            /**
+             * Constructs a new SideBySideMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: BotMetadata.BotUnifiedResponseMutation.ISideBySideMetadata);
+
+            /** SideBySideMetadata primaryResponseId. */
+            public primaryResponseId: string;
+
+            /**
+             * Creates a new SideBySideMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SideBySideMetadata instance
+             */
+            public static create(properties?: BotMetadata.BotUnifiedResponseMutation.ISideBySideMetadata): BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata;
+
+            /**
+             * Encodes the specified SideBySideMetadata message. Does not implicitly {@link BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.verify|verify} messages.
+             * @param message SideBySideMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: BotMetadata.BotUnifiedResponseMutation.ISideBySideMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified SideBySideMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata.verify|verify} messages.
+             * @param message SideBySideMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: BotMetadata.BotUnifiedResponseMutation.ISideBySideMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SideBySideMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SideBySideMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata;
+
+            /**
+             * Decodes a SideBySideMetadata message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns SideBySideMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata;
+
+            /**
+             * Verifies a SideBySideMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a SideBySideMetadata message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns SideBySideMetadata
+             */
+            public static fromObject(object: { [k: string]: any }): BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata;
+
+            /**
+             * Creates a plain object from a SideBySideMetadata message. Also converts values to other types if specified.
+             * @param message SideBySideMetadata
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: BotMetadata.BotUnifiedResponseMutation.SideBySideMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this SideBySideMetadata to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for SideBySideMetadata
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+    }
+
+    /** Properties of a BotMessageOrigin. */
+    interface IBotMessageOrigin {
+
+        /** BotMessageOrigin type */
+        type?: (BotMetadata.BotMessageOrigin.BotMessageOriginType|null);
+    }
+
+    /** Represents a BotMessageOrigin. */
+    class BotMessageOrigin implements IBotMessageOrigin {
+
+        /**
+         * Constructs a new BotMessageOrigin.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotMessageOrigin);
+
+        /** BotMessageOrigin type. */
+        public type: BotMetadata.BotMessageOrigin.BotMessageOriginType;
+
+        /**
+         * Creates a new BotMessageOrigin instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotMessageOrigin instance
+         */
+        public static create(properties?: BotMetadata.IBotMessageOrigin): BotMetadata.BotMessageOrigin;
+
+        /**
+         * Encodes the specified BotMessageOrigin message. Does not implicitly {@link BotMetadata.BotMessageOrigin.verify|verify} messages.
+         * @param message BotMessageOrigin message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotMessageOrigin, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotMessageOrigin message, length delimited. Does not implicitly {@link BotMetadata.BotMessageOrigin.verify|verify} messages.
+         * @param message BotMessageOrigin message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotMessageOrigin, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotMessageOrigin message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotMessageOrigin
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMessageOrigin;
+
+        /**
+         * Decodes a BotMessageOrigin message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotMessageOrigin
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMessageOrigin;
+
+        /**
+         * Verifies a BotMessageOrigin message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotMessageOrigin message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotMessageOrigin
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMessageOrigin;
+
+        /**
+         * Creates a plain object from a BotMessageOrigin message. Also converts values to other types if specified.
+         * @param message BotMessageOrigin
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotMessageOrigin, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotMessageOrigin to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotMessageOrigin
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotMessageOrigin {
+
+        /** BotMessageOriginType enum. */
+        enum BotMessageOriginType {
+            BOT_MESSAGE_ORIGIN_TYPE_AI_INITIATED = 0
+        }
+    }
+
+    /** Properties of a BotMessageOriginMetadata. */
+    interface IBotMessageOriginMetadata {
+
+        /** BotMessageOriginMetadata origins */
+        origins?: (BotMetadata.IBotMessageOrigin[]|null);
+    }
+
+    /** Represents a BotMessageOriginMetadata. */
+    class BotMessageOriginMetadata implements IBotMessageOriginMetadata {
+
+        /**
+         * Constructs a new BotMessageOriginMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotMessageOriginMetadata);
+
+        /** BotMessageOriginMetadata origins. */
+        public origins: BotMetadata.IBotMessageOrigin[];
+
+        /**
+         * Creates a new BotMessageOriginMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotMessageOriginMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotMessageOriginMetadata): BotMetadata.BotMessageOriginMetadata;
+
+        /**
+         * Encodes the specified BotMessageOriginMetadata message. Does not implicitly {@link BotMetadata.BotMessageOriginMetadata.verify|verify} messages.
+         * @param message BotMessageOriginMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotMessageOriginMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotMessageOriginMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotMessageOriginMetadata.verify|verify} messages.
+         * @param message BotMessageOriginMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotMessageOriginMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotMessageOriginMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotMessageOriginMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMessageOriginMetadata;
+
+        /**
+         * Decodes a BotMessageOriginMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotMessageOriginMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMessageOriginMetadata;
+
+        /**
+         * Verifies a BotMessageOriginMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotMessageOriginMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotMessageOriginMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMessageOriginMetadata;
+
+        /**
+         * Creates a plain object from a BotMessageOriginMetadata message. Also converts values to other types if specified.
+         * @param message BotMessageOriginMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotMessageOriginMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotMessageOriginMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotMessageOriginMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of an InThreadSurveyMetadata. */
+    interface IInThreadSurveyMetadata {
+
+        /** InThreadSurveyMetadata tessaSessionId */
+        tessaSessionId?: (string|null);
+
+        /** InThreadSurveyMetadata simonSessionId */
+        simonSessionId?: (string|null);
+
+        /** InThreadSurveyMetadata simonSurveyId */
+        simonSurveyId?: (string|null);
+
+        /** InThreadSurveyMetadata tessaRootId */
+        tessaRootId?: (string|null);
+
+        /** InThreadSurveyMetadata requestId */
+        requestId?: (string|null);
+
+        /** InThreadSurveyMetadata tessaEvent */
+        tessaEvent?: (string|null);
+
+        /** InThreadSurveyMetadata invitationHeaderText */
+        invitationHeaderText?: (string|null);
+
+        /** InThreadSurveyMetadata invitationBodyText */
+        invitationBodyText?: (string|null);
+
+        /** InThreadSurveyMetadata invitationCtaText */
+        invitationCtaText?: (string|null);
+
+        /** InThreadSurveyMetadata invitationCtaUrl */
+        invitationCtaUrl?: (string|null);
+
+        /** InThreadSurveyMetadata surveyTitle */
+        surveyTitle?: (string|null);
+
+        /** InThreadSurveyMetadata questions */
+        questions?: (BotMetadata.InThreadSurveyMetadata.IInThreadSurveyQuestion[]|null);
+
+        /** InThreadSurveyMetadata surveyContinueButtonText */
+        surveyContinueButtonText?: (string|null);
+
+        /** InThreadSurveyMetadata surveySubmitButtonText */
+        surveySubmitButtonText?: (string|null);
+
+        /** InThreadSurveyMetadata privacyStatementFull */
+        privacyStatementFull?: (string|null);
+
+        /** InThreadSurveyMetadata privacyStatementParts */
+        privacyStatementParts?: (BotMetadata.InThreadSurveyMetadata.IInThreadSurveyPrivacyStatementPart[]|null);
+
+        /** InThreadSurveyMetadata feedbackToastText */
+        feedbackToastText?: (string|null);
+    }
+
+    /** Represents an InThreadSurveyMetadata. */
+    class InThreadSurveyMetadata implements IInThreadSurveyMetadata {
+
+        /**
+         * Constructs a new InThreadSurveyMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IInThreadSurveyMetadata);
+
+        /** InThreadSurveyMetadata tessaSessionId. */
+        public tessaSessionId: string;
+
+        /** InThreadSurveyMetadata simonSessionId. */
+        public simonSessionId: string;
+
+        /** InThreadSurveyMetadata simonSurveyId. */
+        public simonSurveyId: string;
+
+        /** InThreadSurveyMetadata tessaRootId. */
+        public tessaRootId: string;
+
+        /** InThreadSurveyMetadata requestId. */
+        public requestId: string;
+
+        /** InThreadSurveyMetadata tessaEvent. */
+        public tessaEvent: string;
+
+        /** InThreadSurveyMetadata invitationHeaderText. */
+        public invitationHeaderText: string;
+
+        /** InThreadSurveyMetadata invitationBodyText. */
+        public invitationBodyText: string;
+
+        /** InThreadSurveyMetadata invitationCtaText. */
+        public invitationCtaText: string;
+
+        /** InThreadSurveyMetadata invitationCtaUrl. */
+        public invitationCtaUrl: string;
+
+        /** InThreadSurveyMetadata surveyTitle. */
+        public surveyTitle: string;
+
+        /** InThreadSurveyMetadata questions. */
+        public questions: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyQuestion[];
+
+        /** InThreadSurveyMetadata surveyContinueButtonText. */
+        public surveyContinueButtonText: string;
+
+        /** InThreadSurveyMetadata surveySubmitButtonText. */
+        public surveySubmitButtonText: string;
+
+        /** InThreadSurveyMetadata privacyStatementFull. */
+        public privacyStatementFull: string;
+
+        /** InThreadSurveyMetadata privacyStatementParts. */
+        public privacyStatementParts: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyPrivacyStatementPart[];
+
+        /** InThreadSurveyMetadata feedbackToastText. */
+        public feedbackToastText: string;
+
+        /**
+         * Creates a new InThreadSurveyMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns InThreadSurveyMetadata instance
+         */
+        public static create(properties?: BotMetadata.IInThreadSurveyMetadata): BotMetadata.InThreadSurveyMetadata;
+
+        /**
+         * Encodes the specified InThreadSurveyMetadata message. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.verify|verify} messages.
+         * @param message InThreadSurveyMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IInThreadSurveyMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified InThreadSurveyMetadata message, length delimited. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.verify|verify} messages.
+         * @param message InThreadSurveyMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IInThreadSurveyMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an InThreadSurveyMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns InThreadSurveyMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.InThreadSurveyMetadata;
+
+        /**
+         * Decodes an InThreadSurveyMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns InThreadSurveyMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.InThreadSurveyMetadata;
+
+        /**
+         * Verifies an InThreadSurveyMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an InThreadSurveyMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns InThreadSurveyMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.InThreadSurveyMetadata;
+
+        /**
+         * Creates a plain object from an InThreadSurveyMetadata message. Also converts values to other types if specified.
+         * @param message InThreadSurveyMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.InThreadSurveyMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this InThreadSurveyMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for InThreadSurveyMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace InThreadSurveyMetadata {
+
+        /** Properties of an InThreadSurveyOption. */
+        interface IInThreadSurveyOption {
+
+            /** InThreadSurveyOption stringValue */
+            stringValue?: (string|null);
+
+            /** InThreadSurveyOption numericValue */
+            numericValue?: (number|null);
+
+            /** InThreadSurveyOption textTranslated */
+            textTranslated?: (string|null);
+        }
+
+        /** Represents an InThreadSurveyOption. */
+        class InThreadSurveyOption implements IInThreadSurveyOption {
+
+            /**
+             * Constructs a new InThreadSurveyOption.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyOption);
+
+            /** InThreadSurveyOption stringValue. */
+            public stringValue: string;
+
+            /** InThreadSurveyOption numericValue. */
+            public numericValue: number;
+
+            /** InThreadSurveyOption textTranslated. */
+            public textTranslated: string;
+
+            /**
+             * Creates a new InThreadSurveyOption instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns InThreadSurveyOption instance
+             */
+            public static create(properties?: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyOption): BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption;
+
+            /**
+             * Encodes the specified InThreadSurveyOption message. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.verify|verify} messages.
+             * @param message InThreadSurveyOption message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyOption, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified InThreadSurveyOption message, length delimited. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption.verify|verify} messages.
+             * @param message InThreadSurveyOption message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyOption, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an InThreadSurveyOption message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns InThreadSurveyOption
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption;
+
+            /**
+             * Decodes an InThreadSurveyOption message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns InThreadSurveyOption
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption;
+
+            /**
+             * Verifies an InThreadSurveyOption message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an InThreadSurveyOption message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns InThreadSurveyOption
+             */
+            public static fromObject(object: { [k: string]: any }): BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption;
+
+            /**
+             * Creates a plain object from an InThreadSurveyOption message. Also converts values to other types if specified.
+             * @param message InThreadSurveyOption
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyOption, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this InThreadSurveyOption to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for InThreadSurveyOption
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        /** Properties of an InThreadSurveyPrivacyStatementPart. */
+        interface IInThreadSurveyPrivacyStatementPart {
+
+            /** InThreadSurveyPrivacyStatementPart text */
+            text?: (string|null);
+
+            /** InThreadSurveyPrivacyStatementPart url */
+            url?: (string|null);
+        }
+
+        /** Represents an InThreadSurveyPrivacyStatementPart. */
+        class InThreadSurveyPrivacyStatementPart implements IInThreadSurveyPrivacyStatementPart {
+
+            /**
+             * Constructs a new InThreadSurveyPrivacyStatementPart.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyPrivacyStatementPart);
+
+            /** InThreadSurveyPrivacyStatementPart text. */
+            public text: string;
+
+            /** InThreadSurveyPrivacyStatementPart url. */
+            public url: string;
+
+            /**
+             * Creates a new InThreadSurveyPrivacyStatementPart instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns InThreadSurveyPrivacyStatementPart instance
+             */
+            public static create(properties?: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyPrivacyStatementPart): BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart;
+
+            /**
+             * Encodes the specified InThreadSurveyPrivacyStatementPart message. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.verify|verify} messages.
+             * @param message InThreadSurveyPrivacyStatementPart message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyPrivacyStatementPart, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified InThreadSurveyPrivacyStatementPart message, length delimited. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.verify|verify} messages.
+             * @param message InThreadSurveyPrivacyStatementPart message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyPrivacyStatementPart, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an InThreadSurveyPrivacyStatementPart message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns InThreadSurveyPrivacyStatementPart
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart;
+
+            /**
+             * Decodes an InThreadSurveyPrivacyStatementPart message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns InThreadSurveyPrivacyStatementPart
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart;
+
+            /**
+             * Verifies an InThreadSurveyPrivacyStatementPart message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an InThreadSurveyPrivacyStatementPart message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns InThreadSurveyPrivacyStatementPart
+             */
+            public static fromObject(object: { [k: string]: any }): BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart;
+
+            /**
+             * Creates a plain object from an InThreadSurveyPrivacyStatementPart message. Also converts values to other types if specified.
+             * @param message InThreadSurveyPrivacyStatementPart
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this InThreadSurveyPrivacyStatementPart to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for InThreadSurveyPrivacyStatementPart
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        /** Properties of an InThreadSurveyQuestion. */
+        interface IInThreadSurveyQuestion {
+
+            /** InThreadSurveyQuestion questionText */
+            questionText?: (string|null);
+
+            /** InThreadSurveyQuestion questionId */
+            questionId?: (string|null);
+
+            /** InThreadSurveyQuestion questionOptions */
+            questionOptions?: (BotMetadata.InThreadSurveyMetadata.IInThreadSurveyOption[]|null);
+        }
+
+        /** Represents an InThreadSurveyQuestion. */
+        class InThreadSurveyQuestion implements IInThreadSurveyQuestion {
+
+            /**
+             * Constructs a new InThreadSurveyQuestion.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyQuestion);
+
+            /** InThreadSurveyQuestion questionText. */
+            public questionText: string;
+
+            /** InThreadSurveyQuestion questionId. */
+            public questionId: string;
+
+            /** InThreadSurveyQuestion questionOptions. */
+            public questionOptions: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyOption[];
+
+            /**
+             * Creates a new InThreadSurveyQuestion instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns InThreadSurveyQuestion instance
+             */
+            public static create(properties?: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyQuestion): BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion;
+
+            /**
+             * Encodes the specified InThreadSurveyQuestion message. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.verify|verify} messages.
+             * @param message InThreadSurveyQuestion message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyQuestion, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified InThreadSurveyQuestion message, length delimited. Does not implicitly {@link BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion.verify|verify} messages.
+             * @param message InThreadSurveyQuestion message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: BotMetadata.InThreadSurveyMetadata.IInThreadSurveyQuestion, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an InThreadSurveyQuestion message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns InThreadSurveyQuestion
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion;
+
+            /**
+             * Decodes an InThreadSurveyQuestion message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns InThreadSurveyQuestion
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion;
+
+            /**
+             * Verifies an InThreadSurveyQuestion message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates an InThreadSurveyQuestion message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns InThreadSurveyQuestion
+             */
+            public static fromObject(object: { [k: string]: any }): BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion;
+
+            /**
+             * Creates a plain object from an InThreadSurveyQuestion message. Also converts values to other types if specified.
+             * @param message InThreadSurveyQuestion
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: BotMetadata.InThreadSurveyMetadata.InThreadSurveyQuestion, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this InThreadSurveyQuestion to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for InThreadSurveyQuestion
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+    }
+
+    /** Properties of a BotSourcesMetadata. */
+    interface IBotSourcesMetadata {
+
+        /** BotSourcesMetadata sources */
+        sources?: (BotMetadata.BotSourcesMetadata.IBotSourceItem[]|null);
+    }
+
+    /** Represents a BotSourcesMetadata. */
+    class BotSourcesMetadata implements IBotSourcesMetadata {
+
+        /**
+         * Constructs a new BotSourcesMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotSourcesMetadata);
+
+        /** BotSourcesMetadata sources. */
+        public sources: BotMetadata.BotSourcesMetadata.IBotSourceItem[];
+
+        /**
+         * Creates a new BotSourcesMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotSourcesMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotSourcesMetadata): BotMetadata.BotSourcesMetadata;
+
+        /**
+         * Encodes the specified BotSourcesMetadata message. Does not implicitly {@link BotMetadata.BotSourcesMetadata.verify|verify} messages.
+         * @param message BotSourcesMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotSourcesMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotSourcesMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotSourcesMetadata.verify|verify} messages.
+         * @param message BotSourcesMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotSourcesMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotSourcesMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotSourcesMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSourcesMetadata;
+
+        /**
+         * Decodes a BotSourcesMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotSourcesMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSourcesMetadata;
+
+        /**
+         * Verifies a BotSourcesMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotSourcesMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotSourcesMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotSourcesMetadata;
+
+        /**
+         * Creates a plain object from a BotSourcesMetadata message. Also converts values to other types if specified.
+         * @param message BotSourcesMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotSourcesMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotSourcesMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotSourcesMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotSourcesMetadata {
+
+        /** Properties of a BotSourceItem. */
+        interface IBotSourceItem {
+
+            /** BotSourceItem provider */
+            provider?: (BotMetadata.BotSourcesMetadata.BotSourceItem.SourceProvider|null);
+
+            /** BotSourceItem thumbnailCdnUrl */
+            thumbnailCdnUrl?: (string|null);
+
+            /** BotSourceItem sourceProviderUrl */
+            sourceProviderUrl?: (string|null);
+
+            /** BotSourceItem sourceQuery */
+            sourceQuery?: (string|null);
+
+            /** BotSourceItem faviconCdnUrl */
+            faviconCdnUrl?: (string|null);
+
+            /** BotSourceItem citationNumber */
+            citationNumber?: (number|null);
+
+            /** BotSourceItem sourceTitle */
+            sourceTitle?: (string|null);
+        }
+
+        /** Represents a BotSourceItem. */
+        class BotSourceItem implements IBotSourceItem {
+
+            /**
+             * Constructs a new BotSourceItem.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: BotMetadata.BotSourcesMetadata.IBotSourceItem);
+
+            /** BotSourceItem provider. */
+            public provider: BotMetadata.BotSourcesMetadata.BotSourceItem.SourceProvider;
+
+            /** BotSourceItem thumbnailCdnUrl. */
+            public thumbnailCdnUrl: string;
+
+            /** BotSourceItem sourceProviderUrl. */
+            public sourceProviderUrl: string;
+
+            /** BotSourceItem sourceQuery. */
+            public sourceQuery: string;
+
+            /** BotSourceItem faviconCdnUrl. */
+            public faviconCdnUrl: string;
+
+            /** BotSourceItem citationNumber. */
+            public citationNumber: number;
+
+            /** BotSourceItem sourceTitle. */
+            public sourceTitle: string;
+
+            /**
+             * Creates a new BotSourceItem instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns BotSourceItem instance
+             */
+            public static create(properties?: BotMetadata.BotSourcesMetadata.IBotSourceItem): BotMetadata.BotSourcesMetadata.BotSourceItem;
+
+            /**
+             * Encodes the specified BotSourceItem message. Does not implicitly {@link BotMetadata.BotSourcesMetadata.BotSourceItem.verify|verify} messages.
+             * @param message BotSourceItem message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: BotMetadata.BotSourcesMetadata.IBotSourceItem, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified BotSourceItem message, length delimited. Does not implicitly {@link BotMetadata.BotSourcesMetadata.BotSourceItem.verify|verify} messages.
+             * @param message BotSourceItem message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: BotMetadata.BotSourcesMetadata.IBotSourceItem, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a BotSourceItem message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns BotSourceItem
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSourcesMetadata.BotSourceItem;
+
+            /**
+             * Decodes a BotSourceItem message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns BotSourceItem
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSourcesMetadata.BotSourceItem;
+
+            /**
+             * Verifies a BotSourceItem message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a BotSourceItem message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns BotSourceItem
+             */
+            public static fromObject(object: { [k: string]: any }): BotMetadata.BotSourcesMetadata.BotSourceItem;
+
+            /**
+             * Creates a plain object from a BotSourceItem message. Also converts values to other types if specified.
+             * @param message BotSourceItem
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: BotMetadata.BotSourcesMetadata.BotSourceItem, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this BotSourceItem to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for BotSourceItem
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        namespace BotSourceItem {
+
+            /** SourceProvider enum. */
+            enum SourceProvider {
+                UNKNOWN = 0,
+                BING = 1,
+                GOOGLE = 2,
+                SUPPORT = 3,
+                OTHER = 4
+            }
+        }
+    }
+
+    /** Properties of a BotAgeCollectionMetadata. */
+    interface IBotAgeCollectionMetadata {
+
+        /** BotAgeCollectionMetadata ageCollectionEligible */
+        ageCollectionEligible?: (boolean|null);
+
+        /** BotAgeCollectionMetadata shouldTriggerAgeCollectionOnClient */
+        shouldTriggerAgeCollectionOnClient?: (boolean|null);
+    }
+
+    /** Represents a BotAgeCollectionMetadata. */
+    class BotAgeCollectionMetadata implements IBotAgeCollectionMetadata {
+
+        /**
+         * Constructs a new BotAgeCollectionMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotAgeCollectionMetadata);
+
+        /** BotAgeCollectionMetadata ageCollectionEligible. */
+        public ageCollectionEligible: boolean;
+
+        /** BotAgeCollectionMetadata shouldTriggerAgeCollectionOnClient. */
+        public shouldTriggerAgeCollectionOnClient: boolean;
+
+        /**
+         * Creates a new BotAgeCollectionMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotAgeCollectionMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotAgeCollectionMetadata): BotMetadata.BotAgeCollectionMetadata;
+
+        /**
+         * Encodes the specified BotAgeCollectionMetadata message. Does not implicitly {@link BotMetadata.BotAgeCollectionMetadata.verify|verify} messages.
+         * @param message BotAgeCollectionMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotAgeCollectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotAgeCollectionMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotAgeCollectionMetadata.verify|verify} messages.
+         * @param message BotAgeCollectionMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotAgeCollectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotAgeCollectionMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotAgeCollectionMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotAgeCollectionMetadata;
+
+        /**
+         * Decodes a BotAgeCollectionMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotAgeCollectionMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotAgeCollectionMetadata;
+
+        /**
+         * Verifies a BotAgeCollectionMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotAgeCollectionMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotAgeCollectionMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotAgeCollectionMetadata;
+
+        /**
+         * Creates a plain object from a BotAgeCollectionMetadata message. Also converts values to other types if specified.
+         * @param message BotAgeCollectionMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotAgeCollectionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotAgeCollectionMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotAgeCollectionMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a BotImagineMetadata. */
+    interface IBotImagineMetadata {
+
+        /** BotImagineMetadata imagineType */
+        imagineType?: (BotMetadata.BotImagineMetadata.ImagineType|null);
+    }
+
+    /** Represents a BotImagineMetadata. */
+    class BotImagineMetadata implements IBotImagineMetadata {
+
+        /**
+         * Constructs a new BotImagineMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotImagineMetadata);
+
+        /** BotImagineMetadata imagineType. */
+        public imagineType: BotMetadata.BotImagineMetadata.ImagineType;
+
+        /**
+         * Creates a new BotImagineMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotImagineMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotImagineMetadata): BotMetadata.BotImagineMetadata;
+
+        /**
+         * Encodes the specified BotImagineMetadata message. Does not implicitly {@link BotMetadata.BotImagineMetadata.verify|verify} messages.
+         * @param message BotImagineMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotImagineMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotImagineMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotImagineMetadata.verify|verify} messages.
+         * @param message BotImagineMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotImagineMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotImagineMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotImagineMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotImagineMetadata;
+
+        /**
+         * Decodes a BotImagineMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotImagineMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotImagineMetadata;
+
+        /**
+         * Verifies a BotImagineMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotImagineMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotImagineMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotImagineMetadata;
+
+        /**
+         * Creates a plain object from a BotImagineMetadata message. Also converts values to other types if specified.
+         * @param message BotImagineMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotImagineMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotImagineMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotImagineMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotImagineMetadata {
+
+        /** ImagineType enum. */
+        enum ImagineType {
+            UNKNOWN = 0,
+            IMAGINE = 1,
+            MEMU = 2,
+            FLASH = 3,
+            EDIT = 4
+        }
+    }
+
+    /** Properties of a BotQuotaMetadata. */
+    interface IBotQuotaMetadata {
+
+        /** BotQuotaMetadata botFeatureQuotaMetadata */
+        botFeatureQuotaMetadata?: (BotMetadata.BotQuotaMetadata.IBotFeatureQuotaMetadata[]|null);
+    }
+
+    /** Represents a BotQuotaMetadata. */
+    class BotQuotaMetadata implements IBotQuotaMetadata {
+
+        /**
+         * Constructs a new BotQuotaMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotQuotaMetadata);
+
+        /** BotQuotaMetadata botFeatureQuotaMetadata. */
+        public botFeatureQuotaMetadata: BotMetadata.BotQuotaMetadata.IBotFeatureQuotaMetadata[];
+
+        /**
+         * Creates a new BotQuotaMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotQuotaMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotQuotaMetadata): BotMetadata.BotQuotaMetadata;
+
+        /**
+         * Encodes the specified BotQuotaMetadata message. Does not implicitly {@link BotMetadata.BotQuotaMetadata.verify|verify} messages.
+         * @param message BotQuotaMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotQuotaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotQuotaMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotQuotaMetadata.verify|verify} messages.
+         * @param message BotQuotaMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotQuotaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotQuotaMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotQuotaMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotQuotaMetadata;
+
+        /**
+         * Decodes a BotQuotaMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotQuotaMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotQuotaMetadata;
+
+        /**
+         * Verifies a BotQuotaMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotQuotaMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotQuotaMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotQuotaMetadata;
+
+        /**
+         * Creates a plain object from a BotQuotaMetadata message. Also converts values to other types if specified.
+         * @param message BotQuotaMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotQuotaMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotQuotaMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotQuotaMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotQuotaMetadata {
+
+        /** Properties of a BotFeatureQuotaMetadata. */
+        interface IBotFeatureQuotaMetadata {
+
+            /** BotFeatureQuotaMetadata featureType */
+            featureType?: (BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType|null);
+
+            /** BotFeatureQuotaMetadata remainingQuota */
+            remainingQuota?: (number|null);
+
+            /** BotFeatureQuotaMetadata expirationTimestamp */
+            expirationTimestamp?: (number|Long|null);
+        }
+
+        /** Represents a BotFeatureQuotaMetadata. */
+        class BotFeatureQuotaMetadata implements IBotFeatureQuotaMetadata {
+
+            /**
+             * Constructs a new BotFeatureQuotaMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: BotMetadata.BotQuotaMetadata.IBotFeatureQuotaMetadata);
+
+            /** BotFeatureQuotaMetadata featureType. */
+            public featureType: BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.BotFeatureType;
+
+            /** BotFeatureQuotaMetadata remainingQuota. */
+            public remainingQuota: number;
+
+            /** BotFeatureQuotaMetadata expirationTimestamp. */
+            public expirationTimestamp: (number|Long);
+
+            /**
+             * Creates a new BotFeatureQuotaMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns BotFeatureQuotaMetadata instance
+             */
+            public static create(properties?: BotMetadata.BotQuotaMetadata.IBotFeatureQuotaMetadata): BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata;
+
+            /**
+             * Encodes the specified BotFeatureQuotaMetadata message. Does not implicitly {@link BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.verify|verify} messages.
+             * @param message BotFeatureQuotaMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: BotMetadata.BotQuotaMetadata.IBotFeatureQuotaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified BotFeatureQuotaMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata.verify|verify} messages.
+             * @param message BotFeatureQuotaMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: BotMetadata.BotQuotaMetadata.IBotFeatureQuotaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a BotFeatureQuotaMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns BotFeatureQuotaMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata;
+
+            /**
+             * Decodes a BotFeatureQuotaMetadata message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns BotFeatureQuotaMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata;
+
+            /**
+             * Verifies a BotFeatureQuotaMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a BotFeatureQuotaMetadata message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns BotFeatureQuotaMetadata
+             */
+            public static fromObject(object: { [k: string]: any }): BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata;
+
+            /**
+             * Creates a plain object from a BotFeatureQuotaMetadata message. Also converts values to other types if specified.
+             * @param message BotFeatureQuotaMetadata
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: BotMetadata.BotQuotaMetadata.BotFeatureQuotaMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this BotFeatureQuotaMetadata to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for BotFeatureQuotaMetadata
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        namespace BotFeatureQuotaMetadata {
+
+            /** BotFeatureType enum. */
+            enum BotFeatureType {
+                UNKNOWN_FEATURE = 0,
+                REASONING_FEATURE = 1
+            }
+        }
+    }
+
+    /** Properties of a BotModeSelectionMetadata. */
+    interface IBotModeSelectionMetadata {
+
+        /** BotModeSelectionMetadata mode */
+        mode?: (BotMetadata.BotModeSelectionMetadata.BotUserSelectionMode[]|null);
+    }
+
+    /** Represents a BotModeSelectionMetadata. */
+    class BotModeSelectionMetadata implements IBotModeSelectionMetadata {
+
+        /**
+         * Constructs a new BotModeSelectionMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotModeSelectionMetadata);
+
+        /** BotModeSelectionMetadata mode. */
+        public mode: BotMetadata.BotModeSelectionMetadata.BotUserSelectionMode[];
+
+        /**
+         * Creates a new BotModeSelectionMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotModeSelectionMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotModeSelectionMetadata): BotMetadata.BotModeSelectionMetadata;
+
+        /**
+         * Encodes the specified BotModeSelectionMetadata message. Does not implicitly {@link BotMetadata.BotModeSelectionMetadata.verify|verify} messages.
+         * @param message BotModeSelectionMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotModeSelectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotModeSelectionMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotModeSelectionMetadata.verify|verify} messages.
+         * @param message BotModeSelectionMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotModeSelectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotModeSelectionMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotModeSelectionMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotModeSelectionMetadata;
+
+        /**
+         * Decodes a BotModeSelectionMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotModeSelectionMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotModeSelectionMetadata;
+
+        /**
+         * Verifies a BotModeSelectionMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotModeSelectionMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotModeSelectionMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotModeSelectionMetadata;
+
+        /**
+         * Creates a plain object from a BotModeSelectionMetadata message. Also converts values to other types if specified.
+         * @param message BotModeSelectionMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotModeSelectionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotModeSelectionMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotModeSelectionMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotModeSelectionMetadata {
+
+        /** BotUserSelectionMode enum. */
+        enum BotUserSelectionMode {
+            UNKNOWN_MODE = 0,
+            REASONING_MODE = 1
+        }
+    }
+
+    /** Properties of a BotCapabilityMetadata. */
+    interface IBotCapabilityMetadata {
+
+        /** BotCapabilityMetadata capabilities */
+        capabilities?: (BotMetadata.BotCapabilityMetadata.BotCapabilityType[]|null);
+    }
+
+    /** Represents a BotCapabilityMetadata. */
+    class BotCapabilityMetadata implements IBotCapabilityMetadata {
+
+        /**
+         * Constructs a new BotCapabilityMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotCapabilityMetadata);
+
+        /** BotCapabilityMetadata capabilities. */
+        public capabilities: BotMetadata.BotCapabilityMetadata.BotCapabilityType[];
+
+        /**
+         * Creates a new BotCapabilityMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotCapabilityMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotCapabilityMetadata): BotMetadata.BotCapabilityMetadata;
+
+        /**
+         * Encodes the specified BotCapabilityMetadata message. Does not implicitly {@link BotMetadata.BotCapabilityMetadata.verify|verify} messages.
+         * @param message BotCapabilityMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotCapabilityMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotCapabilityMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotCapabilityMetadata.verify|verify} messages.
+         * @param message BotCapabilityMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotCapabilityMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotCapabilityMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotCapabilityMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotCapabilityMetadata;
+
+        /**
+         * Decodes a BotCapabilityMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotCapabilityMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotCapabilityMetadata;
+
+        /**
+         * Verifies a BotCapabilityMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotCapabilityMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotCapabilityMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotCapabilityMetadata;
+
+        /**
+         * Creates a plain object from a BotCapabilityMetadata message. Also converts values to other types if specified.
+         * @param message BotCapabilityMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotCapabilityMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotCapabilityMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotCapabilityMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotCapabilityMetadata {
+
+        /** BotCapabilityType enum. */
+        enum BotCapabilityType {
+            UNKNOWN = 0,
+            PROGRESS_INDICATOR = 1,
+            RICH_RESPONSE_HEADING = 2,
+            RICH_RESPONSE_NESTED_LIST = 3,
+            AI_MEMORY = 4,
+            RICH_RESPONSE_THREAD_SURFING = 5,
+            RICH_RESPONSE_TABLE = 6,
+            RICH_RESPONSE_CODE = 7,
+            RICH_RESPONSE_STRUCTURED_RESPONSE = 8,
+            RICH_RESPONSE_INLINE_IMAGE = 9,
+            WA_IG_1P_PLUGIN_RANKING_CONTROL = 10,
+            WA_IG_1P_PLUGIN_RANKING_UPDATE_1 = 11,
+            WA_IG_1P_PLUGIN_RANKING_UPDATE_2 = 12,
+            WA_IG_1P_PLUGIN_RANKING_UPDATE_3 = 13,
+            WA_IG_1P_PLUGIN_RANKING_UPDATE_4 = 14,
+            WA_IG_1P_PLUGIN_RANKING_UPDATE_5 = 15,
+            WA_IG_1P_PLUGIN_RANKING_UPDATE_6 = 16,
+            WA_IG_1P_PLUGIN_RANKING_UPDATE_7 = 17,
+            WA_IG_1P_PLUGIN_RANKING_UPDATE_8 = 18,
+            WA_IG_1P_PLUGIN_RANKING_UPDATE_9 = 19,
+            WA_IG_1P_PLUGIN_RANKING_UPDATE_10 = 20,
+            RICH_RESPONSE_SUB_HEADING = 21,
+            RICH_RESPONSE_GRID_IMAGE = 22,
+            AI_STUDIO_UGC_MEMORY = 23,
+            RICH_RESPONSE_LATEX = 24,
+            RICH_RESPONSE_MAPS = 25,
+            RICH_RESPONSE_INLINE_REELS = 26,
+            AGENTIC_PLANNING = 27,
+            ACCOUNT_LINKING = 28,
+            STREAMING_DISAGGREGATION = 29,
+            RICH_RESPONSE_GRID_IMAGE_3P = 30,
+            RICH_RESPONSE_LATEX_INLINE = 31,
+            QUERY_PLAN = 32,
+            PROACTIVE_MESSAGE = 33,
+            RICH_RESPONSE_UNIFIED_RESPONSE = 34,
+            PROMOTION_MESSAGE = 35,
+            SIMPLIFIED_PROFILE_PAGE = 36,
+            RICH_RESPONSE_SOURCES_IN_MESSAGE = 37,
+            RICH_RESPONSE_SIDE_BY_SIDE_SURVEY = 38
+        }
+    }
+
+    /** Properties of a BotProgressIndicatorMetadata. */
+    interface IBotProgressIndicatorMetadata {
+
+        /** BotProgressIndicatorMetadata progressDescription */
+        progressDescription?: (string|null);
+
+        /** BotProgressIndicatorMetadata stepsMetadata */
+        stepsMetadata?: (BotMetadata.BotProgressIndicatorMetadata.IBotPlanningStepMetadata[]|null);
+    }
+
+    /** Represents a BotProgressIndicatorMetadata. */
+    class BotProgressIndicatorMetadata implements IBotProgressIndicatorMetadata {
+
+        /**
+         * Constructs a new BotProgressIndicatorMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotProgressIndicatorMetadata);
+
+        /** BotProgressIndicatorMetadata progressDescription. */
+        public progressDescription: string;
+
+        /** BotProgressIndicatorMetadata stepsMetadata. */
+        public stepsMetadata: BotMetadata.BotProgressIndicatorMetadata.IBotPlanningStepMetadata[];
+
+        /**
+         * Creates a new BotProgressIndicatorMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotProgressIndicatorMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotProgressIndicatorMetadata): BotMetadata.BotProgressIndicatorMetadata;
+
+        /**
+         * Encodes the specified BotProgressIndicatorMetadata message. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.verify|verify} messages.
+         * @param message BotProgressIndicatorMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotProgressIndicatorMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotProgressIndicatorMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.verify|verify} messages.
+         * @param message BotProgressIndicatorMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotProgressIndicatorMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotProgressIndicatorMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotProgressIndicatorMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata;
+
+        /**
+         * Decodes a BotProgressIndicatorMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotProgressIndicatorMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata;
+
+        /**
+         * Verifies a BotProgressIndicatorMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotProgressIndicatorMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotProgressIndicatorMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata;
+
+        /**
+         * Creates a plain object from a BotProgressIndicatorMetadata message. Also converts values to other types if specified.
+         * @param message BotProgressIndicatorMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotProgressIndicatorMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotProgressIndicatorMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotProgressIndicatorMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotProgressIndicatorMetadata {
+
+        /** Properties of a BotPlanningStepMetadata. */
+        interface IBotPlanningStepMetadata {
+
+            /** BotPlanningStepMetadata statusTitle */
+            statusTitle?: (string|null);
+
+            /** BotPlanningStepMetadata statusBody */
+            statusBody?: (string|null);
+
+            /** BotPlanningStepMetadata sourcesMetadata */
+            sourcesMetadata?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata[]|null);
+
+            /** BotPlanningStepMetadata status */
+            status?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus|null);
+
+            /** BotPlanningStepMetadata isReasoning */
+            isReasoning?: (boolean|null);
+
+            /** BotPlanningStepMetadata isEnhancedSearch */
+            isEnhancedSearch?: (boolean|null);
+
+            /** BotPlanningStepMetadata sections */
+            sections?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata[]|null);
+        }
+
+        /** Represents a BotPlanningStepMetadata. */
+        class BotPlanningStepMetadata implements IBotPlanningStepMetadata {
+
+            /**
+             * Constructs a new BotPlanningStepMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: BotMetadata.BotProgressIndicatorMetadata.IBotPlanningStepMetadata);
+
+            /** BotPlanningStepMetadata statusTitle. */
+            public statusTitle: string;
+
+            /** BotPlanningStepMetadata statusBody. */
+            public statusBody: string;
+
+            /** BotPlanningStepMetadata sourcesMetadata. */
+            public sourcesMetadata: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata[];
+
+            /** BotPlanningStepMetadata status. */
+            public status: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.PlanningStepStatus;
+
+            /** BotPlanningStepMetadata isReasoning. */
+            public isReasoning: boolean;
+
+            /** BotPlanningStepMetadata isEnhancedSearch. */
+            public isEnhancedSearch: boolean;
+
+            /** BotPlanningStepMetadata sections. */
+            public sections: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata[];
+
+            /**
+             * Creates a new BotPlanningStepMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns BotPlanningStepMetadata instance
+             */
+            public static create(properties?: BotMetadata.BotProgressIndicatorMetadata.IBotPlanningStepMetadata): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata;
+
+            /**
+             * Encodes the specified BotPlanningStepMetadata message. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.verify|verify} messages.
+             * @param message BotPlanningStepMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: BotMetadata.BotProgressIndicatorMetadata.IBotPlanningStepMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified BotPlanningStepMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.verify|verify} messages.
+             * @param message BotPlanningStepMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: BotMetadata.BotProgressIndicatorMetadata.IBotPlanningStepMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a BotPlanningStepMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns BotPlanningStepMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata;
+
+            /**
+             * Decodes a BotPlanningStepMetadata message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns BotPlanningStepMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata;
+
+            /**
+             * Verifies a BotPlanningStepMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a BotPlanningStepMetadata message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns BotPlanningStepMetadata
+             */
+            public static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata;
+
+            /**
+             * Creates a plain object from a BotPlanningStepMetadata message. Also converts values to other types if specified.
+             * @param message BotPlanningStepMetadata
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this BotPlanningStepMetadata to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for BotPlanningStepMetadata
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        namespace BotPlanningStepMetadata {
+
+            /** Properties of a BotPlanningSearchSourceMetadata. */
+            interface IBotPlanningSearchSourceMetadata {
+
+                /** BotPlanningSearchSourceMetadata title */
+                title?: (string|null);
+
+                /** BotPlanningSearchSourceMetadata provider */
+                provider?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider|null);
+
+                /** BotPlanningSearchSourceMetadata sourceUrl */
+                sourceUrl?: (string|null);
+
+                /** BotPlanningSearchSourceMetadata favIconUrl */
+                favIconUrl?: (string|null);
+            }
+
+            /** Represents a BotPlanningSearchSourceMetadata. */
+            class BotPlanningSearchSourceMetadata implements IBotPlanningSearchSourceMetadata {
+
+                /**
+                 * Constructs a new BotPlanningSearchSourceMetadata.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata);
+
+                /** BotPlanningSearchSourceMetadata title. */
+                public title: string;
+
+                /** BotPlanningSearchSourceMetadata provider. */
+                public provider: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotSearchSourceProvider;
+
+                /** BotPlanningSearchSourceMetadata sourceUrl. */
+                public sourceUrl: string;
+
+                /** BotPlanningSearchSourceMetadata favIconUrl. */
+                public favIconUrl: string;
+
+                /**
+                 * Creates a new BotPlanningSearchSourceMetadata instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns BotPlanningSearchSourceMetadata instance
+                 */
+                public static create(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata;
+
+                /**
+                 * Encodes the specified BotPlanningSearchSourceMetadata message. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.verify|verify} messages.
+                 * @param message BotPlanningSearchSourceMetadata message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified BotPlanningSearchSourceMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.verify|verify} messages.
+                 * @param message BotPlanningSearchSourceMetadata message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a BotPlanningSearchSourceMetadata message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns BotPlanningSearchSourceMetadata
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata;
+
+                /**
+                 * Decodes a BotPlanningSearchSourceMetadata message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns BotPlanningSearchSourceMetadata
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata;
+
+                /**
+                 * Verifies a BotPlanningSearchSourceMetadata message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a BotPlanningSearchSourceMetadata message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns BotPlanningSearchSourceMetadata
+                 */
+                public static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata;
+
+                /**
+                 * Creates a plain object from a BotPlanningSearchSourceMetadata message. Also converts values to other types if specified.
+                 * @param message BotPlanningSearchSourceMetadata
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this BotPlanningSearchSourceMetadata to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+
+                /**
+                 * Gets the default type url for BotPlanningSearchSourceMetadata
+                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns The default type url
+                 */
+                public static getTypeUrl(typeUrlPrefix?: string): string;
+            }
+
+            /** Properties of a BotPlanningSearchSourcesMetadata. */
+            interface IBotPlanningSearchSourcesMetadata {
+
+                /** BotPlanningSearchSourcesMetadata sourceTitle */
+                sourceTitle?: (string|null);
+
+                /** BotPlanningSearchSourcesMetadata provider */
+                provider?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider|null);
+
+                /** BotPlanningSearchSourcesMetadata sourceUrl */
+                sourceUrl?: (string|null);
+            }
+
+            /** Represents a BotPlanningSearchSourcesMetadata. */
+            class BotPlanningSearchSourcesMetadata implements IBotPlanningSearchSourcesMetadata {
+
+                /**
+                 * Constructs a new BotPlanningSearchSourcesMetadata.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata);
+
+                /** BotPlanningSearchSourcesMetadata sourceTitle. */
+                public sourceTitle: string;
+
+                /** BotPlanningSearchSourcesMetadata provider. */
+                public provider: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.BotPlanningSearchSourceProvider;
+
+                /** BotPlanningSearchSourcesMetadata sourceUrl. */
+                public sourceUrl: string;
+
+                /**
+                 * Creates a new BotPlanningSearchSourcesMetadata instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns BotPlanningSearchSourcesMetadata instance
+                 */
+                public static create(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata;
+
+                /**
+                 * Encodes the specified BotPlanningSearchSourcesMetadata message. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.verify|verify} messages.
+                 * @param message BotPlanningSearchSourcesMetadata message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified BotPlanningSearchSourcesMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.verify|verify} messages.
+                 * @param message BotPlanningSearchSourcesMetadata message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourcesMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a BotPlanningSearchSourcesMetadata message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns BotPlanningSearchSourcesMetadata
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata;
+
+                /**
+                 * Decodes a BotPlanningSearchSourcesMetadata message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns BotPlanningSearchSourcesMetadata
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata;
+
+                /**
+                 * Verifies a BotPlanningSearchSourcesMetadata message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a BotPlanningSearchSourcesMetadata message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns BotPlanningSearchSourcesMetadata
+                 */
+                public static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata;
+
+                /**
+                 * Creates a plain object from a BotPlanningSearchSourcesMetadata message. Also converts values to other types if specified.
+                 * @param message BotPlanningSearchSourcesMetadata
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this BotPlanningSearchSourcesMetadata to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+
+                /**
+                 * Gets the default type url for BotPlanningSearchSourcesMetadata
+                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns The default type url
+                 */
+                public static getTypeUrl(typeUrlPrefix?: string): string;
+            }
+
+            namespace BotPlanningSearchSourcesMetadata {
+
+                /** BotPlanningSearchSourceProvider enum. */
+                enum BotPlanningSearchSourceProvider {
+                    UNKNOWN = 0,
+                    OTHER = 1,
+                    GOOGLE = 2,
+                    BING = 3
+                }
+            }
+
+            /** Properties of a BotPlanningStepSectionMetadata. */
+            interface IBotPlanningStepSectionMetadata {
+
+                /** BotPlanningStepSectionMetadata sectionTitle */
+                sectionTitle?: (string|null);
+
+                /** BotPlanningStepSectionMetadata sectionBody */
+                sectionBody?: (string|null);
+
+                /** BotPlanningStepSectionMetadata sourcesMetadata */
+                sourcesMetadata?: (BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata[]|null);
+            }
+
+            /** Represents a BotPlanningStepSectionMetadata. */
+            class BotPlanningStepSectionMetadata implements IBotPlanningStepSectionMetadata {
+
+                /**
+                 * Constructs a new BotPlanningStepSectionMetadata.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata);
+
+                /** BotPlanningStepSectionMetadata sectionTitle. */
+                public sectionTitle: string;
+
+                /** BotPlanningStepSectionMetadata sectionBody. */
+                public sectionBody: string;
+
+                /** BotPlanningStepSectionMetadata sourcesMetadata. */
+                public sourcesMetadata: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningSearchSourceMetadata[];
+
+                /**
+                 * Creates a new BotPlanningStepSectionMetadata instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns BotPlanningStepSectionMetadata instance
+                 */
+                public static create(properties?: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata;
+
+                /**
+                 * Encodes the specified BotPlanningStepSectionMetadata message. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.verify|verify} messages.
+                 * @param message BotPlanningStepSectionMetadata message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified BotPlanningStepSectionMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.verify|verify} messages.
+                 * @param message BotPlanningStepSectionMetadata message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.IBotPlanningStepSectionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a BotPlanningStepSectionMetadata message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns BotPlanningStepSectionMetadata
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata;
+
+                /**
+                 * Decodes a BotPlanningStepSectionMetadata message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns BotPlanningStepSectionMetadata
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata;
+
+                /**
+                 * Verifies a BotPlanningStepSectionMetadata message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a BotPlanningStepSectionMetadata message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns BotPlanningStepSectionMetadata
+                 */
+                public static fromObject(object: { [k: string]: any }): BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata;
+
+                /**
+                 * Creates a plain object from a BotPlanningStepSectionMetadata message. Also converts values to other types if specified.
+                 * @param message BotPlanningStepSectionMetadata
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: BotMetadata.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this BotPlanningStepSectionMetadata to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+
+                /**
+                 * Gets the default type url for BotPlanningStepSectionMetadata
+                 * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns The default type url
+                 */
+                public static getTypeUrl(typeUrlPrefix?: string): string;
+            }
+
+            /** BotSearchSourceProvider enum. */
+            enum BotSearchSourceProvider {
+                UNKNOWN_PROVIDER = 0,
+                OTHER = 1,
+                GOOGLE = 2,
+                BING = 3
+            }
+
+            /** PlanningStepStatus enum. */
+            enum PlanningStepStatus {
+                UNKNOWN = 0,
+                PLANNED = 1,
+                EXECUTING = 2,
+                FINISHED = 3
+            }
+        }
+    }
+
+    /** Properties of a BotModelMetadata. */
+    interface IBotModelMetadata {
+
+        /** BotModelMetadata modelType */
+        modelType?: (BotMetadata.BotModelMetadata.ModelType|null);
+
+        /** BotModelMetadata premiumModelStatus */
+        premiumModelStatus?: (BotMetadata.BotModelMetadata.PremiumModelStatus|null);
+    }
+
+    /** Represents a BotModelMetadata. */
+    class BotModelMetadata implements IBotModelMetadata {
+
+        /**
+         * Constructs a new BotModelMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotModelMetadata);
+
+        /** BotModelMetadata modelType. */
+        public modelType: BotMetadata.BotModelMetadata.ModelType;
+
+        /** BotModelMetadata premiumModelStatus. */
+        public premiumModelStatus: BotMetadata.BotModelMetadata.PremiumModelStatus;
+
+        /**
+         * Creates a new BotModelMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotModelMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotModelMetadata): BotMetadata.BotModelMetadata;
+
+        /**
+         * Encodes the specified BotModelMetadata message. Does not implicitly {@link BotMetadata.BotModelMetadata.verify|verify} messages.
+         * @param message BotModelMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotModelMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotModelMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotModelMetadata.verify|verify} messages.
+         * @param message BotModelMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotModelMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotModelMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotModelMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotModelMetadata;
+
+        /**
+         * Decodes a BotModelMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotModelMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotModelMetadata;
+
+        /**
+         * Verifies a BotModelMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotModelMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotModelMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotModelMetadata;
+
+        /**
+         * Creates a plain object from a BotModelMetadata message. Also converts values to other types if specified.
+         * @param message BotModelMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotModelMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotModelMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotModelMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotModelMetadata {
+
+        /** ModelType enum. */
+        enum ModelType {
+            UNKNOWN_TYPE = 0,
+            LLAMA_PROD = 1,
+            LLAMA_PROD_PREMIUM = 2
+        }
+
+        /** PremiumModelStatus enum. */
+        enum PremiumModelStatus {
+            UNKNOWN_STATUS = 0,
+            AVAILABLE = 1,
+            QUOTA_EXCEED_LIMIT = 2
+        }
+    }
+
+    /** Properties of a BotReminderMetadata. */
+    interface IBotReminderMetadata {
+
+        /** BotReminderMetadata requestMessageKey */
+        requestMessageKey?: (Protocol.IMessageKey|null);
+
+        /** BotReminderMetadata action */
+        action?: (BotMetadata.BotReminderMetadata.ReminderAction|null);
+
+        /** BotReminderMetadata name */
+        name?: (string|null);
+
+        /** BotReminderMetadata nextTriggerTimestamp */
+        nextTriggerTimestamp?: (number|Long|null);
+
+        /** BotReminderMetadata frequency */
+        frequency?: (BotMetadata.BotReminderMetadata.ReminderFrequency|null);
+    }
+
+    /** Represents a BotReminderMetadata. */
+    class BotReminderMetadata implements IBotReminderMetadata {
+
+        /**
+         * Constructs a new BotReminderMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotReminderMetadata);
+
+        /** BotReminderMetadata requestMessageKey. */
+        public requestMessageKey?: (Protocol.IMessageKey|null);
+
+        /** BotReminderMetadata action. */
+        public action: BotMetadata.BotReminderMetadata.ReminderAction;
+
+        /** BotReminderMetadata name. */
+        public name: string;
+
+        /** BotReminderMetadata nextTriggerTimestamp. */
+        public nextTriggerTimestamp: (number|Long);
+
+        /** BotReminderMetadata frequency. */
+        public frequency: BotMetadata.BotReminderMetadata.ReminderFrequency;
+
+        /**
+         * Creates a new BotReminderMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotReminderMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotReminderMetadata): BotMetadata.BotReminderMetadata;
+
+        /**
+         * Encodes the specified BotReminderMetadata message. Does not implicitly {@link BotMetadata.BotReminderMetadata.verify|verify} messages.
+         * @param message BotReminderMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotReminderMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotReminderMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotReminderMetadata.verify|verify} messages.
+         * @param message BotReminderMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotReminderMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotReminderMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotReminderMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotReminderMetadata;
+
+        /**
+         * Decodes a BotReminderMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotReminderMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotReminderMetadata;
+
+        /**
+         * Verifies a BotReminderMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotReminderMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotReminderMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotReminderMetadata;
+
+        /**
+         * Creates a plain object from a BotReminderMetadata message. Also converts values to other types if specified.
+         * @param message BotReminderMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotReminderMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotReminderMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotReminderMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotReminderMetadata {
+
+        /** ReminderAction enum. */
+        enum ReminderAction {
+            NOTIFY = 1,
+            CREATE = 2,
+            DELETE = 3,
+            UPDATE = 4
+        }
+
+        /** ReminderFrequency enum. */
+        enum ReminderFrequency {
+            ONCE = 1,
+            DAILY = 2,
+            WEEKLY = 3,
+            BIWEEKLY = 4,
+            MONTHLY = 5
+        }
+    }
+
+    /** Properties of a BotMemuMetadata. */
+    interface IBotMemuMetadata {
+
+        /** BotMemuMetadata faceImages */
+        faceImages?: (BotMetadata.IBotMediaMetadata[]|null);
+    }
+
+    /** Represents a BotMemuMetadata. */
+    class BotMemuMetadata implements IBotMemuMetadata {
+
+        /**
+         * Constructs a new BotMemuMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotMemuMetadata);
+
+        /** BotMemuMetadata faceImages. */
+        public faceImages: BotMetadata.IBotMediaMetadata[];
+
+        /**
+         * Creates a new BotMemuMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotMemuMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotMemuMetadata): BotMetadata.BotMemuMetadata;
+
+        /**
+         * Encodes the specified BotMemuMetadata message. Does not implicitly {@link BotMetadata.BotMemuMetadata.verify|verify} messages.
+         * @param message BotMemuMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotMemuMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotMemuMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotMemuMetadata.verify|verify} messages.
+         * @param message BotMemuMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotMemuMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotMemuMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotMemuMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMemuMetadata;
+
+        /**
+         * Decodes a BotMemuMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotMemuMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMemuMetadata;
+
+        /**
+         * Verifies a BotMemuMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotMemuMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotMemuMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMemuMetadata;
+
+        /**
+         * Creates a plain object from a BotMemuMetadata message. Also converts values to other types if specified.
+         * @param message BotMemuMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotMemuMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotMemuMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotMemuMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a BotMediaMetadata. */
+    interface IBotMediaMetadata {
+
+        /** BotMediaMetadata fileSha256 */
+        fileSha256?: (string|null);
+
+        /** BotMediaMetadata mediaKey */
+        mediaKey?: (string|null);
+
+        /** BotMediaMetadata fileEncSha256 */
+        fileEncSha256?: (string|null);
+
+        /** BotMediaMetadata directPath */
+        directPath?: (string|null);
+
+        /** BotMediaMetadata mediaKeyTimestamp */
+        mediaKeyTimestamp?: (number|Long|null);
+
+        /** BotMediaMetadata mimetype */
+        mimetype?: (string|null);
+
+        /** BotMediaMetadata orientationType */
+        orientationType?: (BotMetadata.BotMediaMetadata.OrientationType|null);
+    }
+
+    /** Represents a BotMediaMetadata. */
+    class BotMediaMetadata implements IBotMediaMetadata {
+
+        /**
+         * Constructs a new BotMediaMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotMediaMetadata);
+
+        /** BotMediaMetadata fileSha256. */
+        public fileSha256: string;
+
+        /** BotMediaMetadata mediaKey. */
+        public mediaKey: string;
+
+        /** BotMediaMetadata fileEncSha256. */
+        public fileEncSha256: string;
+
+        /** BotMediaMetadata directPath. */
+        public directPath: string;
+
+        /** BotMediaMetadata mediaKeyTimestamp. */
+        public mediaKeyTimestamp: (number|Long);
+
+        /** BotMediaMetadata mimetype. */
+        public mimetype: string;
+
+        /** BotMediaMetadata orientationType. */
+        public orientationType: BotMetadata.BotMediaMetadata.OrientationType;
+
+        /**
+         * Creates a new BotMediaMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotMediaMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotMediaMetadata): BotMetadata.BotMediaMetadata;
+
+        /**
+         * Encodes the specified BotMediaMetadata message. Does not implicitly {@link BotMetadata.BotMediaMetadata.verify|verify} messages.
+         * @param message BotMediaMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotMediaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotMediaMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotMediaMetadata.verify|verify} messages.
+         * @param message BotMediaMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotMediaMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotMediaMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotMediaMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMediaMetadata;
+
+        /**
+         * Decodes a BotMediaMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotMediaMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMediaMetadata;
+
+        /**
+         * Verifies a BotMediaMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotMediaMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotMediaMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMediaMetadata;
+
+        /**
+         * Creates a plain object from a BotMediaMetadata message. Also converts values to other types if specified.
+         * @param message BotMediaMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotMediaMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotMediaMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotMediaMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotMediaMetadata {
+
+        /** OrientationType enum. */
+        enum OrientationType {
+            CENTER = 1,
+            LEFT = 2,
+            RIGHT = 3
+        }
+    }
+
+    /** Properties of a BotSessionMetadata. */
+    interface IBotSessionMetadata {
+
+        /** BotSessionMetadata sessionId */
+        sessionId?: (string|null);
+
+        /** BotSessionMetadata sessionSource */
+        sessionSource?: (BotMetadata.BotSessionSource|null);
+    }
+
+    /** Represents a BotSessionMetadata. */
+    class BotSessionMetadata implements IBotSessionMetadata {
+
+        /**
+         * Constructs a new BotSessionMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotSessionMetadata);
+
+        /** BotSessionMetadata sessionId. */
+        public sessionId: string;
+
+        /** BotSessionMetadata sessionSource. */
+        public sessionSource: BotMetadata.BotSessionSource;
+
+        /**
+         * Creates a new BotSessionMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotSessionMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotSessionMetadata): BotMetadata.BotSessionMetadata;
+
+        /**
+         * Encodes the specified BotSessionMetadata message. Does not implicitly {@link BotMetadata.BotSessionMetadata.verify|verify} messages.
+         * @param message BotSessionMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotSessionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotSessionMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotSessionMetadata.verify|verify} messages.
+         * @param message BotSessionMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotSessionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotSessionMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotSessionMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSessionMetadata;
+
+        /**
+         * Decodes a BotSessionMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotSessionMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSessionMetadata;
+
+        /**
+         * Verifies a BotSessionMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotSessionMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotSessionMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotSessionMetadata;
+
+        /**
+         * Creates a plain object from a BotSessionMetadata message. Also converts values to other types if specified.
+         * @param message BotSessionMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotSessionMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotSessionMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotSessionMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a BotMetricsMetadata. */
+    interface IBotMetricsMetadata {
+
+        /** BotMetricsMetadata destinationId */
+        destinationId?: (string|null);
+
+        /** BotMetricsMetadata destinationEntryPoint */
+        destinationEntryPoint?: (BotMetadata.BotMetricsEntryPoint|null);
+
+        /** BotMetricsMetadata threadOrigin */
+        threadOrigin?: (BotMetadata.BotMetricsThreadEntryPoint|null);
+    }
+
+    /** Represents a BotMetricsMetadata. */
+    class BotMetricsMetadata implements IBotMetricsMetadata {
+
+        /**
+         * Constructs a new BotMetricsMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotMetricsMetadata);
+
+        /** BotMetricsMetadata destinationId. */
+        public destinationId: string;
+
+        /** BotMetricsMetadata destinationEntryPoint. */
+        public destinationEntryPoint: BotMetadata.BotMetricsEntryPoint;
+
+        /** BotMetricsMetadata threadOrigin. */
+        public threadOrigin: BotMetadata.BotMetricsThreadEntryPoint;
+
+        /**
+         * Creates a new BotMetricsMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotMetricsMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotMetricsMetadata): BotMetadata.BotMetricsMetadata;
+
+        /**
+         * Encodes the specified BotMetricsMetadata message. Does not implicitly {@link BotMetadata.BotMetricsMetadata.verify|verify} messages.
+         * @param message BotMetricsMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotMetricsMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotMetricsMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotMetricsMetadata.verify|verify} messages.
+         * @param message BotMetricsMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotMetricsMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotMetricsMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotMetricsMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMetricsMetadata;
+
+        /**
+         * Decodes a BotMetricsMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotMetricsMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMetricsMetadata;
+
+        /**
+         * Verifies a BotMetricsMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotMetricsMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotMetricsMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMetricsMetadata;
+
+        /**
+         * Creates a plain object from a BotMetricsMetadata message. Also converts values to other types if specified.
+         * @param message BotMetricsMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotMetricsMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotMetricsMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotMetricsMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a BotRenderingMetadata. */
+    interface IBotRenderingMetadata {
+
+        /** BotRenderingMetadata keywords */
+        keywords?: (BotMetadata.BotRenderingMetadata.IKeyword[]|null);
+    }
+
+    /** Represents a BotRenderingMetadata. */
+    class BotRenderingMetadata implements IBotRenderingMetadata {
+
+        /**
+         * Constructs a new BotRenderingMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotRenderingMetadata);
+
+        /** BotRenderingMetadata keywords. */
+        public keywords: BotMetadata.BotRenderingMetadata.IKeyword[];
+
+        /**
+         * Creates a new BotRenderingMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotRenderingMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotRenderingMetadata): BotMetadata.BotRenderingMetadata;
+
+        /**
+         * Encodes the specified BotRenderingMetadata message. Does not implicitly {@link BotMetadata.BotRenderingMetadata.verify|verify} messages.
+         * @param message BotRenderingMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotRenderingMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotRenderingMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotRenderingMetadata.verify|verify} messages.
+         * @param message BotRenderingMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotRenderingMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotRenderingMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotRenderingMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotRenderingMetadata;
+
+        /**
+         * Decodes a BotRenderingMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotRenderingMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotRenderingMetadata;
+
+        /**
+         * Verifies a BotRenderingMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotRenderingMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotRenderingMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotRenderingMetadata;
+
+        /**
+         * Creates a plain object from a BotRenderingMetadata message. Also converts values to other types if specified.
+         * @param message BotRenderingMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotRenderingMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotRenderingMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotRenderingMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotRenderingMetadata {
+
+        /** Properties of a Keyword. */
+        interface IKeyword {
+
+            /** Keyword value */
+            value?: (string|null);
+
+            /** Keyword associatedPrompts */
+            associatedPrompts?: (string[]|null);
+        }
+
+        /** Represents a Keyword. */
+        class Keyword implements IKeyword {
+
+            /**
+             * Constructs a new Keyword.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: BotMetadata.BotRenderingMetadata.IKeyword);
+
+            /** Keyword value. */
+            public value: string;
+
+            /** Keyword associatedPrompts. */
+            public associatedPrompts: string[];
+
+            /**
+             * Creates a new Keyword instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Keyword instance
+             */
+            public static create(properties?: BotMetadata.BotRenderingMetadata.IKeyword): BotMetadata.BotRenderingMetadata.Keyword;
+
+            /**
+             * Encodes the specified Keyword message. Does not implicitly {@link BotMetadata.BotRenderingMetadata.Keyword.verify|verify} messages.
+             * @param message Keyword message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: BotMetadata.BotRenderingMetadata.IKeyword, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified Keyword message, length delimited. Does not implicitly {@link BotMetadata.BotRenderingMetadata.Keyword.verify|verify} messages.
+             * @param message Keyword message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: BotMetadata.BotRenderingMetadata.IKeyword, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Keyword message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Keyword
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotRenderingMetadata.Keyword;
+
+            /**
+             * Decodes a Keyword message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns Keyword
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotRenderingMetadata.Keyword;
+
+            /**
+             * Verifies a Keyword message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a Keyword message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns Keyword
+             */
+            public static fromObject(object: { [k: string]: any }): BotMetadata.BotRenderingMetadata.Keyword;
+
+            /**
+             * Creates a plain object from a Keyword message. Also converts values to other types if specified.
+             * @param message Keyword
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: BotMetadata.BotRenderingMetadata.Keyword, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this Keyword to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for Keyword
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+    }
+
+    /** Properties of a BotPromotionMessageMetadata. */
+    interface IBotPromotionMessageMetadata {
+
+        /** BotPromotionMessageMetadata promotionType */
+        promotionType?: (BotMetadata.BotPromotionMessageMetadata.BotPromotionType|null);
+
+        /** BotPromotionMessageMetadata buttonTitle */
+        buttonTitle?: (string|null);
+    }
+
+    /** Represents a BotPromotionMessageMetadata. */
+    class BotPromotionMessageMetadata implements IBotPromotionMessageMetadata {
+
+        /**
+         * Constructs a new BotPromotionMessageMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotPromotionMessageMetadata);
+
+        /** BotPromotionMessageMetadata promotionType. */
+        public promotionType: BotMetadata.BotPromotionMessageMetadata.BotPromotionType;
+
+        /** BotPromotionMessageMetadata buttonTitle. */
+        public buttonTitle: string;
+
+        /**
+         * Creates a new BotPromotionMessageMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotPromotionMessageMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotPromotionMessageMetadata): BotMetadata.BotPromotionMessageMetadata;
+
+        /**
+         * Encodes the specified BotPromotionMessageMetadata message. Does not implicitly {@link BotMetadata.BotPromotionMessageMetadata.verify|verify} messages.
+         * @param message BotPromotionMessageMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotPromotionMessageMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotPromotionMessageMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotPromotionMessageMetadata.verify|verify} messages.
+         * @param message BotPromotionMessageMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotPromotionMessageMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotPromotionMessageMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotPromotionMessageMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotPromotionMessageMetadata;
+
+        /**
+         * Decodes a BotPromotionMessageMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotPromotionMessageMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotPromotionMessageMetadata;
+
+        /**
+         * Verifies a BotPromotionMessageMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotPromotionMessageMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotPromotionMessageMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotPromotionMessageMetadata;
+
+        /**
+         * Creates a plain object from a BotPromotionMessageMetadata message. Also converts values to other types if specified.
+         * @param message BotPromotionMessageMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotPromotionMessageMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotPromotionMessageMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotPromotionMessageMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotPromotionMessageMetadata {
+
+        /** BotPromotionType enum. */
+        enum BotPromotionType {
+            UNKNOWN_TYPE = 0,
+            C50 = 1,
+            SURVEY_PLATFORM = 2
+        }
+    }
+
+    /** Properties of a BotSignatureVerificationUseCaseProof. */
+    interface IBotSignatureVerificationUseCaseProof {
+
+        /** BotSignatureVerificationUseCaseProof version */
+        version?: (number|null);
+
+        /** BotSignatureVerificationUseCaseProof useCase */
+        useCase?: (BotMetadata.BotSignatureVerificationUseCaseProof.BotSignatureUseCase|null);
+
+        /** BotSignatureVerificationUseCaseProof signature */
+        signature?: (Uint8Array|null);
+
+        /** BotSignatureVerificationUseCaseProof certificateChain */
+        certificateChain?: (Uint8Array|null);
+    }
+
+    /** Represents a BotSignatureVerificationUseCaseProof. */
+    class BotSignatureVerificationUseCaseProof implements IBotSignatureVerificationUseCaseProof {
+
+        /**
+         * Constructs a new BotSignatureVerificationUseCaseProof.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotSignatureVerificationUseCaseProof);
+
+        /** BotSignatureVerificationUseCaseProof version. */
+        public version: number;
+
+        /** BotSignatureVerificationUseCaseProof useCase. */
+        public useCase: BotMetadata.BotSignatureVerificationUseCaseProof.BotSignatureUseCase;
+
+        /** BotSignatureVerificationUseCaseProof signature. */
+        public signature: Uint8Array;
+
+        /** BotSignatureVerificationUseCaseProof certificateChain. */
+        public certificateChain: Uint8Array;
+
+        /**
+         * Creates a new BotSignatureVerificationUseCaseProof instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotSignatureVerificationUseCaseProof instance
+         */
+        public static create(properties?: BotMetadata.IBotSignatureVerificationUseCaseProof): BotMetadata.BotSignatureVerificationUseCaseProof;
+
+        /**
+         * Encodes the specified BotSignatureVerificationUseCaseProof message. Does not implicitly {@link BotMetadata.BotSignatureVerificationUseCaseProof.verify|verify} messages.
+         * @param message BotSignatureVerificationUseCaseProof message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotSignatureVerificationUseCaseProof, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotSignatureVerificationUseCaseProof message, length delimited. Does not implicitly {@link BotMetadata.BotSignatureVerificationUseCaseProof.verify|verify} messages.
+         * @param message BotSignatureVerificationUseCaseProof message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotSignatureVerificationUseCaseProof, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotSignatureVerificationUseCaseProof message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotSignatureVerificationUseCaseProof
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSignatureVerificationUseCaseProof;
+
+        /**
+         * Decodes a BotSignatureVerificationUseCaseProof message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotSignatureVerificationUseCaseProof
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSignatureVerificationUseCaseProof;
+
+        /**
+         * Verifies a BotSignatureVerificationUseCaseProof message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotSignatureVerificationUseCaseProof message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotSignatureVerificationUseCaseProof
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotSignatureVerificationUseCaseProof;
+
+        /**
+         * Creates a plain object from a BotSignatureVerificationUseCaseProof message. Also converts values to other types if specified.
+         * @param message BotSignatureVerificationUseCaseProof
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotSignatureVerificationUseCaseProof, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotSignatureVerificationUseCaseProof to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotSignatureVerificationUseCaseProof
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotSignatureVerificationUseCaseProof {
+
+        /** BotSignatureUseCase enum. */
+        enum BotSignatureUseCase {
+            WA_BOT_MSG = 0
+        }
+    }
+
+    /** Properties of a BotSignatureVerificationMetadata. */
+    interface IBotSignatureVerificationMetadata {
+
+        /** BotSignatureVerificationMetadata proofs */
+        proofs?: (BotMetadata.IBotSignatureVerificationUseCaseProof[]|null);
+    }
+
+    /** Represents a BotSignatureVerificationMetadata. */
+    class BotSignatureVerificationMetadata implements IBotSignatureVerificationMetadata {
+
+        /**
+         * Constructs a new BotSignatureVerificationMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotSignatureVerificationMetadata);
+
+        /** BotSignatureVerificationMetadata proofs. */
+        public proofs: BotMetadata.IBotSignatureVerificationUseCaseProof[];
+
+        /**
+         * Creates a new BotSignatureVerificationMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotSignatureVerificationMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotSignatureVerificationMetadata): BotMetadata.BotSignatureVerificationMetadata;
+
+        /**
+         * Encodes the specified BotSignatureVerificationMetadata message. Does not implicitly {@link BotMetadata.BotSignatureVerificationMetadata.verify|verify} messages.
+         * @param message BotSignatureVerificationMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotSignatureVerificationMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotSignatureVerificationMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotSignatureVerificationMetadata.verify|verify} messages.
+         * @param message BotSignatureVerificationMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotSignatureVerificationMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotSignatureVerificationMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotSignatureVerificationMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSignatureVerificationMetadata;
+
+        /**
+         * Decodes a BotSignatureVerificationMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotSignatureVerificationMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSignatureVerificationMetadata;
+
+        /**
+         * Verifies a BotSignatureVerificationMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotSignatureVerificationMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotSignatureVerificationMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotSignatureVerificationMetadata;
+
+        /**
+         * Creates a plain object from a BotSignatureVerificationMetadata message. Also converts values to other types if specified.
+         * @param message BotSignatureVerificationMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotSignatureVerificationMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotSignatureVerificationMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotSignatureVerificationMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a BotMemoryFact. */
+    interface IBotMemoryFact {
+
+        /** BotMemoryFact fact */
+        fact?: (string|null);
+
+        /** BotMemoryFact factId */
+        factId?: (string|null);
+    }
+
+    /** Represents a BotMemoryFact. */
+    class BotMemoryFact implements IBotMemoryFact {
+
+        /**
+         * Constructs a new BotMemoryFact.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotMemoryFact);
+
+        /** BotMemoryFact fact. */
+        public fact: string;
+
+        /** BotMemoryFact factId. */
+        public factId: string;
+
+        /**
+         * Creates a new BotMemoryFact instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotMemoryFact instance
+         */
+        public static create(properties?: BotMetadata.IBotMemoryFact): BotMetadata.BotMemoryFact;
+
+        /**
+         * Encodes the specified BotMemoryFact message. Does not implicitly {@link BotMetadata.BotMemoryFact.verify|verify} messages.
+         * @param message BotMemoryFact message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotMemoryFact, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotMemoryFact message, length delimited. Does not implicitly {@link BotMetadata.BotMemoryFact.verify|verify} messages.
+         * @param message BotMemoryFact message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotMemoryFact, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotMemoryFact message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotMemoryFact
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMemoryFact;
+
+        /**
+         * Decodes a BotMemoryFact message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotMemoryFact
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMemoryFact;
+
+        /**
+         * Verifies a BotMemoryFact message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotMemoryFact message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotMemoryFact
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMemoryFact;
+
+        /**
+         * Creates a plain object from a BotMemoryFact message. Also converts values to other types if specified.
+         * @param message BotMemoryFact
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotMemoryFact, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotMemoryFact to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotMemoryFact
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a BotMemoryMetadata. */
+    interface IBotMemoryMetadata {
+
+        /** BotMemoryMetadata addedFacts */
+        addedFacts?: (BotMetadata.IBotMemoryFact[]|null);
+
+        /** BotMemoryMetadata removedFacts */
+        removedFacts?: (BotMetadata.IBotMemoryFact[]|null);
+
+        /** BotMemoryMetadata disclaimer */
+        disclaimer?: (string|null);
+    }
+
+    /** Represents a BotMemoryMetadata. */
+    class BotMemoryMetadata implements IBotMemoryMetadata {
+
+        /**
+         * Constructs a new BotMemoryMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotMemoryMetadata);
+
+        /** BotMemoryMetadata addedFacts. */
+        public addedFacts: BotMetadata.IBotMemoryFact[];
+
+        /** BotMemoryMetadata removedFacts. */
+        public removedFacts: BotMetadata.IBotMemoryFact[];
+
+        /** BotMemoryMetadata disclaimer. */
+        public disclaimer: string;
+
+        /**
+         * Creates a new BotMemoryMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotMemoryMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotMemoryMetadata): BotMetadata.BotMemoryMetadata;
+
+        /**
+         * Encodes the specified BotMemoryMetadata message. Does not implicitly {@link BotMetadata.BotMemoryMetadata.verify|verify} messages.
+         * @param message BotMemoryMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotMemoryMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotMemoryMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotMemoryMetadata.verify|verify} messages.
+         * @param message BotMemoryMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotMemoryMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotMemoryMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotMemoryMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotMemoryMetadata;
+
+        /**
+         * Decodes a BotMemoryMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotMemoryMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotMemoryMetadata;
+
+        /**
+         * Verifies a BotMemoryMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotMemoryMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotMemoryMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotMemoryMetadata;
+
+        /**
+         * Creates a plain object from a BotMemoryMetadata message. Also converts values to other types if specified.
+         * @param message BotMemoryMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotMemoryMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotMemoryMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotMemoryMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a BotLinkedAccount. */
+    interface IBotLinkedAccount {
+
+        /** BotLinkedAccount type */
+        type?: (BotMetadata.BotLinkedAccount.BotLinkedAccountType|null);
+    }
+
+    /** Represents a BotLinkedAccount. */
+    class BotLinkedAccount implements IBotLinkedAccount {
+
+        /**
+         * Constructs a new BotLinkedAccount.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotLinkedAccount);
+
+        /** BotLinkedAccount type. */
+        public type: BotMetadata.BotLinkedAccount.BotLinkedAccountType;
+
+        /**
+         * Creates a new BotLinkedAccount instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotLinkedAccount instance
+         */
+        public static create(properties?: BotMetadata.IBotLinkedAccount): BotMetadata.BotLinkedAccount;
+
+        /**
+         * Encodes the specified BotLinkedAccount message. Does not implicitly {@link BotMetadata.BotLinkedAccount.verify|verify} messages.
+         * @param message BotLinkedAccount message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotLinkedAccount, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotLinkedAccount message, length delimited. Does not implicitly {@link BotMetadata.BotLinkedAccount.verify|verify} messages.
+         * @param message BotLinkedAccount message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotLinkedAccount, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotLinkedAccount message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotLinkedAccount
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotLinkedAccount;
+
+        /**
+         * Decodes a BotLinkedAccount message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotLinkedAccount
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotLinkedAccount;
+
+        /**
+         * Verifies a BotLinkedAccount message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotLinkedAccount message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotLinkedAccount
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotLinkedAccount;
+
+        /**
+         * Creates a plain object from a BotLinkedAccount message. Also converts values to other types if specified.
+         * @param message BotLinkedAccount
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotLinkedAccount, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotLinkedAccount to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotLinkedAccount
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotLinkedAccount {
+
+        /** BotLinkedAccountType enum. */
+        enum BotLinkedAccountType {
+            BOT_LINKED_ACCOUNT_TYPE_1P = 0
+        }
+    }
+
+    /** Properties of a BotLinkedAccountsMetadata. */
+    interface IBotLinkedAccountsMetadata {
+
+        /** BotLinkedAccountsMetadata accounts */
+        accounts?: (BotMetadata.IBotLinkedAccount[]|null);
+
+        /** BotLinkedAccountsMetadata acAuthTokens */
+        acAuthTokens?: (Uint8Array|null);
+
+        /** BotLinkedAccountsMetadata acErrorCode */
+        acErrorCode?: (number|null);
+    }
+
+    /** Represents a BotLinkedAccountsMetadata. */
+    class BotLinkedAccountsMetadata implements IBotLinkedAccountsMetadata {
+
+        /**
+         * Constructs a new BotLinkedAccountsMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotLinkedAccountsMetadata);
+
+        /** BotLinkedAccountsMetadata accounts. */
+        public accounts: BotMetadata.IBotLinkedAccount[];
+
+        /** BotLinkedAccountsMetadata acAuthTokens. */
+        public acAuthTokens: Uint8Array;
+
+        /** BotLinkedAccountsMetadata acErrorCode. */
+        public acErrorCode: number;
+
+        /**
+         * Creates a new BotLinkedAccountsMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotLinkedAccountsMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotLinkedAccountsMetadata): BotMetadata.BotLinkedAccountsMetadata;
+
+        /**
+         * Encodes the specified BotLinkedAccountsMetadata message. Does not implicitly {@link BotMetadata.BotLinkedAccountsMetadata.verify|verify} messages.
+         * @param message BotLinkedAccountsMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotLinkedAccountsMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotLinkedAccountsMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotLinkedAccountsMetadata.verify|verify} messages.
+         * @param message BotLinkedAccountsMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotLinkedAccountsMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotLinkedAccountsMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotLinkedAccountsMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotLinkedAccountsMetadata;
+
+        /**
+         * Decodes a BotLinkedAccountsMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotLinkedAccountsMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotLinkedAccountsMetadata;
+
+        /**
+         * Verifies a BotLinkedAccountsMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotLinkedAccountsMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotLinkedAccountsMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotLinkedAccountsMetadata;
+
+        /**
+         * Creates a plain object from a BotLinkedAccountsMetadata message. Also converts values to other types if specified.
+         * @param message BotLinkedAccountsMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotLinkedAccountsMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotLinkedAccountsMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotLinkedAccountsMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a BotPromptSuggestion. */
+    interface IBotPromptSuggestion {
+
+        /** BotPromptSuggestion prompt */
+        prompt?: (string|null);
+
+        /** BotPromptSuggestion promptId */
+        promptId?: (string|null);
+    }
+
+    /** Represents a BotPromptSuggestion. */
+    class BotPromptSuggestion implements IBotPromptSuggestion {
+
+        /**
+         * Constructs a new BotPromptSuggestion.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotPromptSuggestion);
+
+        /** BotPromptSuggestion prompt. */
+        public prompt: string;
+
+        /** BotPromptSuggestion promptId. */
+        public promptId: string;
+
+        /**
+         * Creates a new BotPromptSuggestion instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotPromptSuggestion instance
+         */
+        public static create(properties?: BotMetadata.IBotPromptSuggestion): BotMetadata.BotPromptSuggestion;
+
+        /**
+         * Encodes the specified BotPromptSuggestion message. Does not implicitly {@link BotMetadata.BotPromptSuggestion.verify|verify} messages.
+         * @param message BotPromptSuggestion message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotPromptSuggestion, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotPromptSuggestion message, length delimited. Does not implicitly {@link BotMetadata.BotPromptSuggestion.verify|verify} messages.
+         * @param message BotPromptSuggestion message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotPromptSuggestion, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotPromptSuggestion message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotPromptSuggestion
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotPromptSuggestion;
+
+        /**
+         * Decodes a BotPromptSuggestion message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotPromptSuggestion
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotPromptSuggestion;
+
+        /**
+         * Verifies a BotPromptSuggestion message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotPromptSuggestion message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotPromptSuggestion
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotPromptSuggestion;
+
+        /**
+         * Creates a plain object from a BotPromptSuggestion message. Also converts values to other types if specified.
+         * @param message BotPromptSuggestion
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotPromptSuggestion, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotPromptSuggestion to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotPromptSuggestion
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a BotPromptSuggestions. */
+    interface IBotPromptSuggestions {
+
+        /** BotPromptSuggestions suggestions */
+        suggestions?: (BotMetadata.IBotPromptSuggestion[]|null);
+    }
+
+    /** Represents a BotPromptSuggestions. */
+    class BotPromptSuggestions implements IBotPromptSuggestions {
+
+        /**
+         * Constructs a new BotPromptSuggestions.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotPromptSuggestions);
+
+        /** BotPromptSuggestions suggestions. */
+        public suggestions: BotMetadata.IBotPromptSuggestion[];
+
+        /**
+         * Creates a new BotPromptSuggestions instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotPromptSuggestions instance
+         */
+        public static create(properties?: BotMetadata.IBotPromptSuggestions): BotMetadata.BotPromptSuggestions;
+
+        /**
+         * Encodes the specified BotPromptSuggestions message. Does not implicitly {@link BotMetadata.BotPromptSuggestions.verify|verify} messages.
+         * @param message BotPromptSuggestions message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotPromptSuggestions, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotPromptSuggestions message, length delimited. Does not implicitly {@link BotMetadata.BotPromptSuggestions.verify|verify} messages.
+         * @param message BotPromptSuggestions message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotPromptSuggestions, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotPromptSuggestions message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotPromptSuggestions
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotPromptSuggestions;
+
+        /**
+         * Decodes a BotPromptSuggestions message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotPromptSuggestions
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotPromptSuggestions;
+
+        /**
+         * Verifies a BotPromptSuggestions message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotPromptSuggestions message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotPromptSuggestions
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotPromptSuggestions;
+
+        /**
+         * Creates a plain object from a BotPromptSuggestions message. Also converts values to other types if specified.
+         * @param message BotPromptSuggestions
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotPromptSuggestions, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotPromptSuggestions to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotPromptSuggestions
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a BotSuggestedPromptMetadata. */
+    interface IBotSuggestedPromptMetadata {
+
+        /** BotSuggestedPromptMetadata suggestedPrompts */
+        suggestedPrompts?: (string[]|null);
+
+        /** BotSuggestedPromptMetadata selectedPromptIndex */
+        selectedPromptIndex?: (number|null);
+
+        /** BotSuggestedPromptMetadata promptSuggestions */
+        promptSuggestions?: (BotMetadata.IBotPromptSuggestions|null);
+
+        /** BotSuggestedPromptMetadata selectedPromptId */
+        selectedPromptId?: (string|null);
+    }
+
+    /** Represents a BotSuggestedPromptMetadata. */
+    class BotSuggestedPromptMetadata implements IBotSuggestedPromptMetadata {
+
+        /**
+         * Constructs a new BotSuggestedPromptMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotSuggestedPromptMetadata);
+
+        /** BotSuggestedPromptMetadata suggestedPrompts. */
+        public suggestedPrompts: string[];
+
+        /** BotSuggestedPromptMetadata selectedPromptIndex. */
+        public selectedPromptIndex: number;
+
+        /** BotSuggestedPromptMetadata promptSuggestions. */
+        public promptSuggestions?: (BotMetadata.IBotPromptSuggestions|null);
+
+        /** BotSuggestedPromptMetadata selectedPromptId. */
+        public selectedPromptId: string;
+
+        /**
+         * Creates a new BotSuggestedPromptMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotSuggestedPromptMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotSuggestedPromptMetadata): BotMetadata.BotSuggestedPromptMetadata;
+
+        /**
+         * Encodes the specified BotSuggestedPromptMetadata message. Does not implicitly {@link BotMetadata.BotSuggestedPromptMetadata.verify|verify} messages.
+         * @param message BotSuggestedPromptMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotSuggestedPromptMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotSuggestedPromptMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotSuggestedPromptMetadata.verify|verify} messages.
+         * @param message BotSuggestedPromptMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotSuggestedPromptMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotSuggestedPromptMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotSuggestedPromptMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotSuggestedPromptMetadata;
+
+        /**
+         * Decodes a BotSuggestedPromptMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotSuggestedPromptMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotSuggestedPromptMetadata;
+
+        /**
+         * Verifies a BotSuggestedPromptMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotSuggestedPromptMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotSuggestedPromptMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotSuggestedPromptMetadata;
+
+        /**
+         * Creates a plain object from a BotSuggestedPromptMetadata message. Also converts values to other types if specified.
+         * @param message BotSuggestedPromptMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotSuggestedPromptMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotSuggestedPromptMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotSuggestedPromptMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a BotPluginMetadata. */
+    interface IBotPluginMetadata {
+
+        /** BotPluginMetadata provider */
+        provider?: (BotMetadata.BotPluginMetadata.SearchProvider|null);
+
+        /** BotPluginMetadata pluginType */
+        pluginType?: (BotMetadata.BotPluginMetadata.PluginType|null);
+
+        /** BotPluginMetadata thumbnailCdnUrl */
+        thumbnailCdnUrl?: (string|null);
+
+        /** BotPluginMetadata profilePhotoCdnUrl */
+        profilePhotoCdnUrl?: (string|null);
+
+        /** BotPluginMetadata searchProviderUrl */
+        searchProviderUrl?: (string|null);
+
+        /** BotPluginMetadata referenceIndex */
+        referenceIndex?: (number|null);
+
+        /** BotPluginMetadata expectedLinksCount */
+        expectedLinksCount?: (number|null);
+
+        /** BotPluginMetadata searchQuery */
+        searchQuery?: (string|null);
+
+        /** BotPluginMetadata parentPluginMessageKey */
+        parentPluginMessageKey?: (Protocol.IMessageKey|null);
+
+        /** BotPluginMetadata deprecatedField */
+        deprecatedField?: (BotMetadata.BotPluginMetadata.PluginType|null);
+
+        /** BotPluginMetadata parentPluginType */
+        parentPluginType?: (BotMetadata.BotPluginMetadata.PluginType|null);
+
+        /** BotPluginMetadata faviconCdnUrl */
+        faviconCdnUrl?: (string|null);
+    }
+
+    /** Represents a BotPluginMetadata. */
+    class BotPluginMetadata implements IBotPluginMetadata {
+
+        /**
+         * Constructs a new BotPluginMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotPluginMetadata);
+
+        /** BotPluginMetadata provider. */
+        public provider: BotMetadata.BotPluginMetadata.SearchProvider;
+
+        /** BotPluginMetadata pluginType. */
+        public pluginType: BotMetadata.BotPluginMetadata.PluginType;
+
+        /** BotPluginMetadata thumbnailCdnUrl. */
+        public thumbnailCdnUrl: string;
+
+        /** BotPluginMetadata profilePhotoCdnUrl. */
+        public profilePhotoCdnUrl: string;
+
+        /** BotPluginMetadata searchProviderUrl. */
+        public searchProviderUrl: string;
+
+        /** BotPluginMetadata referenceIndex. */
+        public referenceIndex: number;
+
+        /** BotPluginMetadata expectedLinksCount. */
+        public expectedLinksCount: number;
+
+        /** BotPluginMetadata searchQuery. */
+        public searchQuery: string;
+
+        /** BotPluginMetadata parentPluginMessageKey. */
+        public parentPluginMessageKey?: (Protocol.IMessageKey|null);
+
+        /** BotPluginMetadata deprecatedField. */
+        public deprecatedField: BotMetadata.BotPluginMetadata.PluginType;
+
+        /** BotPluginMetadata parentPluginType. */
+        public parentPluginType: BotMetadata.BotPluginMetadata.PluginType;
+
+        /** BotPluginMetadata faviconCdnUrl. */
+        public faviconCdnUrl: string;
+
+        /**
+         * Creates a new BotPluginMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotPluginMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotPluginMetadata): BotMetadata.BotPluginMetadata;
+
+        /**
+         * Encodes the specified BotPluginMetadata message. Does not implicitly {@link BotMetadata.BotPluginMetadata.verify|verify} messages.
+         * @param message BotPluginMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotPluginMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotPluginMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotPluginMetadata.verify|verify} messages.
+         * @param message BotPluginMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotPluginMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotPluginMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotPluginMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotPluginMetadata;
+
+        /**
+         * Decodes a BotPluginMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotPluginMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotPluginMetadata;
+
+        /**
+         * Verifies a BotPluginMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotPluginMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotPluginMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotPluginMetadata;
+
+        /**
+         * Creates a plain object from a BotPluginMetadata message. Also converts values to other types if specified.
+         * @param message BotPluginMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotPluginMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotPluginMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotPluginMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    namespace BotPluginMetadata {
+
+        /** PluginType enum. */
+        enum PluginType {
+            UNKNOWN_PLUGIN = 0,
+            REELS = 1,
+            SEARCH = 2
+        }
+
+        /** SearchProvider enum. */
+        enum SearchProvider {
+            UNKNOWN = 0,
+            BING = 1,
+            GOOGLE = 2,
+            SUPPORT = 3
+        }
+    }
+
+    /** Properties of a BotAvatarMetadata. */
+    interface IBotAvatarMetadata {
+
+        /** BotAvatarMetadata sentiment */
+        sentiment?: (number|null);
+
+        /** BotAvatarMetadata behaviorGraph */
+        behaviorGraph?: (string|null);
+
+        /** BotAvatarMetadata action */
+        action?: (number|null);
+
+        /** BotAvatarMetadata intensity */
+        intensity?: (number|null);
+
+        /** BotAvatarMetadata wordCount */
+        wordCount?: (number|null);
+    }
+
+    /** Represents a BotAvatarMetadata. */
+    class BotAvatarMetadata implements IBotAvatarMetadata {
+
+        /**
+         * Constructs a new BotAvatarMetadata.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: BotMetadata.IBotAvatarMetadata);
+
+        /** BotAvatarMetadata sentiment. */
+        public sentiment: number;
+
+        /** BotAvatarMetadata behaviorGraph. */
+        public behaviorGraph: string;
+
+        /** BotAvatarMetadata action. */
+        public action: number;
+
+        /** BotAvatarMetadata intensity. */
+        public intensity: number;
+
+        /** BotAvatarMetadata wordCount. */
+        public wordCount: number;
+
+        /**
+         * Creates a new BotAvatarMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BotAvatarMetadata instance
+         */
+        public static create(properties?: BotMetadata.IBotAvatarMetadata): BotMetadata.BotAvatarMetadata;
+
+        /**
+         * Encodes the specified BotAvatarMetadata message. Does not implicitly {@link BotMetadata.BotAvatarMetadata.verify|verify} messages.
+         * @param message BotAvatarMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: BotMetadata.IBotAvatarMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BotAvatarMetadata message, length delimited. Does not implicitly {@link BotMetadata.BotAvatarMetadata.verify|verify} messages.
+         * @param message BotAvatarMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: BotMetadata.IBotAvatarMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BotAvatarMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BotAvatarMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): BotMetadata.BotAvatarMetadata;
+
+        /**
+         * Decodes a BotAvatarMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BotAvatarMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): BotMetadata.BotAvatarMetadata;
+
+        /**
+         * Verifies a BotAvatarMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BotAvatarMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BotAvatarMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): BotMetadata.BotAvatarMetadata;
+
+        /**
+         * Creates a plain object from a BotAvatarMetadata message. Also converts values to other types if specified.
+         * @param message BotAvatarMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: BotMetadata.BotAvatarMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BotAvatarMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for BotAvatarMetadata
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** BotSessionSource enum. */
+    enum BotSessionSource {
+        NONE = 0,
+        NULL_STATE = 1,
+        TYPEAHEAD = 2,
+        USER_INPUT = 3,
+        EMU_FLASH = 4,
+        EMU_FLASH_FOLLOWUP = 5,
+        VOICE = 6
+    }
+
+    /** BotMetricsThreadEntryPoint enum. */
+    enum BotMetricsThreadEntryPoint {
+        AI_TAB_THREAD = 1,
+        AI_HOME_THREAD = 2,
+        AI_DEEPLINK_IMMERSIVE_THREAD = 3,
+        AI_DEEPLINK_THREAD = 4,
+        ASK_META_AI_CONTEXT_MENU_THREAD = 5
+    }
+
+    /** BotMetricsEntryPoint enum. */
+    enum BotMetricsEntryPoint {
+        FAVICON = 1,
+        CHATLIST = 2,
+        AISEARCH_NULL_STATE_PAPER_PLANE = 3,
+        AISEARCH_NULL_STATE_SUGGESTION = 4,
+        AISEARCH_TYPE_AHEAD_SUGGESTION = 5,
+        AISEARCH_TYPE_AHEAD_PAPER_PLANE = 6,
+        AISEARCH_TYPE_AHEAD_RESULT_CHATLIST = 7,
+        AISEARCH_TYPE_AHEAD_RESULT_MESSAGES = 8,
+        AIVOICE_SEARCH_BAR = 9,
+        AIVOICE_FAVICON = 10,
+        AISTUDIO = 11,
+        DEEPLINK = 12,
+        NOTIFICATION = 13,
+        PROFILE_MESSAGE_BUTTON = 14,
+        FORWARD = 15,
+        APP_SHORTCUT = 16,
+        FF_FAMILY = 17,
+        AI_TAB = 18,
+        AI_HOME = 19,
+        AI_DEEPLINK_IMMERSIVE = 20,
+        AI_DEEPLINK = 21,
+        META_AI_CHAT_SHORTCUT_AI_STUDIO = 22,
+        UGC_CHAT_SHORTCUT_AI_STUDIO = 23,
+        NEW_CHAT_AI_STUDIO = 24,
+        AIVOICE_FAVICON_CALL_HISTORY = 25,
+        ASK_META_AI_CONTEXT_MENU = 26,
+        ASK_META_AI_CONTEXT_MENU_1ON1 = 27,
+        ASK_META_AI_CONTEXT_MENU_GROUP = 28,
+        INVOKE_META_AI_1ON1 = 29,
+        INVOKE_META_AI_GROUP = 30,
+        META_AI_FORWARD = 31
+    }
+}
+
 /** Namespace StatusAttributions. */
 export namespace StatusAttributions {
 
@@ -33366,6 +32114,9 @@ export namespace StatusAttributions {
 
         /** StatusAttribution groupStatus */
         groupStatus?: (StatusAttributions.StatusAttribution.IGroupStatus|null);
+
+        /** StatusAttribution rlAttribution */
+        rlAttribution?: (StatusAttributions.StatusAttribution.IRLAttribution|null);
     }
 
     /** Represents a StatusAttribution. */
@@ -33378,10 +32129,10 @@ export namespace StatusAttributions {
         constructor(properties?: StatusAttributions.IStatusAttribution);
 
         /** StatusAttribution type. */
-        public type?: (StatusAttributions.StatusAttribution.Type|null);
+        public type: StatusAttributions.StatusAttribution.Type;
 
         /** StatusAttribution actionUrl. */
-        public actionUrl?: (string|null);
+        public actionUrl: string;
 
         /** StatusAttribution statusReshare. */
         public statusReshare?: (StatusAttributions.StatusAttribution.IStatusReshare|null);
@@ -33395,14 +32146,11 @@ export namespace StatusAttributions {
         /** StatusAttribution groupStatus. */
         public groupStatus?: (StatusAttributions.StatusAttribution.IGroupStatus|null);
 
-        /** StatusAttribution _type. */
-        public _type?: "type";
-
-        /** StatusAttribution _actionUrl. */
-        public _actionUrl?: "actionUrl";
+        /** StatusAttribution rlAttribution. */
+        public rlAttribution?: (StatusAttributions.StatusAttribution.IRLAttribution|null);
 
         /** StatusAttribution attributionData. */
-        public attributionData?: ("statusReshare"|"externalShare"|"music"|"groupStatus");
+        public attributionData?: ("statusReshare"|"externalShare"|"music"|"groupStatus"|"rlAttribution");
 
         /**
          * Creates a new StatusAttribution instance using the specified properties.
@@ -33510,28 +32258,16 @@ export namespace StatusAttributions {
             constructor(properties?: StatusAttributions.StatusAttribution.IExternalShare);
 
             /** ExternalShare actionUrl. */
-            public actionUrl?: (string|null);
+            public actionUrl: string;
 
             /** ExternalShare source. */
-            public source?: (StatusAttributions.StatusAttribution.ExternalShare.Source|null);
+            public source: StatusAttributions.StatusAttribution.ExternalShare.Source;
 
             /** ExternalShare duration. */
-            public duration?: (number|null);
+            public duration: number;
 
             /** ExternalShare actionFallbackUrl. */
-            public actionFallbackUrl?: (string|null);
-
-            /** ExternalShare _actionUrl. */
-            public _actionUrl?: "actionUrl";
-
-            /** ExternalShare _source. */
-            public _source?: "source";
-
-            /** ExternalShare _duration. */
-            public _duration?: "duration";
-
-            /** ExternalShare _actionFallbackUrl. */
-            public _actionFallbackUrl?: "actionFallbackUrl";
+            public actionFallbackUrl: string;
 
             /**
              * Creates a new ExternalShare instance using the specified properties.
@@ -33621,7 +32357,8 @@ export namespace StatusAttributions {
                 MESSENGER = 3,
                 SPOTIFY = 4,
                 YOUTUBE = 5,
-                PINTEREST = 6
+                PINTEREST = 6,
+                THREADS = 7
             }
         }
 
@@ -33642,10 +32379,7 @@ export namespace StatusAttributions {
             constructor(properties?: StatusAttributions.StatusAttribution.IGroupStatus);
 
             /** GroupStatus authorJid. */
-            public authorJid?: (string|null);
-
-            /** GroupStatus _authorJid. */
-            public _authorJid?: "authorJid";
+            public authorJid: string;
 
             /**
              * Creates a new GroupStatus instance using the specified properties.
@@ -33757,40 +32491,22 @@ export namespace StatusAttributions {
             constructor(properties?: StatusAttributions.StatusAttribution.IMusic);
 
             /** Music authorName. */
-            public authorName?: (string|null);
+            public authorName: string;
 
             /** Music songId. */
-            public songId?: (string|null);
+            public songId: string;
 
             /** Music title. */
-            public title?: (string|null);
+            public title: string;
 
             /** Music author. */
-            public author?: (string|null);
+            public author: string;
 
             /** Music artistAttribution. */
-            public artistAttribution?: (string|null);
+            public artistAttribution: string;
 
             /** Music isExplicit. */
-            public isExplicit?: (boolean|null);
-
-            /** Music _authorName. */
-            public _authorName?: "authorName";
-
-            /** Music _songId. */
-            public _songId?: "songId";
-
-            /** Music _title. */
-            public _title?: "title";
-
-            /** Music _author. */
-            public _author?: "author";
-
-            /** Music _artistAttribution. */
-            public _artistAttribution?: "artistAttribution";
-
-            /** Music _isExplicit. */
-            public _isExplicit?: "isExplicit";
+            public isExplicit: boolean;
 
             /**
              * Creates a new Music instance using the specified properties.
@@ -33870,6 +32586,114 @@ export namespace StatusAttributions {
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
+        /** Properties of a RLAttribution. */
+        interface IRLAttribution {
+
+            /** RLAttribution source */
+            source?: (StatusAttributions.StatusAttribution.RLAttribution.Source|null);
+        }
+
+        /** Represents a RLAttribution. */
+        class RLAttribution implements IRLAttribution {
+
+            /**
+             * Constructs a new RLAttribution.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: StatusAttributions.StatusAttribution.IRLAttribution);
+
+            /** RLAttribution source. */
+            public source: StatusAttributions.StatusAttribution.RLAttribution.Source;
+
+            /**
+             * Creates a new RLAttribution instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RLAttribution instance
+             */
+            public static create(properties?: StatusAttributions.StatusAttribution.IRLAttribution): StatusAttributions.StatusAttribution.RLAttribution;
+
+            /**
+             * Encodes the specified RLAttribution message. Does not implicitly {@link StatusAttributions.StatusAttribution.RLAttribution.verify|verify} messages.
+             * @param message RLAttribution message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: StatusAttributions.StatusAttribution.IRLAttribution, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified RLAttribution message, length delimited. Does not implicitly {@link StatusAttributions.StatusAttribution.RLAttribution.verify|verify} messages.
+             * @param message RLAttribution message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: StatusAttributions.StatusAttribution.IRLAttribution, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RLAttribution message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RLAttribution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): StatusAttributions.StatusAttribution.RLAttribution;
+
+            /**
+             * Decodes a RLAttribution message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns RLAttribution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): StatusAttributions.StatusAttribution.RLAttribution;
+
+            /**
+             * Verifies a RLAttribution message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a RLAttribution message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns RLAttribution
+             */
+            public static fromObject(object: { [k: string]: any }): StatusAttributions.StatusAttribution.RLAttribution;
+
+            /**
+             * Creates a plain object from a RLAttribution message. Also converts values to other types if specified.
+             * @param message RLAttribution
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: StatusAttributions.StatusAttribution.RLAttribution, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this RLAttribution to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for RLAttribution
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        namespace RLAttribution {
+
+            /** Source enum. */
+            enum Source {
+                UNKNOWN = 0,
+                RAY_BAN_META_GLASSES = 1,
+                OAKLEY_META_GLASSES = 2,
+                HYPERNOVA_GLASSES = 3
+            }
+        }
+
         /** Properties of a StatusReshare. */
         interface IStatusReshare {
 
@@ -33890,16 +32714,10 @@ export namespace StatusAttributions {
             constructor(properties?: StatusAttributions.StatusAttribution.IStatusReshare);
 
             /** StatusReshare source. */
-            public source?: (StatusAttributions.StatusAttribution.StatusReshare.Source|null);
+            public source: StatusAttributions.StatusAttribution.StatusReshare.Source;
 
             /** StatusReshare metadata. */
             public metadata?: (StatusAttributions.StatusAttribution.StatusReshare.IMetadata|null);
-
-            /** StatusReshare _source. */
-            public _source?: "source";
-
-            /** StatusReshare _metadata. */
-            public _metadata?: "metadata";
 
             /**
              * Creates a new StatusReshare instance using the specified properties.
@@ -34007,28 +32825,16 @@ export namespace StatusAttributions {
                 constructor(properties?: StatusAttributions.StatusAttribution.StatusReshare.IMetadata);
 
                 /** Metadata duration. */
-                public duration?: (number|null);
+                public duration: number;
 
                 /** Metadata channelJid. */
-                public channelJid?: (string|null);
+                public channelJid: string;
 
                 /** Metadata channelMessageId. */
-                public channelMessageId?: (number|null);
+                public channelMessageId: number;
 
                 /** Metadata hasMultipleReshares. */
-                public hasMultipleReshares?: (boolean|null);
-
-                /** Metadata _duration. */
-                public _duration?: "duration";
-
-                /** Metadata _channelJid. */
-                public _channelJid?: "channelJid";
-
-                /** Metadata _channelMessageId. */
-                public _channelMessageId?: "channelMessageId";
-
-                /** Metadata _hasMultipleReshares. */
-                public _hasMultipleReshares?: "hasMultipleReshares";
+                public hasMultipleReshares: boolean;
 
                 /**
                  * Creates a new Metadata instance using the specified properties.
@@ -34119,11 +32925,13 @@ export namespace StatusAttributions {
 
         /** Type enum. */
         enum Type {
-            RESHARE = 0,
-            EXTERNAL_SHARE = 1,
-            MUSIC = 2,
-            STATUS_MENTION = 3,
-            GROUP_STATUS = 4
+            UNKNOWN = 0,
+            RESHARE = 1,
+            EXTERNAL_SHARE = 2,
+            MUSIC = 3,
+            STATUS_MENTION = 4,
+            GROUP_STATUS = 5,
+            RL_ATTRIBUTION = 6
         }
     }
 }
@@ -34154,22 +32962,13 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.IClientPairingProps);
 
         /** ClientPairingProps isChatDbLidMigrated. */
-        public isChatDbLidMigrated?: (boolean|null);
+        public isChatDbLidMigrated: boolean;
 
         /** ClientPairingProps isSyncdPureLidSession. */
-        public isSyncdPureLidSession?: (boolean|null);
+        public isSyncdPureLidSession: boolean;
 
         /** ClientPairingProps isSyncdSnapshotRecoveryEnabled. */
-        public isSyncdSnapshotRecoveryEnabled?: (boolean|null);
-
-        /** ClientPairingProps _isChatDbLidMigrated. */
-        public _isChatDbLidMigrated?: "isChatDbLidMigrated";
-
-        /** ClientPairingProps _isSyncdPureLidSession. */
-        public _isSyncdPureLidSession?: "isSyncdPureLidSession";
-
-        /** ClientPairingProps _isSyncdSnapshotRecoveryEnabled. */
-        public _isSyncdSnapshotRecoveryEnabled?: "isSyncdSnapshotRecoveryEnabled";
+        public isSyncdSnapshotRecoveryEnabled: boolean;
 
         /**
          * Creates a new ClientPairingProps instance using the specified properties.
@@ -34269,16 +33068,10 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.IEncryptedPairingRequest);
 
         /** EncryptedPairingRequest encryptedPayload. */
-        public encryptedPayload?: (Uint8Array|null);
+        public encryptedPayload: Uint8Array;
 
         /** EncryptedPairingRequest iv. */
-        public iv?: (Uint8Array|null);
-
-        /** EncryptedPairingRequest _encryptedPayload. */
-        public _encryptedPayload?: "encryptedPayload";
-
-        /** EncryptedPairingRequest _iv. */
-        public _iv?: "iv";
+        public iv: Uint8Array;
 
         /**
          * Creates a new EncryptedPairingRequest instance using the specified properties.
@@ -34381,22 +33174,13 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.IPairingRequest);
 
         /** PairingRequest companionPublicKey. */
-        public companionPublicKey?: (Uint8Array|null);
+        public companionPublicKey: Uint8Array;
 
         /** PairingRequest companionIdentityKey. */
-        public companionIdentityKey?: (Uint8Array|null);
+        public companionIdentityKey: Uint8Array;
 
         /** PairingRequest advSecret. */
-        public advSecret?: (Uint8Array|null);
-
-        /** PairingRequest _companionPublicKey. */
-        public _companionPublicKey?: "companionPublicKey";
-
-        /** PairingRequest _companionIdentityKey. */
-        public _companionIdentityKey?: "companionIdentityKey";
-
-        /** PairingRequest _advSecret. */
-        public _advSecret?: "advSecret";
+        public advSecret: Uint8Array;
 
         /**
          * Creates a new PairingRequest instance using the specified properties.
@@ -34496,16 +33280,10 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.IPrimaryEphemeralIdentity);
 
         /** PrimaryEphemeralIdentity publicKey. */
-        public publicKey?: (Uint8Array|null);
+        public publicKey: Uint8Array;
 
         /** PrimaryEphemeralIdentity nonce. */
-        public nonce?: (Uint8Array|null);
-
-        /** PrimaryEphemeralIdentity _publicKey. */
-        public _publicKey?: "publicKey";
-
-        /** PrimaryEphemeralIdentity _nonce. */
-        public _nonce?: "nonce";
+        public nonce: Uint8Array;
 
         /**
          * Creates a new PrimaryEphemeralIdentity instance using the specified properties.
@@ -34605,16 +33383,10 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.IProloguePayload);
 
         /** ProloguePayload companionEphemeralIdentity. */
-        public companionEphemeralIdentity?: (Uint8Array|null);
+        public companionEphemeralIdentity: Uint8Array;
 
         /** ProloguePayload commitment. */
         public commitment?: (CompanionReg.ICompanionCommitment|null);
-
-        /** ProloguePayload _companionEphemeralIdentity. */
-        public _companionEphemeralIdentity?: "companionEphemeralIdentity";
-
-        /** ProloguePayload _commitment. */
-        public _commitment?: "commitment";
 
         /**
          * Creates a new ProloguePayload instance using the specified properties.
@@ -34711,10 +33483,7 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.ICompanionCommitment);
 
         /** CompanionCommitment hash. */
-        public hash?: (Uint8Array|null);
-
-        /** CompanionCommitment _hash. */
-        public _hash?: "hash";
+        public hash: Uint8Array;
 
         /**
          * Creates a new CompanionCommitment instance using the specified properties.
@@ -34817,22 +33586,13 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.ICompanionEphemeralIdentity);
 
         /** CompanionEphemeralIdentity publicKey. */
-        public publicKey?: (Uint8Array|null);
+        public publicKey: Uint8Array;
 
         /** CompanionEphemeralIdentity deviceType. */
-        public deviceType?: (CompanionReg.DeviceProps.PlatformType|null);
+        public deviceType: CompanionReg.DeviceProps.PlatformType;
 
         /** CompanionEphemeralIdentity ref. */
-        public ref?: (string|null);
-
-        /** CompanionEphemeralIdentity _publicKey. */
-        public _publicKey?: "publicKey";
-
-        /** CompanionEphemeralIdentity _deviceType. */
-        public _deviceType?: "deviceType";
-
-        /** CompanionEphemeralIdentity _ref. */
-        public _ref?: "ref";
+        public ref: string;
 
         /**
          * Creates a new CompanionEphemeralIdentity instance using the specified properties.
@@ -34941,34 +33701,19 @@ export namespace CompanionReg {
         constructor(properties?: CompanionReg.IDeviceProps);
 
         /** DeviceProps os. */
-        public os?: (string|null);
+        public os: string;
 
         /** DeviceProps version. */
         public version?: (CompanionReg.DeviceProps.IAppVersion|null);
 
         /** DeviceProps platformType. */
-        public platformType?: (CompanionReg.DeviceProps.PlatformType|null);
+        public platformType: CompanionReg.DeviceProps.PlatformType;
 
         /** DeviceProps requireFullSync. */
-        public requireFullSync?: (boolean|null);
+        public requireFullSync: boolean;
 
         /** DeviceProps historySyncConfig. */
         public historySyncConfig?: (CompanionReg.DeviceProps.IHistorySyncConfig|null);
-
-        /** DeviceProps _os. */
-        public _os?: "os";
-
-        /** DeviceProps _version. */
-        public _version?: "version";
-
-        /** DeviceProps _platformType. */
-        public _platformType?: "platformType";
-
-        /** DeviceProps _requireFullSync. */
-        public _requireFullSync?: "requireFullSync";
-
-        /** DeviceProps _historySyncConfig. */
-        public _historySyncConfig?: "historySyncConfig";
 
         /**
          * Creates a new DeviceProps instance using the specified properties.
@@ -35079,34 +33824,19 @@ export namespace CompanionReg {
             constructor(properties?: CompanionReg.DeviceProps.IAppVersion);
 
             /** AppVersion primary. */
-            public primary?: (number|null);
+            public primary: number;
 
             /** AppVersion secondary. */
-            public secondary?: (number|null);
+            public secondary: number;
 
             /** AppVersion tertiary. */
-            public tertiary?: (number|null);
+            public tertiary: number;
 
             /** AppVersion quaternary. */
-            public quaternary?: (number|null);
+            public quaternary: number;
 
             /** AppVersion quinary. */
-            public quinary?: (number|null);
-
-            /** AppVersion _primary. */
-            public _primary?: "primary";
-
-            /** AppVersion _secondary. */
-            public _secondary?: "secondary";
-
-            /** AppVersion _tertiary. */
-            public _tertiary?: "tertiary";
-
-            /** AppVersion _quaternary. */
-            public _quaternary?: "quaternary";
-
-            /** AppVersion _quinary. */
-            public _quinary?: "quinary";
+            public quinary: number;
 
             /**
              * Creates a new AppVersion instance using the specified properties.
@@ -35230,6 +33960,15 @@ export namespace CompanionReg {
 
             /** HistorySyncConfig supportMessageAssociation */
             supportMessageAssociation?: (boolean|null);
+
+            /** HistorySyncConfig supportGroupHistory */
+            supportGroupHistory?: (boolean|null);
+
+            /** HistorySyncConfig onDemandReady */
+            onDemandReady?: (boolean|null);
+
+            /** HistorySyncConfig supportGuestChat */
+            supportGuestChat?: (boolean|null);
         }
 
         /** Represents a HistorySyncConfig. */
@@ -35242,88 +33981,55 @@ export namespace CompanionReg {
             constructor(properties?: CompanionReg.DeviceProps.IHistorySyncConfig);
 
             /** HistorySyncConfig fullSyncDaysLimit. */
-            public fullSyncDaysLimit?: (number|null);
+            public fullSyncDaysLimit: number;
 
             /** HistorySyncConfig fullSyncSizeMbLimit. */
-            public fullSyncSizeMbLimit?: (number|null);
+            public fullSyncSizeMbLimit: number;
 
             /** HistorySyncConfig storageQuotaMb. */
-            public storageQuotaMb?: (number|null);
+            public storageQuotaMb: number;
 
             /** HistorySyncConfig inlineInitialPayloadInE2EeMsg. */
-            public inlineInitialPayloadInE2EeMsg?: (boolean|null);
+            public inlineInitialPayloadInE2EeMsg: boolean;
 
             /** HistorySyncConfig recentSyncDaysLimit. */
-            public recentSyncDaysLimit?: (number|null);
+            public recentSyncDaysLimit: number;
 
             /** HistorySyncConfig supportCallLogHistory. */
-            public supportCallLogHistory?: (boolean|null);
+            public supportCallLogHistory: boolean;
 
             /** HistorySyncConfig supportBotUserAgentChatHistory. */
-            public supportBotUserAgentChatHistory?: (boolean|null);
+            public supportBotUserAgentChatHistory: boolean;
 
             /** HistorySyncConfig supportCagReactionsAndPolls. */
-            public supportCagReactionsAndPolls?: (boolean|null);
+            public supportCagReactionsAndPolls: boolean;
 
             /** HistorySyncConfig supportBizHostedMsg. */
-            public supportBizHostedMsg?: (boolean|null);
+            public supportBizHostedMsg: boolean;
 
             /** HistorySyncConfig supportRecentSyncChunkMessageCountTuning. */
-            public supportRecentSyncChunkMessageCountTuning?: (boolean|null);
+            public supportRecentSyncChunkMessageCountTuning: boolean;
 
             /** HistorySyncConfig supportHostedGroupMsg. */
-            public supportHostedGroupMsg?: (boolean|null);
+            public supportHostedGroupMsg: boolean;
 
             /** HistorySyncConfig supportFbidBotChatHistory. */
-            public supportFbidBotChatHistory?: (boolean|null);
+            public supportFbidBotChatHistory: boolean;
 
             /** HistorySyncConfig supportAddOnHistorySyncMigration. */
-            public supportAddOnHistorySyncMigration?: (boolean|null);
+            public supportAddOnHistorySyncMigration: boolean;
 
             /** HistorySyncConfig supportMessageAssociation. */
-            public supportMessageAssociation?: (boolean|null);
+            public supportMessageAssociation: boolean;
 
-            /** HistorySyncConfig _fullSyncDaysLimit. */
-            public _fullSyncDaysLimit?: "fullSyncDaysLimit";
+            /** HistorySyncConfig supportGroupHistory. */
+            public supportGroupHistory: boolean;
 
-            /** HistorySyncConfig _fullSyncSizeMbLimit. */
-            public _fullSyncSizeMbLimit?: "fullSyncSizeMbLimit";
+            /** HistorySyncConfig onDemandReady. */
+            public onDemandReady: boolean;
 
-            /** HistorySyncConfig _storageQuotaMb. */
-            public _storageQuotaMb?: "storageQuotaMb";
-
-            /** HistorySyncConfig _inlineInitialPayloadInE2EeMsg. */
-            public _inlineInitialPayloadInE2EeMsg?: "inlineInitialPayloadInE2EeMsg";
-
-            /** HistorySyncConfig _recentSyncDaysLimit. */
-            public _recentSyncDaysLimit?: "recentSyncDaysLimit";
-
-            /** HistorySyncConfig _supportCallLogHistory. */
-            public _supportCallLogHistory?: "supportCallLogHistory";
-
-            /** HistorySyncConfig _supportBotUserAgentChatHistory. */
-            public _supportBotUserAgentChatHistory?: "supportBotUserAgentChatHistory";
-
-            /** HistorySyncConfig _supportCagReactionsAndPolls. */
-            public _supportCagReactionsAndPolls?: "supportCagReactionsAndPolls";
-
-            /** HistorySyncConfig _supportBizHostedMsg. */
-            public _supportBizHostedMsg?: "supportBizHostedMsg";
-
-            /** HistorySyncConfig _supportRecentSyncChunkMessageCountTuning. */
-            public _supportRecentSyncChunkMessageCountTuning?: "supportRecentSyncChunkMessageCountTuning";
-
-            /** HistorySyncConfig _supportHostedGroupMsg. */
-            public _supportHostedGroupMsg?: "supportHostedGroupMsg";
-
-            /** HistorySyncConfig _supportFbidBotChatHistory. */
-            public _supportFbidBotChatHistory?: "supportFbidBotChatHistory";
-
-            /** HistorySyncConfig _supportAddOnHistorySyncMigration. */
-            public _supportAddOnHistorySyncMigration?: "supportAddOnHistorySyncMigration";
-
-            /** HistorySyncConfig _supportMessageAssociation. */
-            public _supportMessageAssociation?: "supportMessageAssociation";
+            /** HistorySyncConfig supportGuestChat. */
+            public supportGuestChat: boolean;
 
             /**
              * Creates a new HistorySyncConfig instance using the specified properties.
@@ -35454,10 +34160,7 @@ export namespace MmsRetry {
         constructor(properties?: MmsRetry.IServerErrorReceipt);
 
         /** ServerErrorReceipt stanzaId. */
-        public stanzaId?: (string|null);
-
-        /** ServerErrorReceipt _stanzaId. */
-        public _stanzaId?: "stanzaId";
+        public stanzaId: string;
 
         /**
          * Creates a new ServerErrorReceipt instance using the specified properties.
@@ -35563,28 +34266,16 @@ export namespace MmsRetry {
         constructor(properties?: MmsRetry.IMediaRetryNotification);
 
         /** MediaRetryNotification stanzaId. */
-        public stanzaId?: (string|null);
+        public stanzaId: string;
 
         /** MediaRetryNotification directPath. */
-        public directPath?: (string|null);
+        public directPath: string;
 
         /** MediaRetryNotification result. */
-        public result?: (MmsRetry.MediaRetryNotification.ResultType|null);
+        public result: MmsRetry.MediaRetryNotification.ResultType;
 
         /** MediaRetryNotification messageSecret. */
-        public messageSecret?: (Uint8Array|null);
-
-        /** MediaRetryNotification _stanzaId. */
-        public _stanzaId?: "stanzaId";
-
-        /** MediaRetryNotification _directPath. */
-        public _directPath?: "directPath";
-
-        /** MediaRetryNotification _result. */
-        public _result?: "result";
-
-        /** MediaRetryNotification _messageSecret. */
-        public _messageSecret?: "messageSecret";
+        public messageSecret: Uint8Array;
 
         /**
          * Creates a new MediaRetryNotification instance using the specified properties.

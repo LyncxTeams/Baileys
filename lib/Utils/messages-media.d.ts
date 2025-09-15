@@ -9,6 +9,12 @@ import { ILogger } from './logger'
 
 export declare const hkdfInfoKey: (type: MediaType) => string
 
+export declare const getRawMediaUploadData: (media: WAMediaUpload, mediaType: MediaType, logger?: ILogger) => Promise<{
+    filePath: string
+    fileSha256: Buffer<ArrayBufferLike>
+    fileLength: number
+}>
+
 /** generates all the keys required to encrypt/decrypt & sign a media message */
 export declare function getMediaKeys(buffer: Uint8Array | string | null | undefined, mediaType: MediaType): MediaDecryptionKeyInfo
 

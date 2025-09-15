@@ -4,6 +4,8 @@ export declare const TAGS: {
     DICTIONARY_1: number
     DICTIONARY_2: number
     DICTIONARY_3: number
+    INTEROP_JID: number
+    FB_JID: number
     AD_JID: number
     LIST_8: number
     LIST_16: number
@@ -14,8 +16,6 @@ export declare const TAGS: {
     BINARY_32: number
     NIBBLE_8: number
     PACKED_MAX: number
-    SINGLE_BYTE_MAX: number
-    STREAM_END: number
 }
 
 export declare const DOUBLE_BYTE_TOKENS: string[][]
