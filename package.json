@@ -1,7 +1,7 @@
 {
-  "name": "@itsukichan/baileys",
-  "version": "7.3.2",
-  "description": "WhatsApp API Modification By Itsukiichan",
+  "name": "@fuadxyro/baileys",
+  "version": "7.5.2",
+  "description": "WhatsApp API Modification By LyncxTeams",
   "keywords": [
     "whatsapp",
     "js-whatsapp",
@@ -12,10 +12,10 @@
     "automation",
     "multi-device"
   ],
-  "homepage": "https://github.com/Itsukichann/Baileys",
+  "homepage": "https://github.com/LyncxTeams/Baileys",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Itsukichann/Baileys.git"
+    "url": "git+ssh://git@github.com/LyncxTeams/Baileys.git"
   },
   "license": "MIT",
   "author": "Itsukichann",
