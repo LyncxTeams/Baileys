@@ -1,42 +1,83 @@
-import { SignalRepository } from '../Types'
-import { AuthenticationCreds, AuthenticationState, KeyPair, SignalIdentity, SignalKeyStore, SignedKeyPair } from '../Types/Auth'
-import { BinaryNode, JidWithDevice } from '../WABinary'
-import { USyncQueryResultList } from '../WAUSync'
-
-export declare const createSignalIdentity: (wid: string, accountSignatureKey: Uint8Array) => SignalIdentity
-
-export declare const getPreKeys: ({ get }: SignalKeyStore, min: number, limit: number) => Promise<{
-    [id: string]: KeyPair
-}>
-
-export declare const generateOrGetPreKeys: (creds: AuthenticationCreds, range: number) => {
-    newPreKeys: {
-        [id: number]: KeyPair
-    }
-    lastPreKeyId: number
-    preKeysRange: readonly [number, number]
-}
-
-export declare const xmppSignedPreKey: (key: SignedKeyPair) => BinaryNode
-
-export declare const xmppPreKey: (pair: KeyPair, id: number) => BinaryNode
-
-export declare const parseAndInjectE2ESessions: (node: BinaryNode, repository: SignalRepository) => Promise<void>
-
-export declare const extractDeviceJids: (result: USyncQueryResultList[], myJid: string, excludeZeroDevices: boolean) => JidWithDevice[]
-
-/**
- * get the next N keys for upload or processing
- * @param count number of pre-keys to get or generate
- */
-export declare const getNextPreKeys: ({ creds, keys }: AuthenticationState, count: number) => Promise<{
-    update: Partial<AuthenticationCreds>
-    preKeys: {
-        [id: string]: KeyPair
-    }
-}>
-
-export declare const getNextPreKeysNode: (state: AuthenticationState, count: number) => Promise<{
-    update: Partial<AuthenticationCreds>
-    node: BinaryNode
-}>
+export function createSignalIdentity(wid: any, accountSignatureKey: any): {
+    identifier: {
+        name: any;
+        deviceId: number;
+    };
+    identifierKey: any;
+};
+export function getPreKeys({ get }: {
+    get: any;
+}, min: any, limit: any): Promise<any>;
+export function generateOrGetPreKeys(creds: any, range: any): {
+    newPreKeys: {};
+    lastPreKeyId: number;
+    preKeysRange: any[];
+};
+export function xmppSignedPreKey(key: any): {
+    tag: string;
+    attrs: {};
+    content: {
+        tag: string;
+        attrs: {};
+        content: any;
+    }[];
+};
+export function xmppPreKey(pair: any, id: any): {
+    tag: string;
+    attrs: {};
+    content: {
+        tag: string;
+        attrs: {};
+        content: any;
+    }[];
+};
+export function extractE2ESessionFromRetryReceipt(receipt: any): {
+    registrationId: number | undefined;
+    identityKey: any;
+    signedPreKey: {
+        keyId: number | undefined;
+        publicKey: any;
+        signature: any;
+    };
+    preKey: {
+        keyId: number | undefined;
+        publicKey: any;
+    } | undefined;
+} | null;
+export function parseAndInjectE2ESessions(node: any, repository: any): Promise<void>;
+export function extractDeviceJids(result: any, myJid: any, myLid: any, excludeZeroDevices: any): {
+    user: any;
+    device: any;
+    domainType: any;
+    server: any;
+}[];
+export function getNextPreKeys({ creds, keys }: {
+    creds: any;
+    keys: any;
+}, count: any): Promise<{
+    update: {
+        nextPreKeyId: number;
+        firstUnuploadedPreKeyId: number;
+    };
+    preKeys: any;
+}>;
+export function getNextPreKeysNode(state: any, count: any): Promise<{
+    update: {
+        nextPreKeyId: number;
+        firstUnuploadedPreKeyId: number;
+    };
+    node: {
+        tag: string;
+        attrs: {
+            xmlns: string;
+            type: string;
+            to: string;
+        };
+        content: {
+            tag: string;
+            attrs: {};
+            content: any;
+        }[];
+    };
+}>;
+//# sourceMappingURL=signal.d.ts.map

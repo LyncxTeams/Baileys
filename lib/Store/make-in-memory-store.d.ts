@@ -1,123 +1,63 @@
-import type KeyedDB from '@adiwajshing/keyed-db'
-import type { Comparable } from '@adiwajshing/keyed-db/lib/Types'
-import type { Logger } from 'pino'
-import { proto } from '../../WAProto'
-import type makeMDSocket from '../Socket'
-import type { BaileysEventEmitter, Chat, ConnectionState, Contact, GroupMetadata, PresenceData, WAMessage, WAMessageCursor, WAMessageKey } from '../Types'
-import { Label } from '../Types/Label'
-import { LabelAssociation } from '../Types/LabelAssociation'
-import { ObjectRepository } from './object-repository'
-
-type WASocket = ReturnType<typeof makeMDSocket>
-
-export declare const waChatKey: (pin: boolean) => {
-    key: (c: Chat) => string
-    compare: (k1: string, k2: string) => number
+export function waChatKey(pin: any): {
+    key: (c: any) => string;
+    compare: (k1: any, k2: any) => any;
+};
+export function waMessageID(m: any): any;
+export namespace waLabelAssociationKey {
+    function key(la: any): any;
+    function compare(k1: any, k2: any): any;
 }
-
-export declare const waMessageID: (m: WAMessage) => string
-
-export declare const waLabelAssociationKey: Comparable<LabelAssociation, string>
-
-export type BaileysInMemoryStoreConfig = {
-    chatKey?: Comparable<Chat, string>
-    labelAssociationKey?: Comparable<LabelAssociation, string>
-    logger?: Logger
-    socket?: WASocket
-}
-
-export declare const makeInMemoryStore: (config: BaileysInMemoryStoreConfig) => {
-    chats: KeyedDB<Chat, string>
-    contacts: {
-        [_: string]: Contact
-    }
-    messages: {
-        [_: string]: {
-            array: proto.IWebMessageInfo[]
-            get: (id: string) => proto.IWebMessageInfo | undefined
-            upsert: (item: proto.IWebMessageInfo, mode: "append" | "prepend") => void
-            update: (item: proto.IWebMessageInfo) => boolean
-            remove: (item: proto.IWebMessageInfo) => boolean
-            updateAssign: (id: string, update: Partial<proto.IWebMessageInfo>) => boolean
-            clear: () => void
-            filter: (contain: (item: proto.IWebMessageInfo) => boolean) => void
-            toJSON: () => proto.IWebMessageInfo[]
-            fromJSON: (newItems: proto.IWebMessageInfo[]) => void
-        }
-    }
-    groupMetadata: {
-        [_: string]: GroupMetadata
-    }
-    state: ConnectionState
-    presences: {
-        [id: string]: {
-            [participant: string]: PresenceData
-        }
-    }
-    labels: ObjectRepository<Label>
-    labelAssociations: KeyedDB<LabelAssociation, string>
-    bind: (ev: BaileysEventEmitter) => void
+export function makeInMemoryStore(config?: {}): {
+    chats: any;
+    contacts: {};
+    messages: {};
+    groupMetadata: {};
+    state: {
+        connection: string;
+    };
+    presences: {};
+    labels: ObjectRepository;
+    labelAssociations: any;
+    bind: (ev: any) => void;
     /** loads messages from the store, if not found -- uses the legacy connection */
-    loadMessages: (jid: string, count: number, cursor: WAMessageCursor) => Promise<proto.IWebMessageInfo[]>
+    loadMessages: (jid: any, count: any, cursor: any) => Promise<any>;
     /**
      * Get all available labels for profile
      *
      * Keep in mind that the list is formed from predefined tags and tags
      * that were "caught" during their editing.
      */
-    getLabels: () => ObjectRepository<Label>
+    getLabels: () => ObjectRepository;
     /**
      * Get labels for chat
      *
      * @returns Label IDs
      **/
-    getChatLabels: (chatId: string) => LabelAssociation[]
+    getChatLabels: (chatId: any) => any;
     /**
      * Get labels for message
      *
      * @returns Label IDs
      **/
-    getMessageLabels: (messageId: string) => string[]
-    loadMessage: (jid: string, id: string) => Promise<proto.IWebMessageInfo | undefined>
-    mostRecentMessage: (jid: string) => Promise<proto.IWebMessageInfo>
-    fetchImageUrl: (jid: string, suki: WASocket | undefined) => Promise<string | null | undefined>
-    fetchGroupMetadata: (jid: string, suki: WASocket | undefined) => Promise<GroupMetadata>
-    fetchMessageReceipts: ({ remoteJid, id }: WAMessageKey) => Promise<proto.IUserReceipt[] | null | undefined>
+    getMessageLabels: (messageId: any) => any;
+    loadMessage: (jid: any, id: any) => Promise<any>;
+    mostRecentMessage: (jid: any) => Promise<any>;
+    fetchImageUrl: (jid: any, sock: any) => Promise<any>;
+    fetchGroupMetadata: (jid: any, sock: any) => Promise<any>;
+    fetchMessageReceipts: ({ remoteJid, id }: {
+        remoteJid: any;
+        id: any;
+    }) => Promise<any>;
     toJSON: () => {
-        chats: KeyedDB<Chat, string>
-        contacts: {
-            [_: string]: Contact
-        }
-        messages: {
-            [_: string]: {
-                array: proto.IWebMessageInfo[]
-                get: (id: string) => proto.IWebMessageInfo | undefined
-                upsert: (item: proto.IWebMessageInfo, mode: "append" | "prepend") => void
-                update: (item: proto.IWebMessageInfo) => boolean
-                remove: (item: proto.IWebMessageInfo) => boolean
-                updateAssign: (id: string, update: Partial<proto.IWebMessageInfo>) => boolean
-                clear: () => void
-                filter: (contain: (item: proto.IWebMessageInfo) => boolean) => void
-                toJSON: () => proto.IWebMessageInfo[]
-                fromJSON: (newItems: proto.IWebMessageInfo[]) => void
-            }
-        }
-        labels: ObjectRepository<Label>
-        labelAssociations: KeyedDB<LabelAssociation, string>
-    }
-    fromJSON: (json: {
-        chats: Chat[]
-        contacts: {
-            [id: string]: Contact
-        }
-        messages: {
-            [id: string]: proto.IWebMessageInfo[]
-        }
-        labels: {
-            [labelId: string]: Label
-        }
-        labelAssociations: LabelAssociation[]
-    }) => void
-    writeToFile: (path: string) => void
-    readFromFile: (path: string) => void
-}
+        chats: any;
+        contacts: {};
+        messages: {};
+        labels: ObjectRepository;
+        labelAssociations: any;
+    };
+    fromJSON: (json: any) => void;
+    writeToFile: (path: any) => void;
+    readFromFile: (path: any) => void;
+};
+import { ObjectRepository } from './object-repository.js';
+//# sourceMappingURL=make-in-memory-store.d.ts.map

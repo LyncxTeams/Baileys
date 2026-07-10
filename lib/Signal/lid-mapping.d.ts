@@ -1,30 +1,21 @@
-import { SignalKeyStoreWithTransaction } from '../Types'
-
-export declare class LIDMappingStore {
-    private readonly keys
-    private onWhatsAppFunc?
-    constructor(keys: SignalKeyStoreWithTransaction, onWhatsAppFunc?: (...jids: string[]) => Promise<{
-        jid: string
-        exists: boolean
-        lid: string
-    }[] | undefined>)
+export class LIDMappingStore {
+    constructor(keys: any, logger: any, pnToLIDFunc: any);
+    mappingCache: any;
+    inflightLIDLookups: Map<any, any>;
+    inflightPNLookups: Map<any, any>;
+    keys: any;
+    pnToLIDFunc: any;
+    logger: any;
+    storeLIDPNMappings(pairs: any): Promise<void>;
+    getLIDForPN(pn: any): Promise<any>;
+    getLIDsForPNs(pns: any): Promise<any>;
+    _getLIDsForPNsImpl(pns: any): Promise<any[] | null>;
+    getPNForLID(lid: any): Promise<any>;
+    getPNsForLIDs(lids: any): Promise<any>;
+    _getPNsForLIDsImpl(lids: any): Promise<any[] | null>;
     /**
-     * Store LID-PN mapping - USER LEVEL
+     * Close the cache and release resources
      */
-    storeLIDPNMapping(lid: string, pn: string): Promise<void>
-    /**
-     * Store LID-PN mapping - USER LEVEL
-     */
-    storeLIDPNMappings(pairs: {
-        lid: string
-        pn: string
-    }[]): Promise<void>
-    /**
-     * Get LID for PN - Returns device-specific LID based on user mapping
-     */
-    getLIDForPN(pn: string): Promise<string | null>
-    /**
-     * Get PN for LID - USER LEVEL with device construction
-     */
-    getPNForLID(lid: string): Promise<string | null>
+    close(): void;
 }
+//# sourceMappingURL=lid-mapping.d.ts.map

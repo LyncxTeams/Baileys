@@ -1,13 +1,44 @@
-import { proto } from '../../WAProto'
-import type { AuthenticationCreds, SignalCreds, SocketConfig } from '../Types'
-import { BinaryNode } from '../WABinary'
-
-export declare const generateLoginNode: (userJid: string, config: SocketConfig) => proto.IClientPayload
-
-export declare const generateRegistrationNode: ({ registrationId, signedPreKey, signedIdentityKey }: SignalCreds, config: SocketConfig) => proto.ClientPayload
-
-export declare const configureSuccessfulPairing: (stanza: BinaryNode, { advSecretKey, signedIdentityKey, signalIdentities }: Pick<AuthenticationCreds, 'advSecretKey' | 'signedIdentityKey' | 'signalIdentities'>) => {
-    creds: Partial<AuthenticationCreds>
-    reply: BinaryNode
-}
-export declare const encodeSignedDeviceIdentity: (account: proto.IADVSignedDeviceIdentity, includeSignatureKey: boolean) => Uint8Array
+export function generateLoginNode(userJid: any, config: any): proto.ClientPayload;
+export function generateRegistrationNode({ registrationId, signedPreKey, signedIdentityKey }: {
+    registrationId: any;
+    signedPreKey: any;
+    signedIdentityKey: any;
+}, config: any): proto.ClientPayload;
+export function configureSuccessfulPairing(stanza: any, { advSecretKey, signedIdentityKey, signalIdentities }: {
+    advSecretKey: any;
+    signedIdentityKey: any;
+    signalIdentities: any;
+}): {
+    creds: {
+        account: proto.ADVSignedDeviceIdentity;
+        me: {
+            id: any;
+            name: any;
+            lid: any;
+        };
+        signalIdentities: any[];
+        platform: any;
+    };
+    reply: {
+        tag: string;
+        attrs: {
+            to: string;
+            type: string;
+            id: any;
+        };
+        content: {
+            tag: string;
+            attrs: {};
+            content: {
+                tag: string;
+                attrs: {
+                    'key-index': string;
+                };
+                content: any;
+            }[];
+        }[];
+    };
+};
+export function encodeSignedDeviceIdentity(account: any, includeSignatureKey: any): any;
+import { proto } from '../../WAProto/index.js';
+//# sourceMappingURL=validate-connection.d.ts.map

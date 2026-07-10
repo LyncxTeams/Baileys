@@ -1,44 +1,17 @@
-import { SenderChainKey } from './sender-chain-key'
-import { SenderMessageKey } from './sender-message-key'
-
-interface SenderChainKeyStructure {
-    iteration: number
-    seed: Uint8Array
+export class SenderKeyState {
+    constructor(id: any, iteration: any, chainKey: any, signatureKeyPair: any, signatureKeyPublic: any, signatureKeyPrivate: any, senderKeyStateStructure: any);
+    MAX_MESSAGE_KEYS: number;
+    senderKeyStateStructure: any;
+    getKeyId(): any;
+    getSenderChainKey(): SenderChainKey;
+    setSenderChainKey(chainKey: any): void;
+    getSigningKeyPublic(): any;
+    getSigningKeyPrivate(): any;
+    hasSenderMessageKey(iteration: any): any;
+    addSenderMessageKey(senderMessageKey: any): void;
+    removeSenderMessageKey(iteration: any): SenderMessageKey | null;
+    getStructure(): any;
 }
-
-interface SenderSigningKeyStructure {
-    public: Uint8Array
-    private?: Uint8Array
-}
-
-interface SenderMessageKeyStructure {
-    iteration: number
-    seed: Uint8Array
-}
-
-interface SenderKeyStateStructure {
-    senderKeyId: number
-    senderChainKey: SenderChainKeyStructure
-    senderSigningKey: SenderSigningKeyStructure
-    senderMessageKeys: SenderMessageKeyStructure[]
-}
-
-export declare class SenderKeyState {
-    private readonly MAX_MESSAGE_KEYS
-    private readonly senderKeyStateStructure
-    constructor(id?: number | null, iteration?: number | null, chainKey?: Uint8Array | null, signatureKeyPair?: {
-        public: Uint8Array
-        private: Uint8Array
-    } | null, signatureKeyPublic?: Uint8Array | null, signatureKeyPrivate?: Uint8Array | null, senderKeyStateStructure?: SenderKeyStateStructure | null)
-    getKeyId(): number
-    getSenderChainKey(): SenderChainKey
-    setSenderChainKey(chainKey: SenderChainKey): void
-    getSigningKeyPublic(): Buffer
-    getSigningKeyPrivate(): Buffer | undefined
-    hasSenderMessageKey(iteration: number): boolean
-    addSenderMessageKey(senderMessageKey: SenderMessageKey): void
-    removeSenderMessageKey(iteration: number): SenderMessageKey | null
-    getStructure(): SenderKeyStateStructure
-}
-
-export {}
+import { SenderChainKey } from './sender-chain-key.js';
+import { SenderMessageKey } from './sender-message-key.js';
+//# sourceMappingURL=sender-key-state.d.ts.map

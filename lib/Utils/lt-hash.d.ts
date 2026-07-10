@@ -1,14 +1,7 @@
-declare class d {
-    salt: string
-    constructor(e: string)
-    add(e: any, t: any): any
-    subtract(e: any, t: any): any
-    subtractThenAdd(e: any, t: any, r: any): any
-    _addSingle(e: any, t: any): Promise<ArrayBuffer>
-    _subtractSingle(e: any, t: any): Promise<ArrayBuffer>
-    performPointwiseWithOverflow(e: any, t: any, r: any): ArrayBuffer
-}
-
-export declare const LT_HASH_ANTI_TAMPERING: d
-
-export {}
+/**
+ * LT Hash is a summation based hash algorithm that maintains the integrity of a piece of data
+ * over a series of mutations. You can add/remove mutations and it'll return a hash equal to
+ * if the same series of mutations was made sequentially.
+ */
+export const LT_HASH_ANTI_TAMPERING: any;
+//# sourceMappingURL=lt-hash.d.ts.map

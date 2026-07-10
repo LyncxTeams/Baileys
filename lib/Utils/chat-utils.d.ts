@@ -1,82 +1,409 @@
-import { AxiosRequestConfig } from 'axios'
-import { proto } from '../../WAProto'
-import { BaileysEventEmitter, ChatModification, ChatMutation, Contact, InitialAppStateSyncOptions, LTHashState, WAPatchCreate, WAPatchName } from '../Types'
-import { BinaryNode } from '../WABinary'
-import { ILogger } from './logger'
-
-type FetchAppStateSyncKey = (keyId: string) => Promise<proto.Message.IAppStateSyncKeyData | null | undefined>
-
-export type ChatMutationMap = {
-    [index: string]: ChatMutation
-}
-
-export declare const newLTHashState: () => LTHashState
-
-export declare const encodeSyncdPatch: ({ type, index, syncAction, apiVersion, operation }: WAPatchCreate, myAppStateKeyId: string, state: LTHashState, getAppStateSyncKey: FetchAppStateSyncKey) => Promise<{
-    patch: proto.ISyncdPatch
-    state: LTHashState
-}>
-
-export declare const decodeSyncdMutations: (msgMutations: (proto.ISyncdMutation | proto.ISyncdRecord)[], initialState: LTHashState, getAppStateSyncKey: FetchAppStateSyncKey, onMutation: (mutation: ChatMutation) => void, validateMacs: boolean) => Promise<{
-    hash: Buffer
-    indexValueMap: {
-        [indexMacBase64: string]: {
-            valueMac: Uint8Array | Buffer
-        }
-    }
-}>
-
-export declare const decodeSyncdPatch: (msg: proto.ISyncdPatch, name: WAPatchName, initialState: LTHashState, getAppStateSyncKey: FetchAppStateSyncKey, onMutation: (mutation: ChatMutation) => void, validateMacs: boolean) => Promise<{
-    hash: Buffer
-    indexValueMap: {
-        [indexMacBase64: string]: {
-            valueMac: Uint8Array | Buffer
-        }
-    }
-}>
-
-export declare const extractSyncdPatches: (result: BinaryNode, options: AxiosRequestConfig<{}>) => Promise<{
-    critical_block: {
-        patches: proto.ISyncdPatch[]
-        hasMorePatches: boolean
-        snapshot?: proto.ISyncdSnapshot | undefined
-    }
-    critical_unblock_low: {
-        patches: proto.ISyncdPatch[]
-        hasMorePatches: boolean
-        snapshot?: proto.ISyncdSnapshot | undefined
-    }
-    regular_high: {
-        patches: proto.ISyncdPatch[]
-        hasMorePatches: boolean
-        snapshot?: proto.ISyncdSnapshot | undefined
-    }
-    regular_low: {
-        patches: proto.ISyncdPatch[]
-        hasMorePatches: boolean
-        snapshot?: proto.ISyncdSnapshot | undefined
-    }
-    regular: {
-        patches: proto.ISyncdPatch[]
-        hasMorePatches: boolean
-        snapshot?: proto.ISyncdSnapshot | undefined
-    }
-}>
-
-export declare const downloadExternalBlob: (blob: proto.IExternalBlobReference, options: AxiosRequestConfig<{}>) => Promise<Buffer>
-export declare const downloadExternalPatch: (blob: proto.IExternalBlobReference, options: AxiosRequestConfig<{}>) => Promise<proto.SyncdMutations>
-export declare const decodeSyncdSnapshot: (name: WAPatchName, snapshot: proto.ISyncdSnapshot, getAppStateSyncKey: FetchAppStateSyncKey, minimumVersionNumber: number | undefined, validateMacs?: boolean) => Promise<{
-    state: LTHashState
-    mutationMap: ChatMutationMap
-}>
-
-export declare const decodePatches: (name: WAPatchName, syncds: proto.ISyncdPatch[], initial: LTHashState, getAppStateSyncKey: FetchAppStateSyncKey, options: AxiosRequestConfig<{}>, minimumVersionNumber?: number, logger?: ILogger, validateMacs?: boolean) => Promise<{
-    state: LTHashState
-    mutationMap: ChatMutationMap
-}>
-
-export declare const chatModificationToAppPatch: (mod: ChatModification, jid: string) => WAPatchCreate
-
-export declare const processSyncAction: (syncAction: ChatMutation, ev: BaileysEventEmitter, me: Contact, initialSyncOpts?: InitialAppStateSyncOptions, logger?: ILogger) => void
-
-export {}
+export function makeLtHashGenerator({ indexValueMap, hash }: {
+    indexValueMap: any;
+    hash: any;
+}): {
+    mix: ({ indexMac, valueMac, operation }: {
+        indexMac: any;
+        valueMac: any;
+        operation: any;
+    }) => void;
+    finish: () => {
+        hash: any;
+        indexValueMap: any;
+    };
+};
+export function newLTHashState(): {
+    version: number;
+    hash: any;
+    indexValueMap: {};
+};
+export function ensureLTHashStateVersion(state: any): any;
+export const MAX_SYNC_ATTEMPTS: 2;
+export function isMissingKeyError(error: any): boolean;
+export function isAppStateSyncIrrecoverable(error: any, attempts: any): boolean;
+export function encodeSyncdPatch({ type, index, syncAction, apiVersion, operation }: {
+    type: any;
+    index: any;
+    syncAction: any;
+    apiVersion: any;
+    operation: any;
+}, myAppStateKeyId: any, state: any, getAppStateSyncKey: any): Promise<{
+    patch: {
+        patchMac: any;
+        snapshotMac: any;
+        keyId: {
+            id: any;
+        };
+        mutations: {
+            operation: any;
+            record: {
+                index: {
+                    blob: any;
+                };
+                value: {
+                    blob: any;
+                };
+                keyId: {
+                    id: any;
+                };
+            };
+        }[];
+    };
+    state: any;
+}>;
+export function decodeSyncdMutations(msgMutations: any, initialState: any, getAppStateSyncKey: any, onMutation: any, validateMacs: any): Promise<{
+    hash: any;
+    indexValueMap: any;
+}>;
+export function decodeSyncdPatch(msg: any, name: any, initialState: any, getAppStateSyncKey: any, onMutation: any, validateMacs: any): Promise<{
+    hash: any;
+    indexValueMap: any;
+}>;
+export function extractSyncdPatches(result: any, options: any): Promise<{}>;
+export function downloadExternalBlob(blob: any, options: any): Promise<any>;
+export function downloadExternalPatch(blob: any, options: any): Promise<proto.SyncdMutations>;
+export function decodeSyncdSnapshot(name: any, snapshot: any, getAppStateSyncKey: any, minimumVersionNumber: any, validateMacs: boolean | undefined, logger: any): Promise<{
+    state: {
+        version: number;
+        hash: any;
+        indexValueMap: {};
+    };
+    mutationMap: {};
+}>;
+export function decodePatches(name: any, syncds: any, initial: any, getAppStateSyncKey: any, options: any, minimumVersionNumber: any, logger: any, validateMacs?: boolean): Promise<{
+    state: any;
+    mutationMap: {};
+}>;
+export function chatModificationToAppPatch(mod: any, jid: any): {
+    syncAction: {
+        muteAction: {
+            muted: boolean;
+            muteEndTimestamp: any;
+        };
+        archiveChatAction?: undefined;
+        markChatAsReadAction?: undefined;
+        deleteMessageForMeAction?: undefined;
+        clearChatAction?: undefined;
+        pinAction?: undefined;
+        contactAction?: undefined;
+        privacySettingDisableLinkPreviewsAction?: undefined;
+        starAction?: undefined;
+        deleteChatAction?: undefined;
+        pushNameSetting?: undefined;
+        quickReplyAction?: undefined;
+        labelEditAction?: undefined;
+        labelAssociationAction?: undefined;
+    };
+    index: any[];
+    type: string;
+    apiVersion: number;
+    operation: proto.SyncdMutation.SyncdOperation;
+} | {
+    syncAction: {
+        archiveChatAction: {
+            archived: boolean;
+            messageRange: any;
+        };
+        muteAction?: undefined;
+        markChatAsReadAction?: undefined;
+        deleteMessageForMeAction?: undefined;
+        clearChatAction?: undefined;
+        pinAction?: undefined;
+        contactAction?: undefined;
+        privacySettingDisableLinkPreviewsAction?: undefined;
+        starAction?: undefined;
+        deleteChatAction?: undefined;
+        pushNameSetting?: undefined;
+        quickReplyAction?: undefined;
+        labelEditAction?: undefined;
+        labelAssociationAction?: undefined;
+    };
+    index: any[];
+    type: string;
+    apiVersion: number;
+    operation: proto.SyncdMutation.SyncdOperation;
+} | {
+    syncAction: {
+        markChatAsReadAction: {
+            read: any;
+            messageRange: any;
+        };
+        muteAction?: undefined;
+        archiveChatAction?: undefined;
+        deleteMessageForMeAction?: undefined;
+        clearChatAction?: undefined;
+        pinAction?: undefined;
+        contactAction?: undefined;
+        privacySettingDisableLinkPreviewsAction?: undefined;
+        starAction?: undefined;
+        deleteChatAction?: undefined;
+        pushNameSetting?: undefined;
+        quickReplyAction?: undefined;
+        labelEditAction?: undefined;
+        labelAssociationAction?: undefined;
+    };
+    index: any[];
+    type: string;
+    apiVersion: number;
+    operation: proto.SyncdMutation.SyncdOperation;
+} | {
+    syncAction: {
+        deleteMessageForMeAction: {
+            deleteMedia: any;
+            messageTimestamp: any;
+        };
+        muteAction?: undefined;
+        archiveChatAction?: undefined;
+        markChatAsReadAction?: undefined;
+        clearChatAction?: undefined;
+        pinAction?: undefined;
+        contactAction?: undefined;
+        privacySettingDisableLinkPreviewsAction?: undefined;
+        starAction?: undefined;
+        deleteChatAction?: undefined;
+        pushNameSetting?: undefined;
+        quickReplyAction?: undefined;
+        labelEditAction?: undefined;
+        labelAssociationAction?: undefined;
+    };
+    index: any[];
+    type: string;
+    apiVersion: number;
+    operation: proto.SyncdMutation.SyncdOperation;
+} | {
+    syncAction: {
+        clearChatAction: {
+            messageRange: any;
+        };
+        muteAction?: undefined;
+        archiveChatAction?: undefined;
+        markChatAsReadAction?: undefined;
+        deleteMessageForMeAction?: undefined;
+        pinAction?: undefined;
+        contactAction?: undefined;
+        privacySettingDisableLinkPreviewsAction?: undefined;
+        starAction?: undefined;
+        deleteChatAction?: undefined;
+        pushNameSetting?: undefined;
+        quickReplyAction?: undefined;
+        labelEditAction?: undefined;
+        labelAssociationAction?: undefined;
+    };
+    index: any[];
+    type: string;
+    apiVersion: number;
+    operation: proto.SyncdMutation.SyncdOperation;
+} | {
+    syncAction: {
+        pinAction: {
+            pinned: boolean;
+        };
+        muteAction?: undefined;
+        archiveChatAction?: undefined;
+        markChatAsReadAction?: undefined;
+        deleteMessageForMeAction?: undefined;
+        clearChatAction?: undefined;
+        contactAction?: undefined;
+        privacySettingDisableLinkPreviewsAction?: undefined;
+        starAction?: undefined;
+        deleteChatAction?: undefined;
+        pushNameSetting?: undefined;
+        quickReplyAction?: undefined;
+        labelEditAction?: undefined;
+        labelAssociationAction?: undefined;
+    };
+    index: any[];
+    type: string;
+    apiVersion: number;
+    operation: proto.SyncdMutation.SyncdOperation;
+} | {
+    syncAction: {
+        contactAction: any;
+        muteAction?: undefined;
+        archiveChatAction?: undefined;
+        markChatAsReadAction?: undefined;
+        deleteMessageForMeAction?: undefined;
+        clearChatAction?: undefined;
+        pinAction?: undefined;
+        privacySettingDisableLinkPreviewsAction?: undefined;
+        starAction?: undefined;
+        deleteChatAction?: undefined;
+        pushNameSetting?: undefined;
+        quickReplyAction?: undefined;
+        labelEditAction?: undefined;
+        labelAssociationAction?: undefined;
+    };
+    index: any[];
+    type: string;
+    apiVersion: number;
+    operation: proto.SyncdMutation.SyncdOperation;
+} | {
+    syncAction: {
+        privacySettingDisableLinkPreviewsAction: any;
+        muteAction?: undefined;
+        archiveChatAction?: undefined;
+        markChatAsReadAction?: undefined;
+        deleteMessageForMeAction?: undefined;
+        clearChatAction?: undefined;
+        pinAction?: undefined;
+        contactAction?: undefined;
+        starAction?: undefined;
+        deleteChatAction?: undefined;
+        pushNameSetting?: undefined;
+        quickReplyAction?: undefined;
+        labelEditAction?: undefined;
+        labelAssociationAction?: undefined;
+    };
+    index: string[];
+    type: string;
+    apiVersion: number;
+    operation: proto.SyncdMutation.SyncdOperation;
+} | {
+    syncAction: {
+        starAction: {
+            starred: boolean;
+        };
+        muteAction?: undefined;
+        archiveChatAction?: undefined;
+        markChatAsReadAction?: undefined;
+        deleteMessageForMeAction?: undefined;
+        clearChatAction?: undefined;
+        pinAction?: undefined;
+        contactAction?: undefined;
+        privacySettingDisableLinkPreviewsAction?: undefined;
+        deleteChatAction?: undefined;
+        pushNameSetting?: undefined;
+        quickReplyAction?: undefined;
+        labelEditAction?: undefined;
+        labelAssociationAction?: undefined;
+    };
+    index: any[];
+    type: string;
+    apiVersion: number;
+    operation: proto.SyncdMutation.SyncdOperation;
+} | {
+    syncAction: {
+        deleteChatAction: {
+            messageRange: any;
+        };
+        muteAction?: undefined;
+        archiveChatAction?: undefined;
+        markChatAsReadAction?: undefined;
+        deleteMessageForMeAction?: undefined;
+        clearChatAction?: undefined;
+        pinAction?: undefined;
+        contactAction?: undefined;
+        privacySettingDisableLinkPreviewsAction?: undefined;
+        starAction?: undefined;
+        pushNameSetting?: undefined;
+        quickReplyAction?: undefined;
+        labelEditAction?: undefined;
+        labelAssociationAction?: undefined;
+    };
+    index: any[];
+    type: string;
+    apiVersion: number;
+    operation: proto.SyncdMutation.SyncdOperation;
+} | {
+    syncAction: {
+        pushNameSetting: {
+            name: any;
+        };
+        muteAction?: undefined;
+        archiveChatAction?: undefined;
+        markChatAsReadAction?: undefined;
+        deleteMessageForMeAction?: undefined;
+        clearChatAction?: undefined;
+        pinAction?: undefined;
+        contactAction?: undefined;
+        privacySettingDisableLinkPreviewsAction?: undefined;
+        starAction?: undefined;
+        deleteChatAction?: undefined;
+        quickReplyAction?: undefined;
+        labelEditAction?: undefined;
+        labelAssociationAction?: undefined;
+    };
+    index: string[];
+    type: string;
+    apiVersion: number;
+    operation: proto.SyncdMutation.SyncdOperation;
+} | {
+    syncAction: {
+        quickReplyAction: {
+            count: number;
+            deleted: any;
+            keywords: never[];
+            message: any;
+            shortcut: any;
+        };
+        muteAction?: undefined;
+        archiveChatAction?: undefined;
+        markChatAsReadAction?: undefined;
+        deleteMessageForMeAction?: undefined;
+        clearChatAction?: undefined;
+        pinAction?: undefined;
+        contactAction?: undefined;
+        privacySettingDisableLinkPreviewsAction?: undefined;
+        starAction?: undefined;
+        deleteChatAction?: undefined;
+        pushNameSetting?: undefined;
+        labelEditAction?: undefined;
+        labelAssociationAction?: undefined;
+    };
+    index: any[];
+    type: string;
+    apiVersion: number;
+    operation: proto.SyncdMutation.SyncdOperation;
+} | {
+    syncAction: {
+        labelEditAction: {
+            name: any;
+            color: any;
+            predefinedId: any;
+            deleted: any;
+        };
+        muteAction?: undefined;
+        archiveChatAction?: undefined;
+        markChatAsReadAction?: undefined;
+        deleteMessageForMeAction?: undefined;
+        clearChatAction?: undefined;
+        pinAction?: undefined;
+        contactAction?: undefined;
+        privacySettingDisableLinkPreviewsAction?: undefined;
+        starAction?: undefined;
+        deleteChatAction?: undefined;
+        pushNameSetting?: undefined;
+        quickReplyAction?: undefined;
+        labelAssociationAction?: undefined;
+    };
+    index: any[];
+    type: string;
+    apiVersion: number;
+    operation: proto.SyncdMutation.SyncdOperation;
+} | {
+    syncAction: {
+        labelAssociationAction: {
+            labeled: boolean;
+        };
+        muteAction?: undefined;
+        archiveChatAction?: undefined;
+        markChatAsReadAction?: undefined;
+        deleteMessageForMeAction?: undefined;
+        clearChatAction?: undefined;
+        pinAction?: undefined;
+        contactAction?: undefined;
+        privacySettingDisableLinkPreviewsAction?: undefined;
+        starAction?: undefined;
+        deleteChatAction?: undefined;
+        pushNameSetting?: undefined;
+        quickReplyAction?: undefined;
+        labelEditAction?: undefined;
+    };
+    index: any[];
+    type: string;
+    apiVersion: number;
+    operation: proto.SyncdMutation.SyncdOperation;
+};
+export function processSyncAction(syncAction: any, ev: any, me: any, initialSyncOpts: any, logger: any): void;
+import { proto } from '../../WAProto/index.js';
+//# sourceMappingURL=chat-utils.d.ts.map

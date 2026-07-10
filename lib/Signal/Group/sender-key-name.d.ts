@@ -1,19 +1,12 @@
-interface Sender {
-    id: string
-    deviceId: number
-    toString(): string
+export class SenderKeyName {
+    constructor(groupId: any, sender: any);
+    groupId: any;
+    sender: any;
+    getGroupId(): any;
+    getSender(): any;
+    serialize(): string;
+    toString(): string;
+    equals(other: any): boolean;
+    hashCode(): number;
 }
-
-export declare class SenderKeyName {
-    private readonly groupId
-    private readonly sender
-    constructor(groupId: string, sender: Sender)
-    getGroupId(): string
-    getSender(): Sender
-    serialize(): string
-    toString(): string
-    equals(other: SenderKeyName | null): boolean
-    hashCode(): number
-}
-
-export {}
+//# sourceMappingURL=sender-key-name.d.ts.map

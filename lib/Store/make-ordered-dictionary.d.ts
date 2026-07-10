@@ -1,12 +1,13 @@
-export declare function makeOrderedDictionary<T>(idGetter: (item: T) => string): {
-    array: T[]
-    get: (id: string) => T | undefined
-    upsert: (item: T, mode: 'append' | 'prepend') => void
-    update: (item: T) => boolean
-    remove: (item: T) => boolean
-    updateAssign: (id: string, update: Partial<T>) => boolean
-    clear: () => void
-    filter: (contain: (item: T) => boolean) => void
-    toJSON: () => T[]
-    fromJSON: (newItems: T[]) => void
-}
+export function makeOrderedDictionary(idGetter: any): {
+    array: any[];
+    get: (id: any) => any;
+    upsert: (item: any, mode: any) => void;
+    update: (item: any) => boolean;
+    remove: (item: any) => boolean;
+    updateAssign: (id: any, update: any) => boolean;
+    clear: () => void;
+    filter: (contain: any) => void;
+    toJSON: () => any[];
+    fromJSON: (newItems: any) => void;
+};
+//# sourceMappingURL=make-ordered-dictionary.d.ts.map

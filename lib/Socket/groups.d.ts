@@ -1,129 +1,286 @@
-import { proto } from '../../WAProto'
-import { GroupMetadata, ParticipantAction, SocketConfig, ContactAction } from '../Types'
-import { BinaryNode } from '../WABinary'
-
-export declare const makeGroupsSocket: (config: SocketConfig) => {
-    groupQuery: (jid: string, type: string, content: BinaryNode) => Promise<BinaryNode>
-    groupMetadata: (jid: string) => Promise<GroupMetadata>
-    groupCreate: (subject: string, participants: string[]) => Promise<GroupMetadata>
-    groupLeave: (id: string) => Promise<void>
-    groupUpdateSubject: (jid: string, subject: string) => Promise<void>
-    groupRequestParticipantsList: (jid: string) => Promise<{
-        [key: string]: string
-    }[]>
-    groupRequestParticipantsUpdate: (jid: string, participants: string[], action: 'approve' | 'reject') => Promise<{
-        status: string
-        jid: string
-    }[]>
-    groupParticipantsUpdate: (jid: string, participants: string[], action: ParticipantAction) => Promise<{
-        status: string
-        jid: string
-        content: BinaryNode
-    }[]>
-    groupUpdateDescription: (jid: string, description?: string) => Promise<void>
-    groupInviteCode: (jid: string) => Promise<string | undefined>
-    groupRevokeInvite: (jid: string) => Promise<string | undefined>
-    groupAcceptInvite: (code: string) => Promise<string | undefined>
+export function makeGroupsSocket(config: any): {
+    groupQuery: (jid: any, type: any, content: any) => Promise<any>;
+    groupMetadata: (jid: any) => Promise<{
+        id: any;
+        notify: any;
+        addressingMode: any;
+        subject: any;
+        subjectOwner: any;
+        subjectOwnerPn: any;
+        subjectOwnerUsername: any;
+        subjectTime: number;
+        size: any;
+        creation: number;
+        owner: string | undefined;
+        ownerPn: string | undefined;
+        ownerUsername: any;
+        owner_country_code: any;
+        desc: any;
+        descId: any;
+        descOwner: string | undefined;
+        descOwnerPn: string | undefined;
+        descOwnerUsername: any;
+        descTime: number | undefined;
+        linkedParent: any;
+        restrict: boolean;
+        announce: boolean;
+        isCommunity: boolean;
+        isCommunityAnnounce: boolean;
+        joinApprovalMode: boolean;
+        memberAddMode: boolean;
+        participants: any;
+        ephemeralDuration: number | undefined;
+    }>;
+    groupCreate: (subject: any, participants: any) => Promise<{
+        id: any;
+        notify: any;
+        addressingMode: any;
+        subject: any;
+        subjectOwner: any;
+        subjectOwnerPn: any;
+        subjectOwnerUsername: any;
+        subjectTime: number;
+        size: any;
+        creation: number;
+        owner: string | undefined;
+        ownerPn: string | undefined;
+        ownerUsername: any;
+        owner_country_code: any;
+        desc: any;
+        descId: any;
+        descOwner: string | undefined;
+        descOwnerPn: string | undefined;
+        descOwnerUsername: any;
+        descTime: number | undefined;
+        linkedParent: any;
+        restrict: boolean;
+        announce: boolean;
+        isCommunity: boolean;
+        isCommunityAnnounce: boolean;
+        joinApprovalMode: boolean;
+        memberAddMode: boolean;
+        participants: any;
+        ephemeralDuration: number | undefined;
+    }>;
+    groupLeave: (id: any) => Promise<void>;
+    groupUpdateSubject: (jid: any, subject: any) => Promise<void>;
+    groupRequestParticipantsList: (jid: any) => Promise<any>;
+    groupRequestParticipantsUpdate: (jid: any, participants: any, action: any) => Promise<any>;
+    groupParticipantsUpdate: (jid: any, participants: any, action: any) => Promise<any>;
+    groupUpdateDescription: (jid: any, description: any) => Promise<void>;
+    groupInviteCode: (jid: any) => Promise<any>;
+    groupRevokeInvite: (jid: any) => Promise<any>;
+    groupAcceptInvite: (code: any) => Promise<any>;
     /**
      * revoke a v4 invite for someone
      * @param groupJid group jid
      * @param invitedJid jid of person you invited
      * @returns true if successful
      */
-    groupRevokeInviteV4: (groupJid: string, invitedJid: string) => Promise<boolean>
+    groupRevokeInviteV4: (groupJid: any, invitedJid: any) => Promise<boolean>;
     /**
      * accept a GroupInviteMessage
      * @param key the key of the invite message, or optionally only provide the jid of the person who sent the invite
      * @param inviteMessage the message to accept
      */
-    groupAcceptInviteV4: (key: string | proto.IMessageKey, inviteMessage: proto.Message.IGroupInviteMessage) => Promise<string>
-    groupGetInviteInfo: (code: string) => Promise<GroupMetadata>
-    groupToggleEphemeral: (jid: string, ephemeralExpiration: number) => Promise<void>
-    groupSettingUpdate: (jid: string, setting: 'announcement' | 'not_announcement' | 'locked' | 'unlocked') => Promise<void>
-    groupMemberAddMode: (jid: string, mode: 'admin_add' | 'all_member_add') => Promise<void>
-    groupJoinApprovalMode: (jid: string, mode: 'on' | 'off') => Promise<void>
-    groupFetchAllParticipating: () => Promise<{
-        [_: string]: GroupMetadata
-    }>
-    processingMutex: {
-        mutex<T>(code: () => T | Promise<T>): Promise<T>
-    }
-    fetchPrivacySettings: (force?: boolean) => Promise<{
-        [_: string]: string
-    }>
-    upsertMessage: (msg: proto.IWebMessageInfo, type: import("../Types").MessageUpsertType) => Promise<void>
-    appPatch: (patchCreate: import("../Types").WAPatchCreate) => Promise<void>
-    sendPresenceUpdate: (type: import("../Types").WAPresence, toJid?: string | undefined) => Promise<void>
-    presenceSubscribe: (toJid: string, tcToken?: Buffer | undefined) => Promise<void>    
-    getLidUser: (jid: string) => Promise<{
-    	lid: string
-        id: string
-    }[] | undefined>
-    fetchBlocklist: () => Promise<string[]>
-    fetchStatus: (...jids: string[]) => Promise<import("..").USyncQueryResultList[] | undefined>
-    fetchDisappearingDuration: (...jids: string[]) => Promise<import("..").USyncQueryResultList[] | undefined>
-    updateProfilePicture: (jid: string, content: import("../Types").WAMediaUpload) => Promise<void>
-    removeProfilePicture: (jid: string) => Promise<void>
-    updateProfileStatus: (status: string) => Promise<void>
-    updateProfileName: (name: string) => Promise<void>
-    updateBlockStatus: (jid: string, action: "block" | "unblock") => Promise<void>
-    updateCallPrivacy: (value: import("../Types").WAPrivacyCallValue) => Promise<void>
-    updateLastSeenPrivacy: (value: import("../Types").WAPrivacyValue) => Promise<void>
-    updateOnlinePrivacy: (value: import("../Types").WAPrivacyOnlineValue) => Promise<void>
-    updateProfilePicturePrivacy: (value: import("../Types").WAPrivacyValue) => Promise<void>
-    updateStatusPrivacy: (value: import("../Types").WAPrivacyValue) => Promise<void>
-    updateReadReceiptsPrivacy: (value: import("../Types").WAReadReceiptsValue) => Promise<void>
-    updateGroupsAddPrivacy: (value: import("../Types").WAPrivacyGroupAddValue) => Promise<void>
-    updateDefaultDisappearingMode: (duration: number) => Promise<void>
-    updateDisableLinkPreviewsPrivacy: (isPreviewsDisabled: boolean) => Promise<void>
-    getBusinessProfile: (jid: string) => Promise<void | import("../Types").WABusinessProfile>
-    resyncAppState: (collections: readonly ("critical_block" | "critical_unblock_low" | "regular_high" | "regular_low" | "regular")[], isInitialSync: boolean) => Promise<void>
-    chatModify: (mod: import("../Types").ChatModification, jid: string) => Promise<void>
-    cleanDirtyBits: (type: "account_sync" | "groups", fromTimestamp?: string | number | undefined) => Promise<void>
-    addLabel: (jid: string, labels: import("../Types/Label").LabelActionBody) => Promise<void>
-    addChatLabel: (jid: string, labelId: string) => Promise<void>
-    removeChatLabel: (jid: string, labelId: string) => Promise<void>
-    addMessageLabel: (jid: string, messageId: string, labelId: string) => Promise<void>
-    removeMessageLabel: (jid: string, messageId: string, labelId: string) => Promise<void>
-    clearMessage: (jid: string, key: import("../Types").WAProto.IMessageKey, timeStamp: number | import("long").Long) => Promise<void>
-    star: (jid: string, messages: {
-        id: string
-        fromMe?: boolean | undefined
-    }[], star: boolean) => Promise<void>
-    addOrEditQuickReply: (quickReply: import("../Types/Bussines").QuickReplyAction) => Promise<void>
-    removeQuickReply: (timestamp: string) => Promise<void>
-    addOrEditContact: (jid: string, contact: ContactAction) => Promise<void>
-    removeContact: (jid: string) => Promise<void>
-    executeUSyncQuery: (usyncQuery: import("..").USyncQuery) => Promise<import("..").USyncQueryResult | undefined>
-    type: "md"
-    ws: import("./Client").WebSocketClient
-    ev: import("../Types").BaileysEventEmitter & {
-        process(handler: (events: Partial<import("../Types").BaileysEventMap>) => void | Promise<void>): () => void
-        buffer(): void
-        createBufferedFunction<A extends any[], T_1>(work: (...args: A) => Promise<T_1>): (...args: A) => Promise<T_1>
-        flush(force?: boolean | undefined): boolean
-        isBuffering(): boolean
-    }
+    groupAcceptInviteV4: (...args: any[]) => Promise<any>;
+    groupGetInviteInfo: (code: any) => Promise<{
+        id: any;
+        notify: any;
+        addressingMode: any;
+        subject: any;
+        subjectOwner: any;
+        subjectOwnerPn: any;
+        subjectOwnerUsername: any;
+        subjectTime: number;
+        size: any;
+        creation: number;
+        owner: string | undefined;
+        ownerPn: string | undefined;
+        ownerUsername: any;
+        owner_country_code: any;
+        desc: any;
+        descId: any;
+        descOwner: string | undefined;
+        descOwnerPn: string | undefined;
+        descOwnerUsername: any;
+        descTime: number | undefined;
+        linkedParent: any;
+        restrict: boolean;
+        announce: boolean;
+        isCommunity: boolean;
+        isCommunityAnnounce: boolean;
+        joinApprovalMode: boolean;
+        memberAddMode: boolean;
+        participants: any;
+        ephemeralDuration: number | undefined;
+    }>;
+    groupToggleEphemeral: (jid: any, ephemeralExpiration: any) => Promise<void>;
+    groupSettingUpdate: (jid: any, setting: any) => Promise<void>;
+    groupMemberAddMode: (jid: any, mode: any) => Promise<void>;
+    groupJoinApprovalMode: (jid: any, mode: any) => Promise<void>;
+    groupFetchAllParticipating: () => Promise<{}>;
+    findUserId: (pnLid: any) => Promise<{
+        lid: undefined;
+        phoneNumber: undefined;
+    }>;
+    serverProps: {
+        privacyTokenOn1to1: boolean;
+        profilePicPrivacyToken: boolean;
+        lidTrustedTokenIssueToLid: boolean;
+    };
+    createCallLink: (type: any, event: any, timeoutMs: any) => Promise<any>;
+    getBotListV2: () => Promise<{
+        jid: any;
+        personaId: any;
+    }[]>;
+    messageMutex: {
+        mutex(code: any): any;
+    };
+    receiptMutex: {
+        mutex(code: any): any;
+    };
+    appStatePatchMutex: {
+        mutex(code: any): any;
+    };
+    notificationMutex: {
+        mutex(code: any): any;
+    };
+    fetchPrivacySettings: (force?: boolean) => Promise<any>;
+    upsertMessage: (...args: any[]) => Promise<any>;
+    appPatch: (patchCreate: any) => Promise<void>;
+    sendPresenceUpdate: (type: any, toJid: any) => Promise<void>;
+    presenceSubscribe: (toJid: any) => Promise<void>;
+    profilePictureUrl: (jid: any, type?: string, timeoutMs?: number, shouldIncludeTcToken?: boolean) => Promise<any>;
+    fetchBlocklist: () => Promise<any>;
+    fetchStatus: (...jids: any[]) => Promise<any>;
+    fetchDisappearingDuration: (...jids: any[]) => Promise<any>;
+    updateProfilePicture: (jid: any, content: any, dimensions: any) => Promise<void>;
+    removeProfilePicture: (jid: any) => Promise<void>;
+    updateProfileStatus: (status: any) => Promise<void>;
+    updateProfileName: (name: any) => Promise<void>;
+    updateBlockStatus: (jid: any, action: any) => Promise<void>;
+    updateDisableLinkPreviewsPrivacy: (isPreviewsDisabled: any) => Promise<void>;
+    updateCallPrivacy: (value: any) => Promise<void>;
+    updateMessagesPrivacy: (value: any) => Promise<void>;
+    updateLastSeenPrivacy: (value: any) => Promise<void>;
+    updateOnlinePrivacy: (value: any) => Promise<void>;
+    updateProfilePicturePrivacy: (value: any) => Promise<void>;
+    updateStatusPrivacy: (value: any) => Promise<void>;
+    updateReadReceiptsPrivacy: (value: any) => Promise<void>;
+    updateGroupsAddPrivacy: (value: any) => Promise<void>;
+    updateDefaultDisappearingMode: (duration: any) => Promise<void>;
+    getBusinessProfile: (jid: any) => Promise<{
+        wid: any;
+        address: any;
+        description: any;
+        website: any[];
+        email: any;
+        category: any;
+        business_hours: {
+            timezone: any;
+            business_config: any;
+        };
+    } | undefined>;
+    resyncAppState: (...args: any[]) => Promise<any>;
+    chatModify: (mod: any, jid: any) => Promise<void>;
+    cleanDirtyBits: (type: any, fromTimestamp: any) => Promise<void>;
+    addOrEditContact: (jid: any, contact: any) => Promise<void>;
+    removeContact: (jid: any) => Promise<void>;
+    placeholderResendCache: any;
+    addLabel: (jid: any, labels: any) => Promise<void>;
+    addChatLabel: (jid: any, labelId: any) => Promise<void>;
+    removeChatLabel: (jid: any, labelId: any) => Promise<void>;
+    addMessageLabel: (jid: any, messageId: any, labelId: any) => Promise<void>;
+    removeMessageLabel: (jid: any, messageId: any, labelId: any) => Promise<void>;
+    star: (jid: any, messages: any, star: any) => Promise<void>;
+    addOrEditQuickReply: (quickReply: any) => Promise<void>;
+    removeQuickReply: (timestamp: any) => Promise<void>;
+    type: string;
+    ws: import("./Client/websocket.js").WebSocketClient;
+    ev: {
+        process(handler: any): () => void;
+        emit(event: any, evData: any): any;
+        isBuffering(): boolean;
+        buffer: () => void;
+        flush: () => boolean;
+        createBufferedFunction(work: any): (...args: any[]) => Promise<any>;
+        on: (...args: any[]) => any;
+        off: (...args: any[]) => any;
+        removeAllListeners: (...args: any[]) => any;
+        destroy(): void;
+    };
     authState: {
-        creds: import("../Types").AuthenticationCreds
-        keys: import("../Types").SignalKeyStoreWithTransaction
-    }
-    signalRepository: import("../Types").SignalRepository
-    user: import("../Types").Contact | undefined
-    generateMessageTag: () => string
-    query: (node: BinaryNode, timeoutMs?: number | undefined) => Promise<BinaryNode>
-    waitForMessage: <T_2>(msgId: string, timeoutMs?: number | undefined) => Promise<T_2>
-    waitForSocketOpen: () => Promise<void>
-    sendRawMessage: (data: Uint8Array | Buffer) => Promise<void>
-    sendNode: (frame: BinaryNode) => Promise<void>
-    logout: (msg?: string | undefined) => Promise<void>
-    end: (error: Error | undefined) => void
-    onUnexpectedError: (err: Error | import("@hapi/boom").Boom<any>, msg: string) => void
-    uploadPreKeys: (count?: number) => Promise<void>
-    uploadPreKeysToServerIfRequired: () => Promise<void>
-    requestPairingCode: (phoneNumber: string, code?: string) => Promise<string>
-    waitForConnectionUpdate: (check: (u: Partial<import("../Types").ConnectionState>) => boolean | undefined, timeoutMs?: number | undefined) => Promise<void>
-    sendWAMBuffer: (wamBuffer: Buffer) => Promise<BinaryNode>
-}
-
-export declare const extractGroupMetadata: (result: BinaryNode) => GroupMetadata
+        creds: any;
+        keys: {
+            get: (type: any, ids: any) => Promise<any>;
+            set: (data: any) => Promise<void>;
+            isInTransaction: () => boolean;
+            transaction: (work: any, key: any) => Promise<any>;
+        };
+    };
+    signalRepository: any;
+    user: any;
+    generateMessageTag: () => string;
+    query: (node: any, timeoutMs: any) => Promise<any>;
+    waitForMessage: (msgId: any, timeoutMs?: any) => Promise<any>;
+    waitForSocketOpen: () => Promise<void>;
+    sendRawMessage: (data: any) => Promise<void>;
+    sendNode: (frame: any) => Promise<void>;
+    logout: (msg: any) => Promise<void>;
+    end: (error: any) => Promise<void>;
+    registerSocketEndHandler: (handler: any) => void;
+    onUnexpectedError: (err: any, msg: any) => void;
+    uploadPreKeys: (count?: number) => Promise<void>;
+    uploadPreKeysToServerIfRequired: () => Promise<void>;
+    digestKeyBundle: () => Promise<void>;
+    rotateSignedPreKey: () => Promise<void>;
+    requestPairingCode: (phoneNumber: any, customPairingCode: any) => Promise<any>;
+    updateServerTimeOffset: ({ attrs }: {
+        attrs: any;
+    }) => void;
+    sendUnifiedSession: () => Promise<void>;
+    wamBuffer: import("../index.js").BinaryInfo;
+    waitForConnectionUpdate: (check: any, timeoutMs: any) => Promise<void>;
+    sendWAMBuffer: (wamBuffer: any) => Promise<any>;
+    executeUSyncQuery: (usyncQuery: any) => Promise<any>;
+    onWhatsApp: (...phoneNumber: any[]) => Promise<any>;
+    fetchAccountReachoutTimelock: () => Promise<{
+        isActive: boolean;
+        timeEnforcementEnds: Date | undefined;
+        enforcementType: any;
+    }>;
+    fetchNewChatMessageCap: () => Promise<any>;
+};
+export function extractGroupMetadata(result: any): {
+    id: any;
+    notify: any;
+    addressingMode: any;
+    subject: any;
+    subjectOwner: any;
+    subjectOwnerPn: any;
+    subjectOwnerUsername: any;
+    subjectTime: number;
+    size: any;
+    creation: number;
+    owner: string | undefined;
+    ownerPn: string | undefined;
+    ownerUsername: any;
+    owner_country_code: any;
+    desc: any;
+    descId: any;
+    descOwner: string | undefined;
+    descOwnerPn: string | undefined;
+    descOwnerUsername: any;
+    descTime: number | undefined;
+    linkedParent: any;
+    restrict: boolean;
+    announce: boolean;
+    isCommunity: boolean;
+    isCommunityAnnounce: boolean;
+    joinApprovalMode: boolean;
+    memberAddMode: boolean;
+    participants: any;
+    ephemeralDuration: number | undefined;
+};
+//# sourceMappingURL=groups.d.ts.map

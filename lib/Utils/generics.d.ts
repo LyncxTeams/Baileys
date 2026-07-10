@@ -1,115 +1,64 @@
-import { AxiosRequestConfig } from 'axios'
-import { ILogger } from './logger'
-import { proto } from '../../WAProto'
-import { BaileysEventEmitter, BaileysEventMap, BrowsersMap, ConnectionState, WACallUpdateType, WAVersion } from '../Types'
-import { BinaryNode } from '../WABinary'
-
-export declare const Browsers: BrowsersMap
-
-export declare const getPlatformId: (browser: string) => any
-
-export declare const BufferJSON: {
-    replacer: (k: any, value: any) => any
-    reviver: (_: any, value: any) => any
+export function promiseTimeout(ms: any, promise: any): Promise<any>;
+export function bindWaitForEvent(ev: any, event: any): (check: any, timeoutMs: any) => Promise<void>;
+export function trimUndefined(obj: any): any;
+export function bytesToCrockford(buffer: any): string;
+export function encodeNewsletterMessage(message: any): any;
+export namespace BufferJSON {
+    function replacer(k: any, value: any): any;
+    function reviver(_: any, value: any): any;
 }
-
-export declare const getKeyAuthor: (key: proto.IMessageKey | undefined | null, meId?: string) => string
-
-export declare const writeRandomPadMax16: (msg: Uint8Array) => Buffer
-
-export declare const unpadRandomMax16: (e: Uint8Array | Buffer) => Uint8Array
-
-export declare const encodeWAMessage: (message: proto.IMessage) => Buffer
-
-export declare const encodeNewsletterMessage: (message: proto.IMessage) => Uint8Array
-
-export declare const generateRegistrationId: () => number
-
-export declare const encodeBigEndian: (e: number, t?: number) => Uint8Array
-
-export declare const toNumber: (t: Long | number | null | undefined) => number
-
-/** unix timestamp of a date in seconds */
-export declare const unixTimestampSeconds: (date?: Date) => number
-
-export type DebouncedTimeout = ReturnType<typeof debouncedTimeout>
-
-export declare const debouncedTimeout: (intervalMs?: number, task?: () => void) => {
-    start: (newIntervalMs?: number, newTask?: () => void) => void
-    cancel: () => void
-    setTask: (newTask: () => void) => () => void
-    setInterval: (newInterval: number) => number
-}
-
-export declare const delay: (ms: number) => Promise<void>
-
-export declare const delayCancellable: (ms: number) => {
-    delay: Promise<void>
-    cancel: () => void
-}
-
-export declare function promiseTimeout<T>(ms: number | undefined, promise: (resolve: (v: T) => void, reject: (error: any) => void) => void): Promise<T>
-
-export declare const generateMessageID: (userId?: string) => string
-
-export declare function bindWaitForEvent<T extends keyof BaileysEventMap>(ev: BaileysEventEmitter, event: T): (check: (u: BaileysEventMap[T]) => boolean | undefined, timeoutMs?: number) => Promise<void>
-
-export declare const bindWaitForConnectionUpdate: (ev: BaileysEventEmitter) => (check: (u: Partial<ConnectionState>) => boolean | undefined, timeoutMs?: number) => Promise<void>
-
-export declare const printQRIfNecessaryListener: (ev: BaileysEventEmitter, logger: ILogger) => void
-/**
- * utility that fetches latest baileys version from the master branch.
- * Use to ensure your WA connection is always on the latest version
- */
- 
-export declare const fetchLatestBaileysVersion: (options?: AxiosRequestConfig<{}>) => Promise<{
-    version: WAVersion
-    isLatest: boolean
-    error?: undefined
+export function getKeyAuthor(key: any, meId?: string): any;
+export function isStringNullOrEmpty(value: any): boolean;
+export function writeRandomPadMax16(msg: any): any;
+export function unpadRandomMax16(e: any): Uint8Array<any>;
+export function generateParticipantHashV2(participants: any): string;
+export function encodeWAMessage(message: any): any;
+export function generateRegistrationId(): number;
+export function encodeBigEndian(e: any, t?: number): Uint8Array<ArrayBuffer>;
+export function toNumber(t: any): any;
+export function unixTimestampSeconds(date?: Date): number;
+export function debouncedTimeout(intervalMs: number | undefined, task: any): {
+    start: (newIntervalMs: any, newTask: any) => void;
+    cancel: () => void;
+    setTask: (newTask: any) => any;
+    setInterval: (newInterval: any) => any;
+};
+export function delay(ms: any): Promise<any>;
+export function delayCancellable(ms: any): {
+    delay: Promise<any>;
+    cancel: () => void;
+};
+export function generateMessageIDV2(userId: any): string;
+export function generateMessageID(): string;
+export function bindWaitForConnectionUpdate(ev: any): (check: any, timeoutMs: any) => Promise<void>;
+export function fetchLatestBaileysVersion(options?: {}): Promise<{
+    version: number[];
+    isLatest: boolean;
+    error?: undefined;
 } | {
-    version: WAVersion
-    isLatest: boolean
-    error: any
-}>
-
-/** unique message tag prefix for MD clients */
-export declare const generateMdTagPrefix: () => string
-/**
- * Given a type of receipt, returns what the new status of the message should be
- * @param type type from receipt
- */
- 
-export declare const getStatusFromReceiptType: (type: string | undefined) => proto.WebMessageInfo.Status
-/**
- * Stream errors generally provide a reason, map that to a baileys DisconnectReason
- * @param reason the string reason given, eg. "conflict"
- */
-export declare const getErrorCodeFromStreamError: (node: BinaryNode) => {
-    reason: string
-    statusCode: number
-}
-
-export declare const getCallStatusFromNode: ({ tag, attrs }: BinaryNode) => WACallUpdateType
-
-export declare const getCodeFromWSError: (error: Error) => number
-/**
- * Is the given platform WA business
- * @param platform AuthenticationCreds.platform
- */
-export declare const isWABusinessPlatform: (platform: string) => boolean
-
-export declare function trimUndefined(obj: {
-    [_: string]: any
-}): {
-    [_: string]: any
-}
-
-export declare function bytesToCrockford(buffer: Buffer): string
-
-export declare function toUnicodeEscape(text: string): string
-
-export declare function fromUnicodeEscape(escapedText: string): string
-
-export declare function asciiEncode(text: string): string
-
-export declare function asciiDecode(...codes: string[]): string[]
+    version: number[];
+    isLatest: boolean;
+    error: unknown;
+}>;
+export function fetchLatestWaWebVersion(options?: {}): Promise<{
+    version: number[];
+    isLatest: boolean;
+    error?: undefined;
+} | {
+    version: number[];
+    isLatest: boolean;
+    error: unknown;
+}>;
+export function generateMdTagPrefix(): string;
+export function getStatusFromReceiptType(type: any): any;
+export function getErrorCodeFromStreamError(node: any): {
+    reason: any;
+    statusCode: number;
+};
+export function getCallStatusFromNode({ tag, attrs }: {
+    tag: any;
+    attrs: any;
+}): string;
+export function getCodeFromWSError(error: any): number;
+export function isWABusinessPlatform(platform: any): boolean;
+//# sourceMappingURL=generics.d.ts.map

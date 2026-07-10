@@ -1,16 +1,7 @@
-import { generateKeyPair } from '@itsukichan/libsignal-node/src/curve'
-
-type KeyPairType = ReturnType<typeof generateKeyPair>
-
-export declare function generateSenderKey(): Buffer
-
-export declare function generateSenderKeyId(): number
-
-export interface SigningKeyPair {
-    public: Buffer
-    private: Buffer
-}
-
-export declare function generateSenderSigningKey(key?: KeyPairType): SigningKeyPair
-
-export {}
+export function generateSenderKey(): any;
+export function generateSenderKeyId(): any;
+export function generateSenderSigningKey(key: any): {
+    public: any;
+    private: any;
+};
+//# sourceMappingURL=keyhelper.d.ts.map

@@ -1,17 +1,17 @@
-import { CiphertextMessage } from './ciphertext-message'
-
-export declare class SenderKeyDistributionMessage extends CiphertextMessage {
-    private readonly id
-    private readonly iteration
-    private readonly chainKey
-    private readonly signatureKey
-    private readonly serialized
-    constructor(id?: number | null, iteration?: number | null, chainKey?: Uint8Array | null, signatureKey?: Uint8Array | null, serialized?: Uint8Array | null)
-    private intsToByteHighAndLow
-    serialize(): Uint8Array
-    getType(): number
-    getIteration(): number
-    getChainKey(): Uint8Array
-    getSignatureKey(): Uint8Array
-    getId(): number
+export class SenderKeyDistributionMessage extends CiphertextMessage {
+    constructor(id: any, iteration: any, chainKey: any, signatureKey: any, serialized: any);
+    serialized: any;
+    id: any;
+    iteration: any;
+    chainKey: any;
+    signatureKey: any;
+    intsToByteHighAndLow(highValue: any, lowValue: any): number;
+    serialize(): any;
+    getType(): number;
+    getIteration(): any;
+    getChainKey(): any;
+    getSignatureKey(): any;
+    getId(): any;
 }
+import { CiphertextMessage } from './ciphertext-message.js';
+//# sourceMappingURL=sender-key-distribution-message.d.ts.map

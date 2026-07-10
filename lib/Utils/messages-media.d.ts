@@ -1,135 +1,137 @@
-import { Boom } from '@hapi/boom'
-import { AxiosRequestConfig } from 'axios'
-import { Readable, Transform } from 'stream'
-import { URL } from 'url'
-import { proto } from '../../WAProto'
-import { DownloadableMessage, MediaConnInfo, MediaDecryptionKeyInfo, MediaType, SocketConfig, WAMediaUpload, WAMediaUploadFunction, WAMessageContent } from '../Types'
-import { BinaryNode } from '../WABinary'
-import { ILogger } from './logger'
-
-export declare const hkdfInfoKey: (type: MediaType) => string
-
-export declare const getRawMediaUploadData: (media: WAMediaUpload, mediaType: MediaType, logger?: ILogger) => Promise<{
-    filePath: string
-    fileSha256: Buffer<ArrayBufferLike>
-    fileLength: number
-}>
-
 /** generates all the keys required to encrypt/decrypt & sign a media message */
-export declare function getMediaKeys(buffer: Uint8Array | string | null | undefined, mediaType: MediaType): MediaDecryptionKeyInfo
-
-export declare const extractImageThumb: (bufferOrFilePath: Readable | Buffer | string, width?: number) => Promise<{
-    buffer: Buffer
-    original: {
-        width: number | undefined
-        height: number | undefined
-    }
-}>
-
-export declare const encodeBase64EncodedStringForUpload: (b64: string) => string
-
-export declare const generateProfilePicture: (mediaUpload: WAMediaUpload) => Promise<{
-    img: Buffer
-}>
-
-/** gets the SHA256 of the given media message */
-export declare const mediaMessageSHA256B64: (message: WAMessageContent) => string | null | undefined
-
-export declare function getAudioDuration(buffer: Buffer | string | Readable): Promise<number | undefined>
-
+export function getMediaKeys(buffer: any, mediaType: any): Promise<{
+    iv: any;
+    cipherKey: any;
+    macKey: any;
+}>;
+export function getAudioDuration(buffer: any): Promise<any>;
 /**
   referenced from and modifying https://github.com/wppconnect-team/wa-js/blob/main/src/chat/functions/prepareAudioWaveform.ts
  */
-export declare function getAudioWaveform(buffer: Buffer | string | Readable, logger?: ILogger): Promise<Uint8Array | undefined>
-
-export declare const toReadable: (buffer: Buffer) => Readable
-
-export declare const toBuffer: (stream: Readable) => Promise<Buffer>
-
-export declare const getStream: (item: WAMediaUpload, opts?: AxiosRequestConfig) => Promise<{
-    readonly stream: Readable
-    readonly type: "buffer"
-} | {
-    readonly stream: Readable
-    readonly type: "readable"
-} | {
-    readonly stream: Readable
-    readonly type: "remote"
-} | {
-    readonly stream: import("fs").ReadStream
-    readonly type: "file"
-}>
-
+export function getAudioWaveform(buffer: any, logger: any): Promise<Uint8Array<ArrayBuffer> | undefined>;
 /** generates a thumbnail for a given media, if required */
-export declare function generateThumbnail(file: string, mediaType: 'video' | 'image', options: {
-    logger?: Logger
-}): Promise<{
-    thumbnail: string | undefined
+export function generateThumbnail(file: any, mediaType: any, options: any): Promise<{
+    thumbnail: any;
     originalImageDimensions: {
-        width: number
-        height: number
-    } | undefined
-}>
-
-export declare const getHttpStream: (url: string | URL, options?: AxiosRequestConfig & {
-    isStream?: true
-}) => Promise<Readable>
-
-type EncryptedStreamOptions = {
-    saveOriginalFileIfRequired?: boolean
-    logger?: Logger
-    opts?: AxiosRequestConfig
-}
-
-export declare const encryptedStream: (media: WAMediaUpload, mediaType: MediaType, { logger, saveOriginalFileIfRequired, opts }?: EncryptedStreamOptions) => Promise<{
-    mediaKey: Buffer
-    encWriteStream: Readable
-    bodyPath: string | undefined
-    mac: Buffer
-    fileEncSha256: Buffer
-    fileSha256: Buffer
-    fileLength: number
-    didSaveToTmpPath: boolean
-}>
-
-export type MediaDownloadOptions = {
-    startByte?: number
-    endByte?: number
-    options?: AxiosRequestConfig<{}>
-}
-
-export declare const getUrlFromDirectPath: (directPath: string) => string
-
-export declare const downloadContentFromMessage: ({ mediaKey, directPath, url }: DownloadableMessage, type: MediaType, opts?: MediaDownloadOptions) => Promise<Transform>
-
-/**
- * Decrypts and downloads an AES256-CBC encrypted file given the keys.
- * Assumes the SHA256 of the plaintext is appended to the end of the ciphertext
- * */
-export declare const downloadEncryptedContent: (downloadUrl: string, { cipherKey, iv }: MediaDecryptionKeyInfo, { startByte, endByte, options }?: MediaDownloadOptions) => Promise<Transform>
-
-export declare function extensionForMediaMessage(message: WAMessageContent): string
-
-export declare const getWAUploadToServer: ({ customUploadHosts, fetchAgent, logger, options }: SocketConfig, refreshMediaConn: (force: boolean) => Promise<MediaConnInfo>) => WAMediaUploadFunction
-/**
- * Generate a binary node that will request the phone to re-upload the media & return the newly uploaded URL
- */
-export declare const encryptMediaRetryRequest: (key: proto.IMessageKey, mediaKey: Buffer | Uint8Array, meId: string) => BinaryNode
-
-export declare const decodeMediaRetryNode: (node: BinaryNode) => {
-    key: proto.IMessageKey
-    media?: {
-        ciphertext: Uint8Array
-        iv: Uint8Array
-    } | undefined
-    error?: Boom<any> | undefined
-}
-
-export declare const decryptMediaRetryData: ({ ciphertext, iv }: {
-    ciphertext: Uint8Array
-    iv: Uint8Array
-}, mediaKey: Uint8Array, msgId: string) => Promise<proto.MediaRetryNotification>
-
-export declare const getStatusCodeForMediaRetry: (code: number) => any
-
-export {}
+        width: any;
+        height: any;
+    } | undefined;
+}>;
+export function extensionForMediaMessage(message: any): any;
+export function getImageProcessingLibrary(): Promise<any>;
+export function hkdfInfoKey(type: any): string;
+export function getRawMediaUploadData(media: any, mediaType: any, logger: any): Promise<{
+    filePath: any;
+    fileSha256: any;
+    fileLength: number;
+}>;
+export function extractVideoThumb(path: any, time: any, size: any): Promise<any>;
+export function extractImageThumb(bufferOrFilePath: any, width?: number): Promise<{
+    buffer: any;
+    original: {
+        width: any;
+        height: any;
+    };
+}>;
+export function encodeBase64EncodedStringForUpload(b64: any): string;
+export function generateProfilePicture(mediaUpload: any, dimensions: any): Promise<{
+    img: any;
+}>;
+export function mediaMessageSHA256B64(message: any): any;
+export function toReadable(buffer: any): any;
+export function toBuffer(stream: any): Promise<any>;
+export function getStream(item: any, opts: any): Promise<{
+    stream: any;
+    type: string;
+}>;
+export function getHttpStream(url: any, options?: {}): Promise<any>;
+export function encryptedStream(media: any, mediaType: any, { logger, saveOriginalFileIfRequired, opts }?: {}): Promise<{
+    mediaKey: any;
+    originalFilePath: any;
+    encFilePath: any;
+    mac: any;
+    fileEncSha256: any;
+    fileSha256: any;
+    fileLength: number;
+}>;
+export const DEF_MEDIA_HOST: "mmg.whatsapp.net";
+export function getUrlFromDirectPath(directPath: any, host?: string): string;
+export function downloadContentFromMessage({ mediaKey, directPath, url }: {
+    mediaKey: any;
+    directPath: any;
+    url: any;
+}, type: any, opts?: {}): Promise<any>;
+export function downloadEncryptedContent(downloadUrl: any, { cipherKey, iv }: {
+    cipherKey: any;
+    iv: any;
+}, { startByte, endByte, options }?: {}): Promise<any>;
+export function uploadWithNodeHttp({ url, filePath, headers, timeoutMs, agent }: {
+    url: any;
+    filePath: any;
+    headers: any;
+    timeoutMs: any;
+    agent: any;
+}, redirectCount?: number): Promise<any>;
+export function getWAUploadToServer({ customUploadHosts, fetchAgent, logger, options }: {
+    customUploadHosts: any;
+    fetchAgent: any;
+    logger: any;
+    options: any;
+}, refreshMediaConn: any): (filePath: any, { mediaType, fileEncSha256B64, timeoutMs, newsletter }: {
+    mediaType: any;
+    fileEncSha256B64: any;
+    timeoutMs: any;
+    newsletter: any;
+}) => Promise<{
+    mediaUrl: any;
+    directPath: any;
+    meta_hmac: any;
+    fbid: any;
+    ts: any;
+    thumbnailDirectPath: any;
+    thumbnailSha256: any;
+}>;
+export function encryptMediaRetryRequest(key: any, mediaKey: any, meId: any): {
+    tag: string;
+    attrs: {
+        id: any;
+        to: string;
+        type: string;
+    };
+    content: ({
+        tag: string;
+        attrs: {
+            jid?: undefined;
+            from_me?: undefined;
+            participant?: undefined;
+        };
+        content: {
+            tag: string;
+            attrs: {};
+            content: any;
+        }[];
+    } | {
+        tag: string;
+        attrs: {
+            jid: any;
+            from_me: string;
+            participant: any;
+        };
+        content?: undefined;
+    })[];
+};
+export function decodeMediaRetryNode(node: any): {
+    key: {
+        id: any;
+        remoteJid: any;
+        fromMe: boolean;
+        participant: any;
+    };
+};
+export function decryptMediaRetryData({ ciphertext, iv }: {
+    ciphertext: any;
+    iv: any;
+}, mediaKey: any, msgId: any): proto.MediaRetryNotification;
+export function getStatusCodeForMediaRetry(code: any): any;
+import { proto } from '../../WAProto/index.js';
+//# sourceMappingURL=messages-media.d.ts.map

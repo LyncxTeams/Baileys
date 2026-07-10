@@ -1,3 +1,2 @@
-import { BinaryInfo } from './BinaryInfo'
-
-export declare const encodeWAM: (binaryInfo: BinaryInfo) => Buffer
+export function encodeWAM(binaryInfo: any): any;
+//# sourceMappingURL=encode.d.ts.map

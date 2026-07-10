@@ -1,16 +1,8 @@
-export declare class BinaryInfo {
-    protocolVersion: number
-    sequence: number
-    events: {
-        [x: string]: {
-            props: {
-                [x: string]: import("./constants").Value
-            }
-            globals: {
-                [x: string]: import("./constants").Value
-            }
-        }
-    }[]
-    buffer: Buffer[]
-    constructor(options?: Partial<BinaryInfo>)
+export class BinaryInfo {
+    constructor(options?: {});
+    protocolVersion: number;
+    sequence: number;
+    events: any[];
+    buffer: any[];
 }
+//# sourceMappingURL=BinaryInfo.d.ts.map

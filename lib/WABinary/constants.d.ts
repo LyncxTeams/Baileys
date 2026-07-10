@@ -1,30 +1,62 @@
-export declare const TAGS: {
-    LIST_EMPTY: number
-    DICTIONARY_0: number
-    DICTIONARY_1: number
-    DICTIONARY_2: number
-    DICTIONARY_3: number
-    INTEROP_JID: number
-    FB_JID: number
-    AD_JID: number
-    LIST_8: number
-    LIST_16: number
-    JID_PAIR: number
-    HEX_8: number
-    BINARY_8: number
-    BINARY_20: number
-    BINARY_32: number
-    NIBBLE_8: number
-    PACKED_MAX: number
+export namespace TAGS {
+    let LIST_EMPTY: number;
+    let DICTIONARY_0: number;
+    let DICTIONARY_1: number;
+    let DICTIONARY_2: number;
+    let DICTIONARY_3: number;
+    let INTEROP_JID: number;
+    let FB_JID: number;
+    let AD_JID: number;
+    let LIST_8: number;
+    let LIST_16: number;
+    let JID_PAIR: number;
+    let HEX_8: number;
+    let BINARY_8: number;
+    let BINARY_20: number;
+    let BINARY_32: number;
+    let NIBBLE_8: number;
+    let PACKED_MAX: number;
 }
-
-export declare const DOUBLE_BYTE_TOKENS: string[][]
-
-export declare const SINGLE_BYTE_TOKENS: (string | null)[]
-
-export declare const TOKEN_MAP: {
-    [token: string]: {
-        dict?: number
-        index: number
-    }
-}
+export const DOUBLE_BYTE_TOKENS: string[][];
+export const SINGLE_BYTE_TOKENS: string[];
+export const TOKEN_MAP: {};
+export const CPP_KEYWORDS: Set<string>;
+export const CSS_KEYWORDS: Set<string>;
+export const GO_KEYWORDS: Set<string>;
+export const HTML_KEYWORDS: Set<string>;
+export const JS_KEYWORDS: Set<string>;
+export const PYTHON_KEYWORDS: Set<string>;
+export const RUST_KEYWORDS: Set<string>;
+export const C_KEYWORDS: Set<string>;
+export const CSHARP_KEYWORDS: Set<string>;
+export const BASH_KEYWORDS: Set<string>;
+export const CMD_KEYWORDS: Set<string>;
+export const POWERSHELL_KEYWORDS: Set<string>;
+export const LANGUAGE_KEYWORDS: {
+    css: Set<string>;
+    html: Set<string>;
+    javascript: Set<string>;
+    typescript: Set<string>;
+    js: Set<string>;
+    ts: Set<string>;
+    python: Set<string>;
+    py: Set<string>;
+    go: Set<string>;
+    golang: Set<string>;
+    cpp: Set<string>;
+    'c++': Set<string>;
+    rust: Set<string>;
+    rs: Set<string>;
+    c: Set<string>;
+    h: Set<string>;
+    csharp: Set<string>;
+    cs: Set<string>;
+    bash: Set<string>;
+    sh: Set<string>;
+    zsh: Set<string>;
+    cmd: Set<string>;
+    bat: Set<string>;
+    powershell: Set<string>;
+    ps1: Set<string>;
+};
+//# sourceMappingURL=constants.d.ts.map

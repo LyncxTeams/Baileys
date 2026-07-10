@@ -1,14 +1,13 @@
-import { USyncQueryProtocol } from '../../Types/USync'
-import { BinaryNode } from '../../WABinary'
-
-export type StatusData = {
-    status?: string | null
-    setAt?: Date
+export class USyncStatusProtocol {
+    name: string;
+    getQueryElement(): {
+        tag: string;
+        attrs: {};
+    };
+    getUserElement(): null;
+    parser(node: any): {
+        status: any;
+        setAt: Date;
+    } | undefined;
 }
-
-export declare class USyncStatusProtocol implements USyncQueryProtocol {
-    name: string
-    getQueryElement(): BinaryNode
-    getUserElement(): null
-    parser(node: BinaryNode): StatusData | undefined
-}
+//# sourceMappingURL=USyncStatusProtocol.d.ts.map
