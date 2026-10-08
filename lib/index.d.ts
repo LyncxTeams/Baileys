@@ -10,3 +10,4 @@ export { makeWASocket };
 export default makeWASocket;
 import makeWASocket from './Socket/index.js';
 //# sourceMappingURL=index.d.ts.map
+export * from "./Voip/index.js";
