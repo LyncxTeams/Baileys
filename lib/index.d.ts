@@ -11,5 +11,3 @@ export default makeWASocket;
 import makeWASocket from './Socket/index.js';
 //# sourceMappingURL=index.d.ts.map
 export * from "./Voip/index.js";
-
-export declare const StatusFont: typeof import('../WAProto/index.js').proto.Message.ExtendedTextMessage.FontType;
