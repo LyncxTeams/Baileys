@@ -1,6 +1,6 @@
 {
    "name": "@lyncxteams/baileys",
-   "version": "0.3.18-final",
+   "version": "0.3.20-final",
    "description": "Enhanced Baileys v7 with fixes for newsletter media uploads, plus support for interactive messages, albums, and additional message types.",
    "main": "lib/index.js",
    "types": "lib/index.d.ts",
