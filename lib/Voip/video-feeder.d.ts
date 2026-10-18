@@ -1,4 +1,3 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export declare const VIDEO_FORMAT_I420: number;
 export declare class VideoFeeder {
     constructor(width: number, height: number, fps: number, onFrame: (frame: Buffer, width: number, height: number, fps: number) => void, source?: string | null, hooks?: {

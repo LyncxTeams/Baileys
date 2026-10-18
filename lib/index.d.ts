@@ -11,3 +11,5 @@ export default makeWASocket;
 import makeWASocket from './Socket/index.js';
 //# sourceMappingURL=index.d.ts.map
 export * from "./Voip/index.js";
+export declare const CylicVoipJs: any;
+export declare function loadVoipJS(): Promise<{ default: any }>;
