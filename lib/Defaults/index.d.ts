@@ -45,7 +45,6 @@ export namespace DEFAULT_CONNECTION_CONFIG {
     export let logger: any;
     export let emitOwnEvents: boolean;
     export let defaultQueryTimeoutMs: number;
-    pairingCodeTimeoutMs: number;
     export let customUploadHosts: never[];
     export let retryRequestDelayMs: number;
     export let maxMsgRetryCount: number;
@@ -144,4 +143,3 @@ declare const version: number[];
 import { makeLibSignalRepository } from '../Signal/libsignal.js';
 export {};
 //# sourceMappingURL=index.d.ts.map
-export const PAIRING_RESPONSE_GRACE_MS: number;
