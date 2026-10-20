@@ -9,39 +9,10 @@ Dokumentasi ini membedakan **dua implementasi VoIP** yang tersedia di source:
 
 ---
 
-## 1. Judul cepat: `lib/Voip/` — Voip Core
+## 1. Voip Core
 
-### Struktur utama
-
-```text
-lib/Voip/
-├── index.js
-├── index.d.ts
-├── signaling.js
-├── signaling.d.ts
-├── relay-transport.js
-├── wasm-engine.js
-├── worker-bootstrap.js
-├── audio-feeder.js
-├── audio-feeder.d.ts
-├── video-feeder.js
-├── video-feeder.d.ts
-├── types.js
-└── types.d.ts
-```
-
-### Fungsi singkat
-
-| File | Peran |
-|---|---|
-| `index.js` | API utama `VoipClient`, pengelolaan call, dan lifecycle |
-| `signaling.js` | Signaling panggilan WhatsApp |
-| `relay-transport.js` | Transport relay media |
-| `wasm-engine.js` | Engine media berbasis WASM |
-| `worker-bootstrap.js` | Kode worker untuk engine |
-| `audio-feeder.js` | Memasok audio ke pipeline panggilan |
-| `video-feeder.js` | Memasok video/screen capture ke pipeline |
-| `types.js` | Definisi tipe/runtime terkait |
+### Fungsi
+Voip Core menyediakan client panggilan yang terhubung ke socket Baileys yang sudah login. Ini bukan sistem pairing/QR terpisah.
 
 ### Import
 
@@ -54,9 +25,9 @@ import VoipClient, {
 } from './lib/Voip/index.js'
 ```
 
-Jika package Baileys dipasang sebagai dependency, sesuaikan path import dengan ekspor package yang benar-benar tersedia.
+Sesuaikan jalur import dengan cara package kamu mengekspor API tersebut.
 
-### Membuat client dari socket yang sudah login
+### Membuat client
 
 ```js
 import { makeVoipClient } from './lib/Voip/index.js'
@@ -67,7 +38,7 @@ const voip = await makeVoipClient(conn, {
 })
 ```
 
-`conn` harus berupa socket Baileys yang sudah terautentikasi dan WebSocket-nya sudah terbuka. API ini tidak melakukan pairing/scan QR kedua kali.
+`conn` harus merupakan socket Baileys yang sudah terautentikasi dan koneksinya sudah terbuka.
 
 Alternatif dengan lifecycle manual:
 
@@ -82,9 +53,7 @@ const voip = new VoipClient({
 await voip.connect()
 ```
 
-### Melakukan panggilan
-
-Bentuk API yang tersedia di source `VoipClient`:
+### Panggilan keluar
 
 ```js
 await voip.call('628123456789', {
@@ -93,76 +62,42 @@ await voip.call('628123456789', {
 })
 ```
 
-- Ganti nomor contoh dengan nomor tujuan yang valid.
-- `durationMs` mengatur durasi sesuai implementasi client.
-- `audioSource` default pada source adalah `'silence'`; sumber audio lain harus mengikuti format yang didukung implementasi.
-- Pemanggilan dapat gagal jika target/LID tidak bisa di-resolve atau signaling belum siap.
+Nomor tersebut hanya contoh. `durationMs` mengatur durasi sesuai implementasi client, sedangkan `audioSource` harus memakai sumber yang didukung versi source yang digunakan.
 
-### Lifecycle koneksi
+### Lifecycle
 
 ```js
 await voip.connect()
 
-// Setelah socket Baileys reconnect, sambungkan client ke socket baru:
+// Gunakan socket baru setelah Baileys reconnect:
 await voip.attach(newConn)
 
-// Saat tidak digunakan lagi:
+// Saat client tidak digunakan:
 voip.disconnect()
 ```
 
-Gunakan `attach(newConn)` untuk socket hasil reconnect yang baru. Jangan menganggap instance VoIP otomatis mengikuti objek socket baru tanpa attach.
+Jika socket Baileys berganti setelah reconnect, hubungkan client ke socket baru sesuai lifecycle di atas. Jangan menganggap client otomatis mengikuti socket baru.
 
-### Catatan Voip Core
-
-- `makeVoipClient(socket, config)` membuat client lalu memanggil `connect()`.
-- `VoipClient` menerima `socket`, `sock`, atau `conn` di konfigurasi.
-- Jangan menjalankan dua client yang mengendalikan call/socket yang sama tanpa memahami lifecycle internalnya.
-- `AudioFeeder`, `VideoFeeder`, dan `VIDEO_FORMAT_I420` diekspor dari `index.js`; detail parameter feeder lihat file deklarasi `.d.ts`.
+### Catatan
+- `makeVoipClient(socket, config)` membuat client dan menjalankan `connect()`.
+- Konfigurasi client menerima socket melalui properti `socket`, `sock`, atau `conn`.
+- `AudioFeeder`, `VideoFeeder`, dan `VIDEO_FORMAT_I420` tersedia sebagai ekspor pada implementasi yang mendukungnya.
+- Hindari membuat beberapa client yang mengendalikan socket/call yang sama tanpa memahami lifecycle-nya.
 
 ---
 
-## 2. Judul cepat: `lib/VoipJS/` — VoipJS Call Manager
+## 2. VoipJS Call Manager
 
-### Struktur utama
-
-```text
-lib/VoipJS/
-├── index.js
-├── WaVoipCoordinator.js
-├── voipClient.js
-├── voip-deps.js
-├── protobuf.js
-├── bytes.js
-├── types.js
-├── signaling/
-├── relay/
-├── app-data/
-├── crypto/
-├── media/
-├── call/
-└── shim/
-```
-
-### Fungsi singkat
-
-| Folder/file | Peran |
-|---|---|
-| `index.js` | API tingkat tinggi `Voip`, call manager, guard, dan event |
-| `WaVoipCoordinator.js` | Mengatur state/event panggilan |
-| `voipClient.js` | Client panggilan tingkat bawah |
-| `signaling/` | Signaling dan bridge |
-| `relay/` | Relay, STUN, DTLS, SCTP, dan data channel |
-| `app-data/` | Stream/protokol app data |
-| `crypto/` | Utilitas enkripsi dan SRTP |
-| `media/` | Pipeline audio/video dan RTP |
-| `call/` | State dan sesi media panggilan |
-| `shim/` | Adapter untuk integrasi ke lingkungan Baileys |
+### Fungsi
+VoipJS menyediakan API tingkat tinggi untuk mengelola panggilan, event panggilan masuk, media, serta batas pemakaian.
 
 ### Import
 
 ```js
 import Voip from './lib/VoipJS/index.js'
 ```
+
+Sesuaikan jalur import dengan ekspor package yang benar-benar tersedia.
 
 ### Membuat manager
 
@@ -180,16 +115,16 @@ const voipJS = new Voip(conn, {
 })
 ```
 
-`conn` adalah objek koneksi yang dipakai oleh adapter VoipJS pada source ini. Pastikan bentuk socket cocok dengan integrasi yang tersedia pada versi repository kamu.
+`conn` harus berupa socket/koneksi yang didukung oleh adapter VoipJS versi kamu.
 
-Opsi yang tampak di constructor:
-- `maxConcurrentCalls`: jumlah panggilan aktif maksimum; harus integer positif.
-- `maxCallsPerHour`: batas panggilan per jam (default 3).
-- `maxCallsPerDay`: batas panggilan per hari (default 8).
-- `minIntervalMs`: jeda minimum antarpanggilan (default 300000 ms).
-- `allowedNumbers`: jika berisi nomor, target di luar daftar ditolak; daftar kosong tidak membatasi target berdasarkan allowlist.
-- `voipLogLevel`: level log (default `warn`).
-- `ffprobePath`: path executable `ffprobe` (default `ffprobe`).
+Opsi utama:
+- `maxConcurrentCalls`: batas panggilan aktif bersamaan.
+- `maxCallsPerHour`: batas panggilan per jam.
+- `maxCallsPerDay`: batas panggilan per hari.
+- `minIntervalMs`: jeda minimum antarpanggilan dalam milidetik.
+- `allowedNumbers`: daftar nomor yang diizinkan; isi sesuai kebutuhan.
+- `voipLogLevel`: tingkat detail log.
+- `ffprobePath`: lokasi executable `ffprobe`.
 - `tmpDir`: direktori sementara opsional.
 
 ### Mendengarkan panggilan masuk
@@ -207,36 +142,32 @@ voipJS.onIncoming(info => {
 })
 ```
 
-`onIncoming` memberikan objek informasi panggilan. Cara menjawab/menolak tetap bergantung pada call ID dan media yang disediakan.
+`onIncoming` menerima informasi panggilan masuk. Gunakan `callId` dari event tersebut untuk mengelola panggilan yang bersangkutan.
 
 ### Menjawab atau menolak panggilan
 
-Signature yang tersedia di source:
+Signature yang digunakan implementasi:
 
 ```js
 await voipJS.accept(callId, media, resolution, options)
 await voipJS.reject(callId, reason)
 ```
 
-Contoh kerangka—isi `media` dan `resolution` dengan format yang memang didukung implementasi media pada repository:
+Kerangka penggunaan:
 
 ```js
-const callId = 'CALL_ID_DARI_EVENT'
+await voipJS.accept(callId, media, resolution, {})
+```
 
-await voipJS.accept(
-  callId,
-  media,
-  resolution,
-  {}
-)
+Atau:
 
-// Atau, jika tidak ingin menjawab:
+```js
 await voipJS.reject(callId, 'declined')
 ```
 
-Contoh di atas sengaja tidak mengarang format `media`/`resolution`; cek implementasi `#launch`, kelas media, serta tipe di `lib/VoipJS/index.js` dan `lib/VoipJS/types.js` sebelum dipakai.
+`media` dan `resolution` harus mengikuti format yang didukung engine media pada versi source kamu. Jangan menggunakan parameter contoh dari Voip Core untuk VoipJS secara langsung.
 
-### Melakukan panggilan keluar
+### Panggilan keluar
 
 Signature:
 
@@ -244,7 +175,7 @@ Signature:
 await voipJS.call(jid, media, resolution, options)
 ```
 
-Contoh kerangka:
+Kerangka:
 
 ```js
 await voipJS.call(
@@ -255,11 +186,9 @@ await voipJS.call(
 )
 ```
 
-Parameter `media` dan `resolution` harus mengikuti struktur media yang diterima fungsi `#launch` pada source VoipJS. Nomor tujuan pada contoh hanya placeholder.
+Nomor hanya contoh; `media` dan `resolution` harus disesuaikan dengan engine media yang digunakan.
 
-### Call manager lainnya
-
-API publik yang tampak di source meliputi:
+### API pengelolaan panggilan
 
 ```js
 voipJS.calls
@@ -274,15 +203,13 @@ await voipJS.hangup(callId)
 await voipJS.end()
 ```
 
-`calls` mengembalikan daftar call yang dikelola. Nama event yang benar harus dilihat dari event yang diemits oleh coordinator/client; jangan menebak nama event selain API `onIncoming` yang tersedia.
+`calls` menyediakan daftar panggilan yang dikelola. Gunakan nama event yang benar-benar dikeluarkan oleh versi implementasi kamu.
 
-### Batas penggunaan
-
-- Mulai dengan `maxConcurrentCalls: 1`.
-- Pertahankan guard frekuensi untuk mencegah panggilan berulang.
-- Gunakan hanya untuk panggilan yang memang diizinkan penerima.
-- Jangan mematikan guard untuk mengakali limit.
-- Untuk penggunaan audio/video, pastikan binary/dependency yang dibutuhkan tersedia dan dites di lingkungan target.
+### Catatan
+- Mulai dengan satu panggilan aktif untuk pengujian.
+- Pertahankan batas frekuensi panggilan.
+- Pastikan dependency media yang dibutuhkan tersedia di lingkungan runtime.
+- Gunakan fitur panggilan hanya dengan izin penerima.
 
 ---
 
@@ -324,3 +251,103 @@ await voipJS.end()
 
 README ini menjelaskan API dan struktur yang terlihat di source repository. Implementasi VoIP dapat bergantung pada protokol WhatsApp yang berubah, dependency media, runtime, serta dukungan server. Jalankan tes pada akun/perangkat yang kamu kontrol, dan jangan menganggap contoh kerangka sebagai jaminan panggilan akan berhasil di semua versi.
 
+
+---
+
+## 5. Eval Tests (CylicVoip & CylicVoipJS)
+
+Jalankan potongan berikut melalui eval bot dengan prefix `=>`. Tes ini memeriksa ekspor modul dan inisialisasi client; tidak melakukan panggilan sungguhan. Sesuaikan path import jika nama package atau ekspor di project berbeda.
+
+### 5.1 Cek export Voip Core
+
+```js
+=> (async () => {
+  const mod = await import('@whiskeysockets/baileys/lib/Voip/index.js')
+  return {
+    exports: Object.keys(mod),
+    defaultExport: typeof mod.default,
+    makeVoipClient: typeof mod.makeVoipClient,
+    AudioFeeder: typeof mod.AudioFeeder,
+    VideoFeeder: typeof mod.VideoFeeder
+  }
+})()
+```
+
+### 5.2 Cek export VoipJS
+
+```js
+=> (async () => {
+  const mod = await import('@whiskeysockets/baileys/lib/VoipJS/index.js')
+  return {
+    exports: Object.keys(mod),
+    defaultExport: typeof mod.default,
+    Voip: typeof mod.default
+  }
+})()
+```
+
+### 5.3 Inisialisasi CylicVoip
+
+```js
+=> (async () => {
+  if (!conn?.user) throw new Error('Socket Baileys belum login')
+  const { makeVoipClient } = await import('@whiskeysockets/baileys/lib/Voip/index.js')
+  if (!conn.ws || conn.ws.readyState !== 1) throw new Error('WebSocket belum terbuka')
+  conn.cylicVoip ??= await makeVoipClient(conn, {
+    debug: true,
+    logger: (...args) => console.log('[CylicVoip]', ...args)
+  })
+  return 'CylicVoip berhasil diinisialisasi'
+})()
+```
+
+### 5.4 Inisialisasi CylicVoipJS
+
+```js
+=> (async () => {
+  if (!conn?.user) throw new Error('Socket Baileys belum login')
+  if (!conn.ws || conn.ws.readyState !== 1) throw new Error('WebSocket belum terbuka')
+  const Voip = (await import('@whiskeysockets/baileys/lib/VoipJS/index.js')).default
+  conn.cylicVoipJS ??= new Voip(conn, {
+    maxConcurrentCalls: 1,
+    maxCallsPerHour: 3,
+    maxCallsPerDay: 8,
+    minIntervalMs: 300000,
+    voipLogLevel: 'debug'
+  })
+  return 'CylicVoipJS berhasil dibuat'
+})()
+```
+
+### 5.5 Periksa status instance
+
+```js
+=> ({
+  socketLogin: !!conn?.user,
+  websocket: conn?.ws?.readyState,
+  cylicVoip: !!conn?.cylicVoip,
+  cylicVoipJS: !!conn?.cylicVoipJS
+})
+```
+
+Nilai `websocket` bernilai `1` biasanya menunjukkan WebSocket terbuka.
+
+### 5.6 Bersihkan instance tes
+
+Jalankan hanya jika tidak ada panggilan aktif. Nama method cleanup harus cocok dengan implementasi yang dipakai.
+
+```js
+=> (async () => {
+  if (conn.cylicVoip) {
+    await conn.cylicVoip.disconnect()
+    delete conn.cylicVoip
+  }
+  if (conn.cylicVoipJS) {
+    await conn.cylicVoipJS.end()
+    delete conn.cylicVoipJS
+  }
+  return 'Instance VoIP tes dibersihkan'
+})()
+```
+
+**Catatan penting:** nama export, constructor, dan method dapat berbeda antarversi. Jika muncul `ERR_MODULE_NOT_FOUND`, `is not a constructor`, atau `... is not a function`, jalankan tes export terlebih dahulu dan sesuaikan dengan API yang benar-benar diekspor package. Jangan menjalankan kedua client untuk mengendalikan panggilan yang sama secara bersamaan sebelum kompatibilitasnya dipastikan.
