@@ -1,4 +1,4 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* LYNCX Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function generateLoginNode(userJid: any, config: any): proto.ClientPayload;
 export function generateRegistrationNode({ registrationId, signedPreKey, signedIdentityKey }: {
     registrationId: any;

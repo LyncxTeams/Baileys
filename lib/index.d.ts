@@ -1,4 +1,4 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* LYNCX Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export * from "../WAProto/index.js";
 export * from "./Utils/index.js";
 export * from "./Types/index.js";

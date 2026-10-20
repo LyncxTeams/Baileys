@@ -1,4 +1,4 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* LYNCX Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function binaryNodeToString(node: any, i?: number): any;
 export function getBinaryNodeChildren(node: any, childTag: any): any;
 export function getBinaryNodeChild(node: any, childTag: any): any;

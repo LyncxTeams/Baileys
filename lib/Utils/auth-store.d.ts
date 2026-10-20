@@ -1,4 +1,4 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* LYNCX Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export const CREDS_KEY: string;
 export function encodeAuthValue(value: any): string;
 export function decodeAuthValue(type: string, raw: any): any;

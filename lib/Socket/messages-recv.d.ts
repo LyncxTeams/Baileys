@@ -1,4 +1,4 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* LYNCX Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function makeMessagesRecvSocket(config: any): {
     sendMessageAck: (node: any, errorCode: any) => Promise<void>;
     sendRetryRequest: (node: any, forceIncludeKeys?: boolean) => Promise<void>;

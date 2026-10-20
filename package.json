@@ -1,7 +1,7 @@
 {
   "name": "@lyncxteams/baileys",
-  "version": "0.3.21-elaina-core",
-  "description": "LyncxTeams Baileys with Elaina connection, authentication, pairing, QR and current WhatsApp Web protocol core; retains LyncxTeams-specific VoIP modules.",
+  "version": "0.3.21-final",
+  "description": "LyncxTeams Baileys mods.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "type": "module",

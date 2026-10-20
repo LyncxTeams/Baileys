@@ -1,4 +1,4 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* LYNCX Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 /**
  * LT Hash is a summation based hash algorithm that maintains the integrity of a piece of data
  * over a series of mutations. You can add/remove mutations and it'll return a hash equal to

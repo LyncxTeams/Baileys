@@ -1,4 +1,4 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* LYNCX Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function promiseTimeout(ms: any, promise: any): Promise<any>;
 export function bindWaitForEvent(ev: any, event: any): (check: any, timeoutMs: any) => Promise<void>;
 export function trimUndefined(obj: any): any;

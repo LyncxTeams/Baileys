@@ -1,4 +1,4 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* LYNCX Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 /** Read the persisted tctoken JID index and return its entries (never contains the sentinel key itself). */
 export function readTcTokenIndex(keys: any): Promise<any[]>;
 /** Build a SignalDataSet fragment that writes the merged index (persisted ∪ added) under the sentinel key. */

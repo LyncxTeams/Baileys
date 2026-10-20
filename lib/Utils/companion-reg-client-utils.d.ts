@@ -1,4 +1,4 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* LYNCX Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export const CompanionWebClientType: any;
 export function getCompanionWebClientType([os, browserName]: [any, any]): any;
 export function getCompanionPlatformId(browser: any): any;

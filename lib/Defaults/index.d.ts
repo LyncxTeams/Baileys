@@ -1,11 +1,11 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* LYNCX Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export const UNAUTHORIZED_CODES: number[];
 export const BIZ_BOT_SUPPORT_PAYLOAD: "{\"version\":1,\"is_ai_message\":true,\"should_upload_client_logs\":false,\"should_show_system_message\":false,\"ticket_id\":\"7004947587700716\",\"citation_items\":[],\"ticket_locale\":\"us\"}";
 export const DEFAULT_ORIGIN: "https://web.whatsapp.com";
 export const CALL_VIDEO_PREFIX: "https://call.whatsapp.com/video/";
 export const CALL_AUDIO_PREFIX: "https://call.whatsapp.com/voice/";
-export const DONATE_URL: "https://www.npmjs.com/package/@rexxhayanasi/elaina-baileys";
-export const LIBRARY_NAME: "rexxhayanasi/elaina-baileys";
+export const DONATE_URL: "https://www.npmjs.com/package/@rexxhayanasi/LYNCX-baileys";
+export const LIBRARY_NAME: "rexxhayanasi/LYNCX-baileys";
 export const DEF_CALLBACK_PREFIX: "CB:";
 export const DEF_TAG_PREFIX: "TAG:";
 export const PHONE_CONNECTION_CB: "CB:Pong";

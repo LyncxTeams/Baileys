@@ -1,4 +1,4 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* LYNCX Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export { GroupSessionBuilder } from "./group-session-builder.js";
 export { SenderKeyDistributionMessage } from "./sender-key-distribution-message.js";
 export { SenderKeyRecord } from "./sender-key-record.js";

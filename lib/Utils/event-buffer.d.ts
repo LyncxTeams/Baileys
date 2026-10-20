@@ -1,4 +1,4 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* LYNCX Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export const DEFAULT_MAX_EVENT_LISTENERS: number;
 export function makeEventBuffer(logger: any, maxListeners?: number): {
     process(handler: any): () => void;

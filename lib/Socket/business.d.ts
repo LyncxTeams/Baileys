@@ -1,4 +1,4 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* LYNCX Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function makeBusinessSocket(config: any): {
     logger: any;
     getOrderDetails: (orderId: any, tokenBase64: any) => Promise<{

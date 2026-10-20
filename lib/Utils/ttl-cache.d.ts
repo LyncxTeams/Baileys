@@ -1,4 +1,4 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* LYNCX Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export declare class TTLCache<T = any> {
     constructor(options?: {
         /** lifetime in seconds, the same unit node-cache used; 0 or omitted means no expiry */
