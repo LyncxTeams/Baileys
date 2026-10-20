@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export class SenderKeyRecord {
     static deserialize(data: any): SenderKeyRecord;
     constructor(serialized: any);
@@ -10,4 +11,3 @@ export class SenderKeyRecord {
     serialize(): any[];
 }
 import { SenderKeyState } from './sender-key-state.js';
-//# sourceMappingURL=sender-key-record.d.ts.map

@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 /**
  * Decode the received node as a message.
  * @note this will only parse the message, not decrypt it
@@ -25,6 +26,18 @@ export function decodeMessageNode(stanza: any, meId: any, meLid: any): {
     sender: any;
 };
 export function getDecryptionJid(sender: any, repository: any): Promise<any>;
+export function extractNewsletterMessageMeta(stanza: any): {
+    adminProfile?: {
+        id?: string;
+        name?: string;
+        pictureId?: string;
+        pictureDirectPath?: string;
+    };
+    paidPartnership?: boolean;
+    aiContent?: boolean;
+    editTimestamp?: number;
+    originalTimestamp?: number;
+} | undefined;
 export const NO_MESSAGE_FOUND_ERROR_TEXT: "Message absent from node";
 export const MISSING_KEYS_ERROR_TEXT: "Key used already or never filled";
 export const ACCOUNT_RESTRICTED_TEXT: "Your account has been restricted";
@@ -34,7 +47,9 @@ export namespace DECRYPTION_RETRY_CONFIG {
     let sessionRecordErrors: string[];
 }
 export namespace NACK_REASONS {
+    let StaleGroupAddressingMode: number;
     let SenderReachoutTimelocked: number;
+    let NewChatMessagesCapped: number;
     let ParsingError: number;
     let UnrecognizedStanza: number;
     let UnrecognizedStanzaClass: number;
@@ -52,7 +67,9 @@ export namespace NACK_REASONS {
 export namespace SERVER_ERROR_CODES {
     let MessageAccountRestriction: string;
     let SmaxInvalid: string;
+    let NewChatMessagesCapped: string;
 }
+export const RETRYABLE_ACK_CODES: Set<string>;
 export function extractAddressingContext(stanza: any): {
     addressingMode: any;
     senderAlt: any;
@@ -81,4 +98,3 @@ export function decryptMessageNode(stanza: any, meId: any, meLid: any, repositor
     author: any;
     decrypt(): Promise<void>;
 };
-//# sourceMappingURL=decode-wa-message.d.ts.map

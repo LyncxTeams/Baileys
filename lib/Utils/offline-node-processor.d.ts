@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 /**
  * Creates a processor for offline stanza nodes that:
  * - Queues nodes for sequential processing
@@ -7,4 +8,3 @@
 export function makeOfflineNodeProcessor(nodeProcessorMap: any, deps: any, batchSize?: number): {
     enqueue: (type: any, node: any) => void;
 };
-//# sourceMappingURL=offline-node-processor.d.ts.map

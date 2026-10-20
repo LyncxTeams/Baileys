@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export class GroupSessionBuilder {
     constructor(senderKeyStore: any);
     senderKeyStore: any;
@@ -5,4 +6,3 @@ export class GroupSessionBuilder {
     create(senderKeyName: any): Promise<SenderKeyDistributionMessage>;
 }
 import { SenderKeyDistributionMessage } from './sender-key-distribution-message.js';
-//# sourceMappingURL=group-session-builder.d.ts.map

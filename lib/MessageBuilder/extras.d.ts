@@ -1,0 +1,449 @@
+export declare const AI_RICH_LAYOUTS: readonly string[];
+export declare const AI_RICH_PRIMITIVES: readonly string[];
+export declare const AI_RICH_INLINE_ENTITIES: readonly string[];
+export declare const AI_RICH_ITEMS: readonly string[];
+export declare const AI_RICH_PRIMITIVES_WEB_RENDERED: readonly string[];
+export declare const AI_RICH_PRIMITIVE_INTERFACE: 'GenAIUXPrimitive';
+export declare const AI_RICH_PRIMITIVES_WITHOUT_SCHEMA: readonly string[];
+export declare const AI_RICH_HTML_PRIMITIVE: 'GenAIaeacdsnwHtmlPrimitive';
+
+export declare const DividerType: Readonly<{ DOT: 'DOT'; HORIZONTAL_LINE: 'HORIZONTAL_LINE' }>;
+export declare const ImagineType: Readonly<{ IMAGINE: 'IMAGINE'; ANIMATE: 'ANIMATE'; MEMU: 'MEMU' }>;
+export declare const ImagineStatus: Readonly<{ GENERATING: 'GENERATING'; READY: 'READY'; FAILED: 'FAILED' }>;
+export declare const ThinkingIcon: Readonly<{ THINKING: 'THINKING'; WEB_SEARCH: 'WEB_SEARCH'; META_SEARCH: 'META_SEARCH' }>;
+export declare const TaskStatus: Readonly<{ PENDING: 'PENDING'; RUNNING: 'RUNNING'; DONE: 'DONE' }>;
+export declare const FooterActionType: Readonly<Record<string, string>>;
+export declare const AddonActionType: Readonly<Record<string, string>>;
+
+export declare function dividerSection(options?: { dividerType?: string }): any;
+export declare function spacerSection(options?: { spacing?: number }): any;
+export declare function imageSection(url: string, options?: {
+    fallbackUrl?: string;
+    previewUrl?: string;
+    previewFallbackUrl?: string;
+}): any;
+export declare function taskSection(options: {
+    taskId: string | number;
+    title?: string;
+    subtitle?: string;
+    status?: string;
+}): any;
+export declare function latexSection(expression: string, options?: {
+    image?: string;
+    width?: number;
+    height?: number;
+    fontHeight?: number;
+    padding?: number;
+}): any;
+export declare function thinkingSection(title: string, options?: {
+    icon?: string;
+    inProgress?: boolean;
+    metaSearchApps?: string[];
+    thoughtDurationSec?: number;
+}): any;
+export declare function progressSection(title: string, options?: {
+    icon?: string;
+    inProgress?: boolean;
+    metaSearchApps?: string[];
+    thoughtDurationSec?: number;
+}): any;
+
+export declare function lockHeight(height: number): string;
+
+export declare const HTML_APP_BRIDGE: 'AndroidBridge';
+
+export declare function dataUri(bytes: Buffer | Uint8Array, mimetype: string): string;
+
+export declare function htmlMedia(bytes: Buffer | Uint8Array, options: {
+    mimetype: string;
+    tag?: 'video' | 'audio' | 'img';
+    label?: string;
+    poster?: string;
+    id?: string;
+    attributes?: string;
+}): string;
+
+export interface AutoHeightOptions {
+    min?: number;
+    max?: number;
+    settleMs?: number;
+    maxReports?: number;
+}
+
+export declare function autoHeight(options?: AutoHeightOptions): string;
+
+export interface ScrollControlsOptions {
+    /** CSS selector for the pane to scroll. Defaults to the #__wrap that height creates. */
+    target?: string;
+    /** Pixels per tap, and per repeat while held. */
+    step?: number;
+    /** Repeat interval while a button is held down, at least 16. */
+    holdMs?: number;
+    /** Button edge length in pixels, at least 24. */
+    size?: number;
+    side?: 'right' | 'left';
+    inset?: number;
+}
+
+/**
+ * On-screen scroll buttons. Touch scrolling inside the bubble is taken by the
+ * chat list behind it, so a page taller than its bubble cannot be scrolled by
+ * dragging; these move the pane programmatically instead. Hidden when the
+ * content already fits.
+ */
+export declare function scrollControls(options?: ScrollControlsOptions): string;
+
+export declare const AI_RICH_HTML_PRIMITIVE_CLASS: 'FOAHtmlPrimitive';
+
+export declare function htmlSection(html: string, options?: {
+    trustedSources?: string[];
+    height?: number;
+    typename?: string;
+}): any;
+
+export declare function sendHtmlApp(sock: any, jid: string, html: string, options?: {
+    title?: string;
+    label?: string;
+    trustedSources?: string[];
+    height?: number;
+    autoHeight?: boolean | AutoHeightOptions;
+    scrollButtons?: boolean | ScrollControlsOptions;
+    typename?: string;
+    id?: string;
+    bypassDownload?: boolean;
+    guard?: boolean | 'warn';
+    [key: string]: any;
+}): Promise<any>;
+
+export declare const HTML_MIME_TYPE: 'text/html';
+
+export declare function sendHtmlDocument(sock: any, jid: string, html: string, options?: {
+    fileName?: string;
+    caption?: string;
+    [key: string]: any;
+}): Promise<any>;
+
+export interface FileSectionOptions {
+    title?: string;
+    fileExtension?: string;
+    fileLength?: number;
+    pageCount?: number;
+    previewImage?: any;
+}
+
+export declare function fileSection(url: string, options?: FileSectionOptions): any;
+export declare function fileLinkSection(url: string, options?: FileSectionOptions): any;
+
+export interface BotMediaMetadata {
+    fileSha256?: string;
+    mediaKey?: string;
+    fileEncSha256?: string;
+    directPath?: string;
+    mediaKeyTimestamp?: number;
+    mimetype?: string;
+}
+
+export declare function botMediaMetadata(documentMessage: any): BotMediaMetadata;
+
+export declare function prepareFileArtifact(sock: any, content: string | Uint8Array, options?: {
+    mimetype?: string;
+    fileName?: string;
+    title?: string;
+    id?: string;
+}): Promise<{
+    mediaId: string;
+    media: BotMediaMetadata;
+    documentMessage: any;
+    section: any;
+    mediaDetails: { id: string; previewMedia: BotMediaMetadata; highResMedia: BotMediaMetadata };
+}>;
+
+export declare function sendHtmlArtifact(sock: any, jid: string, html: string, options?: {
+    fileName?: string;
+    title?: string;
+    label?: string;
+    id?: string;
+    bypassDownload?: boolean;
+    [key: string]: any;
+}): Promise<{ message: any; mediaId: string }>;
+
+export declare const SourceProvider: Readonly<{ UNKNOWN: 0; BING: 1; GOOGLE: 2; SUPPORT: 3; OTHER: 4 }>;
+
+export interface SourceInput {
+    url: string;
+    title?: string;
+    query?: string;
+    favicon?: string;
+    thumbnail?: string;
+    citation?: number;
+    provider?: number;
+}
+
+export declare function botSourcesMetadata(sources: SourceInput[]): { sources: any[] };
+
+export declare const EMBEDDED_SCREEN_PRESENTATION: Readonly<{ HALF_HEIGHT: 'HALF_HEIGHT'; FULL_HEIGHT: 'FULL_HEIGHT' }>;
+
+export declare const EMBEDDED_SCREEN_TYPENAME: string;
+export declare const EMBEDDED_SCREEN_TABBED_TYPENAME: string;
+export declare const EMBEDDED_SCREEN_TAB_TYPENAME: string;
+export declare const AI_RICH_SECTION_TYPENAME: string;
+export declare const AI_RICH_UNIFIED_RESPONSE_TYPENAME: string;
+export declare const AI_RICH_UNIFIED_RESPONSE_TYPENAME_APP: string;
+export declare const AI_RICH_NESTED_UNIFIED_RESPONSE_TYPENAME: string;
+export declare const EMBEDDED_SCREEN_SINGLE_TYPENAME: string;
+export declare const EMBEDDED_SCREEN_CONTEXTUAL_TYPENAME: string;
+export declare const AI_RICH_NODES: readonly string[];
+export declare function collectTypenames(root: any, options?: { limit?: number }): string[];
+
+export declare function embeddedTab(options?: {
+    id?: string;
+    header?: any;
+    tabHeader?: any;
+    sections?: any[];
+    typename?: string;
+}): any;
+
+export declare function embeddedTabbedContent(tabs: any[], options?: { typename?: string }): any;
+
+export declare const AI_RICH_RESPONSE_KEYS: readonly string[];
+
+export declare function embeddedScreen(options?: {
+    id?: string;
+    title?: string;
+    content?: any[];
+    tabs?: any[];
+    tabsTypename?: string;
+    typename?: string;
+    header?: any;
+    body?: any;
+    artifacts?: any[];
+    steps?: any[];
+    stepEntries?: any[];
+    sources?: any[];
+    pollId?: string;
+}): any;
+
+export declare function readEmbeddedTabs(screen: any): any[];
+
+export declare function readEmbeddedSections(screen: any): any[];
+
+export declare function footerActionSection(actionType: string, options?: {
+    buttonText?: string;
+    url?: string;
+}): any;
+
+export declare const A2UI_VERSION: 'v0.9';
+export declare const A2UI_BASIC_CATALOG: string;
+export declare const A2UI_ROOT_ID: 'root';
+
+export interface A2UIComponent {
+    id: string;
+    component: string;
+    [key: string]: any;
+}
+
+export interface A2UIElement {
+    type: 'info_card' | 'list_card';
+    [key: string]: any;
+}
+
+export declare function a2uiText(id: string, text: string, options?: { variant?: string }): A2UIComponent;
+export declare function a2uiImage(id: string, url: string, options?: { variant?: string; fit?: string }): A2UIComponent;
+export declare function a2uiColumn(id: string, children?: string[]): A2UIComponent;
+export declare function a2uiRow(id: string, children?: string[]): A2UIComponent;
+export declare function a2uiCard(id: string, child: string): A2UIComponent;
+export declare function a2uiInfoCard(element?: Record<string, any>): A2UIElement;
+export declare function a2uiListCard(element?: Record<string, any>): A2UIElement;
+export declare function a2uiFallback(components: any[]): string;
+
+export declare function a2uiSurface(components: A2UIComponent[], options?: {
+    surfaceId?: string;
+    root?: string;
+    catalogId?: string;
+    sendDataModel?: boolean;
+    version?: string;
+    type?: string;
+    title?: string;
+}): any;
+
+export declare function a2uiWidget(components: A2UIComponent[], options?: {
+    uuid?: string;
+    surfaceId?: string;
+    root?: string;
+    catalogId?: string;
+    sendDataModel?: boolean;
+    version?: string;
+    type?: string;
+    title?: string;
+    fallback?: string;
+    data?: any;
+}): BloksWidget;
+
+export declare function sendA2UI(sock: any, jid: string, components: A2UIComponent[], options?: {
+    buttons?: any[];
+    contextInfo?: any;
+    uuid?: string;
+    surfaceId?: string;
+    root?: string;
+    catalogId?: string;
+    sendDataModel?: boolean;
+    type?: string;
+    title?: string;
+    fallback?: string;
+    messageId?: string;
+    additionalNodes?: any[];
+    [key: string]: any;
+}): Promise<any>;
+
+export declare function buildA2UISection(components: A2UIComponent[], options?: {
+    uuid?: string;
+    surfaceId?: string;
+    root?: string;
+    catalogId?: string;
+    sendDataModel?: boolean;
+    version?: string;
+    type?: string;
+    title?: string;
+    data?: any;
+    initialResponse?: string;
+    versioningId?: string;
+}): any;
+
+export declare function sendA2UIBloks(sock: any, jid: string, components: A2UIComponent[], options?: {
+    uuid?: string;
+    surfaceId?: string;
+    root?: string;
+    catalogId?: string;
+    sendDataModel?: boolean;
+    version?: string;
+    type?: string;
+    title?: string;
+    data?: any;
+    initialResponse?: string;
+    versioningId?: string;
+    [key: string]: any;
+}): Promise<any>;
+
+export declare const BLOKS_A2UI_TYPE: 'im_a2ui';
+export declare const BLOKS_A2UI_REPLY_ACTION: 'a2ui_reply_action';
+export declare const BLOKS_A2UI_SUPPORTED_ELEMENTS: readonly string[];
+
+export interface AIRichSubmessage {
+    messageType: number;
+    messageText?: string;
+    imageMetadata?: any;
+    tableMetadata?: any;
+    contentItemsMetadata?: any;
+    [key: string]: any;
+}
+
+export type AIRichSubmessageKind = 'text' | 'inline_image' | 'table' | 'content_items';
+
+export declare const AI_RICH_SUBMESSAGE_TEXT: 2;
+export declare const AI_RICH_SUBMESSAGE_INLINE_IMAGE: 3;
+export declare const AI_RICH_SUBMESSAGE_TABLE: 4;
+export declare const AI_RICH_SUBMESSAGE_CONTENT_ITEMS: 9;
+export declare const AI_RICH_SUBMESSAGE_KINDS: readonly AIRichSubmessageKind[];
+
+export declare function aiRichSubmessage(kind: AIRichSubmessageKind, payload?: any): AIRichSubmessage;
+export declare function aiRichText(text: string): AIRichSubmessage;
+export declare function aiRichInlineImage(image: {
+    previewUrl: string;
+    highResUrl?: string;
+    sourceUrl?: string;
+    text?: string;
+    alignment?: number;
+    tapLinkUrl?: string;
+}): AIRichSubmessage;
+export declare function aiRichTable(table: {
+    rows: { items: string[]; isHeading?: boolean }[];
+    title?: string;
+}): AIRichSubmessage;
+export declare function aiRichContentItems(content: { items: any[]; [key: string]: any }): AIRichSubmessage;
+
+export declare const AIRichMessage: {
+    SUBMESSAGE_KINDS: readonly AIRichSubmessageKind[];
+    text: typeof aiRichText;
+    inlineImage: typeof aiRichInlineImage;
+    table: typeof aiRichTable;
+    contentItems: typeof aiRichContentItems;
+    submessage: typeof aiRichSubmessage;
+    textSection: (text: string) => any;
+    nativeFlowSection: (name: string, params?: any, options?: { uuid?: string; initialResponse?: string; versioningId?: string }) => any;
+};
+
+export declare function sendAIRichMessage(sock: any, jid: string, options?: {
+    sections?: any[];
+    text?: string;
+    nativeFlow?: { name: string; params?: any };
+    submessages?: AIRichSubmessage[];
+    forwardWrapper?: boolean;
+    [key: string]: any;
+}): Promise<any>;
+
+export interface BloksWidget {
+    type: string;
+    data: string;
+    uuid: string;
+    fallback: string;
+}
+
+export declare function bloksSection(type: string, data?: string | Record<string, any>, options?: {
+    uuid?: string;
+    initialResponse?: string;
+    versioningId?: string;
+}): any;
+
+export declare function bloksWidget(options: {
+    type: string;
+    data?: string | Record<string, any>;
+    uuid?: string;
+    fallback?: string;
+}): BloksWidget;
+
+export declare function sendBloksWidget(sock: any, jid: string, options: {
+    type: string;
+    data?: string | Record<string, any>;
+    uuid?: string;
+    fallback?: string;
+    body?: string;
+    contextInfo?: any;
+    messageId?: string;
+    additionalNodes?: any[];
+    [key: string]: any;
+}): Promise<any>;
+
+export declare function decodeBloksWidget(msg: any): (BloksWidget & { params: any }) | null;
+
+export interface RichMessageRead {
+    kind: 'airich' | 'a2ui' | 'bloks' | 'interactive';
+    text: string;
+    title: string;
+    buttons: { name: string; params: any }[];
+    html: string[];
+    typenames: string[];
+    sections: any[];
+    footerSections: any[];
+    embeddedScreens: any[];
+    embeddedTabs: any[];
+    submessages: any[];
+    responseId?: string;
+    a2ui?: { surfaceId: string; root?: string; catalogId?: string; version: string; components: A2UIComponent[] };
+    bloks?: { type: string; uuid: string; fallback: string; params: any };
+}
+
+export declare function readRichMessage(msg: any): RichMessageRead | null;
+
+export declare function decodeAIRich(msg: any): {
+    responseId?: string;
+    layouts: string[];
+    typenames: string[];
+    footerTypenames: string[];
+    sections: any[];
+    footerSections: any[];
+    embeddedScreens: any[];
+    embeddedTabs: any[];
+    embeddedSections: any[];
+    submessages: any[];
+    unified: any;
+} | null;

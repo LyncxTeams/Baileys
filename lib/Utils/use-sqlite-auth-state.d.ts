@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function useSqliteAuthState(opts: any): Promise<{
     state: {
         creds: any;
@@ -7,5 +8,6 @@ export function useSqliteAuthState(opts: any): Promise<{
         };
     };
     saveCreds: () => Promise<void>;
+    clearAuth: () => Promise<void>;
+    close: () => Promise<void>;
 }>;
-//# sourceMappingURL=use-sqlite-auth-state.d.ts.map

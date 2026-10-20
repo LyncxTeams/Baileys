@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function createSignalIdentity(wid: any, accountSignatureKey: any): {
     identifier: {
         name: any;
@@ -80,4 +81,3 @@ export function getNextPreKeysNode(state: any, count: any): Promise<{
         }[];
     };
 }>;
-//# sourceMappingURL=signal.d.ts.map

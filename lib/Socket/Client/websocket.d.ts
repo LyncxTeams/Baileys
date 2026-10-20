@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export class WebSocketClient extends AbstractSocketClient {
     constructor(...args: any[]);
     socket: any;
@@ -10,4 +11,3 @@ export class WebSocketClient extends AbstractSocketClient {
     send(str: any, cb: any): boolean;
 }
 import { AbstractSocketClient } from './types.js';
-//# sourceMappingURL=websocket.d.ts.map

@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export default makeWASocket;
 declare function makeWASocket(config: any): {
     communityQuery: (jid: any, type: any, content: any) => Promise<any>;
@@ -244,7 +245,20 @@ declare function makeWASocket(config: any): {
         shouldIncludeDeviceIdentity: boolean;
     }>;
     getUSyncDevices: (jids: any, useCache: any, ignoreZeroDevices: any) => Promise<any[]>;
-    updateMemberLabel: (jid: any, memberLabel: any) => Promise<any>;
+    updateMemberLabel: (jid: string, memberLabel?: string | null, options?: {
+        additionalNodes?: any[];
+    }) => Promise<{
+        jid: string;
+        label: string;
+        messageId: string;
+    }>;
+    removeMemberLabel: (jid: string, options?: {
+        additionalNodes?: any[];
+    }) => Promise<{
+        jid: string;
+        label: string;
+        messageId: string;
+    }>;
     updateMediaMessage: (message: any) => Promise<any>;
     sendMessage: (jid: any, content: any, options?: {}) => Promise<import("../index.js").proto.WebMessageInfo | undefined>;
     executeWMexQuery: (variables: any, queryId: any, dataPath: any) => Promise<any>;
@@ -265,8 +279,19 @@ declare function makeWASocket(config: any): {
     }>;
     newsletterUpdate: (jid: any, updates: any) => Promise<any>;
     newsletterSubscribers: (jid: any) => Promise<any>;
-    newsletterSubscribed: () => Promise<any>;
-    newsletterMetadata: (type: any, key: any) => Promise<any>;
+    newsletterSubscribed: (options?: {
+        fetchStatusMetadata?: boolean;
+        fetchWamoSub?: boolean;
+    }) => Promise<any>;
+    newsletterMetadata: (type: 'jid' | 'invite', key: string, options?: {
+        fetchCreationTime?: boolean;
+        fetchFullImage?: boolean;
+        fetchViewerMetadata?: boolean;
+        fetchPinnedMessages?: boolean;
+        fetchStatusMetadata?: boolean;
+        fetchWamoSub?: boolean;
+        viewRole?: string;
+    }) => Promise<any>;
     newsletterFollow: (jid: any) => Promise<any>;
     newsletterUnfollow: (jid: any) => Promise<any>;
     newsletterMute: (jid: any) => Promise<any>;
@@ -435,6 +460,17 @@ declare function makeWASocket(config: any): {
     updateProfileStatus: (status: any) => Promise<void>;
     updateProfileName: (name: any) => Promise<void>;
     updateBlockStatus: (jid: any, action: any) => Promise<void>;
+    reportSpam: (jid: string, options?: {
+        flow?: string;
+        source?: string;
+        subject?: string;
+        isKnownChat?: boolean;
+    }) => Promise<{
+        jid: string;
+        flow: string;
+        reported: true;
+        node: any;
+    }>;
     updateDisableLinkPreviewsPrivacy: (isPreviewsDisabled: any) => Promise<void>;
     updateCallPrivacy: (value: any) => Promise<void>;
     updateMessagesPrivacy: (value: any) => Promise<void>;
@@ -511,6 +547,7 @@ declare function makeWASocket(config: any): {
     digestKeyBundle: () => Promise<void>;
     rotateSignedPreKey: () => Promise<void>;
     requestPairingCode: (phoneNumber: any, customPairingCode: any) => Promise<any>;
+    cancelPairingCode: () => boolean;
     updateServerTimeOffset: ({ attrs }: {
         attrs: any;
     }) => void;
@@ -520,11 +557,26 @@ declare function makeWASocket(config: any): {
     sendWAMBuffer: (wamBuffer: any) => Promise<any>;
     executeUSyncQuery: (usyncQuery: any) => Promise<any>;
     onWhatsApp: (...phoneNumber: any[]) => Promise<any>;
+    onWhatsAppUsername: (...usernames: any[]) => Promise<any>;
+    getUsernames: (...jids: any[]) => Promise<any>;
     fetchAccountReachoutTimelock: () => Promise<{
         isActive: boolean;
         timeEnforcementEnds: Date | undefined;
         enforcementType: any;
     }>;
-    fetchNewChatMessageCap: () => Promise<any>;
+    fetchNewChatMessageCap: () => Promise<{
+        status: string;
+        capped: boolean;
+        warned: boolean;
+        totalQuota?: number;
+        usedQuota?: number;
+        remaining?: number;
+        cycleStart?: number;
+        cycleEnd?: number;
+        serverTime?: number;
+        oteStatus?: string;
+        mvStatus?: string;
+        subscriptionStatus?: string;
+        response: any;
+    }>;
 };
-//# sourceMappingURL=index.d.ts.map

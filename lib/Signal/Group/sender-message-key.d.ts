@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export class SenderMessageKey {
     constructor(iteration: any, seed: any);
     iv: any;
@@ -9,4 +10,3 @@ export class SenderMessageKey {
     getCipherKey(): any;
     getSeed(): any;
 }
-//# sourceMappingURL=sender-message-key.d.ts.map

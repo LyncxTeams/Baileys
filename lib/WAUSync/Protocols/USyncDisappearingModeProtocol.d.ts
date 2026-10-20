@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export class USyncDisappearingModeProtocol {
     name: string;
     getQueryElement(): {
@@ -10,4 +11,3 @@ export class USyncDisappearingModeProtocol {
         setAt: Date;
     } | undefined;
 }
-//# sourceMappingURL=USyncDisappearingModeProtocol.d.ts.map

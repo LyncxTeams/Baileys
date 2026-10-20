@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function makeGroupsSocket(config: any): {
     groupQuery: (jid: any, type: any, content: any) => Promise<any>;
     groupMetadata: (jid: any) => Promise<{
@@ -160,6 +161,17 @@ export function makeGroupsSocket(config: any): {
     updateProfileStatus: (status: any) => Promise<void>;
     updateProfileName: (name: any) => Promise<void>;
     updateBlockStatus: (jid: any, action: any) => Promise<void>;
+    reportSpam: (jid: string, options?: {
+        flow?: string;
+        source?: string;
+        subject?: string;
+        isKnownChat?: boolean;
+    }) => Promise<{
+        jid: string;
+        flow: string;
+        reported: true;
+        node: any;
+    }>;
     updateDisableLinkPreviewsPrivacy: (isPreviewsDisabled: any) => Promise<void>;
     updateCallPrivacy: (value: any) => Promise<void>;
     updateMessagesPrivacy: (value: any) => Promise<void>;
@@ -245,6 +257,8 @@ export function makeGroupsSocket(config: any): {
     sendWAMBuffer: (wamBuffer: any) => Promise<any>;
     executeUSyncQuery: (usyncQuery: any) => Promise<any>;
     onWhatsApp: (...phoneNumber: any[]) => Promise<any>;
+    onWhatsAppUsername: (...usernames: any[]) => Promise<any>;
+    getUsernames: (...jids: any[]) => Promise<any>;
     fetchAccountReachoutTimelock: () => Promise<{
         isActive: boolean;
         timeEnforcementEnds: Date | undefined;
@@ -283,4 +297,3 @@ export function extractGroupMetadata(result: any): {
     participants: any;
     ephemeralDuration: number | undefined;
 };
-//# sourceMappingURL=groups.d.ts.map

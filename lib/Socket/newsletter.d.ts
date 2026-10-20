@@ -1,3 +1,29 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+export interface NewsletterAddOnGroup {
+    jid?: string;
+    messages: {
+        serverId?: number;
+        reaction?: { code?: string; t?: number };
+        pollVote?: { t?: number; hashes: string[] };
+    }[];
+}
+export interface NewsletterEnforcement {
+    enforcementId?: string;
+    createdAt?: number;
+    violationCategory?: string;
+    source?: string;
+    appealState?: string;
+    appealCreatedAt?: number;
+    appealReasonOptions: { reason?: string; label?: string }[];
+    appealFormUrl?: string;
+    policy?: {
+        headline?: string;
+        subtitle?: string;
+        overview?: string;
+        explanation?: string;
+        adminDisclaimer?: string;
+    };
+}
 export function makeNewsletterSocket(config: any): {
     executeWMexQuery: (variables: any, queryId: any, dataPath: any) => Promise<any>;
     newsletterCreate: (name: any, description: any) => Promise<{
@@ -16,21 +42,85 @@ export function makeNewsletterSocket(config: any): {
         mute_state: any;
     }>;
     newsletterUpdate: (jid: any, updates: any) => Promise<any>;
-    newsletterSubscribers: (jid: any) => Promise<any>;
-    newsletterSubscribed: () => Promise<any>;
-    newsletterMetadata: (type: any, key: any) => Promise<any>;
+    newsletterSubscribers: (jid: string, options?: {
+        count?: number;
+    }) => Promise<{
+        id?: string;
+        phoneNumber?: string;
+        displayName?: string;
+        username?: string;
+        role?: string;
+        followTime?: number;
+    }[]>;
+    newsletterSubscribed: (options?: {
+        fetchStatusMetadata?: boolean;
+        fetchWamoSub?: boolean;
+    }) => Promise<any>;
+    newsletterMetadata: (type: 'invite' | 'jid', key: string, options?: {
+        fetchCreationTime?: boolean;
+        fetchFullImage?: boolean;
+        fetchViewerMetadata?: boolean;
+        fetchPinnedMessages?: boolean;
+        fetchStatusMetadata?: boolean;
+        fetchWamoSub?: boolean;
+    }) => Promise<any>;
     newsletterFollow: (jid: any) => Promise<any>;
     newsletterUnfollow: (jid: any) => Promise<any>;
+    newsletterUpdateUserSetting: (jid: string, type: 'ADMIN_NOTIFICATIONS' | 'FOLLOWER_NOTIFICATIONS', value: boolean) => Promise<{
+        id: string;
+        state?: string;
+    }>;
     newsletterMute: (jid: any) => Promise<any>;
     newsletterUnmute: (jid: any) => Promise<any>;
     newsletterUpdateName: (jid: any, name: any) => Promise<any>;
+    newsletterUpdateReactions: (jid: string, setting: 'ALL' | 'BASIC' | 'NONE' | 'BLOCKLIST') => Promise<any>;
     newsletterUpdateDescription: (jid: any, description: any) => Promise<any>;
     newsletterUpdatePicture: (jid: any, content: any) => Promise<any>;
     newsletterRemovePicture: (jid: any) => Promise<any>;
     newsletterReactMessage: (jid: any, serverId: any, reaction: any) => Promise<void>;
-    newsletterFetchMessages: (type: any, key: any, count: any, after: any, before: any) => Promise<{
+    newsletterFetchMessages: (type: any, key: any, count?: number, after?: any, before?: any) => Promise<{
         [k: string]: any;
     }[]>;
+    newsletterFetchMessageUpdates: (jid: string, options?: {
+        count?: number;
+        since?: number;
+        before?: string | number;
+        after?: string | number;
+    }) => Promise<{
+        jid: string;
+        messages: { [k: string]: any }[];
+    }>;
+    newsletterQuestionResponses: (jid: string, serverId: string | number, options?: {
+        count?: number;
+        before?: string;
+        filter?: 'contacts' | 'replied' | 'starred';
+        searchText?: string;
+    }) => Promise<{
+        jid: string;
+        serverId: number;
+        responses: {
+            id?: string;
+            t?: number;
+            isSender: boolean;
+            responseServerId?: string;
+            sender: {
+                lid?: string;
+                notifyName?: string;
+                pictureDirectPath?: string;
+            };
+            replied: boolean;
+            starred: boolean;
+            message?: any;
+        }[];
+    }>;
+    newsletterMyAddOns: (options?: {
+        limit?: number;
+        jid?: string;
+    }) => Promise<NewsletterAddOnGroup[]>;
+    newsletterStatusMyAddOns: (options?: {
+        limit?: number;
+        jid?: string;
+    }) => Promise<NewsletterAddOnGroup[]>;
     subscribeNewsletterUpdates: (jid: any) => Promise<{
         duration: any;
     } | null>;
@@ -38,6 +128,90 @@ export function makeNewsletterSocket(config: any): {
     newsletterChangeOwner: (jid: any, newOwnerJid: any) => Promise<void>;
     newsletterDemote: (jid: any, userJid: any) => Promise<void>;
     newsletterDelete: (jid: any) => Promise<void>;
+    newsletterAdminCapabilities: (jid: string) => Promise<string[]>;
+    newsletterEnforcements: (jid: string, locale?: string) => Promise<{
+        adminProfiles: NewsletterEnforcement[];
+        profilePictureDeletions: NewsletterEnforcement[];
+        suspensions: NewsletterEnforcement[];
+        violatingMessages: NewsletterEnforcement[];
+        geoSuspensions: NewsletterEnforcement[];
+    }>;
+    newsletterReports: (locale?: string) => Promise<any[]>;
+    newsletterAppealReport: (reportId: string | number, reason: string) => Promise<any>;
+    newsletterCanPostStatus: (jid: string) => Promise<{
+        canPost: boolean;
+        canPostMusic: boolean;
+        capabilities: string[];
+    }>;
+    newsletterAdminInfo: (jid: string) => Promise<{
+        id: string;
+        adminCount: number;
+        adminProfile?: {
+            id?: string;
+            name?: string;
+            picture?: {
+                id?: string;
+                directPath?: string;
+            };
+        };
+        adminProfilesEnabled: boolean;
+    }>;
+    newsletterPollVoters: (jid: string, serverId: string | number, options?: {
+        limit?: number;
+        voteHash?: string;
+    }) => Promise<any>;
+    newsletterReactionSenders: (jid: string, serverId: string | number) => Promise<any>;
+    newsletterPinMessages: (jid: string, serverIds: (string | number)[] | string | number) => Promise<any>;
+    newsletterUnpinMessages: (jid: string, serverIds: (string | number)[] | string | number) => Promise<any>;
+    newsletterLabelAiContent: (jid: string, serverId: string | number, messageType?: 'MESSAGE' | 'STATUS') => Promise<any>;
+    newsletterLabelPaidPartnership: (jid: string, serverId: string | number, messageType?: 'MESSAGE' | 'STATUS') => Promise<any>;
+    newsletterCreateAdminInvite: (jid: string, userJid: string) => Promise<any>;
+    newsletterRevokeAdminInvite: (jid: string, userJid: string) => Promise<any>;
+    newsletterAcceptAdminInvite: (jid: string) => Promise<any>;
+    newsletterDirectoryList: (options?: {
+        view?: 'RECOMMENDED' | 'NEW' | 'POPULAR' | 'FEATURED' | 'TRENDING';
+        categories?: string[];
+        countryCodes?: string[];
+        limit?: number;
+        cursorToken?: string;
+        fetchStatusMetadata?: boolean;
+    }) => Promise<any>;
+    newsletterDirectorySearch: (searchText: string, options?: {
+        categories?: string[];
+        limit?: number;
+        cursorToken?: string;
+        fetchStatusMetadata?: boolean;
+    }) => Promise<any>;
+    newsletterDirectoryCategories: (options?: {
+        categories?: string[];
+        countryCode?: string;
+        perCategoryLimit?: number;
+        fetchStatusMetadata?: boolean;
+    }) => Promise<any>;
+    newsletterSendPollVote: (jid: string, parentServerId: string | number, options: string[] | string) => Promise<{
+        id: string;
+    }>;
+    newsletterInsights: (jid: string, options?: {
+        metrics?: string[];
+    }) => Promise<any>;
+    newsletterFollowers: (jid: string, options?: {
+        count?: number;
+    }) => Promise<any>;
+    newsletterPendingAdminInvites: (jid: string) => Promise<{
+        id?: string;
+        phoneNumber?: string;
+    }[]>;
+    newsletterQuestionResponseState: (jid: string, serverId: string | number, responseServerId: string | number, state: 'HIDDEN' | 'VISIBLE') => Promise<any>;
+    newsletterRecommended: (options?: {
+        limit?: number;
+        countryCodes?: string[];
+        fetchStatusMetadata?: boolean;
+    }) => Promise<any>;
+    newsletterSimilar: (jid: string, options?: {
+        limit?: number;
+        countryCodes?: string[];
+        fetchStatusMetadata?: boolean;
+    }) => Promise<any>;
     groupQuery: (jid: any, type: any, content: any) => Promise<any>;
     groupMetadata: (jid: any) => Promise<{
         id: any;
@@ -188,6 +362,17 @@ export function makeNewsletterSocket(config: any): {
     updateProfileStatus: (status: any) => Promise<void>;
     updateProfileName: (name: any) => Promise<void>;
     updateBlockStatus: (jid: any, action: any) => Promise<void>;
+    reportSpam: (jid: string, options?: {
+        flow?: string;
+        source?: string;
+        subject?: string;
+        isKnownChat?: boolean;
+    }) => Promise<{
+        jid: string;
+        flow: string;
+        reported: true;
+        node: any;
+    }>;
     updateDisableLinkPreviewsPrivacy: (isPreviewsDisabled: any) => Promise<void>;
     updateCallPrivacy: (value: any) => Promise<void>;
     updateMessagesPrivacy: (value: any) => Promise<void>;
@@ -273,6 +458,8 @@ export function makeNewsletterSocket(config: any): {
     sendWAMBuffer: (wamBuffer: any) => Promise<any>;
     executeUSyncQuery: (usyncQuery: any) => Promise<any>;
     onWhatsApp: (...phoneNumber: any[]) => Promise<any>;
+    onWhatsAppUsername: (...usernames: any[]) => Promise<any>;
+    getUsernames: (...jids: any[]) => Promise<any>;
     fetchAccountReachoutTimelock: () => Promise<{
         isActive: boolean;
         timeEnforcementEnds: Date | undefined;
@@ -280,4 +467,3 @@ export function makeNewsletterSocket(config: any): {
     }>;
     fetchNewChatMessageCap: () => Promise<any>;
 };
-//# sourceMappingURL=newsletter.d.ts.map

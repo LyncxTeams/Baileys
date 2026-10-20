@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export * from "./Auth.js";
 export * from "./GroupMetadata.js";
 export * from "./Chat.js";
@@ -11,4 +12,3 @@ export * from "./Call.js";
 export * from "./Signal.js";
 export * from "./Mex.js";
 export const DisconnectReason: any;
-//# sourceMappingURL=index.d.ts.map

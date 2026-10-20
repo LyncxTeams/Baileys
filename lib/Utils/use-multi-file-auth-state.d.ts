@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function useMultiFileAuthState(folder: any): Promise<{
     state: {
         creds: any;
@@ -8,4 +9,4 @@ export function useMultiFileAuthState(folder: any): Promise<{
     };
     saveCreds: () => Promise<any>;
 }>;
-//# sourceMappingURL=use-multi-file-auth-state.d.ts.map
+export function countAuthFileLocks(): number;

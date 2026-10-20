@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export class BinaryInfo {
     constructor(options?: {});
     protocolVersion: number;
@@ -5,4 +6,3 @@ export class BinaryInfo {
     events: any[];
     buffer: any[];
 }
-//# sourceMappingURL=BinaryInfo.d.ts.map

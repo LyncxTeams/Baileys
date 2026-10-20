@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 /**
  * Uploads images not already uploaded to WA's servers
  */
@@ -47,4 +48,3 @@ export function parseProductNode(productNode: any): {
     isHidden: boolean;
 };
 export function uploadingNecessaryImages(images: any, waUploadToServer: any, timeoutMs?: number): Promise<any[]>;
-//# sourceMappingURL=business.d.ts.map

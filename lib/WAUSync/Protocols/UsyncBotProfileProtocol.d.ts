@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export class USyncBotProfileProtocol {
     name: string;
     getQueryElement(): {
@@ -36,4 +37,3 @@ export class USyncBotProfileProtocol {
         prompts: string[];
     };
 }
-//# sourceMappingURL=UsyncBotProfileProtocol.d.ts.map

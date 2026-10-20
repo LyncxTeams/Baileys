@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 /**
  * encrypt AES 256 GCM;
  * where the tag tag is suffixed to the ciphertext
@@ -37,4 +38,3 @@ export function signedKeyPair(identityKeyPair: any, keyId: any): {
     signature: any;
     keyId: any;
 };
-//# sourceMappingURL=crypto.d.ts.map

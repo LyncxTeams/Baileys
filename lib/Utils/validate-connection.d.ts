@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function generateLoginNode(userJid: any, config: any): proto.ClientPayload;
 export function generateRegistrationNode({ registrationId, signedPreKey, signedIdentityKey }: {
     registrationId: any;
@@ -41,4 +42,3 @@ export function configureSuccessfulPairing(stanza: any, { advSecretKey, signedId
 };
 export function encodeSignedDeviceIdentity(account: any, includeSignatureKey: any): any;
 import { proto } from '../../WAProto/index.js';
-//# sourceMappingURL=validate-connection.d.ts.map

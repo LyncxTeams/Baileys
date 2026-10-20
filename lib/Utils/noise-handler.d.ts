@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function makeNoiseHandler({ keyPair: { private: privateKey, public: publicKey }, NOISE_HEADER, logger, routingInfo }: {
     keyPair: {
         private: any;
@@ -18,4 +19,3 @@ export function makeNoiseHandler({ keyPair: { private: privateKey, public: publi
     encodeFrame: (data: any) => any;
     decodeFrame: (newData: any, onFrame: any) => Promise<void>;
 };
-//# sourceMappingURL=noise-handler.d.ts.map

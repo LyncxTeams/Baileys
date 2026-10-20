@@ -1,3 +1,3 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 /** Association type */
 export const LabelAssociationType: any;
-//# sourceMappingURL=LabelAssociation.d.ts.map

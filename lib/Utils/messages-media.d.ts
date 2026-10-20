@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 /** generates all the keys required to encrypt/decrypt & sign a media message */
 export function getMediaKeys(buffer: any, mediaType: any): Promise<{
     iv: any;
@@ -134,4 +135,3 @@ export function decryptMediaRetryData({ ciphertext, iv }: {
 }, mediaKey: any, msgId: any): proto.MediaRetryNotification;
 export function getStatusCodeForMediaRetry(code: any): any;
 import { proto } from '../../WAProto/index.js';
-//# sourceMappingURL=messages-media.d.ts.map

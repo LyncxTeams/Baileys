@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 /**
  * Manages pre-key operations with proper concurrency control
  */
@@ -23,4 +24,3 @@ export class PreKeyManager {
      */
     validateDeletions(data: any, keyType: any): Promise<any>;
 }
-//# sourceMappingURL=pre-key-manager.d.ts.map

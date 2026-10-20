@@ -1,3 +1,16 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+export function buildMemberLabelMessage(jid: string, memberLabel?: string | null): {
+    label: string;
+    content: any;
+    node: {
+        tag: string;
+        attrs: {
+            tag_reason: 'user_update' | 'user_delete';
+            appdata: 'member_tag';
+        };
+        content: undefined;
+    };
+};
 export function makeMessagesSocket(config: any): {
     userDevicesCache: any;
     devicesMutex: {
@@ -15,6 +28,17 @@ export function makeMessagesSocket(config: any): {
         addBizAttributes: any;
         statusJidList: any;
     }) => Promise<any>;
+    sendHD: (jid: string, content: {
+        image?: any;
+        video?: any;
+        hd?: any;
+        caption?: string;
+    }, options?: any) => Promise<any>;
+    sendImgVid: (jid: string, content: {
+        image: any;
+        video: any;
+        caption?: string;
+    }, options?: any) => Promise<any>;
     sendReceipt: (jid: any, participant: any, messageIds: any, type: any) => Promise<void>;
     sendReceipts: (keys: any, type: any) => Promise<void>;
     readMessages: (keys: any) => Promise<void>;
@@ -42,7 +66,21 @@ export function makeMessagesSocket(config: any): {
     }>;
     getUSyncDevices: (jids: any, useCache: any, ignoreZeroDevices: any) => Promise<any[]>;
     messageRetryManager: MessageRetryManager | null;
-    updateMemberLabel: (jid: any, memberLabel: any) => Promise<any>;
+    resetGroupSenderKey: (jid: string) => Promise<{ jid: string; cleared: number; devices: string[] }>;
+    updateMemberLabel: (jid: string, memberLabel?: string | null, options?: {
+        additionalNodes?: any[];
+    }) => Promise<{
+        jid: string;
+        label: string;
+        messageId: string;
+    }>;
+    removeMemberLabel: (jid: string, options?: {
+        additionalNodes?: any[];
+    }) => Promise<{
+        jid: string;
+        label: string;
+        messageId: string;
+    }>;
     updateMediaMessage: (message: any) => Promise<any>;
     sendMessage: (jid: any, content: any, options?: {}) => Promise<proto.WebMessageInfo | undefined>;
     executeWMexQuery: (variables: any, queryId: any, dataPath: any) => Promise<any>;
@@ -63,8 +101,19 @@ export function makeMessagesSocket(config: any): {
     }>;
     newsletterUpdate: (jid: any, updates: any) => Promise<any>;
     newsletterSubscribers: (jid: any) => Promise<any>;
-    newsletterSubscribed: () => Promise<any>;
-    newsletterMetadata: (type: any, key: any) => Promise<any>;
+    newsletterSubscribed: (options?: {
+        fetchStatusMetadata?: boolean;
+        fetchWamoSub?: boolean;
+    }) => Promise<any>;
+    newsletterMetadata: (type: 'jid' | 'invite', key: string, options?: {
+        fetchCreationTime?: boolean;
+        fetchFullImage?: boolean;
+        fetchViewerMetadata?: boolean;
+        fetchPinnedMessages?: boolean;
+        fetchStatusMetadata?: boolean;
+        fetchWamoSub?: boolean;
+        viewRole?: string;
+    }) => Promise<any>;
     newsletterFollow: (jid: any) => Promise<any>;
     newsletterUnfollow: (jid: any) => Promise<any>;
     newsletterMute: (jid: any) => Promise<any>;
@@ -233,6 +282,17 @@ export function makeMessagesSocket(config: any): {
     updateProfileStatus: (status: any) => Promise<void>;
     updateProfileName: (name: any) => Promise<void>;
     updateBlockStatus: (jid: any, action: any) => Promise<void>;
+    reportSpam: (jid: string, options?: {
+        flow?: string;
+        source?: string;
+        subject?: string;
+        isKnownChat?: boolean;
+    }) => Promise<{
+        jid: string;
+        flow: string;
+        reported: true;
+        node: any;
+    }>;
     updateDisableLinkPreviewsPrivacy: (isPreviewsDisabled: any) => Promise<void>;
     updateCallPrivacy: (value: any) => Promise<void>;
     updateMessagesPrivacy: (value: any) => Promise<void>;
@@ -318,6 +378,8 @@ export function makeMessagesSocket(config: any): {
     sendWAMBuffer: (wamBuffer: any) => Promise<any>;
     executeUSyncQuery: (usyncQuery: any) => Promise<any>;
     onWhatsApp: (...phoneNumber: any[]) => Promise<any>;
+    onWhatsAppUsername: (...usernames: any[]) => Promise<any>;
+    getUsernames: (...jids: any[]) => Promise<any>;
     fetchAccountReachoutTimelock: () => Promise<{
         isActive: boolean;
         timeEnforcementEnds: Date | undefined;
@@ -327,4 +389,3 @@ export function makeMessagesSocket(config: any): {
 };
 import { MessageRetryManager } from '../Utils/index.js';
 import { proto } from '../../WAProto/index.js';
-//# sourceMappingURL=messages-send.d.ts.map

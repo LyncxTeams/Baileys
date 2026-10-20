@@ -1,10 +1,11 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export const UNAUTHORIZED_CODES: number[];
 export const BIZ_BOT_SUPPORT_PAYLOAD: "{\"version\":1,\"is_ai_message\":true,\"should_upload_client_logs\":false,\"should_show_system_message\":false,\"ticket_id\":\"7004947587700716\",\"citation_items\":[],\"ticket_locale\":\"us\"}";
 export const DEFAULT_ORIGIN: "https://web.whatsapp.com";
 export const CALL_VIDEO_PREFIX: "https://call.whatsapp.com/video/";
 export const CALL_AUDIO_PREFIX: "https://call.whatsapp.com/voice/";
-export const DONATE_URL: "https://saweria.co/itsliaaa";
-export const LIBRARY_NAME: "itsliaaa/baileys";
+export const DONATE_URL: "https://www.npmjs.com/package/@rexxhayanasi/elaina-baileys";
+export const LIBRARY_NAME: "rexxhayanasi/elaina-baileys";
 export const DEF_CALLBACK_PREFIX: "CB:";
 export const DEF_TAG_PREFIX: "TAG:";
 export const PHONE_CONNECTION_CB: "CB:Pong";
@@ -21,7 +22,6 @@ export const NOISE_MODE: "Noise_XX_25519_AESGCM_SHA256\0\0\0\0";
 export const DICT_VERSION: 3;
 export const KEY_BUNDLE_TYPE: any;
 export const NOISE_WA_HEADER: any;
-export const LEXER_REGEX: RegExp;
 /** from: https://stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url */
 export const URL_REGEX: RegExp;
 export namespace WA_CERT_DETAILS {
@@ -35,6 +35,7 @@ export namespace DEFAULT_CACHE_TTLS {
     let MSG_RETRY: number;
     let CALL_OFFER: number;
     let USER_DEVICES: number;
+    let OUTBOUND_RESEND: number;
 }
 export namespace DEFAULT_CONNECTION_CONFIG {
     export { version };
@@ -48,6 +49,10 @@ export namespace DEFAULT_CONNECTION_CONFIG {
     export let customUploadHosts: never[];
     export let retryRequestDelayMs: number;
     export let maxMsgRetryCount: number;
+    export let ackRetryDelayMs: number;
+    export let maxAckRetryCount: number;
+    export let maxRetryQueueSize: number;
+    export let pairingCodeTimeoutMs: number;
     export let fireInitQueries: boolean;
     export let auth: undefined;
     export let markOnlineOnConnect: boolean;
@@ -142,4 +147,7 @@ import { proto } from '../../WAProto/index.js';
 declare const version: number[];
 import { makeLibSignalRepository } from '../Signal/libsignal.js';
 export {};
-//# sourceMappingURL=index.d.ts.map
+export const MAX_OUTBOUND_RESEND_ENTRIES: number;
+export const MEMBER_LABEL_MAX_LENGTH: number;
+export const DEFAULT_CACHE_MAX_KEYS: number;
+export const PAIRING_RESPONSE_GRACE_MS: number;

@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function buildProfilePictureQueryContent(type: any, tcTokenContent: any): {
     tag: string;
     attrs: {
@@ -5,7 +6,40 @@ export function buildProfilePictureQueryContent(type: any, tcTokenContent: any):
         query: string;
     };
 }[];
+export function readSpamReportResult(sent: {
+    tag: string;
+    attrs: Record<string, string>;
+}, result: any): {
+    jid: string;
+    flow: string;
+    reported: true;
+    node: any;
+};
+export function buildSpamListNode(jid: string, options?: {
+    flow?: string;
+    source?: string;
+    subject?: string;
+    isKnownChat?: boolean;
+}): {
+    tag: string;
+    attrs: Record<string, string>;
+};
 export function makeChatsSocket(config: any): {
+    checkAccountHealth: (jid: string) => Promise<{
+        jid: string;
+        exists: boolean;
+        isBusiness: boolean;
+        verifiedName: string | null;
+        about: string | null;
+        hasProfilePhoto: boolean;
+        self: {
+            capped: boolean;
+            warned: boolean;
+            unlimited: boolean;
+            remaining: number | null;
+        } | null;
+        notes: string[];
+    }>;
     findUserId: (pnLid: any) => Promise<{
         lid: undefined;
         phoneNumber: undefined;
@@ -18,6 +52,9 @@ export function makeChatsSocket(config: any): {
         /** AB prop 14303: issue tctokens to LID instead of PN. WA Web default: false. */
         lidTrustedTokenIssueToLid: boolean;
     };
+    /** Every AB prop the server pushed, keyed by both its number and its name. */
+    fetchProps: () => Promise<Record<string, string>>;
+    getServerProps: (options?: { refresh?: boolean }) => Promise<Record<string, string>>;
     createCallLink: (type: any, event: any, timeoutMs: any) => Promise<any>;
     getBotListV2: () => Promise<{
         jid: any;
@@ -47,8 +84,74 @@ export function makeChatsSocket(config: any): {
     updateProfilePicture: (jid: any, content: any, dimensions: any) => Promise<void>;
     removeProfilePicture: (jid: any) => Promise<void>;
     updateProfileStatus: (status: any) => Promise<void>;
+    getUsername: () => Promise<{
+        username: string | null;
+        state: string | null;
+        pin: string | null;
+    }>;
+    setUsername: (username?: string, options?: {
+        reserved?: boolean;
+        sessionId?: string;
+        source?: string;
+    }) => Promise<boolean>;
+    removeUsername: () => Promise<boolean>;
+    setUsernamePin: (pin: string) => Promise<boolean>;
+    removeUsernamePin: () => Promise<boolean>;
+    checkUsernameAvailability: (username: string, options?: {
+        sessionId?: string;
+        source?: string;
+    }) => Promise<{
+        available: boolean;
+        suggestions: string[];
+        response: any;
+    }>;
+    updateTextStatus: (text?: string | null, options?: {
+        emoji?: string;
+        ephemeralDurationSec?: number;
+    }) => Promise<any>;
+    fetchTextStatus: (jids: string[] | string) => Promise<any>;
+    fetchAbout: (jid: string) => Promise<{
+        jid: string;
+        status: string | null;
+        response: any;
+    }>;
+    fetchServerLinkPreview: (url: string) => Promise<any>;
+    fetchUserNotices: (since?: number) => Promise<{
+        id?: string;
+        stage?: string;
+        t?: string;
+        version?: string;
+        type?: string;
+    }[]>;
+    updateUserNoticeStage: (noticeId: string | number, stage: string | number) => Promise<void>;
+    fetchOptOutList: (options?: {
+        category?: string;
+        dhash?: string;
+    }) => Promise<any[]>;
+    updateOptOut: (input: {
+        jid: string;
+        category: string;
+        action: string;
+        dhash?: string;
+        reason?: string;
+        entryPoint?: string;
+        signupId?: string;
+        duration?: number;
+    }) => Promise<void>;
+    fetchPushSettings: () => Promise<any>;
     updateProfileName: (name: any) => Promise<void>;
     updateBlockStatus: (jid: any, action: any) => Promise<void>;
+    reportSpam: (jid: string, options?: {
+        flow?: string;
+        source?: string;
+        subject?: string;
+        isKnownChat?: boolean;
+    }) => Promise<{
+        jid: string;
+        flow: string;
+        reported: true;
+        node: any;
+    }>;
     updateDisableLinkPreviewsPrivacy: (isPreviewsDisabled: any) => Promise<void>;
     updateCallPrivacy: (value: any) => Promise<void>;
     updateMessagesPrivacy: (value: any) => Promise<void>;
@@ -134,6 +237,8 @@ export function makeChatsSocket(config: any): {
     sendWAMBuffer: (wamBuffer: any) => Promise<any>;
     executeUSyncQuery: (usyncQuery: any) => Promise<any>;
     onWhatsApp: (...phoneNumber: any[]) => Promise<any>;
+    onWhatsAppUsername: (...usernames: any[]) => Promise<any>;
+    getUsernames: (...jids: any[]) => Promise<any>;
     fetchAccountReachoutTimelock: () => Promise<{
         isActive: boolean;
         timeEnforcementEnds: Date | undefined;
@@ -141,4 +246,3 @@ export function makeChatsSocket(config: any): {
     }>;
     fetchNewChatMessageCap: () => Promise<any>;
 };
-//# sourceMappingURL=chats.d.ts.map

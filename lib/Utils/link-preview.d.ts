@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function getUrlInfo(text: any, opts?: {
     thumbnailWidth: number;
     fetchOpts: {
@@ -10,4 +11,3 @@ export function getUrlInfo(text: any, opts?: {
     description: any;
     originalThumbnailUrl: any;
 } | undefined>;
-//# sourceMappingURL=link-preview.d.ts.map

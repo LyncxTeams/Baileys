@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export const WEB_EVENTS: ({
     name: string;
     id: number;
@@ -34924,4 +34925,3 @@ export const FLAG_GLOBAL: 0;
 export const FLAG_EVENT: 1;
 export const FLAG_FIELD: 2;
 export const FLAG_EXTENDED: 4;
-//# sourceMappingURL=constants.d.ts.map

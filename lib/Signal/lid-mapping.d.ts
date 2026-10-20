@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export class LIDMappingStore {
     constructor(keys: any, logger: any, pnToLIDFunc: any);
     mappingCache: any;
@@ -18,4 +19,3 @@ export class LIDMappingStore {
      */
     close(): void;
 }
-//# sourceMappingURL=lid-mapping.d.ts.map

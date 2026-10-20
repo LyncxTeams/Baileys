@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function makeLtHashGenerator({ indexValueMap, hash }: {
     indexValueMap: any;
     hash: any;
@@ -406,4 +407,3 @@ export function chatModificationToAppPatch(mod: any, jid: any): {
 };
 export function processSyncAction(syncAction: any, ev: any, me: any, initialSyncOpts: any, logger: any): void;
 import { proto } from '../../WAProto/index.js';
-//# sourceMappingURL=chat-utils.d.ts.map

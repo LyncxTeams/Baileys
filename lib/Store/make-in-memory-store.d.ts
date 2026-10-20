@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function waChatKey(pin: any): {
     key: (c: any) => string;
     compare: (k1: any, k2: any) => any;
@@ -60,4 +61,3 @@ export function makeInMemoryStore(config?: {}): {
     readFromFile: (path: any) => void;
 };
 import { ObjectRepository } from './object-repository.js';
-//# sourceMappingURL=make-in-memory-store.d.ts.map

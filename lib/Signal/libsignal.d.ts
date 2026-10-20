@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function makeLibSignalRepository(auth: any, logger: any, pnToLIDFunc: any): {
     decryptGroupMessage({ group, authorJid, msg }: {
         group: any;
@@ -52,4 +53,3 @@ export function makeLibSignalRepository(auth: any, logger: any, pnToLIDFunc: any
     migrateSession(fromJid: any, toJid: any): Promise<any>;
 };
 import { LIDMappingStore } from './lid-mapping.js';
-//# sourceMappingURL=libsignal.d.ts.map

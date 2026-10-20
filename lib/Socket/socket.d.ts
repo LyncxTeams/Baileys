@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function makeSocket(config: any): {
     type: string;
     ws: WebSocketClient;
@@ -39,6 +40,7 @@ export function makeSocket(config: any): {
     digestKeyBundle: () => Promise<void>;
     rotateSignedPreKey: () => Promise<void>;
     requestPairingCode: (phoneNumber: any, customPairingCode: any) => Promise<any>;
+    cancelPairingCode: () => boolean;
     updateServerTimeOffset: ({ attrs }: {
         attrs: any;
     }) => void;
@@ -49,13 +51,28 @@ export function makeSocket(config: any): {
     sendWAMBuffer: (wamBuffer: any) => Promise<any>;
     executeUSyncQuery: (usyncQuery: any) => Promise<any>;
     onWhatsApp: (...phoneNumber: any[]) => Promise<any>;
+    onWhatsAppUsername: (...usernames: any[]) => Promise<any>;
+    getUsernames: (...jids: any[]) => Promise<any>;
     fetchAccountReachoutTimelock: () => Promise<{
         isActive: boolean;
         timeEnforcementEnds: Date | undefined;
         enforcementType: any;
     }>;
-    fetchNewChatMessageCap: () => Promise<any>;
+    fetchNewChatMessageCap: () => Promise<{
+        status: string;
+        capped: boolean;
+        warned: boolean;
+        totalQuota?: number;
+        usedQuota?: number;
+        remaining?: number;
+        cycleStart?: number;
+        cycleEnd?: number;
+        serverTime?: number;
+        oteStatus?: string;
+        mvStatus?: string;
+        subscriptionStatus?: string;
+        response: any;
+    }>;
 };
 import { WebSocketClient } from './Client/index.js';
 import { BinaryInfo } from '../WAM/BinaryInfo.js';
-//# sourceMappingURL=socket.d.ts.map

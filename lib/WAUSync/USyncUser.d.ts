@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export class USyncUser {
     withId(id: any): this;
     id: any;
@@ -14,4 +15,3 @@ export class USyncUser {
     withPersonaId(personaId: any): this;
     personaId: any;
 }
-//# sourceMappingURL=USyncUser.d.ts.map

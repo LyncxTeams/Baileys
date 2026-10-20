@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function makeOrderedDictionary(idGetter: any): {
     array: any[];
     get: (id: any) => any;
@@ -10,4 +11,3 @@ export function makeOrderedDictionary(idGetter: any): {
     toJSON: () => any[];
     fromJSON: (newItems: any) => void;
 };
-//# sourceMappingURL=make-ordered-dictionary.d.ts.map

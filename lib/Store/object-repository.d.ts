@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export class ObjectRepository {
     constructor(entities?: {});
     entityMap: Map<string, any>;
@@ -8,4 +9,3 @@ export class ObjectRepository {
     count(): number;
     toJSON(): any[];
 }
-//# sourceMappingURL=object-repository.d.ts.map

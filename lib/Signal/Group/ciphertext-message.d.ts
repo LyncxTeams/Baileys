@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export class CiphertextMessage {
     UNSUPPORTED_VERSION: number;
     CURRENT_VERSION: number;
@@ -7,4 +8,3 @@ export class CiphertextMessage {
     SENDERKEY_DISTRIBUTION_TYPE: number;
     ENCRYPTED_MESSAGE_OVERHEAD: number;
 }
-//# sourceMappingURL=ciphertext-message.d.ts.map

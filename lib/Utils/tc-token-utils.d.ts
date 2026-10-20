@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 /** Read the persisted tctoken JID index and return its entries (never contains the sentinel key itself). */
 export function readTcTokenIndex(keys: any): Promise<any[]>;
 /** Build a SignalDataSet fragment that writes the merged index (persisted ∪ added) under the sentinel key. */
@@ -27,4 +28,3 @@ export function storeTcTokensFromIqResult({ result, fallbackJid, keys, getLIDFor
 }): Promise<void>;
 /** Sentinel key under `tctoken` store holding a JSON array of tracked storage JIDs for cross-session pruning. */
 export const TC_TOKEN_INDEX_KEY: "__index";
-//# sourceMappingURL=tc-token-utils.d.ts.map

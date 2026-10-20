@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export function downloadHistory(msg: any, options: any): Promise<proto.HistorySync>;
 export function processHistoryMessage(item: any, logger: any): {
     chats: any[];
@@ -73,4 +74,3 @@ export function downloadAndProcessHistorySyncNotification(msg: any, options: any
 }>;
 export function getHistoryMsg(message: any): any;
 import { proto } from '../../WAProto/index.js';
-//# sourceMappingURL=history.d.ts.map

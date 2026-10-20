@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export namespace Browsers {
     function ubuntu(browser: any): any[];
     function macOS(browser: any): any[];
@@ -7,4 +8,3 @@ export namespace Browsers {
     function appropriate(browser: any): any[];
 }
 export function getPlatformId(browser: any): string;
-//# sourceMappingURL=browser-utils.d.ts.map

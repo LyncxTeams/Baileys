@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 import { EventEmitter } from 'node:events';
 export declare const CallState: Readonly<{
     Idle: 0;

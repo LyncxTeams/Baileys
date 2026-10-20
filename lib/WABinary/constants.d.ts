@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export namespace TAGS {
     let LIST_EMPTY: number;
     let DICTIONARY_0: number;
@@ -20,43 +21,3 @@ export namespace TAGS {
 export const DOUBLE_BYTE_TOKENS: string[][];
 export const SINGLE_BYTE_TOKENS: string[];
 export const TOKEN_MAP: {};
-export const CPP_KEYWORDS: Set<string>;
-export const CSS_KEYWORDS: Set<string>;
-export const GO_KEYWORDS: Set<string>;
-export const HTML_KEYWORDS: Set<string>;
-export const JS_KEYWORDS: Set<string>;
-export const PYTHON_KEYWORDS: Set<string>;
-export const RUST_KEYWORDS: Set<string>;
-export const C_KEYWORDS: Set<string>;
-export const CSHARP_KEYWORDS: Set<string>;
-export const BASH_KEYWORDS: Set<string>;
-export const CMD_KEYWORDS: Set<string>;
-export const POWERSHELL_KEYWORDS: Set<string>;
-export const LANGUAGE_KEYWORDS: {
-    css: Set<string>;
-    html: Set<string>;
-    javascript: Set<string>;
-    typescript: Set<string>;
-    js: Set<string>;
-    ts: Set<string>;
-    python: Set<string>;
-    py: Set<string>;
-    go: Set<string>;
-    golang: Set<string>;
-    cpp: Set<string>;
-    'c++': Set<string>;
-    rust: Set<string>;
-    rs: Set<string>;
-    c: Set<string>;
-    h: Set<string>;
-    csharp: Set<string>;
-    cs: Set<string>;
-    bash: Set<string>;
-    sh: Set<string>;
-    zsh: Set<string>;
-    cmd: Set<string>;
-    bat: Set<string>;
-    powershell: Set<string>;
-    ps1: Set<string>;
-};
-//# sourceMappingURL=constants.d.ts.map

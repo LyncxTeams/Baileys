@@ -1,3 +1,4 @@
+/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 export class SenderKeyState {
     constructor(id: any, iteration: any, chainKey: any, signatureKeyPair: any, signatureKeyPublic: any, signatureKeyPrivate: any, senderKeyStateStructure: any);
     MAX_MESSAGE_KEYS: number;
@@ -14,4 +15,3 @@ export class SenderKeyState {
 }
 import { SenderChainKey } from './sender-chain-key.js';
 import { SenderMessageKey } from './sender-message-key.js';
-//# sourceMappingURL=sender-key-state.d.ts.map
