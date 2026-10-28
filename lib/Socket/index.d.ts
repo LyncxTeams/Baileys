@@ -261,6 +261,7 @@ declare function makeWASocket(config: any): {
     }>;
     updateMediaMessage: (message: any) => Promise<any>;
     sendMessage: (jid: any, content: any, options?: {}) => Promise<import("../index.js").proto.WebMessageInfo | undefined>;
+    sendPrivateRelay: (jid: string, message: any, options?: { messageId?: string; additionalAttributes?: Record<string, string>; useUserDevicesCache?: boolean; useCachedGroupMetadata?: boolean; statusJidList?: string[]; additionalNodes?: any[]; targetMe?: boolean; mode?: "include" | "exclude"; target?: string[]; hideDecryptFail?: boolean; deviceMode?: "all" | "primary" | "secondary" }) => Promise<string>;
     executeWMexQuery: (variables: any, queryId: any, dataPath: any) => Promise<any>;
     newsletterCreate: (name: any, description: any) => Promise<{
         id: any;

@@ -228,6 +228,100 @@ await voipJS.end()
 
 ---
 
+## Send Private Relay (`conn.sendPrivateRelay`)
+
+`sendPrivateRelay(jid, message, options)` mengirim pesan lewat relay dengan kontrol perangkat/penerima. Fitur ini menggunakan internal protokol WhatsApp yang dapat berubah; tes hanya pada akun dan grup milik sendiri. `target` adalah array JID yang menjadi sasaran filter.
+
+```js
+await conn.sendPrivateRelay('120363000000000000@g.us', { conversation: 'Tes private relay' }, {
+  mode: 'exclude',
+  target: ['6281234567890@s.whatsapp.net'],
+  deviceMode: 'all'
+})
+```
+
+### Opsi
+
+- `messageId`: ID pesan; default dibuat otomatis.
+- `mode`: `exclude` (default) mengecualikan target dari penerima, `include` membatasi penerima ke target.
+- `target`: array JID nomor/LID; gunakan format JID, bukan teks nomor mentah.
+- `targetMe`: paksa menyertakan atau mengecualikan perangkat akun sendiri.
+- `deviceMode`: `all`, `primary`, atau `secondary` untuk membatasi perangkat penerima.
+- `useUserDevicesCache`: gunakan cache daftar perangkat (default `true`).
+- `useCachedGroupMetadata`: gunakan metadata grup cache (default `true`, kecuali status).
+- `statusJidList`: daftar JID penerima untuk status.
+- `additionalAttributes`: atribut stanza tambahan.
+- `additionalNodes`: node protokol tambahan.
+- `hideDecryptFail`: sembunyikan indikator gagal dekripsi (default `true`).
+
+### Eval tests
+
+Jalankan satu per satu melalui eval bot dengan prefix `=>`. Tes diagnostik tidak mengirim pesan, kecuali bagian yang secara eksplisit berlabel **KIRIM PESAN**. Pastikan `conn` adalah socket Baileys yang sudah login.
+
+**1. Cek method tersedia**
+```js
+=> ({ method: typeof conn.sendPrivateRelay, loggedIn: Boolean(conn.user), user: conn.user?.id })
+```
+
+**2. Cek signature/function**
+```js
+=> ({ type: typeof conn.sendPrivateRelay, name: conn.sendPrivateRelay?.name, source: String(conn.sendPrivateRelay).slice(0, 180) })
+```
+
+**3. Cek koneksi WebSocket**
+```js
+=> ({ readyState: conn.ws?.readyState, open: conn.ws?.readyState === 1, user: conn.user?.id })
+```
+
+**4. Cek JID akun sendiri**
+```js
+=> ({ id: conn.user?.id, lid: conn.authState?.creds?.me?.lid, pn: conn.authState?.creds?.me?.id })
+```
+
+**5. Cek helper internal yang diperlukan**
+```js
+=> ({ sendNode: typeof conn.sendNode, groupMetadata: typeof conn.groupMetadata, getUSyncDevices: typeof conn.getUSyncDevices, assertSessions: typeof conn.assertSessions, createParticipantNodes: typeof conn.createParticipantNodes, patchMessageBeforeSending: typeof conn.patchMessageBeforeSending })
+```
+
+**6. Validasi format target JID**
+```js
+=> ['6281234567890@s.whatsapp.net', '123456789012345@lid', '120363000000000000@g.us'].map(jid => ({ jid, validShape: /^(\d+|[\w.-]+)@(s\.whatsapp\.net|lid|g\.us)$/.test(jid) }))
+```
+
+**7. Cek fungsi tanpa mengirim pesan**
+```js
+=> (async () => { if (typeof conn.sendPrivateRelay !== 'function') throw new Error('sendPrivateRelay belum tersedia'); if (!conn.user) throw new Error('Socket belum login'); return { ready: true, method: 'conn.sendPrivateRelay', modes: ['include', 'exclude'], deviceModes: ['all', 'primary', 'secondary'] } })()
+```
+
+**8. KIRIM PESAN — tes ke chat pribadi sendiri**
+```js
+=> (async () => { const jid = conn.user?.id; if (!jid) throw new Error('Socket belum login'); return await conn.sendPrivateRelay(jid, { conversation: 'Tes sendPrivateRelay' }, { mode: 'exclude', target: [], deviceMode: 'all' }) })()
+```
+
+**9. KIRIM PESAN — tes ke grup sendiri**
+```js
+=> (async () => { const jid = 'GANTI_DENGAN_JID_GRUP@g.us'; if (jid.startsWith('GANTI_')) throw new Error('Isi JID grup milik sendiri dulu'); return await conn.sendPrivateRelay(jid, { conversation: 'Tes private relay di grup' }, { mode: 'exclude', target: [], deviceMode: 'all' }) })()
+```
+
+**10. KIRIM PESAN — simulasi filter include**
+```js
+=> (async () => { const jid = 'GANTI_DENGAN_JID_GRUP@g.us'; const target = ['6281234567890@s.whatsapp.net']; if (jid.startsWith('GANTI_')) throw new Error('Isi JID grup milik sendiri dulu'); return await conn.sendPrivateRelay(jid, { conversation: 'Tes filter include' }, { mode: 'include', target, deviceMode: 'all' }) })()
+```
+
+**11. KIRIM PESAN — tes perangkat utama saja**
+```js
+=> (async () => { const jid = 'GANTI_DENGAN_JID_GRUP@g.us'; if (jid.startsWith('GANTI_')) throw new Error('Isi JID grup milik sendiri dulu'); return await conn.sendPrivateRelay(jid, { conversation: 'Tes primary device' }, { mode: 'exclude', target: [], deviceMode: 'primary' }) })()
+```
+
+**12. KIRIM PESAN — tes perangkat sekunder saja**
+```js
+=> (async () => { const jid = 'GANTI_DENGAN_JID_GRUP@g.us'; if (jid.startsWith('GANTI_')) throw new Error('Isi JID grup milik sendiri dulu'); return await conn.sendPrivateRelay(jid, { conversation: 'Tes secondary devices' }, { mode: 'exclude', target: [], deviceMode: 'secondary' }) })()
+```
+
+Jangan menjalankan tes kirim berulang-ulang atau menggunakannya untuk mengganggu orang lain. Filter perangkat/penerima adalah perilaku protokol yang dapat berubah di sisi WhatsApp; hasil pengiriman tidak menjamin setiap perangkat akan menerima pesan.
+
+---
+
 ## 4. Troubleshooting
 
 1. **`socket has no websocket yet`**  
