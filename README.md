@@ -351,3 +351,17 @@ Jalankan hanya jika tidak ada panggilan aktif. Nama method cleanup harus cocok d
 ```
 
 **Catatan penting:** nama export, constructor, dan method dapat berbeda antarversi. Jika muncul `ERR_MODULE_NOT_FOUND`, `is not a constructor`, atau `... is not a function`, jalankan tes export terlebih dahulu dan sesuaikan dengan API yang benar-benar diekspor package. Jangan menjalankan kedua client untuk mengendalikan panggilan yang sama secara bersamaan sebelum kompatibilitasnya dipastikan.
+
+## Private Relay (`conn.sendPrivateRelay`)
+
+Kirim pesan grup yang hanya bisa dibaca member tertentu (mode `include` / `exclude`).
+Dokumentasi lengkap dan contoh eval: [PRIVATE_RELAY.md](./PRIVATE_RELAY.md)
+
+```js
+await conn.sendPrivateRelay(m.chat, { text: 'Rahasia' }, { mode: 'include', target: [m.sender] })
+```
+
+## WhatsApp Web Screenshot (`conn.wweb`)
+
+Screenshot chat web.whatsapp.com dari bot. Puppeteer tetap dipasang di project bot (bukan dependency Baileys).
+Dokumentasi: [WWEB.md](./WWEB.md)

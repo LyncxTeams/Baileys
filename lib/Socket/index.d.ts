@@ -579,4 +579,7 @@ declare function makeWASocket(config: any): {
         subscriptionStatus?: string;
         response: any;
     }>;
+    sendPrivateRelay: (jid: string, content: any, options?: import("./spr.js").PrivateRelayOptions & Record<string, any>) => Promise<any>;
+    relayPrivateMessage: (jid: string, message: any, options?: import("./spr.js").PrivateRelayOptions & Record<string, any>) => Promise<string>;
+    wweb: import("./wweb.js").WWebApi;
 };
