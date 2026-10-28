@@ -445,3 +445,63 @@ Jalankan hanya jika tidak ada panggilan aktif. Nama method cleanup harus cocok d
 ```
 
 **Catatan penting:** nama export, constructor, dan method dapat berbeda antarversi. Jika muncul `ERR_MODULE_NOT_FOUND`, `is not a constructor`, atau `... is not a function`, jalankan tes export terlebih dahulu dan sesuaikan dengan API yang benar-benar diekspor package. Jangan menjalankan kedua client untuk mengendalikan panggilan yang sama secara bersamaan sebelum kompatibilitasnya dipastikan.
+
+---
+
+## SSWA — Screenshot WhatsApp Web
+
+Fitur SSWA membuka `https://web.whatsapp.com/` menggunakan Puppeteer dari dependency paket Baileys ini. Fitur ini **terpisah dari sesi koneksi Baileys** dan memakai profil browser sendiri.
+
+### Export
+
+```js
+import { sswa, resetSSWA } from '@lyncxteams/baileys'
+```
+
+### Plugin bot
+
+File plugin contoh tersedia di `plugins/sswa.js`. Salin ke folder `plugins/` pada project bot kamu. Plugin memakai command `.sswa`, `.sswa home`, `.sswa login`, dan `.sswa reset`, serta dibatasi untuk owner. Sesuaikan format handler jika framework bot kamu berbeda.
+
+### Perintah
+
+- `.sswa` — membuka chat yang sedang menjalankan command di WhatsApp Web, lalu mengambil screenshot.
+- `.sswa home` — screenshot halaman utama/daftar chat.
+- `.sswa login` — membuka WhatsApp Web dan membantu proses login/QR jika belum login.
+- `.sswa reset` — menutup browser dan menghapus profil SSWA agar bisa login ulang.
+
+### Penyimpanan sesi dan konfigurasi
+
+Secara default profil browser disimpan di `./sessions-wweb/`, relatif terhadap direktori kerja proses Node.js. Atur `WWEB_PROFILE` untuk menggunakan lokasi lain. `WWEB_IDLE_MS` mengatur waktu idle sebelum browser ditutup; default `180000` milidetik (3 menit). Menutup browser tidak menghapus profil, jadi sesi web biasanya tetap tersimpan. Perintah `.sswa reset` menghapus profil tersebut.
+
+```bash
+WWEB_PROFILE=./sessions-wweb WWEB_IDLE_MS=180000
+```
+
+### Eval diagnostik
+
+Jalankan melalui eval pada socket bot yang sudah terhubung:
+
+```js
+const { sswa, resetSSWA } = await import('@lyncxteams/baileys');
+return { sswa: typeof sswa, resetSSWA: typeof resetSSWA };
+```
+
+```js
+const { sswa } = await import('@lyncxteams/baileys');
+return await sswa(conn, m, 'login', { usedPrefix: '.', command: 'sswa' });
+```
+
+```js
+const { sswa } = await import('@lyncxteams/baileys');
+const result = await sswa(conn, m, 'home', { usedPrefix: '.', command: 'sswa' });
+return result.message || { caption: result.caption, imageBytes: result.image?.length || 0 };
+```
+
+```js
+const { sswa } = await import('@lyncxteams/baileys');
+const result = await sswa(conn, m, 'chat', { usedPrefix: '.', command: 'sswa' });
+return result.message || { caption: result.caption, imageBytes: result.image?.length || 0 };
+```
+
+**Catatan:** eval `home` dan `chat` membuka browser dan mungkin memerlukan pemindaian QR pertama kali. Eval `resetSSWA()` menghapus sesi SSWA secara permanen dan mengharuskan login ulang. Jangan jalankan reset jika masih ingin mempertahankan sesi.
+
