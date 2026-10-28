@@ -63,4 +63,3 @@ Lewat env atau config `makeWASocket({ ... })`:
 - Antrian internal: banyak perintah bersamaan dijalankan satu per satu (satu browser dibagi).
 - Jika error "Chromium masih mengunci sessions-wweb", restart proses bot sepenuhnya.
 - Pencarian chat memakai nama chat dan nomor. Untuk chat pribadi, kirim `name` (mis. `conn.getName(jid)`) agar akurat.
-- File: `lib/Socket/wweb.js`, `lib/Socket/wweb.d.ts`, pemasangan di `lib/Socket/index.js`.

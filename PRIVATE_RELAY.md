@@ -102,11 +102,3 @@ Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
   bisa diverifikasi WhatsApp seperti pesan biasa. Fungsi `deriveReportingTag` lama dari `spr.js` (token
   non-standar dengan konstanta XOR) **tidak dibawa**.
 - Jika hasilnya tidak sesuai, coba `await conn.resetGroupSenderKey(m.chat)` agar kunci grup didistribusikan ulang.
-
-## 5. Lokasi file
-
-| File | Isi |
-|------|-----|
-| `lib/Socket/spr.js` | Implementasi `sPR`, `makePrivateRelay`, helper enkripsi sender-key |
-| `lib/Socket/spr.d.ts` | Tipe TypeScript |
-| `lib/Socket/index.js` | Pemasangan `conn.sendPrivateRelay` & `conn.relayPrivateMessage` |
