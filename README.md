@@ -678,189 +678,547 @@ VoIPJS uses its own call-manager API and media arguments. Review `lib/VoipJS/` a
 
 ## Direct eval cookbook
 
-These snippets are intended for a bot runtime that exposes the authenticated socket as `conn` and the current message as `m`. Paste one snippet at a time into the bot's eval command. They are not standalone Node.js scripts unless you define `conn`, `m`, and the required imports first.
+Bagian ini khusus untuk command `eval` pada bot. Semua contoh di bawah memakai objek yang biasanya sudah tersedia di runtime bot:
 
-### 1. Connection identity
+| Variabel | Isi |
+|---|---|
+| `conn` | Socket WhatsApp yang sudah login dari LyncxTeams Baileys. |
+| `m` | Pesan yang memicu command eval. |
+| `m.chat` | JID chat tempat command dikirim. |
+| `m.sender` | JID pengirim command. |
+| `m.key` | Kunci pesan WhatsApp yang sedang diproses. |
+
+Salin **satu contoh saja** ke eval. Tanda `=>` adalah awalan eval, bukan bagian dari JavaScript biasa. Contoh yang memakai `import()` mengambil builder/helper langsung dari paket `@lyncxteams/baileys`, jadi tidak perlu menambahkan import di file plugin.
+
+> [!IMPORTANT]
+> Jalankan eval hanya pada bot dan akun yang kamu kelola. Contoh yang mengubah pengaturan grup, profil, privasi, atau channel benar-benar mengirim perubahan ke WhatsApp. Pastikan target dan izin akun sudah benar sebelum menjalankannya.
+
+### 1. Socket dan informasi akun
+
+**Lihat seluruh informasi akun bot:**
 
 ```js
 => conn.user
 ```
 
-### 2. Current bot JID
+**Lihat JID akun bot:**
 
 ```js
 => conn.user?.id
 ```
 
-### 3. Fetch a user's profile picture
+**Lihat nama akun bot:**
 
 ```js
-=> await conn.profilePictureUrl(m.sender, 'image')
+=> conn.user?.name
 ```
 
-### 4. Fetch group metadata
-
-```js
-=> await conn.groupMetadata(m.chat)
-```
-
-### 5. List participating groups
-
-```js
-=> Object.values(await conn.groupFetchAllParticipating()).map(g => ({ id: g.id, subject: g.subject, size: g.participants?.length || 0 }))
-```
-
-### 6. Read privacy settings
-
-```js
-=> await conn.fetchPrivacySettings(true)
-```
-
-### 7. Read blocked contacts
-
-```js
-=> await conn.fetchBlocklist()
-```
-
-### 8. Get disappearing-message duration
-
-```js
-=> await conn.fetchDisappearingDuration(m.chat)
-```
-
-### 9. Read business profile
-
-```js
-=> await conn.getBusinessProfile(m.sender)
-```
-
-### 10. Read newsletter metadata
-
-```js
-=> await conn.newsletterMetadata('jid', '123456789012345678@newsletter')
-```
-
-### 11. Fetch newsletter statuses
-
-```js
-=> await conn.getNewsletterStatuses('123456789012345678@newsletter')
-```
-
-### 12. Fetch newsletter status updates
-
-```js
-=> await conn.getNewsletterStatusUpdates('123456789012345678@newsletter')
-```
-
-### 13. Send a text message
-
-```js
-=> await conn.sendMessage(m.chat, { text: 'Test from LyncxTeams' })
-```
-
-### 14. Send a quoted response
-
-```js
-=> await conn.sendMessage(m.chat, { text: 'This message quotes your command.' }, { quoted: m })
-```
-
-### 15. React to the current message
-
-```js
-=> await conn.sendMessage(m.chat, { react: { text: '⚡', key: m.key } })
-```
-
-### 16. Send an interactive quick reply
-
-```js
-=> { const { Button } = await import('@lyncxteams/baileys'); const b = new Button(conn).setBody('Eval test').addButton('ok', 'Continue'); return await b.send(m.chat) }
-```
-
-### 17. Send an AIRich response
-
-```js
-=> { const { AIRich } = await import('@lyncxteams/baileys'); const r = new AIRich(conn).setTitle('LyncxTeams').setSubtitle('Eval preview'); r.addText('AIRich builder is available.'); return await r.send(m.chat) }
-```
-
-### 18. Send a code section
-
-```js
-=> { const { AIRich } = await import('@lyncxteams/baileys'); const r = new AIRich(conn).setTitle('Code sample'); r.addCode('js', "console.log('LyncxTeams')"); return await r.send(m.chat) }
-```
-
-### 19. Send a table section
-
-```js
-=> { const { AIRich } = await import('@lyncxteams/baileys'); const r = new AIRich(conn).setTitle('Runtime'); r.addTable({ headers: ['Key', 'Value'], rows: [['Node', process.version], ['Platform', process.platform]] }); return await r.send(m.chat) }
-```
-
-### 20. Send a location
-
-```js
-=> await conn.sendMessage(m.chat, { location: { degreesLatitude: -6.2, degreesLongitude: 106.8, name: 'Jakarta' } })
-```
-
-### 21. Send a temporary-message setting
-
-```js
-=> await conn.groupToggleEphemeral(m.chat, 86400)
-```
-
-### 22. Get group invite code
-
-```js
-=> await conn.groupInviteCode(m.chat)
-```
-
-### 23. Get pending join requests
-
-```js
-=> await conn.groupRequestParticipantsList(m.chat)
-```
-
-### 24. Get all group subjects
-
-```js
-=> Object.values(await conn.groupFetchAllParticipating()).map(g => g.subject)
-```
-
-### 25. Inspect a received message
-
-```js
-=> ({ key: m.key, pushName: m.pushName, messageType: Object.keys(m.message || {}) })
-```
-
-### 26. Decode the message text
-
-```js
-=> { const { getContentType } = await import('@lyncxteams/baileys'); const type = getContentType(m.message); return { type, content: m.message?.[type] } }
-```
-
-### 27. Check optional media support
-
-```js
-=> { const { hasOptionalMedia } = await import('@lyncxteams/baileys'); return hasOptionalMedia() }
-```
-
-### 28. Create a call link
-
-```js
-=> await conn.createCallLink('audio')
-```
-
-### 29. Fetch contact status
-
-```js
-=> await conn.fetchStatus(m.sender)
-```
-
-### 30. Check socket connection state
+**Lihat status koneksi WebSocket** (`1` biasanya berarti koneksi terbuka):
 
 ```js
 => conn.ws?.readyState
 ```
 
-The eval cookbook intentionally uses read-oriented examples and ordinary message sends. Group-setting changes, participant moderation, block actions, account-link operations, and status publishing should be run only after checking the target and confirming the account has permission.
+### 2. Mengirim pesan
+
+**Kirim teks:**
+
+```js
+=> await conn.sendMessage(m.chat, { text: 'Hello from LyncxTeams' })
+```
+
+**Kirim teks sambil membalas pesan command:**
+
+```js
+=> await conn.sendMessage(m.chat, { text: 'Ini pesan balasan.' }, { quoted: m })
+```
+
+**Kirim pesan dengan mention pengirim:**
+
+```js
+=> await conn.sendMessage(m.chat, { text: `Halo @${m.sender.split('@')[0]}`, mentions: [m.sender] })
+```
+
+**Kirim emoji reaction ke pesan command:**
+
+```js
+=> await conn.sendMessage(m.chat, { react: { text: '⚡', key: m.key } })
+```
+
+**Hapus reaction dari pesan command:**
+
+```js
+=> await conn.sendMessage(m.chat, { react: { text: '', key: m.key } })
+```
+
+**Edit pesan yang sebelumnya dikirim bot** (ganti `MESSAGE_ID` dengan ID pesan bot):
+
+```js
+=> await conn.sendMessage(m.chat, { text: 'Teks yang sudah diperbarui', edit: { remoteJid: m.chat, fromMe: true, id: 'MESSAGE_ID' } })
+```
+
+**Kirim lokasi:**
+
+```js
+=> await conn.sendMessage(m.chat, { location: { degreesLatitude: -6.200000, degreesLongitude: 106.816666, name: 'Jakarta' } })
+```
+
+**Kirim polling:**
+
+```js
+=> await conn.sendMessage(m.chat, { poll: { name: 'Pilih salah satu', values: ['Pilihan A', 'Pilihan B', 'Pilihan C'], selectableCount: 1 } })
+```
+
+### 3. Mengirim media
+
+**Kirim gambar dari URL:**
+
+```js
+=> await conn.sendMessage(m.chat, { image: { url: 'https://example.com/image.jpg' }, caption: 'Contoh gambar' })
+```
+
+**Kirim video dari URL:**
+
+```js
+=> await conn.sendMessage(m.chat, { video: { url: 'https://example.com/video.mp4' }, caption: 'Contoh video' })
+```
+
+**Kirim audio dari URL:**
+
+```js
+=> await conn.sendMessage(m.chat, { audio: { url: 'https://example.com/audio.mp3' }, mimetype: 'audio/mpeg' })
+```
+
+**Kirim audio sebagai voice note:**
+
+```js
+=> await conn.sendMessage(m.chat, { audio: { url: 'https://example.com/audio.ogg' }, mimetype: 'audio/ogg; codecs=opus', ptt: true })
+```
+
+**Kirim dokumen:**
+
+```js
+=> await conn.sendMessage(m.chat, { document: { url: 'https://example.com/file.pdf' }, mimetype: 'application/pdf', fileName: 'document.pdf' })
+```
+
+**Kirim stiker dari URL WebP:**
+
+```js
+=> await conn.sendMessage(m.chat, { sticker: { url: 'https://example.com/sticker.webp' } })
+```
+
+> [!NOTE]
+> URL media pada contoh hanya placeholder. Ganti dengan URL file yang benar-benar bisa diakses. Pemrosesan media tertentu membutuhkan backend opsional seperti `sharp` atau FFmpeg sesuai jenis medianya.
+
+### 4. Membaca pesan dan kontak
+
+**Lihat struktur pesan yang memicu eval:**
+
+```js
+=> m
+```
+
+**Lihat key pesan:**
+
+```js
+=> m.key
+```
+
+**Lihat tipe konten pesan:**
+
+```js
+=> { const { getContentType } = await import('@lyncxteams/baileys'); return getContentType(m.message) }
+```
+
+**Ambil isi pesan berdasarkan tipe kontennya:**
+
+```js
+=> { const { getContentType } = await import('@lyncxteams/baileys'); const type = getContentType(m.message); return { type, content: m.message?.[type] } }
+```
+
+**Tandai pesan command sebagai sudah dibaca:**
+
+```js
+=> await conn.readMessages([m.key])
+```
+
+**Ambil foto profil pengirim:**
+
+```js
+=> await conn.profilePictureUrl(m.sender, 'image')
+```
+
+**Periksa nomor/JID melalui WhatsApp:**
+
+```js
+=> await conn.onWhatsApp(m.sender)
+```
+
+**Periksa username WhatsApp:**
+
+```js
+=> await conn.onWhatsAppUsername('username')
+```
+
+**Ambil status/About pengirim:**
+
+```js
+=> await conn.fetchStatus(m.sender)
+```
+
+**Ambil profil bisnis pengirim jika tersedia:**
+
+```js
+=> await conn.getBusinessProfile(m.sender)
+```
+
+### 5. Grup WhatsApp
+
+Contoh pada bagian ini menggunakan `m.chat` sebagai target grup. Jalankan di dalam grup yang benar.
+
+**Ambil metadata grup:**
+
+```js
+=> await conn.groupMetadata(m.chat)
+```
+
+**Lihat nama, deskripsi, dan jumlah anggota grup:**
+
+```js
+=> { const g = await conn.groupMetadata(m.chat); return { id: g.id, subject: g.subject, desc: g.desc, participants: g.participants?.length } }
+```
+
+**Ambil daftar seluruh grup yang diikuti bot:**
+
+```js
+=> await conn.groupFetchAllParticipating()
+```
+
+**Ambil nama semua grup:**
+
+```js
+=> Object.values(await conn.groupFetchAllParticipating()).map(g => g.subject)
+```
+
+**Ambil kode undangan grup:**
+
+```js
+=> await conn.groupInviteCode(m.chat)
+```
+
+**Buat tautan undangan grup:**
+
+```js
+=> `https://chat.whatsapp.com/${await conn.groupInviteCode(m.chat)}`
+```
+
+**Lihat permintaan bergabung yang masih menunggu:**
+
+```js
+=> await conn.groupRequestParticipantsList(m.chat)
+```
+
+**Lihat pengaturan metadata grup:**
+
+```js
+=> { const g = await conn.groupMetadata(m.chat); return { announce: g.announce, restrict: g.restrict, memberAddMode: g.memberAddMode, joinApprovalMode: g.joinApprovalMode } }
+```
+
+**Ubah nama grup:**
+
+```js
+=> await conn.groupUpdateSubject(m.chat, 'Nama Grup Baru')
+```
+
+**Ubah deskripsi grup:**
+
+```js
+=> await conn.groupUpdateDescription(m.chat, 'Deskripsi grup baru')
+```
+
+**Aktifkan mode hanya admin yang bisa mengirim pesan:**
+
+```js
+=> await conn.groupSettingUpdate(m.chat, 'announcement')
+```
+
+**Kembalikan agar semua anggota bisa mengirim pesan:**
+
+```js
+=> await conn.groupSettingUpdate(m.chat, 'not_announcement')
+```
+
+**Aktifkan pesan sementara 7 hari:**
+
+```js
+=> await conn.groupToggleEphemeral(m.chat, 7 * 24 * 60 * 60)
+```
+
+**Nonaktifkan pesan sementara:**
+
+```js
+=> await conn.groupToggleEphemeral(m.chat, 0)
+```
+
+**Keluar dari grup saat ini:**
+
+```js
+=> await conn.groupLeave(m.chat)
+```
+
+### 6. Privasi dan profil akun
+
+**Lihat pengaturan privasi akun bot:**
+
+```js
+=> await conn.fetchPrivacySettings(true)
+```
+
+**Lihat daftar akun yang diblokir:**
+
+```js
+=> await conn.fetchBlocklist()
+```
+
+**Lihat durasi pesan sementara pada chat:**
+
+```js
+=> await conn.fetchDisappearingDuration(m.chat)
+```
+
+**Lihat foto profil bot:**
+
+```js
+=> await conn.profilePictureUrl(conn.user.id, 'image')
+```
+
+**Ubah nama profil bot:**
+
+```js
+=> await conn.updateProfileName('Nama Bot Baru')
+```
+
+**Ubah About/status profil bot:**
+
+```js
+=> await conn.updateProfileStatus('Available')
+```
+
+**Ubah privasi Last Seen menjadi kontak:**
+
+```js
+=> await conn.updateLastSeenPrivacy('contacts')
+```
+
+**Ubah privasi foto profil menjadi kontak:**
+
+```js
+=> await conn.updateProfilePicturePrivacy('contacts')
+```
+
+**Ubah privasi Status menjadi kontak:**
+
+```js
+=> await conn.updateStatusPrivacy('contacts')
+```
+
+**Ubah privasi tanda dibaca:**
+
+```js
+=> await conn.updateReadReceiptsPrivacy('all')
+```
+
+> [!WARNING]
+> Perintah profil dan privasi di atas mengubah akun bot yang sedang login, bukan akun pengirim command. Nilai privasi yang diterima WhatsApp dapat berubah mengikuti versi server.
+
+### 7. Newsletter / WhatsApp Channel
+
+Ganti `CHANNEL_JID` dengan JID channel yang valid dan kamu kelola atau ikuti.
+
+**Ambil metadata channel:**
+
+```js
+=> await conn.newsletterMetadata('jid', 'CHANNEL_JID')
+```
+
+**Ambil status channel:**
+
+```js
+=> await conn.getNewsletterStatuses('CHANNEL_JID')
+```
+
+**Ambil pembaruan status channel:**
+
+```js
+=> await conn.getNewsletterStatusUpdates('CHANNEL_JID')
+```
+
+**Ambil daftar subscriber channel:**
+
+```js
+=> await conn.newsletterSubscribers('CHANNEL_JID')
+```
+
+**Ikuti channel:**
+
+```js
+=> await conn.newsletterFollow('CHANNEL_JID')
+```
+
+**Berhenti mengikuti channel:**
+
+```js
+=> await conn.newsletterUnfollow('CHANNEL_JID')
+```
+
+**Kirim teks status ke channel:**
+
+```js
+=> await conn.sendNewsletterStatus('CHANNEL_JID', { text: 'Update dari LyncxTeams' })
+```
+
+**Beri reaction pada status channel:**
+
+```js
+=> await conn.sendNewsletterStatusReaction('CHANNEL_JID', STATUS_SERVER_ID, '❤️')
+```
+
+> [!CAUTION]
+> Mengirim status, mengikuti/berhenti mengikuti channel, dan memberi reaction adalah tindakan nyata pada akun WhatsApp. `STATUS_SERVER_ID` harus diganti dengan ID status yang valid dari hasil fetch.
+
+### 8. MessageBuilder terintegrasi
+
+Builder harus diimpor dari paket LyncxTeams. Semua contoh berikut mengirim pesan baru ke chat tempat command eval dijalankan.
+
+**Button quick reply:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); const msg = new MB.Button(conn).setTitle('LyncxTeams Menu').setBody('Pilih salah satu menu.').setFooter('LyncxTeams').addReply('Ping', 'ping').addReply('Menu', 'menu'); return await msg.send(m.chat) }
+```
+
+**Button URL dan copy code:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); const msg = new MB.Button(conn).setTitle('Useful Links').setBody('Pilih tindakan.').addUrl('Buka Website', 'https://example.com').addCopy('Salin Kode', 'LYNCX-2026'); return await msg.send(m.chat) }
+```
+
+**Button dengan gambar:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); const msg = new MB.Button(conn).setImage('https://example.com/image.jpg').setTitle('LyncxTeams').setBody('Button dengan header gambar.').addReply('Lanjut', 'continue'); return await msg.send(m.chat) }
+```
+
+**ButtonV2:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); const msg = new MB.ButtonV2(conn).setTitle('LyncxTeams').setBody('Pilih menu.').addButton('Menu', 'menu').addButton('Ping', 'ping'); return await msg.send(m.chat) }
+```
+
+**List / selection:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); const msg = new MB.Button(conn).setTitle('Daftar Menu').setBody('Pilih salah satu.').addSelection('Buka daftar').makeSection('Menu Utama').makeRow('', 'Profil', 'Lihat profil bot', 'profile').makeRow('', 'Runtime', 'Lihat runtime', 'runtime'); return await msg.send(m.chat) }
+```
+
+**AIRich teks:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); const rich = new MB.AIRich(conn).setTitle('LyncxTeams'); rich.addText('Halo! Ini pesan AIRich dari eval.'); return await rich.send(m.chat) }
+```
+
+**AIRich kode:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); const rich = new MB.AIRich(conn).setTitle('JavaScript Example'); rich.addCode('js', "const name = 'LyncxTeams'\nconsole.log(name)"); return await rich.send(m.chat) }
+```
+
+**AIRich tabel:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); const rich = new MB.AIRich(conn).setTitle('Runtime Info'); rich.addTable([['Property', 'Value'], ['Node.js', process.version], ['Platform', process.platform]]); return await rich.send(m.chat) }
+```
+
+**AIRich map:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); const rich = new MB.AIRich(conn).setTitle('Map Preview'); rich.addMap([{ latitude: -6.200000, longitude: 106.816666, title: 'Jakarta', body: 'Example location' }]); return await rich.send(m.chat) }
+```
+
+**Carousel dua kartu:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); const a = await new MB.Button(conn).setImage('https://example.com/one.jpg').setBody('Kartu pertama').addReply('Pilih', 'one').toCard(); const b = await new MB.Button(conn).setImage('https://example.com/two.jpg').setBody('Kartu kedua').addUrl('Buka', 'https://example.com').toCard(); const carousel = new MB.Carousel(conn).setBody('Contoh carousel').addCard([a, b]); return await carousel.send(m.chat) }
+```
+
+### 9. Helper dan utilitas
+
+**Periksa dukungan native-flow untuk Web:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); return MB.isWebSupportedButtonName('quick_reply') }
+```
+
+**Periksa batas native-flow button:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); return MB.checkNativeFlowButtons([{ name: 'quick_reply' }]) }
+```
+
+**Periksa apakah `sharp` tersedia:**
+
+```js
+=> { const { hasOptionalMedia } = await import('@lyncxteams/baileys'); return await hasOptionalMedia('sharp') }
+```
+
+**Periksa apakah FFmpeg wrapper tersedia:**
+
+```js
+=> { const { hasOptionalMedia } = await import('@lyncxteams/baileys'); return await hasOptionalMedia('fluent-ffmpeg') }
+```
+
+**Ambil buffer dari URL:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); return await MB.Toolkit.fetchBuffer('https://example.com/image.jpg') }
+```
+
+### 10. Pengalamatan LID / PN
+
+**Lihat seluruh key pengirim dan chat:**
+
+```js
+=> ({ remoteJid: m.key.remoteJid, remoteJidAlt: m.key.remoteJidAlt, participant: m.key.participant, participantAlt: m.key.participantAlt, sender: m.sender })
+```
+
+**Lihat apakah pengirim menggunakan LID atau PN JID:**
+
+```js
+=> ({ sender: m.sender, isLid: m.sender?.endsWith('@lid'), isPn: m.sender?.endsWith('@s.whatsapp.net') })
+```
+
+Jangan mengubah string `@lid` menjadi `@s.whatsapp.net` secara manual. Keduanya adalah identifier berbeda; gunakan mapping/helper LID dari library jika memang perlu mencari pasangan identifier.
+
+### 11. Contoh gabungan
+
+**Kirim ringkasan akun bot menggunakan AIRich:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); const rich = new MB.AIRich(conn).setTitle('Bot Information'); rich.addTable([['Item', 'Value'], ['Name', conn.user?.name || '-'], ['JID', conn.user?.id || '-'], ['Node.js', process.version], ['Platform', process.platform]]); return await rich.send(m.chat) }
+```
+
+**Kirim ringkasan grup menggunakan AIRich:**
+
+```js
+=> { const { MB } = await import('@lyncxteams/baileys'); const g = await conn.groupMetadata(m.chat); const rich = new MB.AIRich(conn).setTitle('Group Information'); rich.addTable([['Item', 'Value'], ['Name', g.subject || '-'], ['Members', String(g.participants?.length || 0)], ['JID', g.id || '-']]); return await rich.send(m.chat) }
+```
+
+**Kirim daftar nama grup menggunakan pesan teks:**
+
+```js
+=> { const groups = Object.values(await conn.groupFetchAllParticipating()); return await conn.sendMessage(m.chat, { text: groups.map((g, i) => `${i + 1}. ${g.subject}`).join('\n') || 'Tidak ada grup.' }) }
+```
+
+---
 
 ## LID and JID notes
 
