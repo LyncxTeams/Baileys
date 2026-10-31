@@ -1,6 +1,6 @@
 {
   "name": "@lyncxteams/baileys",
-  "version": "0.3.21-final",
+  "version": "1.0.0",
   "description": "LyncxTeams Baileys mods.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
