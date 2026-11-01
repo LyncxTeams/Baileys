@@ -335,10 +335,6 @@ Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bag
 - [Kredit](#kredit)
   - [Pemelihara Proyek](#pemelihara-proyek)
   - [Baileys / Upstream](#baileys--upstream)
-  - [Kontribusi Fork / Sumber](#kontribusi-fork--sumber)
-  - [MessageBuilder Terintegrasi](#messagebuilder-terintegrasi)
-  - [Kontributor Open Source](#kontributor-open-source)
-- [TQTO](#tqto)
 - [Lisensi](#lisensi)
 
 
@@ -7779,118 +7775,13 @@ Proyek ini ada berkat kerja banyak pengembang dan proyek open source.
 - **WhiskeySockets/Baileys** — proyek Baileys upstream dan implementasi inti WhatsApp Web.
 - **adiwajshing** — penulis Baileys yang pertama dan kerja awal ekosistemnya.
 
-### Kontribusi Fork / Sumber
-- **Lia Wynn / ItsLia** — garis keturunan fork dan modifikasi Baileys sebelumnya yang masih dipakai di mana relevan.
-- **Kyuu / kiuur** — kontributor dan pendukung proyek.
-
-### MessageBuilder Terintegrasi
-MessageBuilder bawaan ini berbasis **NIXCODE / Advanced WhatsApp Interactive Message Builder**.
-
-- **Nixel** — pencipta awal implementasi MessageBuilder-nya.
-- **Ahmad tumbuh kembang** — kontributor MessageBuilder.
-
-Atribusi dan pemberitahuan lisensi builder aslinya wajib dihormati saat memodifikasi atau mendistribusikan ulang sumbernya. Builder-nya diintegrasikan ke paket ini supaya pengguna tidak perlu memasang `baileys-mbuilder` secara terpisah.
-
-### Kontributor Open Source
-Terima kasih kepada setiap kontributor Baileys upstream, penulis library, penguji, pelapor masalah, dan pengembang yang kerjanya membantu proyek ini jadi mungkin.
-
-> Mem-fork dan memodifikasi proyek open source itu dipersilakan. Mohon pertahankan pemberitahuan hak cipta, lisensi, atribusi, dan kontributor yang berlaku.
-
-
----
-
-## TQTO
-<details>
-<summary><strong>Terima Kasih Kepada</strong></summary>
-
-Terima kasih kepada semua pihak yang telah memberikan dukungan, inspirasi, dan kontribusi dalam pengembangan proyek ini.
-
-- **Allah SWT** — atas rahmat, kemudahan, dan perlindungan-Nya.
-- **Orang Tua** — atas doa dan dukungan yang tiada henti.
-- **RexxHayanasi** — pengembang dan maintainer proyek.
-- Seluruh contributor dan komunitas open source yang membantu perkembangan Baileys.
-
-</details>
-<h2 align="center"> Kontributor & Kredit</h2>
-
-<p align="center">
-  Terima kasih kepada semua yang berkontribusi ke proyek ini.
-</p>
-
-<table align="center">
-  <tr>
-    <td align="center" width="180">
-      <a href="https://github.com/RexxHayanasi">
-        <img
-          src="https://avatars.githubusercontent.com/u/150516773?v=4"
-          width="90"
-          height="90"
-          alt="RexxHayanasi"
-        />
-        <br />
-        <b>RexxHayanasi</b>
-      </a>
-      <br />
-      <sub>Pemelihara Proyek</sub>
-    </td>
-    <td align="center" width="180">
-      <a href="https://github.com/kiuur">
-        <img
-          src="https://avatars.githubusercontent.com/u/182334162?v=4"
-          width="90"
-          height="90"
-          alt="Kyuu"
-        />
-        <br />
-        <b>Kyuu</b>
-      </a>
-      <br />
-      <sub>Kontributor</sub>
-    </td>
-    <td align="center" width="180">
-      <a href="https://github.com/ValdazGT">
-        <img
-          src="https://avatars.githubusercontent.com/u/108647595?v=4"
-          width="90"
-          height="90"
-          alt="ValdazGT"
-        />
-        <br />
-        <b>ValdazGT</b>
-      </a>
-      <br />
-      <sub>MBuilder · Pemilik</sub>
-    </td>
-    <td align="center" width="180">
-      <a href="https://github.com/itsliaaa">
-        <img
-          src="https://avatars.githubusercontent.com/u/88979678?v=4"
-          width="90"
-          height="90"
-          alt="ITSLIAAA"
-        />
-        <br />
-        <b>ITSLIAAA</b>
-      </a>
-      <br />
-      <sub>Rujukan messages-send.js</sub>
-      <br />
-      <sub>Rujukan Migrasi Awal</sub>
-    </td>
-  </tr>
-</table>
-
-<p align="center">
-  <sub>Dibangun dan dipelihara dengan kontribusi dari komunitas ️</sub>
-</p>
-
 
 ---
 
 ## Lisensi
 Proyek ini didistribusikan di bawah lisensi yang disertakan bersama repo/paketnya.
 
-Modifikasi khusus LyncxTeams dipelihara oleh **RexxHayanasi**. Sebagian kode diturunkan dari Baileys dan kerja open source lainnya, karena itu tetap membawa pemberitahuan hak cipta, lisensi, dan atribusi upstream yang berlaku.
+Sebagian kode diturunkan dari Baileys dan kerja open source lainnya, karena itu tetap membawa pemberitahuan hak cipta, lisensi, dan atribusi upstream yang berlaku.
 
 Jangan menghapus pemberitahuan hak cipta atau atribusi pihak ketiga yang diwajibkan lisensinya masing-masing.
 
@@ -7900,7 +7791,6 @@ Jangan menghapus pemberitahuan hak cipta atau atribusi pihak ketiga yang diwajib
 <div align="center">
   <b> @lyncxteams/baileys</b>
   <br>
-  <sub>Dibangun dengan hormat kepada ekosistem open source Baileys.</sub>
 </div>
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
