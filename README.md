@@ -60,7 +60,7 @@ Use this map to jump directly to a task. The full reference and examples are org
 | Receive messages and socket events | [Receiving messages](#receiving-messages), [Events](#events) |
 | Understand LID, PN, and JID addressing | [LID / PN / JID addressing](#lid--pn--jid-addressing) |
 | Use Private Relay | [Private Relay](#private-relay-spr) |
-| Use WhatsApp Web screenshot helpers | [WhatsApp Web screenshot](#whatsapp-web-screenshot-connwweb) |
+| Use WhatsApp Web screenshot helpers | [WhatsApp Web screenshot](#whatsapp-web-screenshot) |
 | Build interactive messages | [Integrated MessageBuilder](#integrated-messagebuilder) |
 | Work with groups and communities | [Group management](#group-management), [Communities](#communities) |
 | Work with channels | [Newsletters / Channels](#newsletter--channel) |
@@ -1210,7 +1210,9 @@ Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
 
 ---
 
-## ️ WhatsApp Web Screenshot (`conn.wweb`)
+<a id="whatsapp-web-screenshot"></a>
+
+## WhatsApp Web Screenshot
 Screenshot chat / beranda **web.whatsapp.com** lewat Chromium headless. Semua logika (login QR, buka chat,
 scroll ke pesan terbaru, screenshot, auto-tutup saat idle) ada di Baileys, sehingga plugin bot hanya
 beberapa baris.
