@@ -1,38 +1,75 @@
-
-
 <div align="center">
-  <h1>💫 @lyncxteams/baileys</h1>
-  <p><em>Library WhatsApp custom berbasis Baileys dengan penyesuaian LyncxTeams dan MessageBuilder bawaan.</em></p>
-  <br>
 
-  <p>
-    <a href="https://www.npmjs.com/package/@lyncxteams/baileys">
-      <img src="https://img.shields.io/npm/v/@lyncxteams/baileys?color=blueviolet&label=version&logo=npm" alt="npm version" />
-    </a>
-    <a href="https://www.npmjs.com/package/@lyncxteams/baileys">
-      <img src="https://img.shields.io/npm/dt/@lyncxteams/baileys?color=blueviolet&label=downloads&logo=npm" alt="npm downloads" />
-    </a>
-    <a href="LICENSE">
-      <img src="https://img.shields.io/badge/license-MIT-success" alt="license" />
-    </a>
-    <img src="https://img.shields.io/badge/Node.js-%3E%3D20-339933?logo=node.js&logoColor=white" alt="Node.js" />
-    <img src="https://img.shields.io/badge/Module-ESM-F7DF1E?logo=javascript&logoColor=black" alt="ESM" />
-    <img src="https://img.shields.io/badge/MessageBuilder-v4.7-7F5AF0" alt="Message Builder" />
-  </p>
+# LYNCXTEAMS / BAILEYS
+**WhatsApp Web protocol toolkit for Node.js**
+
+A maintained ESM-oriented Baileys fork with integrated messaging utilities, protocol extensions, and MessageBuilder components.
+
+<br>
+
+[![npm version](https://img.shields.io/npm/v/@lyncxteams/baileys?label=NPM&color=303846)](https://www.npmjs.com/package/@lyncxteams/baileys)
+[![npm downloads](https://img.shields.io/npm/dt/@lyncxteams/baileys?label=Downloads&color=303846)](https://www.npmjs.com/package/@lyncxteams/baileys)
+[![Node.js](https://img.shields.io/badge/Node.js-20%2B-303846)](https://nodejs.org/)
+[![Module](https://img.shields.io/badge/Module-ESM-303846)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+[![License](https://img.shields.io/badge/License-MIT-303846)](LICENSE)
+
+<br>
+
+[Documentation](#documentation-map) · [Installation](#installation) · [Examples](#feature-index) · [Issues](https://github.com/LyncxTeams/baileys/issues)
+
 </div>
 
-## 🐞 Menemukan Bug?
 
-Laporkan bug, masalah kompatibilitas, atau usulan perbaikan melalui issue tracker repository LyncxTeams.
+---
 
-<p align="left">
-  <a href="https://github.com/LyncxTeams/baileys/issues">
-    <img src="https://img.shields.io/badge/GitHub-Report%20an%20Issue-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Issues" />
-  </a>
-  <a href="https://github.com/LyncxTeams/baileys">
-    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository" />
-  </a>
-</p>
+## Project overview
+`@lyncxteams/baileys` is an unofficial WhatsApp Multi-Device library for Node.js. It extends the Baileys ecosystem with LyncxTeams-specific changes, additional protocol helpers, and an integrated message-building layer.
+
+The package is designed for projects that need direct socket access alongside higher-level components such as `Button`, `ButtonV2`, `Carousel`, `AIRich`, and `Toolkit`.
+
+> [!IMPORTANT]
+> This is an unofficial WhatsApp Web API library. It is not affiliated with, authorized by, sponsored by, or supported by WhatsApp or Meta. Use it responsibly and follow applicable laws and WhatsApp's Terms of Service.
+
+> [!NOTE]
+> This fork includes protocol and API extensions. Availability can depend on the WhatsApp account, server-side rollout, device type, and permissions.
+
+## At a glance
+| Area | Included capabilities |
+|---|---|
+| Connection | Multi-Device sessions, QR login, pairing codes, reconnect handling |
+| Session storage | Multi-file, single-file, SQLite, PostgreSQL, MySQL, MongoDB, Redis, and NekoDB integrations |
+| Messaging | Message events, message normalization, albums, status, polls, media, and modern message types |
+| Interactive messages | Buttons, native-flow selections, carousels, rich link cards, and AIRich |
+| Private Relay | Selective relay delivery and lower-level relay payload support |
+| WhatsApp Web | Screenshot and page inspection helpers through `conn.wweb` |
+| Groups and communities | Group administration, participant requests, community operations, and metadata |
+| Channels | Newsletter metadata, posts, reactions, polls, status, admin tools, and discovery |
+| Business tools | Catalog, product management, labels, contact helpers, and quick replies |
+| Calling | Call links, VoIP helpers, audio queues, video, screen sharing, and group calls |
+| Addressing | LID, PN, and JID-aware helpers |
+| Runtime | ESM package requiring Node.js 20 or newer |
+
+## Documentation map
+Use this map to jump directly to a task. The full reference and examples are organized below.
+
+| I need to… | Start here |
+|---|---|
+| Install the package and import the socket | [Installation](#installation), [Imports](#imports) |
+| Connect and authenticate | [Basic connection](#basic-connection), [Session storage](#session-storage) |
+| Pair a device without scanning a QR code | [Pairing codes](#pairing-codes) |
+| Receive messages and socket events | [Receiving messages](#receiving-messages), [Events](#events) |
+| Understand LID, PN, and JID addressing | [LID / PN / JID addressing](#lid--pn--jid-addressing) |
+| Use Private Relay | [Private Relay](#private-relay-spr) |
+| Use WhatsApp Web screenshot helpers | [WhatsApp Web screenshot](#whatsapp-web-screenshot-connwweb) |
+| Build interactive messages | [Integrated MessageBuilder](#integrated-messagebuilder) |
+| Work with groups and communities | [Group management](#group-management), [Communities](#communities) |
+| Work with channels | [Newsletters / Channels](#newsletter--channel) |
+| Use calling and VoIP | [Calling](#calling) |
+| Troubleshoot common problems | [Troubleshooting](#troubleshooting) |
+
+## Feature index
+The sections below contain the detailed API reference and examples. Code samples are individually collapsed; open only the example you need.
+
 
 ---
 
@@ -45,16 +82,15 @@ Laporkan bug, masalah kompatibilitas, atau usulan perbaikan melalui issue tracke
 > Proyek ini dibangun di atas ekosistem Baileys, lalu ditambah perbaikan, penyesuaian kompatibilitas, dukungan pesan interaktif, dan MessageBuilder bawaan.
 
 
+
 ---
 
-## 📌 Ringkasan
-
+## Ringkasan
 `@lyncxteams/baileys` adalah fork Baileys modern yang berorientasi ESM, untuk pengembangan WhatsApp Multi-Device.
 
 Paket ini menggabungkan lapisan socket, utilitas protokol, dukungan pengalamatan yang sadar LID, dan MessageBuilder bawaan dalam satu dependensi. Button, pesan native-flow, carousel, dan layout AIRich bisa dipakai langsung dari paket ini tanpa memasang dependensi builder terpisah.
 
-### ✨ Yang Menonjol
-
+### Yang Menonjol
 | Fitur | Keterangan |
 |---|---|
 | 🔌 Multi-Device | Terhubung ke WhatsApp lewat protokol Baileys Multi-Device. |
@@ -71,56 +107,55 @@ Paket ini menggabungkan lapisan socket, utilitas protokol, dukungan pengalamatan
 | 🗄️ Sesi di Database | Menyimpan sesi di SQLite, PostgreSQL, MySQL, MongoDB, Redis, atau NekoDB, bukan di berkas. |
 | 📦 ESM | Paket ESM-first, butuh Node.js 20+; disarankan Node.js 22 atau lebih baru. |
 
-### 🗺️ Apa Saja Yang Bisa Dilakukan?
-
+### ️ Apa Saja Yang Bisa Dilakukan?
 Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bagian yang memperlihatkan kodenya.
 
 | Aku mau… | Pakai | Baca |
 |---|---|---|
-| Login dan tetap login | `useMultiFileAuthState`, `usePostgresAuthState`, … | [Penyimpanan Sesi](#-penyimpanan-sesi) |
-| Login tanpa scan QR | kode pairing | [Kode Pairing](#-kode-pairing) |
-| Menanggapi pesan masuk | `messages.upsert` | [Menerima Pesan](#-menerima-pesan), [Event](#-event) |
-| Kirim teks, gambar, video, berkas, lokasi, polling | `sock.sendMessage` | [Mengirim Pesan](#-mengirim-pesan) |
-| Kirim button, list, carousel | `Button`, `ButtonV2`, `Carousel` | [MessageBuilder Terintegrasi](#-messagebuilder-terintegrasi) |
+| Login dan tetap login | `useMultiFileAuthState`, `usePostgresAuthState`, … | [Penyimpanan Sesi](#penyimpanan-sesi) |
+| Login tanpa scan QR | kode pairing | [Kode Pairing](#kode-pairing) |
+| Menanggapi pesan masuk | `messages.upsert` | [Menerima Pesan](#menerima-pesan), [Event](#event) |
+| Kirim teks, gambar, video, berkas, lokasi, polling | `sock.sendMessage` | [Mengirim Pesan](#mengirim-pesan) |
+| Kirim button, list, carousel | `Button`, `ButtonV2`, `Carousel` | [MessageBuilder Terintegrasi](#messagebuilder-terintegrasi) |
 | Kirim kartu bergaya AI | `AIRich`, A2UI | [AIRich](#airich), [Kartu A2UI](#kartu-a2ui) |
 | Baca pesan rich yang dikirim bot lain | `readRichMessage` | [Membaca Balik Pesan Rich](#membaca-balik-pesan-rich) |
-| Kirim beberapa foto jadi satu postingan | pesan album | [Pesan Album](#-pesan-album) |
-| Mengelola channel | helper channel | [Newsletter / Channel](#-newsletter--channel) |
-| Mengelola grup | `groupCreate`, `groupParticipantsUpdate`, … | [Pengelolaan Grup](#-pengelolaan-grup) |
-| Mengelola komunitas | helper komunitas | [Komunitas](#-komunitas) |
-| Blokir, buka blokir, lapor spam | `updateBlockStatus`, `reportSpam` | [Pengaturan Privasi](#-pengaturan-privasi) |
-| Tampilkan sedang menulis, tanda dibaca, presence | `sendPresenceUpdate`, `readMessages` | [Presence dan Tanda Dibaca](#-presence-dan-tanda-dibaca) |
-| Pin, arsip, bisukan, bintangi chat | `chatModify` | [Keadaan Chat](#-keadaan-chat) |
-| Pakai label bisnis dan katalog | helper label dan katalog | [Label](#-label), [Bisnis dan Katalog](#-bisnis-dan-katalog) |
-| Buat link panggilan, tolak panggilan | `createCallLink`, `rejectCall` | [Panggilan](#-panggilan) |
+| Kirim beberapa foto jadi satu postingan | pesan album | [Pesan Album](#pesan-album) |
+| Mengelola channel | helper channel | [Newsletter / Channel](#newsletter--channel) |
+| Mengelola grup | `groupCreate`, `groupParticipantsUpdate`, … | [Pengelolaan Grup](#pengelolaan-grup) |
+| Mengelola komunitas | helper komunitas | [Komunitas](#komunitas) |
+| Blokir, buka blokir, lapor spam | `updateBlockStatus`, `reportSpam` | [Pengaturan Privasi](#pengaturan-privasi) |
+| Tampilkan sedang menulis, tanda dibaca, presence | `sendPresenceUpdate`, `readMessages` | [Presence dan Tanda Dibaca](#presence-dan-tanda-dibaca) |
+| Pin, arsip, bisukan, bintangi chat | `chatModify` | [Keadaan Chat](#keadaan-chat) |
+| Pakai label bisnis dan katalog | helper label dan katalog | [Label](#label), [Bisnis dan Katalog](#bisnis-dan-katalog) |
+| Buat link panggilan, tolak panggilan | `createCallLink`, `rejectCall` | [Panggilan](#panggilan) |
 | Menelepon orang dan memutar audio | `makeVoipClient`, `voip.call` | [Melakukan Panggilan Suara](#melakukan-panggilan-suara) |
 | Memutar antrean lagu di panggilan | `playlist`, `enqueue`, `idle` | [Memainkan Antrean Audio](#memainkan-antrean-audio) |
 | Kirim video atau bagikan layar saat panggilan | `video: true`, `screenShare: true` | [Panggilan Video](#panggilan-video), [Berbagi Layar](#berbagi-layar) |
 | Menelepon satu grup sekaligus | `voip.callGroup` | [Panggilan Grup](#panggilan-grup) |
-| Mengubah atau membaca foto profil | helper foto profil | [Foto Profil](#-foto-profil) |
-| Menjadwalkan pesan untuk nanti | pesan terjadwal | [Pesan Terjadwal](#-pesan-terjadwal) |
-| Mengikuti perubahan WhatsApp Web | `npm run wa:update` | [Memperbarui Versi WhatsApp Web](#-memperbarui-versi-whatsapp-web) |
-| Tahu kalau nomorku sedang bermasalah | sinyal kesehatan akun | [Sinyal Kesehatan Akun](#-sinyal-kesehatan-akun) |
-| Paham bedanya jid LID dan PN | helper pengalamatan | [Pengalamatan LID / PN / JID](#-pengalamatan-lid--pn--jid) |
-| Tahu kenapa `conversation` kosong | `normalizeMessageContent` | [Semua Jenis Pesan](#-semua-jenis-pesan) |
-| Memperbaiki yang rusak | — | [Penanganan Masalah](#-penanganan-masalah) |
+| Mengubah atau membaca foto profil | helper foto profil | [Foto Profil](#foto-profil) |
+| Menjadwalkan pesan untuk nanti | pesan terjadwal | [Pesan Terjadwal](#pesan-terjadwal) |
+| Mengikuti perubahan WhatsApp Web | `npm run wa:update` | [Memperbarui Versi WhatsApp Web](#memperbarui-versi-whatsapp-web) |
+| Tahu kalau nomorku sedang bermasalah | sinyal kesehatan akun | [Sinyal Kesehatan Akun](#sinyal-kesehatan-akun) |
+| Paham bedanya jid LID dan PN | helper pengalamatan | [Pengalamatan LID / PN / JID](#pengalamatan-lid--pn--jid) |
+| Tahu kenapa `conversation` kosong | `normalizeMessageContent` | [Semua Jenis Pesan](#semua-jenis-pesan) |
+| Memperbaiki yang rusak | — | [Penanganan Masalah](#penanganan-masalah) |
+
 
 ---
 
-## 📚 Daftar Isi
-
-- [Ringkasan](#-ringkasan)
-  - [Yang Menonjol](#-yang-menonjol)
-  - [Apa Saja Yang Bisa Dilakukan?](#-apa-saja-yang-bisa-dilakukan)
-- [Kebutuhan](#-kebutuhan)
-- [Pemasangan](#-pemasangan)
+## Daftar Isi
+- [Ringkasan](#ringkasan)
+  - [Yang Menonjol](#yang-menonjol)
+  - [Apa Saja Yang Bisa Dilakukan?](#apa-saja-yang-bisa-dilakukan)
+- [Kebutuhan](#kebutuhan)
+- [Pemasangan](#pemasangan)
   - [Paket yang disarankan](#paket-yang-disarankan)
   - [Paket Media Opsional](#paket-media-opsional)
-- [Impor](#-impor)
-- [Koneksi Dasar](#-koneksi-dasar)
+- [Impor](#impor)
+- [Koneksi Dasar](#koneksi-dasar)
   - [Opsi percobaan ulang dan pairing](#opsi-percobaan-ulang-dan-pairing)
   - [Opsi socket](#opsi-socket)
-- [Penyimpanan Sesi](#-penyimpanan-sesi)
+- [Penyimpanan Sesi](#penyimpanan-sesi)
   - [Multi-berkas (bawaan)](#multi-berkas-bawaan)
   - [Satu berkas](#satu-berkas)
   - [SQLite](#sqlite)
@@ -128,13 +163,13 @@ Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bag
   - [NekoDB](#nekodb)
   - [Menyimpan Kunci Signal di Cache](#menyimpan-kunci-signal-di-cache)
   - [Menyimpan Chat dan Pesan](#menyimpan-chat-dan-pesan)
-- [Kode Pairing](#-kode-pairing)
+- [Kode Pairing](#kode-pairing)
   - [Permintaannya dikonfirmasi server](#permintaannya-dikonfirmasi-server)
   - [Satu kode dalam satu waktu](#satu-kode-dalam-satu-waktu)
   - [Kode Pairing Kustom](#kode-pairing-kustom)
   - [Memeriksa pairing tanpa menyentuh bot yang jalan](#memeriksa-pairing-tanpa-menyentuh-bot-yang-jalan)
-- [Menerima Pesan](#-menerima-pesan)
-- [Event](#-event)
+- [Menerima Pesan](#menerima-pesan)
+- [Event](#event)
   - [Koneksi dan kredensial](#koneksi-dan-kredensial)
   - [Pesan](#pesan)
   - [Chat dan kontak](#chat-dan-kontak)
@@ -142,8 +177,8 @@ Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bag
   - [Channel](#channel)
   - [Panggilan dan suara](#panggilan-dan-suara)
   - [Lain-lain](#lain-lain)
-- [Pengalamatan LID / PN / JID](#-pengalamatan-lid--pn--jid)
-- [Mengirim Pesan](#-mengirim-pesan)
+- [Pengalamatan LID / PN / JID](#pengalamatan-lid--pn--jid)
+- [Mengirim Pesan](#mengirim-pesan)
   - [Teks](#teks)
   - [Mention (orang & grup)](#mention-orang--grup)
   - [Teruskan dari channel (forwardedNewsletter)](#teruskan-dari-channel-forwardednewsletter)
@@ -152,16 +187,16 @@ Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bag
   - [Dokumen](#dokumen)
   - [Lokasi](#lokasi)
   - [Polling](#polling)
-- [External Ad Reply](#-external-ad-reply)
+- [External Ad Reply](#external-ad-reply)
   - [Kenapa kartunya bisa tidak muncul sama sekali](#kenapa-kartunya-bisa-tidak-muncul-sama-sekali)
   - [Click-to-WhatsApp, bentuk yang benar-benar dikirim saat iklan diklik](#click-to-whatsapp-bentuk-yang-benar-benar-dikirim-saat-iklan-diklik)
   - [Kartu dan label "via ad" itu dua hal berbeda](#kartu-dan-label-via-ad-itu-dua-hal-berbeda)
   - [Jangan pernah menyetel `alwaysShowAdAttribution` dari bot](#jangan-pernah-menyetel-alwaysshowadattribution-dari-bot)
-- [Kartu Rich Link](#-kartu-rich-link)
+- [Kartu Rich Link](#kartu-rich-link)
   - [Satu impor, seluruh builder](#satu-impor-seluruh-builder)
-- [Split Payment dan Pengingat](#-split-payment-dan-pengingat)
-- [Gaya Link Preview di Status](#-gaya-link-preview-di-status)
-- [Membaca Social Link Preview](#-membaca-social-link-preview)
+- [Split Payment dan Pengingat](#split-payment-dan-pengingat)
+- [Gaya Link Preview di Status](#gaya-link-preview-di-status)
+- [Membaca Social Link Preview](#membaca-social-link-preview)
 - [Button](#button)
   - [Quick Reply + URL + Copy](#quick-reply--url--copy)
   - [Button dengan Gambar](#button-dengan-gambar)
@@ -187,14 +222,14 @@ Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bag
   - [Mini App HTML](#mini-app-html)
   - [Layar Tertanam](#layar-tertanam)
   - [Memeriksa Pesan AI Rich Yang Diterima](#memeriksa-pesan-ai-rich-yang-diterima)
-- [Pesan Album](#-pesan-album)
-- [Status](#-status)
+- [Pesan Album](#pesan-album)
+- [Status](#status)
   - [Latar, Warna Teks dan Font](#latar-warna-teks-dan-font)
   - [Status Gambar, Video dan Suara](#status-gambar-video-dan-suara)
   - [Stiker Status](#stiker-status)
   - [Status Grup](#status-grup)
   - [Apa Saja Yang Benar-Benar Bisa Digayakan](#apa-saja-yang-benar-benar-bisa-digayakan)
-- [Newsletter / Channel](#-newsletter--channel)
+- [Newsletter / Channel](#newsletter--channel)
   - [Membuat dan Menyunting Channel](#membuat-dan-menyunting-channel)
   - [Mengikuti Channel](#mengikuti-channel)
   - [Membaca Channel](#membaca-channel)
@@ -204,14 +239,14 @@ Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bag
   - [Admin](#admin)
   - [Mencari Channel](#mencari-channel)
   - [Penindakan](#penindakan)
-- [Username & Info](#-username--info)
+- [Username & Info](#username--info)
   - [Username](#username)
   - [Info / Status Teks](#info--status-teks)
   - [Pemberitahuan Ketentuan Layanan](#pemberitahuan-ketentuan-layanan)
   - [Daftar Opt-Out Pemasaran](#daftar-opt-out-pemasaran)
   - [Pengaturan Push](#pengaturan-push)
   - [Link Preview Dari Sisi Server](#link-preview-dari-sisi-server)
-- [Pengelolaan Grup](#-pengelolaan-grup)
+- [Pengelolaan Grup](#pengelolaan-grup)
   - [Membuat Grup](#membuat-grup)
   - [Menambah Anggota](#menambah-anggota)
   - [Mengeluarkan Anggota](#mengeluarkan-anggota)
@@ -223,45 +258,45 @@ Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bag
   - [Link Undangan](#link-undangan)
   - [Pesan Sementara](#pesan-sementara)
   - [Membaca Grup](#membaca-grup)
-- [Komunitas](#-komunitas)
+- [Komunitas](#komunitas)
   - [Membuat dan Menautkan](#membuat-dan-menautkan)
   - [Anggota dan Pengaturan](#anggota-dan-pengaturan)
   - [Undangan dan Pembacaan](#undangan-dan-pembacaan)
-- [Pengaturan Privasi](#-pengaturan-privasi)
+- [Pengaturan Privasi](#pengaturan-privasi)
   - [Pesan Sementara Bawaan](#pesan-sementara-bawaan)
   - [Pemblokiran](#pemblokiran)
   - [Melaporkan Spam](#melaporkan-spam)
-- [Semua Jenis Pesan](#-semua-jenis-pesan)
+- [Semua Jenis Pesan](#semua-jenis-pesan)
   - [Kenapa `conversation` kadang kosong](#kenapa-conversation-kadang-kosong)
   - [84 sisanya](#84-sisanya)
   - [Membaca pesan rich](#membaca-pesan-rich)
-- [Presence dan Tanda Dibaca](#-presence-dan-tanda-dibaca)
+- [Presence dan Tanda Dibaca](#presence-dan-tanda-dibaca)
   - [Menandai Sudah Dibaca](#menandai-sudah-dibaca)
   - [Memeriksa Nomor](#memeriksa-nomor)
-- [Keadaan Chat](#-keadaan-chat)
+- [Keadaan Chat](#keadaan-chat)
   - [Riwayat dan Sinkronisasi Ulang](#riwayat-dan-sinkronisasi-ulang)
-- [Label](#-label)
-- [Bisnis dan Katalog](#-bisnis-dan-katalog)
+- [Label](#label)
+- [Bisnis dan Katalog](#bisnis-dan-katalog)
   - [Mengelola Produk](#mengelola-produk)
   - [Profil dan Balasan Cepat](#profil-dan-balasan-cepat)
   - [Mengambil Ulang Media Kedaluwarsa](#mengambil-ulang-media-kedaluwarsa)
   - [Label Anggota Grup](#label-anggota-grup)
-- [Panggilan](#-panggilan)
+- [Panggilan](#panggilan)
   - [Melakukan Panggilan Suara](#melakukan-panggilan-suara)
   - [Memainkan Antrean Audio](#memainkan-antrean-audio)
   - [Panggilan Video](#panggilan-video)
   - [Berbagi Layar](#berbagi-layar)
   - [Panggilan Grup](#panggilan-grup)
   - [Keluar](#keluar)
-- [Foto Profil](#-foto-profil)
+- [Foto Profil](#foto-profil)
   - [Mengambil URL Foto Profil](#mengambil-url-foto-profil)
   - [Mengubah Foto Profil](#mengubah-foto-profil)
   - [Menghapus Foto Profil](#menghapus-foto-profil)
-- [Ekspor Yang Berguna](#-ekspor-yang-berguna)
+- [Ekspor Yang Berguna](#ekspor-yang-berguna)
   - [Cache Internal](#cache-internal)
-- [Memperbarui Versi WhatsApp Web](#-memperbarui-versi-whatsapp-web)
-- [Pesan Terjadwal](#-pesan-terjadwal)
-- [API Pesan WhatsApp Modern](#-api-pesan-whatsapp-modern)
+- [Memperbarui Versi WhatsApp Web](#memperbarui-versi-whatsapp-web)
+- [Pesan Terjadwal](#pesan-terjadwal)
+- [API Pesan WhatsApp Modern](#api-pesan-whatsapp-modern)
   - [Message Key](#message-key)
   - [Polling Foto](#polling-foto)
   - [Pesan Pertanyaan](#pesan-pertanyaan)
@@ -283,11 +318,11 @@ Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bag
   - [Panggilan Terjadwal](#panggilan-terjadwal)
   - [Penanda Broadcast Lokasi](#penanda-broadcast-lokasi)
   - [Builder Tingkat Rendah](#builder-tingkat-rendah)
-- [Sinyal Kesehatan Akun](#-sinyal-kesehatan-akun)
+- [Sinyal Kesehatan Akun](#sinyal-kesehatan-akun)
   - [Kuota Pesan ke Chat Baru](#kuota-pesan-ke-chat-baru)
   - [Timelock Reachout](#timelock-reachout)
   - [Memakainya Sebagai Pengaman](#memakainya-sebagai-pengaman)
-- [Penanganan Masalah](#-penanganan-masalah)
+- [Penanganan Masalah](#penanganan-masalah)
   - [`Cannot read properties of undefined (reading 'undefined')` saat membalas](#cannot-read-properties-of-undefined-reading-undefined-saat-membalas)
   - [Bot menjawab di semua grup kecuali satu](#bot-menjawab-di-semua-grup-kecuali-satu)
   - [Kode pairing harus tepat 8 karakter](#kode-pairing-harus-tepat-8-karakter)
@@ -297,20 +332,20 @@ Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bag
   - [Button atau AIRich tergambar berbeda](#button-atau-airich-tergambar-berbeda)
   - [Yang muncul LID, bukan JID nomor telepon](#yang-muncul-lid-bukan-jid-nomor-telepon)
   - [Sesi ter-logout](#sesi-ter-logout)
-- [Menemukan Bug?](#-menemukan-bug)
-- [Kredit](#-kredit)
+- [Menemukan Bug?](#menemukan-bug)
+- [Kredit](#kredit)
   - [Pemelihara Proyek](#pemelihara-proyek)
   - [Baileys / Upstream](#baileys--upstream)
   - [Kontribusi Fork / Sumber](#kontribusi-fork--sumber)
   - [MessageBuilder Terintegrasi](#messagebuilder-terintegrasi)
   - [Kontributor Open Source](#kontributor-open-source)
-- [TQTO](#-tqto)
-- [Lisensi](#-lisensi)
+- [TQTO](#tqto)
+- [Lisensi](#lisensi)
+
 
 ---
 
-## ⚙️ Kebutuhan
-
+## ️ Kebutuhan
 - Node.js **20 atau lebih baru** — itu yang dideklarasikan `package.json` dan yang dipaksa oleh pemeriksaan `preinstall`, jadi versi di bawahnya ditolak saat instalasi
 - **Disarankan Node.js 22 atau lebih baru**, dan **24** untuk pengembangan serta alur rilis
 - npm
@@ -325,10 +360,10 @@ Cek versi Node.js kamu:
 
 </details>
 
+
 ---
 
-## 📦 Pemasangan
-
+## Pemasangan
 Pasang langsung dari npm:
 
 <details>
@@ -339,7 +374,6 @@ Pasang langsung dari npm:
 </details>
 
 ### Paket yang disarankan
-
 Pakai paketnya langsung dengan namanya sendiri:
 
 <details>
@@ -357,7 +391,6 @@ Pakai paketnya langsung dengan namanya sendiri:
 Paket ini ESM-first. Pakai sintaks `import`, bukan `require()`.
 
 ### Paket Media Opsional
-
 Pemasangan dasarnya tidak membawa library pengolah gambar atau video. Ukurannya jadi sekitar 45 MB lebih kecil, dan pilihan build `sharp` diserahkan ke kamu — tidak bentrok dengan versi yang sudah dipaku proyekmu.
 
 <details>
@@ -390,10 +423,10 @@ await hasOptionalMedia('fluent-ffmpeg')</code></pre>
 
 </details>
 
+
 ---
 
-## 📥 Impor
-
+## Impor
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -423,10 +456,10 @@ Mengimpor utilitas tambahan:
 > [!NOTE]
 > MessageBuilder sudah terintegrasi. Kamu tidak perlu memasang `baileys-mbuilder` secara terpisah.
 
+
 ---
 
-## 🚀 Koneksi Dasar
-
+## Koneksi Dasar
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -471,7 +504,6 @@ startSock()</code></pre>
 </details>
 
 ### Opsi percobaan ulang dan pairing
-
 Selain opsi Baileys yang biasa, yang ini mengatur bagaimana socket menangani pesan yang tidak bisa didekripsi, pengiriman yang ditolak, dan pairing:
 
 | Opsi | Bawaan | Fungsinya |
@@ -486,7 +518,6 @@ Selain opsi Baileys yang biasa, yang ini mengatur bagaimana socket menangani pes
 `maxRetryQueueSize` itu klep pengaman, bukan tombol throughput. Tanpa batas itu, ledakan pesan yang tidak bisa didekripsi akan mengantre tanpa henti dan menggelembungkan heap; di atas batasnya, kelebihannya di-ack tanpa diulang. Menaikkannya tidak menyelamatkan lebih banyak pesan — yang berperan di situ `retryRequestDelayMs`, dengan harga menekan pengirim lebih keras.
 
 ### Opsi socket
-
 Semua yang diterima `makeWASocket`, beserta bawaannya:
 
 | Opsi | Bawaan | Fungsinya |
@@ -522,10 +553,10 @@ Semua yang diterima `makeWASocket`, beserta bawaannya:
 
 `getMessage` lebih penting daripada yang tersirat dari bawaannya: tanpa itu, penerima yang meminta pesan dikirim ulang tidak mendapat apa pun, dan pesannya tampil sebagai "menunggu pesan ini". Arahkan ke penyimpanan apa pun yang kamu punya.
 
+
 ---
 
-## 💾 Penyimpanan Sesi
-
+## Penyimpanan Sesi
 Auth state menyimpan kredensial dan kunci Signal kamu. Kehilangannya berarti scan QR lagi; membocorkannya berarti orang lain bisa memakai akunmu. Paket ini membawa beberapa penyimpanan sekaligus, semuanya mengembalikan bentuk `{ state, saveCreds }` yang sama.
 
 Mana pun yang kamu pilih, sambungkan `saveCreds` ke event `creds.update` — kalau tidak, tidak ada yang tersimpan:
@@ -538,7 +569,6 @@ Mana pun yang kamu pilih, sambungkan `saveCreds` ke event `creds.update` — kal
 </details>
 
 ### Multi-berkas (bawaan)
-
 Satu folder, satu berkas per kunci. Sederhana, tanpa dependensi, dan pilihan yang tepat untuk satu bot di satu mesin.
 
 <details>
@@ -553,7 +583,6 @@ const { state, saveCreds } = await useMultiFileAuthState('./session')</code></pr
 Ia menulis banyak berkas kecil — akun yang sibuk menghasilkan ribuan berkas pre-key. Itu normal; menghapusnya di tengah sesi merusak sesinya.
 
 ### Satu berkas
-
 Semuanya dalam satu berkas JSON. Lebih mudah dibackup atau dipindah antar host, tapi melambat begitu kumpulan kuncinya membesar karena seluruh berkas ditulis ulang setiap ada perubahan.
 
 <details>
@@ -566,7 +595,6 @@ const { state, saveCreds } = await useSingleFileAuthState('./session.json')</cod
 </details>
 
 ### SQLite
-
 Kunci disimpan di database sungguhan, jadi pembacaan bersamaan dan kumpulan kunci besar tetap cepat. Butuh `better-sqlite3` v11, v12, atau v13.
 
 <details>
@@ -600,7 +628,6 @@ const { state, saveCreds } = await useSqliteAuthState({ database })</code></pre>
 Dua tabel dibuat saat pertama dipakai: `creds` dan `signal_keys`.
 
 ### PostgreSQL, MySQL, MongoDB, Redis
-
 Untuk bot yang sudah menjalankan database, atau beberapa bot yang berbagi satu database. Masing-masing menerima koneksi yang sudah kamu punya atau detail untuk membuka koneksinya sendiri, dan masing-masing menyimpan barisnya di bawah satu nama `session`, jadi satu database bisa memuat banyak akun.
 
 <details>
@@ -668,7 +695,6 @@ Keempatnya mengembalikan `clearAuth()` untuk menghapus sesi dan `close()` untuk 
 Ganti namanya dengan `table`, `collectionName`, atau `prefix`. Backend SQL menulis sekumpulan kunci di dalam satu transaksi, MongoDB memakai satu `bulkWrite`, dan Redis menyalurkannya lewat `MULTI`, jadi satu dekripsi yang menyimpan tiga puluh pre-key memakan satu perjalanan, bukan tiga puluh.
 
 ### NekoDB
-
 Untuk bot yang state-nya sudah ada di NekoDB, supaya sesinya ikut bersama data yang lain.
 
 <details>
@@ -690,7 +716,6 @@ Argumen pertama harus instance NekoDB yang sudah tersambung; koleksinya default 
 </details>
 
 ### Menyimpan Kunci Signal di Cache
-
 Setiap penyimpanan membaca kunci dari disk atau database pada tiap dekripsi. Membungkus penyimpanan kunci dengan cache menghilangkan perjalanan itu:
 
 <details>
@@ -715,7 +740,6 @@ const sock = makeWASocket({
 Layak dipakai di penyimpanan apa pun, dan hampir wajib di yang berbasis berkas untuk bot grup yang sibuk.
 
 ### Menyimpan Chat dan Pesan
-
 Auth state menyimpan kunci, bukan percakapan. Untuk chat, kontak, dan riwayat pesan, pasang penyimpanan in-memory:
 
 <details>
@@ -739,10 +763,10 @@ store.bind(sock.ev)</code></pre>
 
 Dari situ `store.chats`, `store.contacts`, `store.messages`, dan `store.groupMetadata` akan terus sinkron, dan `loadMessage` persis yang dibutuhkan `getMessage`. Ia hidup di memori, jadi ukur terhadap trafikmu — bot di grup besar akan terus menggembungkannya.
 
+
 ---
 
-## 🔐 Kode Pairing
-
+## Kode Pairing
 Kode pairing bisa diminta setelah socket dibuat.
 
 <details>
@@ -769,7 +793,6 @@ Nomornya dinormalkan sebelum dipakai, jadi `+62 812-3456-7890` dan `628123456789
 </details>
 
 ### Permintaannya dikonfirmasi server
-
 `requestPairingCode` menunggu jawaban WhatsApp dan baru kembali setelah server mendaftarkan kodenya. Penolakan dilempar, bukan ditelan, jadi kode yang kamu terima memang kode yang benar-benar diketahui server:
 
 <details>
@@ -788,7 +811,6 @@ Nomornya dinormalkan sebelum dipakai, jadi `+62 812-3456-7890` dan `628123456789
 Dua penolakan yang paling sering kamu temui: `rate-overlimit` — terlalu banyak percobaan, tunggu dulu sebelum mencoba lagi — dan varian not-allowed, artinya tautan-lewat-nomor-telepon tidak diaktifkan untuk akun itu.
 
 ### Satu kode dalam satu waktu
-
 Respons pairing hanya bisa didekripsi oleh kunci yang menghasilkannya, jadi permintaan kedua saat yang pertama masih menggantung akan merusak yang pertama. Itu ditolak dengan `409`:
 
 <details>
@@ -817,7 +839,6 @@ const code = await sock.requestPairingCode(phoneNumber)</code></pre>
 Pengamannya membersihkan diri sendiri begitu kodenya kedaluwarsa. WhatsApp merotasi kode pairing setiap 3 menit; sesuaikan dengan `pairingCodeTimeoutMs` kalau kamu butuh jendela lain.
 
 ### Kode Pairing Kustom
-
 Kode pairing kustom harus berisi tepat **8 karakter**.
 
 <details>
@@ -833,7 +854,6 @@ console.log(code)</code></pre>
 </details>
 
 ### Memeriksa pairing tanpa menyentuh bot yang jalan
-
 `script/testpairing.js` menjalankan satu permintaan pairing ke direktori sesi sekali pakai, jadi kredensial bot yang sudah tersambung tidak pernah tertimpa:
 
 <details>
@@ -845,10 +865,10 @@ console.log(code)</code></pre>
 
 `--check-only` melaporkan apakah server menerima registrasinya dan tidak pernah mencetak kodenya — pakai itu di tempat mana pun yang outputnya bisa dibaca orang lain. Lepas flag-nya untuk mencetak kode dan menunggu penautannya selesai.
 
+
 ---
 
-## 📩 Menerima Pesan
-
+## Menerima Pesan
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -885,10 +905,10 @@ Mengambil teksnya secara sederhana:
 
 </details>
 
+
 ---
 
-## 📡 Event
-
+## Event
 Semua yang dipancarkan socket, lewat `sock.ev`. Berlangganan satu-satu, atau sekaligus dengan `sock.ev.process`.
 
 <details>
@@ -904,14 +924,12 @@ Semua yang dipancarkan socket, lewat `sock.ev`. Berlangganan satu-satu, atau sek
 `process` memberimu satu objek per flush, bukan satu callback per event, sehingga ledakan sinkronisasi riwayat tidak menggempur handler-mu.
 
 ### Koneksi dan kredensial
-
 | Event | Dipancarkan saat |
 |---|---|
 | `connection.update` | keadaan koneksi, QR, kode pairing, timelock reachout |
 | `creds.update` | kredensial berubah — selalu sambungkan ini ke `saveCreds` |
 
 ### Pesan
-
 | Event | Dipancarkan saat |
 |---|---|
 | `messages.upsert` | pesan baru atau tambahan, dengan `type: 'notify' \| 'append'` |
@@ -925,7 +943,6 @@ Semua yang dipancarkan socket, lewat `sock.ev`. Berlangganan satu-satu, atau sek
 | `messaging-history.status` | kemajuan sinkronisasi riwayat |
 
 ### Chat dan kontak
-
 | Event | Dipancarkan saat |
 |---|---|
 | `chats.upsert` / `chats.update` / `chats.delete` | daftar chat berubah |
@@ -938,7 +955,6 @@ Semua yang dipancarkan socket, lewat `sock.ev`. Berlangganan satu-satu, atau sek
 | `lid-mapping.update` | satu nomor telepon dipetakan ke LID |
 
 ### Grup dan komunitas
-
 | Event | Dipancarkan saat |
 |---|---|
 | `groups.upsert` / `groups.update` | metadata grup |
@@ -947,7 +963,6 @@ Semua yang dipancarkan socket, lewat `sock.ev`. Berlangganan satu-satu, atau sek
 | `group.member-tag.update` | label anggota berubah |
 
 ### Channel
-
 | Event | Dipancarkan saat |
 |---|---|
 | `newsletter.reaction` | ada follower bereaksi |
@@ -957,7 +972,6 @@ Semua yang dipancarkan socket, lewat `sock.ev`. Berlangganan satu-satu, atau sek
 | `newsletter-admin-profile.update` | seorang admin mengubah profil channel-nya |
 
 ### Panggilan dan suara
-
 | Event | Dipancarkan saat |
 |---|---|
 | `call` | panggilan masuk atau diperbarui |
@@ -965,7 +979,6 @@ Semua yang dipancarkan socket, lewat `sock.ev`. Berlangganan satu-satu, atau sek
 | `voice.command` | satu transkripsi cocok dengan frasa pemicu |
 
 ### Lain-lain
-
 | Event | Dipancarkan saat |
 |---|---|
 | `event` | pesan acara dibuat atau diperbarui |
@@ -973,14 +986,13 @@ Semua yang dipancarkan socket, lewat `sock.ev`. Berlangganan satu-satu, atau sek
 
 `mex.notification` itu pintu daruratnya: apa pun yang ditambahkan WhatsApp dan belum dimodelkan library ini tiba di situ beserta nama operasi dan payload mentahnya, jadi fitur baru tidak pernah hilang tanpa jejak.
 
----
-
-
 
 ---
 
-## 🔐 Private Relay (sPR)
 
+---
+
+## Private Relay (sPR)
 Kirim pesan **grup** yang hanya bisa dibuka oleh member tertentu. Member lain tetap menerima
 paketnya, tapi tidak mendapat kunci sender-key, sehingga pesan tidak terbaca di sisi mereka
 (gagal dekripsi disembunyikan dengan `decrypt-fail="hide"`).
@@ -997,19 +1009,19 @@ conn.relayPrivateMessage(jid, message, options)   // versi mentah (proto message
 
 Juga tersedia sebagai export: `import { sPR, makePrivateRelay } from '@lyncxteams/baileys'`
 
+
 ---
 
 ### Cara kerja singkat
-
 | Mode | Arti |
 |------|------|
 | `exclude` (default) | Semua dapat kunci **kecuali** jid di `target` |
 | `include` | **Hanya** jid di `target` yang dapat kunci |
 
+
 ---
 
 ### Opsi
-
 | Opsi | Tipe | Default | Keterangan |
 |------|------|---------|------------|
 | `mode` | `"include"` \| `"exclude"` | `"exclude"` | Lihat tabel di atas |
@@ -1023,10 +1035,10 @@ Juga tersedia sebagai export: `import { sPR, makePrivateRelay } from '@lyncxteam
 
 `content` sama persis dengan `conn.sendMessage` (`{ text }`, `{ image }`, `{ poll }`, dst).
 
+
 ---
 
 ### Contoh siap eval (`=>`)
-
 Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
 
 **Hanya pengirim yang bisa baca**
@@ -1101,10 +1113,10 @@ Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
 
 </details>
 
+
 ---
 
 ### Catatan
-
 - Fungsi ini **khusus grup** (`@g.us`). Untuk chat pribadi, filter `target` hanya memilih device mana yang dienkripsi.
 - Pesan yang dikirim ke jid biasa/newsletter tetap berjalan, tapi mode include/exclude tidak berpengaruh di newsletter.
 - `target` boleh PN atau LID; lookup LID ↔ PN dilakukan otomatis lewat `signalRepository.lidMapping`.
@@ -1115,10 +1127,10 @@ Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
 - Jika hasilnya tidak sesuai, coba `await conn.resetGroupSenderKey(m.chat)` agar kunci grup didistribusikan ulang.
 
 
+
 ---
 
-## 🖥️ WhatsApp Web Screenshot (`conn.wweb`)
-
+## ️ WhatsApp Web Screenshot (`conn.wweb`)
 Screenshot chat / beranda **web.whatsapp.com** lewat Chromium headless. Semua logika (login QR, buka chat,
 scroll ke pesan terbaru, screenshot, auto-tutup saat idle) ada di Baileys, sehingga plugin bot hanya
 beberapa baris.
@@ -1128,7 +1140,6 @@ beberapa baris.
 > Baileys mencarinya di `process.cwd()` bot, atau bisa disuntik manual (lihat bawah).
 
 ## Plugin botwa (cukup ini)
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -1147,7 +1158,6 @@ export default handler</code></pre>
 Perintah: `.sswa` (screenshot chat ini), `.sswa home`, `.sswa login`, `.sswa reset`.
 
 ### API
-
 | Method | Fungsi |
 |--------|--------|
 | `conn.wweb.run(m, { mode, usedPrefix, command, name })` | Satu panggilan penuh, balasan (QR, gambar, error) dikirim otomatis ke `m.chat`. `mode`: `chat` \| `home` \| `login` \| `reset` |
@@ -1161,7 +1171,6 @@ Perintah: `.sswa` (screenshot chat ini), `.sswa home`, `.sswa login`, `.sswa res
 `onQr(buffer)` dipanggil saat WhatsApp Web minta scan QR (kirim sendiri sebagai gambar).
 
 ### Contoh eval (`=>`)
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -1173,7 +1182,6 @@ Perintah: `.sswa` (screenshot chat ini), `.sswa home`, `.sswa login`, `.sswa res
 </details>
 
 ### Konfigurasi
-
 Lewat env atau config `makeWASocket({ ... })`:
 
 | Env | Config | Default |
@@ -1184,13 +1192,11 @@ Lewat env atau config `makeWASocket({ ... })`:
 | - | `puppeteer` | modul puppeteer yang disuntik saat membuat socket |
 
 ### Catatan
-
 - Antrian internal: banyak perintah bersamaan dijalankan satu per satu (satu browser dibagi).
 - Jika error "Chromium masih mengunci sessions-wweb", restart proses bot sepenuhnya.
 - Pencarian chat memakai nama chat dan nomor. Untuk chat pribadi, kirim `name` (mis. `conn.getName(jid)`) agar akurat.
 
-## 🪪 Pengalamatan LID / PN / JID
-
+## Pengalamatan LID / PN / JID
 Versi protokol WhatsApp yang baru bisa mengidentifikasi pengguna dengan alamat LID, bukan hanya JID nomor telepon. Jangan berasumsi setiap penanda pengguna yang masuk berakhiran `@s.whatsapp.net`.
 
 Bentuk yang umum antara lain:
@@ -1239,12 +1245,11 @@ console.log(decoded)</code></pre>
 > [!IMPORTANT]
 > LID dan PN adalah dua bentuk alamat untuk akun yang sama **hanya** kalau WhatsApp menyediakan pemetaannya atau aplikasimu sudah tahu pemetaannya. Jangan membuat PN palsu dengan mengganti akhiran `@lid`.
 
+
 ---
 
-## 💬 Mengirim Pesan
-
+## Mengirim Pesan
 ### Teks
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -1270,7 +1275,6 @@ console.log(decoded)</code></pre>
 `viewOnce: true` dan `viewOnceV2: true` membungkusnya di `viewOnceMessage` / `viewOnceMessageV2`; itu pembungkus yang dipakai media. Field `conversation` yang polos tidak bisa membawa semua ini — ia cuma string tanpa tempat untuk menaruh flag-nya — jadi teksnya harus berjalan sebagai `extendedTextMessage`, dan fork ini selalu begitu.
 
 ### Mention (orang & grup)
-
 **Mention orang** — taruh `@<nomor>` di teks dan daftarkan JID lengkapnya di `mentions`:
 
 <details>
@@ -1305,7 +1309,6 @@ Hasil wire: `text` menjadi `Cek grup ini @120363XXXXXXXXXXXX@g.us`, dan penerima
 - Bisa digabung dengan media (dipasang ke `caption`) dan dengan `mentions` biasa dalam satu pesan.
 
 ### Teruskan dari channel (forwardedNewsletter)
-
 Repost konten channel dengan label **"Diteruskan dari [Nama Channel]"**. Menyetel `contextInfo.forwardedNewsletterMessageInfo` dan menandai `isForwarded`:
 
 <details>
@@ -1328,7 +1331,6 @@ Repost konten channel dengan label **"Diteruskan dari [Nama Channel]"**. Menyete
 - Bekerja pada teks maupun media (dipasang ke tipe pesan yang dibuat).
 
 ### Gambar
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -1340,7 +1342,6 @@ Repost konten channel dengan label **"Diteruskan dari [Nama Channel]"**. Menyete
 </details>
 
 ### Video
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -1352,7 +1353,6 @@ Repost konten channel dengan label **"Diteruskan dari [Nama Channel]"**. Menyete
 </details>
 
 ### Dokumen
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -1365,7 +1365,6 @@ Repost konten channel dengan label **"Diteruskan dari [Nama Channel]"**. Menyete
 </details>
 
 ### Lokasi
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -1381,7 +1380,6 @@ Repost konten channel dengan label **"Diteruskan dari [Nama Channel]"**. Menyete
 </details>
 
 ### Polling
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -1396,7 +1394,6 @@ Repost konten channel dengan label **"Diteruskan dari [Nama Channel]"**. Menyete
 </details>
 
 #### Pengaturan polling
-
 Setiap sakelar yang ditampilkan WhatsApp di composer polling-nya sendiri tersedia di sini. Nama opsinya tidak sama dengan nama field protobuf-nya, jadi keduanya didaftar bersebelahan:
 
 | Opsi | Field protobuf | Bawaan | Fungsinya |
@@ -1463,10 +1460,10 @@ Dua catatan yang perlu diketahui. Penerima WhatsApp **Web** lebih ketat daripada
 
 Dengan kata lain, Web hanya menerima polling foto di dalam channel, jadi polling foto yang kelihatan benar di ponsel bisa tampil tidak didukung di sesi browser. Dan mencampur opsi gambar dengan `hideVoter` atau `endDate` memindahkan pesannya ke `pollCreationMessageV6`; kalau gambarnya berhenti muncul setelah kamu menambahkan sakelar itu, kirim polling fotonya tanpa keduanya.
 
+
 ---
 
-## 📰 External Ad Reply
-
+## External Ad Reply
 `externalAdReply` bisa ditempelkan lewat `contextInfo` kalau kamu mau kartu bergaya link preview WhatsApp yang standar.
 
 <details>
@@ -1512,7 +1509,6 @@ Ada juga bentuk singkat yang duduk di sebelah konten, bukan di dalam `contextInf
 `url` di situ mengisi `sourceUrl`, yaitu tautan yang dibuka kartunya. Itu bukan gambar, jadi tidak lagi disalin ke `thumbnailUrl` atau `mediaUrl` — keduanya kunci terpisah yang kamu setel sendiri kalau gambarnya memang diambil lewat jaringan. Beri kartunya salah satu: buffer `thumbnail` inline atau `thumbnailUrl`; tanpa keduanya, kartunya tergambar tanpa gambar dan satu peringatan masuk ke logger.
 
 ### Kenapa kartunya bisa tidak muncul sama sekali
-
 Field-nya masih hidup — build WhatsApp sekarang tetap mem-parse `externalAdReply` dan tetap menelusurinya saat validasi. Yang berubah ada di sisi penerima. Kedua klien membuang **seluruh pesannya**, bukan cuma kartunya, kalau tiba di akun konsumer. WA Web:
 
 <details>
@@ -1534,10 +1530,9 @@ Baca ketiga syaratnya:
 
 Tidak ada isi payload yang mengubah ini. Ini bukan soal `mediaType` yang benar, thumbnail yang valid, atau `showAdAttribution`; pesannya dibuang setelah didekripsi, sebelum digambar. Kalau kartunya yang membawa isi pesanmu, kirim isi itu di badan pesan juga supaya pesannya tetap berguna sendiri.
 
-Bawaan prop ini di tabel klien `false`, jadi ini tidak aktif di mana-mana — dinyalakan per akun dari server. Pastikan dulu sebelum berasumsi: kirim kartu yang sama ke nomor WhatsApp Business. Kalau salinan Business menampilkan kartunya dan salinan konsumer tidak menampilkan pesan sama sekali, itu gerbang ini. Kalau dua-duanya tidak menampilkan kartu tapi dua-duanya menampilkan pesannya, berarti kartunya sendiri yang cacat dan [Kartu Rich Link](#-kartu-rich-link) bukan yang kamu butuhkan — periksa thumbnail-nya dulu.
+Bawaan prop ini di tabel klien `false`, jadi ini tidak aktif di mana-mana — dinyalakan per akun dari server. Pastikan dulu sebelum berasumsi: kirim kartu yang sama ke nomor WhatsApp Business. Kalau salinan Business menampilkan kartunya dan salinan konsumer tidak menampilkan pesan sama sekali, itu gerbang ini. Kalau dua-duanya tidak menampilkan kartu tapi dua-duanya menampilkan pesannya, berarti kartunya sendiri yang cacat dan [Kartu Rich Link](#kartu-rich-link) bukan yang kamu butuhkan — periksa thumbnail-nya dulu.
 
 ### Click-to-WhatsApp, bentuk yang benar-benar dikirim saat iklan diklik
-
 Contoh di atas memakai `externalAdReply` sebagai hiasan. Click-to-WhatsApp adalah tujuan asli field ini dibangun: seseorang mengetuk iklan di Facebook atau Instagram, WhatsApp terbuka di thread pengiklan, dan pesan pertama yang dikirim orang itu membawa iklan asalnya. Kunci-kunci tambahan itulah yang dibiarkan kosong oleh kartu hiasan.
 
 <details>
@@ -1594,7 +1589,6 @@ Kegunaan tiap kunci yang khusus CTWA:
 `AdType.CTWA` bernilai `0`, jadi protobuf tidak menuliskannya ke wire dan ia terbaca balik sebagai `0` — itu nilai bawaannya, bukan field yang hilang.
 
 ### Kartu dan label "via ad" itu dua hal berbeda
-
 Saat diterima, klien melipat `contextInfo` menjadi `ctwaContext` pada pesannya, dan hanya sebagian kunci di atas yang selamat dalam perjalanan itu:
 
 <details>
@@ -1636,7 +1630,6 @@ Jadi akun konsumer biasa memang menggambarnya, selama `sourceUrl` disetel dan `m
 **Label "Message via ad"** itu elemen terpisah, dan ia bertumpu pada `contextInfo.alwaysShowAdAttribution` (field **48**) — bukan `externalAdReply.showAdAttribution`, yang merupakan field lain dan tidak pernah dibaca labelnya. Satu titik render memeriksa field-nya saja; satu lagi lewat `shouldShowAdAttribution`, yang menambahkan `isSMB() || getABPropConfigValue("wa_ctwa_web_thread_ad_attribution_enabled")` (`2898`, bawaan `false`) dan menolak langsung untuk pesan yang diteruskan.
 
 ### Jangan pernah menyetel `alwaysShowAdAttribution` dari bot
-
 Menyetelnya mengorbankan seluruh pesanmu, tanpa prop apa pun terlibat:
 
 <details>
@@ -1660,10 +1653,10 @@ Tanpa AB prop, tanpa rollout — penerima konsumer selalu membuang pesan apa pun
 
 Jadi paruh kartu dari CTWA itu biasa dan aman; paruh atribusi iklannya memang untuk akun Business.
 
+
 ---
 
-## 🖼️ Kartu Rich Link
-
+## ️ Kartu Rich Link
 Kartu yang digambar WhatsApp sendiri untuk sebuah tautan. Gambar besar, judul, dan subjudulnya sama dengan `externalAdReply`, tapi dibangun dari `extendedTextMessage`, yaitu link preview biasa yang dikirim semua pengguna sepanjang hari — tanpa field iklan, jadi penekanan di atas tidak bisa menyentuhnya.
 
 <details>
@@ -1746,14 +1739,13 @@ Klien memutuskan sebuah pesan membawa preview lewat `isUrlExtendedTextMessage`, 
 
 Fungsi `upload` harus tersedia untuk kartu besar, karena thumbnail-nya memang benar-benar diunggah — mengirim lewat socket sudah memberimu itu. Library gambar (`sharp`, `@napi-rs/image`, atau `jimp`) yang mengukur dan menskalakan sampulnya, dan tanpa itu kartunya selalu yang kecil.
 
+
 ---
 
-# 🧱 MessageBuilder Terintegrasi
-
+# MessageBuilder Terintegrasi
 MessageBuilder v4.7 sudah disertakan langsung di dalam `@lyncxteams/baileys`.
 
 ### Satu impor, seluruh builder
-
 Permukaan builder-nya terdiri dari 212 nama yang tersebar di empat modul, dan itulah kenapa satu bot bisa berakhir dengan satu paragraf impor cuma untuk menggambar satu kartu. `MB` (nama panjangnya: `MessageBuilder`) membawa semuanya — kelima kelas builder, semua pabrik section dan item, semua enum, pemeriksa native flow, helper tanda tangan. Tidak ada lagi yang perlu ikut di baris impor:
 
 <details>
@@ -1801,10 +1793,10 @@ Semua contoh di bab ini ditulis seperti itu, `MB` dan tidak ada yang lain, sampa
 
 </details>
 
+
 ---
 
-## 💸 Split Payment dan Pengingat
-
+## Split Payment dan Pengingat
 Dua-duanya tergambar di Android sebagai bubble-nya sendiri. Nominalnya angka manusia — nilai di wire diskalakan dengan `offset` (bawaan 1000), dan menyerahkan angka yang sudah diskalakan dengan tangan membuat tagihannya seribu kali lipat.
 
 <details>
@@ -1848,8 +1840,7 @@ Baca kembali dengan `readSplitPayment(msg)` dan `readPaymentReminder(msg)`, yang
 
 Ini pesan biasa yang dikirim akunmu sendiri, tampil di bawah namamu sendiri — tidak memindahkan uang dan bukan permintaan pembayaran yang ditindaklanjuti jaringan. Anggap kartu split ini sebagai catatan, karena memang itu.
 
-## 📊 Gaya Link Preview di Status
-
+## Gaya Link Preview di Status
 `statusLinkPreviewMetadata` duduk di bagian atas pesan, di sebelah teksnya, dan memberi tahu status kartu link preview mana yang harus digambar:
 
 <details>
@@ -1864,8 +1855,7 @@ Ini pesan biasa yang dikirim akunmu sendiri, tampil di bawah namamu sendiri — 
 
 Klien tidak menerbitkan nama apa pun untuk nilai-nilai ini, jadi di sini angkanya diteruskan apa adanya ketimbang mengarang enum — `statusLinkPreview: 1` saja hasilnya sama. Style negatif atau bukan bilangan bulat ditolak.
 
-## 🎬 Membaca Social Link Preview
-
+## Membaca Social Link Preview
 Kalau klien Meta sendiri mengirim link preview untuk reel atau postingan, mereka menempelkan node tambahan di sebelah judul dan thumbnail yang biasa: `linkPreviewMetadata` berisi jenis postingan, video inline, dan durasinya, plus `endCardTiles` dan `videoContentUrl`. `readSocialPreview(msg)` menarik semua itu kembali keluar, dan mengembalikan `null` untuk pesan yang tidak membawa satu pun di antaranya.
 
 <details>
@@ -1886,14 +1876,12 @@ sock.ev.on('messages.upsert', ({ messages }) =&gt; {
 
 Buktinya, supaya kamu tidak perlu menurunkannya ulang: di WA Web, pemeta proto-ke-model untuk `extendedTextMessage` menyalin `matchedText`, `description`, `title`, `jpegThumbnail`, `previewType`, `doNotPlayInline`, `mediaKey`, `mediaKeyTimestamp`, `thumbnailDirectPath`, `thumbnailSha256`, dan `thumbnailEncSha256` — tidak ada yang lain. `linkPreviewMetadata`, `endCardTiles`, dan `videoContentUrl` dibuang di perbatasan itu sebelum ada komponen yang bisa membacanya, dan hitungan pembacaan langsung di seluruh bundle sepakat: `matchedText` 66, `thumbnailDirectPath` 51, ketiga itu **0** masing-masing. Di aplikasi, `endCardTiles_` sama sekali tidak ada di dex mana pun, jadi tile-nya bahkan tidak bisa didekode di sana.
 
-Untuk kartu yang memang tergambar, dengan thumbnail besar dan tanpa tautan yang ditempel di badan pesan, pakai [Kartu Rich Link](#-kartu-rich-link) atau opsi `linkPreview` pada pesan teks biasa.
+Untuk kartu yang memang tergambar, dengan thumbnail besar dan tanpa tautan yang ditempel di badan pesan, pakai [Kartu Rich Link](#kartu-rich-link) atau opsi `linkPreview` pada pesan teks biasa.
 
 ## Button
-
 Builder `Button` dipakai untuk pesan interaktif native-flow.
 
 ### Quick Reply + URL + Copy
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -1912,7 +1900,6 @@ await message.send(jid)</code></pre>
 </details>
 
 ### Button dengan Gambar
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -1929,7 +1916,6 @@ await message.send(jid)</code></pre>
 </details>
 
 ### Daftar Helper Button
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -1968,10 +1954,10 @@ Builder-nya juga menyediakan:
 
 </details>
 
+
 ---
 
 ## Selection / List
-
 Buat list single-select native dengan `addSelection`, `makeSection`, dan `makeRow`.
 
 <details>
@@ -1996,7 +1982,6 @@ await list.send(jid)</code></pre>
 > `single_select` hanya tergambar di **Android**. WhatsApp Web dan iOS tidak punya kodenya — namanya tidak ada di daftar native-flow mereka, jadi pesannya jatuh ke kartu teks biasa dan list-nya hilang. Ini bukan hal yang bisa ditambal dari library. Lihat [Dukungan Native Flow](#dukungan-native-flow) untuk yang memang tergambar di mana-mana.
 
 ### Dukungan Native Flow
-
 WhatsApp Web memegang daftar nama button native-flow yang tetap. Apa pun di luar daftar itu dibuang dan pesannya diturunkan jadi `phone_only_feature` — teksnya tetap sampai, button-nya tidak.
 
 <details>
@@ -2026,10 +2011,10 @@ Quick reply tidak bisa dicampur dengan jenis button lain dalam satu pesan — kl
 
 Kalau kamu butuh satu menu yang jalan di semua platform, pakai sampai 10 button `addReply`, atau kirim pilihannya sebagai teks dan biarkan pengguna menjawab. Tidak ada trik protokol yang membuat list single-select muncul di Web.
 
+
 ---
 
 ## ButtonV2
-
 `ButtonV2` menyediakan builder button klasik yang lebih sederhana.
 
 <details>
@@ -2050,10 +2035,10 @@ await message.send(jid)</code></pre>
 
 </details>
 
+
 ---
 
 ## Carousel
-
 Kartu carousel bisa dibuat dari `Button.toCard()` lalu diserahkan ke `Carousel`.
 
 <details>
@@ -2085,10 +2070,10 @@ await carousel.send(jid)</code></pre>
 > [!IMPORTANT]
 > Setiap kartu carousel wajib punya lampiran media gambar atau video di header-nya.
 
+
 ---
 
 ## AIRich
-
 `AIRich` adalah builder respons rich bawaan untuk bermacam layout dan jenis konten.
 
 Ia tidak lewat `sock.sendMessage`, dan memang tidak bisa. `send` merelay pesannya lalu langsung mengirim satu suntingan `protocolMessage` untuk pesan itu sendiri — unified response baru tergambar setelah stanza kedua itu mendarat. Itu dua stanza dari satu panggilan, dan bukan hal yang bisa dikembalikan `sendMessage`; ia memberimu satu `WebMessageInfo` untuk satu pesan. Jadi respons rich dibangun di atas sebuah instance lalu direlay oleh builder-nya sendiri, dan semua contoh di bawah mulai dari `new MB.AIRich(sock)` dan berakhir di `await rich.send(jid)`.
@@ -2111,7 +2096,6 @@ await rich.send(jid)</code></pre>
 Satu panggilan `send` mengirim dua stanza: pesannya, lalu suntingan `protocolMessage` type 14 yang membawa isi yang sama. Yang kedua itu yang membuat kartunya tergambar tanpa unduhan, jadi kalau ia gagal `send` ikut melempar — errornya membawa `relayedKey`, kunci stanza pertama yang sudah terlanjur keluar, supaya kamu bisa mengulang `sendEdit` sendiri. Sebelumnya kegagalan itu ditelan diam-diam dan `send` tetap mengembalikan kunci seolah semuanya beres, padahal yang sampai cuma pesan kosong.
 
 ### Teks + Kode + Tabel
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -2135,7 +2119,6 @@ await rich.send(jid)</code></pre>
 </details>
 
 ### Kenapa bisa tidak muncul sama sekali
-
 Pesan AI Rich dikirim terbungkus `botForwardedMessage`, persis seperti forward Meta AI yang asli, dan itu bawaannya.
 
 Sempat tidak begitu. `build` dan `send` pernah menaruh `richResponseMessage` di tingkat atas, alasannya di bundle WA Web pembungkusnya cuma dibuka di belakang satu gerbang:
@@ -2154,7 +2137,6 @@ Tapi itu tabel WA **Web**, sedangkan yang membaca pesan-pesan ini ada di ponsel.
 Beri `forwardWrapper: false` ke `build`, `send`, `buildEdit`, atau `forwardRichResponse` kalau kamu memang menargetkan WA Web dan tahu prop itu menyala di sana.
 
 ### Kenapa cuma judulnya yang muncul
-
 Bubble-nya tampil, judulnya tampil, tapi badannya kosong. Dari dex Android `2.26.37.1`, pemilih baris percakapan (`LX/Dox;->A00`) punya tiga jalur untuk satu respons rich:
 
 1. **Termasker** — hanya kalau status verifikasi pesannya **FAILED**, di balik prop `ai_rich_response_unknown_sender_verification_masking_enabled` (id 27635). Log klien: `ConversationRowAiUnknownSenderMasked: signature verification failed`.
@@ -2222,11 +2204,9 @@ Helper AIRich lain yang tersedia antara lain:
 </details>
 
 ### Apa Yang Bisa Dicampur Dengan Apa
-
 Respons rich dan pesan interaktif kelihatannya seharusnya bisa digabung, dan menu bot yang memasangkan `nativeFlowMessage` dengan `bloksWidget` memberi kesan apa pun bisa. Baca kliennya, dan semuanya terbagi rapi jadi satu hal yang tidak bisa dicampur dan dua yang bisa.
 
 #### Kunci konten tingkat atas tidak pernah bisa dicampur
-
 `richResponseMessage` itu field **97** dari `Message`. `interactiveMessage` **45**, `extendedTextMessage` **6**, `conversation` **1**. Protobuf dengan senang hati mengenkode dua di antaranya bersebelahan, dan keduanya selamat dalam perjalanan — tapi setiap resolver memilih tepat satu, mengikuti urutan field, dan sisanya cuma beban mati di wire:
 
 <details>
@@ -2241,7 +2221,6 @@ Respons rich dan pesan interaktif kelihatannya seharusnya bisa digabung, dan men
 Jadi tidak ada yang namanya "respons rich dengan button". Kirim dua pesan, atau pilih satu bentuk.
 
 #### Di dalam `interactiveMessage`, tiga slot ikut dan tiga saling berebut
-
 Klien menentukan jenis interaktifnya dengan menelusuri enum-nya sendiri lalu mengambil field pertama yang ada:
 
 <details>
@@ -2277,7 +2256,6 @@ Keduanya berdiri di belakang satu syarat keras:
 `messageVersion` **wajib** ada di slot yang menang, dan nilainya harus `1` atau kurang. Hilangkan itu dan pesannya tidak didukung sebelum semua yang di atas dijalankan — tidak ada versi 9. Kunci konten `nativeFlow` menyetelnya untukmu.
 
 #### Constraint tombol, dan kenapa itu menentukan segalanya
-
 `nativeFlowMessage.name` **bukan** yang dibaca klien. Nama flow-nya diturunkan dari button-nya, dan hanya kalau button-nya lolos pemeriksaan:
 
 <details>
@@ -2429,7 +2407,6 @@ Ada satu jalan keluar dari seluruh pemeriksaan ini, dan itu alasan kenapa menu d
 Jaga `bloksWidget.fallback` identik byte-per-byte dengan `text`. Klien menyembunyikan teks bubble-nya hanya kalau widget-nya aktif **dan** keduanya sama (`if (S && k === msg.bloksWidget?.fallback) k = null`), jadi payload yang sama menggambar widget-nya di tempat prop-nya aktif dan teks biasa di tempat yang tidak, bukan menampilkan isinya dua kali.
 
 #### Di dalam `richResponseMessage`, semuanya bisa dicampur
-
 Di sinilah respons rich benar-benar bisa disusun. Empat daftar berjalan bersama dan tidak ada yang saling berebut:
 
 | Slot | Membawa |
@@ -2460,7 +2437,6 @@ await rich.send(jid)</code></pre>
 Itu memancarkan `FOABloksPrimitive`, salah satu dari delapan belas nama yang juga digambar WA Web — jadi berbeda dari jalur `interactiveMessage.bloksWidget`, yang ini tidak berada di belakang `im_bloks_widget_enable`.
 
 ### Inline Entity di Dalam Teks
-
 `addText` dan `addTable` memindai string-nya untuk empat bentuk mirip markdown lalu mengubahnya menjadi **inline entity** — bagian yang digambar klien sebagai tautan, kutipan, dan rumus di dalam satu paragraf, bukan sebagai section terpisah.
 
 | Kamu menulis | Menjadi | `__typename` |
@@ -2516,7 +2492,6 @@ console.log(inline.map(e =&gt; e.metadata.__typename))</code></pre>
 </details>
 
 ### Menyunting Pesan Yang Sudah Tampil
-
 Setiap panggilan `add*` menerima `id`, `insertAt`, dan `replace`, jadi pesan yang sudah terkirim bisa terus berubah ketimbang dikirim ulang.
 
 <details>
@@ -2558,7 +2533,6 @@ rich.delete('pic')</code></pre>
 Target yang salah melempar error bertipe ketimbang gagal tanpa suara — `ItemNotFoundError`, `DuplicateIdError`, `InvalidTargetError`, dan `ContentValidationError`, semuanya turunan `AIRichError` dengan field `code`.
 
 ### Mencampur Instance
-
 `sections` dan `items` membuka apa yang dipegang sebuah builder, jadi konten yang dibangun di satu instance bisa dijatuhkan ke instance lain.
 
 <details>
@@ -2575,7 +2549,6 @@ await rich.sendEdit()</code></pre>
 </details>
 
 ### Membaca Pesan Yang Sudah Ada
-
 `loadFrom` membangun ulang sebuah builder dari pesan yang kamu terima, jadi pesan interaktif yang masuk bisa disunting dan dikirim lagi.
 
 <details>
@@ -2589,7 +2562,6 @@ const buttonV2 = new MB.ButtonV2(sock).loadFrom(m.message)</code></pre>
 </details>
 
 ### Primitif Yang Belum Punya Helper
-
 MessageBuilder mencakup 11 dari primitif yang digambar langsung WA Web. Sisanya dibuka di sini sebagai pembangun section biasa yang kamu jatuhkan ke `addSection`; katalog Meta AI yang lebih luas ada di [Sisa Katalog Meta AI](#sisa-katalog-meta-ai).
 
 <details>
@@ -2627,7 +2599,6 @@ await rich.send(jid)</code></pre>
 `FOABloksPrimitive` justru punya pabrik: `bloksSection`. Primitifnya membawa satu layar Bloks (`type: "im_a2ui"`) yang komponennya ikut di dalam `data`, bukan diambil klien dari server Meta — dan inilah pembungkus yang dipakai fixture A2UI resmi WhatsApp Web. Lihat [Kartu A2UI](#kartu-a2ui). `GenAIMetaSubsQuotaUpsellPrimitive` dulu ikut dikecualikan dengan alasan yang sama, dan itu juga salah: parser-nya membaca seluruh kartunya dari wire — pabriknya ada sekarang, lihat [Kartu Penawaran Langganan](#kartu-penawaran-langganan).
 
 ### Sisa Katalog Meta AI
-
 `AIRichMessage` adalah bentuk yang dikirim Meta AI sendiri, dan bot mencapainya dengan meneruskan salah satunya. Jadi katalognya jauh lebih besar daripada yang dicakup section di atas: klien WhatsApp mem-parse sekitar empat puluh primitif, dan `AI_RICH_PRIMITIVES` sekarang mendaftar semuanya, dengan `AI_RICH_ITEMS` untuk node item yang dibawa sebuah layout.
 
 Permukaan `AIRichMessage` merakit bentuk itu secara utuh, termasuk submessage dan konteks penerusan yang dicap generator resmi (`WAWebGenerateRichResponseMessageProto`). `sendAIRichMessage(sock, jid, options)` menerima `sections`, `text`, `nativeFlow`, dan `submessages` sekaligus:
@@ -2652,7 +2623,6 @@ Peringatan render A2UI tetap berlaku untuk bentuk apa pun: lihat [Kartu A2UI](#k
 Satu catatan yang perlu diketahui sebelum kamu membangun kartu di sekitar salah satunya: katalog penuhnya tergambar di aplikasi WhatsApp, dan di situlah penerimamu berada. WA Web desktop yang tertinggal — ia membawa renderer untuk delapan belas nama dan memetakan sisanya ke node kosong. Pesannya tetap sampai bagaimanapun dan section lainnya tetap tergambar, jadi penonton di desktop melihat bolong, bukan kegagalan.
 
 #### Bagian yang juga tergambar di desktop
-
 `AI_RICH_PRIMITIVES_WEB_RENDERED` adalah bagian katalog yang juga bisa digambar WA Web, jadi kartu yang dibangun hanya dari nama-nama ini tampil sama di aplikasi dan di browser. Daftarnya dibaca dari `getPlainTextFromUnifiedResponse`, satu-satunya modul yang mencacah setiap primitif yang dikenal klien Web, plus `WAWebUnifiedResponseUtils` untuk dua nama lagi. Sampai revisi `1047301412` jumlahnya delapan belas primitif, ditambah tiga layout:
 
 | | |
@@ -2671,7 +2641,6 @@ Dua nama duduk aneh di tengah: `GenAIFollowUpSuggestionPillPrimitive` dan `GenAI
 Inline entity satu-satunya tempat nama yang tidak dikenal jadi fatal, bukan diabaikan — lihat peringatan di [Inline Entity di Dalam Teks](#inline-entity-di-dalam-teks). `AI_RICH_INLINE_ENTITIES` tetap tertutup di empat karena alasan itu.
 
 #### Sub-node di dalam primitifnya
-
 Karena pesan Meta AI **diteruskan** dari Meta AI dan bukan dibangun sendiri, yang penting bukan apakah sebuah nama tergambar, tapi apakah dekodernya mengenalinya. Tiga daftar di atas cuma menyebut node setingkat section. Di bawah setiap primitif masih ada objek bersarang dengan `__typename`-nya sendiri — baris tabel, ikon tim, jam buka sebuah tempat — dan `AI_RICH_NODES` mendaftar **50** di antaranya.
 
 Tiap entri di daftar itu punya bukti yang sama: APK membawa kelas model Kotlin `<nama>Impl.kt` untuknya. Itu juga pembeda yang memisahkannya dari flag AB dan nama telemetri, yang bentuknya mirip tapi tidak pernah punya kelas model.
@@ -2786,7 +2755,6 @@ await rich.send(jid)</code></pre>
 | `calendarWidgetSection` / `calendarEvent` | `GenAI3PExtWidgetPrimitive` | `header`, `sections` berisi tanggal dan acara, `ctas`, `toast` |
 
 #### Peta digambar dari submessage, bukan dari section
-
 `GenAIMapPrimitive` itu node peta milik aplikasi Meta AI sendiri. Klien WhatsApp membaca peta dari tempat yang sama sekali lain: dari daftar submessage protobuf, sebagai `AIRichResponseSubMessageType.AI_RICH_RESPONSE_MAP` (7) yang membawa `mapMetadata`. Section yang berdiri sendiri memang tiba, tapi tidak menggambar apa-apa.
 
 `rich.addMap` memancarkan kedua paruhnya sekaligus, sama seperti `addTable` dan `addCode` memasangkan section dengan metadata-nya:
@@ -2837,7 +2805,6 @@ await rich.send(jid)</code></pre>
 Dua layout bergabung dengan delapan yang sudah didukung: `multipleResponseSection(responses, { layoutType })` membangun `GenAIMultipleResponseLayoutViewModel`, dan `bloomCardSection(primitives)` membangun `GenAIIGSuggestedBloomCardLayoutViewModel`. `addonActionSection(primitives, { actionType, alignment })` mengisi field `addon_action_alignment` yang tidak disetel helper addon sebelumnya.
 
 ##### Kenapa `addonActionSection` bisa bikin WhatsApp force-close
-
 `AddonAction` bukan section konten biasa, dia overlay tombol interaktif (salin ke clipboard, kirim ke chat, follow-up prompt). Di dex `2.26.37.1` setiap item dibangun sebagai `MetaAiOverlayButton` (`LX/3z3->A0x`) yang butuh label atau ikon; kalau tidak ada, klien mencatat `Button has no label or icon.` lalu tombolnya dibuang. Kalau overlay-nya akhirnya kosong, jalur render grup mengakses tombol yang tidak ada dan aplikasi penerima force-close.
 
 `GenAIFooterActionPrimitive` (punya `cta_text` + `footer_action_type`) bukan tombol overlay, jadi menaruhnya di `addonActionSection` menghasilkan tombol tanpa label/ikon dan itulah yang memicu crash. Karena itu `addonActionSection` sekarang menolak lebih dulu: `actionType` wajib salah satu `AddonActionType`, `primitives` tidak boleh kosong, dan `GenAIFooterActionPrimitive` dilempar `TypeError` alih-alih dikirim mentah.
@@ -2845,7 +2812,6 @@ Dua layout bergabung dengan delapan yang sudah didukung: `multipleResponseSectio
 `AddonAction` yang benar-benar tampil adalah milik Meta AI sendiri yang menempel pada artefak/embedded screen buatannya. Untuk mengirimnya, teruskan pesan AIRich asli dari bot Meta AI lewat `forwardRichResponse`, bukan menyintesisnya dari primitive umum.
 
 #### Kartu penawaran langganan
-
 `quotaUpsellSection` membangun `GenAIMetaSubsQuotaUpsellPrimitive`, kartu yang dipakai Meta untuk menawarkan langganan waktu kuota habis. Nama field-nya dibaca langsung dari `cometComposedTextV2GenAiMetaSubsQuotaUpsellPrimitiveParser` di bundle WA Web, jadi ini salah satu dari sedikit primitif yang bentuknya terverifikasi sampai ke tombolnya:
 
 <details>
@@ -2880,11 +2846,9 @@ await rich.send(jid)</code></pre>
 Satu jebakan yang memang ada di parser-nya: kartunya dibuang utuh kalau `meter_usage_type` bernilai `META_AI_THINK_HARD` atau `benefit_type` memuat `THINK_HARD`. Nilainya diekspor sebagai `QuotaUpsellMeterUsageType` supaya tidak terpakai tanpa sengaja. Daftar tombol yang kosong tidak dikirim sebagai `[]` — field-nya hilang sama sekali.
 
 #### `GenAIUXPrimitive` itu interface, bukan primitif
-
 Namanya ada di dex sebagai `GenAIUXPrimitiveImpl.kt` dan sempat ikut terdaftar di `AI_RICH_PRIMITIVES`. Itu keliru. `cometComposedTextV2GenAiUxPrimitiveParser` adalah dispatcher yang mencacah setiap nama konkret, dan parser layout — `CometComposedTextV2GenAISingleLayoutViewModelParser.react` untuk `view_model.primitive`, `...GenAIGridLayoutViewModelParser.react` untuk `view_model.primitives` — memanggil dispatcher itu untuk setiap isinya. Jadi `GenAIUXPrimitive` adalah tipe interface dari field tersebut, bukan `__typename` yang pernah muncul di wire; mengirimnya mendarat di `buildUnsupportedURTypeNode`. Sekarang ia duduk sendiri di `AI_RICH_PRIMITIVE_INTERFACE`, dan `AI_RICH_PRIMITIVES` tinggal **48** nama yang benar-benar bisa dikirim.
 
 #### Dua primitif yang bentuknya belum terbaca
-
 `AI_RICH_PRIMITIVES_WITHOUT_SCHEMA` menyebut `GenAIClippyWidgetPrimitive` dan `GenAIClippyFollowUpPrimitive`. Keduanya nyata — dex membawa `<nama>Impl.kt` untuk masing-masing — tapi nama field-nya tidak bisa dibaca dari mana pun. Bundle WA Web tidak memuat typename-nya sama sekali, dan di dex string namanya tidak direferensikan kode apa pun, jadi tidak ada pembacaan field yang bisa diikuti. Satu-satunya keping yang terverifikasi adalah enum `ClippyArtifactType` (`MINI_APP`, `STATIC_HTML`).
 
 Karena itu tidak ada pabrik untuk keduanya: menebak nama field sama dengan mengarang, dan yang ditebak tidak akan tergambar. Kalau kamu mau mencoba bentuknya sendiri, `customSection` mengirimkannya apa adanya.
@@ -2912,7 +2876,6 @@ Enum untuk semua yang di atas ikut bersama builder-nya: `MapQueryStatus`, `Place
 `FooterActionType` juga mendapat `COPY_LINK`, `REMIX_MEDIA`, dan `USE_TEMPLATE`.
 
 ### Meneruskan Jawaban Meta AI Yang Asli
-
 Semua yang di atas membangun respons rich dari nol. Ada jalur kedua yang berperilaku berbeda dalam satu hal penting: merelay pesan yang benar-benar datang dari Meta AI.
 
 Klien memverifikasi pesan bot yang diteruskan terhadap sertifikat root yang dibawanya sendiri — `CN=Meta WA Feature Root CA`, ECDSA P-256, diekspor di sini sebagai `BOT_SIGNATURE_ROOT_CERTIFICATE`. Payload yang ditandatangani pendek:
@@ -2960,7 +2923,6 @@ Jadi: relay atau muat-lalu-kirim-ulang kalau kamu mau buktinya selamat, dan perl
 Pencabutan sertifikat tidak diperiksa. Klien mengambil CRL dari Meta dan menganggap daftar yang tidak tersedia atau kedaluwarsa sebagai tercabut; `verifyRichResponseSignature` melewati langkah itu, jadi `passed` di sini berarti rantai dan tanda tangannya baik, bukan berarti sertifikatnya masih hidup.
 
 #### Yang tidak bisa dimiliki respons bikinan sendiri
-
 Tanda tangan atas konten yang bukan produksi Meta bukan sesuatu yang bisa dicetak bot — itu butuh sertifikat leaf yang diterbitkan di bawah root tersebut. `AIRich` mengisi `verificationMetadata` dengan byte placeholder supaya field-nya ada dan berbentuk benar; `verifyRichResponseSignature` atas keluaranmu sendiri mengembalikan `failed`, dan itu benar.
 
 Apakah itu merugikanmu atau tidak bergantung pada sakelar sisi server yang tidak bisa kamu lihat:
@@ -2973,7 +2935,6 @@ Apakah itu merugikanmu atau tidak bergantung pada sakelar sisi server yang tidak
 Keempatnya disetel per akun oleh server. Sebuah respons bisa sempurna secara struktur dan tetap keluar sebagai bubble cadangan, dan tidak ada cara mengetahuinya dari sisi pengirim.
 
 ### Membaca Balik Pesan Rich
-
 Pesan AI Rich, A2UI, atau Bloks tiba dengan keadaan kosong di tempat yang biasa dilihat bot — `conversation` kosong, `extendedTextMessage` tidak ada, dan `getContentType` hanya melaporkan pembungkusnya (`botForwardedMessage` atau `interactiveMessage`). `readRichMessage` menormalkan semuanya menjadi satu bentuk.
 
 <details>
@@ -3007,7 +2968,6 @@ Ia mengembalikan `null` untuk apa pun yang bukan salah satunya, jadi aman dipang
 Ia membuka view-once dan pembungkus lainnya dulu, jadi kartu di dalam `viewOnceMessageV2` terbaca sama dengan yang tanpa pembungkus.
 
 ### Kartu A2UI
-
 `interactiveMessage.bloksWidget` dengan `type: "im_a2ui"` dimaksudkan menghasilkan kartu yang digambar klien dari spesifikasi deklaratif yang dibawa pesannya. Komponennya memang ikut di dalam `data` — tapi lihat peringatan di bawah: yang menggambarnya tetap Bloks app `im_a2ui` dari Meta, dan ada gerbang klien yang tidak bisa dilewati pengirim biasa.
 
 > [!WARNING]
@@ -3134,7 +3094,6 @@ Isi `catalogId` untuk menyebut kosakata komponennya. Fixture debug WhatsApp tida
 Kartu A2UI dan button native-flow hidup di `interactiveMessage` yang sama, dan begitulah kartunya mendapat baris button di bawahnya. `decodeBloksWidget(msg)` membacanya kembali, dengan `params` yang sudah di-parse.
 
 ### Mini App HTML
-
 `htmlSection` membawa satu dokumen HTML utuh — style dan `<script>` termasuk — yang digambar aplikasi WhatsApp di dalam WebView di dalam bubble chat. Itulah cara satu halaman interaktif, game canvas kecil, atau grafik langsung sampai ke pengguna tanpa menghosting apa pun. Ia bagian dari `AI_RICH_PRIMITIVES` dan bukan bagian dari `AI_RICH_PRIMITIVES_WEB_RENDERED`: namanya tidak muncul di mana pun di bundle WA Web, jadi penonton desktop mendapat node kosong di tempat halaman itu seharusnya.
 
 **Typename-nya tidak divalidasi.** `GenAIaeacdsnwHtmlPrimitive` juga tidak muncul di mana pun di APK — tidak di dex, resource, maupun library native. Klien mendekode unified response lewat runtime Pando milik Meta (`com.facebook.pando.TreeJNI`), yang menafsirkan ulang sebuah node pohon menjadi kelas model **tanpa membandingkan `__typename`**. Renderer-nya justru memilih jalur berdasarkan bentuk field-nya, dan mencatat `JarvisRichContent/render skipped malformed HtmlSectionContent` kalau bentuknya tidak pas. Yang benar-benar harus ada adalah `payload` dan `trusted_sources` — dua nama field itu, plus kelas `HtmlSectionContent(payload=, trustedSources=)`, ada di APK. Model Kotlin untuk section-nya adalah `FOAHtmlPrimitive`, diekspor sebagai `AI_RICH_HTML_PRIMITIVE_CLASS`. Yang perlu diketahui sebelum kamu bersandar pada penggantian itu: satu-satunya kelas dex yang membawa nama `FOAHtmlPrimitive` adalah `FOAHtmlPrimitiveDemoDONOTUSEImpl`, sementara jalur render yang benar-benar mencatat baris di atas dibangun di sekitar `HtmlSectionContent`. Jadi typename bawaannya yang sebaiknya dipakai, dan penggantinya itu cadangan untuk dicoba, bukan padanan.
@@ -3165,7 +3124,6 @@ Bawaannya tetap `GenAIaeacdsnwHtmlPrimitive` karena itu nama yang teramati beker
 WebView tempatnya digambar itu offline dan tidak punya penyimpanan — baca [apa yang sebenarnya disediakannya](#apa-yang-sebenarnya-disediakan-webview) sebelum merancang di sekitarnya.
 
 #### sendHtmlApp
-
 Satu panggilan, tanpa menyusun pembungkusnya sendiri.
 
 <details>
@@ -3234,7 +3192,6 @@ Yang berikut ini diisi untukmu, sesuai yang diharapkan klien:
 ditambah `messageType: 1`, satu `botResponseId` baru, dan blok `verificationMetadata`.
 
 #### htmlSection
-
 Pakai pembangun section-nya kalau HTML-nya duduk bersama section lain di builder yang kamu kendalikan.
 
 <details>
@@ -3265,7 +3222,6 @@ await rich.send(m.chat)</code></pre>
 Ia melempar `TypeError` kalau `html`-nya kosong atau bukan string, dan kalau `trustedSources`-nya bukan array, jadi kartu yang cacat gagal saat build ketimbang tiba kosong.
 
 #### Apa Yang Sebenarnya Disediakan WebView
-
 Diukur di perangkat Android, bukan dikira-kira. Halamannya disuntikkan ke frame kosong, jadi ia berjalan di origin opaque:
 
 | Sinyal | Nilainya |
@@ -3315,7 +3271,6 @@ Jadi mini app di sini **membawa semua yang dibutuhkannya dan tidak mengingat apa
 Yang memang jalan: `canvas` 2D, WebGL dan WebGL2, `OffscreenCanvas`, WebAssembly, Web Audio, `requestAnimationFrame`, serta video atau audio yang didekode dari URI `data:`.
 
 #### Menulis HTML Yang Berperilaku Benar di WebView
-
 Halamannya berjalan di dalam bubble di daftar chat yang bisa di-scroll, bukan di tab sendiri. Lima hal yang tidak berbahaya di browser jadi berbahaya di sini.
 
 **Beri halamannya tinggi yang tetap.** Ini yang membuat kartunya terlihat bergetar. Kalau tinggi kontennya bergantung pada lebarnya — `<canvas>` dengan `width:100%; height:auto`, gambar tanpa dimensi, apa pun yang memakai `aspect-ratio` — maka host mengukur bubble-nya dari kontennya sementara kontennya mengukur dirinya dari lebar yang baru diserahkan host, dan keduanya saling berkejaran. Satu halaman yang diukur di lebar 300px sampai 460px seharusnya melaporkan tinggi yang sama setiap kali.
@@ -3417,7 +3372,6 @@ document.addEventListener('keydown', e =&gt; { if (e.code === 'Space') { e.preve
 **Satu jebakan escaping.** Kalau kamu membangun HTML-nya sebagai literal string JavaScript, `"\d"` menjadi `d` dan `"\s"` menjadi `s` sebelum halamannya melihatnya — regex seperti `/dino_best=(\d+)/` diam-diam berubah jadi regex yang mencocokkan karakter `d` literal dan tidak pernah berjalan. Tulis `\\d` dan `\\s`, atau baca dokumennya dari berkas seperti contoh pertama dan hindari masalahnya sekalian.
 
 #### Membaca Balik Mini App
-
 `decodeAIRich` menangani primitif ini seperti yang lain — tidak ada whitelist yang perlu diperbarui:
 
 <details>
@@ -3445,7 +3399,6 @@ Nilai enum-nya, dibaca dari klien ketimbang dikira-kira:
 `AI_RICH_LAYOUTS` mendaftar kedelapan nama layout yang diterima `MB.newLayout` — `Single`, `HScroll`, dan `ActionRow` yang dipakai MessageBuilder; `VStack`, `Grid`, `FlexibleCountGrid`, `RichListItem`, dan `AddonAction` juga ada.
 
 ### Layar Tertanam
-
 Layar tertanam adalah **permukaan kedua yang dibawa pesan yang sama**. Bubble di chat-nya tetap kecil — satu baris teks, satu kartu preview — dan mengetuknya membuka satu sheet penuh yang punya section-nya sendiri, atau beberapa tab berisi section. Begitulah satu pesan bisa sekaligus menjadi jawaban singkat dan satu mini app utuh.
 
 Dua hal yang perlu diketahui sebelum membangunnya:
@@ -3454,7 +3407,6 @@ Dua hal yang perlu diketahui sebelum membangunnya:
 - **Tab disarangkan di dalam `content`, bukan di sebelahnya.** Layarnya memegang `content[]`; tiap entri berupa section (ada `view_model`-nya) atau kontainer tab (ada `tabs`-nya). Membalik ini satu-satunya alasan paling umum sebuah layar terbuka kosong.
 
 #### Contoh lengkap
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -3502,7 +3454,6 @@ Layar tanpa tab sama validnya — beri `content` saja, dan sheet-nya menampilkan
 Kamu bisa memberi keduanya. Kontainer tab-nya ditambahkan **setelah** `content` biasa apa pun yang kamu beri, jadi section datarnya tergambar lebih dulu dan strip tab-nya di bawahnya.
 
 #### Apa yang benar-benar dikirim
-
 `MB.send` mengenkode semua ini dengan base64 ke dalam `botForwardedMessage.message.richResponseMessage.unifiedResponse.data`. Contoh di atas menghasilkan:
 
 <details>
@@ -3557,7 +3508,6 @@ Kamu bisa memberi keduanya. Kontainer tab-nya ditambahkan **setelah** `content` 
 Baca penyarangannya dari luar ke dalam: **layar → `content[]` → `tabs[]` → `sections[]` → `view_model` → `primitive`**. Setiap tingkat kecuali tab dan layarnya sendiri membawa `__typename`, dan builder-nya mengisi semuanya.
 
 #### Hal yang sama tanpa builder
-
 Kalau kamu lebih suka menyusun payload-nya dengan tangan — atau sedang memindahkan yang kamu terima dari bot lain — ini panggilan `relayMessage` yang setara. Tidak ada sihir di sini; ini persis yang dihasilkan `AIRich`:
 
 <details>
@@ -3639,7 +3589,6 @@ await sock.relayMessage(m.chat, {
 Builder-nya tetap layak dipakai — ia membangkitkan id-nya, membuang field kosong ketimbang mengirim `null`, dan menyimpan typename-nya di satu tempat — tapi payload-nya JSON biasa dan tidak ada yang menghalangimu menuliskannya sendiri.
 
 #### Typename-nya
-
 | Konstanta | Nilai | Tempatnya |
 | --- | --- | --- |
 | `AI_RICH_SECTION_TYPENAME` | `GenAIUnifiedResponseSection` | setiap section, tingkat atas maupun tersarang |
@@ -3671,7 +3620,6 @@ MB.embeddedScreen({ tabs: [tab], tabsTypename: 'FOAIDButtonSheets' })</code></pr
 Baris terakhir itu penting. Seperti pada `htmlSection`, **Android tidak membandingkan `__typename`** — Pando menafsirkan ulang node pohonnya berdasarkan bentuk field, jadi payload di lapangan membawa macam-macam nama kontainer dan tetap tergambar. `tabsTypename` ada supaya kamu bisa menyamakan dengan apa pun yang diharapkan sebuah build, bukan terkunci ke satu string.
 
 #### Opsi
-
 `embeddedScreen({ … })`:
 
 | Opsi | Field di wire | Catatan |
@@ -3704,7 +3652,6 @@ Apa pun yang dibiarkan `undefined` dibuang, tidak pernah dikirim sebagai `null`.
 `EMBEDDED_SCREEN_PRESENTATION` (`HALF_HEIGHT`, `FULL_HEIGHT`) juga diekspor. Kedua nilainya dan field `overwrite_first_screen_presentation` ada di klien Android, tapi objek mana yang membawa field itu tidak bisa ditentukan dari kliennya saja, jadi builder-nya tidak menyetelnya — tambahkan sendiri kalau kamu tahu di mana sebuah build menginginkannya.
 
 #### Membaca balik layar tertanam
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -3730,7 +3677,6 @@ const html = MB.readEmbeddedSections(info.embeddedScreens[0])
 `readRichMessage(m).html` juga mengumpulkan HTML yang duduk di dalam layar tertanam, jadi halaman yang dikirim lewat tab tidak lagi tak terlihat olehnya. `readEmbeddedTabs` membaca kedua bentuknya — yang tersarang di bawah `content`, dan `tabs` datar yang lebih lama di tingkat layar — jadi payload dari bot lain terbaca bagaimanapun bentuknya.
 
 #### Kalau sheet-nya terbuka kosong
-
 | Gejala | Penyebab |
 | --- | --- |
 | Tidak ada yang terbuka sama sekali | Kamu sedang melihat WhatsApp Web. Ia tidak menggambar layar tertanam; pakai ponsel. |
@@ -3739,7 +3685,6 @@ const html = MB.readEmbeddedSections(info.embeddedScreens[0])
 | Teksnya tergambar, HTML-nya tidak | Penontonnya di WA Web desktop, yang tidak punya renderer untuk section HTML. Lihat [Mini App HTML](#mini-app-html) untuk primitifnya dan `trusted_sources`-nya. |
 
 ### Memeriksa Pesan AI Rich Yang Diterima
-
 `decodeAIRich` membongkar `unifiedResponse` yang base64 supaya kamu bisa melihat persis primitif apa yang dipakai sebuah pesan — berguna untuk menirukan sesuatu yang dikirim bot lain.
 
 <details>
@@ -3757,10 +3702,10 @@ console.log(info.sections)</code></pre>
 > [!WARNING]
 > AIRich dan beberapa payload interaktif eksperimental bergantung pada kompatibilitas klien/server WhatsApp. Hasil gambarnya bisa berubah antar versi WhatsApp.
 
+
 ---
 
-## 🖼️ Pesan Album
-
+## ️ Pesan Album
 Mengirim beberapa gambar atau video sebagai satu album.
 
 <details>
@@ -3792,10 +3737,10 @@ Mengirim beberapa gambar atau video sebagai satu album.
 
 Satu album butuh setidaknya dua item media gambar/video.
 
+
 ---
 
-## 🎞️ Foto + Video Berpasangan (imgvid)
-
+## ️ Foto + Video Berpasangan (imgvid)
 Mengirim satu foto sebagai induk lalu satu video sebagai anak yang tertaut ke foto itu, mirip motion photo. Cukup berikan `image` dan `video` sekaligus di satu `sendMessage`:
 
 <details>
@@ -3815,10 +3760,10 @@ Jalur ini hanya aktif kalau `image` dan `video` sama-sama ada dan `jid` bukan ar
 
 **Catatan jujur.** Ini penautan media lewat association, bukan motion photo asli berbentuk JPEG dengan MP4 tertanam. Apakah tampil sebagai "foto yang bisa diputar" sepenuhnya tergantung dukungan klien penerima — kalau belum mendukung, keduanya tampil sebagai foto dan video terpisah. Tidak ada yang bisa dipaksa dari sisi pengirim.
 
+
 ---
 
-## 📸 Status
-
+## Status
 Status dikirim ke jid khusus `status@broadcast`, dan yang menerimanya adalah orang-orang yang kamu daftar di `statusJidList`. Daftar itu seluruh mekanisme audiensnya — tidak ada pengaturan privasi terpisah yang bisa dibalik dari sini.
 
 <details>
@@ -3833,7 +3778,6 @@ Status dikirim ke jid khusus `status@broadcast`, dan yang menerimanya adalah ora
 </details>
 
 ### Latar, Warna Teks dan Font
-
 Status **teks** itu `extendedTextMessage` dengan tiga field penggayaan, dan ketiganya opsi di argumen ketiga, bukan bagian dari kontennya:
 
 <details>
@@ -3857,7 +3801,6 @@ await sock.sendMessage('status@broadcast', { text: 'Halo semua' }, {
 | `font` | `font` | 9, enum |
 
 #### Warna
-
 Kedua warnanya menerima bentuk yang sama:
 
 | Yang kamu beri | Hasilnya |
@@ -3870,7 +3813,6 @@ Kedua warnanya menerima bentuk yang sama:
 Hilangkan salah satu opsinya dan sama sekali tidak ada yang dituliskan ke pesannya — klien memilih sendiri.
 
 #### Font
-
 `StatusFont` itu `ExtendedTextMessage.FontType`. Delapan ini seluruh himpunan yang diterima — WhatsApp Web memvalidasi terhadap daftar ini persis dan membuang yang lain, jadi nilai kesembilan sama saja dengan tidak mengirim font sama sekali.
 
 | Konstanta | Nilai | Tampaknya | Berkas font di klien Android |
@@ -3913,7 +3855,6 @@ await sock.sendMessage('status@broadcast', {
 > Font-nya dibawa di dalam APK Android, di `assets/fonts/`. Bundle WhatsApp Web mem-parse field-nya dan memvalidasi kedelapan nilainya tapi **tidak punya pemetaan font-family untuk satu pun di antaranya** — jadi status yang kamu gayakan akan tampil bergaya di ponsel dan polos di Web. Itu kliennya, bukan pesannya.
 
 ### Status Gambar, Video dan Suara
-
 Status media itu pesan media biasa yang dikirim ke `status@broadcast`:
 
 <details>
@@ -3948,7 +3889,6 @@ Status **pesan suara** satu-satunya jenis media yang juga menerima warna latar �
 </details>
 
 ### Stiker Status
-
 Status gambar atau video bisa membawa stiker yang bisa diketuk — satu tempat, satu channel, satu tautan, satu lagu. Mereka menempel di pesan medianya sebagai `interactiveAnnotations`, dan masing-masing diposisikan oleh persegi yang diberikan dalam **pecahan dari medianya**, bukan piksel: klien mengalikan setiap koordinat dengan lebar dan tinggi hasil gambarnya.
 
 <details>
@@ -4014,7 +3954,6 @@ for (const sticker of readStickers(msg.message)) {
 `readStickers` mengembalikan `[]` untuk apa pun tanpa anotasi, jadi aman dipakai di setiap pesan.
 
 #### Mengirim Lagu
-
 Pesan audio biasa dengan sampul, judul, dan penyanyinya di `externalAdReply`. Tidak ada di sini yang bergantung pada katalog musik Meta, jadi ia tergambar untuk berkas apa pun yang kamu punya:
 
 <details>
@@ -4055,12 +3994,11 @@ Pesan audio biasa dengan sampul, judul, dan penyanyinya di `externalAdReply`. Ti
 
 Setel mimetype-nya sendiri kalau melakukan itu. Pesan suara itu opus di dalam kontainer ogg, bawaan di sini `audio/mpeg`, dan tidak ada apa pun di library ini yang men-transcode — menyerahkan mp3 ke `ptt: true` memberimu peringatan di log dan bubble yang bisa jadi tidak mau diputar. Waveform-nya tetap dihitung untukmu kalau ffmpeg tersedia.
 
-Kartu di sini `externalAdReply`, jadi ia membawa risiko pengiriman field itu: penerima konsumer yang akunnya punya prop penekanan aktif akan membuang seluruh pesan audionya, bukan cuma artwork-nya. Lihat [External Ad Reply](#-external-ad-reply) untuk syarat tepatnya, dan [Kartu Rich Link](#-kartu-rich-link) untuk sampul yang tergambar tanpa field iklan terlibat — sebagai pesannya sendiri di sebelah audionya, karena preview itu milik teks dan bubble audio tidak punya tempat untuknya.
+Kartu di sini `externalAdReply`, jadi ia membawa risiko pengiriman field itu: penerima konsumer yang akunnya punya prop penekanan aktif akan membuang seluruh pesan audionya, bukan cuma artwork-nya. Lihat [External Ad Reply](#external-ad-reply) untuk syarat tepatnya, dan [Kartu Rich Link](#kartu-rich-link) untuk sampul yang tergambar tanpa field iklan terlibat — sebagai pesannya sendiri di sebelah audionya, karena preview itu milik teks dan bubble audio tidak punya tempat untuknya.
 
 Membaca musik yang datang pakai `readMusicMessage(msg.message)`, yang mengembalikan `null` untuk apa pun yang bukan itu.
 
 ### Status Grup
-
 Status grup itu pesan yang sama dengan `groupStatus: true` padanya. Itu membungkus pesan yang sudah jadi di dalam `groupStatusMessageV2` dan menyetel `contextInfo.isGroupStatus`, dan itulah yang membuat lapisan relay menempelkan node `<meta is_group_status="true">` yang dicari klien:
 
 <details>
@@ -4115,7 +4053,6 @@ await sock.sendMessage(groupJid, {
 </details>
 
 #### Font apa saja yang bisa dipakai status grup
-
 Delapan yang sama dengan status biasa, karena di bawahnya `extendedTextMessage` yang sama juga — pembungkusnya ditambahkan setelahnya dan tidak mengubah apa pun soal penggayaannya. Tidak ada muka huruf khusus grup dan tidak ada tambahan yang perlu dibuka.
 
 | Konstanta | Nilai | Tampaknya |
@@ -4167,13 +4104,12 @@ Media bekerja dengan cara yang sama — `groupStatus: true` bersama `image`, `vi
 
 </details>
 
-Karena payload-nya terbungkus, `message.conversation` bernilai `undefined` di sisi penerima dan isi sebenarnya ada satu lapis di bawahnya. Jalankan lewat `normalizeMessageContent` sebelum membacanya, sama seperti pembungkus lainnya — lihat [Semua Jenis Pesan](#-semua-jenis-pesan).
+Karena payload-nya terbungkus, `message.conversation` bernilai `undefined` di sisi penerima dan isi sebenarnya ada satu lapis di bawahnya. Jalankan lewat `normalizeMessageContent` sebelum membacanya, sama seperti pembungkus lainnya — lihat [Semua Jenis Pesan](#semua-jenis-pesan).
 
 > [!NOTE]
 > `groupStatusMessageV2` itu field 103 dari `Message`; `groupStatusMessage` yang lebih lama field 96. Keduanya pembungkus `FutureProofMessage` dan lapisan relay menambahkan node meta untuk keduanya, tapi `groupStatus: true` selalu membangun V2. WhatsApp Web hanya pernah *mem-parse* ini — ia sama sekali tidak punya jalur kirim untuk status grup, jadi di klien resmi ini diposting dari ponsel.
 
 ### Apa Saja Yang Benar-Benar Bisa Digayakan
-
 Layak dikatakan terang-terangan, karena ini asumsi salah yang paling umum:
 
 | Jenis status | Latar | Warna teks | Font | Caption |
@@ -4190,14 +4126,12 @@ Status grup bukan baris terpisah: `groupStatus: true` membungkus mana pun di ant
 
 Untuk menaruh lencana audiens kustom di salah satunya, lihat [Audiens Status Kustom](#audiens-status-kustom-teman-dekat).
 
+
 ---
 
-## 📢 Newsletter / Channel
-
+## Newsletter / Channel
 ### Membuat dan Menyunting Channel
-
 #### Membuat Channel
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4211,7 +4145,6 @@ console.log(newsletter)</code></pre>
 </details>
 
 #### Mengubah Nama
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4223,7 +4156,6 @@ console.log(newsletter)</code></pre>
 </details>
 
 #### Mengubah Deskripsi
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4235,7 +4167,6 @@ console.log(newsletter)</code></pre>
 </details>
 
 #### Mengubah Foto
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4247,7 +4178,6 @@ console.log(newsletter)</code></pre>
 </details>
 
 #### Pengaturan Reaksi
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4258,9 +4188,7 @@ console.log(newsletter)</code></pre>
 `ALL` mengizinkan emoji apa pun, `BASIC` hanya himpunan bawaan, `NONE` mematikan reaksi, `BLOCKLIST` memakai daftar blokir sisi server. Selain itu ditolak sebelum permintaannya dikirim.
 
 ### Mengikuti Channel
-
 #### Follow / Unfollow
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4270,7 +4198,6 @@ await sock.newsletterUnfollow('123456789@newsletter')</code></pre>
 </details>
 
 #### Mute / Unmute
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4280,7 +4207,6 @@ await sock.newsletterUnmute('123456789@newsletter')</code></pre>
 </details>
 
 #### Membisukan Aktivitas Admin atau Follower
-
 WhatsApp Web menggantikan pasangan mute/unmute yang lama dengan satu pengaturan yang memisahkan notifikasi admin dari notifikasi follower.
 
 <details>
@@ -4294,7 +4220,6 @@ await sock.newsletterUpdateUserSetting('123456789@newsletter', 'FOLLOWER_NOTIFIC
 `newsletterMute` dan `newsletterUnmute` itu bentuk singkat untuk mutasi yang sama dengan `ADMIN_NOTIFICATIONS`, dan itu persis yang dikirim sakelar mute di WhatsApp Web. Keduanya dulu memanggil sepasang operasi terpisah yang sudah tidak ada lagi di kedua klien, jadi sekarang keduanya mengembalikan `{ id, state }` yang sama dengan yang dikembalikan panggilan pengaturannya.
 
 #### Mengambil Daftar Channel Yang Diikuti
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4310,9 +4235,7 @@ const lengkap = await sock.newsletterSubscribed({
 Query-nya, `WAWebMexFetchAllNewslettersMetadataJobQuery`, mendeklarasikan `fetch_status_metadata` dan `fetch_wamo_sub` tanpa nilai bawaan, jadi keduanya harus ikut terkirim. Sampai versi `1.3.10` fork ini mengirim variabel kosong dan panggilannya gagal di server; sekarang keduanya selalu dikirim, `false` kecuali kamu meminta.
 
 ### Membaca Channel
-
 #### Mengambil Metadata Channel
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4347,7 +4270,6 @@ metadata.status_metadata                   // { last_status_server_id, last_stat
 </details>
 
 #### Pembaruan Pesan Bertahap
-
 Hanya menanyakan apa yang berubah di sebuah channel sejak satu timestamp, ketimbang mengambil ulang riwayatnya.
 
 <details>
@@ -4361,7 +4283,6 @@ Hanya menanyakan apa yang berubah di sebuah channel sejak satu timestamp, ketimb
 </details>
 
 #### Follower
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4370,7 +4291,6 @@ Hanya menanyakan apa yang berubah di sebuah channel sejak satu timestamp, ketimb
 </details>
 
 #### Insight
-
 Analitik admin untuk channel yang kamu miliki.
 
 <details>
@@ -4386,7 +4306,6 @@ Analitik admin untuk channel yang kamu miliki.
 `metrics_status` bernilai `OK` atau `MISSING`; `MISSING` berarti server belum punya data untuk jendela yang diminta.
 
 #### Reaksi dan Vote Milik Sendiri
-
 Apa saja yang kamu reaksi atau vote di berbagai channel, tanpa menelusuri setiap pesan.
 
 <details>
@@ -4407,9 +4326,7 @@ for (const group of groups) {
 `pollVote.hashes` itu hash SHA-256 dari opsinya, dienkode hex — cocokkan dengan opsi polling-nya untuk tahu yang mana yang kamu pilih.
 
 ### Memposting dan Bereaksi
-
 #### Bereaksi ke Pesan Channel
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4435,7 +4352,6 @@ Hapus reaksinya dengan memberi nilai kosong:
 </details>
 
 #### Pin / Unpin Pesan
-
 Menerima `server_id` pesannya, bukan message key-nya.
 
 <details>
@@ -4447,7 +4363,6 @@ await sock.newsletterUnpinMessages('123456789@newsletter', 175)</code></pre>
 </details>
 
 #### Label Konten
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4459,7 +4374,6 @@ await sock.newsletterLabelPaidPartnership('123456789@newsletter', 175)</code></p
 `messageType` argumen ketiga dan bawaannya `MESSAGE`; beri `STATUS` untuk melabeli status channel.
 
 #### Vote di Polling Channel
-
 Vote channel dikirim tanpa enkripsi sebagai hash opsi, berbeda dari vote terenkripsi yang dipakai di chat.
 
 <details>
@@ -4470,7 +4384,6 @@ Vote channel dikirim tanpa enkripsi sebagai hash opsi, berbeda dari vote terenkr
 </details>
 
 #### Pemberi Vote Polling
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4484,7 +4397,6 @@ Vote channel dikirim tanpa enkripsi sebagai hash opsi, berbeda dari vote terenkr
 Responsnya mengelompokkan pemberi vote per `vote_hash`, masing-masing dengan array `voter_list.edges`.
 
 #### Pengirim Reaksi
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4493,9 +4405,7 @@ Responsnya mengelompokkan pemberi vote per `vote_hash`, masing-masing dengan arr
 </details>
 
 ### Status Channel
-
 #### Memposting Status Channel
-
 Channel bisa menerbitkan statusnya sendiri — cincin di sekitar avatar channel-nya, bisa diputar seperti story. Itu fitur WhatsApp sungguhan dengan stanza-nya sendiri, bukan postingan `status@broadcast` yang dialamatkan ke channel.
 
 <details>
@@ -4532,7 +4442,6 @@ Menghapus salah satunya:
 </details>
 
 ##### Status Channel vs `status@broadcast`
-
 Keduanya tampak sama bagi penonton dan sama sekali berbeda di wire.
 
 | | `status@broadcast` | Status channel |
@@ -4547,7 +4456,6 @@ Keduanya tampak sama bagi penonton dan sama sekali berbeda di wire.
 Library-nya mengurus beda medianya untukmu: `sendNewsletterStatus` mengunggah lewat jalur newsletter dan menaruh handle yang dikembalikan ke `media_id` secara otomatis. Jenis yang didukung adalah teks, gambar, video, gif, dan audio — dokumen dan stiker ditolak. WhatsApp Web sendiri hanya menerbitkan gambar dan video, jadi dua yang lain mendapat peringatan dan bisa ditolak server.
 
 ##### Dari Mana Server Id Datangnya
-
 `<ack>` yang menjawab status yang diterbitkan membawa `from`, `class`, `id`, dan `t` — dan sama sekali tidak membawa server id. Itu bukan kegagalan; id-nya datang sesaat kemudian, di stanza `<status>` yang digemakan server kembali ke penerbitnya, ditandai `is_sender="true"`.
 
 `sendNewsletterStatus` menunggu gema itu lalu mengisinya, jadi id yang kamu butuhkan untuk bereaksi atau menarik statusmu sendiri ada di hasilnya:
@@ -4571,7 +4479,6 @@ await sock.sendNewsletterStatusReaction('123456789@newsletter', posted.newslette
 Penungguannya dibatasi dan tidak pernah menghalangi pengirimannya: kalau gemanya tidak datang, `newsletterStatusServerId` bernilai `undefined` dan yang lain tidak berubah. Atur dengan `serverIdTimeoutMs`, atau lewati dengan `resolveServerId: false` kalau kamu hanya peduli statusnya terkirim.
 
 ##### Memeriksa Apakah Channel Boleh Memposting
-
 WhatsApp menggerbangi pembuatan status channel pada kemampuan per-channel yang diberikan server, bukan pada pengaturan yang bisa kamu balik. Periksa dulu sebelum membangun alur posting:
 
 <details>
@@ -4584,7 +4491,6 @@ WhatsApp menggerbangi pembuatan status channel pada kemampuan per-channel yang d
 `canPost` itu `CHANNEL_STATUS_PRODUCER` di daftar kemampuannya. Gerbang lengkap yang diterapkan WhatsApp Web adalah: flag `channel_status_creation` aktif, kamu admin atau pemiliknya, channel-nya tidak disuspensi atau dihentikan, dan channel-nya memegang `CHANNEL_STATUS_PRODUCER`. Hanya yang terakhir yang terlihat oleh klien, dan itu yang benar-benar berbeda per channel — flag rollout-nya mati secara bawaan di Web, itu sebabnya button-nya tidak ada di situ sementara di ponsel ada.
 
 ##### Status Pertanyaan
-
 Status channel bisa membawa kotak pertanyaan, dan follower-nya yang menjawab.
 
 <details>
@@ -4600,7 +4506,6 @@ Status channel bisa membawa kotak pertanyaan, dan follower-nya yang menjawab.
 Jawabannya kembali sebagai `questionResponseMessage`. Bagikan ulang salah satunya di atas status baru dengan `interactionType: 'question_reshare'` plus `parentServerId` dan `responseServerId`; terbitkan jawabanmu sendiri dengan `interactionType: 'question_response'` dan `parentServerId`. Status pertanyaan harus duduk di atas media — WhatsApp Web tidak pernah menerbitkan yang cuma teks.
 
 #### Membaca Status Channel
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4629,7 +4534,6 @@ Untuk hanya menanyakan apa yang berubah sejak satu timestamp, pakai feed pembaru
 </details>
 
 #### Atribusi Status Channel
-
 LyncxTeams Baileys membuka `StatusAttribution.Type.NEWSLETTER_STATUS` dengan metadata pembagian ulang channel yang sudah ada di WAProto.
 
 <details>
@@ -4672,7 +4576,6 @@ await sock.sendMessage('status@broadcast', {
 </details>
 
 #### Siapa Yang Mengirim Pesan Channel
-
 Pesan channel membawa nama tampilan dan foto admin yang memposting di dalam blok `<meta>` yang dulu dibuang begitu saja. Sekarang itu didekode ke `newsletterMeta`.
 
 <details>
@@ -4696,9 +4599,7 @@ Pesan channel membawa nama tampilan dan foto admin yang memposting di dalam blok
 Pesan yang diposting bot sendiri ke sebuah channel sekarang tiba dengan `key.fromMe: true` (WhatsApp menandainya `is_sender`), plus `key.isNewsletterSender`. Sebelum ini mereka tampak seperti pesan orang lain, sehingga bot bisa menjawab postingan channel-nya sendiri.
 
 ### Pertanyaan
-
 #### Jawaban Pertanyaan
-
 Jawaban untuk pertanyaan channel, beserta follower di belakang masing-masing.
 
 <details>
@@ -4721,7 +4622,6 @@ for (const r of responses) {
 `filter` menerima `contacts`, `replied`, atau `starred`; `searchText` mencari di jawabannya; `before` menelusuri ke belakang.
 
 #### Menyembunyikan Jawaban Pertanyaan
-
 Memoderasi jawaban seorang follower atas pertanyaan channel.
 
 <details>
@@ -4732,12 +4632,11 @@ await sock.newsletterQuestionResponseState('123456789@newsletter', questionServe
 
 </details>
 
+
 ---
 
 ### Admin
-
 #### Kemampuan Admin
-
 Fitur channel mana saja yang sudah diaktifkan server untukmu. Ini gerbang yang diperiksa WhatsApp Web sendiri sebelum menawarkan sebuah fitur.
 
 <details>
@@ -4752,7 +4651,6 @@ console.log(capabilities)
 Butuh hak admin atau pemilik di channel-nya; channel lain menjawab `Not Authorized`.
 
 #### Profil Admin
-
 Admin channel bisa menyetel nama dan foto miliknya sendiri yang ikut bersama setiap update yang ia posting, sehingga follower melihat siapa penulisnya, bukan cuma channel-nya. WhatsApp menamai sakelar tingkat channel-nya **Show admin profile**.
 
 Tiga bagian dari ini bisa dibaca dari library:
@@ -4788,7 +4686,6 @@ Update yang masuk membawa admin yang memposting di `newsletterMeta`, dan library
 Menyetel nama atau foto admin milikmu sendiri **tidak mungkin dari API klien mana pun**. WhatsApp Web hanya pernah *menerima* profil admin: tidak ada mutasi untuk itu, `newsletterUpdate` hanya menerima pengaturan nama, deskripsi, foto, dan reaksi, dan sakelar "Show admin profile" di UI Web digambar tanpa handler. Itu disetel dari ponsel, dan hanya di channel yang memegang kemampuan `ADMIN_PROFILE`.
 
 #### Undangan Admin
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4799,7 +4696,6 @@ await sock.newsletterAcceptAdminInvite('123456789@newsletter')</code></pre>
 </details>
 
 #### Undangan Admin Yang Menggantung
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4809,9 +4705,7 @@ await sock.newsletterAcceptAdminInvite('123456789@newsletter')</code></pre>
 </details>
 
 ### Mencari Channel
-
 #### Penemuan
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4821,7 +4715,6 @@ const similar = await sock.newsletterSimilar('123456789@newsletter', { limit: 20
 </details>
 
 #### Direktori
-
 Penemuan channel, kueri yang sama dengan yang dipakai tab Pembaruan. Kategorinya `BUSINESS`, `ENTERTAINMENT`, `LIFESTYLE`, `NEWS`, `ORGANIZATIONS`, `PEOPLE`, `SPORTS`, dan `SPECIAL_EVENTS` sampai `SPECIAL_EVENTS_5`.
 
 <details>
@@ -4840,9 +4733,7 @@ const preview = await sock.newsletterDirectoryCategories({ categories: ['NEWS'],
 </details>
 
 ### Penindakan
-
 #### Penindakan dan Banding
-
 Kalau satu fitur channel menghilang tanpa suara — pengaturan profil admin, cincin status, kemampuan memposting — penyebabnya sering kali penindakan terhadap channel-nya, bukan rollout yang belum sampai. Ini membaca apa yang sedang ditahan WhatsApp terhadapnya.
 
 <details>
@@ -4889,12 +4780,10 @@ await sock.newsletterAppealReport(reports[0].report_id, 'RESPONSE_VIOLATES_GUIDE
 
 </details>
 
-## 🪪 Username & Info
-
+## Username & Info
 WhatsApp Web memindahkan username dan teks Info ke kueri MEX. Yang di sini memanggil kueri persisted yang sama dengan yang dipakai klien Web.
 
 ### Username
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4920,7 +4809,6 @@ Cek sebuah nama sebelum mengklaimnya:
 `setUsername` menghasilkan `true` hanya kalau server menjawab `SUCCESS`. `state` bernilai `ACTIVE` atau `RESERVED`; beri `{ reserved: true }` saat mengklaim nama yang direservasi.
 
 #### Aturan Username
-
 `setUsername` dan `checkUsernameAvailability` menolak nama yang salah secara lokal sebelum sampai ke server, jadi kamu mendapat alasannya ketimbang kegagalan umum. Aturannya dibaca langsung dari klien Web:
 
 | Aturan | Error |
@@ -4952,7 +4840,6 @@ displayUsername('rexx')            // '@rexx'</code></pre>
 `@` di depan dilepas untukmu, jadi `setUsername('@elaina')` dan `setUsername('elaina')` itu panggilan yang sama.
 
 ### Info / Status Teks
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -4969,7 +4856,6 @@ console.log(about.status)</code></pre>
 IQ `updateProfileStatus` yang klasik masih jalan dan tidak disentuh.
 
 ### Pemberitahuan Ketentuan Layanan
-
 WhatsApp menggerbangi sebagian fitur di balik pemberitahuan yang harus dilalui pengguna. Yang di sini membaca daftar pemberitahuannya dan melaporkan kemajuannya, dengan IQ yang sama seperti yang dipakai klien Web.
 
 <details>
@@ -4985,7 +4871,6 @@ await sock.updateUserNoticeStage('20601216', 5)</code></pre>
 `stage` itu penghitung milik server untuk pemberitahuan tersebut — baca nilai saat ini dari `fetchUserNotices` sebelum memajukannya.
 
 ### Daftar Opt-Out Pemasaran
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5001,7 +4886,6 @@ await sock.updateOptOut({
 </details>
 
 ### Pengaturan Push
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5010,7 +4894,6 @@ await sock.updateOptOut({
 </details>
 
 ### Link Preview Dari Sisi Server
-
 Membiarkan WhatsApp yang membangkitkan preview-nya ketimbang kamu mengorek halamannya sendiri.
 
 <details>
@@ -5021,12 +4904,11 @@ Membiarkan WhatsApp yang membangkitkan preview-nya ketimbang kamu mengorek halam
 
 </details>
 
+
 ---
 
-## 👥 Pengelolaan Grup
-
+## Pengelolaan Grup
 ### Membuat Grup
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5043,7 +4925,6 @@ console.log(group.id)</code></pre>
 </details>
 
 ### Menambah Anggota
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5056,7 +4937,6 @@ console.log(group.id)</code></pre>
 </details>
 
 ### Mengeluarkan Anggota
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5069,7 +4949,6 @@ console.log(group.id)</code></pre>
 </details>
 
 ### Promote / Demote
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5079,7 +4958,6 @@ await sock.groupParticipantsUpdate(groupJid, [userJid], 'demote')</code></pre>
 </details>
 
 ### Mengubah Deskripsi Grup
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5091,7 +4969,6 @@ await sock.groupParticipantsUpdate(groupJid, [userJid], 'demote')</code></pre>
 </details>
 
 ### Subjek dan Pengaturan
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5103,7 +4980,6 @@ await sock.groupSettingUpdate(groupJid, 'announcement')</code></pre>
 `groupSettingUpdate` menerima salah satu dari `announcement` (hanya admin yang boleh mengirim), `not_announcement`, `locked` (hanya admin yang boleh menyunting info grup), atau `unlocked`.
 
 ### Siapa Yang Boleh Masuk dan Siapa Yang Boleh Menambah
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5115,7 +4991,6 @@ await sock.groupJoinApprovalMode(groupJid, 'on')</code></pre>
 `groupMemberAddMode` bernilai `admin_add` atau `all_member_add`. `groupJoinApprovalMode` bernilai `on` atau `off`; kalau aktif, orang yang memakai link undangan mendarat di antrean permintaan, bukan langsung di grupnya.
 
 ### Toggle Riwayat Grup
-
 WA Web revisi terbaru menambah app-state action `groupHistoryToggleAction` (apakah riwayat pesan lama dibagikan ke anggota baru). Di revisi ini WhatsApp Web baru punya sisi **terima**-nya — belum ada flow kirim — jadi fork mendecode-nya dan meneruskan lewat event `groups.update`:
 
 <details>
@@ -5135,7 +5010,6 @@ sock.ev.on('groups.update', ([update]) =&gt; {
 Ketika kamu (atau perangkat tertaut lain) mengubah setelan ini, action-nya tersinkron dan bot menerima `{ id, groupHistoryToggleMode }`. Setter khusus akan ditambahkan begitu WA Web merilis jalur kirimnya, supaya index app-state-nya pasti benar dan tidak merusak hash.
 
 ### Antrean Permintaan Masuk
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5146,7 +5020,6 @@ await sock.groupRequestParticipantsUpdate(groupJid, [userJid], 'reject')</code><
 </details>
 
 ### Link Undangan
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5163,7 +5036,6 @@ await sock.groupAcceptInvite(code)</code></pre>
 `groupGetInviteInfo` membaca grup di balik sebuah kode tanpa ikut masuk. Ada juga sepasang undangan langsung — `groupRevokeInviteV4(groupJid, invitedJid)` dan `groupAcceptInviteV4` — untuk undangan yang dikirim ke satu orang, bukan berupa link.
 
 ### Pesan Sementara
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5175,7 +5047,6 @@ await sock.groupToggleEphemeral(groupJid, 0)</code></pre>
 Durasinya dalam detik; `0` mematikannya. Pilihan milik WhatsApp sendiri adalah 24 jam, 7 hari, dan 90 hari.
 
 ### Membaca Grup
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5188,14 +5059,13 @@ await sock.groupLeave(groupJid)</code></pre>
 
 `groupFetchAllParticipating` mengembalikan semua grup yang kamu ikuti, dikunci berdasarkan jid. Itu satu permintaan untuk semuanya, jadi pilih ini ketimbang memanggil `groupMetadata` di dalam loop.
 
+
 ---
 
-## 🏘️ Komunitas
-
+## ️ Komunitas
 Komunitas itu induk yang memiliki grup-grup. Setiap metodenya mencerminkan padanannya di grup, ditambah panggilan penautan yang tidak punya padanan di grup.
 
 ### Membuat dan Menautkan
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5213,7 +5083,6 @@ const linked = await sock.communityFetchLinkedGroups(community.id)</code></pre>
 `communityCreateGroup` membuat grup yang sudah tertaut ke komunitasnya. `communityLinkGroup` menautkan grup yang sudah ada — kamu harus jadi admin di keduanya.
 
 ### Anggota dan Pengaturan
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5230,7 +5099,6 @@ await sock.communityToggleEphemeral(communityJid, 7 * 24 * 60 * 60)</code></pre>
 Aksi dan nilainya sama dengan yang di grup di atas.
 
 ### Undangan dan Pembacaan
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5245,10 +5113,10 @@ await sock.communityLeave(communityJid)</code></pre>
 
 </details>
 
+
 ---
 
-## 🔒 Pengaturan Privasi
-
+## Pengaturan Privasi
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5280,7 +5148,6 @@ await sock.updateDisableLinkPreviewsPrivacy(true)</code></pre>
 </details>
 
 ### Pesan Sementara Bawaan
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5292,7 +5159,6 @@ const durations = await sock.fetchDisappearingDuration(jidA, jidB)</code></pre>
 Bawaannya berlaku untuk chat baru. `fetchDisappearingDuration` menerima jid sebanyak apa pun dan melaporkan pengaturan masing-masing.
 
 ### Pemblokiran
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5303,7 +5169,6 @@ const blocked = await sock.fetchBlocklist()</code></pre>
 </details>
 
 ### Melaporkan Spam
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5323,16 +5188,15 @@ await sock.reportSpam(groupJid, {
 
 Ia mengembalikan jid dan flow yang **benar-benar terkirim** — bukan yang kamu serahkan: suffix perangkat dilepas dari jid kontak dan `flow` diisi bawaannya kalau kamu tidak menyebutkan. Kalau server menjawab dengan `<error>`, panggilannya melempar `Boom` dengan kode dari server dan `data` berisi `jid`, `flow`, serta `text` alasannya. Sampai versi `1.3.10` fungsi ini selalu `resolve` ke `undefined`, jadi laporan yang ditolak tidak bisa dibedakan dari yang diterima.
 
+
 ---
 
-## 📨 Semua Jenis Pesan
-
+## Semua Jenis Pesan
 `message.message` itu kotak dengan tepat satu kunci terisi, dan kuncinya yang
 menyebut jenisnya. Jumlahnya **115**. Dua hal menjegal hampir semua orang yang
 baru mulai, jadi baca bagian ini sebelum memburu bug yang sebenarnya tidak ada.
 
 ### Kenapa `conversation` kadang kosong
-
 **31 dari 115 itu pembungkus.** Mereka tidak membawa isi sendiri — mereka memegang
 pesan lain di dalamnya. Foto view-once itu bukan `imageMessage`, tapi
 `viewOnceMessageV2` yang memuat `imageMessage`. Balasan status grup itu
@@ -5392,7 +5256,6 @@ sekali, dan parser stikernya tidak membaca `audioMessage` kembali keluar. Anggap
 keduanya field untuk dikenali saat mulai berdatangan, bukan untuk dikirim.
 
 ### 84 sisanya
-
 Yang ini membawa isinya. Kamu akan memakai segelintir terus-menerus dan tidak
 pernah menyentuh sisanya, tapi mengetahui mereka ada menyelamatkanmu dari
 mengira sebuah pesan cacat padahal itu sekadar jenis yang belum pernah kamu
@@ -5419,16 +5282,15 @@ ini, dibedakan oleh `type`-nya. Bot yang mengabaikannya akan kelihatan seperti
 tidak pernah menyadari ada pesan yang dihapus.
 
 ### Membaca pesan rich
-
 Pesan dari bot lain — AI Rich, A2UI, Bloks — meninggalkan `conversation` kosong
 dan `getContentType` hanya melaporkan pembungkusnya. `readRichMessage`
 menormalkan semuanya menjadi satu bentuk; lihat
 [Membaca Balik Pesan Rich](#membaca-balik-pesan-rich).
 
+
 ---
 
-## 👀 Presence dan Tanda Dibaca
-
+## Presence dan Tanda Dibaca
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5446,7 +5308,6 @@ await sock.sendPresenceUpdate('unavailable')</code></pre>
 Kamu baru menerima presence seseorang setelah `presenceSubscribe` pada jid-nya. `available` dan `unavailable` itu keadaan global milikmu sendiri dan tidak menerima jid; sisanya indikator sedang-menulis per chat. `recording` dikirim ke wire sebagai `composing` dengan `media: audio`, dan itulah yang menghasilkan "merekam audio…".
 
 ### Menandai Sudah Dibaca
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5460,7 +5321,6 @@ await sock.sendReceipts([msg.key], 'read')</code></pre>
 `readMessages` yang sebaiknya kamu pakai. `sendReceipt` dan `sendReceipts` itu lapisan yang lebih rendah di bawahnya, dengan jenis tanda terimanya disebut eksplisit — `read`, `read-self`, `played`, atau `undefined` untuk tanda terkirim biasa.
 
 ### Memeriksa Nomor
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5472,7 +5332,6 @@ for (const entry of results) {
 </details>
 
 #### Cari lewat username
-
 `onWhatsApp` hanya menerima nomor telepon. Untuk resolve **`@username` → JID** (mulai chat lewat username) pakai `onWhatsAppUsername`:
 
 <details>
@@ -5503,10 +5362,10 @@ for (const entry of names) {
 
 Terima satu atau banyak JID. Mengembalikan `[{ jid, username }]` hanya untuk JID yang memang punya username publik. Di balik layar ini USync query protokol `username` (`usync_username`), username dibaca dari isi node `<username>` balasan.
 
+
 ---
 
-## 🗂️ Keadaan Chat
-
+## ️ Keadaan Chat
 `chatModify` menulis ke app state, jadi satu perubahan ikut tersinkron ke ponsel dan ke setiap perangkat tertaut lainnya.
 
 <details>
@@ -5527,7 +5386,6 @@ await sock.chatModify({ contact: { fullName: 'LyncxTeams' } }, jid)</code></pre>
 `mute` itu durasi dalam milidetik, dan `null` membatalkan pembisuan. Beberapa di antaranya butuh `lastMessages` — server memakainya untuk menempatkan perubahan itu di garis waktu chat-nya, dan ia melempar error tanpa itu.
 
 ### Riwayat dan Sinkronisasi Ulang
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5539,10 +5397,10 @@ await sock.resyncAppState(['regular_high'], false)</code></pre>
 
 `fetchMessageHistory` meminta ke ponsel pesan-pesan yang lebih lama dari key yang kamu serahkan; mereka tiba lewat `messaging-history.set`. `requestPlaceholderResend` meminta satu pesan lagi kalau ia tiba sebagai placeholder.
 
+
 ---
 
-## 🏷️ Label
-
+## ️ Label
 Label itu fitur WhatsApp Business.
 
 <details>
@@ -5558,10 +5416,10 @@ await sock.removeMessageLabel(jid, messageId, labelId)</code></pre>
 
 </details>
 
+
 ---
 
-## 🛍️ Bisnis dan Katalog
-
+## ️ Bisnis dan Katalog
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5577,7 +5435,6 @@ const order = await sock.getOrderDetails(orderId, tokenBase64)</code></pre>
 `updateBusinessProfile` juga diekspor dengan salah tulis aslinya, `updateBussinesProfile`; keduanya fungsi yang sama.
 
 ### Mengelola Produk
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5596,7 +5453,6 @@ await sock.productDelete([created.id])</code></pre>
 </details>
 
 ### Profil dan Balasan Cepat
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5612,7 +5468,6 @@ await sock.removeContact(jid)</code></pre>
 `removeContact` itu `chatModify({ contact: null })` dengan nama yang lebih ramah, jadi ia tersinkron ke ponsel seperti penyuntingan kontak lainnya.
 
 ### Mengambil Ulang Media Kedaluwarsa
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5623,7 +5478,6 @@ await sock.removeContact(jid)</code></pre>
 URL media WhatsApp kedaluwarsa. Kalau unduhan gagal di pesan lama, ini meminta `directPath` baru ke perangkat pengirimnya lalu mengembalikan pesannya dengan field itu terisi — setelah itu unduh lagi.
 
 ### Label Anggota Grup
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5655,10 +5509,10 @@ Label anggota lain sampai lewat event, bukan lewat query:
 
 </details>
 
+
 ---
 
-## 📞 Panggilan
-
+## Panggilan
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5677,7 +5531,6 @@ await sock.rejectCall(callId, callFrom)</code></pre>
 `createCallLink` menerima `audio` atau `video` dan mengembalikan token-nya saja. Kedua prefiksnya diekspor karena tidak sama dengan nama medianya — link video ada di bawah `/video/` sementara link audio di bawah `/voice/`. Beri `event` dengan `startTime` dalam detik unix untuk menjadwalkan panggilannya ketimbang membukanya sekarang.
 
 ### Melakukan Panggilan Suara
-
 Tumpukan VoIP-nya menjalankan mesin panggilan WhatsApp Web di dalam proses yang sama dan menumpang **socket yang sudah kamu pakai login**. Tidak ada pairing kedua dan tidak ada QR kedua: pairing sekali, dan sesi yang sama yang melakukan panggilan.
 
 <details>
@@ -5725,7 +5578,6 @@ sock.ev.on('connection.update', async ({ connection }) =&gt; {
 </details>
 
 ### Memainkan Antrean Audio
-
 Setiap panggilan menerima playlist, dan antreannya yang menggerakkan panggilan, bukan sebaliknya: putar satu lagu, tutup saat selesai; atau putar, tunggu sementara lagu berikutnya dicari, putar yang itu, lalu tutup.
 
 <details>
@@ -5770,7 +5622,6 @@ await call.waitForEnd()</code></pre>
 `enqueue` juga menerima array, `skip()` membuang lagu yang sedang diputar, `play()` menggantikan antreannya dengan satu lagu sekarang, dan `queued()` serta `nowPlaying()` melaporkan apa yang tersisa dan apa yang sedang jalan. Audio yang masih tertahan di buffer dari lagu yang sudah selesai diputar habis dulu sebelum yang berikutnya mulai, jadi satu lagu tidak pernah terpotong di ekornya karena antreannya maju.
 
 ### Panggilan Video
-
 Panggilan satu lawan satu maupun grup dua-duanya menerima video. Frame-nya datang dari ffmpeg sama seperti audionya, jadi sumber videonya bisa berupa berkas, URL, gambar diam, atau generator `lavfi:`.
 
 <details>
@@ -5813,7 +5664,6 @@ Mesinnya memilih resolusi dan laju frame saat panggilannya tersambung, dan pengu
 Audio dan video itu dua proses ffmpeg dengan dua jam berbeda. Memutar berkas yang sama lewat keduanya akan melenceng; kalau kamu butuh keduanya terkunci bersama, serahkan berkas yang sama hanya ke `playlist` dan biarkan gambarnya berupa gambar diam.
 
 ### Berbagi Layar
-
 Video yang sama, dikirim sebagai berbagi layar ketimbang sebagai kamera. Ini titik masuk wasm yang terpisah, jadi penerimanya melihatnya berlabel layar yang dibagikan, bukan seperti bot menyalakan kameranya.
 
 <details>
@@ -5835,7 +5685,6 @@ Mana yang lebih baik bergantung pada apa yang kamu kirim, dan layak diuji keduan
 - **Jalur kamera** cocok untuk gambar bergerak, dan menjangkau semua orang. Berbagi layar digerbangi `calling_screen_share_milestone_version`: penerima dengan WhatsApp yang lebih lama mendapat dialog "mohon perbarui" ketimbang kontenmu. Di grup juga ada batas jumlah peserta untuk berbagi, dan biasanya hanya satu peserta yang boleh berbagi sekaligus.
 
 ### Panggilan Grup
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5872,7 +5721,6 @@ Ketiga berkas itu milik WhatsApp Web sendiri, dibawa byte per byte. Pemindai sup
 Tidak ada yang ditulis ke stdout kecuali kamu memintanya: beri `debug: true` untuk pelacakan bawaannya, atau `logger: (...args) => …` untuk mengarahkannya ke logger-mu sendiri.
 
 ### Keluar
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5882,12 +5730,11 @@ Tidak ada yang ditulis ke stdout kecuali kamu memintanya: beri `debug: true` unt
 
 Ini melepas tautan perangkatnya di sisi WhatsApp, jadi kredensial yang tersimpan jadi tak berguna. Untuk menghentikan socket-nya tanpa melepas tautan, pakai `sock.end()`.
 
+
 ---
 
-## 📷 Foto Profil
-
+## Foto Profil
 ### Mengambil URL Foto Profil
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5897,7 +5744,6 @@ console.log(url)</code></pre>
 </details>
 
 ### Mengubah Foto Profil
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5908,7 +5754,6 @@ console.log(url)</code></pre>
 </details>
 
 ### Menghapus Foto Profil
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -5916,10 +5761,10 @@ console.log(url)</code></pre>
 
 </details>
 
+
 ---
 
-## 🧰 Ekspor Yang Berguna
-
+## Ekspor Yang Berguna
 Beberapa ekspor yang sering dipakai:
 
 <details>
@@ -5967,7 +5812,6 @@ console.log(MessageBuilder.VERSION)</code></pre>
 </details>
 
 ### Cache Internal
-
 > [!NOTE]
 > **Kamu tidak perlu mengimpor apa pun untuk ini.** Cache-nya internal, dan library yang membuatnya sendiri. Kalau bot-mu tidak pernah mengurus cache, tidak ada satu baris pun yang perlu diubah.
 
@@ -5985,7 +5829,6 @@ Polanya sama di setiap tempat: kalau kamu tidak menyerahkan apa-apa, library yan
 Jadi `makeWASocket({ auth })` biasa sudah lengkap. Yang berubah cuma isi kotaknya, pintunya tidak.
 
 #### Kapan `TTLCache` perlu diimpor
-
 Cuma kalau kamu memang mau menyerahkan cache buatanmu sendiri — dan itu bukan hal baru, dari dulu memang bisa:
 
 <details>
@@ -6010,7 +5853,6 @@ const sock = makeWASocket({
 Config yang menerimanya: `userDevicesCache`, `msgRetryCounterCache`, `callOfferCache`, `outboundResendCache`, `placeholderResendCache`, `mediaCache`, plus argumen ketiga `makeCacheableSignalKeyStore(store, logger, cache)`.
 
 #### Kalau bot-mu sudah menyerahkan cache sendiri
-
 Tetap jalan tanpa diubah, termasuk kalau yang kamu serahkan `new NodeCache(...)` dari `node-cache` atau `@cacheable/node-cache` milikmu sendiri. Library cuma memanggil delapan metode — `get`, `set`, `has`, `del`, `mget`, `mset`, `flushAll`, `close` — dan NodeCache punya semuanya. Kontraknya duck-typed, bukan `instanceof`.
 
 `stdTTL` dihitung dalam **detik**, sama seperti dulu, dan `TTLCache` sengaja dibuat superset: selain delapan metode di atas ia juga punya `take`, `keys`, `getStats`, serta `on`, `off`, dan `removeAllListeners` yang no-op — supaya kode yang menyentuh cache bawaan dengan gaya NodeCache tidak pecah.
@@ -6038,10 +5880,10 @@ Pengukuran di 200.000 operasi dengan pola akses yang sama seperti pemakaian nyat
 
 `set` dan `get` jalur terpanas dan dua-duanya jauh lebih cepat; `has` lebih lambat karena `lru-cache` ikut memeriksa kedaluwarsa saat dipanggil, dan ia cuma dipakai enam kali di seluruh library, tidak di dalam loop.
 
+
 ---
 
-## 🔄 Memperbarui Versi WhatsApp Web
-
+## Memperbarui Versi WhatsApp Web
 Satu perintah menjalankan seluruh pemeriksaannya:
 
 <details>
@@ -6156,10 +5998,10 @@ npm-debug.log*</code></pre>
 Kalau repomu memang sengaja tidak melacak lockfile untuk paket library ini, tambahkan `package-lock.json` juga. Kalau tidak, biarkan lockfile-nya terlacak seperti biasa.
 
 
+
 ---
 
 ## ⏰ Pesan Terjadwal
-
 WhatsApp menjadwalkan pesan dengan mengirimnya **langsung, dalam keadaan terenkripsi**, lalu membiarkan server membagikan kuncinya pada waktu yang dipilih. Pembungkusnya `conditionalRevealMessage`; kuncinya berjalan di node `<meta type="scheduled_message">` di sebelah pesannya.
 
 Bagian-bagiannya dibuka sebagai balok penyusun, direkonstruksi dari klien WhatsApp Web:
@@ -6228,7 +6070,7 @@ Reveal key-nya AES-256-GCM, 32 byte, dengan IV 12 byte dan tag-nya ditambahkan k
 > [!WARNING]
 > Semua gerbang untuk fitur ini mati secara bawaan di klien yang dikirim WhatsApp (`scheduled_messages_sender_enabled`, `scheduled_messages_receiver_enabled`, `channels_scheduling_updates_enabled`). Builder di sini sudah cocok dengan format wire yang dipakai klien, tapi sampai WhatsApp mengaktifkan fiturnya untuk satu akun, server bisa menolak atau mengabaikan permintaannya. Anggap eksperimental.
 
-## 🧪 API Pesan WhatsApp Modern
+## API Pesan WhatsApp Modern
 LyncxTeams Baileys membuka helper untuk jenis pesan protobuf yang lebih baru yang sudah ada di WAProto yang dibawa. API ini eksperimental karena WhatsApp bisa menggerbangi penggambaran atau penerimaan servernya per akun, per platform, atau per rollout.
 
 <details>
@@ -6243,7 +6085,6 @@ LyncxTeams Baileys membuka helper untuk jenis pesan protobuf yang lebih baru yan
 </details>
 
 ### Message Key
-
 Hampir semua di bab ini menerima sebuah **message key** — `addYours`, `statusMention`, `statusNotification`, `groupStatusReaction`, `statusQuoted`, `pollAddOption`, dan seterusnya. Contohnya menulis `myStatus.key` atau `promptStatus.key` dan itu mudah terlewat saat dibaca cepat, jadi ini asal sebenarnya.
 
 Satu key terdiri dari empat field, dan ia mengidentifikasi satu pesan di mana pun di akunnya:
@@ -6261,7 +6102,6 @@ Satu key terdiri dari empat field, dan ia mengidentifikasi satu pesan di mana pu
 </details>
 
 #### Pesan yang kamu kirim
-
 `sendMessage` mengembalikan pesan yang dikirimnya. Simpan lalu baca `.key`:
 
 <details>
@@ -6290,7 +6130,6 @@ Key status milikmu sendiri **tidak punya `participant`** — kamu pengirimnya, j
 Nilai kembalian itu seluruh `WebMessageInfo`, jadi `myStatus.message` dan `myStatus.messageTimestamp` juga ada kalau kamu membutuhkannya.
 
 #### Pesan yang kamu terima
-
 Setiap pesan masuk tiba dengan key-nya sudah menempel, di event `messages.upsert`:
 
 <details>
@@ -6335,7 +6174,6 @@ await sock.sendMessage('status@broadcast', {
 Key yang kamu simpan tetap berlaku — isinya cuma empat string, jadi menyimpannya di database atau berkas JSON sudah cukup. Tidak ada di sini yang butuh badan pesan aslinya.
 
 #### Pesan yang dibalas orang
-
 Kalau satu pesan mengutip pesan lain, key yang dikutip ada di `contextInfo`-nya:
 
 <details>
@@ -6352,7 +6190,6 @@ const quotedKey = context &amp;&amp; {
 </details>
 
 #### Key mana untuk apa
-
 Kesalahan yang paling banyak memakan waktu adalah menyerahkan key milikmu sendiri di tempat milik orang lain seharusnya, atau sebaliknya. Ini pemilik masing-masingnya:
 
 | Field | Key milik siapa |
@@ -6368,7 +6205,6 @@ Kesalahan yang paling banyak memakan waktu adalah menyerahkan key milikmu sendir
 Setiap pembuatnya memeriksa key-nya sebelum membangun apa pun, dan melempar `TypeError` yang menyebut field tepatnya — `addYours.key must be an object` kalau hilang, `addYours.key.id is required` kalau ada tapi setengah jadi. Bagaimanapun ia gagal saat build ketimbang terkirim lalu diabaikan tanpa suara.
 
 ### Polling Foto
-
 Beri sebuah opsi `image` dan polling-nya dikirim sebagai polling foto: gambar opsinya dikirim sebagai pesan terkait dan setiap opsi membawa hash yang diharapkan server.
 
 Ini jalan di grup dan chat satu lawan satu maupun di channel, dan `hideVoter` serta `endDate` bisa digabungkan dengannya — polling-nya tetap di `pollCreationMessageV3`, yaitu versi tempat gambar opsinya menempel. Lihat [Pengaturan polling](#pengaturan-polling).
@@ -6394,7 +6230,6 @@ Setiap gambar opsi diunggah lalu dikirim sebagai `pollCreationOptionImageMessage
 Opsi berupa string biasa tetap mengirim polling teks normal, dan keduanya bisa dicampur. Sakelar polling lainnya — banyak jawaban, pemilih tersembunyi, tambah opsi, waktu berakhir — didaftar di [Pengaturan polling](#pengaturan-polling).
 
 ### Pesan Pertanyaan
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -6432,7 +6267,6 @@ Payload yang sama bisa dikirim ke JID channel. Pertanyaan channel ditandai oleh 
 `questiontype` bernilai `question` saat memposting pertanyaan, `response` saat seorang follower menjawabnya, dan `reply` saat channel-nya membalas sebuah jawaban.
 
 ### Jawaban Pertanyaan Masuk
-
 Seorang follower menjawab sebuah pertanyaan. Dikirim dengan `questiontype="response"`.
 
 <details>
@@ -6448,7 +6282,6 @@ Seorang follower menjawab sebuah pertanyaan. Dikirim dengan `questiontype="respo
 </details>
 
 ### Balasan Pertanyaan
-
 Channel-nya membalas sebuah jawaban, mengutipnya lewat server id pertanyaannya. Dikirim dengan `questiontype="reply"`.
 
 <details>
@@ -6466,7 +6299,6 @@ Channel-nya membalas sebuah jawaban, mengutipnya lewat server id pertanyaannya. 
 </details>
 
 ### Jawaban Pertanyaan di Status
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -6480,7 +6312,6 @@ Channel-nya membalas sebuah jawaban, mengutipnya lewat server id pertanyaannya. 
 </details>
 
 ### Pesan Kutipan Status
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -6495,7 +6326,6 @@ Channel-nya membalas sebuah jawaban, mengutipnya lewat server id pertanyaannya. 
 </details>
 
 ### Interaksi Stiker Status
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -6510,7 +6340,6 @@ Channel-nya membalas sebuah jawaban, mengutipnya lewat server id pertanyaannya. 
 </details>
 
 ### Notifikasi Status
-
 Jenis notifikasi yang didukung: `UNKNOWN` 0, `STATUS_ADD_YOURS` 1, `STATUS_RESHARE` 2, `STATUS_QUESTION_ANSWER_RESHARE` 3, dan `STATUS_GROUP_STATUS_REPLY` 4, diekspor sebagai `StatusNotificationType`.
 
 `STATUS_GROUP_STATUS_REPLY` ada di bundle WhatsApp Web tapi tidak ada di enum `WAProto` yang dibangkitkan, yang hanya membawa empat yang pertama — alat sinkronisasinya membaca field pesan, bukan nilai enum. `StatusNotificationType` dan `statusNotification` dua-duanya menyelesaikan namanya terhadap daftar di bundle, jadi namanya jalan di sini walau `proto.Message.StatusNotificationMessage.StatusNotificationType.STATUS_GROUP_STATUS_REPLY` bernilai `undefined`.
@@ -6529,7 +6358,6 @@ Jenis notifikasi yang didukung: `UNKNOWN` 0, `STATUS_ADD_YOURS` 1, `STATUS_RESHA
 </details>
 
 ### Undangan Admin Channel
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -6547,7 +6375,6 @@ Jenis notifikasi yang didukung: `UNKNOWN` 0, `STATUS_ADD_YOURS` 1, `STATUS_RESHA
 `jpegThumbnail` dan `contextInfo` juga bisa diberikan.
 
 ### Undangan Follower Channel V2
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -6562,7 +6389,6 @@ Jenis notifikasi yang didukung: `UNKNOWN` 0, `STATUS_ADD_YOURS` 1, `STATUS_RESHA
 </details>
 
 ### Audiens Status Kustom (Teman Dekat)
-
 Ini status yang menampilkan lencana berisi emoji dan nama daftar, dan membuka dialog berbunyi **"Anda ada di audiens kustom {nama}"**. Emoji dan namanya kamu yang pilih, dan dari situlah bagian "emoji kustom"-nya datang.
 
 Ini **bukan** `groupStatusMessageV2`. Dua fitur berbeda sering tertukar di sini, jadi sebelum kodenya:
@@ -6575,7 +6401,6 @@ Ini **bukan** `groupStatusMessageV2`. Dua fitur berbeda sering tertukar di sini,
 Keduanya berdiri sendiri. Satu status bisa jadi yang satu, yang lain, atau dua-duanya.
 
 #### Audiens kustomnya
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -6618,7 +6443,6 @@ Hilangkan salah satu field-nya dan kamu mendapat cadangan milik klien sendiri �
 > `statusAudience` itu **labelnya**, bukan kuncinya. Siapa yang benar-benar menerima statusnya ditentukan `statusJidList` — orang-orang yang kamu kirimi. Menyetel metadata-nya tanpa mempersempit daftar itu berarti memposting ke semua orang dengan lencana "Besties" terpasang.
 
 #### Status grupnya
-
 `groupStatus: true` membungkus apa pun yang kamu kirim di dalam `groupStatusMessageV2` dan menyetel `contextInfo.isGroupStatus`, dan itulah yang membuat lapisan relay menambahkan node meta `is_group_status`:
 
 <details>
@@ -6669,10 +6493,9 @@ menghasilkan:
 
 </details>
 
-Perhatikan `message.conversation` bernilai `undefined` di situ — teksnya dua lapis di bawah. Jalankan lewat `normalizeMessageContent` dulu, seperti pembungkus lainnya (lihat [Semua Jenis Pesan](#-semua-jenis-pesan)).
+Perhatikan `message.conversation` bernilai `undefined` di situ — teksnya dua lapis di bawah. Jalankan lewat `normalizeMessageContent` dulu, seperti pembungkus lainnya (lihat [Semua Jenis Pesan](#semua-jenis-pesan)).
 
 #### Field-nya
-
 `contextInfo.statusAudienceMetadata` itu field **69** dari `ContextInfo`:
 
 | Field | Tag | Nilai |
@@ -6708,7 +6531,6 @@ Atau tulis contextInfo-nya sendiri, kalau kamu merelay ketimbang mengirim:
 </details>
 
 #### Membaca yang kamu terima
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -6724,7 +6546,6 @@ if (audience) {
 </details>
 
 #### Kalau namanya tetap "Close friends"
-
 Emoji dan namanya berjalan di submessage yang sama, jadi kalau salah satunya tiba, yang lain juga tiba. Periksa apa yang benar-benar kamu taruh di wire sebelum menyalahkan ponselnya — `sendMessage` mengembalikan pesan yang dikirimnya:
 
 <details>
@@ -6757,7 +6578,6 @@ Dan kalau payload-nya benar tapi ponselnya tetap menampilkan bawaannya, itu klie
 > Di WhatsApp Web lencananya berada di belakang gerbang rollout sisi penonton (`isStatusCloseFriendsViewerSideEnabled`), dan Web sama sekali tidak punya jalur sisi pengirim untuknya — ia hanya membaca field-nya. Android dan iOS tempat kamu akan melihatnya. Seperti semua di bab ini, WhatsApp bisa menggerbangi penggambarannya per akun.
 
 ### Add Yours
-
 "Add Yours" bukan jenis pesan — itu sebuah **asosiasi**. Seseorang memposting status yang membawa prompt Add Yours; saat kamu memposting jawabanmu sendiri, statusmu membawa `messageAssociation` yang menunjuk balik ke statusnya, dan itulah yang merangkai keduanya.
 
 <details>
@@ -6821,7 +6641,6 @@ Ada tiga rasa Add Yours, dan kamu bisa menyebut yang kamu mau:
 </details>
 
 #### Asosiasi lainnya
-
 `addYours` itu bentuk singkat di atas mekanisme umumnya, dan itu layak diketahui karena field yang sama merangkai polling status, pertanyaan, reaksi, dan item album:
 
 <details>
@@ -6843,7 +6662,6 @@ await sock.sendMessage('status@broadcast', {
 `AssociationType` itu enum milik klien sendiri: `MEDIA_ALBUM` 1, `STATUS_POLL` 4, `STATUS_EXTERNAL_RESHARE` 6, `MEDIA_POLL` 7, `STATUS_ADD_YOURS` 8, `STATUS_NOTIFICATION` 9, `STICKER_ANNOTATION` 11, `STATUS_LINK_ACTION` 13, `STATUS_ADD_YOURS_AI_IMAGINE` 15, `STATUS_QUESTION` 16, `STATUS_ADD_YOURS_DIWALI` 17, `STATUS_REACTION` 18, `POLL_ADD_OPTION` 20, dan lainnya. Berbeda dari `addYours`, bentuk umumnya default ke `UNKNOWN` ketimbang menebak untukmu.
 
 #### Memberi tahu pemosting aslinya
-
 Memposting jawabannya tidak dengan sendirinya memberi tahu siapa pun yang menulis prompt-nya. Itu `statusNotification` yang terpisah, dan `STATUS_ADD_YOURS` salah satu jenisnya:
 
 <details>
@@ -6863,7 +6681,6 @@ Memposting jawabannya tidak dengan sendirinya memberi tahu siapa pun yang menuli
 > **Stiker** Add Yours — prompt-nya sendiri, dengan teksnya sendiri — disusun di Android dan tata letak wire-nya tidak diungkapkan di mana pun di bundle WhatsApp Web. Hanya asosiasinya yang ada, jadi itu saja yang dibangun library ini. Menjawab prompt yang sudah ada bisa; menulis prompt baru dari bot tidak bisa, dan tidak ada di sini yang menebak-nebak tag untuk itu.
 
 ### Mention di Status
-
 Mention orang di status itu dua pesan: statusnya sendiri dikirim ke `status@broadcast` dengan node meta `mentioned_users`, dan setiap chat yang dimention mendapat satu pesan penunjuk kecil supaya mention-nya muncul di situ — `statusMentionMessage` untuk perorangan, `groupStatusMentionMessage` untuk grup, keduanya membungkus `protocolMessage` bertipe `STATUS_MENTION_MESSAGE` (25).
 
 **Serahkan array jid sebagai targetnya dan seluruh alurnya dikerjakan untukmu:**
@@ -6910,7 +6727,6 @@ const content = makeStatusMentionMessage({ key: myStatus.key, group: false })
 Kedua pembungkusnya `FutureProofMessage` — `statusMentionMessage` itu field 87 dari `Message`, `groupStatusMentionMessage` field 92 — jadi yang diterima butuh `normalizeMessageContent` seperti pembungkus lainnya.
 
 ### Reaksi Status Grup
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -6926,7 +6742,6 @@ Kedua pembungkusnya `FutureProofMessage` — `statusMentionMessage` itu field 87
 Reaksinya dibungkus di `groupStatusMessageV2`, sehingga lapisan relay yang sudah ada bisa menyertakan metadata status grupnya.
 
 ### Menambah Opsi Polling
-
 Polling aslinya harus dibuat dengan `canAddOption: true` (lihat [Pengaturan polling](#pengaturan-polling)). Satu pesan membawa satu opsi — `addOption` itu nilai tunggal di protobuf, bukan daftar, jadi kirim beberapa pesan untuk menambah beberapa opsi.
 
 <details>
@@ -6944,7 +6759,6 @@ Polling aslinya harus dibuat dengan `canAddOption: true` (lihat [Pengaturan poll
 `addOption` bisa diberikan langsung kalau kamu sudah punya objek opsi protobuf-nya.
 
 ### Pesan Komentar
-
 `content` menerima teks atau field pesan protobuf. Konten protobuf mentah bisa diberikan sebagai `message`.
 
 <details>
@@ -6962,7 +6776,6 @@ Polling aslinya harus dibuat dengan `canAddOption: true` (lihat [Pengaturan poll
 </details>
 
 ### Pesan Undangan Acara
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -6979,7 +6792,6 @@ Polling aslinya harus dibuat dengan `canAddOption: true` (lihat [Pengaturan poll
 </details>
 
 ### Panggilan Terjadwal
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -7008,7 +6820,6 @@ Membatalkan panggilan terjadwal lewat message key-nya.
 </details>
 
 ### Penanda Broadcast Lokasi
-
 WhatsApp Desktop mengenali `location@broadcast` secara terpisah dari `status@broadcast`. LyncxTeams Baileys membuka penanda dan pendeteksinya tanpa memperlakukannya sebagai fanout status biasa.
 
 <details>
@@ -7020,7 +6831,6 @@ console.log(isJidLocationBroadcast('location@broadcast'))</code></pre>
 </details>
 
 ### Builder Tingkat Rendah
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -7051,10 +6861,10 @@ Helper ini mengembalikan konten pesan yang kompatibel dengan protobuf dan bisa d
 > [!IMPORTANT]
 > Build WhatsApp Desktop yang diperiksa juga membuka nama skema yang berkaitan dengan pembagian riwayat bot dan verifikasi identitas. Keduanya sengaja belum ditambahkan sampai nomor field protobuf, pesan induk, dan tata letak wire-nya terkonfirmasi. LyncxTeams Baileys tidak menebak-nebak tag protobuf.
 
+
 ---
 
-## 🛡️ Sinyal Kesehatan Akun
-
+## ️ Sinyal Kesehatan Akun
 WhatsApp melacak bagaimana satu akun menghubungi orang yang belum pernah diajaknya bicara, dan ia memberi tahu kliennya posisinya di mana. Membaca dua sinyal itu jauh lebih bisa dipegang daripada menebak jeda yang aman.
 
 Keduanya query `w:mex` yang sama persis dengan yang dijalankan WA Web, jadi jawabannya datang dari server WhatsApp, bukan dari hitungan lokal:
@@ -7065,7 +6875,6 @@ Keduanya query `w:mex` yang sama persis dengan yang dijalankan WA Web, jadi jawa
 | `fetchAccountReachoutTimelock()` | `WAWebMexFetchReachoutTimelockJobQuery` (`23983697327930364`) | kapan saja setelah tersambung |
 
 ### Kuota Pesan ke Chat Baru
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -7093,7 +6902,6 @@ Yang memakan kuota cuma **memulai** chat dengan nomor yang belum pernah kamu aja
 Perlu diketahui: query ini menanyakan satu jenis kuota saja, `INDIVIDUAL_NEW_CHAT_THREAD` — kuota **thread** chat baru, bukan jumlah pesan. Sampai versi `1.3.10` fork ini mengirim `INDIVIDUAL_NEW_CHAT_MSG`, nama yang tidak ada di klien mana pun, dan itulah kenapa panggilannya bisa balik dengan error atau angka kosong.
 
 ### Timelock Reachout
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -7119,7 +6927,6 @@ Memanggilnya juga memancarkan `connection.update`, jadi satu pemanggilan cukup u
 </details>
 
 ### Memakainya Sebagai Pengaman
-
 <details>
 <summary> Tampilkan kode </summary>
 
@@ -7142,10 +6949,8 @@ Periksa sebelum satu putaran dan periksa lagi setiap batch — `SECOND_WARNING` 
 > [!NOTE]
 > Mengirim massal lewat klien tidak resmi itu di luar Ketentuan Layanan WhatsApp, apa pun yang sudah disetujui penerimanya. Jalur yang disahkan untuk pengiriman massal berbasis opt-in adalah WhatsApp Business Platform. Sinyal-sinyal ini mengurangi peluang memicu batas otomatis; mereka tidak membuat satu akun jadi aman.
 
-## 🐞 Penanganan Masalah
-
+## Penanganan Masalah
 ### `Cannot read properties of undefined (reading 'undefined')` saat membalas
-
 Jejak lengkapnya seperti ini:
 
 <details>
@@ -7192,7 +6997,6 @@ await sock.sendMessage(m.key.remoteJid, { text: 'halo' }, quotable ? { quoted: m
 </details>
 
 ### Bot menjawab di semua grup kecuali satu
-
 Grup yang tidak ada satu pun pesan tembus — tidak satu balasan pun, sementara semua grup lain baik-baik saja — hampir selalu masalah **sender key**, bukan handler-mu. Pesan grup dienkripsi sekali dengan satu sender key grup lalu difanout; key itu harus sampai ke tiap perangkat anggota secara terpisah, dan library-nya mengingat siapa yang sudah memilikinya di `sender-key-memory`, dikunci **per grup**. Itu sebabnya gejalanya satu grup dan bukan seluruh akun.
 
 Sampai rilis ini ada satu cara ingatan itu bisa berbohong. Enkripsinya dicoba per perangkat dan satu perangkat yang gagal ditelan — pengirimannya tetap berjalan ke semua yang lain — tapi setiap perangkat ditandai sebagai sudah memegang key-nya terlepas dari itu. Perangkat yang tidak pernah menerimanya tercatat sebagai selesai, jadi ia tidak pernah dikirimi lagi, dan sejak itu ia tidak bisa membaca apa pun yang dikatakan bot di grup itu. Ia hanya pulih kalau perangkat itu kebetulan mengirim tanda terima percobaan ulang untuk grup yang tepat itu.
@@ -7234,7 +7038,6 @@ Sebelum menyalahkan sender key, kesampingkan dulu dua penyebab yang lebih murah:
 | Apakah `sendMessage` melempar error untuk jid itu? | Berarti itu pengambilan metadata grupnya, bukan enkripsinya — periksa error-nya, bukan key-nya. |
 
 ### Kode pairing harus tepat 8 karakter
-
 Saat memakai kode pairing kustom:
 
 <details>
@@ -7247,7 +7050,6 @@ Saat memakai kode pairing kustom:
 Nilai kustomnya harus berisi tepat delapan karakter.
 
 ### Kode pairing muncul tapi ponselnya tidak pernah menampilkan prompt
-
 Periksa apa yang dilempar permintaannya sebelum menganggap notifikasinya yang salah. `requestPairingCode` sekarang menunggu server dan melaporkan penolakan ketimbang mengembalikan kode yang tidak pernah terdaftar:
 
 | Pesan | Artinya |
@@ -7263,11 +7065,9 @@ Kalau tidak ada satu pun dari ini yang muncul dan kodenya terdaftar, masukkan ma
 Verifikasi dari luar botmu dengan `node script/testpairing.js <nomor> --check-only`.
 
 ### Permintaan pairing ditolak dengan 409
-
-Masih ada kode lain yang menggantung. Tunggu sampai habis atau panggil `sock.cancelPairingCode()` dulu — lihat [Kode Pairing](#-kode-pairing).
+Masih ada kode lain yang menggantung. Tunggu sampai habis atau panggil `sock.cancelPairingCode()` dulu — lihat [Kode Pairing](#kode-pairing).
 
 ### `Socket is required`
-
 Kelas builder butuh socket Baileys yang aktif:
 
 <details>
@@ -7280,7 +7080,6 @@ Kelas builder butuh socket Baileys yang aktif:
 Jangan membuatnya tanpa menyerahkan `sock`.
 
 ### Button atau AIRich tergambar berbeda
-
 Payload interaktif WhatsApp bisa bergantung pada:
 
 - Versi aplikasi WhatsApp
@@ -7291,35 +7090,29 @@ Payload interaktif WhatsApp bisa bergantung pada:
 Selalu uji format pesan eksperimental sebelum dipakai di produksi.
 
 ### Yang muncul LID, bukan JID nomor telepon
-
 Ini wajar di alur pengalamatan WhatsApp yang lebih baru. Periksa `participantAlt` atau `remoteJidAlt` kalau tersedia, ketimbang membabi buta mengubah `@lid` menjadi `@s.whatsapp.net`.
 
 ### Sesi ter-logout
-
 Kalau WhatsApp mengembalikan `DisconnectReason.loggedOut`, hapus sesi lokal yang tidak valid lalu pairing akunnya lagi.
+
 
 ---
 
-## 🙏 Kredit
-
+## Kredit
 Proyek ini ada berkat kerja banyak pengembang dan proyek open source.
 
 ### Pemelihara Proyek
-
 - **LyncxTeams** — pemelihara, pengembangan fork, integrasi, perbaikan, dan fitur proyek.
 
 ### Baileys / Upstream
-
 - **WhiskeySockets/Baileys** — proyek Baileys upstream dan implementasi inti WhatsApp Web.
 - **adiwajshing** — penulis Baileys yang pertama dan kerja awal ekosistemnya.
 
 ### Kontribusi Fork / Sumber
-
 - **Lia Wynn / ItsLia** — garis keturunan fork dan modifikasi Baileys sebelumnya yang masih dipakai di mana relevan.
 - **Kyuu / kiuur** — kontributor dan pendukung proyek.
 
 ### MessageBuilder Terintegrasi
-
 MessageBuilder bawaan ini berbasis **NIXCODE / Advanced WhatsApp Interactive Message Builder**.
 
 - **Nixel** — pencipta awal implementasi MessageBuilder-nya.
@@ -7328,15 +7121,14 @@ MessageBuilder bawaan ini berbasis **NIXCODE / Advanced WhatsApp Interactive Mes
 Atribusi dan pemberitahuan lisensi builder aslinya wajib dihormati saat memodifikasi atau mendistribusikan ulang sumbernya. Builder-nya diintegrasikan ke paket ini supaya pengguna tidak perlu memasang `baileys-mbuilder` secara terpisah.
 
 ### Kontributor Open Source
-
 Terima kasih kepada setiap kontributor Baileys upstream, penulis library, penguji, pelapor masalah, dan pengembang yang kerjanya membantu proyek ini jadi mungkin.
 
 > Mem-fork dan memodifikasi proyek open source itu dipersilakan. Mohon pertahankan pemberitahuan hak cipta, lisensi, atribusi, dan kontributor yang berlaku.
 
+
 ---
 
-## 💜 TQTO
-
+## TQTO
 <details>
 <summary><strong>Terima Kasih Kepada</strong></summary>
 
@@ -7421,15 +7213,16 @@ Terima kasih kepada semua pihak yang telah memberikan dukungan, inspirasi, dan k
   <sub>Dibangun dan dipelihara dengan kontribusi dari komunitas ❤️</sub>
 </p>
 
+
 ---
 
-## 📄 Lisensi
-
+## Lisensi
 Proyek ini didistribusikan di bawah lisensi yang disertakan bersama repo/paketnya.
 
 Modifikasi khusus LyncxTeams dipelihara oleh **RexxHayanasi**. Sebagian kode diturunkan dari Baileys dan kerja open source lainnya, karena itu tetap membawa pemberitahuan hak cipta, lisensi, dan atribusi upstream yang berlaku.
 
 Jangan menghapus pemberitahuan hak cipta atau atribusi pihak ketiga yang diwajibkan lisensinya masing-masing.
+
 
 ---
 
