@@ -733,99 +733,7 @@ Salin satu blok perintah. `=>` adalah prefix eval bot dan tidak perlu dihapus sa
 => ['sendMessage','groupMetadata','newsletterMetadata','createCallLink','sendPrivateRelay','profilePictureUrl','onWhatsApp','fetchStatus','getBusinessProfile'].map(k => ({ method: k, available: typeof conn[k] === 'function' }))
 ```
 
-### 2. Pesan dasar
-
-**Kirim teks:**
-
-```js
-=> await conn.sendMessage(m.chat, { text: 'Hello from LyncxTeams' })
-```
-
-**Kirim teks dengan quote:**
-
-```js
-=> await conn.sendMessage(m.chat, { text: 'Ini balasan untuk pesan eval.' }, { quoted: m })
-```
-
-**Mention pengirim perintah:**
-
-```js
-=> await conn.sendMessage(m.chat, { text: `Halo @${m.sender.split('@')[0]}`, mentions: [m.sender] })
-```
-
-**Reaction pada pesan pemanggil:**
-
-```js
-=> await conn.sendMessage(m.chat, { react: { text: '⚡', key: m.key } })
-```
-
-**Hapus reaction bot dari pesan tersebut:**
-
-```js
-=> await conn.sendMessage(m.chat, { react: { text: '', key: m.key } })
-```
-
-**Edit pesan bot (ganti ID):**
-
-```js
-=> await conn.sendMessage(m.chat, { text: 'Pesan hasil edit', edit: { remoteJid: m.chat, fromMe: true, id: 'ID_PESAN_BOT' } })
-```
-
-**Kirim lokasi:**
-
-```js
-=> await conn.sendMessage(m.chat, { location: { degreesLatitude: -6.2, degreesLongitude: 106.816666, name: 'Jakarta' } })
-```
-
-**Kirim polling:**
-
-```js
-=> await conn.sendMessage(m.chat, { poll: { name: 'Pilih jawaban', values: ['A', 'B', 'C'], selectableCount: 1 } })
-```
-
-**Kirim kontak:**
-
-```js
-=> await conn.sendMessage(m.chat, { contacts: { displayName: 'LyncxTeams', contacts: [{ vcard: 'BEGIN:VCARD\nVERSION:3.0\nFN:LyncxTeams\nTEL;type=CELL;type=VOICE;waid=6281234567890:+6281234567890\nEND:VCARD' }] } })
-```
-
-**Kirim gambar dari URL:**
-
-```js
-=> await conn.sendMessage(m.chat, { image: { url: 'https://example.com/image.jpg' }, caption: 'LyncxTeams image' })
-```
-
-**Kirim video dari URL:**
-
-```js
-=> await conn.sendMessage(m.chat, { video: { url: 'https://example.com/video.mp4' }, caption: 'LyncxTeams video' })
-```
-
-**Kirim audio:**
-
-```js
-=> await conn.sendMessage(m.chat, { audio: { url: 'https://example.com/audio.mp3' }, mimetype: 'audio/mpeg' })
-```
-
-**Kirim voice note:**
-
-```js
-=> await conn.sendMessage(m.chat, { audio: { url: 'https://example.com/audio.ogg' }, mimetype: 'audio/ogg; codecs=opus', ptt: true })
-```
-
-**Kirim dokumen:**
-
-```js
-=> await conn.sendMessage(m.chat, { document: { url: 'https://example.com/file.pdf' }, mimetype: 'application/pdf', fileName: 'file.pdf' })
-```
-
-**Kirim stiker WebP:**
-
-```js
-=> await conn.sendMessage(m.chat, { sticker: { url: 'https://example.com/sticker.webp' } })
-```
-
-### 3. Membaca pesan dan tanda baca
+### 2. Membaca pesan dan tanda baca
 
 **Lihat objek pesan:**
 
@@ -1178,6 +1086,26 @@ Contoh berikut menggunakan `m.chat`; jalankan di grup untuk operasi grup.
 ```js
 => await conn.updateBlockStatus(m.sender, 'unblock')
 ```
+
+**Laporkan chat yang benar-benar spam/penyalahgunaan:**
+
+```js
+=> await conn.reportSpam(m.chat)
+```
+
+**Laporkan akun pengirim:**
+
+```js
+=> await conn.reportSpam(m.sender)
+```
+
+**Laporkan dengan opsi flow:**
+
+```js
+=> await conn.reportSpam(m.chat, { flow: 'overflow_menu_report', isKnownChat: true })
+```
+
+`reportSpam(jid, options?)` mengirim laporan ke WhatsApp. `jid` harus JID valid. Opsi yang didukung: `flow`, `source`, `subject`, dan `isKnownChat`. Flow default adalah `overflow_menu_report`. Gunakan hanya untuk chat/akun yang memang melanggar aturan; jangan kirim laporan palsu atau berulang.
 
 **Ubah nama profil bot:**
 
@@ -1532,14 +1460,61 @@ Builder di bawah memang diekspor dari paket ini. Semua contoh memakai `MB` agar 
 => await conn.rejectCall('CALL_ID', 'CALLER_JID')
 ```
 
-**Periksa fungsi private relay tersedia:**
+**Kirim pesan yang hanya bisa dibaca target:**
 
 ```js
-=> ({ sendPrivateRelay: typeof conn.sendPrivateRelay === 'function', relayPrivateMessage: typeof conn.relayPrivateMessage === 'function' })
+=> conn.sendPrivateRelay(m.chat, { text: 'Pesan khusus untuk kamu' }, { mode: 'include', target: [m.sender] })
 ```
 
-> [!NOTE]
-> Private relay memakai format dan opsi khusus. Gunakan dokumentasi `PRIVATE_RELAY.md` dari paket untuk payload yang sesuai; contoh ini sengaja tidak menebak isi pesan relay.
+**Kirim ke semua anggota kecuali target:**
+
+```js
+=> conn.sendPrivateRelay(m.chat, { text: 'Pesan untuk anggota grup lainnya' }, { mode: 'exclude', target: ['628123456789@s.whatsapp.net'] })
+```
+
+**Kirim hanya ke beberapa target:**
+
+```js
+=> conn.sendPrivateRelay(m.chat, { text: 'Pesan khusus' }, { mode: 'include', target: ['628111@s.whatsapp.net', '628222@s.whatsapp.net'] })
+```
+
+**Kirim hanya ke anggota yang di-mention:**
+
+```js
+=> conn.sendPrivateRelay(m.chat, { text: 'Pesan untuk yang di-mention' }, { mode: 'include', target: m.mentionedJid || [] })
+```
+
+**Kirim hanya ke admin grup:**
+
+```js
+=> (async () => { const meta = await conn.groupMetadata(m.chat); const admins = meta.participants.filter(p => p.admin).map(p => p.id); return conn.sendPrivateRelay(m.chat, { text: 'Pesan khusus admin' }, { mode: 'include', target: admins }) })()
+```
+
+**Kirim gambar privat dengan reply:**
+
+```js
+=> conn.sendPrivateRelay(m.chat, { image: { url: 'https://example.com/image.jpg' }, caption: 'Gambar privat' }, { mode: 'include', target: [m.sender], quoted: m })
+```
+
+**Kirim hanya ke HP utama target:**
+
+```js
+=> conn.sendPrivateRelay(m.chat, { text: 'Pesan untuk perangkat utama' }, { mode: 'include', target: [m.sender], deviceMode: 'primary' })
+```
+
+**Kirim tanpa memberikan kunci ke perangkat bot sendiri:**
+
+```js
+=> conn.sendPrivateRelay(m.chat, { text: 'Private relay test' }, { mode: 'include', target: [m.sender], targetMe: false })
+```
+
+**Kirim proto message secara langsung:**
+
+```js
+=> conn.relayPrivateMessage(m.chat, { extendedTextMessage: { text: 'Raw private relay message' } }, { mode: 'include', target: [m.sender] })
+```
+
+Private relay ditujukan untuk chat grup (`@g.us`). `mode: 'include'` memberi kunci hanya kepada target, sedangkan `mode: 'exclude'` memberi kunci kepada semua kecuali target. `target` menerima JID PN maupun LID. Payload pesan mengikuti format `sendMessage`.
 
 ### 13. Status channel dan helper newsletter
 
