@@ -2,10 +2,8 @@
 
 <div align="center">
   <h1>💫 @lyncxteams/baileys</h1>
-  <p><em>Library WhatsApp custom di atas Baileys — diperbaiki, dimodernkan, dan dilengkapi message builder bawaan.</em></p>
-
-  <img src="https://github.com/LyncxTeams/baileys" width="400" alt="LyncxTeams Baileys Banner" />
-  <br><br>
+  <p><em>Library WhatsApp custom berbasis Baileys dengan penyesuaian LyncxTeams dan MessageBuilder bawaan.</em></p>
+  <br>
 
   <p>
     <a href="https://www.npmjs.com/package/@lyncxteams/baileys">
@@ -21,24 +19,20 @@
     <img src="https://img.shields.io/badge/Module-ESM-F7DF1E?logo=javascript&logoColor=black" alt="ESM" />
     <img src="https://img.shields.io/badge/MessageBuilder-v4.7-7F5AF0" alt="Message Builder" />
   </p>
-
-  <p>
-    <a href="https://whatsapp.com/channel/0029Vb8RvQKEFeXmGnJr621s">
-      <img src="https://img.shields.io/badge/Join-WhatsApp%20Channel-25D366?logo=whatsapp&logoColor=white" alt="WhatsApp Channel" />
-    </a>
-  </p>
 </div>
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b636-4676-a213-39d67b2d5d67.gif" width="100%">
-</div>
-
 
 ## 🐞 Menemukan Bug?
 
-Untuk laporan bug dan kontribusi, gunakan issue tracker repository LyncxTeams.
+Laporkan bug, masalah kompatibilitas, atau usulan perbaikan melalui issue tracker repository LyncxTeams.
 
-<a href="https://github.com/LyncxTeams/baileys/issues">GitHub Issues</a>
+<p align="left">
+  <a href="https://github.com/LyncxTeams/baileys/issues">
+    <img src="https://img.shields.io/badge/GitHub-Report%20an%20Issue-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Issues" />
+  </a>
+  <a href="https://github.com/LyncxTeams/baileys">
+    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository" />
+  </a>
+</p>
 
 ---
 
@@ -48,11 +42,8 @@ Untuk laporan bug dan kontribusi, gunakan issue tracker repository LyncxTeams.
 > Pakai proyek ini dengan bertanggung jawab, dan patuhi Ketentuan Layanan WhatsApp serta hukum yang berlaku.
 
 > [!NOTE]
-> [!NOTE]
 > Proyek ini dibangun di atas ekosistem Baileys, lalu ditambah perbaikan, penyesuaian kompatibilitas, dukungan pesan interaktif, dan MessageBuilder bawaan.
 
-> [!CAUTION]
-> Channel update proyek yang lama sudah tidak dipakai. Informasi rilis, catatan perubahan, dan pengumuman proyek diterbitkan lewat WhatsApp Channel yang ditautkan di README ini.
 
 ---
 
@@ -7315,7 +7306,7 @@ Proyek ini ada berkat kerja banyak pengembang dan proyek open source.
 
 ### Pemelihara Proyek
 
-- **RexxHayanasi** — pemelihara, pengembangan fork, integrasi, perbaikan, fitur, dan penamaan proyek.
+- **LyncxTeams** — pemelihara, pengembangan fork, integrasi, perbaikan, dan fitur proyek.
 
 ### Baileys / Upstream
 
@@ -7331,7 +7322,7 @@ Proyek ini ada berkat kerja banyak pengembang dan proyek open source.
 
 MessageBuilder bawaan ini berbasis **NIXCODE / Advanced WhatsApp Interactive Message Builder**.
 
-- **Nixel** — pencipta awal implementasi MessageBuilder-nya. [WhatsApp](https://wa.me/6285188349341) · [Channel](https://whatsapp.com/channel/0029VbCV1ck8fewpdNb2TY2k)
+- **Nixel** — pencipta awal implementasi MessageBuilder-nya.
 - **Ahmad tumbuh kembang** — kontributor MessageBuilder.
 
 Atribusi dan pemberitahuan lisensi builder aslinya wajib dihormati saat memodifikasi atau mendistribusikan ulang sumbernya. Builder-nya diintegrasikan ke paket ini supaya pengguna tidak perlu memasang `baileys-mbuilder` secara terpisah.
