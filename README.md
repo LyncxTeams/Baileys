@@ -82,7 +82,6 @@ The sections below contain the detailed API reference and examples. Code samples
 > Proyek ini dibangun di atas ekosistem Baileys, lalu ditambah perbaikan, penyesuaian kompatibilitas, dukungan pesan interaktif, dan MessageBuilder bawaan.
 
 
-
 ---
 
 ## Ringkasan
@@ -93,19 +92,19 @@ Paket ini menggabungkan lapisan socket, utilitas protokol, dukungan pengalamatan
 ### Yang Menonjol
 | Fitur | Keterangan |
 |---|---|
-| 🔌 Multi-Device | Terhubung ke WhatsApp lewat protokol Baileys Multi-Device. |
-| 🔐 Kode Pairing | Mendukung kode pairing biasa maupun kustom 8 karakter. |
-| 🖱️ Button Interaktif | Quick reply, URL, copy, call, list/select, lokasi, dan button native-flow lainnya. |
-| 🧱 MessageBuilder Terintegrasi | `Button`, `ButtonV2`, `Carousel`, `AIRich`, dan `Toolkit` ada di paket yang sama. |
-| 🖼️ Album | Mengirim beberapa gambar/video sebagai satu pesan album. |
-| 📢 Channel | Membuat, mengikuti, mengubah, bereaksi, dan mengambil data WhatsApp Channel. |
-| 👥 Grup | Pembuatan grup, pengelolaan anggota, metadata, pengubahan deskripsi, dan lainnya. |
-| 🪪 Pengalamatan LID / PN | Mendukung pengalamatan LID yang baru, sekaligus membuka alternatif PN/JID yang diberikan WhatsApp kalau ada. |
-| 📷 Foto Profil | Mengambil, mengubah, dan menghapus foto profil. |
-| 🤖 AI Rich | Builder respons rich eksperimental untuk teks, kode, tabel, media, saran, dan layout lainnya. |
-| 📞 Panggilan Suara & Video | Melakukan panggilan audio, video, dan berbagi layar di sesi yang sudah dipunyai bot, dengan playlist yang menggerakkan panggilannya. |
-| 🗄️ Sesi di Database | Menyimpan sesi di SQLite, PostgreSQL, MySQL, MongoDB, Redis, atau NekoDB, bukan di berkas. |
-| 📦 ESM | Paket ESM-first, butuh Node.js 20+; disarankan Node.js 22 atau lebih baru. |
+|  Multi-Device | Terhubung ke WhatsApp lewat protokol Baileys Multi-Device. |
+|  Kode Pairing | Mendukung kode pairing biasa maupun kustom 8 karakter. |
+| ️ Button Interaktif | Quick reply, URL, copy, call, list/select, lokasi, dan button native-flow lainnya. |
+|  MessageBuilder Terintegrasi | `Button`, `ButtonV2`, `Carousel`, `AIRich`, dan `Toolkit` ada di paket yang sama. |
+| ️ Album | Mengirim beberapa gambar/video sebagai satu pesan album. |
+|  Channel | Membuat, mengikuti, mengubah, bereaksi, dan mengambil data WhatsApp Channel. |
+|  Grup | Pembuatan grup, pengelolaan anggota, metadata, pengubahan deskripsi, dan lainnya. |
+|  Pengalamatan LID / PN | Mendukung pengalamatan LID yang baru, sekaligus membuka alternatif PN/JID yang diberikan WhatsApp kalau ada. |
+|  Foto Profil | Mengambil, mengubah, dan menghapus foto profil. |
+|  AI Rich | Builder respons rich eksperimental untuk teks, kode, tabel, media, saran, dan layout lainnya. |
+|  Panggilan Suara & Video | Melakukan panggilan audio, video, dan berbagi layar di sesi yang sudah dipunyai bot, dengan playlist yang menggerakkan panggilannya. |
+| ️ Sesi di Database | Menyimpan sesi di SQLite, PostgreSQL, MySQL, MongoDB, Redis, atau NekoDB, bukan di berkas. |
+|  ESM | Paket ESM-first, butuh Node.js 20+; disarankan Node.js 22 atau lebih baru. |
 
 ### ️ Apa Saja Yang Bisa Dilakukan?
 Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bagian yang memperlihatkan kodenya.
@@ -356,7 +355,9 @@ Cek versi Node.js kamu:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-bash">node -v</code></pre>
+```bash
+node -v
+```
 
 </details>
 
@@ -369,7 +370,9 @@ Pasang langsung dari npm:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-bash">npm install @lyncxteams/baileys</code></pre>
+```bash
+npm install @lyncxteams/baileys
+```
 
 </details>
 
@@ -379,12 +382,14 @@ Pakai paketnya langsung dengan namanya sendiri:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-json">{
+```json
+{
   "type": "module",
   "dependencies": {
     "@lyncxteams/baileys": "latest"
   }
-}</code></pre>
+}
+```
 
 </details>
 
@@ -396,8 +401,10 @@ Pemasangan dasarnya tidak membawa library pengolah gambar atau video. Ukurannya 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-bash">npm i sharp            # thumbnail, resize, MessageBuilder Toolkit.resize
-npm i fluent-ffmpeg    # frame preview video, MessageBuilder Toolkit.getMp4Preview</code></pre>
+```bash
+npm i sharp            # thumbnail, resize, MessageBuilder Toolkit.resize
+npm i fluent-ffmpeg    # frame preview video, MessageBuilder Toolkit.getMp4Preview
+```
 
 </details>
 
@@ -416,10 +423,12 @@ Periksa saat runtime sebelum mengandalkan salah satunya:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { hasOptionalMedia } from '@lyncxteams/baileys'
+```js
+import { hasOptionalMedia } from '@lyncxteams/baileys'
 
 await hasOptionalMedia('sharp')          // false kalau belum terpasang
-await hasOptionalMedia('fluent-ffmpeg')</code></pre>
+await hasOptionalMedia('fluent-ffmpeg')
+```
 
 </details>
 
@@ -430,7 +439,9 @@ await hasOptionalMedia('fluent-ffmpeg')</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import makeWASocket from '@lyncxteams/baileys'</code></pre>
+```js
+import makeWASocket from '@lyncxteams/baileys'
+```
 
 </details>
 
@@ -439,7 +450,8 @@ Mengimpor utilitas tambahan:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import makeWASocket, {
+```js
+import makeWASocket, {
   useMultiFileAuthState,
   DisconnectReason,
   Button,
@@ -449,7 +461,8 @@ Mengimpor utilitas tambahan:
   Toolkit,
   MessageBuilder,
   MB
-} from '@lyncxteams/baileys'</code></pre>
+} from '@lyncxteams/baileys'
+```
 
 </details>
 
@@ -463,7 +476,8 @@ Mengimpor utilitas tambahan:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import makeWASocket, {
+```js
+import makeWASocket, {
   useMultiFileAuthState,
   DisconnectReason
 } from '@lyncxteams/baileys'
@@ -479,7 +493,7 @@ async function startSock() {
 
   sock.ev.on('creds.update', saveCreds)
 
-  sock.ev.on('connection.update', ({ connection, lastDisconnect }) =&gt; {
+  sock.ev.on('connection.update', ({ connection, lastDisconnect }) => {
     if (connection === 'open') {
       console.log('WhatsApp tersambung')
     }
@@ -499,7 +513,8 @@ async function startSock() {
   return sock
 }
 
-startSock()</code></pre>
+startSock()
+```
 
 </details>
 
@@ -564,7 +579,9 @@ Mana pun yang kamu pilih, sambungkan `saveCreds` ke event `creds.update` — kal
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">sock.ev.on('creds.update', saveCreds)</code></pre>
+```js
+sock.ev.on('creds.update', saveCreds)
+```
 
 </details>
 
@@ -574,9 +591,11 @@ Satu folder, satu berkas per kunci. Sederhana, tanpa dependensi, dan pilihan yan
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { useMultiFileAuthState } from '@lyncxteams/baileys'
+```js
+import { useMultiFileAuthState } from '@lyncxteams/baileys'
 
-const { state, saveCreds } = await useMultiFileAuthState('./session')</code></pre>
+const { state, saveCreds } = await useMultiFileAuthState('./session')
+```
 
 </details>
 
@@ -588,9 +607,11 @@ Semuanya dalam satu berkas JSON. Lebih mudah dibackup atau dipindah antar host, 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { useSingleFileAuthState } from '@lyncxteams/baileys'
+```js
+import { useSingleFileAuthState } from '@lyncxteams/baileys'
 
-const { state, saveCreds } = await useSingleFileAuthState('./session.json')</code></pre>
+const { state, saveCreds } = await useSingleFileAuthState('./session.json')
+```
 
 </details>
 
@@ -600,16 +621,20 @@ Kunci disimpan di database sungguhan, jadi pembacaan bersamaan dan kumpulan kunc
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-bash">npm i better-sqlite3</code></pre>
+```bash
+npm i better-sqlite3
+```
 
 </details>
 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { useSqliteAuthState } from '@lyncxteams/baileys'
+```js
+import { useSqliteAuthState } from '@lyncxteams/baileys'
 
-const { state, saveCreds } = await useSqliteAuthState({ dbPath: './session.db' })</code></pre>
+const { state, saveCreds } = await useSqliteAuthState({ dbPath: './session.db' })
+```
 
 </details>
 
@@ -618,10 +643,12 @@ Kalau bagian lain botmu sudah punya koneksi, serahkan koneksi itu saja:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import Database from 'better-sqlite3'
+```js
+import Database from 'better-sqlite3'
 
 const database = new Database('./bot.db')
-const { state, saveCreds } = await useSqliteAuthState({ database })</code></pre>
+const { state, saveCreds } = await useSqliteAuthState({ database })
+```
 
 </details>
 
@@ -633,17 +660,20 @@ Untuk bot yang sudah menjalankan database, atau beberapa bot yang berbagi satu d
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-bash">npm i pg        # PostgreSQL
+```bash
+npm i pg        # PostgreSQL
 npm i mysql2    # MySQL atau MariaDB
 npm i mongodb   # MongoDB
-npm i ioredis   # Redis (node-redis juga bisa)</code></pre>
+npm i ioredis   # Redis (node-redis juga bisa)
+```
 
 </details>
 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import {
+```js
+import {
     usePostgresAuthState,
     useMySQLAuthState,
     useMongoAuthState,
@@ -665,7 +695,8 @@ const { state, saveCreds } = await useMongoAuthState({
 
 const { state, saveCreds } = await useRedisAuthState({
     uri: 'redis://localhost:6379'
-})</code></pre>
+})
+```
 
 </details>
 
@@ -674,10 +705,12 @@ Serahkan koneksimu sendiri kalau bagian lain bot sudah punya, dan beri nama sesi
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { Pool } from 'pg'
+```js
+import { Pool } from 'pg'
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL })
-const { state, saveCreds } = await usePostgresAuthState({ pool, session: 'sales-bot' })</code></pre>
+const { state, saveCreds } = await usePostgresAuthState({ pool, session: 'sales-bot' })
+```
 
 </details>
 
@@ -700,9 +733,11 @@ Untuk bot yang state-nya sudah ada di NekoDB, supaya sesinya ikut bersama data y
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { useNekoDBAuth } from '@lyncxteams/baileys'
+```js
+import { useNekoDBAuth } from '@lyncxteams/baileys'
 
-const { state, saveCreds } = await useNekoDBAuth(db)</code></pre>
+const { state, saveCreds } = await useNekoDBAuth(db)
+```
 
 </details>
 
@@ -711,7 +746,9 @@ Argumen pertama harus instance NekoDB yang sudah tersambung; koleksinya default 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const { state, saveCreds } = await useNekoDBAuth(db, 'my_sessions')</code></pre>
+```js
+const { state, saveCreds } = await useNekoDBAuth(db, 'my_sessions')
+```
 
 </details>
 
@@ -721,7 +758,8 @@ Setiap penyimpanan membaca kunci dari disk atau database pada tiap dekripsi. Mem
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import makeWASocket, { makeCacheableSignalKeyStore, useMultiFileAuthState } from '@lyncxteams/baileys'
+```js
+import makeWASocket, { makeCacheableSignalKeyStore, useMultiFileAuthState } from '@lyncxteams/baileys'
 import pino from 'pino'
 
 const logger = pino({ level: 'silent' })
@@ -733,7 +771,8 @@ const sock = makeWASocket({
     keys: makeCacheableSignalKeyStore(state.keys, logger)
   },
   logger
-})</code></pre>
+})
+```
 
 </details>
 
@@ -745,19 +784,21 @@ Auth state menyimpan kunci, bukan percakapan. Untuk chat, kontak, dan riwayat pe
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { makeInMemoryStore } from '@lyncxteams/baileys'
+```js
+import { makeInMemoryStore } from '@lyncxteams/baileys'
 
 const store = makeInMemoryStore({ logger })
 store.readFromFile('./store.json')
-setInterval(() =&gt; store.writeToFile('./store.json'), 10_000)
+setInterval(() => store.writeToFile('./store.json'), 10_000)
 
 const sock = makeWASocket({
   auth: state,
   logger,
-  getMessage: async (key) =&gt; (await store.loadMessage(key.remoteJid, key.id))?.message
+  getMessage: async (key) => (await store.loadMessage(key.remoteJid, key.id))?.message
 })
 
-store.bind(sock.ev)</code></pre>
+store.bind(sock.ev)
+```
 
 </details>
 
@@ -772,12 +813,14 @@ Kode pairing bisa diminta setelah socket dibuat.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const phoneNumber = '6281234567890'
+```js
+const phoneNumber = '6281234567890'
 
 if (!state.creds.registered) {
   const code = await sock.requestPairingCode(phoneNumber)
   console.log('Kode pairing:', code)
-}</code></pre>
+}
+```
 
 </details>
 
@@ -786,9 +829,11 @@ Nomornya dinormalkan sebelum dipakai, jadi `+62 812-3456-7890` dan `628123456789
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.requestPairingCode('081234567890')
+```js
+await sock.requestPairingCode('081234567890')
 // Boom 400: phoneNumber must be in international format:
-// kode negara lalu nomor nasionalnya, hanya digit</code></pre>
+// kode negara lalu nomor nasionalnya, hanya digit
+```
 
 </details>
 
@@ -798,13 +843,15 @@ Nomornya dinormalkan sebelum dipakai, jadi `+62 812-3456-7890` dan `628123456789
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">try {
+```js
+try {
   const code = await sock.requestPairingCode(phoneNumber)
   console.log('Kode pairing:', code)
 } catch (error) {
   console.log(error.message)   // misalnya rate-overlimit, not-allowed
   console.log(error.data)      // misalnya 429
-}</code></pre>
+}
+```
 
 </details>
 
@@ -816,13 +863,15 @@ Respons pairing hanya bisa didekripsi oleh kunci yang menghasilkannya, jadi perm
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">try {
+```js
+try {
   await sock.requestPairingCode(phoneNumber)
 } catch (error) {
   if (error.output?.statusCode === 409) {
     console.log('masih menggantung, sisa detik:', error.data.secondsLeft)
   }
-}</code></pre>
+}
+```
 
 </details>
 
@@ -831,8 +880,10 @@ Panggil `cancelPairingCode()` untuk meninggalkan percobaan yang menggantung lalu
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">sock.cancelPairingCode()
-const code = await sock.requestPairingCode(phoneNumber)</code></pre>
+```js
+sock.cancelPairingCode()
+const code = await sock.requestPairingCode(phoneNumber)
+```
 
 </details>
 
@@ -844,12 +895,14 @@ Kode pairing kustom harus berisi tepat **8 karakter**.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const code = await sock.requestPairingCode(
+```js
+const code = await sock.requestPairingCode(
   '6281234567890',
   'LYNCX01'
 )
 
-console.log(code)</code></pre>
+console.log(code)
+```
 
 </details>
 
@@ -859,7 +912,9 @@ console.log(code)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-bash">node script/testpairing.js 6281234567890 --check-only</code></pre>
+```bash
+node script/testpairing.js 6281234567890 --check-only
+```
 
 </details>
 
@@ -872,7 +927,8 @@ console.log(code)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">sock.ev.on('messages.upsert', async ({ messages, type }) =&gt; {
+```js
+sock.ev.on('messages.upsert', async ({ messages, type }) => {
   if (type !== 'notify') return
 
   const message = messages[0]
@@ -880,7 +936,8 @@ console.log(code)</code></pre>
 
   console.log('Dari:', message.key.remoteJid)
   console.log('Pesan:', message.message)
-})</code></pre>
+})
+```
 
 </details>
 
@@ -889,7 +946,8 @@ Mengambil teksnya secara sederhana:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">sock.ev.on('messages.upsert', async ({ messages }) =&gt; {
+```js
+sock.ev.on('messages.upsert', async ({ messages }) => {
   const m = messages[0]
   if (!m?.message) return
 
@@ -901,7 +959,8 @@ Mengambil teksnya secara sederhana:
     ''
 
   console.log(text)
-})</code></pre>
+})
+```
 
 </details>
 
@@ -914,10 +973,12 @@ Semua yang dipancarkan socket, lewat `sock.ev`. Berlangganan satu-satu, atau sek
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">sock.ev.process(async (events) =&gt; {
+```js
+sock.ev.process(async (events) => {
   if (events['messages.upsert']) { /* ... */ }
   if (events['connection.update']) { /* ... */ }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1002,8 +1063,10 @@ Sudah terpasang otomatis di `makeWASocket`, tidak perlu import apa pun:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">conn.sendPrivateRelay(jid, content, options)
-conn.relayPrivateMessage(jid, message, options)   // versi mentah (proto message)</code></pre>
+```js
+conn.sendPrivateRelay(jid, content, options)
+conn.relayPrivateMessage(jid, message, options)   // versi mentah (proto message)
+```
 
 </details>
 
@@ -1045,7 +1108,9 @@ Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">=&gt; conn.sendPrivateRelay(m.chat, { text: 'Rahasia, cuma kamu yang lihat' }, { mode: 'include', target: [m.sender] })</code></pre>
+```js
+=> conn.sendPrivateRelay(m.chat, { text: 'Rahasia, cuma kamu yang lihat' }, { mode: 'include', target: [m.sender] })
+```
 
 </details>
 
@@ -1053,7 +1118,9 @@ Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">=&gt; conn.sendPrivateRelay(m.chat, { text: 'Halo semua' }, { mode: 'exclude', target: ['628123456789@s.whatsapp.net'] })</code></pre>
+```js
+=> conn.sendPrivateRelay(m.chat, { text: 'Halo semua' }, { mode: 'exclude', target: ['628123456789@s.whatsapp.net'] })
+```
 
 </details>
 
@@ -1061,7 +1128,9 @@ Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">=&gt; conn.sendPrivateRelay(m.chat, { text: 'Khusus admin' }, { mode: 'include', target: ['628111@s.whatsapp.net', '628222@s.whatsapp.net'] })</code></pre>
+```js
+=> conn.sendPrivateRelay(m.chat, { text: 'Khusus admin' }, { mode: 'include', target: ['628111@s.whatsapp.net', '628222@s.whatsapp.net'] })
+```
 
 </details>
 
@@ -1069,7 +1138,9 @@ Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">=&gt; conn.sendPrivateRelay(m.chat, { text: 'Cek ini' }, { mode: 'include', target: m.mentionedJid || [] })</code></pre>
+```js
+=> conn.sendPrivateRelay(m.chat, { text: 'Cek ini' }, { mode: 'include', target: m.mentionedJid || [] })
+```
 
 </details>
 
@@ -1077,7 +1148,9 @@ Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">=&gt; (async () =&gt; { const meta = await conn.groupMetadata(m.chat); const admins = meta.participants.filter(p =&gt; p.admin).map(p =&gt; p.id); return conn.sendPrivateRelay(m.chat, { text: 'Khusus admin' }, { mode: 'include', target: admins }) })()</code></pre>
+```js
+=> (async () => { const meta = await conn.groupMetadata(m.chat); const admins = meta.participants.filter(p => p.admin).map(p => p.id); return conn.sendPrivateRelay(m.chat, { text: 'Khusus admin' }, { mode: 'include', target: admins }) })()
+```
 
 </details>
 
@@ -1085,7 +1158,9 @@ Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">=&gt; conn.sendPrivateRelay(m.chat, { image: { url: 'https://example.com/a.jpg' }, caption: 'Privat' }, { mode: 'include', target: [m.sender], quoted: m })</code></pre>
+```js
+=> conn.sendPrivateRelay(m.chat, { image: { url: 'https://example.com/a.jpg' }, caption: 'Privat' }, { mode: 'include', target: [m.sender], quoted: m })
+```
 
 </details>
 
@@ -1093,7 +1168,9 @@ Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">=&gt; conn.sendPrivateRelay(m.chat, { text: 'Cuma HP utama' }, { mode: 'include', target: [m.sender], deviceMode: 'primary' })</code></pre>
+```js
+=> conn.sendPrivateRelay(m.chat, { text: 'Cuma HP utama' }, { mode: 'include', target: [m.sender], deviceMode: 'primary' })
+```
 
 </details>
 
@@ -1101,7 +1178,9 @@ Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">=&gt; conn.sendPrivateRelay(m.chat, { text: 'tes' }, { mode: 'include', target: [m.sender], targetMe: false })</code></pre>
+```js
+=> conn.sendPrivateRelay(m.chat, { text: 'tes' }, { mode: 'include', target: [m.sender], targetMe: false })
+```
 
 </details>
 
@@ -1109,7 +1188,9 @@ Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">=&gt; conn.relayPrivateMessage(m.chat, { extendedTextMessage: { text: 'raw' } }, { mode: 'include', target: [m.sender] })</code></pre>
+```js
+=> conn.relayPrivateMessage(m.chat, { extendedTextMessage: { text: 'raw' } }, { mode: 'include', target: [m.sender] })
+```
 
 </details>
 
@@ -1127,7 +1208,6 @@ Contoh memakai `m.chat` (jid grup) dan `m.sender` (pengirim perintah).
 - Jika hasilnya tidak sesuai, coba `await conn.resetGroupSenderKey(m.chat)` agar kunci grup didistribusikan ulang.
 
 
-
 ---
 
 ## ️ WhatsApp Web Screenshot (`conn.wweb`)
@@ -1143,15 +1223,17 @@ beberapa baris.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import puppeteer from 'puppeteer'
+```js
+import puppeteer from 'puppeteer'
 
-let handler = async (m, { conn, args, usedPrefix, command }) =&gt; {
+let handler = async (m, { conn, args, usedPrefix, command }) => {
   conn.wweb.usePuppeteer(puppeteer)          // opsional tapi paling aman
   await conn.wweb.run(m, { mode: (args[0] || 'chat').toLowerCase(), usedPrefix, command, name: conn.getName?.(m.chat) })
 }
 handler.command = /^(sswa|sswaweb)$/i
 handler.owner = true
-export default handler</code></pre>
+export default handler
+```
 
 </details>
 
@@ -1174,10 +1256,12 @@ Perintah: `.sswa` (screenshot chat ini), `.sswa home`, `.sswa login`, `.sswa res
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">=&gt; conn.wweb.run(m, { mode: 'chat', name: conn.getName(m.chat) })
-=&gt; conn.wweb.run(m, { mode: 'home' })
-=&gt; conn.sendMessage(m.chat, { image: await conn.wweb.screenshotChat(m.chat), caption: 'ss' }, { quoted: m })
-=&gt; conn.wweb.reset()</code></pre>
+```js
+=> conn.wweb.run(m, { mode: 'chat', name: conn.getName(m.chat) })
+=> conn.wweb.run(m, { mode: 'home' })
+=> conn.sendMessage(m.chat, { image: await conn.wweb.screenshotChat(m.chat), caption: 'ss' }, { quoted: m })
+=> conn.wweb.reset()
+```
 
 </details>
 
@@ -1204,10 +1288,12 @@ Bentuk yang umum antara lain:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-text">6281234567890@s.whatsapp.net
+```text
+6281234567890@s.whatsapp.net
 123456789012345@lid
 120363xxxxxxxxxx@g.us
-123456789@newsletter</code></pre>
+123456789@newsletter
+```
 
 </details>
 
@@ -1216,12 +1302,14 @@ Untuk pesan masuk, periksa field key yang diberikan WhatsApp:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const key = message.key
+```js
+const key = message.key
 
 console.log('remoteJid:', key.remoteJid)
 console.log('remoteJidAlt:', key.remoteJidAlt)
 console.log('participant:', key.participant)
-console.log('participantAlt:', key.participantAlt)</code></pre>
+console.log('participantAlt:', key.participantAlt)
+```
 
 </details>
 
@@ -1232,13 +1320,15 @@ Pakai helper JID bawaan saat menormalkan penanda:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { jidDecode, jidEncode, jidNormalizedUser } from '@lyncxteams/baileys'
+```js
+import { jidDecode, jidEncode, jidNormalizedUser } from '@lyncxteams/baileys'
 
 const normalized = jidNormalizedUser(jid)
 const decoded = jidDecode(jid)
 
 console.log(normalized)
-console.log(decoded)</code></pre>
+console.log(decoded)
+```
 
 </details>
 
@@ -1253,9 +1343,11 @@ console.log(decoded)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   text: 'Salam dari LyncxTeams 💜'
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1266,7 +1358,9 @@ console.log(decoded)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">{ viewOnceMessageV2Extension: { message: { extendedTextMessage: { text, viewOnce: true } } } }</code></pre>
+```js
+{ viewOnceMessageV2Extension: { message: { extendedTextMessage: { text, viewOnce: true } } } }
+```
 
 </details>
 
@@ -1280,10 +1374,12 @@ console.log(decoded)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   text: 'Halo @628123456789',
   mentions: ['628123456789@s.whatsapp.net']
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1294,10 +1390,12 @@ console.log(decoded)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   text: 'Cek grup ini',
   groupMentions: [{ groupJid: '120363XXXXXXXXXXXX@g.us', groupSubject: 'Nama Grup' }]
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1314,7 +1412,8 @@ Repost konten channel dengan label **"Diteruskan dari [Nama Channel]"**. Menyete
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   text: 'Repost dari channel',
   forwardedNewsletter: {
     newsletterJid: '120363XXXXXXXXXXXX@newsletter',
@@ -1322,7 +1421,8 @@ Repost konten channel dengan label **"Diteruskan dari [Nama Channel]"**. Menyete
     newsletterName: 'Nama Channel',
     contentType: 0
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1334,10 +1434,12 @@ Repost konten channel dengan label **"Diteruskan dari [Nama Channel]"**. Menyete
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   image: { url: 'https://example.com/image.jpg' },
   caption: 'Gambar LyncxTeams'
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1345,10 +1447,12 @@ Repost konten channel dengan label **"Diteruskan dari [Nama Channel]"**. Menyete
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   video: { url: 'https://example.com/video.mp4' },
   caption: 'Video LyncxTeams'
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1356,11 +1460,13 @@ Repost konten channel dengan label **"Diteruskan dari [Nama Channel]"**. Menyete
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   document: { url: 'https://example.com/file.pdf' },
   fileName: 'dokumen.pdf',
   mimetype: 'application/pdf'
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1368,14 +1474,16 @@ Repost konten channel dengan label **"Diteruskan dari [Nama Channel]"**. Menyete
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   location: {
     degreesLatitude: -6.200000,
     degreesLongitude: 106.816666,
     name: 'Jakarta',
     address: 'Jakarta, Indonesia'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1383,13 +1491,15 @@ Repost konten channel dengan label **"Diteruskan dari [Nama Channel]"**. Menyete
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   poll: {
     name: 'Pilih satu',
     values: ['Opsi A', 'Opsi B', 'Opsi C'],
     selectableCount: 1
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1425,7 +1535,8 @@ Setiap sakelar yang ditampilkan WhatsApp di composer polling-nya sendiri tersedi
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js"> await conn.sendMessage(jid, {
+```js
+ await conn.sendMessage(jid, {
   poll: {
     name: 'Yang mana yang enak?',
     values: [
@@ -1436,7 +1547,8 @@ Setiap sakelar yang ditampilkan WhatsApp di composer polling-nya sendiri tersedi
     hideVoter: true,
     endDate: new Date(Date.now() + 24 * 60 * 60 * 1000)
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1453,8 +1565,10 @@ Dua catatan yang perlu diketahui. Penerima WhatsApp **Web** lebih ketat daripada
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-text">isPhotoPollReceiverEnabled(msg) =
-  isNewsletterMsg({ from: msg.from, to: msg.to }) &amp;&amp; isNewsletterPhotoPollsReceiverEnabled()</code></pre>
+```text
+isPhotoPollReceiverEnabled(msg) =
+  isNewsletterMsg({ from: msg.from, to: msg.to }) && isNewsletterPhotoPollsReceiverEnabled()
+```
 
 </details>
 
@@ -1469,7 +1583,8 @@ Dengan kata lain, Web hanya menerima polling foto di dalam channel, jadi polling
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   text: 'LyncxTeams Baileys',
   contextInfo: {
     externalAdReply: {
@@ -1482,7 +1597,8 @@ Dengan kata lain, Web hanya menerima polling foto di dalam channel, jadi polling
       showAdAttribution: false
     }
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1493,7 +1609,8 @@ Ada juga bentuk singkat yang duduk di sebelah konten, bukan di dalam `contextInf
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   text: 'LyncxTeams Baileys',
   externalAdReply: {
     title: 'LyncxTeams Baileys',
@@ -1502,7 +1619,8 @@ Ada juga bentuk singkat yang duduk di sebelah konten, bukan di dalam `contextInf
     url: 'https://www.npmjs.com/package/@lyncxteams/baileys',
     largeThumbnail: true
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1514,9 +1632,11 @@ Field-nya masih hidup — build WhatsApp sekarang tetap mem-parse `externalAdRep
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">if (!isSMB() &amp;&amp; !getIsSentByMe(t) &amp;&amp; r != null
-    &amp;&amp; getABPropConfigValue("ctwa_suppress_message_with_external_ad_reply_consumer_db_level_enabled"))
-  throw new MessageValidationError("This is a spam message sent to consumer number with externalAdReply", INVALID_MESSAGE)</code></pre>
+```js
+if (!isSMB() && !getIsSentByMe(t) && r != null
+    && getABPropConfigValue("ctwa_suppress_message_with_external_ad_reply_consumer_db_level_enabled"))
+  throw new MessageValidationError("This is a spam message sent to consumer number with externalAdReply", INVALID_MESSAGE)
+```
 
 </details>
 
@@ -1538,7 +1658,8 @@ Contoh di atas memakai `externalAdReply` sebagai hiasan. Click-to-WhatsApp adala
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { proto } from '@lyncxteams/baileys'
+```js
+import { proto } from '@lyncxteams/baileys'
 
 await sock.sendMessage(jid, {
   text: 'Halo, saya mau tanya soal promonya',
@@ -1566,7 +1687,8 @@ await sock.sendMessage(jid, {
       containsCtwaFlowsAutoLabel: true
     }
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1594,19 +1716,21 @@ Saat diterima, klien melipat `contextInfo` menjadi `ctwaContext` pada pesannya, 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">n.alwaysShowAdAttribution = contextInfo.alwaysShowAdAttribution
+```js
+n.alwaysShowAdAttribution = contextInfo.alwaysShowAdAttribution
 n.conversionSource        = contextInfo.conversionSource
 n.conversionDelaySeconds  = contextInfo.conversionDelaySeconds
-n.conversionData          = ctwaSignals != null &amp;&amp; ctwaPayload != null ? ctwaPayload : conversionData
+n.conversionData          = ctwaSignals != null && ctwaPayload != null ? ctwaPayload : conversionData
 const d = contextInfo.externalAdReply
 if (d != null) {
   n.sourceUrl = d.sourceUrl, n.title = d.title, n.description = d.body
   n.thumbnail = decodeBytes(d.thumbnail), n.thumbnailUrl = d.thumbnailUrl
   n.mediaType = d.mediaType, n.mediaUrl = d.mediaUrl
-  n.isSuspiciousLink = findLink(d.sourceUrl).suspiciousCharacters.size &gt; 0
+  n.isSuspiciousLink = findLink(d.sourceUrl).suspiciousCharacters.size > 0
   // lalu sourceApp, dan greetingMessageBody / automatedGreetingMessageShown / ctaPayload
   // hanya kalau isWamoAGMIntegrationEnabled(d.sourceApp)
-}</code></pre>
+}
+```
 
 </details>
 
@@ -1617,11 +1741,13 @@ if (d != null) {
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">if (ctwaContext == null
+```js
+if (ctwaContext == null
     || ctwaContext.sourceUrl == null
     || ctwaContext.mediaType === MediaType.NONE
-    || (ctwaContext.adContextPreviewDismissed === true &amp;&amp; isHideAdContextIfSoftDismissed()))
-  return null</code></pre>
+    || (ctwaContext.adContextPreviewDismissed === true && isHideAdContextIfSoftDismissed()))
+  return null
+```
 
 </details>
 
@@ -1635,11 +1761,13 @@ Menyetelnya mengorbankan seluruh pesanmu, tanpa prop apa pun terlibat:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">function D(msg) {
+```js
+function D(msg) {
   const n = msg.ctwaContext?.alwaysShowAdAttribution
-  if (!isSMB() &amp;&amp; !isMeAccount(getSender(msg)) &amp;&amp; n === true)
+  if (!isSMB() && !isMeAccount(getSender(msg)) && n === true)
     throw new MessageValidationError("This is a spam message sent to consumer number with 'Message Via Ad' header", INVALID_MESSAGE)
-}</code></pre>
+}
+```
 
 </details>
 
@@ -1662,7 +1790,8 @@ Kartu yang digambar WhatsApp sendiri untuk sebuah tautan. Gambar besar, judul, d
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   richLink: {
     text: 'dengerin ini',
     url: 'https://example.com/track',
@@ -1670,7 +1799,8 @@ Kartu yang digambar WhatsApp sendiri untuk sebuah tautan. Gambar besar, judul, d
     description: 'Penyanyi',
     image: { url: './sampul.jpg' }
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1690,8 +1820,10 @@ Dua yang terakhir bukan hiasan. Pengaman klien itu sendiri begini:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">var n = !!(e.thumbnailDirectPath || e.thumbnailHQ) &amp;&amp; e.thumbnailHeight != null &amp;&amp; e.thumbnailWidth != null;
-if (!n) return false;</code></pre>
+```js
+var n = !!(e.thumbnailDirectPath || e.thumbnailHQ) && e.thumbnailHeight != null && e.thumbnailWidth != null;
+if (!n) return false;
+```
 
 </details>
 
@@ -1706,7 +1838,8 @@ Kalau kamu sudah punya pipeline preview sendiri, `linkPreview` menerima `image` 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   text: 'lihat https://example.com/a',
   linkPreview: {
     'matched-text': 'https://example.com/a',
@@ -1714,7 +1847,8 @@ Kalau kamu sudah punya pipeline preview sendiri, `linkPreview` menerima `image` 
     description: 'Keterangan',
     image: { url: './gambar.jpg' }
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1723,7 +1857,8 @@ Kalau kamu sudah punya pipeline preview sendiri, `linkPreview` menerima `image` 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   text: 'tidak ada tautan di sini',
   linkPreview: {
     'matched-text': 'https://example.com',
@@ -1731,7 +1866,8 @@ Kalau kamu sudah punya pipeline preview sendiri, `linkPreview` menerima `image` 
     description: 'Keterangan',
     image: { url: './gambar.jpg' }
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1751,7 +1887,8 @@ Permukaan builder-nya terdiri dari 212 nama yang tersebar di empat modul, dan it
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 await new MB.Button(sock)
   .setTitle('LyncxTeams Menu')
@@ -1764,7 +1901,8 @@ rich.addSection(MB.dividerSection())
 rich.addSection(MB.taskSection({ taskId: 'job-1', title: 'Rendering', status: MB.TaskStatus.RUNNING }))
 await rich.send(jid)
 
-MB.checkNativeFlowButtons([{ name: 'single_select' }])</code></pre>
+MB.checkNativeFlowButtons([{ name: 'single_select' }])
+```
 
 </details>
 
@@ -1775,7 +1913,8 @@ Semua contoh di bab ini ditulis seperti itu, `MB` dan tidak ada yang lain, sampa
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import {
+```js
+import {
   Button,
   ButtonV2,
   Carousel,
@@ -1789,7 +1928,8 @@ Semua contoh di bab ini ditulis seperti itu, `MB` dan tidak ada yang lain, sampa
   DuplicateIdError,
   InvalidTargetError,
   ContentValidationError
-} from '@lyncxteams/baileys'</code></pre>
+} from '@lyncxteams/baileys'
+```
 
 </details>
 
@@ -1802,7 +1942,8 @@ Dua-duanya tergambar di Android sebagai bubble-nya sendiri. Nominalnya angka man
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { SplitPaymentStatus, ReminderFrequency } from '@lyncxteams/baileys'
+```js
+import { SplitPaymentStatus, ReminderFrequency } from '@lyncxteams/baileys'
 
 await sock.sendMessage(jid, {
   splitPayment: {
@@ -1830,7 +1971,8 @@ await sock.sendMessage(jid, {
     currency: 'IDR',
     frequency: ReminderFrequency.MONTHLY
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1846,10 +1988,12 @@ Ini pesan biasa yang dikirim akunmu sendiri, tampil di bawah namamu sendiri — 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage('status@broadcast', {
+```js
+await sock.sendMessage('status@broadcast', {
   text: 'baca ini https://example.com/artikel',
   statusLinkPreview: { style: 1 }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1861,14 +2005,16 @@ Kalau klien Meta sendiri mengirim link preview untuk reel atau postingan, mereka
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { readSocialPreview } from '@lyncxteams/baileys'
+```js
+import { readSocialPreview } from '@lyncxteams/baileys'
 
-sock.ev.on('messages.upsert', ({ messages }) =&gt; {
+sock.ev.on('messages.upsert', ({ messages }) => {
   for (const msg of messages) {
     const social = readSocialPreview(msg)
     if (social) console.log(social.postType, social.videoUrl, social.endCards)
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -1885,7 +2031,8 @@ Builder `Button` dipakai untuk pesan interaktif native-flow.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const message = new MB.Button(sock)
   .setTitle('LyncxTeams Menu')
@@ -1895,7 +2042,8 @@ const message = new MB.Button(sock)
   .addUrl('Buka Website', 'https://example.com')
   .addCopy('Salin Kode', 'LYNCX2026')
 
-await message.send(jid)</code></pre>
+await message.send(jid)
+```
 
 </details>
 
@@ -1903,7 +2051,8 @@ await message.send(jid)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const message = new MB.Button(sock)
+```js
+const message = new MB.Button(sock)
   .setImage('https://example.com/elaina.jpg')
   .setTitle('LyncxTeams')
   .setBody('Pesan interaktif dengan header gambar.')
@@ -1911,7 +2060,8 @@ await message.send(jid)</code></pre>
   .addReply('Menu', 'menu')
   .addUrl('Website', 'https://example.com')
 
-await message.send(jid)</code></pre>
+await message.send(jid)
+```
 
 </details>
 
@@ -1919,7 +2069,8 @@ await message.send(jid)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">.addReply(displayText, id)
+```js
+.addReply(displayText, id)
 .addUrl(displayText, url)
 .addCopy(displayText, copyCode)
 .addCall(displayText, id)
@@ -1928,7 +2079,8 @@ await message.send(jid)</code></pre>
 .addAddress(displayText, id)
 .addLocation(options)
 .addSelection(title, options)
-.addButton(name, params)</code></pre>
+.addButton(name, params)
+```
 
 </details>
 
@@ -1937,7 +2089,8 @@ Builder-nya juga menyediakan:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">.setTitle(text)
+```js
+.setTitle(text)
 .setSubtitle(text)
 .setBody(text)
 .setFooter(text)
@@ -1950,7 +2103,8 @@ Builder-nya juga menyediakan:
 .clearButtons()
 .setParams(object)
 .build(jid)
-.send(jid)</code></pre>
+.send(jid)
+```
 
 </details>
 
@@ -1963,7 +2117,8 @@ Buat list single-select native dengan `addSelection`, `makeSection`, dan `makeRo
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const list = new MB.Button(sock)
+```js
+const list = new MB.Button(sock)
   .setTitle('LyncxTeams Menu')
   .setBody('Pilih satu menu.')
   .setFooter('LyncxTeams Baileys')
@@ -1974,7 +2129,8 @@ Buat list single-select native dengan `addSelection`, `makeSection`, dan `makeRo
   .makeSection('Lainnya')
   .makeRow('', 'Tentang', 'Tentang bot ini', 'about')
 
-await list.send(jid)</code></pre>
+await list.send(jid)
+```
 
 </details>
 
@@ -1987,12 +2143,14 @@ WhatsApp Web memegang daftar nama button native-flow yang tetap. Apa pun di luar
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 MB.checkNativeFlowButtons([{ name: 'single_select' }])
 // { ok: false, unsupported: ['single_select'], problems: ['"single_select" is not a native flow WhatsApp Web or iOS can render, only Android shows it'] }
 
-MB.isWebSupportedButtonName('quick_reply')  // true</code></pre>
+MB.isWebSupportedButtonName('quick_reply')  // true
+```
 
 </details>
 
@@ -2020,7 +2178,8 @@ Kalau kamu butuh satu menu yang jalan di semua platform, pakai sampai 10 button 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const message = new MB.ButtonV2(sock)
   .setTitle('LyncxTeams')
@@ -2031,7 +2190,8 @@ const message = new MB.ButtonV2(sock)
   .addButton('Menu', 'menu')
   .addButton('Ping', 'ping')
 
-await message.send(jid)</code></pre>
+await message.send(jid)
+```
 
 </details>
 
@@ -2044,7 +2204,8 @@ Kartu carousel bisa dibuat dari `Button.toCard()` lalu diserahkan ke `Carousel`.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const card1 = await new MB.Button(sock)
   .setImage('https://example.com/card1.jpg')
@@ -2063,7 +2224,8 @@ const carousel = new MB.Carousel(sock)
   .setFooter('LyncxTeams Carousel')
   .addCard([card1, card2])
 
-await carousel.send(jid)</code></pre>
+await carousel.send(jid)
+```
 
 </details>
 
@@ -2083,11 +2245,13 @@ Ia tidak lewat `sock.sendMessage`, dan memang tidak bisa. `send` merelay pesanny
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const rich = new MB.AIRich(sock)
 rich.addText('Halo')
-await rich.send(jid)</code></pre>
+await rich.send(jid)
+```
 
 </details>
 
@@ -2099,7 +2263,8 @@ Satu panggilan `send` mengirim dua stanza: pesannya, lalu suntingan `protocolMes
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const rich = new MB.AIRich(sock)
   .setTitle('LyncxTeams AI')
@@ -2114,7 +2279,8 @@ const rich = new MB.AIRich(sock)
   ])
   .addSuggest(['Lihat menu', 'Bantu aku', 'Tentang LyncxTeams'])
 
-await rich.send(jid)</code></pre>
+await rich.send(jid)
+```
 
 </details>
 
@@ -2126,7 +2292,9 @@ Sempat tidak begitu. `build` dan `send` pernah menaruh `richResponseMessage` di 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">: n &amp;&amp; o("WAWebBotBaseGating").isRichResponseForwardReceivingEnabled() ? n : u || null</code></pre>
+```js
+: n && o("WAWebBotBaseGating").isRichResponseForwardReceivingEnabled() ? n : u || null
+```
 
 </details>
 
@@ -2158,10 +2326,12 @@ Perbaikannya: **jangan kirim proof sama sekali.** Tanpa proof, statusnya `UNKNOW
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const msg = await rich.send(jid)                          // auto: proof dihilangkan
+```js
+const msg = await rich.send(jid)                          // auto: proof dihilangkan
 msg.aiVerification   // 'omitted'     = tanpa proof, status UNKNOWN (bawaan)
                      // 'placeholder' = proof palsu, status FAILED (opt-in)
-                     // 'preserved'   = tanda tangan Meta asli, status VALID</code></pre>
+                     // 'preserved'   = tanda tangan Meta asli, status VALID
+```
 
 </details>
 
@@ -2183,7 +2353,8 @@ Helper AIRich lain yang tersedia antara lain:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">.addText(text)
+```js
+.addText(text)
 .addCode(language, code)
 .addTable(rows)
 .addSource(sources)
@@ -2199,7 +2370,8 @@ Helper AIRich lain yang tersedia antara lain:
 .addWidget(data, options)
 .addFooterAction(data, options)
 .addSection(section)
-.addSubmessage(submessage)</code></pre>
+.addSubmessage(submessage)
+```
 
 </details>
 
@@ -2212,9 +2384,11 @@ Respons rich dan pesan interaktif kelihatannya seharusnya bisa digabung, dan men
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">proto.Message.encode({ richResponseMessage, interactiveMessage }).finish()
+```js
+proto.Message.encode({ richResponseMessage, interactiveMessage }).finish()
 // kunci di wire   : interactiveMessage, richResponseMessage
-// getContentType() : interactiveMessage        ← respons rich-nya diabaikan</code></pre>
+// getContentType() : interactiveMessage        ← respons rich-nya diabaikan
+```
 
 </details>
 
@@ -2226,8 +2400,10 @@ Klien menentukan jenis interaktifnya dengan menelusuri enum-nya sendiri lalu men
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">InteractiveMessageType = { NATIVE_FLOW: 'nativeFlowMessage', SHOPS_STOREFRONT: 'shopStorefrontMessage', CAROUSEL: 'carouselMessage' }
-getInteractiveMessageTypeForProto = f =&gt; members().find(t =&gt; fieldNameFor(t) in f)</code></pre>
+```js
+InteractiveMessageType = { NATIVE_FLOW: 'nativeFlowMessage', SHOPS_STOREFRONT: 'shopStorefrontMessage', CAROUSEL: 'carouselMessage' }
+getInteractiveMessageTypeForProto = f => members().find(t => fieldNameFor(t) in f)
+```
 
 </details>
 
@@ -2245,11 +2421,13 @@ Keduanya berdiri di belakang satu syarat keras:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">isSupportedInteractiveMessageVersion(type, payload) {
+```js
+isSupportedInteractiveMessageVersion(type, payload) {
   const n = payload?.messageVersion
   if (n == null || type == null) return false
-  switch (type) { case NATIVE_FLOW: return n &lt;= 1; case SHOPS_STOREFRONT: return n &lt;= 1; case CAROUSEL: return n &lt;= 1 }
-}</code></pre>
+  switch (type) { case NATIVE_FLOW: return n <= 1; case SHOPS_STOREFRONT: return n <= 1; case CAROUSEL: return n <= 1 }
+}
+```
 
 </details>
 
@@ -2261,15 +2439,17 @@ Keduanya berdiri di belakang satu syarat keras:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">getBizNativeFlowName = ({ interactiveMessage: m }) =&gt; {
+```js
+getBizNativeFlowName = ({ interactiveMessage: m }) => {
   const p = m?.nativeFlowMessage?.buttons
-  if (p?.length &gt; 0 &amp;&amp; !buttonsViolateButtonImprovementsConstraints(p.map(b =&gt; ({ nativeFlowButton: b }))))
+  if (p?.length > 0 && !buttonsViolateButtonImprovementsConstraints(p.map(b => ({ nativeFlowButton: b }))))
       return MB.getNativeFlowNameByButtonName(p[0].name)          // ← satu satunya cabang yang dicapai bot
   if (e.buttonsMessage?.buttons?.length === 1) return …          // buttonsMessage lama
-  const f = !(p?.length) &amp;&amp; (body.text || header.title || footer.text || header.imageMessage) &amp;&amp; !m?.shopStorefrontMessage
+  const f = !(p?.length) && (body.text || header.title || footer.text || header.imageMessage) && !m?.shopStorefrontMessage
   if (f) return MIXED                                            // ← hanya kalau TIDAK ADA button
   // selain itu: undefined
-}</code></pre>
+}
+```
 
 </details>
 
@@ -2280,22 +2460,24 @@ Ini pemeriksaannya, lengkap:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const QUICK_REPLY_LIMIT = 10, OTHER_LIMIT = 3
+```js
+const QUICK_REPLY_LIMIT = 10, OTHER_LIMIT = 3
 const SUPPORTED = [QUICK_REPLY, CTA_CALL, CTA_URL, CTA_CATALOG, CATALOG_MESSAGE, CTA_COPY_CODE, CTA_FLOW,
                    ORDER_STATUS, PAYMENT_REMINDER, BOOKING_CONFIRMATION, PAYMENT_REQUEST,
                    API_SIGNUP, INAPP_SIGNUP, CTA_APP, FORM_MESSAGE]
 
-const isQuickReply = b =&gt; b.nativeFlowButton?.name === String(QUICK_REPLY)
+const isQuickReply = b => b.nativeFlowButton?.name === String(QUICK_REPLY)
 
-buttonsViolateButtonImprovementsConstraints = e =&gt; {
+buttonsViolateButtonImprovementsConstraints = e => {
   if (e.length === 0) return false
   const firstIsQR = isQuickReply(e[0])
-  if (e.length &gt; (firstIsQR ? QUICK_REPLY_LIMIT : OTHER_LIMIT)) return true
-  return !e.slice(1).every(b =&gt; {
+  if (e.length > (firstIsQR ? QUICK_REPLY_LIMIT : OTHER_LIMIT)) return true
+  return !e.slice(1).every(b => {
     const mapped = MB.getNativeFlowNameByButtonName(b.nativeFlowButton?.name)
-    return (mapped != null ? SUPPORTED.includes(mapped) : true) &amp;&amp; firstIsQR === isQuickReply(b)
+    return (mapped != null ? SUPPORTED.includes(mapped) : true) && firstIsQR === isQuickReply(b)
   })
-}</code></pre>
+}
+```
 
 </details>
 
@@ -2312,12 +2494,14 @@ Langgar satu aturannya dan nama flow-nya kembali `undefined`, dan di Web itu fat
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">isValidNativeFlowName = ({ bizInfo, msgContext, name }) =&gt; {
-  if (msgContext !== 'relay' &amp;&amp; name != null) return true
+```js
+isValidNativeFlowName = ({ bizInfo, msgContext, name }) => {
+  if (msgContext !== 'relay' && name != null) return true
   const a = bizInfo?.nativeFlowName
   if (a == null || name == null) return false            // ← nama undefined, sebelum apa pun yang lain
   return cast(a) === MIXED || … ? true : cast(a) === name
-}</code></pre>
+}
+```
 
 </details>
 
@@ -2328,12 +2512,14 @@ Node `<biz>` itu paruh yang lain, dan library ini sudah mengirimnya. Kalau butto
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-xml">&lt;biz actual_actors="2" host_storage="2" privacy_mode_ts="…"&gt;
-  &lt;interactive type="native_flow" v="1"&gt;
-    &lt;native_flow v="9" name="mixed"/&gt;
-  &lt;/interactive&gt;
-  &lt;quality_control decision_id="…" source_type="third_party"&gt;…&lt;/quality_control&gt;
-&lt;/biz&gt;</code></pre>
+```xml
+<biz actual_actors="2" host_storage="2" privacy_mode_ts="…">
+  <interactive type="native_flow" v="1">
+    <native_flow v="9" name="mixed"/>
+  </interactive>
+  <quality_control decision_id="…" source_type="third_party">…</quality_control>
+</biz>
+```
 
 </details>
 
@@ -2346,7 +2532,8 @@ Ini campuran lengkapnya lewat `sendMessage`, tanpa impor — satu jenis button, 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const teks = '✨ MENU LYNCX\n\nPilih kategori di bawah.'
+```js
+const teks = '✨ MENU LYNCX\n\nPilih kategori di bawah.'
 
 await sock.sendMessage(jid, {
   text: teks,
@@ -2364,7 +2551,8 @@ await sock.sendMessage(jid, {
     fallback: teks,
     data: JSON.stringify({ type: 'info_card', title: '✨ MENU LYNCX', body: 'Pilih kategori di bawah.' })
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -2373,7 +2561,8 @@ Mencampur jenis dalam satu pesan tidak masalah bagi pembaca di ponsel, dan bentu
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   text: 'Semua jenis tombol dalam satu pesan',
   footer: 'LyncxTeams - MultiDevice',
   nativeFlow: [
@@ -2383,7 +2572,8 @@ Mencampur jenis dalam satu pesan tidak masalah bagi pembaca di ponsel, dan bentu
     { name: 'send_location', buttonParamsJson: '' },
     { text: 'Pilih', sections: [{ title: 'Kategori', rows: [{ title: 'Downloader', id: '.menu downloader' }] }] }
   ]
-})</code></pre>
+})
+```
 
 </details>
 
@@ -2392,13 +2582,15 @@ Itu mencatat peringatan constraint-nya dan tergambar di ponsel. Kalau pesan yang
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   text: 'Tautan penting',
   nativeFlow: [
     { text: 'Situs', url: 'https://nixel.dev' },
     { text: 'Channel', url: 'https://whatsapp.com/channel/xxxx' }
   ]
-})</code></pre>
+})
+```
 
 </details>
 
@@ -2423,14 +2615,16 @@ Widget Bloks juga bisa hidup **di dalam** respons rich, bukan di sebelahnya, seb
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const rich = new MB.AIRich(sock).setTitle('LyncxTeams AI')
 
 rich.addText('*Statistik hari ini*')
 rich.addSection(MB.bloksSection('im_a2ui', { type: 'info_card', title: 'Penjualan', body: 'Rp 1.250.000' }))
 
-await rich.send(jid)</code></pre>
+await rich.send(jid)
+```
 
 </details>
 
@@ -2450,13 +2644,15 @@ Itu memancarkan `FOABloksPrimitive`, salah satu dari delapan belas nama yang jug
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const rich = new MB.AIRich(sock).setTitle('LyncxTeams AI')
 
-rich.addText('buka [Setelan](&gt;whatsapp://settings), atau lihat [situsnya](https://nixel.dev)')
+rich.addText('buka [Setelan](>whatsapp://settings), atau lihat [situsnya](https://nixel.dev)')
 
-await rich.send(jid)</code></pre>
+await rich.send(jid)
+```
 
 </details>
 
@@ -2470,9 +2666,11 @@ Deeplink itu untuk skema yang diserahkan ponsel ke sebuah aplikasi (`whatsapp://
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">rich.addText(text, { deeplink: false })
+```js
+rich.addText(text, { deeplink: false })
 rich.addText(text, { hyperlink: false, citation: false, latex: false })
-rich.addText(text, { extract: false })</code></pre>
+rich.addText(text, { extract: false })
+```
 
 </details>
 
@@ -2483,11 +2681,13 @@ Tiga baris itu opsi pada satu panggilan, bukan urutan untuk dijalankan apa adany
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const info = MB.decodeAIRich(m.message)
-const inline = info.sections.flatMap(s =&gt; s.view_model?.primitive?.inline_entities ?? [])
-console.log(inline.map(e =&gt; e.metadata.__typename))</code></pre>
+const inline = info.sections.flatMap(s => s.view_model?.primitive?.inline_entities ?? [])
+console.log(inline.map(e => e.metadata.__typename))
+```
 
 </details>
 
@@ -2497,7 +2697,8 @@ Setiap panggilan `add*` menerima `id`, `insertAt`, dan `replace`, jadi pesan yan
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const rich = new MB.AIRich(sock)
   .setTitle('LyncxTeams AI')
@@ -2509,7 +2710,8 @@ rich.addImage('', { status: 'GENERATING', update_text: 'Membuat gambar…', inse
 await rich.sendEdit()
 
 rich.addImage('https://example.com/result.jpg', { replace: 'pic' })
-await rich.sendEdit()</code></pre>
+await rich.sendEdit()
+```
 
 </details>
 
@@ -2520,11 +2722,13 @@ Pembukuan item:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">rich.getIds()          // [ 'intro', 'pic' ]
+```js
+rich.getIds()          // [ 'intro', 'pic' ]
 rich.hasId('pic')      // true
 rich.peek('pic')       // node di balik id itu
 rich.assignId(0, 'first')  // memberi nama item yang belum punya id
-rich.delete('pic')</code></pre>
+rich.delete('pic')
+```
 
 </details>
 
@@ -2538,13 +2742,15 @@ Target yang salah melempar error bertipe ketimbang gagal tanpa suara — `ItemNo
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const cards = new MB.AIRich(sock)
+```js
+const cards = new MB.AIRich(sock)
   .addProduct({ title: 'LyncxTeams', brand: 'Baileys', product_url: 'https://example.com' })
   .addPost({ username: 'elaina', caption: 'Halo', url: 'https://example.com' })
   .items
 
 rich.addSection(MB.newLayout('HScroll', cards), { id: 'mixed' })
-await rich.sendEdit()</code></pre>
+await rich.sendEdit()
+```
 
 </details>
 
@@ -2554,10 +2760,12 @@ await rich.sendEdit()</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const rich = new MB.AIRich(sock).loadFrom(m.message)
+```js
+const rich = new MB.AIRich(sock).loadFrom(m.message)
 const button = new MB.Button(sock).loadFrom(m.message)
 const carousel = new MB.Carousel(sock).loadFrom(m.message)
-const buttonV2 = new MB.ButtonV2(sock).loadFrom(m.message)</code></pre>
+const buttonV2 = new MB.ButtonV2(sock).loadFrom(m.message)
+```
 
 </details>
 
@@ -2567,7 +2775,8 @@ MessageBuilder mencakup 11 dari primitif yang digambar langsung WA Web. Sisanya 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const rich = new MB.AIRich(sock)
   .setTitle('LyncxTeams AI')
@@ -2582,7 +2791,8 @@ rich.addSection(MB.latexSection('E = mc^2'))
 rich.addSection(MB.thinkingSection('Mencari di web…', { icon: MB.ThinkingIcon.WEB_SEARCH }))
 rich.addSection(MB.progressSection('Hampir selesai', { inProgress: false }))
 
-await rich.send(jid)</code></pre>
+await rich.send(jid)
+```
 
 </details>
 
@@ -2606,13 +2816,15 @@ Permukaan `AIRichMessage` merakit bentuk itu secara utuh, termasuk submessage da
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await MB.sendAIRichMessage(sock, jid, {
+```js
+await MB.sendAIRichMessage(sock, jid, {
     text: 'Halo dari AIRichMessage',
     submessages: [
         MB.AIRichMessage.inlineImage({ previewUrl: 'https://x/y.jpg', highResUrl: 'https://x/y-hi.jpg' }),
         MB.AIRichMessage.table({ rows: [{ items: ['Harga', '10'], isHeading: true }] })
     ]
-})</code></pre>
+})
+```
 
 </details>
 
@@ -2670,10 +2882,12 @@ Keduanya membuka dua lubang dekode yang nyata, dan dua-duanya sudah ditutup:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const info = MB.decodeAIRich(msg)
+```js
+const info = MB.decodeAIRich(msg)
 
 info.typenames      // hanya primitif di tingkat section, seperti sebelumnya
-info.allTypenames   // setiap __typename di seluruh pohon, sedalam apa pun</code></pre>
+info.allTypenames   // setiap __typename di seluruh pohon, sedalam apa pun
+```
 
 </details>
 
@@ -2684,7 +2898,8 @@ Lubang kedua ada di `readEmbeddedSections`: ia hanya mengambil entri `content` y
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const rich = new MB.AIRich(sock).setTitle('LyncxTeams AI')
 
@@ -2727,7 +2942,8 @@ rich.addSection(MB.searchPlannerSection({
   ]
 }))
 
-await rich.send(jid)</code></pre>
+await rich.send(jid)
+```
 
 </details>
 
@@ -2762,7 +2978,8 @@ await rich.send(jid)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const rich = new MB.AIRich(sock).setTitle('LyncxTeams AI')
 
@@ -2772,7 +2989,8 @@ rich.addMap([
   { latitude: -6.2150, longitude: 106.8500, title: 'Bakso Pak Kumis', body: 'Bakso urat' }
 ])
 
-await rich.send(jid)</code></pre>
+await rich.send(jid)
+```
 
 </details>
 
@@ -2783,7 +3001,8 @@ Item itu node yang dibawa sebuah layout, bukan section yang berdiri sendiri, jad
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const rich = new MB.AIRich(sock).setTitle('LyncxTeams AI')
 
@@ -2796,7 +3015,8 @@ rich.addSection(MB.contextualSourcesSection([
   { url: 'https://example.com/a', title: 'Sumber A', favicon: 'https://example.com/a.ico' }
 ]))
 
-await rich.send(jid)</code></pre>
+await rich.send(jid)
+```
 
 </details>
 
@@ -2817,7 +3037,8 @@ Dua layout bergabung dengan delapan yang sudah didukung: `multipleResponseSectio
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const rich = new MB.AIRich(sock).setTitle('LyncxTeams AI')
 
@@ -2831,7 +3052,8 @@ rich.addSection(MB.quotaUpsellSection({
   buttons: [MB.quotaUpsellButton({ label: 'Upgrade', action: 'UPGRADE', deeplink: 'https://meta.ai/plus' })]
 }))
 
-await rich.send(jid)</code></pre>
+await rich.send(jid)
+```
 
 </details>
 
@@ -2858,14 +3080,16 @@ Untuk apa pun yang belum dimodelkan di sini, `customSection` mengirim node-nya l
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const rich = new MB.AIRich(sock).setTitle('LyncxTeams AI')
 
 rich.addSection(MB.customSection('GenAISourcedItem', { sourced_item_type: 'THREADS_POST' }))
 rich.addSection(MB.customSection('GenAITopicLinkItem', { title: 'Bali' }, { layout: 'HScroll' }))
 
-await rich.send(jid)</code></pre>
+await rich.send(jid)
+```
 
 </details>
 
@@ -2883,7 +3107,9 @@ Klien memverifikasi pesan bot yang diteruskan terhadap sertifikat root yang diba
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code>version ("1")  ||  fbid bot  ||  byte unified response</code></pre>
+```text
+version ("1")  ||  fbid bot  ||  byte unified response
+```
 
 </details>
 
@@ -2894,14 +3120,16 @@ Tidak ada apa pun tentang pengirim, id pesan, timestamp, atau penerima di dalamn
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
-sock.ev.on('messages.upsert', async ({ messages }) =&gt; {
+sock.ev.on('messages.upsert', async ({ messages }) => {
   for (const msg of messages) {
     if (MB.verifyRichResponseSignature(msg).status !== 'passed') continue
     await MB.forwardRichResponse(sock, '120363xxxx@g.us', msg, { quoted: msg })
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -2940,15 +3168,17 @@ Pesan AI Rich, A2UI, atau Bloks tiba dengan keadaan kosong di tempat yang biasa 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
-sock.ev.on('messages.upsert', ({ messages }) =&gt; {
+sock.ev.on('messages.upsert', ({ messages }) => {
     for (const msg of messages) {
         const rich = MB.readRichMessage(msg)
         if (!rich) continue
         console.log(rich.kind, rich.text)
     }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -2982,14 +3212,16 @@ Ia membuka view-once dan pembungkus lainnya dulu, jadi kartu di dalam `viewOnceM
 <details>
 <summary>Tampilkan kode</summary>
 
-<pre><code class="language-js">(() =&gt; {
+```js
+(() => {
   const t = __debug.modulesMap
   const ab = t['WAWebABPropsConfigs']?.exports?.ABPropConfigs
   const gkx = t['gkx']?.exports
   let gk
   try { gk = gkx('6940') } catch (e) { gk = 'undefined: ' + e.message }
   return { im_a2ui_require_bot_attribution: ab?.im_a2ui_require_bot_attribution, im_bloks_widget_enable: ab?.im_bloks_widget_enable, gk_6940: gk }
-})()</code></pre>
+})()
+```
 
 </details>
 >
@@ -2998,8 +3230,10 @@ Ia membuka view-once dan pembungkus lainnya dulu, jadi kartu di dalam `viewOnceM
 <details>
 <summary>Tampilkan kode</summary>
 
-<pre><code class="language-js">__debug.modulesMap['WAWebInteractiveBloksWidgetDebug'].exports.injectRichResponseTestMessage()
-__debug.modulesMap['WAWebInteractiveBloksWidgetDebug'].exports.injectInteractiveMessageWithBloksWidget()</code></pre>
+```js
+__debug.modulesMap['WAWebInteractiveBloksWidgetDebug'].exports.injectRichResponseTestMessage()
+__debug.modulesMap['WAWebInteractiveBloksWidgetDebug'].exports.injectInteractiveMessageWithBloksWidget()
+```
 
 </details>
 >
@@ -3017,11 +3251,13 @@ Ada dua bentuk A2UI, dan bedanya penting:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await MB.sendA2UIBloks(sock, jid, [
+```js
+await MB.sendA2UIBloks(sock, jid, [
     MB.a2uiColumn('root', ['img', 't1']),
     MB.a2uiImage('img', 'https://files.catbox.moe/5hojci.jpg'),
     MB.a2uiText('t1', 'LyncxTeams Bot')
-], { uuid: crypto.randomUUID() })</code></pre>
+], { uuid: crypto.randomUUID() })
+```
 
 </details>
 
@@ -3032,12 +3268,14 @@ Karena Android hanya menggambar `info_card` dan `list_card`, gunakan elemen itu 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await MB.sendA2UI(sock, jid, [], {
+```js
+await MB.sendA2UI(sock, jid, [], {
     type: 'im_a2ui',
     uuid: crypto.randomUUID(),
     fallback: '✨ MENU LYNCX\nPilih kategori di bawah.',
     data: MB.a2uiInfoCard({ title: '✨ MENU LYNCX', body: 'Pilih kategori di bawah.' })
-})</code></pre>
+})
+```
 
 </details>
 
@@ -3045,7 +3283,8 @@ Karena Android hanya menggambar `info_card` dan `list_card`, gunakan elemen itu 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 await MB.sendA2UI(sock, jid, [
     MB.a2uiColumn('root', ['card_image', 'card_title', 'card_body']),
@@ -3057,7 +3296,8 @@ await MB.sendA2UI(sock, jid, [
         name: 'cta_url',
         buttonParamsJson: JSON.stringify({ display_text: 'Gabung Grup', url: 'https://chat.whatsapp.com/…' })
     }]
-})</code></pre>
+})
+```
 
 </details>
 
@@ -3078,14 +3318,16 @@ Pembungkus `a2uiSurface` membangun payload-nya sendiri kalau kamu mau menulis ta
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">{
+```js
+{
   version: 'v0.9',
   createSurface: {
-    surfaceId: 'card-&lt;uuid&gt;',
+    surfaceId: 'card-<uuid>',
     root: 'root',
     components: [ … ]
   }
-}</code></pre>
+}
+```
 
 </details>
 
@@ -3103,13 +3345,15 @@ Beri `typename` untuk mengirim section-nya dengan nama lain:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const rich = new MB.AIRich(sock).setTitle('Dashboard')
 
 rich.addSection(MB.htmlSection(html, { typename: MB.AI_RICH_HTML_PRIMITIVE_CLASS }))
 
-await rich.send(jid)</code></pre>
+await rich.send(jid)
+```
 
 </details>
 
@@ -3129,21 +3373,25 @@ Satu panggilan, tanpa menyusun pembungkusnya sendiri.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 import { readFileSync } from 'node:fs'
 
 await MB.sendHtmlApp(sock, m.chat, readFileSync('./dino.html', 'utf8'), {
   title: 'NIXEL DINO',
   label: 'Dino Runner',
   trustedSources: ['nixel.dev']
-})</code></pre>
+})
+```
 
 </details>
 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code>MB.sendHtmlApp(sock, jid, html, options?) =&gt; Promise&lt;WAMessage&gt;</code></pre>
+```text
+MB.sendHtmlApp(sock, jid, html, options?) => Promise<WAMessage>
+```
 
 </details>
 
@@ -3180,12 +3428,14 @@ Yang berikut ini diisi untukmu, sesuai yang diharapkan klien:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">contextInfo: {
+```js
+contextInfo: {
   forwardingScore: 1,
   isForwarded: true,
   forwardedAiBotMessageInfo: { botJid: '867051314767696@bot' },
   forwardOrigin: 4
-}</code></pre>
+}
+```
 
 </details>
 
@@ -3197,21 +3447,25 @@ Pakai pembangun section-nya kalau HTML-nya duduk bersama section lain di builder
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const rich = new MB.AIRich(sock)
 rich.setTitle('Dashboard')
 rich.addText('Penjualan hari ini')
 rich.addSection(MB.dividerSection())
 rich.addSection(MB.htmlSection(chartHtml, { trustedSources: ['nixel.dev'] }), { id: 'chart' })
-await rich.send(m.chat)</code></pre>
+await rich.send(m.chat)
+```
 
 </details>
 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code>MB.htmlSection(html, { trustedSources?, height? }) =&gt; section</code></pre>
+```text
+MB.htmlSection(html, { trustedSources?, height? }) => section
+```
 
 </details>
 
@@ -3251,11 +3505,13 @@ Origin opaque itu lalu ikut membawa penyimpanannya. Setiap satu di antara ini me
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code>localStorage   THROW SecurityError
+```text
+localStorage   THROW SecurityError
 sessionStorage THROW SecurityError
 cookie         THROW SecurityError
 indexedDB.open THROW SecurityError
-caches         undefined</code></pre>
+caches         undefined
+```
 
 </details>
 
@@ -3280,7 +3536,9 @@ Beri `height` dan library-nya yang mengurus, apa pun yang dilakukan halamannya:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await MB.sendHtmlApp(sock, m.chat, html, { height: 300 })</code></pre>
+```js
+await MB.sendHtmlApp(sock, m.chat, html, { height: 300 })
+```
 
 </details>
 
@@ -3291,7 +3549,9 @@ Ia menyisipkan `lockHeight(300)` di depan, yang memaku `html`/`body` ke sebanyak
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">window.AndroidBridge.updateSize(520)</code></pre>
+```js
+window.AndroidBridge.updateSize(520)
+```
 
 </details>
 
@@ -3304,8 +3564,10 @@ Kalau mau melakukannya dengan tangan, paku tinggi luarnya dalam piksel, beri can
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-css">#wrap { width: 100%; height: 300px; overflow: hidden }
-#game { width: 312px; height: 106px }</code></pre>
+```css
+#wrap { width: 100%; height: 300px; overflow: hidden }
+#game { width: 312px; height: 106px }
+```
 
 </details>
 
@@ -3314,8 +3576,9 @@ Kalau mau melakukannya dengan tangan, paku tinggi luarnya dalam piksel, beri can
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">let rafId = null, running = true
-document.addEventListener('visibilitychange', () =&gt; {
+```js
+let rafId = null, running = true
+document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
     running = false
     if (rafId) cancelAnimationFrame(rafId)
@@ -3325,7 +3588,8 @@ document.addEventListener('visibilitychange', () =&gt; {
     last = 0
     rafId = requestAnimationFrame(loop)
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -3336,13 +3600,15 @@ lalu akhiri `loop()` dengan `if (running) rafId = requestAnimationFrame(loop)`.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">rq.onsuccess = () =&gt; {
+```js
+rq.onsuccess = () => {
   const db = rq.result
   const tx = db.transaction('kv', 'readwrite')
   tx.objectStore('kv').put(value, 'best')
-  tx.oncomplete = () =&gt; db.close()
-  tx.onerror = () =&gt; db.close()
-}</code></pre>
+  tx.oncomplete = () => db.close()
+  tx.onerror = () => db.close()
+}
+```
 
 </details>
 
@@ -3351,11 +3617,13 @@ lalu akhiri `loop()` dengan `if (running) rafId = requestAnimationFrame(loop)`.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const W = 560, H = 190
+```js
+const W = 560, H = 190
 const dpr = Math.min(devicePixelRatio || 1, 3)
 canvas.width = W * dpr
 canvas.height = H * dpr
-ctx.setTransform(dpr, 0, 0, dpr, 0, 0)</code></pre>
+ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+```
 
 </details>
 
@@ -3364,8 +3632,10 @@ ctx.setTransform(dpr, 0, 0, dpr, 0, 0)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">canvas.addEventListener('pointerdown', e =&gt; { e.preventDefault(); jump() })
-document.addEventListener('keydown', e =&gt; { if (e.code === 'Space') { e.preventDefault(); jump() } })</code></pre>
+```js
+canvas.addEventListener('pointerdown', e => { e.preventDefault(); jump() })
+document.addEventListener('keydown', e => { if (e.code === 'Space') { e.preventDefault(); jump() } })
+```
 
 </details>
 
@@ -3377,11 +3647,13 @@ document.addEventListener('keydown', e =&gt; { if (e.code === 'Space') { e.preve
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const rich = MB.decodeAIRich(msg)
-const section = rich?.sections.find(s =&gt; s.view_model?.primitive?.__typename === MB.AI_RICH_HTML_PRIMITIVE)
+```js
+const rich = MB.decodeAIRich(msg)
+const section = rich?.sections.find(s => s.view_model?.primitive?.__typename === MB.AI_RICH_HTML_PRIMITIVE)
 if (section) {
   const html = section.view_model.primitive.payload
-}</code></pre>
+}
+```
 
 </details>
 
@@ -3392,7 +3664,9 @@ Nilai enum-nya, dibaca dari klien ketimbang dikira-kira:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'</code></pre>
+```js
+import { MB } from '@lyncxteams/baileys'
+```
 
 </details>
 
@@ -3410,22 +3684,23 @@ Dua hal yang perlu diketahui sebelum membangunnya:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const gameHtml = `
-&lt;body style="margin:0;background:transparent;color:#eee;font-family:Arial"&gt;
-  &lt;canvas id="game" width="560" height="190" style="width:100%;height:auto"&gt;&lt;/canvas&gt;
-  &lt;script&gt;
+<body style="margin:0;background:transparent;color:#eee;font-family:Arial">
+  <canvas id="game" width="560" height="190" style="width:100%;height:auto"></canvas>
+  <script>
     const x = document.getElementById('game').getContext('2d')
     x.fillStyle = '#6c5ce7'
     x.fillRect(20, 120, 27, 30)
-  &lt;\/script&gt;
-&lt;/body&gt;`
+  <\/script>
+</body>`
 
-const scoreHtml = '&lt;body style="margin:0;color:#eee;font-family:Arial"&gt;&lt;h3&gt;Best: 00000&lt;/h3&gt;&lt;/body&gt;'
+const scoreHtml = '<body style="margin:0;color:#eee;font-family:Arial"><h3>Best: 00000</h3></body>'
 
 const rich = new MB.AIRich(sock)
-  .addSection(MB.htmlSection('&lt;b&gt;Dino Runner&lt;/b&gt; — ketuk untuk main'))
+  .addSection(MB.htmlSection('<b>Dino Runner</b> — ketuk untuk main'))
 
 rich.addEmbeddedScreen(MB.embeddedScreen({
   title: 'Preview',
@@ -3435,7 +3710,8 @@ rich.addEmbeddedScreen(MB.embeddedScreen({
   ]
 }))
 
-await rich.send(m.chat)</code></pre>
+await rich.send(m.chat)
+```
 
 </details>
 
@@ -3444,10 +3720,12 @@ Layar tanpa tab sama validnya — beri `content` saja, dan sheet-nya menampilkan
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">rich.addEmbeddedScreen(MB.embeddedScreen({
+```js
+rich.addEmbeddedScreen(MB.embeddedScreen({
   title: 'Rincian',
   content: [MB.htmlSection(detailHtml)]
-}))</code></pre>
+}))
+```
 
 </details>
 
@@ -3459,7 +3737,8 @@ Kamu bisa memberi keduanya. Kontainer tab-nya ditambahkan **setelah** `content` 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-jsonc">{
+```jsonc
+{
   "response_id": "183d0aee-fb35-4349-8bc5-7793b11859db",
   "sections": [
     {
@@ -3468,7 +3747,7 @@ Kamu bisa memberi keduanya. Kontainer tab-nya ditambahkan **setelah** `content` 
         "__typename": "GenAISingleLayoutViewModel",
         "primitive": {
           "__typename": "GenAIaeacdsnwHtmlPrimitive",
-          "payload": "&lt;b&gt;Dino Runner&lt;/b&gt; — ketuk untuk main",
+          "payload": "<b>Dino Runner</b> — ketuk untuk main",
           "trusted_sources": []
         }
       }
@@ -3490,7 +3769,7 @@ Kamu bisa memberi keduanya. Kontainer tab-nya ditambahkan **setelah** `content` 
                   "__typename": "GenAIUnifiedResponseSection",
                   "view_model": {
                     "__typename": "GenAISingleLayoutViewModel",
-                    "primitive": { "__typename": "GenAIaeacdsnwHtmlPrimitive", "payload": "&lt;body…&gt;" }
+                    "primitive": { "__typename": "GenAIaeacdsnwHtmlPrimitive", "payload": "<body…>" }
                   }
                 }
               ]
@@ -3501,7 +3780,8 @@ Kamu bisa memberi keduanya. Kontainer tab-nya ditambahkan **setelah** `content` 
       ]
     }
   ]
-}</code></pre>
+}
+```
 
 </details>
 
@@ -3513,7 +3793,8 @@ Kalau kamu lebih suka menyusun payload-nya dengan tangan — atau sedang meminda
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 await sock.relayMessage(m.chat, {
   messageContextInfo: {
@@ -3529,7 +3810,7 @@ await sock.relayMessage(m.chat, {
     message: {
       richResponseMessage: {
         messageType: 1,
-        submessages: [{ messageType: 2, messageText: '&gt; Dino Runner' }],
+        submessages: [{ messageType: 2, messageText: '> Dino Runner' }],
         unifiedResponse: {
           data: Buffer.from(JSON.stringify({
             response_id: '183d0aee-fb35-4349-8bc5-7793b11859db',
@@ -3538,7 +3819,7 @@ await sock.relayMessage(m.chat, {
                 __typename: 'GenAIUnifiedResponseSection',
                 view_model: {
                   __typename: 'GenAISingleLayoutViewModel',
-                  primitive: { __typename: 'GenAIMarkdownTextUXPrimitive', text: '&gt; Dino Runner' }
+                  primitive: { __typename: 'GenAIMarkdownTextUXPrimitive', text: '> Dino Runner' }
                 }
               }
             ],
@@ -3582,7 +3863,8 @@ await sock.relayMessage(m.chat, {
       }
     }
   }
-}, {})</code></pre>
+}, {})
+```
 
 </details>
 
@@ -3607,13 +3889,15 @@ Section selalu mendapat typename-nya. Layar dan tab-nya tetap tanpa tipe kecuali
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 MB.embeddedScreen({ typename: MB.EMBEDDED_SCREEN_TYPENAME, tabs: [tab] })
 MB.embeddedTab({ typename: MB.EMBEDDED_SCREEN_TAB_TYPENAME, sections: [...] })
 
 // untuk build yang mengharapkan nama kontainer lain
-MB.embeddedScreen({ tabs: [tab], tabsTypename: 'FOAIDButtonSheets' })</code></pre>
+MB.embeddedScreen({ tabs: [tab], tabsTypename: 'FOAIDButtonSheets' })
+```
 
 </details>
 
@@ -3655,7 +3939,8 @@ Apa pun yang dibiarkan `undefined` dibuang, tidak pernah dikirim sebagai `null`.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const info = MB.decodeAIRich(m.message)
 
@@ -3669,8 +3954,9 @@ MB.readEmbeddedSections(info.embeddedScreens[0])
 
 // ambil HTML yang dibawa sebuah tab
 const html = MB.readEmbeddedSections(info.embeddedScreens[0])
-  .map(section =&gt; section.view_model?.primitive?.payload)
-  .filter(Boolean)</code></pre>
+  .map(section => section.view_model?.primitive?.payload)
+  .filter(Boolean)
+```
 
 </details>
 
@@ -3690,12 +3976,14 @@ const html = MB.readEmbeddedSections(info.embeddedScreens[0])
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { MB } from '@lyncxteams/baileys'
+```js
+import { MB } from '@lyncxteams/baileys'
 
 const info = MB.decodeAIRich(m.message)
 console.log(info.layouts)     // [ 'Single', 'HScroll' ]
 console.log(info.typenames)   // [ 'GenAIMarkdownTextUXPrimitive', 'GenAIProductItemCardPrimitive' ]
-console.log(info.sections)</code></pre>
+console.log(info.sections)
+```
 
 </details>
 
@@ -3711,7 +3999,8 @@ Mengirim beberapa gambar atau video sebagai satu album.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   album: [
     {
       image: { url: 'https://example.com/1.jpg' },
@@ -3727,7 +4016,8 @@ Mengirim beberapa gambar atau video sebagai satu album.
     }
   ],
   caption: 'Caption untuk albumnya sendiri'
-})</code></pre>
+})
+```
 
 </details>
 
@@ -3746,11 +4036,13 @@ Mengirim satu foto sebagai induk lalu satu video sebagai anak yang tertaut ke fo
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   image: { url: 'https://files.catbox.moe/s72odd.jpeg' },
   video: { url: 'https://files.catbox.moe/ttpfrr.mp4' },
   caption: 'Foto yang bisa diputar'
-})</code></pre>
+})
+```
 
 </details>
 
@@ -3769,11 +4061,13 @@ Status dikirim ke jid khusus `status@broadcast`, dan yang menerimanya adalah ora
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage('status@broadcast', {
+```js
+await sock.sendMessage('status@broadcast', {
   text: 'Halo semua'
 }, {
   statusJidList: ['628xxxx@s.whatsapp.net', '628yyyy@s.whatsapp.net']
-})</code></pre>
+})
+```
 
 </details>
 
@@ -3783,14 +4077,16 @@ Status **teks** itu `extendedTextMessage` dengan tiga field penggayaan, dan keti
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { StatusFont } from '@lyncxteams/baileys'
+```js
+import { StatusFont } from '@lyncxteams/baileys'
 
 await sock.sendMessage('status@broadcast', { text: 'Halo semua' }, {
   statusJidList,
   backgroundColor: '#7C3AED',
   textColor: '#FFFFFF',
   font: StatusFont.CALISTOGA_REGULAR
-})</code></pre>
+})
+```
 
 </details>
 
@@ -3841,11 +4137,13 @@ Dua hal yang perlu diketahui sebelum kamu mantap memilih satu muka:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { StatusFont } from '@lyncxteams/baileys'
+```js
+import { StatusFont } from '@lyncxteams/baileys'
 
 await sock.sendMessage('status@broadcast', {
   text: 'PENGUMUMAN'
-}, { statusJidList, backgroundColor: '#7C3AED', textColor: '#FFFFFF', font: StatusFont.EXO2_EXTRABOLD })</code></pre>
+}, { statusJidList, backgroundColor: '#7C3AED', textColor: '#FFFFFF', font: StatusFont.EXO2_EXTRABOLD })
+```
 
 </details>
 
@@ -3860,7 +4158,8 @@ Status media itu pesan media biasa yang dikirim ke `status@broadcast`:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage('status@broadcast', {
+```js
+await sock.sendMessage('status@broadcast', {
   image: { url: './foto.jpg' },
   caption: 'Halo semua'
 }, { statusJidList })
@@ -3868,7 +4167,8 @@ Status media itu pesan media biasa yang dikirim ke `status@broadcast`:
 await sock.sendMessage('status@broadcast', {
   video: { url: './klip.mp4' },
   caption: 'Halo semua'
-}, { statusJidList })</code></pre>
+}, { statusJidList })
+```
 
 </details>
 
@@ -3877,14 +4177,16 @@ Status **pesan suara** satu-satunya jenis media yang juga menerima warna latar �
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage('status@broadcast', {
+```js
+await sock.sendMessage('status@broadcast', {
   audio: { url: './suara.ogg' },
   mimetype: 'audio/ogg; codecs=opus',
   ptt: true
 }, {
   statusJidList,
   backgroundColor: '#7C3AED'
-})</code></pre>
+})
+```
 
 </details>
 
@@ -3894,7 +4196,8 @@ Status gambar atau video bisa membawa stiker yang bisa diketuk — satu tempat, 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import {
+```js
+import {
   locationSticker,
   channelSticker,
   linkSticker,
@@ -3919,7 +4222,8 @@ await sock.sendMessage('status@broadcast', {
       area: { x: 0.1, y: 0.06, width: 0.8, height: 0.09 }
     })
   ]
-})</code></pre>
+})
+```
 
 </details>
 
@@ -3942,12 +4246,14 @@ Membacanya kembali:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { readStickers } from '@lyncxteams/baileys'
+```js
+import { readStickers } from '@lyncxteams/baileys'
 
 for (const sticker of readStickers(msg.message)) {
   if (sticker.kind === 'location') console.log(sticker.location.degreesLatitude)
   if (sticker.kind === 'music') console.log(sticker.music.title)
-}</code></pre>
+}
+```
 
 </details>
 
@@ -3959,7 +4265,8 @@ Pesan audio biasa dengan sampul, judul, dan penyanyinya di `externalAdReply`. Ti
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   song: {
     audio: { url: './lagu.mp3' },
     artwork: { url: './sampul.jpg' },
@@ -3967,7 +4274,8 @@ Pesan audio biasa dengan sampul, judul, dan penyanyinya di `externalAdReply`. Ti
     author: 'Penyanyi',
     url: 'https://example.com/track'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -3980,7 +4288,8 @@ Pesan audio biasa dengan sampul, judul, dan penyanyinya di `externalAdReply`. Ti
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   song: {
     audio: { url: './pesan.opus' },
     mimetype: 'audio/ogg; codecs=opus',
@@ -3988,7 +4297,8 @@ Pesan audio biasa dengan sampul, judul, dan penyanyinya di `externalAdReply`. Ti
     artwork: { url: './sampul.jpg' },
     title: 'Judul'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -4004,10 +4314,12 @@ Status grup itu pesan yang sama dengan `groupStatus: true` padanya. Itu membungk
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(groupJid, {
+```js
+await sock.sendMessage(groupJid, {
   text: 'halo grup',
   groupStatus: true
-})</code></pre>
+})
+```
 
 </details>
 
@@ -4016,7 +4328,8 @@ Status grup itu pesan yang sama dengan `groupStatus: true` padanya. Itu membungk
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { StatusFont } from '@lyncxteams/baileys'
+```js
+import { StatusFont } from '@lyncxteams/baileys'
 
 await sock.sendMessage(groupJid, {
   text: 'halo grup',
@@ -4026,14 +4339,16 @@ await sock.sendMessage(groupJid, {
   backgroundColor: '#7C3AED',
   textColor: '#FFEE58',
   font: StatusFont.EXO2_EXTRABOLD
-})</code></pre>
+})
+```
 
 </details>
 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-jsonc">{
+```jsonc
+{
   "groupStatusMessageV2": {
     "message": {
       "extendedTextMessage": {
@@ -4048,7 +4363,8 @@ await sock.sendMessage(groupJid, {
       }
     }
   }
-}</code></pre>
+}
+```
 
 </details>
 
@@ -4077,14 +4393,16 @@ Kedelapannya selamat melewati pembungkusan, dan itu layak diperiksa ketimbang di
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code>SYSTEM                 nilai= 0 | font=0  | bg=0xff7c3aed | isGroupStatus=true
+```text
+SYSTEM                 nilai= 0 | font=0  | bg=0xff7c3aed | isGroupStatus=true
 SYSTEM_TEXT            nilai= 1 | font=1  | bg=0xff7c3aed | isGroupStatus=true
 FB_SCRIPT              nilai= 2 | font=2  | bg=0xff7c3aed | isGroupStatus=true
 SYSTEM_BOLD            nilai= 6 | font=6  | bg=0xff7c3aed | isGroupStatus=true
 MORNINGBREEZE_REGULAR  nilai= 7 | font=7  | bg=0xff7c3aed | isGroupStatus=true
 CALISTOGA_REGULAR      nilai= 8 | font=8  | bg=0xff7c3aed | isGroupStatus=true
 EXO2_EXTRABOLD         nilai= 9 | font=9  | bg=0xff7c3aed | isGroupStatus=true
-COURIERPRIME_BOLD      nilai=10 | font=10 | bg=0xff7c3aed | isGroupStatus=true</code></pre>
+COURIERPRIME_BOLD      nilai=10 | font=10 | bg=0xff7c3aed | isGroupStatus=true
+```
 
 </details>
 
@@ -4095,12 +4413,14 @@ Media bekerja dengan cara yang sama — `groupStatus: true` bersama `image`, `vi
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(groupJid, {
+```js
+await sock.sendMessage(groupJid, {
   audio: { url: './suara.ogg' },
   mimetype: 'audio/ogg; codecs=opus',
   ptt: true,
   groupStatus: true
-}, { backgroundColor: '#7C3AED' })</code></pre>
+}, { backgroundColor: '#7C3AED' })
+```
 
 </details>
 
@@ -4114,11 +4434,11 @@ Layak dikatakan terang-terangan, karena ini asumsi salah yang paling umum:
 
 | Jenis status | Latar | Warna teks | Font | Caption |
 | --- | --- | --- | --- | --- |
-| Teks | ✅ | ✅ | ✅ | — |
-| Pesan suara (`ptt: true`) | ✅ | ❌ | ❌ | ❌ |
-| Gambar | ❌ | ❌ | ❌ | ✅ |
-| Video | ❌ | ❌ | ❌ | ✅ |
-| Audio tanpa `ptt` | ❌ | ❌ | ❌ | ❌ |
+| Teks |  |  |  | — |
+| Pesan suara (`ptt: true`) |  |  |  |  |
+| Gambar |  |  |  |  |
+| Video |  |  |  |  |
+| Audio tanpa `ptt` |  |  |  |  |
 
 Status grup bukan baris terpisah: `groupStatus: true` membungkus mana pun di antara itu yang kamu bangun, dan pesan yang terbungkus mempertahankan penggayaan yang sudah ada padanya.
 
@@ -4135,12 +4455,14 @@ Untuk menaruh lencana audiens kustom di salah satunya, lihat [Audiens Status Kus
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const newsletter = await sock.newsletterCreate(
+```js
+const newsletter = await sock.newsletterCreate(
   'LyncxTeams Updates',
   'Channel update resmi'
 )
 
-console.log(newsletter)</code></pre>
+console.log(newsletter)
+```
 
 </details>
 
@@ -4148,10 +4470,12 @@ console.log(newsletter)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.newsletterUpdateName(
+```js
+await sock.newsletterUpdateName(
   '123456789@newsletter',
   'LyncxTeams News'
-)</code></pre>
+)
+```
 
 </details>
 
@@ -4159,10 +4483,12 @@ console.log(newsletter)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.newsletterUpdateDescription(
+```js
+await sock.newsletterUpdateDescription(
   '123456789@newsletter',
   'Kabar terbaru dari LyncxTeams'
-)</code></pre>
+)
+```
 
 </details>
 
@@ -4170,10 +4496,12 @@ console.log(newsletter)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.newsletterUpdatePicture(
+```js
+await sock.newsletterUpdatePicture(
   '123456789@newsletter',
   { url: 'https://example.com/channel.jpg' }
-)</code></pre>
+)
+```
 
 </details>
 
@@ -4181,7 +4509,9 @@ console.log(newsletter)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.newsletterUpdateReactions('123456789@newsletter', 'BASIC')</code></pre>
+```js
+await sock.newsletterUpdateReactions('123456789@newsletter', 'BASIC')
+```
 
 </details>
 
@@ -4192,8 +4522,10 @@ console.log(newsletter)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.newsletterFollow('123456789@newsletter')
-await sock.newsletterUnfollow('123456789@newsletter')</code></pre>
+```js
+await sock.newsletterFollow('123456789@newsletter')
+await sock.newsletterUnfollow('123456789@newsletter')
+```
 
 </details>
 
@@ -4201,8 +4533,10 @@ await sock.newsletterUnfollow('123456789@newsletter')</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.newsletterMute('123456789@newsletter')
-await sock.newsletterUnmute('123456789@newsletter')</code></pre>
+```js
+await sock.newsletterMute('123456789@newsletter')
+await sock.newsletterUnmute('123456789@newsletter')
+```
 
 </details>
 
@@ -4212,8 +4546,10 @@ WhatsApp Web menggantikan pasangan mute/unmute yang lama dengan satu pengaturan 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.newsletterUpdateUserSetting('123456789@newsletter', 'ADMIN_NOTIFICATIONS', true)
-await sock.newsletterUpdateUserSetting('123456789@newsletter', 'FOLLOWER_NOTIFICATIONS', false)</code></pre>
+```js
+await sock.newsletterUpdateUserSetting('123456789@newsletter', 'ADMIN_NOTIFICATIONS', true)
+await sock.newsletterUpdateUserSetting('123456789@newsletter', 'FOLLOWER_NOTIFICATIONS', false)
+```
 
 </details>
 
@@ -4223,12 +4559,14 @@ await sock.newsletterUpdateUserSetting('123456789@newsletter', 'FOLLOWER_NOTIFIC
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const newsletters = await sock.newsletterSubscribed()
+```js
+const newsletters = await sock.newsletterSubscribed()
 
 const lengkap = await sock.newsletterSubscribed({
   fetchStatusMetadata: true,
   fetchWamoSub: true
-})</code></pre>
+})
+```
 
 </details>
 
@@ -4239,14 +4577,16 @@ Query-nya, `WAWebMexFetchAllNewslettersMetadataJobQuery`, mendeklarasikan `fetch
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const metadata = await sock.newsletterMetadata(
+```js
+const metadata = await sock.newsletterMetadata(
   'jid',
   '123456789@newsletter'
 )
 
 console.log(metadata.thread_metadata.handle)          // @username channel-nya
 console.log(metadata.thread_metadata.subscribers_count)
-console.log(metadata.thread_metadata.settings.reaction_codes.value)</code></pre>
+console.log(metadata.thread_metadata.settings.reaction_codes.value)
+```
 
 </details>
 
@@ -4257,7 +4597,8 @@ Tiga bagian tambahan mati secara bawaan karena membebani server dengan pekerjaan
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const metadata = await sock.newsletterMetadata('jid', '123456789@newsletter', {
+```js
+const metadata = await sock.newsletterMetadata('jid', '123456789@newsletter', {
   fetchPinnedMessages: true,
   fetchStatusMetadata: true,
   fetchWamoSub: true
@@ -4265,7 +4606,8 @@ Tiga bagian tambahan mati secara bawaan karena membebani server dengan pekerjaan
 
 metadata.thread_metadata.pinned_messages   // [ { message_id, expiry_ts } ]
 metadata.thread_metadata.wamo_sub          // { plan_id }
-metadata.status_metadata                   // { last_status_server_id, last_status_sent_time }</code></pre>
+metadata.status_metadata                   // { last_status_server_id, last_status_sent_time }
+```
 
 </details>
 
@@ -4275,10 +4617,12 @@ Hanya menanyakan apa yang berubah di sebuah channel sejak satu timestamp, ketimb
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const { messages } = await sock.newsletterFetchMessageUpdates('123456789@newsletter', {
+```js
+const { messages } = await sock.newsletterFetchMessageUpdates('123456789@newsletter', {
   count: 50,
   since: 1770000000
-})</code></pre>
+})
+```
 
 </details>
 
@@ -4286,7 +4630,9 @@ Hanya menanyakan apa yang berubah di sebuah channel sejak satu timestamp, ketimb
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const followers = await sock.newsletterFollowers('123456789@newsletter', { count: 100 })</code></pre>
+```js
+const followers = await sock.newsletterFollowers('123456789@newsletter', { count: 100 })
+```
 
 </details>
 
@@ -4296,10 +4642,12 @@ Analitik admin untuk channel yang kamu miliki.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const insights = await sock.newsletterInsights('123456789@newsletter', {
+```js
+const insights = await sock.newsletterInsights('123456789@newsletter', {
   metrics: ['NET_FOLLOWS', 'UNFOLLOWS']
 })
-// { result: [{ id, values }], last_update_time, metrics_status }</code></pre>
+// { result: [{ id, values }], last_update_time, metrics_status }
+```
 
 </details>
 
@@ -4311,7 +4659,8 @@ Apa saja yang kamu reaksi atau vote di berbagai channel, tanpa menelusuri setiap
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const groups = await sock.newsletterMyAddOns({ limit: 100 })
+```js
+const groups = await sock.newsletterMyAddOns({ limit: 100 })
 const oneChannel = await sock.newsletterMyAddOns({ limit: 50, jid: '123456789@newsletter' })
 const onStatuses = await sock.newsletterStatusMyAddOns({ limit: 50 })
 
@@ -4319,7 +4668,8 @@ for (const group of groups) {
   for (const m of group.messages) {
     console.log(group.jid, m.serverId, m.reaction?.code, m.pollVote?.hashes)
   }
-}</code></pre>
+}
+```
 
 </details>
 
@@ -4330,11 +4680,13 @@ for (const group of groups) {
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.newsletterReactMessage(
+```js
+await sock.newsletterReactMessage(
   '123456789@newsletter',
   '175',
   '🔥'
-)</code></pre>
+)
+```
 
 </details>
 
@@ -4343,11 +4695,13 @@ Hapus reaksinya dengan memberi nilai kosong:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.newsletterReactMessage(
+```js
+await sock.newsletterReactMessage(
   '123456789@newsletter',
   '175',
   ''
-)</code></pre>
+)
+```
 
 </details>
 
@@ -4357,8 +4711,10 @@ Menerima `server_id` pesannya, bukan message key-nya.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.newsletterPinMessages('123456789@newsletter', [175])
-await sock.newsletterUnpinMessages('123456789@newsletter', 175)</code></pre>
+```js
+await sock.newsletterPinMessages('123456789@newsletter', [175])
+await sock.newsletterUnpinMessages('123456789@newsletter', 175)
+```
 
 </details>
 
@@ -4366,8 +4722,10 @@ await sock.newsletterUnpinMessages('123456789@newsletter', 175)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.newsletterLabelAiContent('123456789@newsletter', 175)
-await sock.newsletterLabelPaidPartnership('123456789@newsletter', 175)</code></pre>
+```js
+await sock.newsletterLabelAiContent('123456789@newsletter', 175)
+await sock.newsletterLabelPaidPartnership('123456789@newsletter', 175)
+```
 
 </details>
 
@@ -4379,7 +4737,9 @@ Vote channel dikirim tanpa enkripsi sebagai hash opsi, berbeda dari vote terenkr
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.newsletterSendPollVote('123456789@newsletter', pollServerId, ['Jakarta'])</code></pre>
+```js
+await sock.newsletterSendPollVote('123456789@newsletter', pollServerId, ['Jakarta'])
+```
 
 </details>
 
@@ -4387,10 +4747,12 @@ Vote channel dikirim tanpa enkripsi sebagai hash opsi, berbeda dari vote terenkr
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const voters = await sock.newsletterPollVoters('123456789@newsletter', 175, {
+```js
+const voters = await sock.newsletterPollVoters('123456789@newsletter', 175, {
   limit: 100,
   voteHash: undefined
-})</code></pre>
+})
+```
 
 </details>
 
@@ -4400,7 +4762,9 @@ Responsnya mengelompokkan pemberi vote per `vote_hash`, masing-masing dengan arr
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const senders = await sock.newsletterReactionSenders('123456789@newsletter', 175)</code></pre>
+```js
+const senders = await sock.newsletterReactionSenders('123456789@newsletter', 175)
+```
 
 </details>
 
@@ -4411,14 +4775,16 @@ Channel bisa menerbitkan statusnya sendiri — cincin di sekitar avatar channel-
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendNewsletterStatus('123456789@newsletter', {
+```js
+await sock.sendNewsletterStatus('123456789@newsletter', {
   image: { url: './poster.jpg' },
   caption: 'Rilisan baru hari ini'
 })
 
 await sock.sendNewsletterStatus('123456789@newsletter', {
   text: 'Terima kasih untuk 10 ribu follower'
-})</code></pre>
+})
+```
 
 </details>
 
@@ -4427,8 +4793,10 @@ Bereaksi ke salah satunya, atau menarik reaksinya kembali:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendNewsletterStatusReaction('123456789@newsletter', 175, '🔥')
-await sock.sendNewsletterStatusReaction('123456789@newsletter', 175, undefined)</code></pre>
+```js
+await sock.sendNewsletterStatusReaction('123456789@newsletter', 175, '🔥')
+await sock.sendNewsletterStatusReaction('123456789@newsletter', 175, undefined)
+```
 
 </details>
 
@@ -4437,7 +4805,9 @@ Menghapus salah satunya:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.revokeNewsletterStatus('123456789@newsletter', statusId)</code></pre>
+```js
+await sock.revokeNewsletterStatus('123456789@newsletter', statusId)
+```
 
 </details>
 
@@ -4463,16 +4833,18 @@ Library-nya mengurus beda medianya untukmu: `sendNewsletterStatus` mengunggah le
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const posted = await sock.sendNewsletterStatus('123456789@newsletter', {
+```js
+const posted = await sock.sendNewsletterStatus('123456789@newsletter', {
   image: { url: 'https://example.com/drop.jpg' },
   caption: 'Rilisan baru hari ini'
 })
 
 posted.newsletterStatusServerId   // 175 — dari gemanya, bukan dari ack-nya
 posted.newsletterStatusAck        // ack-nya sendiri, yang tidak pernah punya id itu
-posted.newsletterStatusDelivered  // node &lt;status&gt; mentah tempat id-nya datang
+posted.newsletterStatusDelivered  // node <status> mentah tempat id-nya datang
 
-await sock.sendNewsletterStatusReaction('123456789@newsletter', posted.newsletterStatusServerId, '🔥')</code></pre>
+await sock.sendNewsletterStatusReaction('123456789@newsletter', posted.newsletterStatusServerId, '🔥')
+```
 
 </details>
 
@@ -4484,7 +4856,9 @@ WhatsApp menggerbangi pembuatan status channel pada kemampuan per-channel yang d
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const { canPost, canPostMusic, capabilities } = await sock.newsletterCanPostStatus('123456789@newsletter')</code></pre>
+```js
+const { canPost, canPostMusic, capabilities } = await sock.newsletterCanPostStatus('123456789@newsletter')
+```
 
 </details>
 
@@ -4496,10 +4870,12 @@ Status channel bisa membawa kotak pertanyaan, dan follower-nya yang menjawab.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendNewsletterStatus('123456789@newsletter', {
+```js
+await sock.sendNewsletterStatus('123456789@newsletter', {
   image: { url: './bg.jpg' },
   question: { text: 'Tanya apa saja' }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -4509,13 +4885,15 @@ Jawabannya kembali sebagai `questionResponseMessage`. Bagikan ulang salah satuny
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const list = await sock.getNewsletterStatuses('123456789@newsletter', { count: 20 })
+```js
+const list = await sock.getNewsletterStatuses('123456789@newsletter', { count: 20 })
 
 for (const status of list.statuses) {
   console.log(status.serverId, status.type, status.viewsCount, status.responsesCount)
   console.log(status.adminProfile?.name)
   console.log(status.reactionCounts) // [ { code: '👍', count: 12 } ]
-}</code></pre>
+}
+```
 
 </details>
 
@@ -4526,10 +4904,12 @@ Untuk hanya menanyakan apa yang berubah sejak satu timestamp, pakai feed pembaru
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const updates = await sock.getNewsletterStatusUpdates('123456789@newsletter', {
+```js
+const updates = await sock.getNewsletterStatusUpdates('123456789@newsletter', {
   count: 20,
   since: 1770000000
-})</code></pre>
+})
+```
 
 </details>
 
@@ -4539,7 +4919,8 @@ LyncxTeams Baileys membuka `StatusAttribution.Type.NEWSLETTER_STATUS` dengan met
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage('status@broadcast', {
+```js
+await sock.sendMessage('status@broadcast', {
   image: { url: 'https://example.com/status.jpg' },
   caption: 'Dibagikan dari LyncxTeams Updates',
   newsletterStatus: {
@@ -4550,7 +4931,8 @@ LyncxTeams Baileys membuka `StatusAttribution.Type.NEWSLETTER_STATUS` dengan met
   }
 }, {
   statusJidList: audienceJids
-})</code></pre>
+})
+```
 
 </details>
 
@@ -4559,7 +4941,8 @@ Atribusinya juga bisa dibuat manual.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const attribution = makeNewsletterStatusAttribution({
+```js
+const attribution = makeNewsletterStatusAttribution({
   newsletterJid: '123456789@newsletter',
   messageId: 42
 })
@@ -4571,7 +4954,8 @@ await sock.sendMessage('status@broadcast', {
   }
 }, {
   statusJidList: audienceJids
-})</code></pre>
+})
+```
 
 </details>
 
@@ -4581,7 +4965,8 @@ Pesan channel membawa nama tampilan dan foto admin yang memposting di dalam blok
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">sock.ev.on('messages.upsert', ({ messages }) =&gt; {
+```js
+sock.ev.on('messages.upsert', ({ messages }) => {
   for (const msg of messages) {
     if (!msg.newsletterMeta) continue
     console.log(msg.newsletterMeta.adminProfile.name)               // 'Rexx Hayanasi'
@@ -4590,7 +4975,8 @@ Pesan channel membawa nama tampilan dan foto admin yang memposting di dalam blok
     console.log(msg.newsletterMeta.aiContent)                       // konten AI yang dideklarasikan sendiri
     console.log(msg.newsletterMeta.editTimestamp)
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -4605,7 +4991,8 @@ Jawaban untuk pertanyaan channel, beserta follower di belakang masing-masing.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const { responses } = await sock.newsletterQuestionResponses('123456789@newsletter', 175, {
+```js
+const { responses } = await sock.newsletterQuestionResponses('123456789@newsletter', 175, {
   count: 50,
   filter: 'starred',
   searchText: 'harga'
@@ -4615,7 +5002,8 @@ for (const r of responses) {
   console.log(r.sender.notifyName, r.sender.lid)
   console.log(r.message?.conversation)
   console.log(r.starred, r.replied)
-}</code></pre>
+}
+```
 
 </details>
 
@@ -4627,8 +5015,10 @@ Memoderasi jawaban seorang follower atas pertanyaan channel.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.newsletterQuestionResponseState('123456789@newsletter', questionServerId, responseServerId, 'HIDDEN')
-await sock.newsletterQuestionResponseState('123456789@newsletter', questionServerId, responseServerId, 'VISIBLE')</code></pre>
+```js
+await sock.newsletterQuestionResponseState('123456789@newsletter', questionServerId, responseServerId, 'HIDDEN')
+await sock.newsletterQuestionResponseState('123456789@newsletter', questionServerId, responseServerId, 'VISIBLE')
+```
 
 </details>
 
@@ -4642,9 +5032,11 @@ Fitur channel mana saja yang sudah diaktifkan server untukmu. Ini gerbang yang d
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const capabilities = await sock.newsletterAdminCapabilities('123456789@newsletter')
+```js
+const capabilities = await sock.newsletterAdminCapabilities('123456789@newsletter')
 console.log(capabilities)
-// [ 'INSIGHTS', 'ADMIN_NOTIFICATIONS', 'PHOTO_POLLS', 'QUESTIONS', 'QUIZ', 'THREAD_MENU' ]</code></pre>
+// [ 'INSIGHTS', 'ADMIN_NOTIFICATIONS', 'PHOTO_POLLS', 'QUESTIONS', 'QUIZ', 'THREAD_MENU' ]
+```
 
 </details>
 
@@ -4658,7 +5050,8 @@ Tiga bagian dari ini bisa dibaca dari library:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const info = await sock.newsletterAdminInfo('123456789@newsletter')
+```js
+const info = await sock.newsletterAdminInfo('123456789@newsletter')
 // {
 //   id: '123456789@newsletter',
 //   adminCount: 3,
@@ -4667,7 +5060,8 @@ Tiga bagian dari ini bisa dibaca dari library:
 // }
 
 const caps = await sock.newsletterAdminCapabilities('123456789@newsletter')
-caps.includes('ADMIN_PROFILE')   // apakah WhatsApp sudah memberi fitur ini ke channel-nya</code></pre>
+caps.includes('ADMIN_PROFILE')   // apakah WhatsApp sudah memberi fitur ini ke channel-nya
+```
 
 </details>
 
@@ -4676,10 +5070,12 @@ Update yang masuk membawa admin yang memposting di `newsletterMeta`, dan library
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">sock.ev.on('newsletter-admin-profile.update', ({ id, adminProfile }) =&gt; {
+```js
+sock.ev.on('newsletter-admin-profile.update', ({ id, adminProfile }) => {
   console.log(id, adminProfile)
   // { id, name, pictureId, pictureDirectPath } — atau null kalau seorang admin menghapus miliknya
-})</code></pre>
+})
+```
 
 </details>
 
@@ -4689,9 +5085,11 @@ Menyetel nama atau foto admin milikmu sendiri **tidak mungkin dari API klien man
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.newsletterCreateAdminInvite('123456789@newsletter', '6281234567890@s.whatsapp.net')
+```js
+await sock.newsletterCreateAdminInvite('123456789@newsletter', '6281234567890@s.whatsapp.net')
 await sock.newsletterRevokeAdminInvite('123456789@newsletter', '6281234567890@s.whatsapp.net')
-await sock.newsletterAcceptAdminInvite('123456789@newsletter')</code></pre>
+await sock.newsletterAcceptAdminInvite('123456789@newsletter')
+```
 
 </details>
 
@@ -4699,8 +5097,10 @@ await sock.newsletterAcceptAdminInvite('123456789@newsletter')</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const pending = await sock.newsletterPendingAdminInvites('123456789@newsletter')
-// [ { id: '628xxxxxxxxx@s.whatsapp.net', phoneNumber: '628xxxxxxxxx' } ]</code></pre>
+```js
+const pending = await sock.newsletterPendingAdminInvites('123456789@newsletter')
+// [ { id: '628xxxxxxxxx@s.whatsapp.net', phoneNumber: '628xxxxxxxxx' } ]
+```
 
 </details>
 
@@ -4709,8 +5109,10 @@ await sock.newsletterAcceptAdminInvite('123456789@newsletter')</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const recommended = await sock.newsletterRecommended({ limit: 20, countryCodes: ['ID'] })
-const similar = await sock.newsletterSimilar('123456789@newsletter', { limit: 20 })</code></pre>
+```js
+const recommended = await sock.newsletterRecommended({ limit: 20, countryCodes: ['ID'] })
+const similar = await sock.newsletterSimilar('123456789@newsletter', { limit: 20 })
+```
 
 </details>
 
@@ -4720,7 +5122,8 @@ Penemuan channel, kueri yang sama dengan yang dipakai tab Pembaruan. Kategorinya
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const list = await sock.newsletterDirectoryList({
+```js
+const list = await sock.newsletterDirectoryList({
   view: 'RECOMMENDED',        // RECOMMENDED | NEW | POPULAR | FEATURED | TRENDING
   categories: ['NEWS'],
   countryCodes: ['ID'],
@@ -4728,7 +5131,8 @@ Penemuan channel, kueri yang sama dengan yang dipakai tab Pembaruan. Kategorinya
 })
 
 const found = await sock.newsletterDirectorySearch('elaina', { limit: 20 })
-const preview = await sock.newsletterDirectoryCategories({ categories: ['NEWS'], countryCode: 'ID' })</code></pre>
+const preview = await sock.newsletterDirectoryCategories({ categories: ['NEWS'], countryCode: 'ID' })
+```
 
 </details>
 
@@ -4739,13 +5143,15 @@ Kalau satu fitur channel menghilang tanpa suara — pengaturan profil admin, cin
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const enf = await sock.newsletterEnforcements('123456789@newsletter')
+```js
+const enf = await sock.newsletterEnforcements('123456789@newsletter')
 
 console.log(enf.suspensions)
 console.log(enf.adminProfiles)            // penindakan yang menyasar fitur profil admin
 console.log(enf.profilePictureDeletions)
 console.log(enf.violatingMessages)
-console.log(enf.geoSuspensions)</code></pre>
+console.log(enf.geoSuspensions)
+```
 
 </details>
 
@@ -4754,7 +5160,8 @@ Setiap entri membawa bentuk yang sama:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">{
+```js
+{
   enforcementId: '...',
   createdAt: 1770000000,
   violationCategory: 'GENERIC_VIOLATION',
@@ -4764,7 +5171,8 @@ Setiap entri membawa bentuk yang sama:
   appealReasonOptions: [ { reason: 'RM_COPS', label: 'Saya pemegang haknya' } ],
   appealFormUrl: 'https://...',
   policy: { headline, subtitle, overview, explanation, adminDisclaimer }
-}</code></pre>
+}
+```
 
 </details>
 
@@ -4775,8 +5183,10 @@ Laporan yang kamu ajukan, dan mengajukan banding atas hasilnya:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const reports = await sock.newsletterReports()
-await sock.newsletterAppealReport(reports[0].report_id, 'RESPONSE_VIOLATES_GUIDELINES')</code></pre>
+```js
+const reports = await sock.newsletterReports()
+await sock.newsletterAppealReport(reports[0].report_id, 'RESPONSE_VIOLATES_GUIDELINES')
+```
 
 </details>
 
@@ -4787,13 +5197,15 @@ WhatsApp Web memindahkan username dan teks Info ke kueri MEX. Yang di sini meman
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const current = await sock.getUsername()
+```js
+const current = await sock.getUsername()
 console.log(current) // { username: 'elaina', state: 'ACTIVE', pin: '1234' }
 
 await sock.setUsername('elaina')
 await sock.setUsernamePin('1234')
 await sock.removeUsernamePin()
-await sock.removeUsername()</code></pre>
+await sock.removeUsername()
+```
 
 </details>
 
@@ -4802,7 +5214,9 @@ Cek sebuah nama sebelum mengklaimnya:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const { available, suggestions } = await sock.checkUsernameAvailability('elaina')</code></pre>
+```js
+const { available, suggestions } = await sock.checkUsernameAvailability('elaina')
+```
 
 </details>
 
@@ -4828,12 +5242,14 @@ Validasi tanpa memanggil server:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { validateUsername, isUsernamePin, displayUsername } from '@lyncxteams/baileys'
+```js
+import { validateUsername, isUsernamePin, displayUsername } from '@lyncxteams/baileys'
 
 validateUsername('rexx.hayanasi')  // { isValid: true }
 validateUsername('rexx.com')       // { isValid: false, errorType: 'INVALID_DOMAIN_SUFFIX' }
 isUsernamePin('1234')              // true
-displayUsername('rexx')            // '@rexx'</code></pre>
+displayUsername('rexx')            // '@rexx'
+```
 
 </details>
 
@@ -4843,11 +5259,13 @@ displayUsername('rexx')            // '@rexx'</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.updateTextStatus('Sedang bikin bot', { emoji: '🤖', ephemeralDurationSec: 0 })
+```js
+await sock.updateTextStatus('Sedang bikin bot', { emoji: '🤖', ephemeralDurationSec: 0 })
 
 const mine = await sock.fetchTextStatus(['6281234567890@s.whatsapp.net'])
 const about = await sock.fetchAbout('6281234567890@s.whatsapp.net')
-console.log(about.status)</code></pre>
+console.log(about.status)
+```
 
 </details>
 
@@ -4861,10 +5279,12 @@ WhatsApp menggerbangi sebagian fitur di balik pemberitahuan yang harus dilalui p
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const notices = await sock.fetchUserNotices()
+```js
+const notices = await sock.fetchUserNotices()
 // [ { id: '20601216', stage: '2', t: '...', version: '...', type: '...' } ]
 
-await sock.updateUserNoticeStage('20601216', 5)</code></pre>
+await sock.updateUserNoticeStage('20601216', 5)
+```
 
 </details>
 
@@ -4874,14 +5294,16 @@ await sock.updateUserNoticeStage('20601216', 5)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const list = await sock.fetchOptOutList({ category: 'marketing' })
+```js
+const list = await sock.fetchOptOutList({ category: 'marketing' })
 
 await sock.updateOptOut({
   jid: '6281234567890@s.whatsapp.net',
   category: 'marketing',
   action: 'add',
   reason: 'user_request'
-})</code></pre>
+})
+```
 
 </details>
 
@@ -4889,7 +5311,9 @@ await sock.updateOptOut({
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const settings = await sock.fetchPushSettings()</code></pre>
+```js
+const settings = await sock.fetchPushSettings()
+```
 
 </details>
 
@@ -4899,8 +5323,10 @@ Membiarkan WhatsApp yang membangkitkan preview-nya ketimbang kamu mengorek halam
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const preview = await sock.fetchServerLinkPreview('https://example.com')
-// { direct_path, hash, title, description, preview_type, thumb_data, width, height }</code></pre>
+```js
+const preview = await sock.fetchServerLinkPreview('https://example.com')
+// { direct_path, hash, title, description, preview_type, thumb_data, width, height }
+```
 
 </details>
 
@@ -4912,7 +5338,8 @@ Membiarkan WhatsApp yang membangkitkan preview-nya ketimbang kamu mengorek halam
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const group = await sock.groupCreate(
+```js
+const group = await sock.groupCreate(
   'LyncxTeams Community',
   [
     '6281234567890@s.whatsapp.net',
@@ -4920,7 +5347,8 @@ Membiarkan WhatsApp yang membangkitkan preview-nya ketimbang kamu mengorek halam
   ]
 )
 
-console.log(group.id)</code></pre>
+console.log(group.id)
+```
 
 </details>
 
@@ -4928,11 +5356,13 @@ console.log(group.id)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.groupParticipantsUpdate(
+```js
+await sock.groupParticipantsUpdate(
   groupJid,
   ['6281234567890@s.whatsapp.net'],
   'add'
-)</code></pre>
+)
+```
 
 </details>
 
@@ -4940,11 +5370,13 @@ console.log(group.id)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.groupParticipantsUpdate(
+```js
+await sock.groupParticipantsUpdate(
   groupJid,
   ['6281234567890@s.whatsapp.net'],
   'remove'
-)</code></pre>
+)
+```
 
 </details>
 
@@ -4952,8 +5384,10 @@ console.log(group.id)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.groupParticipantsUpdate(groupJid, [userJid], 'promote')
-await sock.groupParticipantsUpdate(groupJid, [userJid], 'demote')</code></pre>
+```js
+await sock.groupParticipantsUpdate(groupJid, [userJid], 'promote')
+await sock.groupParticipantsUpdate(groupJid, [userJid], 'demote')
+```
 
 </details>
 
@@ -4961,10 +5395,12 @@ await sock.groupParticipantsUpdate(groupJid, [userJid], 'demote')</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.groupUpdateDescription(
+```js
+await sock.groupUpdateDescription(
   groupJid,
   'Selamat datang di LyncxTeams Community 💜'
-)</code></pre>
+)
+```
 
 </details>
 
@@ -4972,8 +5408,10 @@ await sock.groupParticipantsUpdate(groupJid, [userJid], 'demote')</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.groupUpdateSubject(groupJid, 'Nama baru')
-await sock.groupSettingUpdate(groupJid, 'announcement')</code></pre>
+```js
+await sock.groupUpdateSubject(groupJid, 'Nama baru')
+await sock.groupSettingUpdate(groupJid, 'announcement')
+```
 
 </details>
 
@@ -4983,8 +5421,10 @@ await sock.groupSettingUpdate(groupJid, 'announcement')</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.groupMemberAddMode(groupJid, 'admin_add')
-await sock.groupJoinApprovalMode(groupJid, 'on')</code></pre>
+```js
+await sock.groupMemberAddMode(groupJid, 'admin_add')
+await sock.groupJoinApprovalMode(groupJid, 'on')
+```
 
 </details>
 
@@ -4996,14 +5436,16 @@ WA Web revisi terbaru menambah app-state action `groupHistoryToggleAction` (apak
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { GroupHistoryToggleMode } from '@lyncxteams/baileys'
+```js
+import { GroupHistoryToggleMode } from '@lyncxteams/baileys'
 // GroupHistoryToggleMode = { DEFAULT: 0, ON: 1, OFF: 2 }
 
-sock.ev.on('groups.update', ([update]) =&gt; {
+sock.ev.on('groups.update', ([update]) => {
   if (update.groupHistoryToggleMode !== undefined) {
     console.log(update.id, GroupHistoryToggleMode[update.groupHistoryToggleMode])
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -5013,9 +5455,11 @@ Ketika kamu (atau perangkat tertaut lain) mengubah setelan ini, action-nya tersi
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const pending = await sock.groupRequestParticipantsList(groupJid)
+```js
+const pending = await sock.groupRequestParticipantsList(groupJid)
 await sock.groupRequestParticipantsUpdate(groupJid, [userJid], 'approve')
-await sock.groupRequestParticipantsUpdate(groupJid, [userJid], 'reject')</code></pre>
+await sock.groupRequestParticipantsUpdate(groupJid, [userJid], 'reject')
+```
 
 </details>
 
@@ -5023,13 +5467,15 @@ await sock.groupRequestParticipantsUpdate(groupJid, [userJid], 'reject')</code><
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const code = await sock.groupInviteCode(groupJid)
+```js
+const code = await sock.groupInviteCode(groupJid)
 console.log('https://chat.whatsapp.com/' + code)
 
 const fresh = await sock.groupRevokeInvite(groupJid)
 
 const preview = await sock.groupGetInviteInfo(code)
-await sock.groupAcceptInvite(code)</code></pre>
+await sock.groupAcceptInvite(code)
+```
 
 </details>
 
@@ -5039,8 +5485,10 @@ await sock.groupAcceptInvite(code)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.groupToggleEphemeral(groupJid, 7 * 24 * 60 * 60)
-await sock.groupToggleEphemeral(groupJid, 0)</code></pre>
+```js
+await sock.groupToggleEphemeral(groupJid, 7 * 24 * 60 * 60)
+await sock.groupToggleEphemeral(groupJid, 0)
+```
 
 </details>
 
@@ -5050,10 +5498,12 @@ Durasinya dalam detik; `0` mematikannya. Pilihan milik WhatsApp sendiri adalah 2
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const metadata = await sock.groupMetadata(groupJid)
+```js
+const metadata = await sock.groupMetadata(groupJid)
 const all = await sock.groupFetchAllParticipating()
 
-await sock.groupLeave(groupJid)</code></pre>
+await sock.groupLeave(groupJid)
+```
 
 </details>
 
@@ -5069,14 +5519,16 @@ Komunitas itu induk yang memiliki grup-grup. Setiap metodenya mencerminkan padan
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const community = await sock.communityCreate('LyncxTeams Community', 'Untuk apa komunitas ini')
+```js
+const community = await sock.communityCreate('LyncxTeams Community', 'Untuk apa komunitas ini')
 
 const group = await sock.communityCreateGroup('Pengumuman', [userJid], community.id)
 
 await sock.communityLinkGroup(existingGroupJid, community.id)
 await sock.communityUnlinkGroup(existingGroupJid, community.id)
 
-const linked = await sock.communityFetchLinkedGroups(community.id)</code></pre>
+const linked = await sock.communityFetchLinkedGroups(community.id)
+```
 
 </details>
 
@@ -5086,13 +5538,15 @@ const linked = await sock.communityFetchLinkedGroups(community.id)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.communityParticipantsUpdate(communityJid, [userJid], 'promote')
+```js
+await sock.communityParticipantsUpdate(communityJid, [userJid], 'promote')
 await sock.communityUpdateSubject(communityJid, 'Nama baru')
 await sock.communityUpdateDescription(communityJid, 'Deskripsi baru')
 await sock.communitySettingUpdate(communityJid, 'announcement')
 await sock.communityMemberAddMode(communityJid, 'admin_add')
 await sock.communityJoinApprovalMode(communityJid, 'on')
-await sock.communityToggleEphemeral(communityJid, 7 * 24 * 60 * 60)</code></pre>
+await sock.communityToggleEphemeral(communityJid, 7 * 24 * 60 * 60)
+```
 
 </details>
 
@@ -5102,14 +5556,16 @@ Aksi dan nilainya sama dengan yang di grup di atas.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const code = await sock.communityInviteCode(communityJid)
+```js
+const code = await sock.communityInviteCode(communityJid)
 await sock.communityRevokeInvite(communityJid)
 await sock.communityAcceptInvite(code)
 const preview = await sock.communityGetInviteInfo(code)
 
 const metadata = await sock.communityMetadata(communityJid)
 const all = await sock.communityFetchAllParticipating()
-await sock.communityLeave(communityJid)</code></pre>
+await sock.communityLeave(communityJid)
+```
 
 </details>
 
@@ -5120,7 +5576,9 @@ await sock.communityLeave(communityJid)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const settings = await sock.fetchPrivacySettings(true)</code></pre>
+```js
+const settings = await sock.fetchPrivacySettings(true)
+```
 
 </details>
 
@@ -5141,9 +5599,11 @@ Beri `true` untuk melewati cache-nya. Setiap pengaturan punya pengubahnya sendir
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.updateLastSeenPrivacy('contacts')
+```js
+await sock.updateLastSeenPrivacy('contacts')
 await sock.updateOnlinePrivacy('match_last_seen')
-await sock.updateDisableLinkPreviewsPrivacy(true)</code></pre>
+await sock.updateDisableLinkPreviewsPrivacy(true)
+```
 
 </details>
 
@@ -5151,8 +5611,10 @@ await sock.updateDisableLinkPreviewsPrivacy(true)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.updateDefaultDisappearingMode(7 * 24 * 60 * 60)
-const durations = await sock.fetchDisappearingDuration(jidA, jidB)</code></pre>
+```js
+await sock.updateDefaultDisappearingMode(7 * 24 * 60 * 60)
+const durations = await sock.fetchDisappearingDuration(jidA, jidB)
+```
 
 </details>
 
@@ -5162,9 +5624,11 @@ Bawaannya berlaku untuk chat baru. `fetchDisappearingDuration` menerima jid seba
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.updateBlockStatus(jid, 'block')
+```js
+await sock.updateBlockStatus(jid, 'block')
 await sock.updateBlockStatus(jid, 'unblock')
-const blocked = await sock.fetchBlocklist()</code></pre>
+const blocked = await sock.fetchBlocklist()
+```
 
 </details>
 
@@ -5172,7 +5636,8 @@ const blocked = await sock.fetchBlocklist()</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { SPAM_FLOWS } from '@lyncxteams/baileys'
+```js
+import { SPAM_FLOWS } from '@lyncxteams/baileys'
 
 const laporan = await sock.reportSpam(jid)
 // { jid: '628xxxx@s.whatsapp.net', flow: 'overflow_menu_report', reported: true, node }
@@ -5180,7 +5645,8 @@ const laporan = await sock.reportSpam(jid)
 await sock.reportSpam(groupJid, {
     flow: SPAM_FLOWS.GroupInfoReport,
     source: senderJid
-})</code></pre>
+})
+```
 
 </details>
 
@@ -5206,9 +5672,11 @@ terluarnya dan kamu tidak menemukan apa-apa:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const m = messages[0]
+```js
+const m = messages[0]
 console.log(m.message.conversation)          // undefined
-console.log(Object.keys(m.message))          // [ 'groupStatusMessageV2' ]</code></pre>
+console.log(Object.keys(m.message))          // [ 'groupStatusMessageV2' ]
+```
 
 </details>
 
@@ -5219,11 +5687,13 @@ itu tiga pembungkus bertumpuk:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { normalizeMessageContent, getContentType } from '@lyncxteams/baileys'
+```js
+import { normalizeMessageContent, getContentType } from '@lyncxteams/baileys'
 
 const content = normalizeMessageContent(m.message)
 const type = getContentType(content)        // 'imageMessage'
-const text = content?.conversation || content?.extendedTextMessage?.text</code></pre>
+const text = content?.conversation || content?.extendedTextMessage?.text
+```
 
 </details>
 
@@ -5294,14 +5764,16 @@ menormalkan semuanya menjadi satu bentuk; lihat
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.presenceSubscribe(jid)
+```js
+await sock.presenceSubscribe(jid)
 
 await sock.sendPresenceUpdate('composing', jid)
 await sock.sendPresenceUpdate('recording', jid)
 await sock.sendPresenceUpdate('paused', jid)
 
 await sock.sendPresenceUpdate('available')
-await sock.sendPresenceUpdate('unavailable')</code></pre>
+await sock.sendPresenceUpdate('unavailable')
+```
 
 </details>
 
@@ -5311,10 +5783,12 @@ Kamu baru menerima presence seseorang setelah `presenceSubscribe` pada jid-nya. 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.readMessages([msg.key])
+```js
+await sock.readMessages([msg.key])
 
 await sock.sendReceipt(jid, participant, [messageId], 'read')
-await sock.sendReceipts([msg.key], 'read')</code></pre>
+await sock.sendReceipts([msg.key], 'read')
+```
 
 </details>
 
@@ -5324,10 +5798,12 @@ await sock.sendReceipts([msg.key], 'read')</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const results = await sock.onWhatsApp('6281234567890', '6289876543210')
+```js
+const results = await sock.onWhatsApp('6281234567890', '6289876543210')
 for (const entry of results) {
   console.log(entry.jid, entry.exists)
-}</code></pre>
+}
+```
 
 </details>
 
@@ -5337,12 +5813,14 @@ for (const entry of results) {
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const found = await sock.onWhatsAppUsername('@elaina', 'namalain')
+```js
+const found = await sock.onWhatsAppUsername('@elaina', 'namalain')
 for (const entry of found) {
   console.log(entry.jid, entry.exists)
 }
 
-const withPin = await sock.onWhatsAppUsername({ username: 'elaina', pin: '1234' })</code></pre>
+const withPin = await sock.onWhatsAppUsername({ username: 'elaina', pin: '1234' })
+```
 
 </details>
 
@@ -5353,10 +5831,12 @@ Arah sebaliknya — **JID → `@username`** — pakai `getUsernames`:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const names = await sock.getUsernames('628123@s.whatsapp.net', '234256710246613@lid')
+```js
+const names = await sock.getUsernames('628123@s.whatsapp.net', '234256710246613@lid')
 for (const entry of names) {
   console.log(entry.jid, entry.username)
-}</code></pre>
+}
+```
 
 </details>
 
@@ -5371,7 +5851,8 @@ Terima satu atau banyak JID. Mengembalikan `[{ jid, username }]` hanya untuk JID
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.chatModify({ archive: true, lastMessages: [msg] }, jid)
+```js
+await sock.chatModify({ archive: true, lastMessages: [msg] }, jid)
 await sock.chatModify({ pin: true }, jid)
 await sock.chatModify({ mute: 8 * 60 * 60 * 1000 }, jid)
 await sock.chatModify({ mute: null }, jid)
@@ -5379,7 +5860,8 @@ await sock.chatModify({ markRead: false, lastMessages: [msg] }, jid)
 await sock.chatModify({ star: { messages: [{ id: msg.key.id, fromMe: msg.key.fromMe }], star: true } }, jid)
 await sock.chatModify({ clear: true, lastMessages: [msg] }, jid)
 await sock.chatModify({ delete: true, lastMessages: [msg] }, jid)
-await sock.chatModify({ contact: { fullName: 'LyncxTeams' } }, jid)</code></pre>
+await sock.chatModify({ contact: { fullName: 'LyncxTeams' } }, jid)
+```
 
 </details>
 
@@ -5389,9 +5871,11 @@ await sock.chatModify({ contact: { fullName: 'LyncxTeams' } }, jid)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.fetchMessageHistory(50, oldestMsgKey, oldestMsgTimestamp)
+```js
+await sock.fetchMessageHistory(50, oldestMsgKey, oldestMsgTimestamp)
 await sock.requestPlaceholderResend(messageKey)
-await sock.resyncAppState(['regular_high'], false)</code></pre>
+await sock.resyncAppState(['regular_high'], false)
+```
 
 </details>
 
@@ -5406,13 +5890,15 @@ Label itu fitur WhatsApp Business.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.addLabel(jid, { id: '1', name: 'Pelanggan', color: 0, deleted: false })
+```js
+await sock.addLabel(jid, { id: '1', name: 'Pelanggan', color: 0, deleted: false })
 
 await sock.addChatLabel(jid, labelId)
 await sock.removeChatLabel(jid, labelId)
 
 await sock.addMessageLabel(jid, messageId, labelId)
-await sock.removeMessageLabel(jid, messageId, labelId)</code></pre>
+await sock.removeMessageLabel(jid, messageId, labelId)
+```
 
 </details>
 
@@ -5423,12 +5909,14 @@ await sock.removeMessageLabel(jid, messageId, labelId)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const profile = await sock.getBusinessProfile(jid)
+```js
+const profile = await sock.getBusinessProfile(jid)
 await sock.updateBusinessProfile({ description: 'Toko LyncxTeams', address: 'Jakarta', email: 'halo@example.com' })
 
 const catalog = await sock.getCatalog({ jid, limit: 10 })
 const collections = await sock.getCollections(jid, 51)
-const order = await sock.getOrderDetails(orderId, tokenBase64)</code></pre>
+const order = await sock.getOrderDetails(orderId, tokenBase64)
+```
 
 </details>
 
@@ -5438,7 +5926,8 @@ const order = await sock.getOrderDetails(orderId, tokenBase64)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const created = await sock.productCreate({
+```js
+const created = await sock.productCreate({
   name: 'Paket Stiker LyncxTeams',
   description: 'Satu paket stiker',
   price: 15000,
@@ -5448,7 +5937,8 @@ const order = await sock.getOrderDetails(orderId, tokenBase64)</code></pre>
 })
 
 await sock.productUpdate(created.id, { price: 20000 })
-await sock.productDelete([created.id])</code></pre>
+await sock.productDelete([created.id])
+```
 
 </details>
 
@@ -5456,12 +5946,14 @@ await sock.productDelete([created.id])</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.updateProfileName('LyncxTeams')
+```js
+await sock.updateProfileName('LyncxTeams')
 await sock.updateCoverPhoto(buffer)
 await sock.addOrEditQuickReply({ shortcut: 'hi', message: 'Halo!', keywords: ['halo'] })
 
 await sock.addOrEditContact(jid, { fullName: 'LyncxTeams' })
-await sock.removeContact(jid)</code></pre>
+await sock.removeContact(jid)
+```
 
 </details>
 
@@ -5471,7 +5963,9 @@ await sock.removeContact(jid)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const refreshed = await sock.updateMediaMessage(msg)</code></pre>
+```js
+const refreshed = await sock.updateMediaMessage(msg)
+```
 
 </details>
 
@@ -5481,10 +5975,12 @@ URL media WhatsApp kedaluwarsa. Kalau unduhan gagal di pesan lama, ini meminta `
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.updateMemberLabel(groupJid, 'Bendahara')
+```js
+await sock.updateMemberLabel(groupJid, 'Bendahara')
 // { jid: '12345-67890@g.us', label: 'Bendahara', messageId: '3EB0...' }
 
-await sock.removeMemberLabel(groupJid)</code></pre>
+await sock.removeMemberLabel(groupJid)
+```
 
 </details>
 
@@ -5503,9 +5999,11 @@ Label anggota lain sampai lewat event, bukan lewat query:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">sock.ev.on('group.member-tag.update', ({ groupId, participant, label }) =&gt; {
+```js
+sock.ev.on('group.member-tag.update', ({ groupId, participant, label }) => {
   console.log(participant, 'di', groupId, 'sekarang', label)
-})</code></pre>
+})
+```
 
 </details>
 
@@ -5516,7 +6014,8 @@ Label anggota lain sampai lewat event, bukan lewat query:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { CALL_AUDIO_PREFIX, CALL_VIDEO_PREFIX } from '@lyncxteams/baileys'
+```js
+import { CALL_AUDIO_PREFIX, CALL_VIDEO_PREFIX } from '@lyncxteams/baileys'
 
 const token = await sock.createCallLink('video')
 console.log(CALL_VIDEO_PREFIX + token)
@@ -5524,7 +6023,8 @@ console.log(CALL_VIDEO_PREFIX + token)
 const scheduled = await sock.createCallLink('audio', { startTime: Math.floor(Date.now() / 1000) + 3600 })
 console.log(CALL_AUDIO_PREFIX + scheduled)
 
-await sock.rejectCall(callId, callFrom)</code></pre>
+await sock.rejectCall(callId, callFrom)
+```
 
 </details>
 
@@ -5536,9 +6036,10 @@ Tumpukan VoIP-nya menjalankan mesin panggilan WhatsApp Web di dalam proses yang 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { makeVoipClient } from '@lyncxteams/baileys'
+```js
+import { makeVoipClient } from '@lyncxteams/baileys'
 
-sock.ev.on('connection.update', async ({ connection }) =&gt; {
+sock.ev.on('connection.update', async ({ connection }) => {
     if (connection !== 'open') {
         return
     }
@@ -5549,12 +6050,13 @@ sock.ev.on('connection.update', async ({ connection }) =&gt; {
         audioSource: './halo.mp3'
     })
 
-    call.on('ringing', () =&gt; console.log('berdering'))
-    call.on('connected', () =&gt; console.log('dijawab'))
-    call.on('ended', reason =&gt; console.log('berakhir:', reason))
+    call.on('ringing', () => console.log('berdering'))
+    call.on('connected', () => console.log('dijawab'))
+    call.on('ended', reason => console.log('berakhir:', reason))
 
     await call.waitForEnd()
-})</code></pre>
+})
+```
 
 </details>
 
@@ -5567,13 +6069,15 @@ Saat socket-nya tersambung ulang, serahkan socket yang baru ketimbang membangun 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const voip = await makeVoipClient(sock)
+```js
+const voip = await makeVoipClient(sock)
 
-sock.ev.on('connection.update', async ({ connection }) =&gt; {
+sock.ev.on('connection.update', async ({ connection }) => {
     if (connection === 'open') {
         await voip.attach(sock)
     }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -5583,10 +6087,12 @@ Setiap panggilan menerima playlist, dan antreannya yang menggerakkan panggilan, 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const call = await voip.call('628123456789', {
+```js
+const call = await voip.call('628123456789', {
     playlist: ['satu.mp3'],
     durationMs: 0
-})</code></pre>
+})
+```
 
 </details>
 
@@ -5597,23 +6103,25 @@ Untuk antrean yang lagu berikutnya masih harus dicari, beri jedanya jendela tole
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const call = await voip.call('628123456789', {
+```js
+const call = await voip.call('628123456789', {
     playlist: [await findTrack('lagu pertama')],
     idleGraceMs: 30000,
     durationMs: 0
 })
 
-call.on('track', track =&gt; console.log('memutar', track))
-call.on('trackend', track =&gt; console.log('selesai', track))
+call.on('track', track => console.log('memutar', track))
+call.on('trackend', track => console.log('selesai', track))
 
-call.on('idle', async () =&gt; {
+call.on('idle', async () => {
     const next = await findTrack(queue.shift())
     if (next) {
         call.enqueue(next)
     }
 })
 
-await call.waitForEnd()</code></pre>
+await call.waitForEnd()
+```
 
 </details>
 
@@ -5627,24 +6135,28 @@ Panggilan satu lawan satu maupun grup dua-duanya menerima video. Frame-nya datan
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const call = await voip.call('628123456789', {
+```js
+const call = await voip.call('628123456789', {
     video: true,
     videoPlaylist: ['klip.mp4'],
     playlist: ['lagu.mp3'],
     durationMs: 0
 })
 
-call.on('videotrack', track =&gt; console.log('sekarang menampilkan', track))</code></pre>
+call.on('videotrack', track => console.log('sekarang menampilkan', track))
+```
 
 </details>
 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const call = await voip.callGroup('12345-67890@g.us', {
+```js
+const call = await voip.callGroup('12345-67890@g.us', {
     video: true,
     videoPlaylist: ['klip.mp4']
-})</code></pre>
+})
+```
 
 </details>
 
@@ -5655,7 +6167,9 @@ Gambar diam diulang terus ketimbang ditampilkan satu frame saja, dan itu cara mu
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await voip.call('628123456789', { video: true, videoSource: './poster.jpg', playlist: ['lagu.mp3'] })</code></pre>
+```js
+await voip.call('628123456789', { video: true, videoSource: './poster.jpg', playlist: ['lagu.mp3'] })
+```
 
 </details>
 
@@ -5669,11 +6183,13 @@ Video yang sama, dikirim sebagai berbagi layar ketimbang sebagai kamera. Ini tit
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const call = await voip.call('628123456789', {
+```js
+const call = await voip.call('628123456789', {
     screenShare: true,
     videoPlaylist: ['slide.png'],
     playlist: ['narasi.mp3']
-})</code></pre>
+})
+```
 
 </details>
 
@@ -5688,11 +6204,13 @@ Mana yang lebih baik bergantung pada apa yang kamu kirim, dan layak diuji keduan
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const call = await voip.callGroup('12345-67890@g.us', {
+```js
+const call = await voip.callGroup('12345-67890@g.us', {
     playlist: ['satu.mp3', 'dua.mp3'],
     idleGraceMs: 30000,
     durationMs: 0
-})</code></pre>
+})
+```
 
 </details>
 
@@ -5703,12 +6221,14 @@ Untuk ikut ke panggilan yang dimulai orang lain, serahkan ke `joinGroupCall` apa
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const call = await voip.joinGroupCall({
+```js
+const call = await voip.joinGroupCall({
     callId,
     callCreatorJid,
     groupJid,
     playlist: ['satu.mp3']
-})</code></pre>
+})
+```
 
 </details>
 
@@ -5724,7 +6244,9 @@ Tidak ada yang ditulis ke stdout kecuali kamu memintanya: beri `debug: true` unt
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.logout()</code></pre>
+```js
+await sock.logout()
+```
 
 </details>
 
@@ -5738,8 +6260,10 @@ Ini melepas tautan perangkatnya di sisi WhatsApp, jadi kredensial yang tersimpan
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const url = await sock.profilePictureUrl(jid, 'image')
-console.log(url)</code></pre>
+```js
+const url = await sock.profilePictureUrl(jid, 'image')
+console.log(url)
+```
 
 </details>
 
@@ -5747,9 +6271,11 @@ console.log(url)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.updateProfilePicture(jid, {
+```js
+await sock.updateProfilePicture(jid, {
   url: 'https://example.com/profile.jpg'
-})</code></pre>
+})
+```
 
 </details>
 
@@ -5757,7 +6283,9 @@ console.log(url)</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.removeProfilePicture(jid)</code></pre>
+```js
+await sock.removeProfilePicture(jid)
+```
 
 </details>
 
@@ -5770,7 +6298,8 @@ Beberapa ekspor yang sering dipakai:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import {
+```js
+import {
   makeWASocket,
   useMultiFileAuthState,
   useSingleFileAuthState,
@@ -5797,7 +6326,8 @@ Beberapa ekspor yang sering dipakai:
   MB,
   MESSAGE_BUILDER_VERSION,
   TTLCache
-} from '@lyncxteams/baileys'</code></pre>
+} from '@lyncxteams/baileys'
+```
 
 </details>
 
@@ -5806,8 +6336,10 @@ Cek versi builder-nya:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">console.log(MESSAGE_BUILDER_VERSION)
-console.log(MessageBuilder.VERSION)</code></pre>
+```js
+console.log(MESSAGE_BUILDER_VERSION)
+console.log(MessageBuilder.VERSION)
+```
 
 </details>
 
@@ -5822,7 +6354,9 @@ Polanya sama di setiap tempat: kalau kamu tidak menyerahkan apa-apa, library yan
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const userDevicesCache = config.userDevicesCache || new TTLCache({ stdTTL: 300 })</code></pre>
+```js
+const userDevicesCache = config.userDevicesCache || new TTLCache({ stdTTL: 300 })
+```
 
 </details>
 
@@ -5834,12 +6368,14 @@ Cuma kalau kamu memang mau menyerahkan cache buatanmu sendiri — dan itu bukan 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import makeWASocket, { TTLCache } from '@lyncxteams/baileys'
+```js
+import makeWASocket, { TTLCache } from '@lyncxteams/baileys'
 
 const sock = makeWASocket({
   auth,
   userDevicesCache: new TTLCache({ stdTTL: 600, maxKeys: 50000 })
-})</code></pre>
+})
+```
 
 </details>
 
@@ -5889,7 +6425,9 @@ Satu perintah menjalankan seluruh pemeriksaannya:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-bash">npm run wa:update</code></pre>
+```bash
+npm run wa:update
+```
 
 </details>
 
@@ -5910,7 +6448,9 @@ Tambahkan `--apply` untuk menaikkan revisi yang dipaku, dan itu ditolak kecuali 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-bash">npm run wa:update -- --apply</code></pre>
+```bash
+npm run wa:update -- --apply
+```
 
 </details>
 
@@ -5937,8 +6477,10 @@ Perintah pendukungnya:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-bash">npm run verify:mex
-PROTO_BUNDLE_DIR=.wa-bundle/1047416414 npm run verify:mex</code></pre>
+```bash
+npm run verify:mex
+PROTO_BUNDLE_DIR=.wa-bundle/1047416414 npm run verify:mex
+```
 
 </details>
 
@@ -5949,7 +6491,9 @@ Tanpa `PROTO_BUNDLE_DIR` ia memakai snapshot revisi tertinggi di `.wa-bundle`. I
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code>npm run audit:apk -- /path/to/extracted-apk</code></pre>
+```text
+npm run audit:apk -- /path/to/extracted-apk
+```
 
 </details>
 
@@ -5958,9 +6502,11 @@ Tambahkan `--json <berkas>` dan ia menuliskan lubangnya dalam bentuk yang dikons
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code>npm run audit:apk -- /path/to/extracted-apk /dev/null --json gaps.json
+```text
+npm run audit:apk -- /path/to/extracted-apk /dev/null --json gaps.json
 npm run sync:proto -- --gaps gaps.json
-npm run verify:proto</code></pre>
+npm run verify:proto
+```
 
 </details>
 
@@ -5971,7 +6517,9 @@ Tidak ada yang ditulis dengan tangan, jadi `npm run proto:update` tidak akan mem
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code>KHUSUS ANDROID Message.AlbumMessage.caption — aman didekode, kirim hanya kalau memang disengaja</code></pre>
+```text
+KHUSUS ANDROID Message.AlbumMessage.caption — aman didekode, kirim hanya kalau memang disengaja
+```
 
 </details>
 
@@ -5990,13 +6538,14 @@ Entri `.gitignore` yang disarankan:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-gitignore">node_modules/
-npm-debug.log*</code></pre>
+```gitignore
+node_modules/
+npm-debug.log*
+```
 
 </details>
 
 Kalau repomu memang sengaja tidak melacak lockfile untuk paket library ini, tambahkan `package-lock.json` juga. Kalau tidak, biarkan lockfile-nya terlacak seperti biasa.
-
 
 
 ---
@@ -6009,7 +6558,8 @@ Bagian-bagiannya dibuka sebagai balok penyusun, direkonstruksi dari klien WhatsA
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import {
+```js
+import {
   encodeScheduledMessage,
   decodeScheduledMessage,
   buildScheduledMsgMetaNode,
@@ -6029,12 +6579,13 @@ const meta = buildScheduledMsgMetaNode({
   revealKeyId: scheduled.revealKeyId,
   revealKey: scheduled.revealKey
 })
-// &lt;meta type="scheduled_message" st="…"&gt;&lt;key rkid="…"&gt;{32 byte}&lt;/key&gt;&lt;/meta&gt;
+// <meta type="scheduled_message" st="…"><key rkid="…">{32 byte}</key></meta>
 
 await sock.relayMessage(jid, scheduled.message, {
   messageId: sock.generateMessageTag(),
   additionalNodes: [meta]
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6043,7 +6594,9 @@ Membacanya kembali, begitu kamu memegang reveal key-nya:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const message = decodeScheduledMessage(msg.message, revealKey)</code></pre>
+```js
+const message = decodeScheduledMessage(msg.message, revealKey)
+```
 
 </details>
 
@@ -6052,7 +6605,9 @@ Membatalkan pesan terjadwal itu sebuah pesan protokol:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.relayMessage(jid, buildUnscheduleProtocolMessage(scheduledKey), { messageId })</code></pre>
+```js
+await sock.relayMessage(jid, buildUnscheduleProtocolMessage(scheduledKey), { messageId })
+```
 
 </details>
 
@@ -6076,11 +6631,13 @@ LyncxTeams Baileys membuka helper untuk jenis pesan protobuf yang lebih baru yan
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import {
+```js
+import {
   makeNewsletterStatusAttribution,
   LOCATION_BROADCAST_JID,
   isJidLocationBroadcast
-} from '@lyncxteams/baileys'</code></pre>
+} from '@lyncxteams/baileys'
+```
 
 </details>
 
@@ -6092,12 +6649,14 @@ Satu key terdiri dari empat field, dan ia mengidentifikasi satu pesan di mana pu
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">{
+```js
+{
   remoteJid: 'status@broadcast',        // chat tempat ia hidup
   fromMe: false,                        // apakah akun ini yang mengirimnya
   id: '3EB03AC13066A48D44FF59',         // id pesannya
   participant: '628000@s.whatsapp.net'  // siapa yang mengirimnya, di grup atau di status
-}</code></pre>
+}
+```
 
 </details>
 
@@ -6107,13 +6666,15 @@ Satu key terdiri dari empat field, dan ia mengidentifikasi satu pesan di mana pu
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const myStatus = await sock.sendMessage('status@broadcast', {
+```js
+const myStatus = await sock.sendMessage('status@broadcast', {
   image: { url: './foto.jpg' },
   caption: 'halo semua'
 }, { statusJidList })
 
 console.log(myStatus.key)
-// { remoteJid: 'status@broadcast', fromMe: true, id: '3EB03AC13066A48D44FF59' }</code></pre>
+// { remoteJid: 'status@broadcast', fromMe: true, id: '3EB03AC13066A48D44FF59' }
+```
 
 </details>
 
@@ -6122,8 +6683,10 @@ Key status milikmu sendiri **tidak punya `participant`** — kamu pengirimnya, j
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const myGroupStatus = await sock.sendMessage(groupJid, { text: 'halo grup', groupStatus: true })
-// key: { remoteJid: '120363000000000000@g.us', fromMe: true, id: '…' }</code></pre>
+```js
+const myGroupStatus = await sock.sendMessage(groupJid, { text: 'halo grup', groupStatus: true })
+// key: { remoteJid: '120363000000000000@g.us', fromMe: true, id: '…' }
+```
 
 </details>
 
@@ -6135,14 +6698,16 @@ Setiap pesan masuk tiba dengan key-nya sudah menempel, di event `messages.upsert
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">sock.ev.on('messages.upsert', async ({ messages }) =&gt; {
+```js
+sock.ev.on('messages.upsert', async ({ messages }) => {
   for (const m of messages) {
     if (m.key.remoteJid !== 'status@broadcast') continue
 
     console.log(m.key)
     // { remoteJid: 'status@broadcast', fromMe: false, id: '…', participant: '628000@s.whatsapp.net' }
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6153,11 +6718,12 @@ Untuk menjawab satu prompt tertentu, kamu harus memegang key-nya saat ia tiba, k
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const prompts = new Map()
+```js
+const prompts = new Map()
 
-sock.ev.on('messages.upsert', ({ messages }) =&gt; {
+sock.ev.on('messages.upsert', ({ messages }) => {
   for (const m of messages) {
-    if (m.key.remoteJid === 'status@broadcast' &amp;&amp; !m.key.fromMe) {
+    if (m.key.remoteJid === 'status@broadcast' && !m.key.fromMe) {
       prompts.set(m.key.id, m.key)
     }
   }
@@ -6167,7 +6733,8 @@ sock.ev.on('messages.upsert', ({ messages }) =&gt; {
 await sock.sendMessage('status@broadcast', {
   text: 'ikutan!',
   addYours: prompts.get(chosenId)
-}, { statusJidList })</code></pre>
+}, { statusJidList })
+```
 
 </details>
 
@@ -6179,13 +6746,15 @@ Kalau satu pesan mengutip pesan lain, key yang dikutip ada di `contextInfo`-nya:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const context = m.message?.extendedTextMessage?.contextInfo
-const quotedKey = context &amp;&amp; {
+```js
+const context = m.message?.extendedTextMessage?.contextInfo
+const quotedKey = context && {
   remoteJid: m.key.remoteJid,
   fromMe: context.participant === sock.user.id,
   id: context.stanzaId,
   participant: context.participant
-}</code></pre>
+}
+```
 
 </details>
 
@@ -6212,7 +6781,8 @@ Ini jalan di grup dan chat satu lawan satu maupun di channel, dan `hideVoter` se
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   poll: {
     name: 'Sampul yang mana?',
     values: [
@@ -6221,7 +6791,8 @@ Ini jalan di grup dan chat satu lawan satu maupun di channel, dan `hideVoter` se
     ],
     selectableCount: 1
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6233,11 +6804,13 @@ Opsi berupa string biasa tetap mengirim polling teks normal, dan keduanya bisa d
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   question: {
     text: 'Fitur apa yang harus ditambahkan berikutnya?'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6246,21 +6819,25 @@ Payload yang sama bisa dikirim ke JID channel. Pertanyaan channel ditandai oleh 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage('123456789@newsletter', {
+```js
+await sock.sendMessage('123456789@newsletter', {
   question: {
     text: 'Update mana yang kamu mau berikutnya?'
   }
-})</code></pre>
+})
+```
 
 </details>
 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-xml">&lt;message to="123456789@newsletter" id="MESSAGE_ID" type="text"&gt;
-  &lt;meta questiontype="question"/&gt;
-  &lt;plaintext&gt;PROTO_MESSAGE&lt;/plaintext&gt;
-&lt;/message&gt;</code></pre>
+```xml
+<message to="123456789@newsletter" id="MESSAGE_ID" type="text">
+  <meta questiontype="question"/>
+  <plaintext>PROTO_MESSAGE</plaintext>
+</message>
+```
 
 </details>
 
@@ -6272,12 +6849,14 @@ Seorang follower menjawab sebuah pertanyaan. Dikirim dengan `questiontype="respo
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   questionResponse: {
     key: questionMessage.key,
     text: 'MessageBuilder'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6287,14 +6866,16 @@ Channel-nya membalas sebuah jawaban, mengutipnya lewat server id pertanyaannya. 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage('123456789@newsletter', {
+```js
+await sock.sendMessage('123456789@newsletter', {
   questionReply: {
     text: 'Pilihan bagus, ini yang berikutnya dikerjakan',
     serverQuestionId: 175,
     quotedQuestion: questionMessage.message,   // opsional
     quotedResponse: responseMessage.message    // opsional
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6302,12 +6883,14 @@ Channel-nya membalas sebuah jawaban, mengutipnya lewat server id pertanyaannya. 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   statusQuestionAnswer: {
     key: statusQuestion.key,
     text: 'LyncxTeams Baileys'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6315,13 +6898,15 @@ Channel-nya membalas sebuah jawaban, mengutipnya lewat server id pertanyaannya. 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   statusQuoted: {
     originalStatusId: statusMessage.key,
     type: 'QUESTION_ANSWER',
     text: 'Jawaban status yang dikutip'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6329,13 +6914,15 @@ Channel-nya membalas sebuah jawaban, mengutipnya lewat server id pertanyaannya. 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   statusStickerInteraction: {
     key: statusMessage.key,
     stickerKey: 'heart',
     type: 'REACTION'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6347,13 +6934,15 @@ Jenis notifikasi yang didukung: `UNKNOWN` 0, `STATUS_ADD_YOURS` 1, `STATUS_RESHA
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   statusNotification: {
     responseMessageKey: responseMessage.key,
     originalMessageKey: statusMessage.key,
     type: 'STATUS_RESHARE'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6361,14 +6950,16 @@ Jenis notifikasi yang didukung: `UNKNOWN` 0, `STATUS_ADD_YOURS` 1, `STATUS_RESHA
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(userJid, {
+```js
+await sock.sendMessage(userJid, {
   newsletterAdminInvite: {
     newsletterJid: '123456789@newsletter',
     newsletterName: 'LyncxTeams Updates',
     caption: 'Gabung sebagai admin',
     inviteExpiration: Math.floor(Date.now() / 1000) + 86400
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6378,13 +6969,15 @@ Jenis notifikasi yang didukung: `UNKNOWN` 0, `STATUS_ADD_YOURS` 1, `STATUS_RESHA
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(userJid, {
+```js
+await sock.sendMessage(userJid, {
   newsletterFollowerInvite: {
     newsletterJid: '123456789@newsletter',
     newsletterName: 'LyncxTeams Updates',
     caption: 'Ikuti channel ini'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6404,7 +6997,8 @@ Keduanya berdiri sendiri. Satu status bisa jadi yang satu, yang lain, atau dua-d
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage('status@broadcast', {
+```js
+await sock.sendMessage('status@broadcast', {
   text: 'Halo besties 💜',
   statusAudience: {
     listName: 'Besties',
@@ -6412,7 +7006,8 @@ Keduanya berdiri sendiri. Satu status bisa jadi yang satu, yang lain, atau dua-d
   }
 }, {
   statusJidList: bestiesJids
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6421,11 +7016,13 @@ String polos itu bentuk singkat untuk nama daftarnya:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage('status@broadcast', {
+```js
+await sock.sendMessage('status@broadcast', {
   image: { url: './foto.jpg' },
   caption: 'buat kalian aja',
   statusAudience: 'Besties'
-}, { statusJidList: bestiesJids })</code></pre>
+}, { statusJidList: bestiesJids })
+```
 
 </details>
 
@@ -6434,8 +7031,10 @@ Hilangkan salah satu field-nya dan kamu mendapat cadangan milik klien sendiri �
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage('status@broadcast', { text: 'halo', statusAudience: {} }, { statusJidList })
-// → { audienceType: 1, listName: 'Close friends', listEmoji: '⭐' }</code></pre>
+```js
+await sock.sendMessage('status@broadcast', { text: 'halo', statusAudience: {} }, { statusJidList })
+// → { audienceType: 1, listName: 'Close friends', listEmoji: '⭐' }
+```
 
 </details>
 
@@ -6448,10 +7047,12 @@ Hilangkan salah satu field-nya dan kamu mendapat cadangan milik klien sendiri �
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(groupJid, {
+```js
+await sock.sendMessage(groupJid, {
   text: 'halo grup',
   groupStatus: true
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6460,11 +7061,13 @@ Keduanya sekaligus, dan itulah payload yang sebenarnya dimaksud pertanyaannya:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(groupJid, {
+```js
+await sock.sendMessage(groupJid, {
   text: 'halo grup',
   groupStatus: true,
   statusAudience: { listName: 'Besties', listEmoji: '💜' }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6473,7 +7076,8 @@ menghasilkan:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-jsonc">{
+```jsonc
+{
   "groupStatusMessageV2": {
     "message": {
       "extendedTextMessage": {
@@ -6489,7 +7093,8 @@ menghasilkan:
       }
     }
   }
-}</code></pre>
+}
+```
 
 </details>
 
@@ -6509,10 +7114,12 @@ Perhatikan `message.conversation` bernilai `undefined` di situ — teksnya dua l
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { makeStatusAudienceMetadata, proto } from '@lyncxteams/baileys'
+```js
+import { makeStatusAudienceMetadata, proto } from '@lyncxteams/baileys'
 
 makeStatusAudienceMetadata({ listName: 'Kerja', listEmoji: '💼', audienceType: 'CLOSE_FRIENDS' })
-makeStatusAudienceMetadata({ listName: 'Kerja', audienceType: proto.ContextInfo.StatusAudienceMetadata.AudienceType.CLOSE_FRIENDS })</code></pre>
+makeStatusAudienceMetadata({ listName: 'Kerja', audienceType: proto.ContextInfo.StatusAudienceMetadata.AudienceType.CLOSE_FRIENDS })
+```
 
 </details>
 
@@ -6521,12 +7128,14 @@ Atau tulis contextInfo-nya sendiri, kalau kamu merelay ketimbang mengirim:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage('status@broadcast', {
+```js
+await sock.sendMessage('status@broadcast', {
   text: 'Halo besties',
   contextInfo: {
     statusAudienceMetadata: makeStatusAudienceMetadata({ listName: 'Besties', listEmoji: '💜' })
   }
-}, { statusJidList: bestiesJids })</code></pre>
+}, { statusJidList: bestiesJids })
+```
 
 </details>
 
@@ -6534,14 +7143,16 @@ Atau tulis contextInfo-nya sendiri, kalau kamu merelay ketimbang mengirim:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { normalizeMessageContent, getContentType } from '@lyncxteams/baileys'
+```js
+import { normalizeMessageContent, getContentType } from '@lyncxteams/baileys'
 
 const content = normalizeMessageContent(m.message)
 const audience = content?.[getContentType(content)]?.contextInfo?.statusAudienceMetadata
 
 if (audience) {
   console.log(audience.listEmoji, audience.listName)   // 💜 Besties
-}</code></pre>
+}
+```
 
 </details>
 
@@ -6551,13 +7162,15 @@ Emoji dan namanya berjalan di submessage yang sama, jadi kalau salah satunya tib
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const sent = await sock.sendMessage('status@broadcast', {
+```js
+const sent = await sock.sendMessage('status@broadcast', {
   text: 'Halo besties',
   statusAudience: { listName: 'Besties', listEmoji: '💜' }
 }, { statusJidList })
 
 console.log(sent.message.extendedTextMessage.contextInfo.statusAudienceMetadata)
-// StatusAudienceMetadata { audienceType: 1, listName: 'Besties', listEmoji: '💜' }</code></pre>
+// StatusAudienceMetadata { audienceType: 1, listName: 'Besties', listEmoji: '💜' }
+```
 
 </details>
 
@@ -6569,7 +7182,7 @@ Kalau yang tercetak `Close friends`, salah satu dari ini sedang terjadi:
 | --- | --- |
 | Kuncinya tidak pernah dibaca | `statusAudience` diselesaikan oleh `sock.sendMessage`. Langsung ke `generateWAMessageFromContent` dan `relayMessage` melewatinya — setel `contextInfo.statusAudienceMetadata` sendiri di situ. |
 | Ditulis `listname` atau `name` | Kuncinya `listName`. Kunci yang tidak dikenal bukan error, ia cuma membiarkan bawaannya tetap di tempat. |
-| Hanya emoji-nya yang diberikan | `{ listEmoji: '💜' }` mempertahankan nama bawaannya, sama seperti `{ listName: 'Besties' }` mempertahankan bintang bawaannya. |
+| Hanya emoji-nya yang diberikan | `{ listEmoji: '' }` mempertahankan nama bawaannya, sama seperti `{ listName: 'Besties' }` mempertahankan bintang bawaannya. |
 | Ia ikut bersama builder modern | `statusAudience` di sebelah `groupStatusReaction`, `question`, `comment`, dan kawan-kawannya sekarang melempar error ketimbang menghilang — builder itu menggantikan seluruh kontennya dan tidak punya contextInfo. |
 
 Dan kalau payload-nya benar tapi ponselnya tetap menampilkan bawaannya, itu kliennya, bukan pesannya: lencananya fitur yang digerbangi rollout, dan WhatsApp bisa jatuh ke label bawaan di build yang punya parser-nya tapi belum punya UI-nya. Coba penonton di build Android yang terbaru sebelum mengubah kodenya.
@@ -6583,10 +7196,12 @@ Dan kalau payload-nya benar tapi ponselnya tetap menampilkan bawaannya, itu klie
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage('status@broadcast', {
+```js
+await sock.sendMessage('status@broadcast', {
   text: 'ikutan!',
   addYours: promptStatus.key
-}, { statusJidList })</code></pre>
+}, { statusJidList })
+```
 
 </details>
 
@@ -6597,7 +7212,8 @@ Itu menuliskan `messageContextInfo.messageAssociation` (tag 10) dengan `associat
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-jsonc">{
+```jsonc
+{
   "messageContextInfo": {
     "messageAssociation": {
       "associationType": 8,
@@ -6605,7 +7221,8 @@ Itu menuliskan `messageContextInfo.messageAssociation` (tag 10) dengan `associat
     }
   },
   "extendedTextMessage": { "text": "ikutan!" }
-}</code></pre>
+}
+```
 
 </details>
 
@@ -6614,11 +7231,13 @@ Ini jalan di konten status apa pun, media termasuk, karena asosiasinya duduk di 
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage('status@broadcast', {
+```js
+await sock.sendMessage('status@broadcast', {
   image: { url: './jawaban.jpg' },
   caption: 'ikutan!',
   addYours: promptStatus.key
-}, { statusJidList })</code></pre>
+}, { statusJidList })
+```
 
 </details>
 
@@ -6633,10 +7252,12 @@ Ada tiga rasa Add Yours, dan kamu bisa menyebut yang kamu mau:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage('status@broadcast', {
+```js
+await sock.sendMessage('status@broadcast', {
   text: 'ikutan!',
   addYours: { key: promptStatus.key, type: 'STATUS_ADD_YOURS_AI_IMAGINE' }
-}, { statusJidList })</code></pre>
+}, { statusJidList })
+```
 
 </details>
 
@@ -6646,7 +7267,8 @@ Ada tiga rasa Add Yours, dan kamu bisa menyebut yang kamu mau:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { AssociationType } from '@lyncxteams/baileys'
+```js
+import { AssociationType } from '@lyncxteams/baileys'
 
 await sock.sendMessage('status@broadcast', {
   text: 'jawaban',
@@ -6655,7 +7277,8 @@ await sock.sendMessage('status@broadcast', {
     parentMessageKey: questionStatus.key,
     messageIndex: 0
   }
-}, { statusJidList })</code></pre>
+}, { statusJidList })
+```
 
 </details>
 
@@ -6667,13 +7290,15 @@ Memposting jawabannya tidak dengan sendirinya memberi tahu siapa pun yang menuli
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(promptAuthorJid, {
+```js
+await sock.sendMessage(promptAuthorJid, {
   statusNotification: {
     responseMessageKey: myStatus.key,
     originalMessageKey: promptStatus.key,
     type: 'STATUS_ADD_YOURS'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6688,11 +7313,13 @@ Mention orang di status itu dua pesan: statusnya sendiri dikirim ke `status@broa
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(
+```js
+await sock.sendMessage(
   ['628000@s.whatsapp.net', '120363000000000000@g.us'],
   { image: { url: './foto.jpg' }, caption: 'halo semua' },
   { delayMs: 1500 }
-)</code></pre>
+)
+```
 
 </details>
 
@@ -6703,10 +7330,12 @@ Untuk mengirim penunjuknya sendiri, terhadap status yang sudah kamu posting:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const myStatus = await sock.sendMessage('status@broadcast', { text: 'halo semua' }, { statusJidList })
+```js
+const myStatus = await sock.sendMessage('status@broadcast', { text: 'halo semua' }, { statusJidList })
 
 await sock.sendMessage(userJid, { statusMention: { key: myStatus.key } })
-await sock.sendMessage(groupJid, { statusMention: { key: myStatus.key, group: true } })</code></pre>
+await sock.sendMessage(groupJid, { statusMention: { key: myStatus.key, group: true } })
+```
 
 </details>
 
@@ -6717,10 +7346,12 @@ Atau bangun tanpa mengirim, untuk relay buatan sendiri:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { makeStatusMentionMessage } from '@lyncxteams/baileys'
+```js
+import { makeStatusMentionMessage } from '@lyncxteams/baileys'
 
 const content = makeStatusMentionMessage({ key: myStatus.key, group: false })
-// { statusMentionMessage: { message: { protocolMessage: { key, type: 25 } } } }</code></pre>
+// { statusMentionMessage: { message: { protocolMessage: { key, type: 25 } } } }
+```
 
 </details>
 
@@ -6730,12 +7361,14 @@ Kedua pembungkusnya `FutureProofMessage` — `statusMentionMessage` itu field 87
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(groupJid, {
+```js
+await sock.sendMessage(groupJid, {
   groupStatusReaction: {
     key: groupStatusMessage.key,
     text: '❤️'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6747,12 +7380,14 @@ Polling aslinya harus dibuat dengan `canAddOption: true` (lihat [Pengaturan poll
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   pollAddOption: {
     pollCreationMessageKey: pollMessage.key,
     option: 'Opsi baru'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6764,14 +7399,16 @@ Polling aslinya harus dibuat dengan `canAddOption: true` (lihat [Pengaturan poll
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   comment: {
     targetMessageKey: targetMessage.key,
     content: {
       text: 'Komentar untuk pesan ini'
     }
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6779,7 +7416,8 @@ Polling aslinya harus dibuat dengan `canAddOption: true` (lihat [Pengaturan poll
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   eventInvite: {
     eventId: 'elaina-event-001',
     eventTitle: 'Acara Komunitas LyncxTeams',
@@ -6787,7 +7425,8 @@ Polling aslinya harus dibuat dengan `canAddOption: true` (lihat [Pengaturan poll
     endTime: new Date(Date.now() + 7200000),
     caption: 'Sampai jumpa di sana'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6795,13 +7434,15 @@ Polling aslinya harus dibuat dengan `canAddOption: true` (lihat [Pengaturan poll
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const created = await sock.sendMessage(jid, {
+```js
+const created = await sock.sendMessage(jid, {
   scheduledCall: {
     scheduledTimestampMs: new Date(Date.now() + 3600000),
     callType: 'VIDEO',
     title: 'Panggilan LyncxTeams'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6810,12 +7451,14 @@ Membatalkan panggilan terjadwal lewat message key-nya.
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.sendMessage(jid, {
+```js
+await sock.sendMessage(jid, {
   scheduledCallEdit: {
     key: created.key,
     editType: 'CANCEL'
   }
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6825,8 +7468,10 @@ WhatsApp Desktop mengenali `location@broadcast` secara terpisah dari `status@bro
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">console.log(LOCATION_BROADCAST_JID)
-console.log(isJidLocationBroadcast('location@broadcast'))</code></pre>
+```js
+console.log(LOCATION_BROADCAST_JID)
+console.log(isJidLocationBroadcast('location@broadcast'))
+```
 
 </details>
 
@@ -6834,7 +7479,8 @@ console.log(isJidLocationBroadcast('location@broadcast'))</code></pre>
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import {
+```js
+import {
   makeQuestionMessage,
   makeQuestionResponseMessage,
   makeStatusQuestionAnswerMessage,
@@ -6852,7 +7498,8 @@ console.log(isJidLocationBroadcast('location@broadcast'))</code></pre>
   makeNewsletterStatusAttribution,
   makeGroupStatusAttribution,
   makeStatusAudienceMetadata
-} from '@lyncxteams/baileys'</code></pre>
+} from '@lyncxteams/baileys'
+```
 
 </details>
 
@@ -6878,7 +7525,9 @@ Keduanya query `w:mex` yang sama persis dengan yang dijalankan WA Web, jadi jawa
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const cap = await sock.fetchNewChatMessageCap()</code></pre>
+```js
+const cap = await sock.fetchNewChatMessageCap()
+```
 
 </details>
 
@@ -6905,7 +7554,9 @@ Perlu diketahui: query ini menanyakan satu jenis kuota saja, `INDIVIDUAL_NEW_CHA
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const lock = await sock.fetchAccountReachoutTimelock()</code></pre>
+```js
+const lock = await sock.fetchAccountReachoutTimelock()
+```
 
 </details>
 
@@ -6920,9 +7571,11 @@ Memanggilnya juga memancarkan `connection.update`, jadi satu pemanggilan cukup u
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">sock.ev.on('connection.update', ({ reachoutTimeLock }) =&gt; {
+```js
+sock.ev.on('connection.update', ({ reachoutTimeLock }) => {
   if (reachoutTimeLock?.isActive) stopSending()
-})</code></pre>
+})
+```
 
 </details>
 
@@ -6930,17 +7583,19 @@ Memanggilnya juga memancarkan `connection.update`, jadi satu pemanggilan cukup u
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const guard = async () =&gt; {
+```js
+const guard = async () => {
   const lock = await sock.fetchAccountReachoutTimelock()
   if (lock.isActive) return { send: false, reason: 'timelock reachout sampai ' + lock.timeEnforcementEnds }
 
   const cap = await sock.fetchNewChatMessageCap()
   if (cap.capped) return { send: false, reason: 'kuota chat baru habis sampai ' + new Date(cap.cycleEnd * 1000) }
   if (cap.warned) return { send: false, reason: 'WhatsApp sudah memperingatkan akun ini: ' + cap.status }
-  if (cap.remaining !== undefined &amp;&amp; cap.remaining &lt; 10) return { send: false, reason: 'sisa cuma ' + cap.remaining + ' di siklus ini' }
+  if (cap.remaining !== undefined && cap.remaining < 10) return { send: false, reason: 'sisa cuma ' + cap.remaining + ' di siklus ini' }
 
   return { send: true, remaining: cap.remaining }
-}</code></pre>
+}
+```
 
 </details>
 
@@ -6956,11 +7611,13 @@ Jejak lengkapnya seperti ini:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code>TypeError: Cannot read properties of undefined (reading 'undefined')
+```text
+TypeError: Cannot read properties of undefined (reading 'undefined')
     at generateWAMessageFromContent (.../lib/Utils/messages.js:1443:64)
     at generateWAMessage (.../lib/Utils/messages.js:1507:12)
     at async Object.sendMessage (.../lib/Socket/messages-send.js:1300:33)
-    at async Object.before (.../plugins/system/_firstchat.js:18:9)</code></pre>
+    at async Object.before (.../plugins/system/_firstchat.js:18:9)
+```
 
 </details>
 
@@ -6977,8 +7634,10 @@ Sekarang sudah diberi pengaman — pengirimannya berjalan **tanpa** kutipannya d
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code>WARN  nothing quotable here, sending without the quote
-      jid: "120363000000000000@g.us"  quotedId: "3EB0…"  quotedContentType: undefined</code></pre>
+```text
+WARN  nothing quotable here, sending without the quote
+      jid: "120363000000000000@g.us"  quotedId: "3EB0…"  quotedContentType: undefined
+```
 
 </details>
 
@@ -6989,10 +7648,12 @@ Kalau kamu lebih memilih tidak mengirim sama sekali daripada mengirim tanpa kuti
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">import { normalizeMessageContent, getContentType } from '@lyncxteams/baileys'
+```js
+import { normalizeMessageContent, getContentType } from '@lyncxteams/baileys'
 
 const quotable = !!getContentType(normalizeMessageContent(m.message))
-await sock.sendMessage(m.key.remoteJid, { text: 'halo' }, quotable ? { quoted: m } : {})</code></pre>
+await sock.sendMessage(m.key.remoteJid, { text: 'halo' }, quotable ? { quoted: m } : {})
+```
 
 </details>
 
@@ -7006,9 +7667,11 @@ Sekarang satu perangkat ditandai hanya setelah node key-nya benar-benar ada di d
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code>WARN  sender key did not reach every device, leaving them unmarked so the next send retries
+```text
+WARN  sender key did not reach every device, leaving them unmarked so the next send retries
       jid: "120363000000000000@g.us"
-      skipped: [ "628000:12@s.whatsapp.net" ]</code></pre>
+      skipped: [ "628000:12@s.whatsapp.net" ]
+```
 
 </details>
 
@@ -7017,11 +7680,13 @@ Kalau satu grup sudah tersangkut dari sebelum perbaikan ini, bersihkan ingatanny
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const reset = await sock.resetGroupSenderKey('120363000000000000@g.us')
+```js
+const reset = await sock.resetGroupSenderKey('120363000000000000@g.us')
 console.log(reset)
 // { jid: '120363000000000000@g.us', cleared: 4, devices: [ '628000:12@s.whatsapp.net', … ] }
 
-await sock.sendMessage('120363000000000000@g.us', { text: 'halo' })</code></pre>
+await sock.sendMessage('120363000000000000@g.us', { text: 'halo' })
+```
 
 </details>
 
@@ -7043,7 +7708,9 @@ Saat memakai kode pairing kustom:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">await sock.requestPairingCode(phone, 'LYNCX01')</code></pre>
+```js
+await sock.requestPairingCode(phone, 'LYNCX01')
+```
 
 </details>
 
@@ -7073,7 +7740,9 @@ Kelas builder butuh socket Baileys yang aktif:
 <details>
 <summary> Tampilkan kode </summary>
 
-<pre><code class="language-js">const button = new MB.Button(sock)</code></pre>
+```js
+const button = new MB.Button(sock)
+```
 
 </details>
 
@@ -7140,7 +7809,7 @@ Terima kasih kepada semua pihak yang telah memberikan dukungan, inspirasi, dan k
 - Seluruh contributor dan komunitas open source yang membantu perkembangan Baileys.
 
 </details>
-<h2 align="center">✨ Kontributor & Kredit</h2>
+<h2 align="center"> Kontributor & Kredit</h2>
 
 <p align="center">
   Terima kasih kepada semua yang berkontribusi ke proyek ini.
@@ -7210,7 +7879,7 @@ Terima kasih kepada semua pihak yang telah memberikan dukungan, inspirasi, dan k
 </table>
 
 <p align="center">
-  <sub>Dibangun dan dipelihara dengan kontribusi dari komunitas ❤️</sub>
+  <sub>Dibangun dan dipelihara dengan kontribusi dari komunitas ️</sub>
 </p>
 
 
@@ -7227,7 +7896,7 @@ Jangan menghapus pemberitahuan hak cipta atau atribusi pihak ketiga yang diwajib
 ---
 
 <div align="center">
-  <b>💫 @lyncxteams/baileys</b>
+  <b> @lyncxteams/baileys</b>
   <br>
   <sub>Dibangun dengan hormat kepada ekosistem open source Baileys.</sub>
 </div>
