@@ -62,10 +62,108 @@ Use this map to jump directly to a task. The full reference and examples are org
 | Use Private Relay | [Private Relay](#private-relay-spr) |
 | Use WhatsApp Web screenshot helpers | [WhatsApp Web screenshot](#whatsapp-web-screenshot) |
 | Build interactive messages | [Integrated MessageBuilder](#integrated-messagebuilder) |
+| Build and send CFC group history bundles | [CFC](#cfc) |
 | Work with groups and communities | [Group management](#group-management), [Communities](#communities) |
 | Work with channels | [Newsletters / Channels](#newsletter--channel) |
 | Use calling and VoIP | [Calling](#calling) |
 | Troubleshoot common problems | [Troubleshooting](#troubleshooting) |
+
+
+
+## CFC
+
+CFC is integrated into the package and can be imported directly. You do not need to copy a separate `lib/cfc.js` file into your bot project.
+
+### Import
+
+```js
+import { cfc } from '@lyncxteams/baileys'
+```
+
+### Create a bundle
+
+```js
+const history = cfc(sock).builder()
+
+const firstMessage = history.addText('Hello from CFC', {
+  participant: '6281234567890@s.whatsapp.net',
+  timestamp: Math.floor(Date.now() / 1000),
+  fromMe: false,
+  pushName: 'Member'
+})
+
+await history.send(
+  '120363000000000000@g.us',
+  '6281234567890@s.whatsapp.net'
+)
+```
+
+### Available builder methods
+
+| Method | Description |
+|---|---|
+| `cfc(sock)` | Creates a CFC instance for the connected socket. |
+| `.builder()` | Creates a new bundle builder. |
+| `.addText(text, options)` | Adds a text message. |
+| `.addImage(source, options)` | Adds an image from a URL, file path, `Buffer`, or supported image-message object. |
+| `.addRaw(options)` | Adds a raw WhatsApp `Proto.IMessage`. |
+| `.addReaction(target, emoji, options)` | Adds a reaction to a message already added to the builder. |
+| `.build()` | Returns the messages currently in the builder. |
+| `.materialize(groupJid)` | Returns the messages with the supplied group JID as `remoteJid`. |
+| `.send(groupJid, targetJid)` | Creates the CFC bundle and sends it through the connected socket. |
+
+### Message options
+
+`addText` and `addImage` accept these options:
+
+- `participant` (required): participant JID associated with the message.
+- `timestamp` (required): Unix timestamp in seconds.
+- `fromMe` (optional, default `false`): whether the message was sent by the connected account.
+- `messageId` (optional): custom message ID; one is generated when omitted.
+- `pushName` (optional): participant display name.
+- `quoted` (optional): quoted message data; a message ID already present in the same builder can also be used by `addText`.
+- `caption` (optional, `addImage` only): image caption.
+
+For `addReaction`, provide `participant` and `timestamp` in its options. The target can be a message object returned by `addText` / `addImage` / `addRaw`, or its message ID.
+
+### Complete example with a reaction
+
+```js
+import { cfc } from '@lyncxteams/baileys'
+
+const history = cfc(sock).builder()
+
+const message = history.addText('Example message', {
+  participant: '6281234567890@s.whatsapp.net',
+  timestamp: Math.floor(Date.now() / 1000),
+  pushName: 'Member'
+})
+
+history.addReaction(message, '👍', {
+  participant: '6281234567890@s.whatsapp.net',
+  timestamp: Math.floor(Date.now() / 1000)
+})
+
+const result = await history.send(
+  '120363000000000000@g.us',
+  '6281234567890@s.whatsapp.net'
+)
+
+console.log(result)
+```
+
+> [!NOTE]
+> CFC uses the package's built-in CFC service configuration. Sending requires a connected socket with the required group, media, and encryption capabilities. `groupJid` must be the destination group JID and `targetJid` must be the intended recipient JID. The service request and final send can fail; handle errors with `try/catch`.
+
+```js
+try {
+  const result = await history.send(groupJid, targetJid)
+  console.log('CFC sent:', result.id)
+} catch (error) {
+  console.error('CFC failed:', error.message)
+}
+```
+
 
 ## Feature index
 The sections below contain the detailed API reference and examples. Code samples are individually collapsed; open only the example you need.
@@ -116,6 +214,7 @@ Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bag
 | Menanggapi pesan masuk | `messages.upsert` | [Menerima Pesan](#menerima-pesan), [Event](#event) |
 | Kirim teks, gambar, video, berkas, lokasi, polling | `sock.sendMessage` | [Mengirim Pesan](#mengirim-pesan) |
 | Kirim button, list, carousel | `Button`, `ButtonV2`, `Carousel` | [MessageBuilder Terintegrasi](#messagebuilder-terintegrasi) |
+| Buat dan kirim bundle riwayat grup CFC | `cfc(sock)` | [CFC](#cfc) |
 | Kirim kartu bergaya AI | `AIRich`, A2UI | [AIRich](#airich), [Kartu A2UI](#kartu-a2ui) |
 | Baca pesan rich yang dikirim bot lain | `readRichMessage` | [Membaca Balik Pesan Rich](#membaca-balik-pesan-rich) |
 | Kirim beberapa foto jadi satu postingan | pesan album | [Pesan Album](#pesan-album) |
@@ -142,6 +241,70 @@ Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bag
 
 ---
 
+
+
+## CFC
+
+CFC sudah terintegrasi langsung ke dalam package Baileys. Jadi, project bot tidak perlu lagi menyimpan atau mengimpor file `lib/cfc.js` secara terpisah.
+
+### Import
+
+```js
+import { cfc } from '@lyncxteams/baileys'
+```
+
+### Membuat dan mengirim bundle
+
+```js
+const history = cfc(sock).builder()
+
+history.addText('Halo dari CFC', {
+  participant: '6281234567890@s.whatsapp.net',
+  timestamp: Math.floor(Date.now() / 1000),
+  fromMe: false,
+  pushName: 'Member'
+})
+
+const result = await history.send(
+  '120363000000000000@g.us',
+  '6281234567890@s.whatsapp.net'
+)
+
+console.log(result)
+```
+
+### Method yang tersedia
+
+| Method | Fungsi |
+|---|---|
+| `cfc(sock)` | Membuat instance CFC menggunakan socket yang aktif. |
+| `.builder()` | Membuat builder bundle baru. |
+| `.addText(text, options)` | Menambahkan pesan teks. |
+| `.addImage(source, options)` | Menambahkan gambar dari URL, path file, `Buffer`, atau object image-message yang didukung. |
+| `.addRaw(options)` | Menambahkan pesan mentah bertipe `Proto.IMessage`. |
+| `.addReaction(target, emoji, options)` | Menambahkan reaksi ke pesan yang sudah dimasukkan ke builder. |
+| `.build()` | Mengambil daftar pesan di builder. |
+| `.materialize(groupJid)` | Menghasilkan pesan dengan `remoteJid` sesuai JID grup. |
+| `.send(groupJid, targetJid)` | Membuat bundle CFC dan mengirimkannya melalui socket. |
+
+### Opsi pesan
+
+`addText` dan `addImage` menerima opsi berikut:
+
+- `participant` (wajib): JID peserta yang terkait dengan pesan.
+- `timestamp` (wajib): Unix timestamp dalam detik.
+- `fromMe` (opsional, default `false`): penanda apakah pesan dikirim oleh akun bot.
+- `messageId` (opsional): ID pesan khusus; dibuat otomatis jika tidak diisi.
+- `pushName` (opsional): nama tampilan peserta.
+- `quoted` (opsional): data pesan yang dikutip. Untuk `addText`, ID pesan yang sudah ada di builder juga dapat digunakan.
+- `caption` (opsional, khusus `addImage`): caption gambar.
+
+Untuk `addReaction`, isi `participant` dan `timestamp` pada opsi. Target reaksi bisa berupa object pesan hasil `addText` / `addImage` / `addRaw`, atau ID pesannya.
+
+> [!NOTE]
+> CFC menggunakan konfigurasi layanan bawaan package. Pengiriman membutuhkan socket yang sudah terhubung dan mendukung kebutuhan grup, media, serta enkripsi. `groupJid` adalah JID grup tujuan, sedangkan `targetJid` adalah JID penerima yang dituju. Proses request layanan maupun pengiriman pesan dapat gagal, jadi gunakan `try/catch` untuk menangani error.
+
+
 ## Daftar Isi
 - [Ringkasan](#ringkasan)
   - [Yang Menonjol](#yang-menonjol)
@@ -151,6 +314,7 @@ Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bag
   - [Paket yang disarankan](#paket-yang-disarankan)
   - [Paket Media Opsional](#paket-media-opsional)
 - [Impor](#impor)
+- [CFC](#cfc)
 - [Koneksi Dasar](#koneksi-dasar)
   - [Opsi percobaan ulang dan pairing](#opsi-percobaan-ulang-dan-pairing)
   - [Opsi socket](#opsi-socket)
