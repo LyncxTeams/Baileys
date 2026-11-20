@@ -4471,7 +4471,7 @@ Kartu di sini `externalAdReply`, jadi ia membawa risiko pengiriman field itu: pe
 Membaca musik yang datang pakai `readMusicMessage(msg.message)`, yang mengembalikan `null` untuk apa pun yang bukan itu.
 
 ### Status Grup
-Status grup itu pesan yang sama dengan `groupStatus: true` padanya. Itu membungkus pesan yang sudah jadi di dalam `groupStatusMessageV2` dan menyetel `contextInfo.isGroupStatus`, dan itulah yang membuat lapisan relay menempelkan node `<meta is_group_status="true">` yang dicari klien:
+Status grup itu pesan yang sama dengan `groupStatus: true` padanya. Itu membungkus pesan yang sudah jadi di dalam `groupStatusMessageV2` (dan otomatis menambahkan `messageSecret` di dalamnya — tanpa itu WhatsApp menganggapnya pesan grup biasa) dan menyetel `contextInfo.isGroupStatus`, dan itulah yang membuat lapisan relay menempelkan node `<meta is_group_status="true">` yang dicari klien:
 
 <details>
 <summary> Tampilkan kode </summary>
