@@ -72,7 +72,7 @@ Use this map to jump directly to a task. The full reference and examples are org
 
 ## CFC
 
-CFC is integrated into the package and can be imported directly. You do not need to copy a separate `lib/cfc.js` file into your bot project.
+CFC-CCH v2.0.0 is integrated into the package and can be imported directly. It is API-FREE: bundle processing and reaction encoding run locally through Baileys, without an external CFC API or API key. You do not need to copy a separate `lib/cfc.js` file into your bot project.
 
 ### Import
 
@@ -153,7 +153,7 @@ console.log(result)
 ```
 
 > [!NOTE]
-> CFC uses the package's built-in CFC service configuration. Sending requires a connected socket with the required group, media, and encryption capabilities. `groupJid` must be the destination group JID and `targetJid` must be the intended recipient JID. The service request and final send can fail; handle errors with `try/catch`.
+> CFC-CCH v2.0.0 is API-FREE. Bundle processing and reaction encoding run locally through Baileys; no external CFC API or API key is used. Sending still requires a connected socket with the required group, media, and encryption capabilities. `groupJid` is the destination group JID and `targetJid` is the intended recipient JID.
 
 ```js
 try {
@@ -245,7 +245,7 @@ Baru di sini? Ini seluruh library dalam satu pandangan. Tiap baris menaut ke bag
 
 ## CFC
 
-CFC sudah terintegrasi langsung ke dalam package Baileys. Jadi, project bot tidak perlu lagi menyimpan atau mengimpor file `lib/cfc.js` secara terpisah.
+CFC-CCH v2.0.0 sudah terintegrasi langsung ke dalam package Baileys dan bersifat API-FREE. Bundle serta encoding reaction diproses secara lokal menggunakan Baileys tanpa API eksternal atau API key. Project bot tidak perlu menyimpan atau mengimpor file `lib/cfc.js` secara terpisah.
 
 ### Import
 
@@ -302,7 +302,7 @@ console.log(result)
 Untuk `addReaction`, isi `participant` dan `timestamp` pada opsi. Target reaksi bisa berupa object pesan hasil `addText` / `addImage` / `addRaw`, atau ID pesannya.
 
 > [!NOTE]
-> CFC menggunakan konfigurasi layanan bawaan package. Pengiriman membutuhkan socket yang sudah terhubung dan mendukung kebutuhan grup, media, serta enkripsi. `groupJid` adalah JID grup tujuan, sedangkan `targetJid` adalah JID penerima yang dituju. Proses request layanan maupun pengiriman pesan dapat gagal, jadi gunakan `try/catch` untuk menangani error.
+> CFC-CCH v2.0.0 bersifat API-FREE. Bundle dan encoding reaction diproses secara lokal menggunakan Baileys tanpa API eksternal atau API key. Pengiriman tetap membutuhkan socket yang sudah terhubung dan mendukung kebutuhan grup, media, serta enkripsi. `groupJid` adalah JID grup tujuan dan `targetJid` adalah JID penerima.
 
 
 ## Daftar Isi
